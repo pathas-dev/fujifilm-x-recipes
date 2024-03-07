@@ -1,10 +1,12 @@
-import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
-import './globals.css';
-import ThemeSwitch from '@/components/common/ThemeSwitch';
 import Navigation from '@/components/common/Navigation';
+import ThemeSwitch from '@/components/common/ThemeSwitch';
+import type { Metadata } from 'next';
+import { Noto_Sans_KR } from 'next/font/google';
+import './globals.css';
 
-const inter = Inter({ subsets: ['latin'] });
+const notoSans = Noto_Sans_KR({
+  subsets: ['latin'],
+});
 
 export const metadata: Metadata = {
   title: 'Create Next App',
@@ -20,7 +22,7 @@ export default function RootLayout({
     <html lang="en">
       <body
         className={[
-          inter.className,
+          notoSans.className,
           'drawer-content',
           'flex',
           'h-max min-h-[calc(100vh-4rem)]',

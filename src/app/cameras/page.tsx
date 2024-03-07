@@ -1,5 +1,5 @@
 const Cameras = () => {
-  return <main>cameras</main>;
+  return <main>카메라</main>;
 };
 
 export default Cameras;
