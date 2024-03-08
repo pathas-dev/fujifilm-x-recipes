@@ -1,3 +1,4 @@
+import Card from '@/components/card/Card';
 import { Recipe } from '@/types/api';
 
 const apiServerUrl = 'http://localhost:3000';
@@ -16,6 +17,13 @@ const getRecipes = async (): Promise<Recipe[]> => {
 };
 
 export default async function Home() {
-  const data = await getRecipes();
-  return <main>home</main>;
+  const recipes = await getRecipes();
+
+  return (
+    <main className="w-full h-fit p-2 flex flex-col gap-2">
+      {recipes.slice(0, 10).map((recipe) => (
+        <Card recipe={recipe} key={recipe._id} />
+      ))}
+    </main>
+  );
 }

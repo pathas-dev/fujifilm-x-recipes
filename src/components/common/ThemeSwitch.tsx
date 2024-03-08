@@ -8,7 +8,7 @@ const LIGHT_THEME = 'lemonade';
 const THEME_STORAGE_KEY = 'theme';
 
 const ThemeSwitch = () => {
-  const [isDarkTheme, setIsDarkTheme] = useState(false);
+  const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   useEffect(() => {
     let theme = localStorage.getItem(THEME_STORAGE_KEY);
@@ -53,7 +53,7 @@ const ThemeSwitch = () => {
   }, []);
 
   return (
-    <label className="swap swap-rotate absolute right-3 top-3">
+    <label className="swap swap-rotate fixed right-3 top-3 z-[9999]">
       {/* this hidden checkbox controls the state */}
       <input
         type="checkbox"

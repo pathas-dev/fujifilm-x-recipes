@@ -11,7 +11,7 @@ const Navigation = () => {
   ];
 
   return (
-    <div className="btm-nav w-9/12 shadow-2xl rounded-xl mx-auto bottom-3">
+    <div className="btm-nav w-9/12 shadow-2xl rounded-xl mx-auto bottom-3 z-[9999]">
       {buttonProps.map((buttonProp) => (
         <NavButton
           title={buttonProp.title}
@@ -39,10 +39,13 @@ const NavButton = ({ children, title, path }: INavButtonProps) => {
     router.push(path);
   }, [path, router]);
 
-  const isActive = useMemo(() => currentPath === path, [path, currentPath]);
+  const activeClassName = useMemo(
+    () => (currentPath === path ? 'active' : ''),
+    [path, currentPath]
+  );
 
   return (
-    <button className={isActive ? 'active' : ''} onClick={handleClick}>
+    <button className={activeClassName} onClick={handleClick}>
       {children}
       <span className="btm-nav-label">{title}</span>
     </button>
