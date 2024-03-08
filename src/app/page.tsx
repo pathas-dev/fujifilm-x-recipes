@@ -4,8 +4,8 @@ import { getAllDocuments } from './api/mongodb';
 
 const getRecipes = async (): Promise<Recipe[]> => {
   try {
-    const data = await getAllDocuments('recipes');
-    return JSON.parse(JSON.stringify(data)) as Recipe[];
+    const recipes = await getAllDocuments<Recipe>('recipes');
+    return recipes;
   } catch (error) {
     throw new Error('Recipes data request failed');
   }
