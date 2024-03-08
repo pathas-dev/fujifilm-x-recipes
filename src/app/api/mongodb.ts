@@ -1,25 +1,27 @@
-const url = process.env.API_SERVER_URL ?? '';
-const dataSource = process.env.DATA_SOURCE ?? '';
-const database = process.env.DATABASE ?? '';
-const apiKey = process.env.API_KEY ?? '';
+import { MongoClient, ServerApiVersion } from 'mongodb';
 
-export const getAllDocuments = async <T>(
-  collectionName: string
-): Promise<T[]> => {
+const url = process.env.FUJIFILM_X_RECIPES_DATABASE_URL ?? '';
+
+export const getAllDocuments = async (collectionName: string) => {
+  let client = null;
   try {
-    const response = await fetch(url + '/action/find', {
-      method: 'POST',
-      body: JSON.stringify({
-        dataSource,
-        database,
-        collection: collectionName,
-      }),
-      headers: { apiKey },
+    client = new MongoClient(url, {
+      serverApi: {
+        version: ServerApiVersion.v1,
+        strict: true,
+        deprecationErrors: true,
+      },
     });
-
-    const data = await response.json();
-    return data.documents;
+    await client.connect();
+    const data = await client
+      .db('fujifilm-x')
+      .collection(collectionName)
+      .find()
+      .toArray();
+    return data;
   } catch (error) {
     throw error;
+  } finally {
+    if (client) await client.close();
   }
 };
