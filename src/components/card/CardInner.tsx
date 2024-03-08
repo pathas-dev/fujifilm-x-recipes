@@ -4,7 +4,7 @@ import { Recipe } from '@/types/api';
 import dayjs from 'dayjs';
 import Image from 'next/image';
 import Link from 'next/link';
-import React, { useEffect, useState } from 'react';
+import React, { LegacyRef, useEffect, useRef, useState } from 'react';
 
 interface ICardInnerProps {
   urlHtml: string;
@@ -13,11 +13,32 @@ interface ICardInnerProps {
 
 const CardInner = ({ urlHtml, recipe }: ICardInnerProps) => {
   const [openGraph, setOpenGraph] = useState(initialOpenGraph);
+  const [imageSrc, setImageSrc] = useState(initialOpenGraph.image.url);
+  const refCard = useRef<HTMLImageElement>();
 
   useEffect(() => {
     const parsedOpenGraph = getOpenGraph(urlHtml);
     setOpenGraph(parsedOpenGraph);
   }, [urlHtml]);
+
+  useEffect(() => {
+    if (!refCard.current) return;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.intersectionRatio > 0) {
+          setImageSrc(openGraph.image.url);
+        }
+      });
+    });
+
+    io.observe(refCard.current);
+
+    return () => {
+      if (!refCard.current || !io) return;
+      io.unobserve(refCard.current);
+    };
+  }, [openGraph]);
 
   const isColor = /color/i.test(recipe.colorType);
   const colorClassName = isColor
@@ -28,12 +49,13 @@ const CardInner = ({ urlHtml, recipe }: ICardInnerProps) => {
     <div className="card w-full h-fit bg-base-100 shadow-xl image-full overflow-hidden">
       <figure className="relative">
         <Image
-          src={openGraph.image.url}
+          src={imageSrc}
           alt={openGraph.image.alt}
           fill
           style={{ objectFit: 'cover' }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           priority
+          ref={(ref) => (refCard.current = ref ?? undefined)}
         />
       </figure>
       <div className="card-body">
