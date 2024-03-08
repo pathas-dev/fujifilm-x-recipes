@@ -1,7 +1,7 @@
 import Card from '@/components/card/Card';
 import { Recipe } from '@/types/api';
 
-const apiServerUrl = 'http://localhost:3000';
+const apiServerUrl = process.env.VERCEL_URL;
 
 const getRecipes = async (): Promise<Recipe[]> => {
   const res = await fetch(`${apiServerUrl}/api/recipes`);
