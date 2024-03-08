@@ -1,20 +1,14 @@
 import Card from '@/components/card/Card';
 import { Recipe } from '@/types/api';
-
-const apiServerUrl =
-  process.env.NODE_ENV === 'development' ? 'http://localhost:3000' : '';
+import { getAllDocuments } from './api/mongodb';
 
 const getRecipes = async (): Promise<Recipe[]> => {
-  const res = await fetch(`${apiServerUrl}/api/recipes`);
-  // The return value is *not* serialized
-  // You can return Date, Map, Set, etc.
-
-  if (!res.ok) {
-    // This will activate the closest `error.js` Error Boundary
+  try {
+    const data = await getAllDocuments('recipes');
+    return JSON.parse(JSON.stringify(data)) as Recipe[];
+  } catch (error) {
     throw new Error('Recipes data request failed');
   }
-
-  return res.json();
 };
 
 export default async function Home() {
