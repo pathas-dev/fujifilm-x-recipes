@@ -42,6 +42,7 @@ const getRecipesWithFilters = async (): Promise<{
       filters,
     };
   } catch (error) {
+    console.log(error);
     throw new Error('Recipes data request failed');
   }
 };
