@@ -14,7 +14,7 @@ const Card = ({ recipe }: ICardProps) => {
   const refCard = useRef<HTMLImageElement>();
 
   useEffect(() => {
-    if (!refCard.current) return;
+    if (!refCard.current || !recipe.url) return;
 
     const io = new IntersectionObserver((entries) => {
       entries.forEach(async (entry) => {
@@ -45,7 +45,7 @@ const Card = ({ recipe }: ICardProps) => {
       if (!refCard.current || !io) return;
       io.unobserve(refCard.current);
     };
-  }, []);
+  }, [recipe.url]);
 
   const isColor = /color/i.test(recipe.colorType);
   const colorClassName = isColor
