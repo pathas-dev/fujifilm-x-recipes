@@ -51,7 +51,7 @@ export default async function Home() {
 
   return (
     <main className="w-full h-fit p-2 flex flex-col gap-2">
-      {recipes.slice(0, 10).map((recipe) => (
+      {recipes.map((recipe) => (
         <Card recipe={recipe} key={recipe._id} />
       ))}
     </main>
