@@ -11,7 +11,7 @@ interface ICardProps {
   recipe: Recipe;
 }
 const Card = ({ recipe }: ICardProps) => {
-  const [openGraph, setOpenGraph] = useState(initialOpenGraph);
+  const [openGraph, setOpenGraph] = useState(getInitialOpenGraph());
   const refCard = useRef<HTMLImageElement>();
 
   useEffect(() => {
@@ -34,7 +34,7 @@ const Card = ({ recipe }: ICardProps) => {
             if (refCard.current) io.unobserve(refCard.current);
             setOpenGraph(parsedOpenGraph);
           } catch (error) {
-            setOpenGraph(initialOpenGraph);
+            setOpenGraph(getInitialOpenGraph());
           }
         }
       });
@@ -60,9 +60,9 @@ const Card = ({ recipe }: ICardProps) => {
           src={openGraph.image.url}
           alt={openGraph.image.alt}
           fill
+          quality={30}
           style={{ objectFit: 'cover' }}
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          priority
           ref={(ref) => (refCard.current = ref ?? undefined)}
         />
       </figure>
@@ -242,10 +242,17 @@ const initialOpenGraph: OpenGraph = {
   image: {
     height: '',
     width: '',
-    url: rgbDataURL(255, 255, 255),
+    url: '',
     alt: '',
     type: '',
   },
+};
+
+const getInitialOpenGraph = (): OpenGraph => {
+  const random = () => Math.ceil(Math.random() * 255);
+  const newInitialOpenGraph = { ...initialOpenGraph };
+  newInitialOpenGraph.image.url = rgbDataURL(random(), random(), random());
+  return newInitialOpenGraph;
 };
 
 const getOpenGraph = (urlHtml: string): OpenGraph => {
@@ -269,7 +276,7 @@ const getOpenGraph = (urlHtml: string): OpenGraph => {
     if (isUrl) return { ...acc, image: { ...acc.image, url: content } };
 
     return { ...acc, image: { ...acc.image, [imageProperty]: content } };
-  }, initialOpenGraph);
+  }, getInitialOpenGraph());
 };
 
 export default Card;
