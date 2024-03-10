@@ -1,11 +1,12 @@
 'use client';
 
 import { Recipe } from '@/types/api';
-import Card from './Card';
-import { useCallback, useMemo, useState } from 'react';
+import { useCallback, useEffect, useMemo, useState } from 'react';
 import { SvgCameraMicro, SvgFilmMicro, SvgSensorMicro } from '../icon/svgs';
+import Card, { STORAGE_BOOKMARK_KEY } from '../card/Card';
+import { Dropbox, DropboxProps } from '../card/CardList';
 
-interface ICardListProps {
+interface IBookmarkListProps {
   recipes: Recipe[];
   filters: {
     cameras: string[];
@@ -14,14 +15,27 @@ interface ICardListProps {
   };
 }
 
-const CardList = ({ filters, recipes }: ICardListProps) => {
+const BookmarkList = ({ filters, recipes }: IBookmarkListProps) => {
+  const [markedRecipes, setMarkedRecipes] = useState<Recipe[]>([]);
+
   const [bases, setBases] = useState<string[]>([]);
   const [cameras, setCameras] = useState<string[]>([]);
   const [sensors, setSensors] = useState<string[]>([]);
   const [bwOnly, setBwonly] = useState<boolean>(false);
 
+  useEffect(() => {
+    const storedRecipeIds = JSON.parse(
+      localStorage.getItem(STORAGE_BOOKMARK_KEY) ?? '[]'
+    ) as string[];
+    const matchedRecipes = recipes.filter((recipe) =>
+      storedRecipeIds.includes(recipe._id)
+    );
+
+    setMarkedRecipes(matchedRecipes);
+  }, []);
+
   const flteredRecipes = useMemo(() => {
-    return recipes.filter((recipe) => {
+    return markedRecipes.filter((recipe) => {
       const isBaseIncluded = bases.length === 0 || bases.includes(recipe.base);
       const isCameraIncluded =
         cameras.length === 0 || cameras.includes(recipe.camera);
@@ -32,7 +46,7 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
 
       return isBaseIncluded && isCameraIncluded && isSensorIncluded && isBw;
     });
-  }, [recipes, bases, cameras, sensors, bwOnly]);
+  }, [markedRecipes, bases, cameras, sensors, bwOnly]);
 
   const dropboxProps: DropboxProps[] = [
     {
@@ -91,56 +105,4 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
   );
 };
 
-export interface DropboxProps {
-  values: string[];
-  selectedValues: string[];
-  onClickMenu: ({
-    value,
-    checked,
-  }: {
-    value: string;
-    checked: boolean;
-  }) => void;
-  children: React.ReactElement;
-  dropdownEnd?: boolean;
-}
-
-export const Dropbox = ({
-  values,
-  selectedValues,
-  onClickMenu,
-  children,
-  dropdownEnd,
-}: DropboxProps) => {
-  return (
-    <div className={`dropdown ${dropdownEnd ? 'dropdown-end' : ''}`.trim()}>
-      <div tabIndex={0} role="button" className="btn btn-sm m-1">
-        {children}
-      </div>
-      <ul
-        tabIndex={0}
-        className="dropdown-content z-[999] menu p-2 shadow bg-base-100 rounded-box"
-      >
-        <div className="overflow-y-scroll max-h-64 w-max">
-          {values.map((value) => (
-            <li key={value}>
-              <label className="label cursor-pointer ">
-                <a className="label-text flex grow">{value}</a>
-                <input
-                  type="checkbox"
-                  checked={selectedValues.includes(value)}
-                  onChange={({ target: { checked } }) => {
-                    onClickMenu({ value, checked });
-                  }}
-                  className="checkbox checkbox-primary checkbox-xs"
-                />
-              </label>
-            </li>
-          ))}
-        </div>
-      </ul>
-    </div>
-  );
-};
-
-export default CardList;
+export default BookmarkList;

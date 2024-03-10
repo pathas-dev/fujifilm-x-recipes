@@ -1,10 +1,11 @@
 'use client';
 
-import React, { useEffect, useRef, useState } from 'react';
 import { Recipe } from '@/types/api';
+import dayjs from 'dayjs';
 import Image from 'next/image';
 import Link from 'next/link';
-import dayjs from 'dayjs';
+import { useCallback, useEffect, useRef, useState } from 'react';
+import { SvgArrow, SvgLink } from '../icon/svgs';
 
 interface ICardProps {
   recipe: Recipe;
@@ -66,6 +67,7 @@ const Card = ({ recipe }: ICardProps) => {
         />
       </figure>
       <div className="card-body">
+        <Bookmark id={recipe._id} />
         <div className="w-full flex items-end">
           <h2 className="card-title gap-0 items-end">
             <span className="">
@@ -109,42 +111,83 @@ const Card = ({ recipe }: ICardProps) => {
   );
 };
 
-const SvgArrow = () => {
+interface BookmarkProps {
+  id: string;
+}
+
+export const STORAGE_BOOKMARK_KEY = 'bookmark';
+
+const Bookmark = ({ id }: BookmarkProps) => {
+  const [marked, setMarked] = useState(false);
+
+  useEffect(() => {
+    const bookmarkedIds = JSON.parse(
+      localStorage.getItem(STORAGE_BOOKMARK_KEY) ?? '[]'
+    ) as string[];
+
+    setMarked(bookmarkedIds.includes(id));
+  }, []);
+
+  const handleBookmarkClick = useCallback(() => {
+    const bookmarkedIds = JSON.parse(
+      localStorage.getItem(STORAGE_BOOKMARK_KEY) ?? '[]'
+    ) as string[];
+    if (!marked) {
+      bookmarkedIds.push(id);
+      localStorage.setItem(STORAGE_BOOKMARK_KEY, JSON.stringify(bookmarkedIds));
+    } else {
+      const removedIds = bookmarkedIds.filter(
+        (bookmarkedId) => bookmarkedId !== id
+      );
+      localStorage.setItem(STORAGE_BOOKMARK_KEY, JSON.stringify(removedIds));
+    }
+    setMarked((prev) => !prev);
+  }, [marked]);
+
   return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 24 24"
-      strokeWidth={2}
-      stroke="currentColor"
-      className="w-5 h-5"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M13.5 6H5.25A2.25 2.25 0 0 0 3 8.25v10.5A2.25 2.25 0 0 0 5.25 21h10.5A2.25 2.25 0 0 0 18 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25"
-      />
-    </svg>
+    <div className="absolute top-2 right-2">
+      <label className="swap">
+        {/* this hidden checkbox controls the state */}
+        <input
+          type="checkbox"
+          onChange={handleBookmarkClick}
+          checked={marked}
+        />
+
+        {/* volume on icon */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="currentColor"
+          className="w-7 h-7 swap-on fill-green-400"
+        >
+          <path
+            fillRule="evenodd"
+            d="M6.32 2.577a49.255 49.255 0 0 1 11.36 0c1.497.174 2.57 1.46 2.57 2.93V21a.75.75 0 0 1-1.085.67L12 18.089l-7.165 3.583A.75.75 0 0 1 3.75 21V5.507c0-1.47 1.073-2.756 2.57-2.93Z"
+            clipRule="evenodd"
+          />
+        </svg>
+
+        {/* volume off icon */}
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          strokeWidth={1.5}
+          fill="none"
+          stroke="currentColor"
+          className="w-7 h-7 swap-off"
+        >
+          <path
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            d="M17.593 3.322c1.1.128 1.907 1.077 1.907 2.185V21L12 17.25 4.5 21V5.507c0-1.108.806-2.057 1.907-2.185a48.507 48.507 0 0 1 11.186 0Z"
+          />
+        </svg>
+      </label>
+    </div>
   );
 };
-const SvgLink = () => {
-  return (
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      fill="none"
-      viewBox="0 0 25 25"
-      strokeWidth={2}
-      stroke="currentColor"
-      className="w-4 h-4"
-    >
-      <path
-        strokeLinecap="round"
-        strokeLinejoin="round"
-        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
-      />
-    </svg>
-  );
-};
+
 // Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
 const keyStr =
   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
