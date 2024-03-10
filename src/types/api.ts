@@ -13,6 +13,7 @@ export type Recipe = {
 
 export type Origin = {
   _id: string;
+  name: string;
   siteOrProfile: string;
   url: string;
   count: string;

@@ -4,7 +4,7 @@ import { useCallback, useEffect, useState } from 'react';
 
 const THEME_ATTRIBUTE = 'data-theme';
 const DARK_THEME = 'dracula';
-const LIGHT_THEME = 'lemonade';
+const LIGHT_THEME = 'retro';
 const THEME_STORAGE_KEY = 'theme';
 
 const ThemeSwitch = () => {

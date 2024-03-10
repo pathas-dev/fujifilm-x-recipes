@@ -101,7 +101,7 @@ const Card = ({ recipe }: ICardProps) => {
           </div>
         </details>
         <div className="card-actions self-end flex items-center gap-0">
-          <Link href={recipe.url} target="_blank">
+          <Link href={`/origins#${recipe.creator}`}>
             <SvgLink />
           </Link>
           {recipe.creator}, {dayjs(recipe.published).format('YYYY-MM-DD')}
