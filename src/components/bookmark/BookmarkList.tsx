@@ -32,7 +32,7 @@ const BookmarkList = ({ filters, recipes }: IBookmarkListProps) => {
     );
 
     setMarkedRecipes(matchedRecipes);
-  }, []);
+  }, [recipes]);
 
   const flteredRecipes = useMemo(() => {
     return markedRecipes.filter((recipe) => {

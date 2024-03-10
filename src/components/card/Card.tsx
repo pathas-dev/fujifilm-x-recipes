@@ -126,7 +126,7 @@ const Bookmark = ({ id }: BookmarkProps) => {
     ) as string[];
 
     setMarked(bookmarkedIds.includes(id));
-  }, []);
+  }, [id]);
 
   const handleBookmarkClick = useCallback(() => {
     const bookmarkedIds = JSON.parse(
@@ -142,7 +142,7 @@ const Bookmark = ({ id }: BookmarkProps) => {
       localStorage.setItem(STORAGE_BOOKMARK_KEY, JSON.stringify(removedIds));
     }
     setMarked((prev) => !prev);
-  }, [marked]);
+  }, [marked, id]);
 
   return (
     <div className="absolute top-2 right-2">
