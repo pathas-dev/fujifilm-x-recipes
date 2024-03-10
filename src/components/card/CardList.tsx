@@ -35,7 +35,6 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
 
   const dropboxProps: DropboxProps[] = [
     {
-      title: 'Base',
       selectedValues: bases,
       values: filters.bases,
       onClickMenu: ({ value, checked }) => {
@@ -45,7 +44,6 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
       children: <SvgFilm />,
     },
     {
-      title: 'Camera',
       selectedValues: cameras,
       values: filters.cameras,
       onClickMenu: ({ value, checked }) => {
@@ -55,7 +53,6 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
       children: <SvgCamera />,
     },
     {
-      title: 'Sensor',
       selectedValues: sensors,
       values: filters.sensors,
       onClickMenu: ({ value, checked }) => {
@@ -63,7 +60,6 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
         else setSensors((prev) => prev.filter((v) => v !== value));
       },
       children: <SvgSensor />,
-      dropdownEnd: true,
     },
   ];
 
@@ -72,8 +68,8 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
   return (
     <main className="w-full h-fit p-2 flex flex-col gap-2">
       <div className="flex h-fit items-center">
-        {dropboxProps.map((dropboxProps) => (
-          <Dropbox {...dropboxProps} key={dropboxProps.title} />
+        {dropboxProps.map((dropboxProps, index) => (
+          <Dropbox {...dropboxProps} key={index} />
         ))}
         <div className="form-control">
           <label className="cursor-pointer label">
@@ -95,7 +91,6 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
 };
 
 interface DropboxProps {
-  title: string;
   values: string[];
   selectedValues: string[];
   onClickMenu: ({
@@ -110,7 +105,6 @@ interface DropboxProps {
 }
 
 const Dropbox = ({
-  title,
   values,
   selectedValues,
   onClickMenu,
@@ -120,7 +114,6 @@ const Dropbox = ({
   return (
     <div className={`dropdown ${dropdownEnd ? 'dropdown-end' : ''}`.trim()}>
       <div tabIndex={0} role="button" className="btn btn-sm m-1">
-        {title}
         {children}
       </div>
       <ul
