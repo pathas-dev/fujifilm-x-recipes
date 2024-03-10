@@ -28,6 +28,7 @@ export default function RootLayout({
           'h-max min-h-[calc(100vh-4rem)]',
           'w-full',
           'relative',
+          'pb-16',
         ].join(' ')}
         suppressHydrationWarning
       >

@@ -53,7 +53,7 @@ const Card = ({ recipe }: ICardProps) => {
     : 'from-black to-white';
 
   return (
-    <div className="card w-full h-fit bg-base-100 shadow-xl image-full overflow-hidden">
+    <div className="card card-compact w-full h-fit bg-base-100 shadow-xl image-full overflow-hidden">
       <figure className="relative">
         <Image
           src={openGraph.image.url}
@@ -67,21 +67,30 @@ const Card = ({ recipe }: ICardProps) => {
       </figure>
       <div className="card-body">
         <div className="w-full flex items-end">
-          <h2 className="card-title">{recipe.name}</h2>
-          <span className="text-xs leading-5">(from {recipe.base})</span>
-          <Link href={recipe.url} target="_blank">
-            <SvgArrow />
-          </Link>
+          <h2 className="card-title gap-0 items-end">
+            <span className="">
+              {recipe.name}
+              <span className="text-xs font-light leading-5">
+                (from {recipe.base})
+              </span>
+            </span>
+            <Link href={recipe.url} target="_blank">
+              <SvgArrow />
+            </Link>
+          </h2>
         </div>
 
         <details className="collapse collapse-arrow bg-base-100">
           <summary className="collapse-title">
-            <h2
-              className={`text-lg font-medium inline-block text-transparent bg-clip-text bg-gradient-to-br ${colorClassName}`}
-            >
-              {recipe.camera}
-              <span className="text-sm">({recipe.sensor})</span>
-            </h2>
+            <div className="flex items-end">
+              <div
+                className={`mr-2 w-6 h-6 transparent bg-clip bg-gradient-to-br ${colorClassName}`}
+              />
+              <h2 className={`text-lg font-medium text-base-content`}>
+                {recipe.camera}
+                <span className="text-sm">({recipe.sensor})</span>
+              </h2>
+            </div>
           </summary>
           <div className="collapse-content">
             <p className="whitespace-pre-line text-sm text-base-content">
