@@ -1,6 +1,7 @@
 import Card from '@/components/card/Card';
 import { Recipe } from '@/types/api';
 import { getAllDocuments } from './api/mongodb';
+import CardList from '@/components/card/CardList';
 
 const getRecipesWithFilters = async (): Promise<{
   recipes: Recipe[];
@@ -50,11 +51,5 @@ const getRecipesWithFilters = async (): Promise<{
 export default async function Home() {
   const { recipes, filters } = await getRecipesWithFilters();
 
-  return (
-    <main className="w-full h-fit p-2 flex flex-col gap-2">
-      {recipes.map((recipe) => (
-        <Card recipe={recipe} key={recipe._id} />
-      ))}
-    </main>
-  );
+  return <CardList recipes={recipes} filters={filters} />;
 }
