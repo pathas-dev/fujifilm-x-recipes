@@ -84,7 +84,7 @@ const Card = ({ recipe }: ICardProps) => {
           <summary className="collapse-title">
             <div className="flex items-end">
               <div
-                className={`mr-2 w-6 h-6 transparent bg-clip bg-gradient-to-br ${colorClassName}`}
+                className={`mr-2 w-6 h-6 rounded transparent bg-clip bg-gradient-to-br ${colorClassName}`}
               />
               <h2 className={`text-lg font-medium text-base-content`}>
                 {recipe.camera}
