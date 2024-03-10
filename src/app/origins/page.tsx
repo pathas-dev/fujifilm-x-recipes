@@ -20,12 +20,12 @@ const getOrigins = async (): Promise<{
 };
 
 const HPCHAVAZ_BLOG_URL = 'https://hpchavaz-photography.blogspot.com/';
-const MY_BLOG_URL = 'https://pathas1126.tistory.com/';
+const MY_BLOG_URL = 'https://pathas.tistory.com/';
 
 const Origins = async () => {
   const { origins } = await getOrigins();
   return (
-    <main>
+    <main className="w-full pr-4 overflow-hidden whitespace-nowrap text-ellipsis">
       <ul className="steps steps-vertical ml-2">
         {origins.map((origin) => (
           <li key={origin._id} data-content="★" className="step step-neutral">
@@ -35,15 +35,15 @@ const Origins = async () => {
               className="link link-hover link-primary flex"
               target="_blank"
             >
-              <h2>{origin.name}</h2>
-              <div className="ml-1 mt-1 flex items-center">
+              {origin.name}
+              <span className="ml-1 mt-1 flex items-center">
                 <SvgFilmMicro />
                 <span className="text-xs">
                   X{origin.count} (
                   {dayjs(origin.firstPublication).format('YYYYMMDD')}_
                   {dayjs(origin.lastPublication).format('YYYYMMDD')})
                 </span>
-              </div>
+              </span>
             </Link>
           </li>
         ))}
