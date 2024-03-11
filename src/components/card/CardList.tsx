@@ -148,8 +148,8 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
   const onBwToggle = useCallback(() => setBwonly((prev) => !prev), []);
 
   return (
-    <main className="w-full h-fit p-2 flex flex-col gap-2">
-      <div className="flex h-fit items-center">
+    <>
+      <header className="w-full h-fit shadow-md flex items-center fixed top-0 p-2 bg-base-100 z-[999]">
         {dropboxProps.map((dropboxProps, index) => (
           <Dropbox {...dropboxProps} key={index} />
         ))}
@@ -164,11 +164,13 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
             <span className="label-text text-xs ml-1">B/W only</span>
           </label>
         </div>
-      </div>
-      {sortedRecipes.map((recipe) => (
-        <Card recipe={recipe} key={recipe._id} />
-      ))}
-    </main>
+      </header>
+      <main className="w-full h-fit p-2 pt-16 flex flex-col gap-2">
+        {sortedRecipes.map((recipe) => (
+          <Card recipe={recipe} key={recipe._id} />
+        ))}
+      </main>
+    </>
   );
 };
 
@@ -203,7 +205,7 @@ export const Dropbox = ({
       </summary>
       <ul
         tabIndex={0}
-        className="dropdown-content z-[999] menu p-2 shadow bg-base-100 rounded-box"
+        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box"
       >
         <div className="overflow-y-scroll max-h-64 w-max">
           {values.map((value) => (
