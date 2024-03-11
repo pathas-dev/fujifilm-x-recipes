@@ -3,7 +3,7 @@
 import { Recipe } from '@/types/api';
 import dayjs from 'dayjs';
 import Image from 'next/image';
-import { useCallback, useEffect, useRef, useState } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { SvgArrow, SvgLink } from '../icon/svgs';
 import { Link } from '@/navigation';
 
@@ -12,11 +12,16 @@ interface ICardProps {
 }
 const Card = ({ recipe }: ICardProps) => {
   const [intersected, setIntersected] = useState(false);
-  const [openGraph, setOpenGraph] = useState(getInitialOpenGraph());
-  const refCard = useRef<HTMLDivElement>();
+  const [openGraph, setOpenGraph] = useState<undefined | OpenGraph>(undefined);
+  const [skeletonElement, setSkeletonElement] = useState<
+    HTMLDivElement | undefined
+  >(undefined);
+  const [cardElement, setCardElement] = useState<HTMLDivElement | undefined>(
+    undefined
+  );
 
   useEffect(() => {
-    if (!refCard.current || !recipe.url) return;
+    if (!skeletonElement || !recipe.url) return;
 
     const io = new IntersectionObserver((entries) => {
       entries.forEach(async (entry) => {
@@ -30,97 +35,140 @@ const Card = ({ recipe }: ICardProps) => {
             if (!data?.urlHtml) return;
 
             const parsedOpenGraph = getOpenGraph(data.urlHtml);
-            if (!parsedOpenGraph.image.url) return;
+            if (!parsedOpenGraph.image.url) throw new Error('no image');
 
-            if (refCard.current) io.unobserve(refCard.current);
+            if (skeletonElement) io.unobserve(skeletonElement);
             setOpenGraph(parsedOpenGraph);
+            setIntersected(true);
           } catch (error) {
             setOpenGraph(getInitialOpenGraph());
           } finally {
-            setIntersected(true);
+            setSkeletonElement(undefined);
           }
         }
       });
     });
 
-    io.observe(refCard.current);
+    io.observe(skeletonElement);
 
     return () => {
-      if (!refCard.current || !io) return;
-      io.unobserve(refCard.current);
+      if (!skeletonElement || !io) return;
+      io.unobserve(skeletonElement);
+      setSkeletonElement(undefined);
     };
-  }, [recipe.url]);
+  }, [recipe.url, skeletonElement]);
 
-  if (!intersected)
-    return (
-      <div
-        className="skeleton w-full h-40"
-        ref={(ref) => (refCard.current = ref ?? undefined)}
-      />
-    );
+  useEffect(() => {
+    if (!cardElement) return;
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(async (entry) => {
+        setIntersected(entry.intersectionRatio > 0);
+      });
+    });
+
+    io.observe(cardElement);
+
+    return () => {
+      if (!cardElement || !io) return;
+      io.unobserve(cardElement);
+      setCardElement(undefined);
+    };
+  }, [cardElement]);
 
   const isColor = /color/i.test(recipe.colorType);
   const colorClassName = isColor
     ? 'from-red-500 via-green-500 to-blue-500'
     : 'from-black to-white';
+  const cardInner = useMemo(
+    () => (
+      <>
+        <figure className="relative">
+          <Image
+            src={openGraph?.image?.url ?? getImagePlaceholder()}
+            alt={openGraph?.image?.alt ?? ''}
+            fill
+            quality={30}
+            style={{ objectFit: 'cover' }}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          />
+        </figure>
+        <div className="card-body">
+          <Bookmark id={recipe._id} />
+          <div className="w-full flex items-end">
+            <h2 className="card-title gap-0 items-end">
+              <span className="">
+                {recipe.name}
+                <span className="text-xs font-light leading-5">
+                  (from {recipe.base})
+                </span>
+              </span>
+              <Link href={recipe.url} target="_blank">
+                <SvgArrow />
+              </Link>
+            </h2>
+          </div>
+
+          <details className="collapse collapse-arrow bg-base-100">
+            <summary className="collapse-title">
+              <div className="flex items-end">
+                <div
+                  className={`mr-2 w-6 h-6 rounded transparent bg-clip bg-gradient-to-br ${colorClassName}`}
+                />
+                <h2 className={`text-lg font-medium text-base-content`}>
+                  {recipe.camera}
+                  <span className="text-sm">({recipe.sensor})</span>
+                </h2>
+              </div>
+            </summary>
+            <div className="collapse-content">
+              <p className="whitespace-pre-line text-sm text-base-content">
+                {recipe.settings}
+              </p>
+            </div>
+          </details>
+          <div className="card-actions self-end flex items-center gap-0">
+            <Link
+              href={`/origins#${recipe.creator}`}
+              className="card-actions self-end flex items-center gap-0 link link-hover"
+            >
+              <SvgLink />
+              {recipe.creator}, {dayjs(recipe.published).format('YYYY-MM-DD')}
+            </Link>
+          </div>
+        </div>
+      </>
+    ),
+    [
+      colorClassName,
+      openGraph?.image?.alt,
+      openGraph?.image?.url,
+      recipe._id,
+      recipe.base,
+      recipe.camera,
+      recipe.creator,
+      recipe.name,
+      recipe.published,
+      recipe.sensor,
+      recipe.settings,
+      recipe.url,
+    ]
+  );
+
+  if (!openGraph)
+    return (
+      <div
+        className="skeleton w-full h-40"
+        ref={(ref) => setSkeletonElement(ref ?? undefined)}
+      />
+    );
 
   return (
-    <div className="card card-compact w-full min-h-40 bg-base-100 shadow-xl image-full overflow-hidden">
-      <figure className="relative">
-        <Image
-          src={openGraph.image.url}
-          alt={openGraph.image.alt}
-          fill
-          quality={30}
-          style={{ objectFit: 'cover' }}
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          ref={(ref) => (refCard.current = ref ?? undefined)}
-        />
-      </figure>
-      <div className="card-body">
-        <Bookmark id={recipe._id} />
-        <div className="w-full flex items-end">
-          <h2 className="card-title gap-0 items-end">
-            <span className="">
-              {recipe.name}
-              <span className="text-xs font-light leading-5">
-                (from {recipe.base})
-              </span>
-            </span>
-            <Link href={recipe.url} target="_blank">
-              <SvgArrow />
-            </Link>
-          </h2>
-        </div>
-
-        <details className="collapse collapse-arrow bg-base-100">
-          <summary className="collapse-title">
-            <div className="flex items-end">
-              <div
-                className={`mr-2 w-6 h-6 rounded transparent bg-clip bg-gradient-to-br ${colorClassName}`}
-              />
-              <h2 className={`text-lg font-medium text-base-content`}>
-                {recipe.camera}
-                <span className="text-sm">({recipe.sensor})</span>
-              </h2>
-            </div>
-          </summary>
-          <div className="collapse-content">
-            <p className="whitespace-pre-line text-sm text-base-content">
-              {recipe.settings}
-            </p>
-          </div>
-        </details>
-        <div className="card-actions self-end flex items-center gap-0">
-          <Link
-            href={`/origins#${recipe.creator}`}
-            className="card-actions self-end flex items-center gap-0 link link-hover"
-          >
-            <SvgLink />
-            {recipe.creator}, {dayjs(recipe.published).format('YYYY-MM-DD')}
-          </Link>
-        </div>
-      </div>
+    <div
+      ref={(ref) => setCardElement(ref ?? undefined)}
+      className="card card-compact w-full min-h-40 bg-base-100 shadow-xl image-full overflow-hidden"
+    >
+      {intersected ? cardInner : null}
     </div>
   );
 };
@@ -260,6 +308,11 @@ const initialOpenGraph: OpenGraph = {
     alt: '',
     type: '',
   },
+};
+
+const getImagePlaceholder = () => {
+  const random = () => Math.ceil(Math.random() * 255);
+  return rgbDataURL(random(), random(), random());
 };
 
 const getInitialOpenGraph = (): OpenGraph => {
