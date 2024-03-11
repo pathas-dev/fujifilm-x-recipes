@@ -110,12 +110,12 @@ const Card = ({ recipe }: ICardProps) => {
           </div>
 
           <details className="collapse collapse-arrow bg-base-100">
-            <summary className="collapse-title">
+            <summary className="collapse-title text-base-content">
               <div className="flex items-end">
                 <div
                   className={`mr-2 w-6 h-6 rounded transparent bg-clip bg-gradient-to-br ${colorClassName}`}
                 />
-                <h2 className={`text-lg font-medium text-base-content`}>
+                <h2 className={`text-lg font-medium`}>
                   {recipe.camera}
                   <span className="text-sm">({recipe.sensor})</span>
                 </h2>
