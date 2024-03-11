@@ -56,7 +56,7 @@ const getSortDateCallback =
 const getSortCharCallback =
   ({ key, isAsc }: { key: keyof Recipe; isAsc?: boolean }) =>
   (prev: Recipe, next: Recipe) => {
-    const diff = next[key].charCodeAt(0) - prev[key].charCodeAt(0);
+    const diff = next[key].localeCompare(prev[key]);
 
     if (!isAsc) return diff * -1;
     return diff;
@@ -90,6 +90,7 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
     const copiedFilteredRecipes = [...filteredRecipes];
     const [label, directionChar] = sortType.split(DELIMETER);
     const isAsc = directionChar === ASC_CHARACTER;
+
     if (sortType.includes(DATE_LABEL)) {
       return copiedFilteredRecipes.sort(
         getSortDateCallback({ key: 'published', isAsc })
@@ -97,7 +98,10 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
     }
 
     return copiedFilteredRecipes.sort(
-      getSortCharCallback({ key: label.toLowerCase() as keyof Recipe, isAsc })
+      getSortCharCallback({
+        key: label.toLowerCase() as keyof Recipe,
+        isAsc,
+      })
     );
   }, [sortType, filteredRecipes]);
 
