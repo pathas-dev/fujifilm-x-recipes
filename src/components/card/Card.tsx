@@ -54,7 +54,7 @@ const Card = ({ recipe }: ICardProps) => {
   if (!intersected)
     return (
       <div
-        className="skeleton w-full h-36"
+        className="skeleton w-full h-40"
         ref={(ref) => (refCard.current = ref ?? undefined)}
       />
     );
@@ -65,7 +65,7 @@ const Card = ({ recipe }: ICardProps) => {
     : 'from-black to-white';
 
   return (
-    <div className="card card-compact w-full h-fit bg-base-100 shadow-xl image-full overflow-hidden">
+    <div className="card card-compact w-full min-h-40 bg-base-100 shadow-xl image-full overflow-hidden">
       <figure className="relative">
         <Image
           src={openGraph.image.url}
