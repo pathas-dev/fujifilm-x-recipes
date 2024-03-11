@@ -170,6 +170,9 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
             <span className="label-text text-xs ml-1">{labels.bwOnly}</span>
           </label>
         </div>
+        <span className="flex ml-2 text-xs">
+          <SvgFilmMicro />x{sortedRecipes.length}
+        </span>
       </header>
       <main className="w-full h-fit p-2 pt-16 flex flex-col gap-2">
         {sortedRecipes.map((recipe) => (
