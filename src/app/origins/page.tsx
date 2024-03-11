@@ -25,26 +25,34 @@ const MY_BLOG_URL = 'https://pathas.tistory.com/';
 const Origins = async () => {
   const { origins } = await getOrigins();
   return (
-    <main className="w-full pr-4 overflow-hidden whitespace-nowrap text-ellipsis">
-      <ul className="steps steps-vertical ml-2">
+    <main className="w-full verflow-hidden whitespace-nowrap text-ellipsis">
+      <ul className="steps steps-vertical w-full p-2">
         {origins.map((origin) => (
-          <li key={origin._id} data-content="★" className="step step-neutral">
-            <Link
-              id={origin.name}
-              href={origin.url ?? HPCHAVAZ_BLOG_URL}
-              className="link link-hover link-primary flex"
-              target="_blank"
-            >
-              {origin.name}
-              <span className="ml-1 mt-1 flex items-center">
-                <SvgFilmMicro />
-                <span className="text-xs">
-                  X{origin.count} (
-                  {dayjs(origin.firstPublication).format('YYYYMMDD')}_
-                  {dayjs(origin.lastPublication).format('YYYYMMDD')})
+          <li
+            key={origin._id}
+            data-content="★"
+            className="step step-neutral w-full"
+          >
+            <div className="indicator">
+              <div
+                className="tooltip tooltip-bottom"
+                data-tip={`${dayjs(origin.firstPublication).format('YYYYMMDD')}~
+                      ${dayjs(origin.lastPublication).format('YYYYMMDD')}`}
+              >
+                <span className="indicator-item badge badge-accent badge-xs text-xs p-[7.5px]">
+                  <SvgFilmMicro />
+                  {isNaN(Number(origin.count)) ? '' : `x${origin.count}`}
                 </span>
-              </span>
-            </Link>
+                <Link
+                  id={origin.name}
+                  href={origin.url ?? HPCHAVAZ_BLOG_URL}
+                  className="link link-hover link-primary flex"
+                  target="_blank"
+                >
+                  {origin.name}
+                </Link>
+              </div>
+            </div>
           </li>
         ))}
         <li data-content="♠" className="step step-neutral">
