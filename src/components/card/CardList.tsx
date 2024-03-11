@@ -18,51 +18,41 @@ interface ICardListProps {
     bases: string[];
     sensors: string[];
   };
+  labels: {
+    bwOnly: string;
+    dateLabel: string;
+    nameLabel: string;
+    baseLabel: string;
+    cameraLabel: string;
+    creatorLabel: string;
+  };
 }
 
-const DESC_CHARACTER = '↓';
-const ASC_CHARACTER = '↑';
-const DATE_LABEL = 'Date';
-const NAME_LABEL = 'Name';
-const CAMERA_LABEL = 'Camera';
-const BASE_LABEL = 'Base';
-const CREATOR_LABEL = 'Creator';
-const DELIMETER = ' ';
+const CardList = ({ filters, recipes, labels }: ICardListProps) => {
+  const DESC_CHARACTER = '↓';
+  const ASC_CHARACTER = '↑';
+  const DELIMETER = ' ';
+  const dateLabel = labels.dateLabel;
+  const nameLabel = labels.nameLabel;
+  const cameraLabel = labels.cameraLabel;
+  const baseLabel = labels.baseLabel;
+  const creatorLabel = labels.creatorLabel;
 
-const sortTypes = {
-  dateDesc: [DATE_LABEL, DESC_CHARACTER].join(DELIMETER),
-  dateAsc: [DATE_LABEL, ASC_CHARACTER].join(DELIMETER),
-  nameDesc: [NAME_LABEL, DESC_CHARACTER].join(DELIMETER),
-  nameAsc: [NAME_LABEL, ASC_CHARACTER].join(DELIMETER),
-  cameraDesc: [CAMERA_LABEL, DESC_CHARACTER].join(DELIMETER),
-  cameraAsc: [CAMERA_LABEL, ASC_CHARACTER].join(DELIMETER),
-  baseDesc: [BASE_LABEL, DESC_CHARACTER].join(DELIMETER),
-  baseAsc: [BASE_LABEL, ASC_CHARACTER].join(DELIMETER),
-  creatorDesc: [CREATOR_LABEL, DESC_CHARACTER].join(DELIMETER),
-  creatorAsc: [CREATOR_LABEL, ASC_CHARACTER].join(DELIMETER),
-} as const;
+  const sortTypes = {
+    dateDesc: [dateLabel, DESC_CHARACTER].join(DELIMETER),
+    dateAsc: [dateLabel, ASC_CHARACTER].join(DELIMETER),
+    nameDesc: [nameLabel, DESC_CHARACTER].join(DELIMETER),
+    nameAsc: [nameLabel, ASC_CHARACTER].join(DELIMETER),
+    cameraDesc: [cameraLabel, DESC_CHARACTER].join(DELIMETER),
+    cameraAsc: [cameraLabel, ASC_CHARACTER].join(DELIMETER),
+    baseDesc: [baseLabel, DESC_CHARACTER].join(DELIMETER),
+    baseAsc: [baseLabel, ASC_CHARACTER].join(DELIMETER),
+    creatorDesc: [creatorLabel, DESC_CHARACTER].join(DELIMETER),
+    creatorAsc: [creatorLabel, ASC_CHARACTER].join(DELIMETER),
+  } as const;
 
-const sortValues = Object.values(sortTypes);
+  const sortValues = Object.values(sortTypes);
 
-const getSortDateCallback =
-  ({ key, isAsc }: { key: keyof Recipe; isAsc?: boolean }) =>
-  (prev: Recipe, next: Recipe) => {
-    const diff = dayjs(prev[key]).diff(next[key]);
-
-    if (!isAsc) return diff * -1;
-    return diff;
-  };
-
-const getSortCharCallback =
-  ({ key, isAsc }: { key: keyof Recipe; isAsc?: boolean }) =>
-  (prev: Recipe, next: Recipe) => {
-    const diff = next[key].localeCompare(prev[key]);
-
-    if (!isAsc) return diff * -1;
-    return diff;
-  };
-
-const CardList = ({ filters, recipes }: ICardListProps) => {
   const [bases, setBases] = useState<string[]>([]);
   const [cameras, setCameras] = useState<string[]>([]);
   const [sensors, setSensors] = useState<string[]>([]);
@@ -87,11 +77,19 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
   }, [recipes, bases, cameras, sensors, bwOnly]);
 
   const sortedRecipes = useMemo(() => {
+    const labelToRecipeKeyMap: { [key: string]: keyof Recipe } = {
+      [dateLabel]: 'published',
+      [nameLabel]: 'name',
+      [cameraLabel]: 'camera',
+      [baseLabel]: 'base',
+      [creatorLabel]: 'creator',
+    };
+
     const copiedFilteredRecipes = [...filteredRecipes];
     const [label, directionChar] = sortType.split(DELIMETER);
     const isAsc = directionChar === ASC_CHARACTER;
 
-    if (sortType.includes(DATE_LABEL)) {
+    if (sortType.includes(dateLabel)) {
       return copiedFilteredRecipes.sort(
         getSortDateCallback({ key: 'published', isAsc })
       );
@@ -99,11 +97,19 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
 
     return copiedFilteredRecipes.sort(
       getSortCharCallback({
-        key: label.toLowerCase() as keyof Recipe,
+        key: labelToRecipeKeyMap[label],
         isAsc,
       })
     );
-  }, [sortType, filteredRecipes]);
+  }, [
+    sortType,
+    filteredRecipes,
+    dateLabel,
+    nameLabel,
+    cameraLabel,
+    baseLabel,
+    creatorLabel,
+  ]);
 
   const dropboxProps: DropboxProps[] = [
     {
@@ -161,7 +167,7 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
               checked={bwOnly}
               onChange={onBwToggle}
             />
-            <span className="label-text text-xs ml-1">B/W only</span>
+            <span className="label-text text-xs ml-1">{labels.bwOnly}</span>
           </label>
         </div>
       </header>
@@ -173,6 +179,24 @@ const CardList = ({ filters, recipes }: ICardListProps) => {
     </>
   );
 };
+
+const getSortDateCallback =
+  ({ key, isAsc }: { key: keyof Recipe; isAsc?: boolean }) =>
+  (prev: Recipe, next: Recipe) => {
+    const diff = dayjs(prev[key]).diff(next[key]);
+
+    if (!isAsc) return diff * -1;
+    return diff;
+  };
+
+const getSortCharCallback =
+  ({ key, isAsc }: { key: keyof Recipe; isAsc?: boolean }) =>
+  (prev: Recipe, next: Recipe) => {
+    const diff = next[key].localeCompare(prev[key]);
+
+    if (!isAsc) return diff * -1;
+    return diff;
+  };
 
 export interface DropboxProps {
   values: string[];
@@ -197,7 +221,11 @@ export const Dropbox = ({
   dropdownEnd,
   type = 'checkbox',
 }: DropboxProps) => {
-  const inputClassName = `${type} ${type}-primary ${type}-xs`;
+  let inputClassName =
+    type === 'checkbox'
+      ? 'checkbox checkbox-primary checkbox-xs'
+      : 'dropbox dropbox-primary dropbox-xs';
+
   return (
     <details className={`dropdown ${dropdownEnd ? 'dropdown-end' : ''}`.trim()}>
       <summary tabIndex={0} role="button" className="btn btn-sm m-1">

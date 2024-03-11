@@ -1,0 +1,15 @@
+{
+  "Navigation": {
+    "bookmarks": "Bookmarks",
+    "recipes": "Recipes",
+    "origins": "Origins"
+  },
+  "Headers": {
+    "bwOnly": "B/W only",
+    "dateLabel": "Date",
+    "nameLabel": "Name",
+    "baseLabel": "Base",
+    "cameraLabel": "Camera",
+    "creatorLabel": "Creator"
+  }
+}

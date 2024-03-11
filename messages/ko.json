@@ -1,0 +1,15 @@
+{
+  "Navigation": {
+    "bookmarks": "북마크",
+    "recipes": "레시피",
+    "origins": "오리진"
+  },
+  "Headers": {
+    "bwOnly": "흑백",
+    "dateLabel": "일자",
+    "nameLabel": "이름",
+    "baseLabel": "바탕",
+    "cameraLabel": "카메라",
+    "creatorLabel": "만든이"
+  }
+}

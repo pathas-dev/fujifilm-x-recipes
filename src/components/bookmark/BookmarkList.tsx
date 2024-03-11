@@ -12,9 +12,17 @@ interface IBookmarkListProps {
     bases: string[];
     sensors: string[];
   };
+  labels: {
+    bwOnly: string;
+    dateLabel: string;
+    nameLabel: string;
+    baseLabel: string;
+    cameraLabel: string;
+    creatorLabel: string;
+  };
 }
 
-const BookmarkList = ({ filters, recipes }: IBookmarkListProps) => {
+const BookmarkList = ({ filters, recipes, labels }: IBookmarkListProps) => {
   const [markedRecipes, setMarkedRecipes] = useState<Recipe[]>([]);
 
   useEffect(() => {
@@ -28,7 +36,7 @@ const BookmarkList = ({ filters, recipes }: IBookmarkListProps) => {
     setMarkedRecipes(matchedRecipes);
   }, [recipes]);
 
-  return <CardList recipes={markedRecipes} filters={filters} />;
+  return <CardList recipes={markedRecipes} filters={filters} labels={labels} />;
 };
 
 export default BookmarkList;

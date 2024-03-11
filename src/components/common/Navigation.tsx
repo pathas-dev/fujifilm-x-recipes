@@ -1,18 +1,39 @@
 'use client';
 
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 import {
   SvgBookmarkMini,
   SvgSparklesMini,
   SvgVariableMini,
 } from '../icon/svgs';
+import { useRouter } from '@/navigation';
 
-const Navigation = () => {
+interface INavigationProps {
+  titles: {
+    bookmarks: string;
+    recipes: string;
+    origins: string;
+  };
+}
+
+const Navigation = ({ titles }: INavigationProps) => {
   const buttonProps: INavButtonProps[] = [
-    { title: 'Bookmarks', children: <SvgBookmarkMini />, path: '/bookmarks' },
-    { title: 'Recipes', children: <SvgVariableMini />, path: '/' },
-    { title: 'Origins', children: <SvgSparklesMini />, path: '/origins' },
+    {
+      title: titles.bookmarks,
+      children: <SvgBookmarkMini />,
+      path: '/bookmarks',
+    },
+    {
+      title: titles.recipes,
+      children: <SvgVariableMini />,
+      path: '/',
+    },
+    {
+      title: titles.origins,
+      children: <SvgSparklesMini />,
+      path: '/origins',
+    },
   ];
 
   return (

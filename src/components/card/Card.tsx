@@ -3,9 +3,9 @@
 import { Recipe } from '@/types/api';
 import dayjs from 'dayjs';
 import Image from 'next/image';
-import Link from 'next/link';
 import { useCallback, useEffect, useRef, useState } from 'react';
 import { SvgArrow, SvgLink } from '../icon/svgs';
+import { Link } from '@/navigation';
 
 interface ICardProps {
   recipe: Recipe;

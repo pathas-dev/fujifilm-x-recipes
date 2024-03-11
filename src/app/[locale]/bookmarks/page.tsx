@@ -1,7 +1,7 @@
-import CardList from '@/components/card/CardList';
+import BookmarkList from '@/components/bookmark/BookmarkList';
 import { Recipe } from '@/types/api';
-import dayjs from 'dayjs';
-import { getAllDocuments } from './api/mongodb';
+import { getAllDocuments } from '@/app/api/mongodb';
+import { getTranslations } from 'next-intl/server';
 
 const getRecipesWithFilters = async (): Promise<{
   recipes: Recipe[];
@@ -14,7 +14,6 @@ const getRecipesWithFilters = async (): Promise<{
   try {
     const data = await getAllDocuments('recipes');
     const recipes = JSON.parse(JSON.stringify(data)) as Recipe[];
-
     const filters = recipes.reduce<{
       cameras: string[];
       bases: string[];
@@ -37,7 +36,6 @@ const getRecipesWithFilters = async (): Promise<{
       }
     );
 
-    recipes.sort((a, b) => dayjs(b.published).diff(a.published));
     Object.values(filters).forEach((filter) => filter.sort());
 
     return {
@@ -50,8 +48,19 @@ const getRecipesWithFilters = async (): Promise<{
   }
 };
 
-export default async function Home() {
+export default async function Bookmarks() {
   const { recipes, filters } = await getRecipesWithFilters();
 
-  return <CardList recipes={recipes} filters={filters} />;
+  const t = await getTranslations('Headers');
+
+  const labels = {
+    bwOnly: t('bwOnly'),
+    dateLabel: t('dateLabel'),
+    nameLabel: t('nameLabel'),
+    baseLabel: t('baseLabel'),
+    cameraLabel: t('cameraLabel'),
+    creatorLabel: t('creatorLabel'),
+  };
+
+  return <BookmarkList recipes={recipes} filters={filters} labels={labels} />;
 }

@@ -1,8 +1,8 @@
 import { SvgFilmMicro } from '@/components/icon/svgs';
 import { Origin } from '@/types/api';
-import Link from 'next/link';
-import { getAllDocuments } from '../api/mongodb';
+import { getAllDocuments } from '@/app/api/mongodb';
 import dayjs from 'dayjs';
+import { Link } from '@/navigation';
 
 const getOrigins = async (): Promise<{
   origins: Origin[];
