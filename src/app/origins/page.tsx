@@ -39,7 +39,7 @@ const Origins = async () => {
                 data-tip={`${dayjs(origin.firstPublication).format('YYYYMMDD')}~
                       ${dayjs(origin.lastPublication).format('YYYYMMDD')}`}
               >
-                <span className="indicator-item badge badge-accent badge-xs text-xs p-[7.5px]">
+                <span className="indicator-item badge badge-outline border-none text-xs text-accent">
                   <SvgFilmMicro />
                   {isNaN(Number(origin.count)) ? '' : `x${origin.count}`}
                 </span>

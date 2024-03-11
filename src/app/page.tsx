@@ -1,7 +1,7 @@
-import Card from '@/components/card/Card';
-import { Recipe } from '@/types/api';
-import { getAllDocuments } from './api/mongodb';
 import CardList from '@/components/card/CardList';
+import { Recipe } from '@/types/api';
+import dayjs from 'dayjs';
+import { getAllDocuments } from './api/mongodb';
 
 const getRecipesWithFilters = async (): Promise<{
   recipes: Recipe[];
@@ -14,6 +14,7 @@ const getRecipesWithFilters = async (): Promise<{
   try {
     const data = await getAllDocuments('recipes');
     const recipes = JSON.parse(JSON.stringify(data)) as Recipe[];
+
     const filters = recipes.reduce<{
       cameras: string[];
       bases: string[];
@@ -36,6 +37,7 @@ const getRecipesWithFilters = async (): Promise<{
       }
     );
 
+    recipes.sort((a, b) => dayjs(b.published).diff(a.published));
     Object.values(filters).forEach((filter) => filter.sort());
 
     return {

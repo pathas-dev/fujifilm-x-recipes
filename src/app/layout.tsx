@@ -29,6 +29,7 @@ export default function RootLayout({
           'w-full',
           'relative',
           'pb-16',
+          'select-none',
         ].join(' ')}
         suppressHydrationWarning
       >

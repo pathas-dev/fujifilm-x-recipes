@@ -11,8 +11,9 @@ interface ICardProps {
   recipe: Recipe;
 }
 const Card = ({ recipe }: ICardProps) => {
+  const [intersected, setIntersected] = useState(false);
   const [openGraph, setOpenGraph] = useState(getInitialOpenGraph());
-  const refCard = useRef<HTMLImageElement>();
+  const refCard = useRef<HTMLDivElement>();
 
   useEffect(() => {
     if (!refCard.current || !recipe.url) return;
@@ -35,6 +36,8 @@ const Card = ({ recipe }: ICardProps) => {
             setOpenGraph(parsedOpenGraph);
           } catch (error) {
             setOpenGraph(getInitialOpenGraph());
+          } finally {
+            setIntersected(true);
           }
         }
       });
@@ -47,6 +50,14 @@ const Card = ({ recipe }: ICardProps) => {
       io.unobserve(refCard.current);
     };
   }, [recipe.url]);
+
+  if (!intersected)
+    return (
+      <div
+        className="skeleton w-full h-36"
+        ref={(ref) => (refCard.current = ref ?? undefined)}
+      />
+    );
 
   const isColor = /color/i.test(recipe.colorType);
   const colorClassName = isColor
@@ -101,10 +112,13 @@ const Card = ({ recipe }: ICardProps) => {
           </div>
         </details>
         <div className="card-actions self-end flex items-center gap-0">
-          <Link href={`/origins#${recipe.creator}`}>
+          <Link
+            href={`/origins#${recipe.creator}`}
+            className="card-actions self-end flex items-center gap-0 link link-hover"
+          >
             <SvgLink />
+            {recipe.creator}, {dayjs(recipe.published).format('YYYY-MM-DD')}
           </Link>
-          {recipe.creator}, {dayjs(recipe.published).format('YYYY-MM-DD')}
         </div>
       </div>
     </div>

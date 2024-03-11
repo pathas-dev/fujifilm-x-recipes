@@ -113,10 +113,10 @@ export const Dropbox = ({
   dropdownEnd,
 }: DropboxProps) => {
   return (
-    <div className={`dropdown ${dropdownEnd ? 'dropdown-end' : ''}`.trim()}>
-      <div tabIndex={0} role="button" className="btn btn-sm m-1">
+    <details className={`dropdown ${dropdownEnd ? 'dropdown-end' : ''}`.trim()}>
+      <summary tabIndex={0} role="button" className="btn btn-sm m-1">
         {children}
-      </div>
+      </summary>
       <ul
         tabIndex={0}
         className="dropdown-content z-[999] menu p-2 shadow bg-base-100 rounded-box"
@@ -139,7 +139,7 @@ export const Dropbox = ({
           ))}
         </div>
       </ul>
-    </div>
+    </details>
   );
 };
 
