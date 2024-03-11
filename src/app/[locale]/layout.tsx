@@ -1,44 +1,57 @@
 import Navigation from '@/components/common/Navigation';
 import ThemeSwitch from '@/components/common/ThemeSwitch';
 import { localeIntl } from '@/i18n';
-import type { Metadata } from 'next';
-import {
-  NextIntlClientProvider,
-  useMessages,
-  useTranslations,
-} from 'next-intl';
+import { locales } from '@/navigation';
+import { Metadata } from 'next';
+import { useTranslations } from 'next-intl';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Noto_Sans_KR } from 'next/font/google';
-import './globals.css';
 
 const notoSans = Noto_Sans_KR({
   subsets: ['latin'],
 });
 
-export const metadata: Metadata = {
-  title: 'fujifilm-x-recipes',
-  description: 'Fujifilm X-system recipes posted by Henri-Pierre Chavaz',
-  openGraph: {
+export async function generateMetadata({
+  params: { locale },
+}: {
+  params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+}) {
+  const t = await getTranslations({ locale, namespace: 'Metadata' });
+
+  const SITE_URL = 'https://fujifilm-x-recipes.vercel.app/';
+
+  const metadata: Metadata = {
     title: 'fujifilm-x-recipes',
-    description: 'fujifilm-x-recipes nextjs project',
-    url: 'https://fujifilm-x-recipes.vercel.app/',
-    siteName: 'fujifilm-x-recipes',
-    images: [
-      {
-        url: 'https://nextjs.org/og.png', // Must be an absolute URL
-        width: 800,
-        height: 600,
-      },
-      {
-        url: 'https://nextjs.org/og-alt.png', // Must be an absolute URL
-        width: 1800,
-        height: 1600,
-        alt: 'My custom alt',
-      },
-    ],
-    locale: 'ko',
-    type: 'website',
-  },
-};
+    description: 'Fujifilm X-system recipes posted by Henri-Pierre Chavaz',
+    openGraph: {
+      title: 'fujifilm-x-recipes',
+      description: t('description'),
+      url: SITE_URL,
+      siteName: 'fujifilm-x-recipes',
+      images: [
+        {
+          url: `${SITE_URL}/og.png`, // Must be an absolute URL
+          width: 800,
+          height: 600,
+        },
+        {
+          url: `${SITE_URL}/og-alt.png`, // Must be an absolute URL
+          width: 1800,
+          height: 900,
+          alt: 'open graph alt image',
+        },
+      ],
+      locale: locale,
+      alternateLocale: 'en',
+      type: 'website',
+    },
+  };
+  return metadata;
+}
+
+export function generateStaticParams() {
+  return locales.map((locale) => ({ locale }));
+}
 
 export default function RootLayout({
   children,
@@ -48,6 +61,7 @@ export default function RootLayout({
   params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
 }>) {
   const { locale } = params;
+  unstable_setRequestLocale(locale);
 
   const t = useTranslations('Navigation');
 

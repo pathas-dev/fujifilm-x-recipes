@@ -11,5 +11,8 @@
     "baseLabel": "Base",
     "cameraLabel": "Camera",
     "creatorLabel": "Creator"
+  },
+  "Metadata": {
+    "description": "This is a website that collects Fujifilm recipes."
   }
 }

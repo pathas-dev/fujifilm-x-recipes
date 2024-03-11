@@ -11,5 +11,8 @@
     "baseLabel": "바탕",
     "cameraLabel": "카메라",
     "creatorLabel": "만든이"
+  },
+  "Metadata": {
+    "description": "후지필름 레시피를 모아둔 웹 사이트 입니다."
   }
 }

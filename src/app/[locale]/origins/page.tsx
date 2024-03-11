@@ -3,6 +3,8 @@ import { Origin } from '@/types/api';
 import { getAllDocuments } from '@/app/api/mongodb';
 import dayjs from 'dayjs';
 import { Link } from '@/navigation';
+import { unstable_setRequestLocale } from 'next-intl/server';
+import { localeIntl } from '@/i18n';
 
 const getOrigins = async (): Promise<{
   origins: Origin[];
@@ -22,8 +24,15 @@ const getOrigins = async (): Promise<{
 const HPCHAVAZ_BLOG_URL = 'https://hpchavaz-photography.blogspot.com/';
 const MY_BLOG_URL = 'https://pathas.tistory.com/';
 
-const Origins = async () => {
+const Origins = async ({
+  params: { locale },
+}: Readonly<{
+  params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+}>) => {
+  unstable_setRequestLocale(locale);
+
   const { origins } = await getOrigins();
+
   return (
     <main className="w-full verflow-hidden whitespace-nowrap text-ellipsis">
       <ul className="steps steps-vertical w-full p-2">

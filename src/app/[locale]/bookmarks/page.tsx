@@ -1,7 +1,8 @@
 import BookmarkList from '@/components/bookmark/BookmarkList';
 import { Recipe } from '@/types/api';
 import { getAllDocuments } from '@/app/api/mongodb';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import { localeIntl } from '@/i18n';
 
 const getRecipesWithFilters = async (): Promise<{
   recipes: Recipe[];
@@ -48,7 +49,12 @@ const getRecipesWithFilters = async (): Promise<{
   }
 };
 
-export default async function Bookmarks() {
+export default async function Bookmarks({
+  params: { locale },
+}: Readonly<{
+  params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+}>) {
+  unstable_setRequestLocale(locale);
   const { recipes, filters } = await getRecipesWithFilters();
 
   const t = await getTranslations('Headers');

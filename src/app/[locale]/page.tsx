@@ -1,8 +1,9 @@
 import { getAllDocuments } from '@/app/api/mongodb';
 import CardList from '@/components/card/CardList';
+import { localeIntl } from '@/i18n';
 import { Recipe } from '@/types/api';
 import dayjs from 'dayjs';
-import { getTranslations } from 'next-intl/server';
+import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 const getRecipesWithFilters = async (): Promise<{
   recipes: Recipe[];
@@ -51,7 +52,12 @@ const getRecipesWithFilters = async (): Promise<{
   }
 };
 
-export default async function Home() {
+export default async function Home({
+  params: { locale },
+}: Readonly<{
+  params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+}>) {
+  unstable_setRequestLocale(locale);
   const { recipes, filters } = await getRecipesWithFilters();
 
   const t = await getTranslations('Headers');
