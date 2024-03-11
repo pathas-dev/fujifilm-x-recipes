@@ -1,13 +1,12 @@
 'use client';
 
-import { usePathname } from 'next/navigation';
 import { useCallback, useMemo } from 'react';
 import {
   SvgBookmarkMini,
   SvgSparklesMini,
   SvgVariableMini,
 } from '../icon/svgs';
-import { useRouter } from '@/navigation';
+import { usePathname, useRouter } from '@/navigation';
 
 interface INavigationProps {
   titles: {
