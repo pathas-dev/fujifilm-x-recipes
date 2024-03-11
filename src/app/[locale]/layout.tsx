@@ -17,6 +17,27 @@ const notoSans = Noto_Sans_KR({
 export const metadata: Metadata = {
   title: 'fujifilm-x-recipes',
   description: 'Fujifilm X-system recipes posted by Henri-Pierre Chavaz',
+  openGraph: {
+    title: 'fujifilm-x-recipes',
+    description: 'fujifilm-x-recipes nextjs project',
+    url: 'https://fujifilm-x-recipes.vercel.app/',
+    siteName: 'fujifilm-x-recipes',
+    images: [
+      {
+        url: 'https://nextjs.org/og.png', // Must be an absolute URL
+        width: 800,
+        height: 600,
+      },
+      {
+        url: 'https://nextjs.org/og-alt.png', // Must be an absolute URL
+        width: 1800,
+        height: 1600,
+        alt: 'My custom alt',
+      },
+    ],
+    locale: 'ko',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
