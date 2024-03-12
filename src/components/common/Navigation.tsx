@@ -43,7 +43,7 @@ const Navigation = ({ titles }: INavigationProps) => {
   ];
 
   return (
-    <div className="btm-nav btm-nav-sm w-9/12 shadow-2xl rounded-xl mx-auto bottom-3 z-[9999]">
+    <nav className="btm-nav btm-nav-sm w-9/12 shadow-2xl rounded-xl mx-auto bottom-3 z-[9999]">
       {buttonProps.map((buttonProp) => (
         <NavButton
           title={buttonProp.title}
@@ -53,7 +53,7 @@ const Navigation = ({ titles }: INavigationProps) => {
           {buttonProp.children}
         </NavButton>
       ))}
-    </div>
+    </nav>
   );
 };
 

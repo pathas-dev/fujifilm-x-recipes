@@ -3,8 +3,8 @@ import { Camera } from '@/types/api';
 
 const Cameras = () => {
   return (
-    <main className="w-full py-3">
-      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical max-w-[75%] mx-auto">
+    <main className="w-full p-3">
+      <ul className="timeline timeline-snap-icon max-md:timeline-compact timeline-vertical mx-auto">
         {camearsData.cameras.map((camera, index) => (
           <Timeline key={camera._id} camera={camera} isLeft={index % 2 === 0} />
         ))}
@@ -13,12 +13,12 @@ const Cameras = () => {
   );
 };
 
-interface IStat {
+interface ITimelineProps {
   camera: Camera;
   isLeft: boolean;
 }
 
-const Timeline = ({ camera, isLeft }: IStat) => {
+const Timeline = ({ camera, isLeft }: ITimelineProps) => {
   const contentClassName = isLeft
     ? 'timeline-start md:text-end mb-10'
     : 'timeline-end mb-10';
