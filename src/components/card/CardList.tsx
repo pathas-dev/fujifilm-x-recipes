@@ -2,7 +2,14 @@
 
 import { Recipe } from '@/types/api';
 import Card from './Card';
-import { HTMLInputTypeAttribute, useCallback, useMemo, useState } from 'react';
+import {
+  Dispatch,
+  HTMLInputTypeAttribute,
+  SetStateAction,
+  useCallback,
+  useMemo,
+  useState,
+} from 'react';
 import {
   SvgArrowUpDownMicro,
   SvgCameraMicro,
@@ -10,6 +17,9 @@ import {
   SvgSensorMicro,
 } from '../icon/svgs';
 import dayjs from 'dayjs';
+import _some from 'lodash/some';
+import _isEqual from 'lodash/isEqual';
+import _reject from 'lodash/reject';
 
 interface ICardListProps {
   recipes: Recipe[];
@@ -28,47 +38,83 @@ interface ICardListProps {
   };
 }
 
+const DESC_CHARACTER = '↓';
+const ASC_CHARACTER = '↑';
+const DELIMETER = ' ';
+
 const CardList = ({ filters, recipes, labels }: ICardListProps) => {
-  const DESC_CHARACTER = '↓';
-  const ASC_CHARACTER = '↑';
-  const DELIMETER = ' ';
-  const dateLabel = labels.dateLabel;
-  const nameLabel = labels.nameLabel;
-  const cameraLabel = labels.cameraLabel;
-  const baseLabel = labels.baseLabel;
-  const creatorLabel = labels.creatorLabel;
+  const sortTypes: Item[] = useMemo(
+    () => [
+      {
+        label: [labels.dateLabel, ASC_CHARACTER].join(DELIMETER),
+        value: 'published',
+        isAsc: true,
+      },
+      {
+        label: [labels.dateLabel, DESC_CHARACTER].join(DELIMETER),
+        value: 'published',
+      },
+      {
+        label: [labels.nameLabel, ASC_CHARACTER].join(DELIMETER),
+        value: 'name',
+        isAsc: true,
+      },
+      {
+        label: [labels.nameLabel, DESC_CHARACTER].join(DELIMETER),
+        value: 'name',
+      },
+      {
+        label: [labels.cameraLabel, ASC_CHARACTER].join(DELIMETER),
+        value: 'camera',
+        isAsc: true,
+      },
+      {
+        label: [labels.cameraLabel, DESC_CHARACTER].join(DELIMETER),
+        value: 'camera',
+      },
+      {
+        label: [labels.baseLabel, ASC_CHARACTER].join(DELIMETER),
+        value: 'base',
+        isAsc: true,
+      },
+      {
+        label: [labels.baseLabel, DESC_CHARACTER].join(DELIMETER),
+        value: 'base',
+      },
+      {
+        label: [labels.creatorLabel, ASC_CHARACTER].join(DELIMETER),
+        value: 'creator',
+        isAsc: true,
+      },
+      {
+        label: [labels.creatorLabel, DESC_CHARACTER].join(DELIMETER),
+        value: 'creator',
+      },
+    ],
+    [
+      labels.dateLabel,
+      labels.nameLabel,
+      labels.cameraLabel,
+      labels.baseLabel,
+      labels.creatorLabel,
+    ]
+  );
 
-  const sortTypes = {
-    dateDesc: [dateLabel, DESC_CHARACTER].join(DELIMETER),
-    dateAsc: [dateLabel, ASC_CHARACTER].join(DELIMETER),
-    nameDesc: [nameLabel, DESC_CHARACTER].join(DELIMETER),
-    nameAsc: [nameLabel, ASC_CHARACTER].join(DELIMETER),
-    cameraDesc: [cameraLabel, DESC_CHARACTER].join(DELIMETER),
-    cameraAsc: [cameraLabel, ASC_CHARACTER].join(DELIMETER),
-    baseDesc: [baseLabel, DESC_CHARACTER].join(DELIMETER),
-    baseAsc: [baseLabel, ASC_CHARACTER].join(DELIMETER),
-    creatorDesc: [creatorLabel, DESC_CHARACTER].join(DELIMETER),
-    creatorAsc: [creatorLabel, ASC_CHARACTER].join(DELIMETER),
-  } as const;
-
-  const sortValues = Object.values(sortTypes);
-
-  const [bases, setBases] = useState<string[]>([]);
-  const [cameras, setCameras] = useState<string[]>([]);
-  const [sensors, setSensors] = useState<string[]>([]);
-  const [sortType, setSortType] = useState<
-    (typeof sortTypes)[keyof typeof sortTypes]
-  >(sortTypes.dateDesc);
+  const [bases, setBases] = useState<Item[]>([]);
+  const [cameras, setCameras] = useState<Item[]>([]);
+  const [sensors, setSensors] = useState<Item[]>([]);
+  const [sortType, setSortType] = useState<Item>(sortTypes[1]);
 
   const [bwOnly, setBwonly] = useState<boolean>(false);
 
   const filteredRecipes = useMemo(() => {
     return recipes.filter((recipe) => {
-      const isBaseIncluded = bases.length === 0 || bases.includes(recipe.base);
+      const isBaseIncluded =
+        bases.length === 0 || _some(bases, { value: recipe.base });
       const isCameraIncluded =
-        cameras.length === 0 || cameras.includes(recipe.camera);
+        cameras.length === 0 || _some(bases, { value: recipe.camera });
       const isSensorIncluded =
-        sensors.length === 0 || sensors.includes(recipe.sensor);
+        sensors.length === 0 || _some(bases, { value: recipe.sensor });
 
       const isBw = bwOnly ? !/color/i.test(recipe.colorType) : true;
 
@@ -77,74 +123,52 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
   }, [recipes, bases, cameras, sensors, bwOnly]);
 
   const sortedRecipes = useMemo(() => {
-    const labelToRecipeKeyMap: { [key: string]: keyof Recipe } = {
-      [dateLabel]: 'published',
-      [nameLabel]: 'name',
-      [cameraLabel]: 'camera',
-      [baseLabel]: 'base',
-      [creatorLabel]: 'creator',
-    };
-
     const copiedFilteredRecipes = [...filteredRecipes];
-    const [label, directionChar] = sortType.split(DELIMETER);
-    const isAsc = directionChar === ASC_CHARACTER;
+    const { value, isAsc } = sortType;
 
-    if (sortType.includes(dateLabel)) {
-      return copiedFilteredRecipes.sort(
-        getSortDateCallback({ key: 'published', isAsc })
-      );
-    }
+    const sort =
+      value === 'published' ? getSortDateCallback : getSortCharCallback;
 
     return copiedFilteredRecipes.sort(
-      getSortCharCallback({
-        key: labelToRecipeKeyMap[label],
-        isAsc,
-      })
+      sort({ key: value as keyof Recipe, isAsc })
     );
-  }, [
-    sortType,
-    filteredRecipes,
-    dateLabel,
-    nameLabel,
-    cameraLabel,
-    baseLabel,
-    creatorLabel,
-  ]);
+  }, [sortType, filteredRecipes]);
+
+  const sortValues = Object.values(sortTypes);
+  const baseItems = filters.bases.map((base) => ({ label: base, value: base }));
+  const cameraItems = filters.cameras.map((carmera) => ({
+    label: carmera,
+    value: carmera,
+  }));
+  const sensorItems = filters.sensors.map((sensor) => ({
+    label: sensor,
+    value: sensor,
+  }));
 
   const dropboxProps: DropboxProps[] = [
     {
-      selectedValues: bases,
-      values: filters.bases,
-      onClickMenu: ({ value, checked }) => {
-        if (checked) setBases((prev) => [...prev, value]);
-        else setBases((prev) => prev.filter((v) => v !== value));
-      },
+      selectedItems: bases,
+      items: baseItems,
+      onClickMenu: getOnClickMenu(setBases),
       children: <SvgFilmMicro />,
     },
     {
-      selectedValues: cameras,
-      values: filters.cameras,
-      onClickMenu: ({ value, checked }) => {
-        if (checked) setCameras((prev) => [...prev, value]);
-        else setCameras((prev) => prev.filter((v) => v !== value));
-      },
+      selectedItems: cameras,
+      items: cameraItems,
+      onClickMenu: getOnClickMenu(setCameras),
       children: <SvgCameraMicro />,
     },
     {
-      selectedValues: sensors,
-      values: filters.sensors,
-      onClickMenu: ({ value, checked }) => {
-        if (checked) setSensors((prev) => [...prev, value]);
-        else setSensors((prev) => prev.filter((v) => v !== value));
-      },
+      selectedItems: sensors,
+      items: sensorItems,
+      onClickMenu: getOnClickMenu(setSensors),
       children: <SvgSensorMicro />,
     },
     {
-      selectedValues: [sortType],
-      values: sortValues,
-      onClickMenu: ({ value, checked }) => {
-        if (checked)
-          setSortType(value as (typeof sortTypes)[keyof typeof sortTypes]);
+      selectedItems: [sortType],
+      items: sortValues,
+      onClickMenu: ({ item, checked }) => {
+        if (checked) setSortType(item);
       },
       children: <SvgArrowUpDownMicro />,
       type: 'radio',
@@ -183,6 +207,13 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
   );
 };
 
+const getOnClickMenu =
+  (dispatch: Dispatch<SetStateAction<Item[]>>) =>
+  ({ item, checked }: { item: Item; checked: boolean }) => {
+    if (checked) dispatch((prev) => [...prev, item]);
+    else dispatch((prev) => _reject(prev, item));
+  };
+
 const getSortDateCallback =
   ({ key, isAsc }: { key: keyof Recipe; isAsc?: boolean }) =>
   (prev: Recipe, next: Recipe) => {
@@ -195,30 +226,30 @@ const getSortDateCallback =
 const getSortCharCallback =
   ({ key, isAsc }: { key: keyof Recipe; isAsc?: boolean }) =>
   (prev: Recipe, next: Recipe) => {
-    const diff = next[key].localeCompare(prev[key]);
+    const diff = prev[key].localeCompare(next[key]);
 
     if (!isAsc) return diff * -1;
     return diff;
   };
 
+type Item = {
+  value: string;
+  label: string;
+  isAsc?: boolean;
+};
+
 export interface DropboxProps {
-  values: string[];
-  selectedValues: string[];
-  onClickMenu: ({
-    value,
-    checked,
-  }: {
-    value: string;
-    checked: boolean;
-  }) => void;
+  items: Item[];
+  selectedItems: Item[];
+  onClickMenu: ({ item, checked }: { item: Item; checked: boolean }) => void;
   children: React.ReactElement;
   dropdownEnd?: boolean;
   type?: HTMLInputTypeAttribute;
 }
 
 export const Dropbox = ({
-  values,
-  selectedValues,
+  items,
+  selectedItems,
   onClickMenu,
   children,
   dropdownEnd,
@@ -239,15 +270,15 @@ export const Dropbox = ({
         className="dropdown-content menu p-2 shadow bg-base-100 rounded-box"
       >
         <div className="overflow-y-scroll max-h-64 w-max">
-          {values.map((value) => (
-            <li key={value}>
+          {items.map((item) => (
+            <li key={item.label}>
               <label className="label cursor-pointer ">
-                <a className="label-text flex grow">{value}</a>
+                <a className="label-text flex grow">{item.label}</a>
                 <input
                   type={type}
-                  checked={selectedValues.includes(value)}
+                  checked={_some(selectedItems, item)}
                   onChange={({ target: { checked } }) => {
-                    onClickMenu({ value, checked });
+                    onClickMenu({ item: item, checked });
                   }}
                   className={inputClassName}
                 />

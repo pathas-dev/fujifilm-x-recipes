@@ -7,6 +7,7 @@ const withPWA = nextPWA({
   dest: 'public',
   cacheOnFrontEndNav: true,
   reloadOnOnline: true,
+  disableDevLogs: true,
 });
 
 /** @type {import('next').NextConfig} */
