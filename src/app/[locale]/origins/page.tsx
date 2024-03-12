@@ -20,6 +20,15 @@ const Origins = async ({
   return (
     <main className="w-full verflow-hidden whitespace-nowrap text-ellipsis">
       <ul className="steps steps-vertical w-full p-2">
+        <li data-content="♠" className="step step-neutral">
+          <Link
+            href={HPCHAVAZ_BLOG_URL}
+            className="link link-hover link-primary"
+            target="_blank"
+          >
+            Maintained By @Henri-Pierre Chavaz
+          </Link>
+        </li>
         {origins.map((origin) => (
           <li
             key={origin._id}
@@ -48,22 +57,14 @@ const Origins = async ({
             </div>
           </li>
         ))}
-        <li data-content="♠" className="step step-neutral">
-          <Link
-            href={HPCHAVAZ_BLOG_URL}
-            className="link link-hover link-primary"
-            target="_blank"
-          >
-            Maintained By Henri-Pierre Chavaz
-          </Link>
-        </li>
+
         <li data-content="♣" className="step step-neutral">
           <Link
             href={MY_BLOG_URL}
             className="link link-hover link-primary"
             target="_blank"
           >
-            Developed By pathas
+            Thiw website is developed by pathas
           </Link>
         </li>
       </ul>
