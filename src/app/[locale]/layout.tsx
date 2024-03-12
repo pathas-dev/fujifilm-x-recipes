@@ -1,3 +1,4 @@
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import Navigation from '@/components/common/Navigation';
 import ThemeSwitch from '@/components/common/ThemeSwitch';
 import { localeIntl } from '@/i18n';
