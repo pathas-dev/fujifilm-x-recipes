@@ -15,5 +15,8 @@
   },
   "Metadata": {
     "description": "후지필름 레시피를 모아둔 웹 사이트입니다."
+  },
+  "Cameras": {
+    "badgesTitle": "필름 시뮬레이션"
   }
 }

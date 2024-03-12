@@ -15,5 +15,8 @@
   },
   "Metadata": {
     "description": "This is a website that collects Fujifilm recipes."
+  },
+  "Cameras": {
+    "badgesTitle": "Film Simulations"
   }
 }
