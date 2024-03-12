@@ -18,7 +18,9 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-  const SITE_URL = 'https://fujifilm-x-recipes.vercel.app/';
+  const SITE_URL = 'https://www.fujifilm-x-recipes.site/';
+  // 도메인 만료 시 아래 vercel 링크로 변경
+  // const SITE_URL = 'https://fujifilm-x-recipes.vercel.app/';
 
   const metadata: Metadata = {
     title: 'fujifilm-x-recipes',
