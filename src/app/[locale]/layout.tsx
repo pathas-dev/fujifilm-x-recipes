@@ -73,6 +73,7 @@ export default function RootLayout({
     bookmarks: t('bookmarks'),
     recipes: t('recipes'),
     origins: t('origins'),
+    cameras: t('cameras'),
   };
 
   return (

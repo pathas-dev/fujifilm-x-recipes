@@ -2,7 +2,8 @@
   "Navigation": {
     "bookmarks": "Bookmarks",
     "recipes": "Recipes",
-    "origins": "Origins"
+    "origins": "Origins",
+    "cameras": "Cameras"
   },
   "Headers": {
     "bwOnly": "B/W only",

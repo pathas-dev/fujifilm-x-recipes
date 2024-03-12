@@ -27,5 +27,5 @@ export type Camera = {
   announced: string;
   sensor: string;
   simulations: string;
-  otherSpecifications: string;
+  otherSpecifications?: string;
 };

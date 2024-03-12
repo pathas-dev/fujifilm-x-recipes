@@ -2,7 +2,8 @@
   "Navigation": {
     "bookmarks": "북마크",
     "recipes": "레시피",
-    "origins": "오리진"
+    "origins": "오리진",
+    "cameras": "카메라"
   },
   "Headers": {
     "bwOnly": "흑백",
