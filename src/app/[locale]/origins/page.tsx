@@ -1,25 +1,9 @@
+import { getOrigins } from '@/app/api/data/localData';
 import { SvgFilmMicro } from '@/components/icon/svgs';
-import { Origin } from '@/types/api';
-import { getAllDocuments } from '@/app/api/mongodb';
-import dayjs from 'dayjs';
-import { Link } from '@/navigation';
-import { unstable_setRequestLocale } from 'next-intl/server';
 import { localeIntl } from '@/i18n';
-
-const getOrigins = async (): Promise<{
-  origins: Origin[];
-}> => {
-  try {
-    const data = await getAllDocuments('origins');
-    const origins = JSON.parse(JSON.stringify(data)) as Origin[];
-    return {
-      origins,
-    };
-  } catch (error) {
-    console.log(error);
-    throw new Error('Origins data request failed');
-  }
-};
+import { Link } from '@/navigation';
+import dayjs from 'dayjs';
+import { unstable_setRequestLocale } from 'next-intl/server';
 
 const HPCHAVAZ_BLOG_URL = 'https://hpchavaz-photography.blogspot.com/';
 const MY_BLOG_URL = 'https://pathas.tistory.com/';

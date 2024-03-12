@@ -1,0 +1,1087 @@
+{
+  "origins": [
+    {
+      "_id": "65edaa3cd7ef6ffcb881df1e",
+      "name": "Aaron Sambey",
+      "siteOrProfile": "Aaron Sambey",
+      "url": "https://www.aaronsambey.com/",
+      "count": 2,
+      "firstPublication": "2022-06-23",
+      "lastPublication": "2022-07-04"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df1f",
+      "name": "Aleksander Torset Eriksen",
+      "siteOrProfile": "Aleksander Torset Eriksen (Facebook)",
+      "url": "https://www.facebook.com/ateriksen",
+      "count": 5,
+      "firstPublication": "2020-06-17",
+      "lastPublication": "2020-08-31"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df20",
+      "name": "Alex Coghe",
+      "siteOrProfile": "Alex Coghe Photojournalist",
+      "url": "https://alexcoghe.com/",
+      "count": 1,
+      "firstPublication": "2021-05-02",
+      "lastPublication": "2021-05-02"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df21",
+      "name": "Alex Gibson",
+      "siteOrProfile": "Leicester Collective",
+      "url": "https://leicestercollective.com/",
+      "count": 2,
+      "firstPublication": "2021-02-15",
+      "lastPublication": "2021-02-20"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df22",
+      "name": "Alik Griffin",
+      "siteOrProfile": "Alik Griffin",
+      "url": "https://alikgriffin.com/",
+      "count": 1,
+      "firstPublication": "2020-09-04",
+      "lastPublication": "2020-09-04"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df23",
+      "name": "Anders Lindborg",
+      "siteOrProfile": "Anders Lindborg Photography",
+      "url": "https://www.anderslindborg.com",
+      "count": 7,
+      "firstPublication": "2020-06-14",
+      "lastPublication": "2022-12-28"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df24",
+      "name": "Andrei Dima",
+      "siteOrProfile": "Andrei Dima",
+      "url": "https://andreidima.com/",
+      "count": 2,
+      "firstPublication": "2021-12-04",
+      "lastPublication": "2021-12-18"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df25",
+      "name": "Andrew Fordyce",
+      "siteOrProfile": "fordycephotographynz (Instagram)",
+      "url": "https://www.instagram.com/fordycephotographynz/",
+      "count": 1,
+      "firstPublication": "2021-10-04",
+      "lastPublication": "2021-10-04"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df26",
+      "name": "Andrew Livelsberger",
+      "siteOrProfile": "visualohio (instagram)",
+      "url": "https://www.instagram.com/visualohio/",
+      "count": 3,
+      "firstPublication": "2021-10-04",
+      "lastPublication": "2021-10-04"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df27",
+      "name": "Andrew and Dani Livelsberger",
+      "siteOrProfile": "Best Light Photo",
+      "url": "https://bestlightphotoblog.wordpress.com",
+      "count": 2,
+      "firstPublication": "2019-07-15",
+      "lastPublication": "2019-08-13"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df28",
+      "name": "Andrew and Denae",
+      "siteOrProfile": "Utah Portrait Photography",
+      "url": "https://denaeandandrew.com",
+      "count": 1,
+      "firstPublication": "2020-05-18",
+      "lastPublication": "2020-05-18"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df29",
+      "name": "Antonis Deligiannis",
+      "siteOrProfile": "tonydeli7 (instagram)",
+      "url": "https://www.instagram.com/tonydeli7/",
+      "count": 1,
+      "firstPublication": "2021-10-01",
+      "lastPublication": "2021-10-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df2a",
+      "name": "Aurimas Povilionis",
+      "siteOrProfile": "aurimaspovilionis.art (Instagram)",
+      "url": "https://www.instagram.com/aurimaspovilionis.art",
+      "count": 1,
+      "firstPublication": "2021-10-17",
+      "lastPublication": "2021-10-17"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df2b",
+      "name": "Bernd Mieger",
+      "siteOrProfile": "unkown",
+      "count": 2,
+      "firstPublication": "2021-09-30",
+      "lastPublication": "2021-09-30"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df2c",
+      "name": "Bryan and Ezra",
+      "siteOrProfile": "The Broketographers",
+      "url": "https://www.thebroketographers.com/blog/",
+      "count": 3,
+      "firstPublication": "2017-05-08",
+      "lastPublication": "2017-09-25"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df2d",
+      "name": "Calin Stan",
+      "siteOrProfile": "Călin Stan (Face nook)",
+      "url": "https://www.facebook.com/calinstan",
+      "count": 2,
+      "firstPublication": "2022-09-21",
+      "lastPublication": "2022-09-25"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df2e",
+      "name": "Cameron Mackey",
+      "siteOrProfile": "Cameron Mackey Photography",
+      "url": "https://www.cammacky.com/",
+      "count": 2,
+      "firstPublication": "2021-06-10",
+      "lastPublication": "2021-06-10"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df2f",
+      "name": "Cezar Niculescu",
+      "siteOrProfile": "Cezar Niculescu (facebook)",
+      "url": "https://www.facebook.com/cezar.black",
+      "count": 3,
+      "firstPublication": "2022-01-14",
+      "lastPublication": "2022-07-25"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df30",
+      "name": "Charles-Antoine Asselin",
+      "siteOrProfile": "Crawnical",
+      "url": "https://www.crawnical.com",
+      "count": 1,
+      "firstPublication": "2020-08-21",
+      "lastPublication": "2020-08-21"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df31",
+      "name": "ChatGPT",
+      "siteOrProfile": "The Chat GPT",
+      "count": 2,
+      "firstPublication": "2023-06-15",
+      "lastPublication": "2023-06-15"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df32",
+      "name": "Clifton Beard",
+      "siteOrProfile": "Atrax Photo",
+      "url": "https://cliftonbeard.zenfolio.com",
+      "count": 6,
+      "firstPublication": "2013-05-31",
+      "lastPublication": "2013-05-31"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df33",
+      "name": "Colin Bissessar",
+      "siteOrProfile": "Colin Bissessar (facebook)",
+      "url": "https://www.facebook.com/groups/462731297942138/user/607800515/",
+      "count": 1,
+      "firstPublication": "2022-06-19",
+      "lastPublication": "2022-06-19"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df34",
+      "name": "Corey Steib",
+      "siteOrProfile": "Fuji Street Shooter",
+      "url": "https://www.instagram.com/fuji_streetshooter/",
+      "count": 1,
+      "firstPublication": "2021-06-07",
+      "lastPublication": "2021-06-07"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df35",
+      "name": "Craig Bergonzoni",
+      "siteOrProfile": "Craig Bergonzoni - Filmmaker Photographer",
+      "url": "https://craigbergonzoniblog.com/",
+      "count": 28,
+      "firstPublication": "2020-08-04",
+      "lastPublication": "2023-01-27"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df36",
+      "name": "Dan Bailey",
+      "siteOrProfile": "Dan Bailey Photo",
+      "url": "https://danbaileyphoto.com/blog/",
+      "count": 1,
+      "firstPublication": "2020-08-05",
+      "lastPublication": "2020-08-05"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df37",
+      "name": "Dane Frias",
+      "siteOrProfile": "Dane Frias (Facebook)",
+      "url": "https://www.facebook.com/friasdane",
+      "count": 1,
+      "firstPublication": "2020-05-04",
+      "lastPublication": "2020-05-04"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df38",
+      "name": "Daniel Bencic",
+      "siteOrProfile": "unkown",
+      "count": 1,
+      "firstPublication": "2021-12-01",
+      "lastPublication": "2021-12-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df39",
+      "name": "David Davis",
+      "siteOrProfile": "Shuttergang",
+      "url": "https://shuttergang.com/",
+      "count": 5,
+      "firstPublication": "2022-04-10",
+      "lastPublication": "2022-04-29"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df3a",
+      "name": "David Houis",
+      "siteOrProfile": "David Houis (Facebook)",
+      "url": "https://www.facebook.com/XxDavidHouisxX",
+      "count": 1,
+      "firstPublication": "2023-03-04",
+      "lastPublication": "2023-03-04"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df3b",
+      "name": "David Muller",
+      "siteOrProfile": "D.j. Muller (intagram djmullerza)",
+      "url": "https://www.instagram.com/djmullerza/",
+      "count": 1,
+      "firstPublication": "2021-07-13",
+      "lastPublication": "2021-07-13"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df3c",
+      "name": "David Szweduik",
+      "siteOrProfile": "Usually Dave",
+      "url": "https://usuallydave.com/",
+      "count": 1,
+      "firstPublication": "2019-10-31",
+      "lastPublication": "2019-10-31"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df3d",
+      "name": "David Whittley",
+      "siteOrProfile": "davidwhittley (instagram)",
+      "url": "https://www.instagram.com/davidwhittley",
+      "count": 2,
+      "firstPublication": "2021-08-20",
+      "lastPublication": "2021-09-10"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df3e",
+      "name": "Derek Clark",
+      "siteOrProfile": "Derek Clark Photography",
+      "url": "https://www.derekclarkphotography.com/blog/",
+      "count": 3,
+      "firstPublication": "2016-05-23",
+      "lastPublication": "2016-09-26"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df3f",
+      "name": "Dom Caligan",
+      "siteOrProfile": "domcaligan (Instagram)",
+      "url": "https://www.instagram.com/domcaligan/",
+      "count": 2,
+      "firstPublication": "2021-08-19",
+      "lastPublication": "2021-09-11"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df40",
+      "name": "Drew McDonald",
+      "siteOrProfile": "dmcd.snap (Instagram)",
+      "url": "https://www.instagram.com/dmcd.snaps/",
+      "count": 1,
+      "firstPublication": "2021-09-30",
+      "lastPublication": "2021-09-30"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df41",
+      "name": "Dronology Films",
+      "siteOrProfile": "Dronology Films (Youtube)",
+      "url": "https://www.youtube.com/channel/UCodp09xPULm76Kb8ST-5qZA",
+      "count": 1,
+      "firstPublication": "2021-06-29",
+      "lastPublication": "2021-06-29"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df42",
+      "name": "Elio Rivero",
+      "siteOrProfile": "Elio",
+      "url": "https://elio.blog",
+      "count": 1,
+      "firstPublication": "2018-11-05",
+      "lastPublication": "2018-11-05"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df43",
+      "name": "Eric Anderson",
+      "siteOrProfile": "Special Edition Art Project",
+      "url": "https://specialeditionartproject.com/",
+      "count": 2,
+      "firstPublication": "2021-10-01",
+      "lastPublication": "2021-10-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df44",
+      "name": "Eric Manten",
+      "siteOrProfile": "Manten Photography",
+      "url": "https://www.mantenphotography.com/blog",
+      "count": 2,
+      "firstPublication": "2019-02-21",
+      "lastPublication": "2019-02-21"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df45",
+      "name": "Eyw Fung",
+      "siteOrProfile": "E. Fung Photoblog",
+      "url": "https://my.fujifilmrecipes.com/",
+      "count": 5,
+      "firstPublication": "2021-04-10",
+      "lastPublication": "2021-06-07"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df46",
+      "name": "Gajan Balan",
+      "siteOrProfile": "Gajan Balan (Youtube)",
+      "url": "https://www.youtube.com/user/DRJ0K3R",
+      "count": 13,
+      "firstPublication": "2020-03-24",
+      "lastPublication": "2020-03-24"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df47",
+      "name": "Gary Quinn ",
+      "siteOrProfile": "GQ Glasgow Photography",
+      "url": "https://gqglasgow.wordpress.com/",
+      "count": 1,
+      "firstPublication": "2020-08-25",
+      "lastPublication": "2020-08-25"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df48",
+      "name": "Grant Teng",
+      "siteOrProfile": "Grant Teng (Facebook)",
+      "url": "https://www.facebook.com/grant.teng.3",
+      "count": 3,
+      "firstPublication": "2022-09-10",
+      "lastPublication": "2022-11-06"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df49",
+      "name": "Helen Fennell",
+      "siteOrProfile": "Helen Fennell Photography",
+      "url": "https://www.helenfennell.com/blog",
+      "count": 3,
+      "firstPublication": "2017-12-17",
+      "lastPublication": "2017-12-17"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df4a",
+      "name": "Hendrik Hazeu",
+      "siteOrProfile": "HendriXimages",
+      "url": "https://www.hendriximages.com/blog",
+      "count": 2,
+      "firstPublication": "2017-01-29",
+      "lastPublication": "2019-03-03"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df4b",
+      "name": "Immanuel Sander",
+      "siteOrProfile": "CAPTN LOOK",
+      "url": "https://www.captnlook.com/recipes",
+      "count": 24,
+      "firstPublication": "2019-07-01",
+      "lastPublication": "2023-09-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df4c",
+      "name": "Ivan Cheam",
+      "siteOrProfile": "Ivanyolo",
+      "url": "https://www.ivanyolo.com/",
+      "count": 27,
+      "firstPublication": "2021-05-12",
+      "lastPublication": "2022-01-19"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df4d",
+      "name": "Jacob van der Sloot",
+      "siteOrProfile": "Jacob van der Sloot (Facebook)",
+      "url": "https://www.facebook.com/jacob.vandersloot.5",
+      "count": 1,
+      "firstPublication": "2021-07-14",
+      "lastPublication": "2021-07-14"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df4e",
+      "name": "James Clinich",
+      "siteOrProfile": "James Clinich (facebook)",
+      "url": "https://www.facebook.com/james.clinich",
+      "count": 2,
+      "firstPublication": "2020-08-05",
+      "lastPublication": "2020-08-30"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df4f",
+      "name": "Jamie Chance",
+      "siteOrProfile": "Jamiechancetravels",
+      "url": "https://www.jamiechancetravels.com",
+      "count": 12,
+      "firstPublication": "2018-06-19",
+      "lastPublication": "2022-01-25"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df50",
+      "name": "JayRegular",
+      "siteOrProfile": " (Youtube)",
+      "url": "https://www.youtube.com/c/JayRegular/featured",
+      "count": 6,
+      "firstPublication": "2020-11-01",
+      "lastPublication": "2020-11-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df51",
+      "name": "Jean-Pascal Remon",
+      "siteOrProfile": "The Most Beautiful World",
+      "url": "https://themostbeautifulworld.com/",
+      "count": 1,
+      "firstPublication": "2019-10-31",
+      "lastPublication": "2019-10-31"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df52",
+      "name": "Jerred Zegelis",
+      "siteOrProfile": "Jerredz",
+      "url": "https://jerredz.com/",
+      "count": 1,
+      "firstPublication": "2022-09-28",
+      "lastPublication": "2022-09-28"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df53",
+      "name": "Jeremy Hembree",
+      "siteOrProfile": "Jeremy Hembree (Facebook)",
+      "url": "https://www.facebook.com/groups/2697473450523901/user/100000054973108/",
+      "count": 1,
+      "firstPublication": "2021-07-17",
+      "lastPublication": "2021-07-17"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df54",
+      "name": "Joe Allam",
+      "siteOrProfile": "Joe Allam (Youtube)",
+      "url": "https://www.youtube.com/channel/UCgaqvHn_b2LX3uHXl3C-xhA",
+      "count": 1,
+      "firstPublication": "2021-06-02",
+      "lastPublication": "2021-06-02"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df55",
+      "name": "Joe D'Agostino",
+      "siteOrProfile": "Joe D'Agostino | Photography",
+      "url": "https://www.josephdagostinophotography.com/",
+      "count": 8,
+      "firstPublication": "2021-01-30",
+      "lastPublication": "2021-02-16"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df56",
+      "name": "John Armstrong",
+      "siteOrProfile": "John Armstrong Photography (youtube)",
+      "url": "https://www.youtube.com/c/JohnArmstrongPhotography",
+      "count": 2,
+      "firstPublication": "2020-09-06",
+      "lastPublication": "2020-09-06"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df57",
+      "name": "John Feinberg",
+      "siteOrProfile": "John Feinberg",
+      "url": "http://www.johnjfeinberg.com/",
+      "count": 1,
+      "firstPublication": "2020-09-09",
+      "lastPublication": "2020-09-09"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df58",
+      "name": "John Peltier",
+      "siteOrProfile": "JM Peltier Photography",
+      "url": "https://www.jmpeltier.com",
+      "count": 9,
+      "firstPublication": "2019-05-15",
+      "lastPublication": "2020-07-03"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df59",
+      "name": "Jonathan Fosburgh",
+      "siteOrProfile": "Jonathan Fosburgh",
+      "url": "https://www.pixtures.co.uk/index.php/browse-photographers-artists/jonathan-fosburgh",
+      "count": 1,
+      "firstPublication": "2021-09-30",
+      "lastPublication": "2021-09-30"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df5a",
+      "name": "Joni Hirvonen",
+      "siteOrProfile": "Joni Hirvonen (Facebook)",
+      "url": "https://www.facebook.com/joni.hirvonen.9",
+      "count": 2,
+      "firstPublication": "2020-07-29",
+      "lastPublication": "2020-09-10"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df5b",
+      "name": "Julien Sorosac",
+      "siteOrProfile": "juliensorosac_photo (instagram)",
+      "url": "https://www.instagram.com/juliensorosac_photo/",
+      "count": 1,
+      "firstPublication": "2021-09-30",
+      "lastPublication": "2021-09-30"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df5c",
+      "name": "Justin Gould",
+      "siteOrProfile": "Film Recipes for Fujifilm X-Trans 4 cameras",
+      "url": "https://film.recipes/",
+      "count": 211,
+      "firstPublication": "2022-04-19",
+      "lastPublication": "2023-11-17"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df5d",
+      "name": "K. Adam Christensen",
+      "siteOrProfile": "Shifteleven (Flickr:)",
+      "url": "https://www.flickr.com/photos/shifteleven/",
+      "count": 1,
+      "firstPublication": "2020-04-24",
+      "lastPublication": "2020-04-24"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df5e",
+      "name": "Kevin Mullins",
+      "siteOrProfile": "F16.click",
+      "url": "https://www.f16.click/",
+      "count": 14,
+      "firstPublication": "06/19/2018",
+      "lastPublication": "10/10/2020"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df5f",
+      "name": "Kyle S",
+      "siteOrProfile": "thinkingrockphotography (instagram)",
+      "url": "https://www.instagram.com/thinkingrockphotography/",
+      "count": 1,
+      "firstPublication": "09/30/2021",
+      "lastPublication": "09/30/2021"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df60",
+      "name": "Lea Hartman",
+      "siteOrProfile": "Lea & Lens",
+      "url": "https://leaandlens.com/",
+      "count": 3,
+      "firstPublication": "08/02/2021",
+      "lastPublication": "08/02/2021"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df61",
+      "name": "Leovan Spencer Leysa",
+      "siteOrProfile": "leovanspencer (instagram)",
+      "url": "www.instagram.com/leovanspencer/",
+      "count": 1,
+      "firstPublication": "09/30/2021",
+      "lastPublication": "09/30/2021"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df62",
+      "name": "Luka Bajone",
+      "siteOrProfile": "Luka Bajone (Youtube)",
+      "url": "https://www.youtube.com/channel/UCED8Xjvu1rkJYM37apsyncg",
+      "count": "#N/A",
+      "firstPublication": "#N/A",
+      "lastPublication": "#N/A"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df63",
+      "name": "Luca Peratella",
+      "siteOrProfile": "Lukkelo (instagram)",
+      "url": "https://www.instagram.com/lukkeio/",
+      "count": 3,
+      "firstPublication": "2021-10-01",
+      "lastPublication": "2021-12-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df64",
+      "name": "Luís Costa",
+      "siteOrProfile": "Life Unintended.com",
+      "url": "https://lifeunintended.com/",
+      "count": 11,
+      "firstPublication": "2018-08-30",
+      "lastPublication": "2020-08-05"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df65",
+      "name": "Marcel Fraij",
+      "siteOrProfile": "Marcel Fraij Hemelsteen",
+      "url": "https://www.hemelsteen.nl/photography/",
+      "count": 18,
+      "firstPublication": "2021-09-30",
+      "lastPublication": "2022-10-24"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df66",
+      "name": "Mar Kevin Cayabyab",
+      "siteOrProfile": "Kebs Cayabyab (Youtube)",
+      "url": "https://www.youtube.com/c/KebsCayabyab",
+      "count": 10,
+      "firstPublication": "2020-07-02",
+      "lastPublication": "2021-08-26"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df67",
+      "name": "Manuel Sechi",
+      "siteOrProfile": "MANUEL SECHI",
+      "url": "https://manuelsechi.com/",
+      "count": 1,
+      "firstPublication": "2018-08-24",
+      "lastPublication": "2018-08-24"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df68",
+      "name": "Marcel Fraij",
+      "siteOrProfile": "Marcel Fraij Hemelsteen",
+      "url": "https://www.hemelsteen.nl/photography/",
+      "count": 18,
+      "firstPublication": "2021-09-30",
+      "lastPublication": "2022-10-24"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df69",
+      "name": "Marco Raugei",
+      "siteOrProfile": "Landscape and Travel Photography",
+      "url": "https://pbase.com/marcoraugei",
+      "count": 7,
+      "firstPublication": "2019-05-07",
+      "lastPublication": "2019-05-07"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df6a",
+      "name": "Marco Secchi",
+      "siteOrProfile": "Marco Secchi Workshop",
+      "url": "https://www.msecchi.com",
+      "count": 6,
+      "firstPublication": "2013-12-19",
+      "lastPublication": "2013-12-19"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df6b",
+      "name": "Mark G. Adams",
+      "siteOrProfile": "One Camera One Lens by Mark G Adams",
+      "url": "https://onecameraonelens.com/",
+      "count": 47,
+      "firstPublication": "2020-07-18",
+      "lastPublication": "2022-06-08"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df6c",
+      "name": "Martino Hesse",
+      "siteOrProfile": "Martino Hesse (facebook)",
+      "url": "https://www.facebook.com/groups/462731297942138/user/1267510868/",
+      "count": 1,
+      "firstPublication": "2021-11-25",
+      "lastPublication": "2021-11-25"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df6d",
+      "name": "Max Elhaik",
+      "siteOrProfile": "Max Elhaik (Facebook)",
+      "url": "https://www.facebook.com/groups/462731297942138/user/1214332855/",
+      "count": 1,
+      "firstPublication": "2022-06-29",
+      "lastPublication": "2022-06-29"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df6e",
+      "name": "Mehdi Berrada",
+      "siteOrProfile": "Unknown",
+      "count": 1,
+      "firstPublication": "2022-08-11",
+      "lastPublication": "2022-08-11"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df6f",
+      "name": "Michael Tam",
+      "siteOrProfile": "Sunflower in the sky",
+      "url": "https://sunflowerinthesky.smugmug.com",
+      "count": 10,
+      "firstPublication": "2019-04-19",
+      "lastPublication": "2019-04-19"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df70",
+      "name": "Mike Chudley",
+      "siteOrProfile": "Mike Chudley (Youtube)",
+      "url": "https://www.youtube.com/c/MikeChudley/about",
+      "count": 1,
+      "firstPublication": "2022-11-03",
+      "lastPublication": "2022-11-03"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df71",
+      "name": "Noursaid Gamal",
+      "siteOrProfile": "gamal.noursaid (Instagram)",
+      "url": "https://www.instagram.com/gamal.noursaid/",
+      "count": 1,
+      "firstPublication": "2021-07-01",
+      "lastPublication": "2021-07-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df72",
+      "name": "NZ Digital",
+      "siteOrProfile": "NZ Digital",
+      "url": "https://nzdigital.blogspot.com",
+      "count": 7,
+      "firstPublication": "2019-08-21",
+      "lastPublication": "2019-09-19"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df73",
+      "name": "Øyvind Nordhagen",
+      "siteOrProfile": "Øyvind Nordhagen",
+      "url": "https://oyvindwashere.medium.com",
+      "count": 13,
+      "firstPublication": "2020-07-19",
+      "lastPublication": "2022-11-30"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df74",
+      "name": "Patrick La Roque",
+      "siteOrProfile": "La Roque",
+      "url": "https://www.laroquephoto.com/blog",
+      "count": 2,
+      "firstPublication": "2016-01-11",
+      "lastPublication": "2019-10-17"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df75",
+      "name": "Paul Armstrong",
+      "siteOrProfile": "ChromeandMusic (instagram)",
+      "url": "https://www.instagram.com/chromeandmusic/",
+      "count": 1,
+      "firstPublication": "2021-12-01",
+      "lastPublication": "2021-12-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df76",
+      "name": "Peter Dareth Evans",
+      "siteOrProfile": "Pete takes pictures",
+      "url": "https://petetakespictures.com/",
+      "count": 7,
+      "firstPublication": "2017-05-13",
+      "lastPublication": "2017-05-13"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df77",
+      "name": "Piotr Skrzypek",
+      "siteOrProfile": "Piotr’s Recipes",
+      "url": "https://piotrecipes.wordpress.com",
+      "count": 44,
+      "firstPublication": "2020-03-29",
+      "lastPublication": "2022-08-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df78",
+      "name": "phominh47",
+      "siteOrProfile": "phominh47 5reddit)",
+      "url": "https://www.reddit.com/user/phominh47/",
+      "count": 1,
+      "firstPublication": "2021-08-09",
+      "lastPublication": "2021-08-09"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df79",
+      "name": "Quentin Descotte",
+      "siteOrProfile": "qdescotte (instagram)",
+      "url": "https://www.instagram.com/qdescotte/",
+      "count": 1,
+      "firstPublication": "2020-06-26",
+      "lastPublication": "2020-06-26"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df7a",
+      "name": "Ramiro Vera",
+      "siteOrProfile": "ramirovera_ph (instagram)",
+      "url": "https://www.instagram.com/ramirovera_ph/",
+      "count": 1,
+      "firstPublication": "2021-12-01",
+      "lastPublication": "2021-12-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df7b",
+      "name": "Reggie Ballesteros",
+      "siteOrProfile": "Reggie Ballesteros Photography",
+      "url": "https://reggiebphotography.com/",
+      "count": 3,
+      "firstPublication": "2021-09-27",
+      "lastPublication": "2022-06-11"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df7c",
+      "name": "Ričardas Samuilis",
+      "siteOrProfile": "unkown",
+      "count": 1,
+      "firstPublication": "2021-10-01",
+      "lastPublication": "2021-10-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df7d",
+      "name": "Ritchie Roesch",
+      "siteOrProfile": "Fuji X Weekly",
+      "url": "https://fujixweekly.com/",
+      "count": 293,
+      "firstPublication": "2017-08-27",
+      "lastPublication": "2023-07-22"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df7e",
+      "name": "River Pascual",
+      "siteOrProfile": "River Pascual (facebook)",
+      "url": "https://www.facebook.com/river1947",
+      "count": 1,
+      "firstPublication": "2022-05-18",
+      "lastPublication": "2022-05-18"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df7f",
+      "name": "Robert Molin",
+      "siteOrProfile": "Robert Molin (Facebook)",
+      "url": "https://www.facebook.com/robert.molin.7",
+      "count": 1,
+      "firstPublication": "06/25/2020",
+      "lastPublication": "06/25/2020"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df80",
+      "name": "Roger Solbakke",
+      "siteOrProfile": "rogers_photo_wall (instagram)",
+      "url": "https://www.instagram.com/rogers_photo_wall/",
+      "count": 1,
+      "firstPublication": "2021-11-01",
+      "lastPublication": "2021-11-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df81",
+      "name": "Ross",
+      "siteOrProfile": "rossandhisjpegs",
+      "url": "https://www.youtube.com/@rossandhisjpegs/about",
+      "count": 1,
+      "firstPublication": "2023-02-27",
+      "lastPublication": "2023-02-27"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df82",
+      "name": "Sabrina Magnusson",
+      "siteOrProfile": "unkown",
+      "count": 1,
+      "firstPublication": "2022-11-07",
+      "lastPublication": "2022-11-07"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df83",
+      "name": "Sebastian Schlüter",
+      "siteOrProfile": "Sebastian Schlueter Photography",
+      "url": "https://www.sebastian-schlueter.com/blog",
+      "count": 1,
+      "firstPublication": "2017-05-01",
+      "lastPublication": "2017-05-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df84",
+      "name": "Sergio Villasanojr",
+      "siteOrProfile": "SERR",
+      "url": "https://serrvillasano.com/",
+      "count": 1,
+      "firstPublication": "2022-03-20",
+      "lastPublication": "2022-03-20"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df85",
+      "name": "Sorin Oancea",
+      "siteOrProfile": "Sorin Oancea (Facebook)",
+      "url": "https://www.facebook.com/soso1cea",
+      "count": 1,
+      "firstPublication": "2020-05-06",
+      "lastPublication": "2020-05-06"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df86",
+      "name": "SpeedyNeo",
+      "siteOrProfile": "SpeedyNeo (DPReveiew forum)",
+      "url": "https://www.dpreview.com/members/8785767960",
+      "count": 1,
+      "firstPublication": "2020-04-01",
+      "lastPublication": "2020-04-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df87",
+      "name": "Suhail ra",
+      "siteOrProfile": "Suhail ra - SOOC Photographer",
+      "url": "https://suhailra440.wixsite.com",
+      "count": 2,
+      "firstPublication": "1900-01-00",
+      "lastPublication": "1900-01-00"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df88",
+      "name": "Sylvain Grand'Maison",
+      "siteOrProfile": "Sylvain Grand'Maison (Facebook)",
+      "url": "https://www.facebook.com/sgrandmaison",
+      "count": 2,
+      "firstPublication": "2021-06-18",
+      "lastPublication": "2021-06-21"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df89",
+      "name": "The Big Negative",
+      "siteOrProfile": "The Big Negative - Film Photography Channel",
+      "url": "https://www.youtube.com/channel/UC1pv_b3uXJ0ADdzU4kwVd1Q",
+      "count": 2,
+      "firstPublication": "2021-04-17",
+      "lastPublication": "2021-04-17"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df8a",
+      "name": "The Creative Camera",
+      "siteOrProfile": "The Creative Camera",
+      "url": "http://thecreativecamera.co.uk/",
+      "count": 1,
+      "firstPublication": "2021-02-25",
+      "lastPublication": "2021-02-25"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df8b",
+      "name": "Thomas B. Jones",
+      "siteOrProfile": "Die Photologen",
+      "url": "https://www.photologen.de/",
+      "count": 7,
+      "firstPublication": "2017-07-30",
+      "lastPublication": "2018-12-03"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df8c",
+      "name": "Thomas Schwab",
+      "siteOrProfile": "effzwo.thommy (Instagram) / blackandwhite.thommy (Instagram)",
+      "url": "https://www.instagram.com/effzwo.thommy/",
+      "count": 13,
+      "firstPublication": "2020-07-24",
+      "lastPublication": "2023-03-24"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df8d",
+      "name": "Timothy Scott",
+      "siteOrProfile": "Tim Scott (Instagram) timmydubv",
+      "url": "https://www.instagram.com/timmydubv/",
+      "count": 3,
+      "firstPublication": "2021-07-13",
+      "lastPublication": "2022-04-23"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df8e",
+      "name": "Tobias Gruber",
+      "siteOrProfile": "tobi_g_photography (Instagram)",
+      "url": "https://www.instagram.com/tobi_g_photography/",
+      "count": 2,
+      "firstPublication": "2022-12-22",
+      "lastPublication": "2022-12-31"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df8f",
+      "name": "Tomas Derner",
+      "siteOrProfile": "Tdernux Photography",
+      "url": "https://www.tdernux.com/recipes",
+      "count": 1,
+      "firstPublication": "2023-01-01",
+      "lastPublication": "2023-01-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df90",
+      "name": "Tomas Tuoma",
+      "siteOrProfile": "Tomas Tuoma (Facebook)",
+      "url": "https://www.facebook.com/tomas.tuoma/",
+      "count": 1,
+      "firstPublication": "2022-03-19",
+      "lastPublication": "2022-03-19"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df91",
+      "name": "Tudor Mateescu",
+      "siteOrProfile": "Passion For Photography - Tudor Mateescu",
+      "url": "https://tudormateescu.com/",
+      "count": 8,
+      "firstPublication": "2022-03-10",
+      "lastPublication": "2023-01-01"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df92",
+      "name": "Tyler Stalman",
+      "siteOrProfile": "Tyler Stalman (youtube)",
+      "url": "https://www.youtube.com/c/stalman",
+      "count": 1,
+      "firstPublication": "2022-09-05",
+      "lastPublication": "2022-09-05"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df93",
+      "name": "Ugur Celasun",
+      "siteOrProfile": "ugurclsn_film (instagram)",
+      "url": "https://www.instagram.com/p/CMH4iz5Hzns/",
+      "count": 1,
+      "firstPublication": "2021-10-16",
+      "lastPublication": "2021-10-16"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df94",
+      "name": "Veijo Matikainen",
+      "siteOrProfile": "Fujigraphy by Veijo Matikainen",
+      "url": "https://fujigraphy.home.blog",
+      "count": 15,
+      "firstPublication": "2019-09-18",
+      "lastPublication": "2020-04-26"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df95",
+      "name": "Vernon Szalacha",
+      "siteOrProfile": "Vernon Szalacha (Facebook)",
+      "url": "https://www.facebook.com/vernon.lee",
+      "count": 5,
+      "firstPublication": "2020-10-21",
+      "lastPublication": "2020-10-21"
+    },
+    {
+      "_id": "65edaa3cd7ef6ffcb881df96",
+      "name": "(ETEERNUH)",
+      "siteOrProfile": "ETEERNUH (youtube)",
+      "url": "https://www.youtube.com/c/ETEERNUH/about",
+      "count": 10,
+      "firstPublication": "2021-10-26",
+      "lastPublication": "2022-04-15"
+    }
+  ]
+}
