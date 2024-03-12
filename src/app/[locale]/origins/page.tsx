@@ -64,7 +64,7 @@ const Origins = async ({
             className="link link-hover link-primary"
             target="_blank"
           >
-            Thiw website is developed by pathas
+            Developed by pathas
           </Link>
         </li>
       </ul>
