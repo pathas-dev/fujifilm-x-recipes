@@ -26,7 +26,7 @@ export async function generateMetadata({
     title: 'fujifilm-x-recipes',
     description: 'Fujifilm X-system recipes posted by Henri-Pierre Chavaz',
     applicationName: 'X-recipes',
-    manifest: `${SITE_URL}/manifest.json`,
+    manifest: `${SITE_URL}manifest.json`,
     openGraph: {
       title: 'fujifilm-x-recipes',
       description: t('description'),
