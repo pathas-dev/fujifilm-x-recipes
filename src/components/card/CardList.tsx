@@ -110,11 +110,11 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
   const filteredRecipes = useMemo(() => {
     return recipes.filter((recipe) => {
       const isBaseIncluded =
-        bases.length === 0 || _some(bases, { value: recipe.base });
+        bases.length === 0 || !!_some(bases, { value: recipe.base });
       const isCameraIncluded =
-        cameras.length === 0 || _some(bases, { value: recipe.camera });
+        cameras.length === 0 || !!_some(cameras, { value: recipe.camera });
       const isSensorIncluded =
-        sensors.length === 0 || _some(bases, { value: recipe.sensor });
+        sensors.length === 0 || !!_some(sensors, { value: recipe.sensor });
 
       const isBw = bwOnly ? !/color/i.test(recipe.colorType) : true;
 
@@ -276,7 +276,7 @@ export const Dropbox = ({
                 <a className="label-text flex grow">{item.label}</a>
                 <input
                   type={type}
-                  checked={_some(selectedItems, item)}
+                  checked={!!_some(selectedItems, item)}
                   onChange={({ target: { checked } }) => {
                     onClickMenu({ item: item, checked });
                   }}
