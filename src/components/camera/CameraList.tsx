@@ -8,9 +8,9 @@ const SIMULATIONS = [
   'Provia',
   'Velvia',
   'Astia',
+  'Monochrome (_/Y/R/G/S)',
   'Prog Neg Std',
   'Prog Neg Hi',
-  'Monochrome (_/Y/R/G/S)',
   'Classic Chrome',
   'Acros (_/Y/R/G)',
   'Eterna',
@@ -21,10 +21,9 @@ const SIMULATIONS = [
 
 interface ICameraListProps {
   cameras: Camera[];
-  title: string;
 }
 
-const CameraList = ({ cameras, title }: ICameraListProps) => {
+const CameraList = ({ cameras }: ICameraListProps) => {
   const [simulations, setSimulations] = useState<string[]>([]);
 
   const filteredSimulations = useMemo(() => {
@@ -39,8 +38,7 @@ const CameraList = ({ cameras, title }: ICameraListProps) => {
 
   return (
     <article className="w-full p-3">
-      <div className="w-10/12">
-        <h1 className="text-xl font-medium mb-1">{title}</h1>
+      <div className="w-11/12 pr-2">
         {SIMULATIONS.map((simulation) => {
           const isIncluded = simulations.includes(simulation);
           const buttonClassName = isIncluded
@@ -52,10 +50,13 @@ const CameraList = ({ cameras, title }: ICameraListProps) => {
               className={buttonClassName}
               key={simulation}
               onClick={() => {
-                if (!simulations.includes(simulation))
-                  return setSimulations((prev) => [...prev, simulation]);
+                const last = simulations[simulations.length - 1];
 
-                setSimulations((prev) => prev.filter((v) => v !== simulation));
+                if (last === simulation) return setSimulations([]);
+
+                const targetIndex = SIMULATIONS.indexOf(simulation);
+
+                return setSimulations(SIMULATIONS.slice(0, targetIndex + 1));
               }}
             >
               #{simulation}
