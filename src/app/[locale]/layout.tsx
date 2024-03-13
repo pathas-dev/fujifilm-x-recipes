@@ -93,6 +93,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        <SpeedInsights />
         <Navigation titles={navigationTitles} />
 
         <ThemeSwitch />
