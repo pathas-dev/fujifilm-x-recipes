@@ -1,4 +1,5 @@
 import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import Navigation from '@/components/common/Navigation';
 import ThemeSwitch from '@/components/common/ThemeSwitch';
 import { localeIntl } from '@/i18n';
@@ -94,6 +95,7 @@ export default function RootLayout({
       >
         {children}
         <SpeedInsights />
+        <Analytics />
         <Navigation titles={navigationTitles} />
 
         <ThemeSwitch />
