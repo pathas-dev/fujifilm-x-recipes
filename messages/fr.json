@@ -1,0 +1,19 @@
+{
+  "Navigation": {
+    "bookmarks": "le signet",
+    "recipes": "la recette",
+    "origins": "l' origine",
+    "cameras": "la caméra"
+  },
+  "Headers": {
+    "bwOnly": "noir et blanc",
+    "dateLabel": "la date",
+    "nameLabel": "le nom",
+    "baseLabel": "la base",
+    "cameraLabel": "la caméra",
+    "creatorLabel": "le créateur"
+  },
+  "Metadata": {
+    "description": "후지필름 레시피를 모아둔 웹 사이트입니다."
+  }
+}
