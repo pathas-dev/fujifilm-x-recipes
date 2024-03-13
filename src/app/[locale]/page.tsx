@@ -1,7 +1,7 @@
 import CardList from '@/components/card/CardList';
-import { localeIntl } from '@/i18n';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { getRecipesWithFilters } from '../api/data/localData';
+import { localeIntl } from '@/navigation';
 
 export default async function Home({
   params: { locale },

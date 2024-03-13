@@ -1,6 +1,6 @@
 import { getOrigins } from '@/app/api/data/localData';
 import { SvgFilmMicro } from '@/components/icon/svgs';
-import { localeIntl } from '@/i18n';
+import { localeIntl } from '@/navigation';
 import { Link } from '@/navigation';
 import dayjs from 'dayjs';
 import { unstable_setRequestLocale } from 'next-intl/server';

@@ -1,6 +1,6 @@
 import camearsData from '@/app/api/data/cameras.json';
 import CameraList from '@/components/camera/CameraList';
-import { localeIntl } from '@/i18n';
+import { localeIntl } from '@/navigation';
 import { unstable_setRequestLocale } from 'next-intl/server';
 
 const Cameras = async ({

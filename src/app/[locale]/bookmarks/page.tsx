@@ -1,6 +1,6 @@
 import { getRecipesWithFilters } from '@/app/api/data/localData';
 import BookmarkList from '@/components/bookmark/BookmarkList';
-import { localeIntl } from '@/i18n';
+import { localeIntl } from '@/navigation';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 export default async function Bookmarks({
