@@ -6,7 +6,7 @@
     "cameras": "Cameras"
   },
   "Headers": {
-    "bwOnly": "B/W only",
+    "bwOnly": "B/W",
     "dateLabel": "Date",
     "nameLabel": "Name",
     "baseLabel": "Base",

@@ -6,7 +6,7 @@
     "cameras": "la caméra"
   },
   "Headers": {
-    "bwOnly": "noir et blanc",
+    "bwOnly": "N/B",
     "dateLabel": "la date",
     "nameLabel": "le nom",
     "baseLabel": "la base",
