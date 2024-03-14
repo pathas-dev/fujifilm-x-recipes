@@ -91,17 +91,17 @@ const WHITE_BALANCES = [
 const WHITE_BALANCE_SHIFT_COLORS = [
   ['#229F7B', '#3B84C5', '#76318E'],
   ['#1CA16F', '#4A92CE', '#852A8C'],
-  ['#1DAE65E', '#66A4D8', '#9A1887'],
+  ['#1DAE65', '#66A4D8', '#9A1887'],
   ['#2FB15A', '#8BBAE4', '#AD0E77'],
   ['#44B34C', '#B4D2EF', '#BB0E62'],
   ['#53B43E', '#D9E7F6', '#C8124D'],
   ['#60B632', '#EFF3FA', '#D5133A'],
   ['#68B82D', '#FAF8FB', '#DF142B'],
   ['#6AB82C', '#FBF9FC', '#E7141F'],
-  ['#6AB82C', '#FFFFFF', '#E71C1D'], //10
+  ['#6AB82C', '#FFFFFF', '#E71C1D'],
   ['#6DB92B', '#FBF9FC', '#E7261D'],
   ['#6FBA2B', '#FBFAFC', '#E72E1A'],
-  ['#75BB29', '#FBF8F5', '#E83E19'], //13
+  ['#75BB29', '#FBF8F5', '#E83E19'],
   ['#7BBD26', '#F7F5DE', '#E94A1A'],
   ['#87C122', '#F2F1B5', '#EA581A'],
   ['#8FC322', '#EEEF8E', '#EC691A'],
@@ -109,6 +109,27 @@ const WHITE_BALANCE_SHIFT_COLORS = [
   ['#95C525', '#ECEA50', '#F1881C'],
   ['#95C526', '#ECE941', '#F2921B'],
 ];
+const whiteBalnceColorMap: { [key: string]: string } = {
+  '0': 'from-[#229F7B] via-[#3B84C5] to-[#76318E]',
+  '1': 'from-[#1CA16F] via-[#4A92CE] to-[#852A8C]',
+  '2': 'from-[#1DAE65] via-[#66A4D8] to-[#9A1887]',
+  '3': 'from-[#2FB15A] via-[#8BBAE4] to-[#AD0E77]',
+  '4': 'from-[#44B34C] via-[#B4D2EF] to-[#BB0E62]',
+  '5': 'from-[#53B43E] via-[#D9E7F6] to-[#C8124D]',
+  '6': 'from-[#60B632] via-[#EFF3FA] to-[#D5133A]',
+  '7': 'from-[#68B82D] via-[#FAF8FB] to-[#DF142B]',
+  '8': 'from-[#6AB82C] via-[#FBF9FC] to-[#E7141F]',
+  '9': 'from-[#6AB82C] via-[#FFFFFF] to-[#E71C1D]',
+  '10': 'from-[#6DB92B] via-[#FBF9FC] to-[#E7261D]',
+  '11': 'from-[#6FBA2B] via-[#FBFAFC] to-[#E72E1A]',
+  '12': 'from-[#75BB29] via-[#FBF8F5] to-[#E83E19]',
+  '13': 'from-[#7BBD26] via-[#F7F5DE] to-[#E94A1A]',
+  '14': 'from-[#87C122] via-[#F2F1B5] to-[#EA581A]',
+  '15': 'from-[#8FC322] via-[#EEEF8E] to-[#EC691A]',
+  '16': 'from-[#93C524] via-[#ECEB69] to-[#EE791C]',
+  '17': 'from-[#95C525] via-[#ECEA50] to-[#F1881C]',
+  '18': 'from-[#95C526] via-[#ECE941] to-[#F2921B]',
+};
 
 const CustomCard = ({ customRecipe }: ICustomCardProps) => {
   return (
@@ -136,14 +157,11 @@ const CustomCard = ({ customRecipe }: ICustomCardProps) => {
       </div>
       <div className="border p-0 border-black w-fit flex flex-col">
         {WHITE_BALANCE_SHIFT.map((row, index) => {
-          const [from, via, to] = WHITE_BALANCE_SHIFT_COLORS[index];
-
-          const className = `inline-block h-4 bg-clip-text text-transparent bg-gradient-to-r from-[${from}] via-[${via}]  to-[${to}] `;
-          const getClassName = () =>
-            `inline-block h-4 bg-clip-text text-transparent bg-gradient-to-r from-[${from}] via-[${via}]  to-[${to}] `;
+          const rowColor = whiteBalnceColorMap[index.toString()];
+          const className = `bg-clip-text text-transparent bg-gradient-to-r inline-block h-4 ${rowColor} `;
 
           return (
-            <span key={index} className={getClassName()}>
+            <span key={index} className={className}>
               {row.map(([x, y]) => {
                 return (
                   <button
