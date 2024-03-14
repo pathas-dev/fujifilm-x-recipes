@@ -75,6 +75,7 @@ export default function RootLayout({
     recipes: t('recipes'),
     origins: t('origins'),
     cameras: t('cameras'),
+    custom: t('custom'),
   };
 
   return (

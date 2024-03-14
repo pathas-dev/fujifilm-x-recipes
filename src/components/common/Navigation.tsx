@@ -5,6 +5,7 @@ import { useCallback, useMemo } from 'react';
 import {
   SvgBookmarkMicro,
   SvgCameraMicro,
+  SvgPencilSquareMicro,
   SvgSparklesMicro,
   SvgVariableMicro,
 } from '../icon/svgs';
@@ -15,11 +16,17 @@ interface INavigationProps {
     recipes: string;
     origins: string;
     cameras: string;
+    custom: string;
   };
 }
 
 const Navigation = ({ titles }: INavigationProps) => {
   const buttonProps: INavButtonProps[] = [
+    {
+      title: titles.custom,
+      children: <SvgPencilSquareMicro />,
+      path: '/custom',
+    },
     {
       title: titles.bookmarks,
       children: <SvgBookmarkMicro />,

@@ -1,9 +1,10 @@
 {
   "Navigation": {
-    "bookmarks": "le signet",
-    "recipes": "la recette",
-    "origins": "l' origine",
-    "cameras": "la caméra"
+    "bookmarks": "signet",
+    "recipes": "recette",
+    "origins": "origine",
+    "cameras": "caméra",
+    "custom": "coutume"
   },
   "Headers": {
     "bwOnly": "N/B",

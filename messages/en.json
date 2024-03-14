@@ -3,7 +3,8 @@
     "bookmarks": "Bookmarks",
     "recipes": "Recipes",
     "origins": "Origins",
-    "cameras": "Cameras"
+    "cameras": "Cameras",
+    "custom": "Custom"
   },
   "Headers": {
     "bwOnly": "B/W",

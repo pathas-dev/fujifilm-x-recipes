@@ -3,7 +3,8 @@
     "bookmarks": "북마크",
     "recipes": "레시피",
     "origins": "오리진",
-    "cameras": "카메라"
+    "cameras": "카메라",
+    "custom": "커스텀"
   },
   "Headers": {
     "bwOnly": "흑백",
