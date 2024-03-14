@@ -1,5 +1,5 @@
 'use client';
-
+import 'rc-slider/assets/index.css';
 import { useState } from 'react';
 import {
   CLARITIES,
@@ -12,6 +12,7 @@ import {
   WHITE_BALANCE_SHIFT,
   whiteBalnceColorMap,
 } from './fujiSettings';
+import Slider from 'rc-slider';
 
 export type CustomRecipe = {
   _id: string;
@@ -59,9 +60,18 @@ const CustomCard = ({ customRecipe }: ICustomCardProps) => {
         EXPOSURES
         <Join items={exposures} onClickRadio={() => {}} value={5} />
         <p>How to park your car at your garage?</p>
-        <div className="card-actions justify-end">
+        <div className="card-actions justify-end bg-primary">
           <button className="btn btn-primary">Learn now!</button>
         </div>
+        <Slider
+          included={false}
+          className="[&>*:nth-child(1)]:bg-primary [&>*:nth-child(3)]:border-secondary [&>*:nth-child(4)>span]:text-content-base"
+          marks={{ 1: <div>3353</div> }}
+          onChange={(value) => {
+            console.log(value);
+          }}
+        />
+        {/* <input type="range" min={0} max="100" value="40" className="range" /> */}
       </div>
       <div className="border p-0 border-black w-fit flex flex-col">
         {WHITE_BALANCE_SHIFT.map((row, index) => {
