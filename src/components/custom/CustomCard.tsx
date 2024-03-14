@@ -1,3 +1,6 @@
+'use client';
+
+import { useState } from 'react';
 import {
   CLARITIES,
   COLORS,
@@ -48,7 +51,7 @@ const CustomCard = ({ customRecipe }: ICustomCardProps) => {
         color
         <Join items={colors} onClickRadio={() => {}} value={5} />
         sharpness
-        <Join items={sharpness} onClickRadio={() => {}} value={5} />
+        <Join items={sharpness} onClickRadio={() => {}} value={3} />
         isoNoiseReduction
         <Join items={isoNoiseReduction} onClickRadio={() => {}} value={5} />
         clarity
@@ -96,23 +99,47 @@ interface IJoinProps {
   onClickRadio: (params: { checked: boolean; item: JoinItem }) => void;
 }
 
-const Join = ({ items, onClickRadio, value }: IJoinProps) => (
-  <div className="join">
-    {items.map((item) => (
-      <input
-        key={item.value}
-        className="join-item btn btn-sm"
-        type="radio"
-        name="options"
-        aria-label={item.label}
-        checked={value === item.value}
-        onChange={({ target: { checked } }) => {
-          onClickRadio({ checked, item });
-        }}
-      />
-    ))}
-  </div>
-);
+const Join = ({ items, onClickRadio, value }: IJoinProps) => {
+  const initialIndex = items.findIndex((item) => item.value === value);
+  console.log('🚀 ~ Join ~ initialIndex:', initialIndex);
+
+  const [top, setTop] = useState(initialIndex * 32);
+
+  const onClickPlus = () => {
+    setTop((prev) => prev + 32);
+  };
+
+  const onClickMinus = () => {
+    setTop((prev) => prev - 32);
+  };
+
+  return (
+    <div>
+      <button onClick={onClickMinus}> -</button>
+      <div className="h-8 overflow-hidden relative">
+        <div
+          className="join join-vertical rounded-none absolute transition-all"
+          style={{ bottom: top }}
+        >
+          {items.map((item) => (
+            <input
+              key={item.value}
+              className="join-item btn btn-sm "
+              type="radio"
+              name="options"
+              aria-label={item.label}
+              checked={value === item.value}
+              onChange={({ target: { checked } }) => {
+                onClickRadio({ checked, item });
+              }}
+            />
+          ))}
+        </div>
+      </div>
+      <button onClick={onClickPlus}>+</button>
+    </div>
+  );
+};
 
 interface IRangeProps {
   min: number;
