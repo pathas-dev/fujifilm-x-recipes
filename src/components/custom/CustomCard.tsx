@@ -124,8 +124,9 @@ const Join = ({ items, onClickRadio, value }: IJoinProps) => {
           {items.map((item) => (
             <input
               key={item.value}
-              className="join-item btn btn-sm "
+              className="join-item btn btn-sm"
               type="radio"
+              style={{ margin: 0 }}
               name="options"
               aria-label={item.label}
               checked={value === item.value}
