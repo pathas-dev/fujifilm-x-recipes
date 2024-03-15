@@ -39,7 +39,7 @@ export const CustomSelect = ({
   return (
     <label className="form-control w-full">
       <select
-        className="select select-bordered select-sm"
+        className="select select-bordered select-secondary select-sm"
         onChange={({ target: { value } }) => {
           onChange(value);
         }}
@@ -67,7 +67,7 @@ export const CustomSlider = (props: ISliderProps) => {
   return (
     <article className="flex flex-col justify-center items-center gap-2 pb-3">
       <div className="flex items-center">
-        <h1 className="text-lg font-medium">{props.label}</h1>
+        <h2 className="font-medium">{props.label}</h2>
         <p>
           <span className="mr-1">:</span>
           {props.displayValue ?? props.value}
@@ -102,7 +102,7 @@ interface IJoinProps {
 
 export const Join = ({ items, onClickRadio, label, value }: IJoinProps) => {
   return (
-    <article className="flex flex-col justify-center items-center gap-2 ">
+    <article className="flex flex-col justify-center items-center gap-2 w-full">
       <div className="flex items-center">
         <h1 className="text-lg font-medium">{label}</h1>
         <p>
@@ -115,7 +115,7 @@ export const Join = ({ items, onClickRadio, label, value }: IJoinProps) => {
         {items.map((item) => (
           <input
             key={item.value}
-            className="join-item btn btn-sm"
+            className="join-item btn btn-xs"
             type="radio"
             name="options"
             aria-label={item.label}

@@ -16,5 +16,59 @@
   },
   "Metadata": {
     "description": "후지필름 레시피를 모아둔 웹 사이트입니다."
+  },
+  "Settings": {
+    "newTitle": "레시피 만들기",
+    "placeholders": {
+      "name": "레시피 이름을 입력해주세요.",
+      "camera": "카메라를 골라주세요.",
+      "base": "바탕을 골라주세요."
+    },
+    "labels": {
+      "highlight": "하이라이트",
+      "tone": "톤",
+      "shadow": "그림자",
+      "grain": "그레인",
+      "grainSize": "그레인 크기",
+      "grainRoughness": "그레인 거칠기",
+      "dynamicRange": "다이내믹 레인지",
+      "colorChromeEffect": "컬러 크롬 효과",
+      "colorChromeFXBlue": "컬러 크롬 FX 블루",
+      "sharpness": "샤프니스",
+      "color": "색농도",
+      "clarity": "선명도",
+      "isoNoiseReduction": "고감도 노이즈 감소",
+      "exposure": "노출",
+      "iso": "ISO",
+      "whiteBalance": "화이트밸런스",
+      "whiteBalanceK": "색 온도(K)",
+      "whiteBalanceShift": "화이트밸런스 시프트"
+    },
+    "options": {
+      "effects": {
+        "off": "OFF",
+        "strong": "강",
+        "weak": "약"
+      },
+      "sizes": {
+        "off": "OFF",
+        "large": "크게",
+        "small": "작게"
+      },
+      "whiteBalances": {
+        "autoWhitePriority": "AUTO 화이트 우선",
+        "auto": "자동",
+        "autoAmbiencePriority": "auto 분위기 우선",
+        "measure": "측정",
+        "k": "K",
+        "sunlight": "직사광선",
+        "shade": "그늘",
+        "daylight": "주광색 형광등",
+        "warmWhite": "온백색 형광등",
+        "coolWhite": "냉백색 형광등",
+        "incandescent": "백열등",
+        "underwater": "수조"
+      }
+    }
   }
 }

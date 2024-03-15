@@ -18,6 +18,7 @@ import {
   SvgSensorMicro,
 } from '../icon/svgs';
 import CustomCard, { CustomRecipe, initialCustomRecipe } from './CustomCard';
+import { HeaderLabels, SettingLabels } from '@/types/language';
 
 interface ICardListProps {
   filters: {
@@ -25,75 +26,73 @@ interface ICardListProps {
     bases: string[];
     sensors: string[];
   };
-  labels: {
-    bwOnly: string;
-    dateLabel: string;
-    nameLabel: string;
-    baseLabel: string;
-    cameraLabel: string;
-    creatorLabel: string;
-  };
+  headerLabels: HeaderLabels;
+  settingLabels: SettingLabels;
 }
 
 const DESC_CHARACTER = '↓';
 const ASC_CHARACTER = '↑';
 const DELIMETER = ' ';
 
-const CustomList = ({ filters, labels }: ICardListProps) => {
+const CustomList = ({
+  filters,
+  headerLabels,
+  settingLabels,
+}: ICardListProps) => {
   const sortTypes: Item[] = useMemo(
     () => [
       {
-        label: [labels.dateLabel, ASC_CHARACTER].join(DELIMETER),
+        label: [headerLabels.dateLabel, ASC_CHARACTER].join(DELIMETER),
         value: 'published',
         isAsc: true,
       },
       {
-        label: [labels.dateLabel, DESC_CHARACTER].join(DELIMETER),
+        label: [headerLabels.dateLabel, DESC_CHARACTER].join(DELIMETER),
         value: 'published',
       },
       {
-        label: [labels.nameLabel, ASC_CHARACTER].join(DELIMETER),
+        label: [headerLabels.nameLabel, ASC_CHARACTER].join(DELIMETER),
         value: 'name',
         isAsc: true,
       },
       {
-        label: [labels.nameLabel, DESC_CHARACTER].join(DELIMETER),
+        label: [headerLabels.nameLabel, DESC_CHARACTER].join(DELIMETER),
         value: 'name',
       },
       {
-        label: [labels.cameraLabel, ASC_CHARACTER].join(DELIMETER),
+        label: [headerLabels.cameraLabel, ASC_CHARACTER].join(DELIMETER),
         value: 'camera',
         isAsc: true,
       },
       {
-        label: [labels.cameraLabel, DESC_CHARACTER].join(DELIMETER),
+        label: [headerLabels.cameraLabel, DESC_CHARACTER].join(DELIMETER),
         value: 'camera',
       },
       {
-        label: [labels.baseLabel, ASC_CHARACTER].join(DELIMETER),
+        label: [headerLabels.baseLabel, ASC_CHARACTER].join(DELIMETER),
         value: 'base',
         isAsc: true,
       },
       {
-        label: [labels.baseLabel, DESC_CHARACTER].join(DELIMETER),
+        label: [headerLabels.baseLabel, DESC_CHARACTER].join(DELIMETER),
         value: 'base',
       },
       {
-        label: [labels.creatorLabel, ASC_CHARACTER].join(DELIMETER),
+        label: [headerLabels.creatorLabel, ASC_CHARACTER].join(DELIMETER),
         value: 'creator',
         isAsc: true,
       },
       {
-        label: [labels.creatorLabel, DESC_CHARACTER].join(DELIMETER),
+        label: [headerLabels.creatorLabel, DESC_CHARACTER].join(DELIMETER),
         value: 'creator',
       },
     ],
     [
-      labels.dateLabel,
-      labels.nameLabel,
-      labels.cameraLabel,
-      labels.baseLabel,
-      labels.creatorLabel,
+      headerLabels.dateLabel,
+      headerLabels.nameLabel,
+      headerLabels.cameraLabel,
+      headerLabels.baseLabel,
+      headerLabels.creatorLabel,
     ]
   );
 
@@ -192,7 +191,9 @@ const CustomList = ({ filters, labels }: ICardListProps) => {
               checked={bwOnly}
               onChange={onBwToggle}
             />
-            <span className="label-text text-xs ml-1">{labels.bwOnly}</span>
+            <span className="label-text text-xs ml-1">
+              {headerLabels.bwOnly}
+            </span>
           </label>
         </div>
         <span className="flex ml-2 text-xs">
@@ -205,6 +206,7 @@ const CustomList = ({ filters, labels }: ICardListProps) => {
             key={customRecipe._id}
             customRecipe={customRecipe}
             filters={filters}
+            settingLabels={settingLabels}
           />
         ))}
       </main>

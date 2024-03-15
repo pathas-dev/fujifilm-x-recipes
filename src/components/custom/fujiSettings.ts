@@ -17,13 +17,18 @@ export const EXPOSURES = _range(-15, 15 + 1, 1).map((value) => {
 export const formatExposure = (value: number) => {
   const abs = Math.abs(value);
   let quotient = Math.floor(abs / 3);
-  if (value < 0) quotient *= -1;
+
+  let prefix = '';
+  if (value > 0) prefix = '+';
+  else if (value < 0) prefix = '-';
 
   const remainder = Math.abs(value % 3);
 
-  if (quotient === 0 && remainder > 0) return `${remainder} ⁄3`;
+  if (quotient === 0 && remainder > 0) return `${prefix}${remainder} ⁄3`;
 
-  return remainder === 0 ? String(quotient) : `${quotient} ${remainder} ⁄3`;
+  return remainder === 0
+    ? `${prefix}${quotient}`
+    : `${prefix}${quotient} ${remainder} ⁄3`;
 };
 
 export const COLORS = _range(-4, 4 + 1, 1);
@@ -35,7 +40,7 @@ export const CLARITIES = _range(-5, 5 + 1, 1);
 export const D_RANGES = ['AUTO', '100%', '200%', '400%'];
 
 export const GRAIN_ROUGHNESS = ['OFF', 'STRONG', 'WEAK'];
-export const GRAIN_SIZE = ['LARGE', 'SMALL'];
+export const GRAIN_SIZE = ['OFF', 'LARGE', 'SMALL'];
 
 export const COLOR_CHROME = ['OFF', 'STRONG', 'WEAK'];
 export const COLOR_CHROME_FX_BLUE = ['OFF', 'STRONG', 'WEAK'];

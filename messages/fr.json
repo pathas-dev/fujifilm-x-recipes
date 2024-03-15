@@ -16,5 +16,59 @@
   },
   "Metadata": {
     "description": "후지필름 레시피를 모아둔 웹 사이트입니다."
+  },
+  "Settings": {
+    "newTitle": "New Recipe",
+    "placeholders": {
+      "name": "Type custom recipe name.",
+      "camera": "Pick a camera.",
+      "base": "Pick a base."
+    },
+    "labels": {
+      "highlight": "Highlight",
+      "tone": "Tone",
+      "shadow": "Shadow",
+      "grain": "Grain",
+      "grainSize": "Grain Size",
+      "grainRoughness": "Grain Roughness",
+      "dynamicRange": "Dynamic Range",
+      "colorChromeEffect": "Color Chrome Effect",
+      "colorChromeFXBlue": "Color Chrom FX Blue",
+      "sharpness": "Sharpness",
+      "color": "Color",
+      "clarity": "Clarity",
+      "isoNoiseReduction": "ISO Noise Reduction",
+      "exposure": "Exposure",
+      "iso": "ISO",
+      "whiteBalance": "White Balance",
+      "whiteBalanceK": "Color temperature(K)",
+      "whiteBalanceShift": "White Balance Shift"
+    },
+    "options": {
+      "effects": {
+        "off": "OFF",
+        "strong": "strong",
+        "weak": "weak"
+      },
+      "sizes": {
+        "off": "OFF",
+        "large": "large",
+        "small": "small"
+      },
+      "whiteBalances": {
+        "autoWhitePriority": "AUTO White Priority",
+        "auto": "AUTO",
+        "autoAmbiencePriority": "AUTO Ambience Priority",
+        "measure": "measure",
+        "k": "K",
+        "sunlight": "sunlight",
+        "shade": "shade",
+        "daylight": "daylight",
+        "warmWhite": "warm white",
+        "coolWhite": "cool white",
+        "incandescent": "incandescent",
+        "underwater": "underwater"
+      }
+    }
   }
 }
