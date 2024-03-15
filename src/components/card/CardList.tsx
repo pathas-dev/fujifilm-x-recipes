@@ -179,7 +179,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
 
   return (
     <>
-      <header className="w-full h-fit shadow-md flex items-center fixed top-0 p-2 bg-base-100 z-[999]">
+      <header className="w-full h-fit shadow-md flex items-center p-2 bg-base-100 z-[999]">
         {dropboxProps.map((dropboxProps, index) => (
           <Dropbox {...dropboxProps} key={index} />
         ))}
@@ -198,7 +198,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
           <SvgFilmMicro />x{sortedRecipes.length}
         </span>
       </header>
-      <main className="w-full h-fit p-2 pt-16 flex flex-col gap-2">
+      <main className="w-full h-full p-2 pb-20 flex flex-col gap-2 items-center overflow-auto">
         {sortedRecipes.map((recipe) => (
           <Card recipe={recipe} key={recipe._id} />
         ))}

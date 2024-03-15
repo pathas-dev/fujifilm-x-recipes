@@ -9,16 +9,20 @@ import {
   SetStateAction,
   useCallback,
   useMemo,
+  useRef,
   useState,
 } from 'react';
 import {
   SvgArrowUpDownMicro,
   SvgCameraMicro,
   SvgFilmMicro,
+  SvgPlusMicro,
+  SvgPlusSolid,
   SvgSensorMicro,
 } from '../icon/svgs';
 import CustomCard, { CustomRecipe, initialCustomRecipe } from './CustomCard';
 import { HeaderLabels, SettingLabels } from '@/types/language';
+import { Camera } from '@/types/api';
 
 interface ICardListProps {
   filters: {
@@ -28,6 +32,7 @@ interface ICardListProps {
   };
   headerLabels: HeaderLabels;
   settingLabels: SettingLabels;
+  cameras: Camera[];
 }
 
 const DESC_CHARACTER = '↓';
@@ -38,6 +43,7 @@ const CustomList = ({
   filters,
   headerLabels,
   settingLabels,
+  cameras,
 }: ICardListProps) => {
   const sortTypes: Item[] = useMemo(
     () => [
@@ -99,20 +105,24 @@ const CustomList = ({
   const [customRecipes, setCustomRecipes] = useState<CustomRecipe[]>([
     initialCustomRecipe,
   ]);
+  const [showNewCard, setShowNewCard] = useState(false);
 
   const [bases, setBases] = useState<Item[]>([]);
-  const [cameras, setCameras] = useState<Item[]>([]);
+  const [filterCameras, setFilterCameras] = useState<Item[]>([]);
   const [sensors, setSensors] = useState<Item[]>([]);
   const [sortType, setSortType] = useState<Item>(sortTypes[1]);
 
   const [bwOnly, setBwonly] = useState<boolean>(false);
+
+  const refMain = useRef<HTMLElement>(null);
 
   const filteredRecipes = useMemo(() => {
     return customRecipes.filter((recipe) => {
       const isBaseIncluded =
         bases.length === 0 || !!_some(bases, { value: recipe.base });
       const isCameraIncluded =
-        cameras.length === 0 || !!_some(cameras, { value: recipe.camera });
+        filterCameras.length === 0 ||
+        !!_some(filterCameras, { value: recipe.camera });
       const isSensorIncluded =
         sensors.length === 0 || !!_some(sensors, { value: recipe.sensor });
 
@@ -120,7 +130,7 @@ const CustomList = ({
 
       return isBaseIncluded && isCameraIncluded && isSensorIncluded && isBw;
     });
-  }, [customRecipes, bases, cameras, sensors, bwOnly]);
+  }, [customRecipes, bases, filterCameras, sensors, bwOnly]);
 
   const sortedRecipes = useMemo(() => {
     const copiedFilteredRecipes = [...filteredRecipes];
@@ -153,9 +163,9 @@ const CustomList = ({
       children: <SvgFilmMicro />,
     },
     {
-      selectedItems: cameras,
+      selectedItems: filterCameras,
       items: cameraItems,
-      onClickMenu: getOnClickMenu(setCameras),
+      onClickMenu: getOnClickMenu(setFilterCameras),
       children: <SvgCameraMicro />,
     },
     {
@@ -177,9 +187,13 @@ const CustomList = ({
 
   const onBwToggle = useCallback(() => setBwonly((prev) => !prev), []);
 
+  const newCardClassName = showNewCard
+    ? 'w-full transition-transform'
+    : 'w-full -translate-y-full transition-transform';
+
   return (
     <>
-      <header className="w-full h-fit shadow-md flex items-center fixed top-0 p-2 bg-base-100 z-[999]">
+      <header className="w-full h-fit shadow-md flex items-center top-0 p-2 bg-base-100">
         {dropboxProps.map((dropboxProps, index) => (
           <Dropbox {...dropboxProps} key={index} />
         ))}
@@ -200,13 +214,38 @@ const CustomList = ({
           <SvgFilmMicro />x{sortedRecipes.length}
         </span>
       </header>
-      <main className="w-full h-fit p-2 pt-16 flex flex-col gap-2 items-center">
+      <button
+        className="fixed z-[999] btn bottom-20 right-6 btn-primary btn-circle"
+        onClick={() => {
+          console.log(refMain.current);
+          refMain.current?.scrollBy({ top: -99999 });
+        }}
+      >
+        <SvgPlusSolid />
+      </button>
+      <main
+        className="w-full h-full p-3 pb-20 flex flex-col gap-2 items-center overflow-auto"
+        ref={refMain}
+      >
+        <CustomCard
+          cameras={cameras}
+          customRecipe={initialCustomRecipe}
+          filters={filters}
+          settingLabels={settingLabels}
+          onCreateSuccess={(recipe) => {
+            setCustomRecipes((prev) => [recipe, ...prev]);
+          }}
+        />
         {sortedRecipes.map((customRecipe) => (
           <CustomCard
+            cameras={cameras}
             key={customRecipe._id}
             customRecipe={customRecipe}
             filters={filters}
             settingLabels={settingLabels}
+            onCreateSuccess={(recipe) => {
+              setCustomRecipes((prev) => [recipe, ...prev]);
+            }}
           />
         ))}
       </main>

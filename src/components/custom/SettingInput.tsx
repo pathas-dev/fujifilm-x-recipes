@@ -1,5 +1,6 @@
 import Slider, { SliderProps } from 'rc-slider';
 import { WHITE_BALANCE_SHIFT, whiteBalnceColorMap } from './fujiSettings';
+import { SvgMinusMicro, SvgPlusMicro } from '../icon/svgs';
 
 interface ICustomInputProps {
   placeholder: string;
@@ -39,15 +40,17 @@ export const CustomSelect = ({
   return (
     <label className="form-control w-full">
       <select
-        className="select select-bordered select-secondary select-sm"
+        className="w-full select select-bordered select-secondary select-sm"
         onChange={({ target: { value } }) => {
           onChange(value);
         }}
         value={value}
       >
-        <option disabled value="">
-          {placeholder}
-        </option>
+        {placeholder && (
+          <option disabled value="">
+            {placeholder}
+          </option>
+        )}
         {items.map((item) => (
           <option value={item.value} key={item.value}>
             {item.label}
@@ -61,17 +64,64 @@ export const CustomSelect = ({
 interface ISliderProps extends SliderProps {
   label: string;
   displayValue?: string;
+  onPlusClick?: () => void;
+  onMinusClick?: () => void;
 }
 
 export const CustomSlider = (props: ISliderProps) => {
+  const onPlusClick = () => {
+    if (
+      !!props.onChange &&
+      !isNaN(props.value as number) &&
+      props.step &&
+      (props.value as number) < (props.max as number)
+    )
+      props.onChange((props.value as number) + props.step);
+  };
+
+  const onMinusClick = () => {
+    if (
+      !!props.onChange &&
+      !isNaN(props.value as number) &&
+      props.step &&
+      (props.value as number) > (props.min as number)
+    )
+      props.onChange((props.value as number) - props.step);
+  };
+
   return (
-    <article className="flex flex-col justify-center items-center gap-2 pb-3">
-      <div className="flex items-center">
+    <article className="w-full flex flex-col justify-center items-center gap-2 pb-5">
+      <div className="flex flex-col justify-center items-center">
         <h2 className="font-medium">{props.label}</h2>
-        <p>
-          <span className="mr-1">:</span>
-          {props.displayValue ?? props.value}
-        </p>
+        <div className="flex my-2 gap-2 items-center">
+          <button
+            className="btn btn-ghost flex btn-xs"
+            onClick={
+              !!props.onMinusClick
+                ? () => {
+                    props.onMinusClick?.();
+                  }
+                : onMinusClick
+            }
+          >
+            <SvgMinusMicro />
+          </button>
+          <p className="text-lg w-16 text-center">
+            {props.displayValue ?? props.value}
+          </p>
+          <button
+            className="btn btn-ghost flex btn-xs"
+            onClick={
+              !!props.onPlusClick
+                ? () => {
+                    props.onPlusClick?.();
+                  }
+                : onPlusClick
+            }
+          >
+            <SvgPlusMicro />
+          </button>
+        </div>
       </div>
       <Slider
         classNames={props.classNames}
@@ -98,17 +148,23 @@ interface IJoinProps {
   value: any;
   onClickRadio: (value: any) => void;
   label: string;
+  displayValue?: string;
 }
 
-export const Join = ({ items, onClickRadio, label, value }: IJoinProps) => {
+export const Join = ({
+  items,
+  onClickRadio,
+  label,
+  value,
+  displayValue,
+}: IJoinProps) => {
   return (
     <article className="flex flex-col justify-center items-center gap-2 w-full">
-      <div className="flex items-center">
-        <h1 className="text-lg font-medium">{label}</h1>
-        <p>
-          <span className="mr-1">:</span>
-          {value}
-        </p>
+      <div className="flex flex-col justify-center items-center">
+        <h2 className="font-medium">{label}</h2>
+        <div className="flex my-2 gap-2 items-center">
+          <p className="text-lg w-16 text-center">{displayValue ?? value}</p>
+        </div>
       </div>
 
       <form className="join mx-auto">
@@ -129,59 +185,111 @@ export const Join = ({ items, onClickRadio, label, value }: IJoinProps) => {
     </article>
   );
 };
-
 interface IWhiteBalanceShiftSelectorProps {
   onClick: (whiteBalaceShift: { red: number; blue: number }) => void;
-  whiteBalance: { red: number; blue: number };
+  shift: { red: number; blue: number };
 }
 
 export const WhiteBalanceShiftSelector = ({
   onClick,
-  whiteBalance,
+  shift,
 }: IWhiteBalanceShiftSelectorProps) => {
+  const MAX = 9;
+  const MIN = -9;
   return (
-    <div className="p-0 w-fit flex flex-col-reverse m-auto">
-      <h1 className="text-lg font-medium">
-        R:{whiteBalance.red} B: {whiteBalance.blue}
-      </h1>
-      {WHITE_BALANCE_SHIFT.map((row, index) => {
-        const rowColor = whiteBalnceColorMap[index.toString()];
-        const className = `relative bg-clip-text text-transparent bg-gradient-to-r inline-block h-4 ${rowColor} `;
+    <div className="p-0 w-fit flex flex-col m-auto">
+      <div className="p-10 w-fit flex flex-col-reverse relative">
+        <h1 className="absolute text-lg font-medium top-3">
+          R:{shift.red} B: {shift.blue}
+        </h1>
+        <div className="absolute flex flex-col gap-1 items-center top-[113px] left-[0px]">
+          <button
+            className="btn btn-ghost flex btn-xs"
+            onClick={() =>
+              onClick({
+                red: shift.red,
+                blue: shift.blue < MAX ? shift.blue + 1 : shift.blue,
+              })
+            }
+          >
+            <SvgPlusMicro />
+          </button>
+          <h2>B</h2>
+          <button
+            className="btn btn-ghost flex btn-xs"
+            onClick={() =>
+              onClick({
+                red: shift.red,
+                blue: shift.blue > MIN ? shift.blue - 1 : shift.blue,
+              })
+            }
+          >
+            <SvgMinusMicro />
+          </button>
+        </div>
+        <div className="absolute flex gap-1 items-center left-[110px] bottom-2">
+          <button
+            className="btn btn-ghost flex btn-xs"
+            onClick={() =>
+              onClick({
+                red: shift.red > MIN ? shift.red - 1 : shift.red,
+                blue: shift.blue,
+              })
+            }
+          >
+            <SvgMinusMicro />
+          </button>
+          <h2>R</h2>
+          <button
+            className="btn btn-ghost flex btn-xs"
+            onClick={() =>
+              onClick({
+                red: shift.red < MAX ? shift.red + 1 : shift.red,
+                blue: shift.blue,
+              })
+            }
+          >
+            <SvgPlusMicro />
+          </button>
+        </div>
+        {WHITE_BALANCE_SHIFT.map((row, index) => {
+          const rowColor = whiteBalnceColorMap[index.toString()];
+          const className = `relative bg-clip-text text-transparent bg-gradient-to-r inline-block h-3 ${rowColor} `;
 
-        return (
-          <span key={index} className={className}>
-            {row.map(([x, y]) => {
-              const red = x - 9;
-              const blue = y - 9;
-              const selected =
-                whiteBalance.red === red && whiteBalance.blue === blue;
+          return (
+            <span key={index} className={className}>
+              {row.map(([x, y]) => {
+                const red = x - 9;
+                const blue = y - 9;
+                const selected = shift.red === red && shift.blue === blue;
 
-              const button = selected ? (
-                <button
-                  key={x + y}
-                  className="h-4 w-4 text-[12px] align-top leading-[11px] border-2 border-accent p-0"
-                  onClick={() => {
-                    onClick({ red, blue });
-                  }}
-                >
-                  ■
-                </button>
-              ) : (
-                <button
-                  key={x + y}
-                  className="h-4 w-4 text-xs align-top leading-4 "
-                  onClick={() => {
-                    onClick({ red, blue });
-                  }}
-                >
-                  ■
-                </button>
-              );
-              return button;
-            })}
-          </span>
-        );
-      })}
+                const button = selected ? (
+                  <button
+                    key={x + y}
+                    className="h-3 w-3 text-[7.5px] align-top leading-[7.5px] border-2 border-accent p-0"
+                    onClick={() => {
+                      onClick({ red, blue });
+                    }}
+                  >
+                    ■
+                  </button>
+                ) : (
+                  <button
+                    key={x + y}
+                    className="h-3 w-3 text-xs align-top leading-3 "
+                    onClick={() => {
+                      onClick({ red, blue });
+                    }}
+                  >
+                    ■
+                  </button>
+                );
+                return button;
+              })}
+            </span>
+          );
+        })}
+      </div>
     </div>
   );
 };

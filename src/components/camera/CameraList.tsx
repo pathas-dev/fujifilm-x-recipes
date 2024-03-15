@@ -37,7 +37,7 @@ const CameraList = ({ cameras }: ICameraListProps) => {
   }, [simulations, cameras]);
 
   return (
-    <article className="w-full p-3">
+    <article className="w-full h-full p-3 pb-20 overflow-auto">
       <div className="w-11/12 pr-2">
         {SIMULATIONS.map((simulation) => {
           const isIncluded = simulations.includes(simulation);

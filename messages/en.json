@@ -19,6 +19,7 @@
   },
   "Settings": {
     "newTitle": "New Recipe",
+    "updateTitle": "Update Recipe",
     "placeholders": {
       "name": "Type custom recipe name.",
       "camera": "Pick a camera.",

@@ -19,6 +19,7 @@
   },
   "Settings": {
     "newTitle": "레시피 만들기",
+    "updateTitle": "레시피 수정",
     "placeholders": {
       "name": "레시피 이름을 입력해주세요.",
       "camera": "카메라를 골라주세요.",

@@ -1,28 +1,19 @@
 'use client';
-import { current, produce } from 'immer';
+import { SettingI18NLabels, SettingLabels } from '@/types/language';
+import { produce } from 'immer';
 import { ReactElement, useState } from 'react';
-import {
-  CustomInput,
-  CustomSelect,
-  CustomSlider,
-  Join,
-  JoinItem,
-  WhiteBalanceShiftSelector,
-} from './SettingInput';
-import {
-  CLARITIES,
-  COLORS,
-  EXPOSURES,
-  HIGHLIGHTS,
-  ISOS,
-  ISO_NOISE_REDUCTION,
-  SHADOWS,
-  SHARPNESS,
-  WHITE_BALANCE_K,
-  formatExposure,
-} from './fujiSettings';
-import { SettingLabels } from '@/types/language';
+import { CustomInput, CustomSelect } from './SettingInput';
 import SettingTab from './SettingTab';
+import {
+  COLOR_CHROME,
+  COLOR_CHROME_FX_BLUE,
+  D_RANGES,
+  GRAIN_ROUGHNESS,
+  GRAIN_SIZE,
+  WHITE_BALANCES,
+} from './fujiSettings';
+import { SvgAirplaneSolid, SvgPencilSquareSolid } from '../icon/svgs';
+import { Camera } from '@/types/api';
 
 export type FujiSetting = {
   tone: { highlight: number; shadow: number };
@@ -33,19 +24,19 @@ export type FujiSetting = {
   exposure: number;
   iso: number;
   grain: {
-    size: string;
-    roughness: string;
+    size: (typeof GRAIN_SIZE)[number];
+    roughness: (typeof GRAIN_ROUGHNESS)[number];
   };
   colorChrome: {
-    effect: string;
-    fxBlue: string;
+    effect: (typeof COLOR_CHROME)[number];
+    fxBlue: (typeof COLOR_CHROME_FX_BLUE)[number];
   };
-  dRange: string;
+  dRange: (typeof D_RANGES)[number];
   whiteBalance: WhiteBalance;
 };
 
 export type WhiteBalance = {
-  type: string;
+  type: (typeof WHITE_BALANCES)[number];
   shift?: { red: number; blue: number };
   k?: number;
 };
@@ -60,15 +51,6 @@ export type CustomRecipe = {
   settings: FujiSetting;
 };
 
-interface ICustomCardProps {
-  customRecipe: CustomRecipe;
-  filters: {
-    cameras: string[];
-    bases: string[];
-    sensors: string[];
-  };
-  settingLabels: SettingLabels;
-}
 export const initialCustomRecipe: CustomRecipe = {
   _id: '',
   name: '',
@@ -88,37 +70,71 @@ export const initialCustomRecipe: CustomRecipe = {
     exposure: 0,
     iso: 200,
     colorChrome: {
-      effect: 'OFF',
-      fxBlue: 'OFF',
+      effect: 'off',
+      fxBlue: 'off',
     },
     dRange: 'AUTO',
     grain: {
-      roughness: 'OFF',
-      size: 'OFF',
+      roughness: 'off',
+      size: 'off',
     },
     whiteBalance: {
-      type: 'auto',
+      type: 'autoWhitePriority',
       shift: { red: 0, blue: 0 },
-      k: 5000,
+      k: 5500,
     },
   },
 };
+
+interface ICustomCardProps {
+  customRecipe: CustomRecipe;
+  filters: {
+    cameras: string[];
+    bases: string[];
+    sensors: string[];
+  };
+  settingLabels: SettingLabels;
+  cameras: Camera[];
+  onCreateSuccess: (recipe: CustomRecipe) => void;
+}
 
 const CustomCard = ({
   customRecipe,
   filters,
   settingLabels,
+  cameras,
+  onCreateSuccess,
 }: ICustomCardProps) => {
   const [recipe, setRecipe] = useState(customRecipe);
+
   const [currentTab, setCurrentTab] =
     useState<keyof typeof settingLabels.labels>('tone');
 
-  const isoMarks = ISOS.reduce((acc, cur) => {
-    return { ...acc, [cur]: ' ' };
-  }, {});
+  const isUpdateMode = !!recipe._id;
+
+  const grainRoughness = GRAIN_ROUGHNESS.map((value) => ({
+    value: value,
+    label: settingLabels.options.effects[value],
+  }));
+  const grainSizes = GRAIN_SIZE.map((value) => ({
+    value: value,
+    label: settingLabels.options.sizes[value],
+  }));
+  const colorChromes = COLOR_CHROME.map((value) => ({
+    value: value,
+    label: settingLabels.options.effects[value],
+  }));
+  const colorChromeBlues = COLOR_CHROME_FX_BLUE.map((value) => ({
+    value: value,
+    label: settingLabels.options.effects[value],
+  }));
+  const whiteBalanceTypes = WHITE_BALANCES.map((value) => ({
+    value,
+    label: settingLabels.options.whiteBalances[value],
+  }));
 
   const tabs: Array<{
-    id: keyof typeof settingLabels.labels;
+    id: keyof SettingI18NLabels;
     label: string;
     settingTab: ReactElement;
   }> = [
@@ -148,23 +164,7 @@ const CustomCard = ({
         />
       ),
     },
-    {
-      id: 'grainSize',
-      label: settingLabels.labels.grainSize,
-      settingTab: (
-        <SettingTab.GrainSize
-          value={recipe.settings.grain.size}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.grain.size = value;
-              })
-            );
-          }}
-          label={settingLabels.labels.grainSize}
-        />
-      ),
-    },
+
     {
       id: 'grainRoughness',
       label: settingLabels.labels.grainRoughness,
@@ -178,7 +178,30 @@ const CustomCard = ({
               })
             );
           }}
+          displayValue={
+            settingLabels.options.effects[recipe.settings.grain.roughness]
+          }
           label={settingLabels.labels.grainRoughness}
+          items={grainRoughness}
+        />
+      ),
+    },
+    {
+      id: 'grainSize',
+      label: settingLabels.labels.grainSize,
+      settingTab: (
+        <SettingTab.GrainSize
+          value={recipe.settings.grain.size}
+          onChange={(value) => {
+            setRecipe(
+              produce(recipe, (draft) => {
+                draft.settings.grain.size = value;
+              })
+            );
+          }}
+          displayValue={settingLabels.options.sizes[recipe.settings.grain.size]}
+          label={settingLabels.labels.grainSize}
+          items={grainSizes}
         />
       ),
     },
@@ -213,6 +236,10 @@ const CustomCard = ({
             );
           }}
           label={settingLabels.labels.colorChromeEffect}
+          items={colorChromes}
+          displayValue={
+            settingLabels.options.effects[recipe.settings.colorChrome.effect]
+          }
         />
       ),
     },
@@ -230,6 +257,10 @@ const CustomCard = ({
             );
           }}
           label={settingLabels.labels.colorChromeFXBlue}
+          items={colorChromeBlues}
+          displayValue={
+            settingLabels.options.effects[recipe.settings.colorChrome.fxBlue]
+          }
         />
       ),
     },
@@ -344,6 +375,14 @@ const CustomCard = ({
       label: settingLabels.labels.whiteBalance,
       settingTab: (
         <SettingTab.WhiteBalance
+          types={whiteBalanceTypes}
+          onTypeChange={(type) =>
+            setRecipe(
+              produce(recipe, (draft) => {
+                draft.settings.whiteBalance.type = type;
+              })
+            )
+          }
           whiteBanlance={recipe.settings.whiteBalance}
           onKChange={(value) => {
             setRecipe(
@@ -366,13 +405,36 @@ const CustomCard = ({
     },
   ];
 
+  const baseOptions = filters.bases
+    .filter((v) => v.toLowerCase().indexOf('dual') < 0)
+    .map((v) => ({ label: v, value: v }));
+
+  const onClickCreate = (recipe: CustomRecipe) => {
+    onCreateSuccess(recipe);
+  };
+  const onClickUpdate = (recipe: CustomRecipe) => {};
+
   return (
-    <article className="card w-full min-w-96">
+    <article className="card w-full min-w-96 bg-base-300 shadow-xl">
       <div className="card-body">
-        <h2 className="card-title">New Custom Recipe</h2>
+        <header className="flex justify-between">
+          <h2 className="card-title">
+            {isUpdateMode ? settingLabels.updateTitle : settingLabels.newTitle}
+          </h2>
+          <button
+            className="btn btn-ghost btn-circle btn-primary btn-sm fill-accent"
+            onClick={
+              isUpdateMode
+                ? () => onClickUpdate(recipe)
+                : () => onClickCreate(recipe)
+            }
+          >
+            {isUpdateMode ? <SvgPencilSquareSolid /> : <SvgAirplaneSolid />}
+          </button>
+        </header>
         <CustomInput
           value={recipe.name}
-          placeholder="Type Custom Film Simulation Name"
+          placeholder={settingLabels.placeholders.name}
           onChange={(value) =>
             setRecipe(
               produce(recipe, (draft) => {
@@ -381,25 +443,27 @@ const CustomCard = ({
             )
           }
         />
-        <div className="flex gap-1">
+        <div className="w-full flex gap-1">
           <CustomSelect
             value={recipe.camera}
-            placeholder="Pick Camera"
+            placeholder={settingLabels.placeholders.camera}
             items={filters.cameras.map((v) => ({ label: v, value: v }))}
             onChange={(value) =>
               setRecipe(
                 produce(recipe, (draft) => {
                   draft.camera = value;
+                  const target = cameras.find(
+                    (camera) => camera.cameraType === value
+                  );
+                  if (target) draft.sensor = target.sensor;
                 })
               )
             }
           />
           <CustomSelect
             value={recipe.base}
-            placeholder="Pick Base Film Simulation"
-            items={filters.bases
-              .filter((v) => v.toLowerCase().indexOf('dual') < 0)
-              .map((v) => ({ label: v, value: v }))}
+            placeholder={settingLabels.placeholders.base}
+            items={baseOptions}
             onChange={(value) =>
               setRecipe(
                 produce(recipe, (draft) => {
@@ -409,32 +473,53 @@ const CustomCard = ({
             }
           />
         </div>
-        <div role="tablist" className="w-full tabs tabs-boxed overflow-auto">
-          {tabs.map((tab) => {
-            const isActive = tab.id === currentTab;
-            const className = isActive
-              ? 'tab min-w-max tab-active'
-              : 'tab min-w-max';
-            return (
-              <a
-                role="tab"
-                className={className}
-                key={tab.id}
-                onClick={() => setCurrentTab(tab.id)}
-              >
-                {tab.label}
-              </a>
-            );
-          })}
-        </div>
+        <TabNavigation
+          tabs={tabs}
+          currentTab={currentTab}
+          onChangeTab={(tab) => setCurrentTab(tab)}
+        />
         <SettingTab>
           {tabs.find((tab) => tab.id === currentTab)?.settingTab ?? null}
         </SettingTab>
-        <div className="card-actions justify-end">
-          <button className="btn btn-primary">Apply</button>
-        </div>
       </div>
     </article>
+  );
+};
+
+interface ITabNavigationProps {
+  tabs: Array<{
+    id: keyof SettingI18NLabels;
+    label: string;
+    settingTab: ReactElement;
+  }>;
+  currentTab: keyof SettingI18NLabels;
+  onChangeTab: (tab: keyof SettingI18NLabels) => void;
+}
+
+const TabNavigation = ({
+  tabs,
+  currentTab,
+  onChangeTab,
+}: ITabNavigationProps) => {
+  return (
+    <nav role="tablist" className="w-full tabs tabs-boxed overflow-auto">
+      {tabs.map((tab) => {
+        const isActive = tab.id === currentTab;
+        const className = isActive
+          ? 'tab min-w-max tab-active'
+          : 'tab min-w-max';
+        return (
+          <a
+            role="tab"
+            className={className}
+            key={tab.id}
+            onClick={() => onChangeTab(tab.id)}
+          >
+            {tab.label}
+          </a>
+        );
+      })}
+    </nav>
   );
 };
 

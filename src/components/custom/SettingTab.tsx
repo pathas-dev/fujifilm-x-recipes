@@ -1,5 +1,7 @@
 import { ReactElement } from 'react';
+import { WhiteBalance } from './CustomCard';
 import {
+  CustomSelect,
   CustomSlider,
   Join,
   JoinItem,
@@ -8,32 +10,33 @@ import {
 import {
   CLARITIES,
   COLORS,
-  COLOR_CHROME,
-  COLOR_CHROME_FX_BLUE,
   D_RANGES,
   EXPOSURES,
-  GRAIN_ROUGHNESS,
-  GRAIN_SIZE,
   HIGHLIGHTS,
   ISOS,
   ISO_NOISE_REDUCTION,
   SHADOWS,
   SHARPNESS,
+  WHITE_BALANCES,
   WHITE_BALANCE_K,
   formatExposure,
 } from './fujiSettings';
-import { WhiteBalance } from './CustomCard';
 
 interface CustomFormProps {
-  children: ReactElement | null;
+  children: ReactElement | null | Array<ReactElement | null>;
 }
 
 const SettingTab = ({ children }: CustomFormProps) => {
-  return <article className="p-5 bg-base-300 rounded-md">{children}</article>;
+  return (
+    <article className="px-5 py-7 bg-base-200 flex-1 justify-center rounded-lg">
+      {children}
+    </article>
+  );
 };
 
-const asJoinItem = (values: Array<number | string>): JoinItem[] =>
-  values.map((v) => ({ label: v.toString(), value: v }));
+export const asJoinItem = (
+  values: Array<number | string> | typeof D_RANGES
+): JoinItem[] => values.map((v) => ({ label: v.toString(), value: v }));
 
 const highlights = asJoinItem(HIGHLIGHTS);
 const shadows = asJoinItem(SHADOWS);
@@ -42,10 +45,6 @@ const sharpnesses = asJoinItem(SHARPNESS);
 const isoNoiseReductions = asJoinItem(ISO_NOISE_REDUCTION);
 const clarities = asJoinItem(CLARITIES);
 const dRanges = asJoinItem(D_RANGES);
-const grainRoughness = asJoinItem(GRAIN_ROUGHNESS);
-const grainSizes = asJoinItem(GRAIN_SIZE);
-const colorChromes = asJoinItem(COLOR_CHROME);
-const colorChromeBlues = asJoinItem(COLOR_CHROME_FX_BLUE);
 
 const exposures = EXPOSURES.map(({ value, quotient, remainder }) => ({
   label: remainder === 0 ? String(quotient) : `${quotient} ${remainder} ⁄3`,
@@ -70,7 +69,7 @@ const Tone = ({
   shadowLabel,
 }: IToneProps) => {
   return (
-    <div>
+    <div className="w-full">
       <CustomSlider
         included={false}
         label={highlightLabel}
@@ -99,12 +98,21 @@ interface IJoinTabProps {
   value: any;
   onChange: (value: any) => void;
   label: string;
+  items?: JoinItem[];
+  displayValue?: string;
 }
 
-const GrainSize = ({ value, onChange, label }: IJoinTabProps) => {
+const GrainSize = ({
+  value,
+  onChange,
+  label,
+  items = [],
+  displayValue,
+}: IJoinTabProps) => {
   return (
     <Join
-      items={grainSizes}
+      items={items}
+      displayValue={displayValue}
       onClickRadio={onChange}
       value={value}
       label={label}
@@ -112,10 +120,17 @@ const GrainSize = ({ value, onChange, label }: IJoinTabProps) => {
   );
 };
 
-const GrainRoughness = ({ value, onChange, label }: IJoinTabProps) => {
+const GrainRoughness = ({
+  value,
+  onChange,
+  label,
+  items = [],
+  displayValue,
+}: IJoinTabProps) => {
   return (
     <Join
-      items={grainRoughness}
+      items={items}
+      displayValue={displayValue}
       onClickRadio={onChange}
       value={value}
       label={label}
@@ -129,24 +144,38 @@ const DynamicRange = ({ value, onChange, label }: IJoinTabProps) => {
   );
 };
 
-const ColorChrome = ({ value, onChange, label }: IJoinTabProps) => {
+const ColorChrome = ({
+  value,
+  onChange,
+  label,
+  items = [],
+  displayValue,
+}: IJoinTabProps) => {
   return (
     <Join
-      items={colorChromes}
+      items={items}
       onClickRadio={onChange}
       value={value}
       label={label}
+      displayValue={displayValue}
     />
   );
 };
 
-const ColorChromeBlue = ({ value, onChange, label }: IJoinTabProps) => {
+const ColorChromeBlue = ({
+  value,
+  onChange,
+  label,
+  items = [],
+  displayValue,
+}: IJoinTabProps) => {
   return (
     <Join
-      items={colorChromeBlues}
+      items={items}
       onClickRadio={onChange}
       value={value}
       label={label}
+      displayValue={displayValue}
     />
   );
 };
@@ -189,6 +218,14 @@ const IsoNoiseReduction = ({ value, onChange, label }: IJoinTabProps) => {
 };
 const Iso = ({ label, onChange, value }: IJoinTabProps) => {
   const isoMarks = ISOS.reduce((acc, cur) => {
+    const points = [200, 6400, 12800, 25600, 51200];
+
+    if (points.includes(cur))
+      return {
+        ...acc,
+        [cur]: cur,
+      };
+
     return { ...acc, [cur]: ' ' };
   }, {});
   return (
@@ -202,6 +239,16 @@ const Iso = ({ label, onChange, value }: IJoinTabProps) => {
       value={value}
       onChange={(value) => {
         onChange(value as number);
+      }}
+      onPlusClick={() => {
+        const nextIndex = ISOS.indexOf(value) + 1;
+        if (nextIndex >= ISOS.length) return;
+        onChange(ISOS[nextIndex]);
+      }}
+      onMinusClick={() => {
+        const prevIndex = ISOS.indexOf(value) - 1;
+        if (prevIndex < 0) return;
+        onChange(ISOS[prevIndex]);
       }}
     />
   );
@@ -230,32 +277,50 @@ const Exposure = ({ label, onChange, value }: IJoinTabProps) => {
 
 interface IWhiteBalanceSettingProps {
   whiteBanlance: WhiteBalance;
+  types: { label: string; value: (typeof WHITE_BALANCES)[number] }[];
+  onTypeChange: (value: (typeof WHITE_BALANCES)[number]) => void;
   onKChange: (value: number) => void;
   onShiftCahnge: (params: { red: number; blue: number }) => void;
 }
 
-const WhiteBalance = ({
+const WhiteBalanceTab = ({
   whiteBanlance,
   onKChange,
   onShiftCahnge,
+  onTypeChange,
+  types,
 }: IWhiteBalanceSettingProps) => {
   return (
     <div>
-      <CustomSlider
-        label="K"
-        min={WHITE_BALANCE_K.min}
-        max={WHITE_BALANCE_K.max}
-        marks={{
-          [WHITE_BALANCE_K.min]: `${WHITE_BALANCE_K.min}K`,
-          [WHITE_BALANCE_K.max]: `${WHITE_BALANCE_K.max}K`,
-        }}
-        classNames={{ track: 'bg-k-low', rail: 'bg-k-high' }}
-        step={WHITE_BALANCE_K.step}
-        value={whiteBanlance.k}
-        onChange={(value) => onKChange(value as number)}
-      />
+      <div className="mb-3">
+        <CustomSelect
+          value={whiteBanlance.type}
+          onChange={onTypeChange}
+          items={types}
+          placeholder=""
+        />
+      </div>
+      {whiteBanlance.type === 'k' && (
+        <div className="w-11/12 mx-auto">
+          <CustomSlider
+            label="K"
+            min={WHITE_BALANCE_K.min}
+            max={WHITE_BALANCE_K.max}
+            marks={{
+              [WHITE_BALANCE_K.min]: `${WHITE_BALANCE_K.min}K`,
+              5500: '5500K',
+              [WHITE_BALANCE_K.max]: `${WHITE_BALANCE_K.max}K`,
+            }}
+            style={{ marginBottom: '3rem' }}
+            classNames={{ track: 'bg-k-low', rail: 'bg-k-high' }}
+            step={WHITE_BALANCE_K.step}
+            value={whiteBanlance.k}
+            onChange={(value) => onKChange(value as number)}
+          />
+        </div>
+      )}
       <WhiteBalanceShiftSelector
-        whiteBalance={whiteBanlance.shift ?? { red: 0, blue: 0 }}
+        shift={whiteBanlance.shift ?? { red: 0, blue: 0 }}
         onClick={onShiftCahnge}
       />
     </div>
@@ -274,6 +339,6 @@ SettingTab.Clarity = Clarity;
 SettingTab.IsoNoiseReduction = IsoNoiseReduction;
 SettingTab.Iso = Iso;
 SettingTab.Exposure = Exposure;
-SettingTab.WhiteBalance = WhiteBalance;
+SettingTab.WhiteBalance = WhiteBalanceTab;
 
 export default SettingTab;

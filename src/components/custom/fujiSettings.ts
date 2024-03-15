@@ -37,13 +37,13 @@ export const ISO_NOISE_REDUCTION = _range(-4, 4 + 1, 1);
 
 export const CLARITIES = _range(-5, 5 + 1, 1);
 
-export const D_RANGES = ['AUTO', '100%', '200%', '400%'];
+export const D_RANGES = ['AUTO', '100%', '200%', '400%'] as const;
 
-export const GRAIN_ROUGHNESS = ['OFF', 'STRONG', 'WEAK'];
-export const GRAIN_SIZE = ['OFF', 'LARGE', 'SMALL'];
+export const GRAIN_ROUGHNESS = ['off', 'strong', 'weak'] as const;
+export const GRAIN_SIZE = ['off', 'large', 'small'] as const;
 
-export const COLOR_CHROME = ['OFF', 'STRONG', 'WEAK'];
-export const COLOR_CHROME_FX_BLUE = ['OFF', 'STRONG', 'WEAK'];
+export const COLOR_CHROME = ['off', 'strong', 'weak'] as const;
+export const COLOR_CHROME_FX_BLUE = ['off', 'strong', 'weak'] as const;
 
 export const WHITE_BALANCE_K = { min: 2500, max: 10000, step: 10 };
 
@@ -58,19 +58,19 @@ export const ISOS = [
 ];
 
 export const WHITE_BALANCES = [
-  'AUTO WHITE PRIORITY',
-  'AUTO',
-  'AUTO AMBIENCE PRIORITY',
-  'MEASURE',
-  'K',
-  'SUNLIGHT',
-  'SHADE',
-  'DAYLIGHT',
-  'WARM WHITE',
-  'COOL WHITE',
-  'INCANDESCENT',
-  'UNDERWATER',
-];
+  'autoWhitePriority',
+  'auto',
+  'autoAmbiencePriority',
+  'measure',
+  'k',
+  'sunlight',
+  'shade',
+  'daylight',
+  'warmWhite',
+  'coolWhite',
+  'incandescent',
+  'underwater',
+] as const;
 
 export const WHITE_BALANCE_SHIFT_COLORS = [
   ['#229F7B', '#3B84C5', '#76318E'],

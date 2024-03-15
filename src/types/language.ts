@@ -7,33 +7,36 @@ export type HeaderLabels = {
   creatorLabel: string;
 };
 
+export type SettingI18NLabels = {
+  highlight: string;
+  tone: string;
+  shadow: string;
+  grain: string;
+  grainSize: string;
+  grainRoughness: string;
+  dynamicRange: string;
+  colorChromeEffect: string;
+  colorChromeFXBlue: string;
+  sharpness: string;
+  color: string;
+  clarity: string;
+  isoNoiseReduction: string;
+  exposure: string;
+  iso: string;
+  whiteBalance: string;
+  whiteBalanceK: string;
+  whiteBalanceShift: string;
+};
+
 export type SettingLabels = {
   newTitle: string;
+  updateTitle: string;
   placeholders: {
     name: string;
     camera: string;
     base: string;
   };
-  labels: {
-    highlight: string;
-    tone: string;
-    shadow: string;
-    grain: string;
-    grainSize: string;
-    grainRoughness: string;
-    dynamicRange: string;
-    colorChromeEffect: string;
-    colorChromeFXBlue: string;
-    sharpness: string;
-    color: string;
-    clarity: string;
-    isoNoiseReduction: string;
-    exposure: string;
-    iso: string;
-    whiteBalance: string;
-    whiteBalanceK: string;
-    whiteBalanceShift: string;
-  };
+  labels: SettingI18NLabels;
   options: {
     effects: {
       off: string;

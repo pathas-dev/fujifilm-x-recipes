@@ -1,4 +1,4 @@
-import { getRecipesWithFilters } from '@/app/api/data/localData';
+import { getCamerasWithFilters } from '@/app/api/data/localData';
 import CustomList from '@/components/custom/CustomList';
 import { localeIntl } from '@/navigation';
 import { HeaderLabels, SettingLabels } from '@/types/language';
@@ -10,7 +10,7 @@ export default async function CustomPage({
   params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
 }>) {
   unstable_setRequestLocale(locale);
-  const { recipes, filters } = await getRecipesWithFilters();
+  const { cameras, filters } = await getCamerasWithFilters();
 
   const tHeaders = await getTranslations('Headers');
   const tSettings = await getTranslations('Settings');
@@ -26,6 +26,7 @@ export default async function CustomPage({
 
   const settingLabels: SettingLabels = {
     newTitle: tSettings('newTitle'),
+    updateTitle: tSettings('updateTitle'),
     placeholders: {
       name: tSettings('placeholders.name'),
       camera: tSettings('placeholders.camera'),
@@ -86,6 +87,7 @@ export default async function CustomPage({
       filters={filters}
       headerLabels={headerLabels}
       settingLabels={settingLabels}
+      cameras={cameras}
     />
   );
 }

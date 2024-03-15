@@ -93,13 +93,13 @@
 .rc-slider-mark-text {
   position: absolute;
   display: inline-block;
-  color: #999;
+  color: var(--tw-bg);
   text-align: center;
   vertical-align: middle;
   cursor: pointer;
 }
 .rc-slider-mark-text-active {
-  color: #666;
+  color: var(--tw-bg);
 }
 .rc-slider-step {
   position: absolute;

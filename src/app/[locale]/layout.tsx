@@ -85,10 +85,10 @@ export default function RootLayout({
           notoSans.className,
           'drawer-content',
           'flex',
-          'h-max min-h-[calc(100vh-4rem)]',
+          'flex-col',
+          'h-screen',
           'w-full',
           'relative',
-          'pb-16',
           'select-none',
         ].join(' ')}
         suppressHydrationWarning
