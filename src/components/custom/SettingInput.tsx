@@ -159,7 +159,7 @@ export const WhiteBalanceShiftSelector = ({
               const button = selected ? (
                 <button
                   key={x + y}
-                  className="h-4 w-4 text-xs align-top leading-3 border-2 border-accent p-0"
+                  className="h-4 w-4 text-[12px] align-top leading-[11px] border-2 border-accent p-0"
                   onClick={() => {
                     onClick({ red, blue });
                   }}
