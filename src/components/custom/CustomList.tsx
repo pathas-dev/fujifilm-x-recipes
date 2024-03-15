@@ -11,14 +11,13 @@ import {
   useMemo,
   useState,
 } from 'react';
-import Card from '../card/Card';
 import {
   SvgArrowUpDownMicro,
   SvgCameraMicro,
   SvgFilmMicro,
   SvgSensorMicro,
 } from '../icon/svgs';
-import CustomCard, { CustomRecipe } from './CustomCard';
+import CustomCard, { CustomRecipe, initialCustomRecipe } from './CustomCard';
 
 interface ICardListProps {
   filters: {
@@ -40,7 +39,7 @@ const DESC_CHARACTER = '↓';
 const ASC_CHARACTER = '↑';
 const DELIMETER = ' ';
 
-const CardList = ({ filters, labels }: ICardListProps) => {
+const CustomList = ({ filters, labels }: ICardListProps) => {
   const sortTypes: Item[] = useMemo(
     () => [
       {
@@ -99,7 +98,7 @@ const CardList = ({ filters, labels }: ICardListProps) => {
   );
 
   const [customRecipes, setCustomRecipes] = useState<CustomRecipe[]>([
-    { _id: '24', base: '', camera: '', colorType: '', sensor: '' },
+    initialCustomRecipe,
   ]);
 
   const [bases, setBases] = useState<Item[]>([]);
@@ -132,7 +131,7 @@ const CardList = ({ filters, labels }: ICardListProps) => {
       value === 'published' ? getSortDateCallback : getSortCharCallback;
 
     return copiedFilteredRecipes.sort(
-      sort({ key: value as keyof CustomRecipe, isAsc })
+      sort({ key: value as keyof Omit<CustomRecipe, 'settings'>, isAsc })
     );
   }, [sortType, filteredRecipes]);
 
@@ -202,7 +201,11 @@ const CardList = ({ filters, labels }: ICardListProps) => {
       </header>
       <main className="w-full h-fit p-2 pt-16 flex flex-col gap-2 items-center">
         {sortedRecipes.map((customRecipe) => (
-          <CustomCard key={customRecipe._id} customRecipe={customRecipe} />
+          <CustomCard
+            key={customRecipe._id}
+            customRecipe={customRecipe}
+            filters={filters}
+          />
         ))}
       </main>
     </>
@@ -217,7 +220,13 @@ const getOnClickMenu =
   };
 
 const getSortDateCallback =
-  ({ key, isAsc }: { key: keyof CustomRecipe; isAsc?: boolean }) =>
+  ({
+    key,
+    isAsc,
+  }: {
+    key: keyof Omit<CustomRecipe, 'settings'>;
+    isAsc?: boolean;
+  }) =>
   (prev: CustomRecipe, next: CustomRecipe) => {
     const diff = dayjs(prev[key]).diff(next[key]);
 
@@ -226,7 +235,13 @@ const getSortDateCallback =
   };
 
 const getSortCharCallback =
-  ({ key, isAsc }: { key: keyof CustomRecipe; isAsc?: boolean }) =>
+  ({
+    key,
+    isAsc,
+  }: {
+    key: keyof Omit<CustomRecipe, 'settings'>;
+    isAsc?: boolean;
+  }) =>
   (prev: CustomRecipe, next: CustomRecipe) => {
     const diff = prev[key].localeCompare(next[key]);
 
@@ -293,4 +308,4 @@ export const Dropbox = ({
   );
 };
 
-export default CardList;
+export default CustomList;

@@ -1,8 +1,8 @@
 import _range from 'lodash/range';
 
-export const HIGHLIGHTS = _range(-2, 4 + 1, 0.5);
+export const HIGHLIGHTS = _range(-2, 4 + 0.5, 0.5);
 
-export const SHADOWS = _range(-2, 4 + 1, 0.5);
+export const SHADOWS = _range(-2, 4 + 0.5, 0.5);
 
 export const EXPOSURES = _range(-15, 15 + 1, 1).map((value) => {
   const abs = Math.abs(value);
@@ -13,6 +13,18 @@ export const EXPOSURES = _range(-15, 15 + 1, 1).map((value) => {
 
   return { value, remainder, quotient };
 });
+
+export const formatExposure = (value: number) => {
+  const abs = Math.abs(value);
+  let quotient = Math.floor(abs / 3);
+  if (value < 0) quotient *= -1;
+
+  const remainder = Math.abs(value % 3);
+
+  if (quotient === 0 && remainder > 0) return `${remainder} ⁄3`;
+
+  return remainder === 0 ? String(quotient) : `${quotient} ${remainder} ⁄3`;
+};
 
 export const COLORS = _range(-4, 4 + 1, 1);
 export const SHARPNESS = _range(-4, 4 + 1, 1);
@@ -28,7 +40,7 @@ export const GRAIN_SIZE = ['LARGE', 'SMALL'];
 export const COLOR_CHROME = ['OFF', 'STRONG', 'WEAK'];
 export const COLOR_CHROME_FX_BLUE = ['OFF', 'STRONG', 'WEAK'];
 
-export const COLOR_TEMPERATURE = [2500, 10000, 10]; // 10 step
+export const WHITE_BALANCE_K = { min: 2500, max: 10000, step: 10 };
 
 export const WHITE_BALANCE_SHIFT = _range(0, 18 + 1, 1).map((y) =>
   _range(0, 18 + 1, 1).map((x) => [x, y])
@@ -77,23 +89,23 @@ export const WHITE_BALANCE_SHIFT_COLORS = [
   ['#95C526', '#ECE941', '#F2921B'],
 ];
 export const whiteBalnceColorMap: { [key: string]: string } = {
-  '0': 'from-[#229F7B] via-[#3B84C5] to-[#76318E]',
-  '1': 'from-[#1CA16F] via-[#4A92CE] to-[#852A8C]',
-  '2': 'from-[#1DAE65] via-[#66A4D8] to-[#9A1887]',
-  '3': 'from-[#2FB15A] via-[#8BBAE4] to-[#AD0E77]',
-  '4': 'from-[#44B34C] via-[#B4D2EF] to-[#BB0E62]',
-  '5': 'from-[#53B43E] via-[#D9E7F6] to-[#C8124D]',
-  '6': 'from-[#60B632] via-[#EFF3FA] to-[#D5133A]',
-  '7': 'from-[#68B82D] via-[#FAF8FB] to-[#DF142B]',
-  '8': 'from-[#6AB82C] via-[#FBF9FC] to-[#E7141F]',
+  '18': 'from-[#229F7B] via-[#3B84C5] to-[#76318E]',
+  '17': 'from-[#1CA16F] via-[#4A92CE] to-[#852A8C]',
+  '16': 'from-[#1DAE65] via-[#66A4D8] to-[#9A1887]',
+  '15': 'from-[#2FB15A] via-[#8BBAE4] to-[#AD0E77]',
+  '14': 'from-[#44B34C] via-[#B4D2EF] to-[#BB0E62]',
+  '13': 'from-[#53B43E] via-[#D9E7F6] to-[#C8124D]',
+  '12': 'from-[#60B632] via-[#EFF3FA] to-[#D5133A]',
+  '11': 'from-[#68B82D] via-[#FAF8FB] to-[#DF142B]',
+  '10': 'from-[#6AB82C] via-[#FBF9FC] to-[#E7141F]',
   '9': 'from-[#6AB82C] via-[#FFFFFF] to-[#E71C1D]',
-  '10': 'from-[#6DB92B] via-[#FBF9FC] to-[#E7261D]',
-  '11': 'from-[#6FBA2B] via-[#FBFAFC] to-[#E72E1A]',
-  '12': 'from-[#75BB29] via-[#FBF8F5] to-[#E83E19]',
-  '13': 'from-[#7BBD26] via-[#F7F5DE] to-[#E94A1A]',
-  '14': 'from-[#87C122] via-[#F2F1B5] to-[#EA581A]',
-  '15': 'from-[#8FC322] via-[#EEEF8E] to-[#EC691A]',
-  '16': 'from-[#93C524] via-[#ECEB69] to-[#EE791C]',
-  '17': 'from-[#95C525] via-[#ECEA50] to-[#F1881C]',
-  '18': 'from-[#95C526] via-[#ECE941] to-[#F2921B]',
+  '8': 'from-[#6DB92B] via-[#FBF9FC] to-[#E7261D]',
+  '7': 'from-[#6FBA2B] via-[#FBFAFC] to-[#E72E1A]',
+  '6': 'from-[#75BB29] via-[#FBF8F5] to-[#E83E19]',
+  '5': 'from-[#7BBD26] via-[#F7F5DE] to-[#E94A1A]',
+  '4': 'from-[#87C122] via-[#F2F1B5] to-[#EA581A]',
+  '3': 'from-[#8FC322] via-[#EEEF8E] to-[#EC691A]',
+  '2': 'from-[#93C524] via-[#ECEB69] to-[#EE791C]',
+  '1': 'from-[#95C525] via-[#ECEA50] to-[#F1881C]',
+  '0': 'from-[#95C526] via-[#ECE941] to-[#F2921B]',
 };

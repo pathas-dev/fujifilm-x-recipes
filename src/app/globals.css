@@ -7,3 +7,5 @@
     text-wrap: balance;
   }
 }
+
+@import './rc-slider.css';
