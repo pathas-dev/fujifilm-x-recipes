@@ -106,11 +106,7 @@ const CustomList = ({
     ]
   );
 
-  console.log(settingMessages.errors);
-
-  const [customRecipes, setCustomRecipes] = useState<CustomRecipe[]>([
-    initialCustomRecipe,
-  ]);
+  const [customRecipes, setCustomRecipes] = useState<CustomRecipe[]>([]);
 
   const [bases, setBases] = useState<Item[]>([]);
   const [filterCameras, setFilterCameras] = useState<Item[]>([]);
@@ -222,6 +218,10 @@ const CustomList = ({
     }, TOAST_ALIVE_TIME);
   };
 
+  const handleNewButton = () => {
+    refMain.current?.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
   return (
     <>
       <header className="w-full h-fit shadow-md flex items-center top-0 p-2 bg-base-100">
@@ -247,10 +247,7 @@ const CustomList = ({
       </header>
       <button
         className="fixed z-[999] btn bottom-20 right-6 btn-primary btn-circle"
-        onClick={() => {
-          console.log(refMain.current);
-          refMain.current?.scrollTo({ top: 0 });
-        }}
+        onClick={handleNewButton}
       >
         <SvgPlusSolid />
       </button>
@@ -264,16 +261,15 @@ const CustomList = ({
         )}
         <CustomCard
           cameras={cameras}
-          customRecipe={initialCustomRecipe}
           filters={filters}
           settingLabels={settingMessages}
           onSuccess={onCreateSuccess}
           onError={onError}
         />
-        {sortedRecipes.map((customRecipe) => (
+        {sortedRecipes.map((customRecipe, index) => (
           <CustomCard
             cameras={cameras}
-            key={customRecipe._id}
+            key={index}
             customRecipe={customRecipe}
             filters={filters}
             settingLabels={settingMessages}

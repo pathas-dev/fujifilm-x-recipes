@@ -1,7 +1,7 @@
 'use client';
 import { SettingI18NLabels, SettingMessages } from '@/types/language';
 import { produce } from 'immer';
-import { ReactElement, useState } from 'react';
+import { ReactElement, forwardRef, useEffect, useRef, useState } from 'react';
 import { CustomInput, CustomSelect } from './SettingInput';
 import SettingTab from './SettingTab';
 import {
@@ -14,6 +14,7 @@ import {
 } from './fujiSettings';
 import { SvgAirplaneSolid, SvgPencilSquareSolid } from '../icon/svgs';
 import { Camera } from '@/types/api';
+import dayjs from 'dayjs';
 
 export type FujiSetting = {
   tone: { highlight: number; shadow: number };
@@ -49,7 +50,40 @@ export type CustomRecipe = {
   camera: string;
   sensor: string;
   colorType: string;
+  createdAt: string;
+  updatedAt: string;
   settings: FujiSetting;
+};
+
+const initialSettings: FujiSetting = {
+  tone: {
+    highlight: 0,
+    shadow: 0,
+  },
+  color: 0,
+  sharpness: 0,
+  isoNoiseReduction: 0,
+  clarity: 0,
+  exposure: 0,
+  iso: {
+    value: 200,
+    isAuto: false,
+  },
+  colorChrome: {
+    effect: 'off',
+    fxBlue: 'off',
+  },
+  dRange: 'AUTO',
+  grain: {
+    roughness: 'off',
+    size: 'off',
+  },
+  whiteBalance: {
+    type: 'autoWhitePriority',
+    shift: { red: 0, blue: 0 },
+    k: 5500,
+  },
+  bwAdj: 0,
 };
 
 export const initialCustomRecipe: CustomRecipe = {
@@ -59,6 +93,8 @@ export const initialCustomRecipe: CustomRecipe = {
   camera: '',
   colorType: '',
   sensor: '',
+  createdAt: '',
+  updatedAt: '',
   settings: {
     tone: {
       highlight: 0,
@@ -91,10 +127,12 @@ export const initialCustomRecipe: CustomRecipe = {
   },
 };
 
+const getInitialCustomRecipe = () => ({ ...initialCustomRecipe });
+
 export const ERROR_TYPES = ['noName', 'noCamera', 'noBase'] as const;
 
 interface ICustomCardProps {
-  customRecipe: CustomRecipe;
+  customRecipe?: CustomRecipe;
   filters: {
     cameras: string[];
     bases: string[];
@@ -114,7 +152,34 @@ const CustomCard = ({
   onSuccess,
   onError,
 }: ICustomCardProps) => {
-  const [recipe, setRecipe] = useState(customRecipe);
+  const [recipe, setRecipe] = useState(getInitialCustomRecipe());
+
+  const refTab = useRef<HTMLElement | null>(null);
+
+  useEffect(() => {
+    setRecipe((prev) => ({
+      ...prev,
+      _id: customRecipe?._id ?? '',
+      base: customRecipe?.base ?? '',
+      camera: customRecipe?.camera ?? '',
+      colorType: customRecipe?.colorType ?? '',
+      createdAt: customRecipe?.createdAt ?? '',
+      updatedAt: customRecipe?.updatedAt ?? '',
+      name: customRecipe?.name ?? '',
+      sensor: customRecipe?.sensor ?? '',
+      settings: customRecipe?.settings ?? initialSettings,
+    }));
+  }, [
+    customRecipe?._id,
+    customRecipe?.base,
+    customRecipe?.camera,
+    customRecipe?.colorType,
+    customRecipe?.createdAt,
+    customRecipe?.updatedAt,
+    customRecipe?.name,
+    customRecipe?.sensor,
+    customRecipe?.settings,
+  ]);
 
   const [currentTab, setCurrentTab] =
     useState<keyof typeof settingLabels.labels>('tone');
@@ -448,14 +513,20 @@ const CustomCard = ({
     if (!recipe.camera) return onError('noCamera');
     if (!recipe.base) return onError('noBase');
 
-    onSuccess(recipe);
+    onSuccess({ ...recipe, createdAt: dayjs().format('YYYY-MM-DD HH:mm:ss') });
+    setCurrentTab('tone');
+    refTab.current?.scrollTo({ left: 0, behavior: 'smooth' });
+    setRecipe(getInitialCustomRecipe());
   };
   const onClickUpdate = (recipe: CustomRecipe) => {
     if (!recipe.name) return onError('noName');
     if (!recipe.camera) return onError('noCamera');
     if (!recipe.base) return onError('noBase');
 
-    onSuccess(recipe);
+    onSuccess({
+      ...recipe,
+      updatedAt: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+    });
   };
 
   return (
@@ -521,6 +592,7 @@ const CustomCard = ({
           tabs={tabs}
           currentTab={currentTab}
           onChangeTab={(tab) => setCurrentTab(tab)}
+          ref={refTab}
         />
         <SettingTab>
           {tabs.find((tab) => tab.id === currentTab)?.settingTab ?? null}
@@ -540,31 +612,35 @@ interface ITabNavigationProps {
   onChangeTab: (tab: keyof SettingI18NLabels) => void;
 }
 
-const TabNavigation = ({
-  tabs,
-  currentTab,
-  onChangeTab,
-}: ITabNavigationProps) => {
-  return (
-    <nav role="tablist" className="w-full tabs tabs-boxed overflow-auto">
-      {tabs.map((tab) => {
-        const isActive = tab.id === currentTab;
-        const className = isActive
-          ? 'tab min-w-max tab-active'
-          : 'tab min-w-max';
-        return (
-          <a
-            role="tab"
-            className={className}
-            key={tab.id}
-            onClick={() => onChangeTab(tab.id)}
-          >
-            {tab.label}
-          </a>
-        );
-      })}
-    </nav>
-  );
-};
+const TabNavigation = forwardRef<HTMLElement, ITabNavigationProps>(
+  ({ tabs, currentTab, onChangeTab }, ref) => {
+    return (
+      <nav
+        role="tablist"
+        className="w-full tabs tabs-boxed overflow-auto"
+        ref={ref}
+      >
+        {tabs.map((tab) => {
+          const isActive = tab.id === currentTab;
+          const className = isActive
+            ? 'tab min-w-max tab-active'
+            : 'tab min-w-max';
+          return (
+            <a
+              role="tab"
+              className={className}
+              key={tab.id}
+              onClick={() => onChangeTab(tab.id)}
+            >
+              {tab.label}
+            </a>
+          );
+        })}
+      </nav>
+    );
+  }
+);
+
+TabNavigation.displayName = 'TabNavigation';
 
 export default CustomCard;
