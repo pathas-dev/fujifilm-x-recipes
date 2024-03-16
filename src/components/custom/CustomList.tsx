@@ -20,8 +20,12 @@ import {
   SvgPlusSolid,
   SvgSensorMicro,
 } from '../icon/svgs';
-import CustomCard, { CustomRecipe, initialCustomRecipe } from './CustomCard';
-import { HeaderLabels, SettingLabels } from '@/types/language';
+import CustomCard, {
+  CustomRecipe,
+  ERROR_TYPES,
+  initialCustomRecipe,
+} from './CustomCard';
+import { HeaderLabels, SettingMessages } from '@/types/language';
 import { Camera } from '@/types/api';
 
 interface ICardListProps {
@@ -31,7 +35,7 @@ interface ICardListProps {
     sensors: string[];
   };
   headerLabels: HeaderLabels;
-  settingLabels: SettingLabels;
+  settingMessages: SettingMessages;
   cameras: Camera[];
 }
 
@@ -42,7 +46,7 @@ const DELIMETER = ' ';
 const CustomList = ({
   filters,
   headerLabels,
-  settingLabels,
+  settingMessages,
   cameras,
 }: ICardListProps) => {
   const sortTypes: Item[] = useMemo(
@@ -102,10 +106,11 @@ const CustomList = ({
     ]
   );
 
+  console.log(settingMessages.errors);
+
   const [customRecipes, setCustomRecipes] = useState<CustomRecipe[]>([
     initialCustomRecipe,
   ]);
-  const [showNewCard, setShowNewCard] = useState(false);
 
   const [bases, setBases] = useState<Item[]>([]);
   const [filterCameras, setFilterCameras] = useState<Item[]>([]);
@@ -113,6 +118,11 @@ const CustomList = ({
   const [sortType, setSortType] = useState<Item>(sortTypes[1]);
 
   const [bwOnly, setBwonly] = useState<boolean>(false);
+
+  const [sccuessMessage, setSuccessMessage] = useState('');
+  const [errorType, setErrorType] = useState<(typeof ERROR_TYPES)[number] | ''>(
+    ''
+  );
 
   const refMain = useRef<HTMLElement>(null);
 
@@ -187,9 +197,30 @@ const CustomList = ({
 
   const onBwToggle = useCallback(() => setBwonly((prev) => !prev), []);
 
-  const newCardClassName = showNewCard
-    ? 'w-full transition-transform'
-    : 'w-full -translate-y-full transition-transform';
+  const TOAST_ALIVE_TIME = 900;
+
+  const onCreateSuccess = (recipe: CustomRecipe) => {
+    setCustomRecipes((prev) => [recipe, ...prev]);
+    setSuccessMessage(settingMessages.successes.create);
+    setTimeout(() => {
+      setSuccessMessage('');
+    }, TOAST_ALIVE_TIME);
+  };
+
+  const onUpdateSuccess = (recipe: CustomRecipe) => {
+    setCustomRecipes((prev) => [recipe, ...prev]);
+    setSuccessMessage(settingMessages.successes.update);
+    setTimeout(() => {
+      setSuccessMessage('');
+    }, TOAST_ALIVE_TIME);
+  };
+
+  const onError = (errorType: (typeof ERROR_TYPES)[number]) => {
+    setErrorType(errorType);
+    setTimeout(() => {
+      setErrorType('');
+    }, TOAST_ALIVE_TIME);
+  };
 
   return (
     <>
@@ -218,7 +249,7 @@ const CustomList = ({
         className="fixed z-[999] btn bottom-20 right-6 btn-primary btn-circle"
         onClick={() => {
           console.log(refMain.current);
-          refMain.current?.scrollBy({ top: -99999 });
+          refMain.current?.scrollTo({ top: 0 });
         }}
       >
         <SvgPlusSolid />
@@ -227,14 +258,17 @@ const CustomList = ({
         className="w-full h-full p-3 pb-20 flex flex-col gap-2 items-center overflow-auto"
         ref={refMain}
       >
+        {!!sccuessMessage && <SuccessToast message={sccuessMessage} />}
+        {!!errorType && (
+          <ErrorToast message={settingMessages.errors[errorType]} />
+        )}
         <CustomCard
           cameras={cameras}
           customRecipe={initialCustomRecipe}
           filters={filters}
-          settingLabels={settingLabels}
-          onCreateSuccess={(recipe) => {
-            setCustomRecipes((prev) => [recipe, ...prev]);
-          }}
+          settingLabels={settingMessages}
+          onSuccess={onCreateSuccess}
+          onError={onError}
         />
         {sortedRecipes.map((customRecipe) => (
           <CustomCard
@@ -242,10 +276,9 @@ const CustomList = ({
             key={customRecipe._id}
             customRecipe={customRecipe}
             filters={filters}
-            settingLabels={settingLabels}
-            onCreateSuccess={(recipe) => {
-              setCustomRecipes((prev) => [recipe, ...prev]);
-            }}
+            settingLabels={settingMessages}
+            onSuccess={onUpdateSuccess}
+            onError={onError}
           />
         ))}
       </main>
@@ -346,6 +379,30 @@ export const Dropbox = ({
         </div>
       </ul>
     </details>
+  );
+};
+
+interface IToastProps {
+  message: string;
+}
+
+const SuccessToast = ({ message }: IToastProps) => {
+  return (
+    <div className="toast toast-center toast-middle z-10">
+      <div className="alert alert-success shadow-lg text-base-100">
+        <span>{message}</span>
+      </div>
+    </div>
+  );
+};
+
+const ErrorToast = ({ message }: IToastProps) => {
+  return (
+    <div className="toast toast-center toast-middle z-10 ">
+      <div className="alert alert-error shadow-lg text-base-100">
+        <span>{message}</span>
+      </div>
+    </div>
   );
 };
 

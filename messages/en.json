@@ -71,6 +71,15 @@
         "incandescent": "incandescent",
         "underwater": "underwater"
       }
+    },
+    "errors": {
+      "noName": "Enter recipe name.",
+      "noBase": "Select a base film.",
+      "noCamera": "Select a base camera."
+    },
+    "successes": {
+      "create": "Recipe created!",
+      "update": "Recipe updated."
     }
   }
 }

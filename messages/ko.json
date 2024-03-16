@@ -71,6 +71,15 @@
         "incandescent": "백열등",
         "underwater": "수조"
       }
+    },
+    "errors": {
+      "noName": "레시피 이름을 입력하세요.",
+      "noBase": "바탕 필름을 골라주세요.",
+      "noCamera": "카메라를 골라주세요."
+    },
+    "successes": {
+      "create": "레시피를 만들었습니다!",
+      "update": "레시피를 수정했습니다."
     }
   }
 }

@@ -1,5 +1,5 @@
 'use client';
-import { SettingI18NLabels, SettingLabels } from '@/types/language';
+import { SettingI18NLabels, SettingMessages } from '@/types/language';
 import { produce } from 'immer';
 import { ReactElement, useState } from 'react';
 import { CustomInput, CustomSelect } from './SettingInput';
@@ -91,6 +91,8 @@ export const initialCustomRecipe: CustomRecipe = {
   },
 };
 
+export const ERROR_TYPES = ['noName', 'noCamera', 'noBase'] as const;
+
 interface ICustomCardProps {
   customRecipe: CustomRecipe;
   filters: {
@@ -98,9 +100,10 @@ interface ICustomCardProps {
     bases: string[];
     sensors: string[];
   };
-  settingLabels: SettingLabels;
+  settingLabels: SettingMessages;
   cameras: Camera[];
-  onCreateSuccess: (recipe: CustomRecipe) => void;
+  onSuccess: (recipe: CustomRecipe) => void;
+  onError: (errorType: (typeof ERROR_TYPES)[number]) => void;
 }
 
 const CustomCard = ({
@@ -108,7 +111,8 @@ const CustomCard = ({
   filters,
   settingLabels,
   cameras,
-  onCreateSuccess,
+  onSuccess,
+  onError,
 }: ICustomCardProps) => {
   const [recipe, setRecipe] = useState(customRecipe);
 
@@ -440,9 +444,19 @@ const CustomCard = ({
     .map((v) => ({ label: v, value: v }));
 
   const onClickCreate = (recipe: CustomRecipe) => {
-    onCreateSuccess(recipe);
+    if (!recipe.name) return onError('noName');
+    if (!recipe.camera) return onError('noCamera');
+    if (!recipe.base) return onError('noBase');
+
+    onSuccess(recipe);
   };
-  const onClickUpdate = (recipe: CustomRecipe) => {};
+  const onClickUpdate = (recipe: CustomRecipe) => {
+    if (!recipe.name) return onError('noName');
+    if (!recipe.camera) return onError('noCamera');
+    if (!recipe.base) return onError('noBase');
+
+    onSuccess(recipe);
+  };
 
   return (
     <article className="card w-full min-w-96 bg-base-300 shadow-xl">

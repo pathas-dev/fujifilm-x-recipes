@@ -1,7 +1,7 @@
 import { getCamerasWithFilters } from '@/app/api/data/localData';
 import CustomList from '@/components/custom/CustomList';
 import { localeIntl } from '@/navigation';
-import { HeaderLabels, SettingLabels } from '@/types/language';
+import { HeaderLabels, SettingMessages } from '@/types/language';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 export default async function CustomPage({
@@ -24,7 +24,7 @@ export default async function CustomPage({
     creatorLabel: tHeaders('creatorLabel'),
   };
 
-  const settingLabels: SettingLabels = {
+  const settingLabels: SettingMessages = {
     newTitle: tSettings('newTitle'),
     updateTitle: tSettings('updateTitle'),
     placeholders: {
@@ -81,13 +81,22 @@ export default async function CustomPage({
         underwater: tSettings('options.whiteBalances.underwater'),
       },
     },
+    errors: {
+      noName: tSettings('errors.noName'),
+      noCamera: tSettings('errors.noCamera'),
+      noBase: tSettings('errors.noBase'),
+    },
+    successes: {
+      create: tSettings('successes.create'),
+      update: tSettings('successes.update'),
+    },
   };
 
   return (
     <CustomList
       filters={filters}
       headerLabels={headerLabels}
-      settingLabels={settingLabels}
+      settingMessages={settingLabels}
       cameras={cameras}
     />
   );

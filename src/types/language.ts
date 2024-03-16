@@ -29,7 +29,7 @@ export type SettingI18NLabels = {
   bwAdj: string;
 };
 
-export type SettingLabels = {
+export type SettingMessages = {
   newTitle: string;
   updateTitle: string;
   placeholders: {
@@ -63,5 +63,14 @@ export type SettingLabels = {
       incandescent: string;
       underwater: string;
     };
+  };
+  errors: {
+    noName: string;
+    noBase: string;
+    noCamera: string;
+  };
+  successes: {
+    create: string;
+    update: string;
   };
 };
