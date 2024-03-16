@@ -33,6 +33,7 @@ export type FujiSetting = {
   };
   dRange: (typeof D_RANGES)[number];
   whiteBalance: WhiteBalance;
+  bwAdj: number;
 };
 
 export type WhiteBalance = {
@@ -86,6 +87,7 @@ export const initialCustomRecipe: CustomRecipe = {
       shift: { red: 0, blue: 0 },
       k: 5500,
     },
+    bwAdj: 0,
   },
 };
 
@@ -408,6 +410,23 @@ const CustomCard = ({
                 if (!draft.settings.whiteBalance.shift) return;
                 draft.settings.whiteBalance.shift.red = red;
                 draft.settings.whiteBalance.shift.blue = blue;
+              })
+            );
+          }}
+        />
+      ),
+    },
+    {
+      id: 'bwAdj',
+      label: settingLabels.labels.bwAdj,
+      settingTab: (
+        <SettingTab.BwAdjust
+          label={settingLabels.labels.bwAdj}
+          value={recipe.settings.bwAdj}
+          onChange={(value) => {
+            setRecipe(
+              produce(recipe, (draft) => {
+                draft.settings.bwAdj = value as number;
               })
             );
           }}

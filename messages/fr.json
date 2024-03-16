@@ -43,7 +43,8 @@
       "iso": "ISO",
       "whiteBalance": "White Balance",
       "whiteBalanceK": "Color temperature(K)",
-      "whiteBalanceShift": "White Balance Shift"
+      "whiteBalanceShift": "White Balance Shift",
+      "bwAdj": "B & W ADJ.(Warm/Cool)"
     },
     "options": {
       "effects": {

@@ -43,7 +43,8 @@
       "iso": "ISO",
       "whiteBalance": "화이트밸런스",
       "whiteBalanceK": "색 온도(K)",
-      "whiteBalanceShift": "화이트밸런스 시프트"
+      "whiteBalanceShift": "화이트밸런스 시프트",
+      "bwAdj": "흑백 조정(웜/쿨)"
     },
     "options": {
       "effects": {

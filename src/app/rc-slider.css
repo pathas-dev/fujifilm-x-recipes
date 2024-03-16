@@ -27,8 +27,12 @@
   border-radius: 6px;
 }
 
-.bg-k-low {
+.bg-transparent {
   background: transparent;
+}
+
+.bg-bw-adj {
+  background: linear-gradient(0.25turn, #004afe, #f8a116);
 }
 
 .bg-k-high {

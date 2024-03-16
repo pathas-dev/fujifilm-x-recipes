@@ -26,6 +26,7 @@ export type SettingI18NLabels = {
   whiteBalance: string;
   whiteBalanceK: string;
   whiteBalanceShift: string;
+  bwAdj: string;
 };
 
 export type SettingLabels = {

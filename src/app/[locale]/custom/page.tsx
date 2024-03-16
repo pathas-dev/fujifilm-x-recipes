@@ -51,6 +51,7 @@ export default async function CustomPage({
       whiteBalance: tSettings('labels.whiteBalance'),
       whiteBalanceK: tSettings('labels.whiteBalanceK'),
       whiteBalanceShift: tSettings('labels.whiteBalanceShift'),
+      bwAdj: tSettings('labels.bwAdj'),
     },
     options: {
       effects: {

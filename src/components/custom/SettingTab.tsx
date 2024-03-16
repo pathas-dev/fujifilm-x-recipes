@@ -8,6 +8,7 @@ import {
   WhiteBalanceShiftSelector,
 } from './SettingInput';
 import {
+  BW_ADJ,
   CLARITIES,
   COLORS,
   D_RANGES,
@@ -333,7 +334,7 @@ const WhiteBalanceTab = ({
               [WHITE_BALANCE_K.max]: `${WHITE_BALANCE_K.max}K`,
             }}
             style={{ marginBottom: '3rem' }}
-            classNames={{ track: 'bg-k-low', rail: 'bg-k-high' }}
+            classNames={{ track: 'bg-transparent', rail: 'bg-k-high' }}
             step={WHITE_BALANCE_K.step}
             value={whiteBanlance.k}
             onChange={(value) => onKChange(value as number)}
@@ -343,6 +344,25 @@ const WhiteBalanceTab = ({
       <WhiteBalanceShiftSelector
         shift={whiteBanlance.shift ?? { red: 0, blue: 0 }}
         onClick={onShiftCahnge}
+      />
+    </div>
+  );
+};
+
+const BwAdjust = ({ value, label, onChange }: IJoinTabProps) => {
+  return (
+    <div className="w-11/12 mx-auto">
+      <CustomSlider
+        included={false}
+        label={label}
+        min={BW_ADJ[0]}
+        max={BW_ADJ[BW_ADJ.length - 1]}
+        marks={BW_ADJ.reduce((acc, cur) => ({ ...acc, [cur]: cur }), {})}
+        style={{ marginBottom: '3rem' }}
+        classNames={{ track: 'bg-transparent', rail: 'bg-bw-adj' }}
+        step={BW_ADJ[1] - BW_ADJ[0]}
+        value={value}
+        onChange={(value) => onChange(value as number)}
       />
     </div>
   );
@@ -361,5 +381,6 @@ SettingTab.IsoNoiseReduction = IsoNoiseReduction;
 SettingTab.Iso = Iso;
 SettingTab.Exposure = Exposure;
 SettingTab.WhiteBalance = WhiteBalanceTab;
+SettingTab.BwAdjust = BwAdjust;
 
 export default SettingTab;

@@ -4,6 +4,8 @@ export const HIGHLIGHTS = _range(-2, 4 + 0.5, 0.5);
 
 export const SHADOWS = _range(-2, 4 + 0.5, 0.5);
 
+export const BW_ADJ = _range(-9, 9 + 1, 1);
+
 export const EXPOSURES = _range(-15, 15 + 1, 1).map((value) => {
   const abs = Math.abs(value);
   let quotient = Math.floor(abs / 3);
