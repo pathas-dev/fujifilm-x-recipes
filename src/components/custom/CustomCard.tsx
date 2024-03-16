@@ -22,7 +22,7 @@ export type FujiSetting = {
   isoNoiseReduction: number;
   clarity: number;
   exposure: number;
-  iso: number;
+  iso: { value: number; isAuto: boolean };
   grain: {
     size: (typeof GRAIN_SIZE)[number];
     roughness: (typeof GRAIN_ROUGHNESS)[number];
@@ -68,7 +68,10 @@ export const initialCustomRecipe: CustomRecipe = {
     isoNoiseReduction: 0,
     clarity: 0,
     exposure: 0,
-    iso: 200,
+    iso: {
+      value: 200,
+      isAuto: false,
+    },
     colorChrome: {
       effect: 'off',
       fxBlue: 'off',
@@ -359,14 +362,22 @@ const CustomCard = ({
       settingTab: (
         <SettingTab.Iso
           label="ISO"
-          value={recipe.settings.iso}
+          value={recipe.settings.iso.value}
           onChange={(value) => {
             setRecipe(
               produce(recipe, (draft) => {
-                draft.settings.iso = value as number;
+                draft.settings.iso.value = value as number;
               })
             );
           }}
+          isAuto={recipe.settings.iso.isAuto}
+          onToggle={(isAuto) =>
+            setRecipe(
+              produce(recipe, (draft) => {
+                draft.settings.iso.isAuto = isAuto;
+              })
+            )
+          }
         />
       ),
     },

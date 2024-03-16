@@ -216,7 +216,13 @@ const IsoNoiseReduction = ({ value, onChange, label }: IJoinTabProps) => {
     />
   );
 };
-const Iso = ({ label, onChange, value }: IJoinTabProps) => {
+
+interface IsoProps extends IJoinTabProps {
+  isAuto: boolean;
+  onToggle: (isAuto: boolean) => void;
+}
+
+const Iso = ({ label, onChange, value, isAuto, onToggle }: IsoProps) => {
   const isoMarks = ISOS.reduce((acc, cur) => {
     const points = [200, 6400, 12800, 25600, 51200];
 
@@ -229,28 +235,43 @@ const Iso = ({ label, onChange, value }: IJoinTabProps) => {
     return { ...acc, [cur]: ' ' };
   }, {});
   return (
-    <CustomSlider
-      label={label}
-      included={false}
-      min={ISOS[0]}
-      max={ISOS[ISOS.length - 1]}
-      marks={isoMarks}
-      step={null}
-      value={value}
-      onChange={(value) => {
-        onChange(value as number);
-      }}
-      onPlusClick={() => {
-        const nextIndex = ISOS.indexOf(value) + 1;
-        if (nextIndex >= ISOS.length) return;
-        onChange(ISOS[nextIndex]);
-      }}
-      onMinusClick={() => {
-        const prevIndex = ISOS.indexOf(value) - 1;
-        if (prevIndex < 0) return;
-        onChange(ISOS[prevIndex]);
-      }}
-    />
+    <div className="w-full relative">
+      <div className="form-control absolute right-0 -top-1">
+        <label className="label cursor-pointer">
+          <span className="label-text mr-2">AUTO</span>
+          <input
+            type="checkbox"
+            className="toggle toggle-sm"
+            checked={isAuto}
+            onChange={({ target: { checked } }) => {
+              onToggle(checked);
+            }}
+          />
+        </label>
+      </div>
+      <CustomSlider
+        label={label}
+        included={false}
+        min={ISOS[0]}
+        max={ISOS[ISOS.length - 1]}
+        marks={isoMarks}
+        step={null}
+        value={value}
+        onChange={(value) => {
+          onChange(value as number);
+        }}
+        onPlusClick={() => {
+          const nextIndex = ISOS.indexOf(value) + 1;
+          if (nextIndex >= ISOS.length) return;
+          onChange(ISOS[nextIndex]);
+        }}
+        onMinusClick={() => {
+          const prevIndex = ISOS.indexOf(value) - 1;
+          if (prevIndex < 0) return;
+          onChange(ISOS[prevIndex]);
+        }}
+      />
+    </div>
   );
 };
 
