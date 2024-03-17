@@ -1,646 +1,302 @@
 'use client';
-import { SettingI18NLabels, SettingMessages } from '@/types/language';
-import { produce } from 'immer';
-import { ReactElement, forwardRef, useEffect, useRef, useState } from 'react';
-import { CustomInput, CustomSelect } from './SettingInput';
-import SettingTab from './SettingTab';
-import {
-  COLOR_CHROME,
-  COLOR_CHROME_FX_BLUE,
-  D_RANGES,
-  GRAIN_ROUGHNESS,
-  GRAIN_SIZE,
-  WHITE_BALANCES,
-} from './fujiSettings';
-import { SvgAirplaneSolid, SvgPencilSquareSolid } from '../icon/svgs';
-import { Camera } from '@/types/api';
+
+import { SettingMessages } from '@/types/language';
 import dayjs from 'dayjs';
+import { useEffect, useState } from 'react';
+import CustomEditCard, { ICustomEditCardProps } from './CustomEditCard';
+import {
+  CustomRecipe,
+  ERROR_TYPES,
+  WhiteBalance,
+  initialSettings,
+} from './customRecipe';
+import { formatExposure, toStringWithSign } from './fujiSettings';
+import {
+  SvgArrowUTurnLeft,
+  SvgCalendarDaysMicro,
+  SvgTrashMini,
+} from '../icon/svgs';
 
-export type FujiSetting = {
-  tone: { highlight: number; shadow: number };
-  color: number;
-  sharpness: number;
-  isoNoiseReduction: number;
-  clarity: number;
-  exposure: number;
-  iso: { value: number; isAuto: boolean };
-  grain: {
-    size: (typeof GRAIN_SIZE)[number];
-    roughness: (typeof GRAIN_ROUGHNESS)[number];
-  };
-  colorChrome: {
-    effect: (typeof COLOR_CHROME)[number];
-    fxBlue: (typeof COLOR_CHROME_FX_BLUE)[number];
-  };
-  dRange: (typeof D_RANGES)[number];
-  whiteBalance: WhiteBalance;
-  bwAdj: number;
-};
+const CARD_MODES = ['READ', 'UPDATE'] as const;
 
-export type WhiteBalance = {
-  type: (typeof WHITE_BALANCES)[number];
-  shift?: { red: number; blue: number };
-  k?: number;
-};
+const AUTO_DELETE_MILLISECONDS = 6000;
 
-export type CustomRecipe = {
-  _id: string;
-  name: string;
-  base: string;
-  camera: string;
-  sensor: string;
-  colorType: string;
-  createdAt: string;
-  updatedAt: string;
-  settings: FujiSetting;
-};
-
-const initialSettings: FujiSetting = {
-  tone: {
-    highlight: 0,
-    shadow: 0,
-  },
-  color: 0,
-  sharpness: 0,
-  isoNoiseReduction: 0,
-  clarity: 0,
-  exposure: 0,
-  iso: {
-    value: 200,
-    isAuto: false,
-  },
-  colorChrome: {
-    effect: 'off',
-    fxBlue: 'off',
-  },
-  dRange: 'AUTO',
-  grain: {
-    roughness: 'off',
-    size: 'off',
-  },
-  whiteBalance: {
-    type: 'autoWhitePriority',
-    shift: { red: 0, blue: 0 },
-    k: 5500,
-  },
-  bwAdj: 0,
-};
-
-export const initialCustomRecipe: CustomRecipe = {
-  _id: '',
-  name: '',
-  base: '',
-  camera: '',
-  colorType: '',
-  sensor: '',
-  createdAt: '',
-  updatedAt: '',
-  settings: {
-    tone: {
-      highlight: 0,
-      shadow: 0,
-    },
-    color: 0,
-    sharpness: 0,
-    isoNoiseReduction: 0,
-    clarity: 0,
-    exposure: 0,
-    iso: {
-      value: 200,
-      isAuto: false,
-    },
-    colorChrome: {
-      effect: 'off',
-      fxBlue: 'off',
-    },
-    dRange: 'AUTO',
-    grain: {
-      roughness: 'off',
-      size: 'off',
-    },
-    whiteBalance: {
-      type: 'autoWhitePriority',
-      shift: { red: 0, blue: 0 },
-      k: 5500,
-    },
-    bwAdj: 0,
-  },
-};
-
-const getInitialCustomRecipe = () => ({ ...initialCustomRecipe });
-
-export const ERROR_TYPES = ['noName', 'noCamera', 'noBase'] as const;
-
-interface ICustomCardProps {
-  customRecipe?: CustomRecipe;
-  filters: {
-    cameras: string[];
-    bases: string[];
-    sensors: string[];
-  };
-  settingLabels: SettingMessages;
-  cameras: Camera[];
-  onSuccess: (recipe: CustomRecipe) => void;
-  onError: (errorType: (typeof ERROR_TYPES)[number]) => void;
+interface ICustomCardProps
+  extends Omit<ICustomEditCardProps, 'onSuccess' | 'onError'> {
+  onUpdateSuccess: (recipe: CustomRecipe) => void;
+  onUpdateError: (errorType: (typeof ERROR_TYPES)[number]) => void;
+  onDeleteSuccess: (customRecipe: CustomRecipe) => void;
 }
 
 const CustomCard = ({
-  customRecipe,
-  filters,
-  settingLabels,
   cameras,
-  onSuccess,
-  onError,
+  filters,
+  onUpdateError,
+  onUpdateSuccess,
+  settingLabels,
+  customRecipe,
+  onDeleteSuccess,
 }: ICustomCardProps) => {
-  const [recipe, setRecipe] = useState(getInitialCustomRecipe());
+  const [mode, setMode] = useState<(typeof CARD_MODES)[number]>('READ');
+  const [deleteTimer, setDeleteTimer] = useState<NodeJS.Timeout>();
 
-  const refTab = useRef<HTMLElement | null>(null);
+  const isReadMode = mode === 'READ';
 
-  useEffect(() => {
-    setRecipe((prev) => ({
-      ...prev,
-      _id: customRecipe?._id ?? '',
-      base: customRecipe?.base ?? '',
-      camera: customRecipe?.camera ?? '',
-      colorType: customRecipe?.colorType ?? '',
-      createdAt: customRecipe?.createdAt ?? '',
-      updatedAt: customRecipe?.updatedAt ?? '',
-      name: customRecipe?.name ?? '',
-      sensor: customRecipe?.sensor ?? '',
-      settings: customRecipe?.settings ?? initialSettings,
-    }));
-  }, [
-    customRecipe?._id,
-    customRecipe?.base,
-    customRecipe?.camera,
-    customRecipe?.colorType,
-    customRecipe?.createdAt,
-    customRecipe?.updatedAt,
-    customRecipe?.name,
-    customRecipe?.sensor,
-    customRecipe?.settings,
-  ]);
+  if (!isReadMode)
+    return (
+      <CustomEditCard
+        cameras={cameras}
+        customRecipe={customRecipe}
+        filters={filters}
+        settingLabels={settingLabels}
+        onSuccess={onUpdateSuccess}
+        onError={onUpdateError}
+      />
+    );
 
-  const [currentTab, setCurrentTab] =
-    useState<keyof typeof settingLabels.labels>('tone');
+  if (!customRecipe) return null;
 
-  const isUpdateMode = !!recipe._id;
+  const isColor = /color/i.test(customRecipe.colorType);
+  const colorClassName = isColor
+    ? 'from-red-500 via-green-500 to-blue-500'
+    : 'from-black to-white';
 
-  const grainRoughness = GRAIN_ROUGHNESS.map((value) => ({
-    value: value,
-    label: settingLabels.options.effects[value],
-  }));
-  const grainSizes = GRAIN_SIZE.map((value) => ({
-    value: value,
-    label: settingLabels.options.sizes[value],
-  }));
-  const colorChromes = COLOR_CHROME.map((value) => ({
-    value: value,
-    label: settingLabels.options.effects[value],
-  }));
-  const colorChromeBlues = COLOR_CHROME_FX_BLUE.map((value) => ({
-    value: value,
-    label: settingLabels.options.effects[value],
-  }));
-  const whiteBalanceTypes = WHITE_BALANCES.map((value) => ({
-    value,
-    label: settingLabels.options.whiteBalances[value],
-  }));
+  const getWhiteBalanceDisplayValue = ({
+    settingLabel,
+    whiteBalance,
+  }: {
+    whiteBalance: WhiteBalance;
+    settingLabel: SettingMessages;
+  }) => {
+    const label = settingLabel.options.whiteBalances[whiteBalance.type];
 
-  const tabs: Array<{
-    id: keyof SettingI18NLabels;
-    label: string;
-    settingTab: ReactElement;
-  }> = [
+    if (whiteBalance.type === 'k') return `${whiteBalance.k}${label}`;
+
+    return label;
+  };
+
+  const getWhiteBalanceShiftValue = (shift: { red: number; blue: number }) =>
+    `${toStringWithSign(shift.red)} Red, ${toStringWithSign(shift.blue)} Blue`;
+
+  const settingDisplayProps: ISettingDisplayProps[] = [
     {
-      id: 'tone',
-      label: settingLabels.labels.tone,
-      settingTab: (
-        <SettingTab.Tone
-          highlight={recipe.settings.tone.highlight}
-          onHighlightChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.tone.highlight = value as number;
-              })
-            );
-          }}
-          highlightLabel={settingLabels.labels.highlight}
-          shadow={recipe.settings.tone.shadow}
-          onShadowChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.tone.shadow = value as number;
-              })
-            );
-          }}
-          shadowLabel={settingLabels.labels.shadow}
-        />
-      ),
+      label: settingLabels.labels.highlight,
+      value: customRecipe.settings.tone.highlight,
+      defaultValue: initialSettings.tone.highlight,
     },
-
     {
-      id: 'grainRoughness',
+      label: settingLabels.labels.shadow,
+      value: customRecipe.settings.tone.shadow,
+      defaultValue: initialSettings.tone.shadow,
+    },
+    {
       label: settingLabels.labels.grainRoughness,
-      settingTab: (
-        <SettingTab.GrainRoughness
-          value={recipe.settings.grain.roughness}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.grain.roughness = value;
-              })
-            );
-          }}
-          displayValue={
-            settingLabels.options.effects[recipe.settings.grain.roughness]
-          }
-          label={settingLabels.labels.grainRoughness}
-          items={grainRoughness}
-        />
-      ),
+      value: customRecipe.settings.grain.roughness,
+      defaultValue: initialSettings.grain.roughness,
+      displayValue:
+        settingLabels.options.effects[customRecipe.settings.grain.roughness],
     },
     {
-      id: 'grainSize',
       label: settingLabels.labels.grainSize,
-      settingTab: (
-        <SettingTab.GrainSize
-          value={recipe.settings.grain.size}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.grain.size = value;
-              })
-            );
-          }}
-          displayValue={settingLabels.options.sizes[recipe.settings.grain.size]}
-          label={settingLabels.labels.grainSize}
-          items={grainSizes}
-        />
-      ),
+      value: customRecipe.settings.grain.size,
+      defaultValue: initialSettings.grain.size,
+      displayValue:
+        settingLabels.options.sizes[customRecipe.settings.grain.size],
     },
     {
-      id: 'dynamicRange',
       label: settingLabels.labels.dynamicRange,
-      settingTab: (
-        <SettingTab.DynamicRange
-          value={recipe.settings.dRange}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.dRange = value;
-              })
-            );
-          }}
-          label={settingLabels.labels.dynamicRange}
-        />
-      ),
+      value: customRecipe.settings.dRange,
+      defaultValue: initialSettings.dRange,
     },
     {
-      id: 'colorChromeEffect',
       label: settingLabels.labels.colorChromeEffect,
-      settingTab: (
-        <SettingTab.ColorChrome
-          value={recipe.settings.colorChrome.effect}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.colorChrome.effect = value;
-              })
-            );
-          }}
-          label={settingLabels.labels.colorChromeEffect}
-          items={colorChromes}
-          displayValue={
-            settingLabels.options.effects[recipe.settings.colorChrome.effect]
-          }
-        />
-      ),
+      value: customRecipe.settings.colorChrome.effect,
+      defaultValue: initialSettings.colorChrome.effect,
+      displayValue:
+        settingLabels.options.effects[customRecipe.settings.colorChrome.effect],
     },
     {
-      id: 'colorChromeFXBlue',
       label: settingLabels.labels.colorChromeFXBlue,
-      settingTab: (
-        <SettingTab.ColorChromeBlue
-          value={recipe.settings.colorChrome.fxBlue}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.colorChrome.fxBlue = value;
-              })
-            );
-          }}
-          label={settingLabels.labels.colorChromeFXBlue}
-          items={colorChromeBlues}
-          displayValue={
-            settingLabels.options.effects[recipe.settings.colorChrome.fxBlue]
-          }
-        />
-      ),
+      value: customRecipe.settings.colorChrome.fxBlue,
+      defaultValue: initialSettings.colorChrome.fxBlue,
+      displayValue:
+        settingLabels.options.effects[customRecipe.settings.colorChrome.fxBlue],
     },
     {
-      id: 'sharpness',
       label: settingLabels.labels.sharpness,
-      settingTab: (
-        <SettingTab.Sharpness
-          value={recipe.settings.sharpness}
-          label={settingLabels.labels.sharpness}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.sharpness = value;
-                return draft;
-              })
-            );
-          }}
-        />
-      ),
+      value: customRecipe.settings.sharpness,
+      defaultValue: initialSettings.sharpness,
     },
     {
-      id: 'color',
       label: settingLabels.labels.color,
-      settingTab: (
-        <SettingTab.Color
-          value={recipe.settings.color}
-          label={settingLabels.labels.color}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.color = value;
-                return draft;
-              })
-            );
-          }}
-        />
-      ),
+      value: customRecipe.settings.color,
+      defaultValue: initialSettings.color,
     },
     {
-      id: 'clarity',
       label: settingLabels.labels.clarity,
-      settingTab: (
-        <SettingTab.Clarity
-          value={recipe.settings.clarity}
-          label={settingLabels.labels.clarity}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.clarity = value;
-                return draft;
-              })
-            );
-          }}
-        />
-      ),
+      value: customRecipe.settings.clarity,
+      defaultValue: initialSettings.clarity,
     },
     {
-      id: 'isoNoiseReduction',
       label: settingLabels.labels.isoNoiseReduction,
-      settingTab: (
-        <SettingTab.IsoNoiseReduction
-          value={recipe.settings.isoNoiseReduction}
-          label={settingLabels.labels.isoNoiseReduction}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.isoNoiseReduction = value;
-                return draft;
-              })
-            );
-          }}
-        />
-      ),
+      value: customRecipe.settings.isoNoiseReduction,
+      defaultValue: initialSettings.isoNoiseReduction,
     },
     {
-      id: 'exposure',
       label: settingLabels.labels.exposure,
-      settingTab: (
-        <SettingTab.Exposure
-          label={settingLabels.labels.exposure}
-          value={recipe.settings.exposure}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.exposure = value as number;
-              })
-            );
-          }}
-        />
-      ),
+      value: customRecipe.settings.exposure,
+      defaultValue: initialSettings.exposure,
+      displayValue: formatExposure(customRecipe.settings.exposure),
     },
     {
-      id: 'iso',
       label: settingLabels.labels.iso,
-      settingTab: (
-        <SettingTab.Iso
-          label="ISO"
-          value={recipe.settings.iso.value}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.iso.value = value as number;
-              })
-            );
-          }}
-          isAuto={recipe.settings.iso.isAuto}
-          onToggle={(isAuto) =>
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.iso.isAuto = isAuto;
-              })
-            )
-          }
-        />
-      ),
+      value: customRecipe.settings.iso.value,
+      defaultValue: initialSettings.iso.value,
+      displayValue: `${customRecipe.settings.iso.isAuto ? 'AUTO up to ' : ''}${
+        customRecipe.settings.iso.value
+      }`,
     },
     {
-      id: 'whiteBalance',
-      label: settingLabels.labels.whiteBalance,
-      settingTab: (
-        <SettingTab.WhiteBalance
-          types={whiteBalanceTypes}
-          onTypeChange={(type) =>
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.whiteBalance.type = type;
-              })
-            )
-          }
-          whiteBanlance={recipe.settings.whiteBalance}
-          onKChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.whiteBalance.k = value as number;
-              })
-            );
-          }}
-          onShiftCahnge={({ blue, red }) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                if (!draft.settings.whiteBalance.shift) return;
-                draft.settings.whiteBalance.shift.red = red;
-                draft.settings.whiteBalance.shift.blue = blue;
-              })
-            );
-          }}
-        />
-      ),
-    },
-    {
-      id: 'bwAdj',
       label: settingLabels.labels.bwAdj,
-      settingTab: (
-        <SettingTab.BwAdjust
-          label={settingLabels.labels.bwAdj}
-          value={recipe.settings.bwAdj}
-          onChange={(value) => {
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.settings.bwAdj = value as number;
-              })
-            );
-          }}
-        />
+      value: customRecipe.settings.bwAdj,
+      defaultValue: initialSettings.bwAdj,
+    },
+    {
+      label: settingLabels.labels.whiteBalance,
+      value: customRecipe.settings.whiteBalance.type,
+      defaultValue: initialSettings.whiteBalance.type,
+      displayValue: getWhiteBalanceDisplayValue({
+        whiteBalance: customRecipe.settings.whiteBalance,
+        settingLabel: settingLabels,
+      }),
+    },
+    {
+      label: settingLabels.labels.whiteBalanceShift,
+      value: getWhiteBalanceShiftValue(
+        customRecipe.settings.whiteBalance.shift
+      ),
+      defaultValue: getWhiteBalanceShiftValue(
+        initialSettings.whiteBalance.shift
       ),
     },
   ];
 
-  const baseOptions = filters.bases
-    .filter((v) => v.toLowerCase().indexOf('dual') < 0)
-    .map((v) => ({ label: v, value: v }));
-
-  const onClickCreate = (recipe: CustomRecipe) => {
-    if (!recipe.name) return onError('noName');
-    if (!recipe.camera) return onError('noCamera');
-    if (!recipe.base) return onError('noBase');
-
-    onSuccess({ ...recipe, createdAt: dayjs().format('YYYY-MM-DD HH:mm:ss') });
-    setCurrentTab('tone');
-    refTab.current?.scrollTo({ left: 0, behavior: 'smooth' });
-    setRecipe(getInitialCustomRecipe());
+  const onDeleteButtonClick = () => {
+    const timer = setTimeout(() => {
+      onDeleteSuccess(customRecipe);
+      setDeleteTimer(undefined);
+    }, AUTO_DELETE_MILLISECONDS);
+    setDeleteTimer(timer);
   };
-  const onClickUpdate = (recipe: CustomRecipe) => {
-    if (!recipe.name) return onError('noName');
-    if (!recipe.camera) return onError('noCamera');
-    if (!recipe.base) return onError('noBase');
 
-    onSuccess({
-      ...recipe,
-      updatedAt: dayjs().format('YYYY-MM-DD HH:mm:ss'),
-    });
+  const onUndoDeleteButtonClick = () => {
+    clearTimeout(deleteTimer);
+    setDeleteTimer(undefined);
   };
 
   return (
-    <article className="card w-full min-w-96 bg-base-300 shadow-xl">
+    <div className="card card-compact w-full bg-base-300 shadow-xl">
       <div className="card-body">
-        <header className="flex justify-between">
-          <h2 className="card-title">
-            {isUpdateMode ? settingLabels.updateTitle : settingLabels.newTitle}
+        <div className="w-full flex items-end">
+          <h2 className="card-title gap-0 items-end">
+            <span className="">
+              {customRecipe.name}
+              <span className="text-xs font-light leading-5">
+                (from {customRecipe.base})
+              </span>
+            </span>
           </h2>
-          <button
-            className="btn btn-ghost btn-circle btn-primary btn-sm fill-accent"
-            onClick={
-              isUpdateMode
-                ? () => onClickUpdate(recipe)
-                : () => onClickCreate(recipe)
-            }
-          >
-            {isUpdateMode ? <SvgPencilSquareSolid /> : <SvgAirplaneSolid />}
-          </button>
-        </header>
-        <CustomInput
-          value={recipe.name}
-          placeholder={settingLabels.placeholders.name}
-          onChange={(value) =>
-            setRecipe(
-              produce(recipe, (draft) => {
-                draft.name = value;
-              })
-            )
-          }
-        />
-        <div className="w-full flex gap-1">
-          <CustomSelect
-            value={recipe.camera}
-            placeholder={settingLabels.placeholders.camera}
-            items={filters.cameras.map((v) => ({ label: v, value: v }))}
-            onChange={(value) =>
-              setRecipe(
-                produce(recipe, (draft) => {
-                  draft.camera = value;
-                  const target = cameras.find(
-                    (camera) => camera.cameraType === value
-                  );
-                  if (target) draft.sensor = target.sensor;
-                })
-              )
-            }
-          />
-          <CustomSelect
-            value={recipe.base}
-            placeholder={settingLabels.placeholders.base}
-            items={baseOptions}
-            onChange={(value) =>
-              setRecipe(
-                produce(recipe, (draft) => {
-                  draft.base = value;
-                })
-              )
-            }
-          />
         </div>
-        <TabNavigation
-          tabs={tabs}
-          currentTab={currentTab}
-          onChangeTab={(tab) => setCurrentTab(tab)}
-          ref={refTab}
-        />
-        <SettingTab>
-          {tabs.find((tab) => tab.id === currentTab)?.settingTab ?? null}
-        </SettingTab>
+
+        <details className="collapse collapse-arrow border border-base-300 bg-base-200">
+          {/* <input type="checkbox" className="peer" /> */}
+          <summary className="collapse-title text-base-content">
+            <div className="flex items-end">
+              <div
+                className={`mr-2 w-6 h-6 rounded transparent bg-clip bg-gradient-to-br ${colorClassName}`}
+              />
+              <h2 className={`text-lg font-medium`}>
+                {customRecipe.camera}
+                <span className="text-sm">({customRecipe.sensor})</span>
+              </h2>
+            </div>
+          </summary>
+          <div className="collapse-content">
+            {settingDisplayProps.map((props) => (
+              <SettingDisplay {...props} key={props.label} />
+            ))}
+          </div>
+        </details>
+        <div className="card-actions justify-between flex items-center">
+          {!deleteTimer ? (
+            <button
+              className="btn btn-ghost btn-circle btn-xs fill-error"
+              onClick={onDeleteButtonClick}
+            >
+              <SvgTrashMini />
+            </button>
+          ) : (
+            <div>
+              <button
+                className="btn btn-ghost btn-xs flex fill-error text-error"
+                onClick={onUndoDeleteButtonClick}
+              >
+                <SvgArrowUTurnLeft />
+                <CountDown milliseconds={AUTO_DELETE_MILLISECONDS - 1000} />
+              </button>
+            </div>
+          )}
+
+          <div className="flex items-center gap-0.5">
+            <SvgCalendarDaysMicro />
+            {dayjs(customRecipe.createdAt).format('YYYY-MM-DD')}
+          </div>
+        </div>
       </div>
-    </article>
+    </div>
   );
 };
 
-interface ITabNavigationProps {
-  tabs: Array<{
-    id: keyof SettingI18NLabels;
-    label: string;
-    settingTab: ReactElement;
-  }>;
-  currentTab: keyof SettingI18NLabels;
-  onChangeTab: (tab: keyof SettingI18NLabels) => void;
+interface ISettingDisplayProps {
+  label: string;
+  value: any;
+  defaultValue: any;
+  displayValue?: string;
 }
 
-const TabNavigation = forwardRef<HTMLElement, ITabNavigationProps>(
-  ({ tabs, currentTab, onChangeTab }, ref) => {
-    return (
-      <nav
-        role="tablist"
-        className="w-full tabs tabs-boxed overflow-auto"
-        ref={ref}
-      >
-        {tabs.map((tab) => {
-          const isActive = tab.id === currentTab;
-          const className = isActive
-            ? 'tab min-w-max tab-active'
-            : 'tab min-w-max';
-          return (
-            <a
-              role="tab"
-              className={className}
-              key={tab.id}
-              onClick={() => onChangeTab(tab.id)}
-            >
-              {tab.label}
-            </a>
-          );
-        })}
-      </nav>
-    );
-  }
-);
+const SettingDisplay = ({
+  label,
+  value,
+  defaultValue,
+  displayValue,
+}: ISettingDisplayProps) => {
+  const isSetted = value !== defaultValue;
+  const className = isSetted ? 'flex gap-1 text-accent' : 'flex gap-1';
+  const isNumber = typeof value === 'number';
 
-TabNavigation.displayName = 'TabNavigation';
+  const formattedNumberValue = isNumber ? toStringWithSign(value) : value;
+
+  return (
+    <div className={className}>
+      <span>{label}:</span>
+      <span>{displayValue ?? formattedNumberValue}</span>
+    </div>
+  );
+};
+
+const CountDown = ({ milliseconds }: { milliseconds: number }) => {
+  const [seconds, setSeconds] = useState(milliseconds / 1000);
+
+  useEffect(() => {
+    const interval = setInterval(() => setSeconds((prev) => prev - 1), 1000);
+    return () => clearInterval(interval);
+  }, [milliseconds]);
+  return (
+    <span className="countdown">
+      {/* @ts-ignore */}
+      <span style={{ '--value': seconds }}>{seconds}</span>
+    </span>
+  );
+};
 
 export default CustomCard;

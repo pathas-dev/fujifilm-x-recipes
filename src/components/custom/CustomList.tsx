@@ -1,5 +1,7 @@
 'use client';
 
+import { Camera } from '@/types/api';
+import { HeaderLabels, SettingMessages } from '@/types/language';
 import dayjs from 'dayjs';
 import _reject from 'lodash/reject';
 import _some from 'lodash/some';
@@ -8,6 +10,7 @@ import {
   HTMLInputTypeAttribute,
   SetStateAction,
   useCallback,
+  useEffect,
   useMemo,
   useRef,
   useState,
@@ -16,17 +19,13 @@ import {
   SvgArrowUpDownMicro,
   SvgCameraMicro,
   SvgFilmMicro,
-  SvgPlusMicro,
   SvgPlusSolid,
   SvgSensorMicro,
 } from '../icon/svgs';
-import CustomCard, {
-  CustomRecipe,
-  ERROR_TYPES,
-  initialCustomRecipe,
-} from './CustomCard';
-import { HeaderLabels, SettingMessages } from '@/types/language';
-import { Camera } from '@/types/api';
+import { CustomRecipe, ERROR_TYPES } from './customRecipe';
+import CustomEditCard from './CustomEditCard';
+import CustomCard from './CustomCard';
+import { produce } from 'immer';
 
 interface ICardListProps {
   filters: {
@@ -42,6 +41,8 @@ interface ICardListProps {
 const DESC_CHARACTER = '↓';
 const ASC_CHARACTER = '↑';
 const DELIMETER = ' ';
+
+const CUSTOM_RECIPES_STORAGE_KEY = 'customRecipes';
 
 const CustomList = ({
   filters,
@@ -122,6 +123,13 @@ const CustomList = ({
 
   const refMain = useRef<HTMLElement>(null);
 
+  useEffect(() => {
+    const storedRecipes = JSON.parse(
+      localStorage.getItem(CUSTOM_RECIPES_STORAGE_KEY) ?? '[]'
+    );
+    setCustomRecipes(storedRecipes);
+  }, []);
+
   const filteredRecipes = useMemo(() => {
     return customRecipes.filter((recipe) => {
       const isBaseIncluded =
@@ -196,7 +204,11 @@ const CustomList = ({
   const TOAST_ALIVE_TIME = 900;
 
   const onCreateSuccess = (recipe: CustomRecipe) => {
-    setCustomRecipes((prev) => [recipe, ...prev]);
+    const recipes = [recipe, ...customRecipes];
+    setCustomRecipes(recipes);
+
+    localStorage.setItem(CUSTOM_RECIPES_STORAGE_KEY, JSON.stringify(recipes));
+
     setSuccessMessage(settingMessages.successes.create);
     setTimeout(() => {
       setSuccessMessage('');
@@ -220,6 +232,20 @@ const CustomList = ({
 
   const handleNewButton = () => {
     refMain.current?.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  const onDeleteSuccess = (deletedRecipe: CustomRecipe): void => {
+    setCustomRecipes(
+      produce(customRecipes, (draft) => {
+        draft = _reject(draft, deletedRecipe);
+        return draft;
+      })
+    );
+    const storedItems = JSON.parse(
+      localStorage.getItem(CUSTOM_RECIPES_STORAGE_KEY) ?? '[]'
+    );
+    const filtered = _reject(storedItems, deletedRecipe);
+    localStorage.setItem(CUSTOM_RECIPES_STORAGE_KEY, JSON.stringify(filtered));
   };
 
   return (
@@ -259,7 +285,7 @@ const CustomList = ({
         {!!errorType && (
           <ErrorToast message={settingMessages.errors[errorType]} />
         )}
-        <CustomCard
+        <CustomEditCard
           cameras={cameras}
           filters={filters}
           settingLabels={settingMessages}
@@ -273,8 +299,9 @@ const CustomList = ({
             customRecipe={customRecipe}
             filters={filters}
             settingLabels={settingMessages}
-            onSuccess={onUpdateSuccess}
-            onError={onError}
+            onUpdateSuccess={onUpdateSuccess}
+            onUpdateError={onError}
+            onDeleteSuccess={onDeleteSuccess}
           />
         ))}
       </main>

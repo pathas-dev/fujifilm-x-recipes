@@ -1,5 +1,4 @@
 import { ReactElement } from 'react';
-import { WhiteBalance } from './CustomCard';
 import {
   CustomSelect,
   CustomSlider,
@@ -22,6 +21,7 @@ import {
   WHITE_BALANCE_K,
   formatExposure,
 } from './fujiSettings';
+import { WhiteBalance } from './customRecipe';
 
 interface CustomFormProps {
   children: ReactElement | null | Array<ReactElement | null>;

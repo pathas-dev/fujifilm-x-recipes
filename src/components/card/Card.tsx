@@ -158,7 +158,7 @@ const Card = ({ recipe }: ICardProps) => {
   if (!openGraph)
     return (
       <div
-        className="skeleton w-full min-h-40"
+        className="skeleton w-full min-h-40 mb-2"
         ref={(ref) => setSkeletonElement(ref ?? undefined)}
       />
     );
@@ -166,7 +166,7 @@ const Card = ({ recipe }: ICardProps) => {
   return (
     <div
       ref={(ref) => setCardElement(ref ?? undefined)}
-      className="card card-compact w-full min-h-40 bg-base-100 shadow-xl image-full overflow-hidden"
+      className="card card-compact w-full min-h-40 bg-base-100 mb-2 shadow-xl image-full overflow-hidden"
     >
       {intersected ? cardInner : null}
     </div>

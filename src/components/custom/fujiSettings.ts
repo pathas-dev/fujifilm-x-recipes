@@ -41,11 +41,11 @@ export const CLARITIES = _range(-5, 5 + 1, 1);
 
 export const D_RANGES = ['AUTO', '100%', '200%', '400%'] as const;
 
-export const GRAIN_ROUGHNESS = ['off', 'strong', 'weak'] as const;
-export const GRAIN_SIZE = ['off', 'large', 'small'] as const;
+export const GRAIN_ROUGHNESS = ['off', 'weak', 'strong'] as const;
+export const GRAIN_SIZE = ['off', 'small', 'large'] as const;
 
-export const COLOR_CHROME = ['off', 'strong', 'weak'] as const;
-export const COLOR_CHROME_FX_BLUE = ['off', 'strong', 'weak'] as const;
+export const COLOR_CHROME = ['off', 'weak', 'strong'] as const;
+export const COLOR_CHROME_FX_BLUE = ['off', 'weak', 'strong'] as const;
 
 export const WHITE_BALANCE_K = { min: 2500, max: 10000, step: 10 };
 
@@ -115,4 +115,12 @@ export const whiteBalnceColorMap: { [key: string]: string } = {
   '2': 'from-[#93C524] via-[#ECEB69] to-[#EE791C]',
   '1': 'from-[#95C525] via-[#ECEA50] to-[#F1881C]',
   '0': 'from-[#95C526] via-[#ECE941] to-[#F2921B]',
+};
+
+export const toStringWithSign = (value: number) => {
+  if (value === 0) return '0';
+
+  if (value > 0) return '+' + value.toString();
+
+  return value.toString();
 };
