@@ -265,8 +265,8 @@ const CustomList = ({
   };
 
   const createCardClassName = shrinkCreateCard
-    ? 'w-full h-12 relative invisible overflow-hidden'
-    : 'w-full h-fit relative';
+    ? 'w-full h-12 invisible overflow-hidden'
+    : 'w-full h-full flex justify-center';
 
   const onChebronClick = () => setShrinkCreateCard((prev) => !prev);
 
