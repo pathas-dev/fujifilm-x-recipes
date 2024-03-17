@@ -19,6 +19,8 @@ import {
   SvgArrowUpDownMicro,
   SvgArrowUpSolid,
   SvgCameraMicro,
+  SvgChebronDoubleDownSolid,
+  SvgChebronDoubleUpSolid,
   SvgFilmMicro,
   SvgPlusSolid,
   SvgSensorMicro,
@@ -121,6 +123,8 @@ const CustomList = ({
   const [errorType, setErrorType] = useState<(typeof ERROR_TYPES)[number] | ''>(
     ''
   );
+
+  const [shrinkCreateCard, setShrinkCreateCard] = useState(false);
 
   const refMain = useRef<HTMLElement>(null);
 
@@ -260,6 +264,12 @@ const CustomList = ({
     localStorage.setItem(CUSTOM_RECIPES_STORAGE_KEY, JSON.stringify(filtered));
   };
 
+  const createCardClassName = shrinkCreateCard
+    ? 'w-full h-12 relative invisible overflow-hidden'
+    : 'w-full h-fit relative';
+
+  const onChebronClick = () => setShrinkCreateCard((prev) => !prev);
+
   return (
     <>
       <header className="w-full h-fit shadow-md flex items-center top-0 p-2 bg-base-100">
@@ -297,13 +307,27 @@ const CustomList = ({
         {!!errorType && (
           <ErrorToast message={settingMessages.errors[errorType]} />
         )}
-        <CustomEditCard
-          cameras={cameras}
-          filters={filters}
-          settingLabels={settingMessages}
-          onSuccess={onCreateSuccess}
-          onError={onError}
-        />
+        <section className="w-full relative">
+          <button
+            className="absolute btn btn-circle btn-accent z-10 left-0 right-0 mx-auto fill-white"
+            onClick={onChebronClick}
+          >
+            {shrinkCreateCard ? (
+              <SvgChebronDoubleDownSolid />
+            ) : (
+              <SvgChebronDoubleUpSolid />
+            )}
+          </button>
+          <div className={createCardClassName}>
+            <CustomEditCard
+              cameras={cameras}
+              filters={filters}
+              settingLabels={settingMessages}
+              onSuccess={onCreateSuccess}
+              onError={onError}
+            />
+          </div>
+        </section>
         {sortedRecipes.map((customRecipe, index) => (
           <CustomCard
             cameras={cameras}
