@@ -53,7 +53,7 @@ const ThemeSwitch = () => {
   }, []);
 
   return (
-    <label className="swap swap-rotate fixed right-6 top-3 z-[9999]">
+    <label className="swap swap-rotate fixed right-3 top-3 z-[9999]">
       {/* this hidden checkbox controls the state */}
       <input
         type="checkbox"

@@ -51,7 +51,7 @@ const Navigation = ({ titles }: INavigationProps) => {
   ];
 
   return (
-    <nav className="btm-nav btm-nav-sm w-9/12 shadow-2xl rounded-xl mx-auto bottom-3 z-[9999]">
+    <nav className="btm-nav btm-nav-sm w-10/12 shadow-2xl rounded-xl mx-auto bottom-3 z-[9999]">
       {buttonProps.map((buttonProp) => (
         <NavButton
           title={buttonProp.title}
