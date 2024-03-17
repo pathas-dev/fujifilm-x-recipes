@@ -6,6 +6,7 @@ import {
   SvgBookmarkMicro,
   SvgCameraMicro,
   SvgPencilSquareMicro,
+  SvgPhotoMicro,
   SvgSparklesMicro,
   SvgVariableMicro,
 } from '../icon/svgs';
@@ -23,29 +24,29 @@ interface INavigationProps {
 const Navigation = ({ titles }: INavigationProps) => {
   const buttonProps: INavButtonProps[] = [
     {
-      title: titles.custom,
-      children: <SvgPencilSquareMicro />,
-      path: '/custom',
-    },
-    {
       title: titles.bookmarks,
       children: <SvgBookmarkMicro />,
       path: '/bookmarks',
     },
     {
       title: titles.recipes,
-      children: <SvgVariableMicro />,
-      path: '/',
+      children: <SvgPhotoMicro />,
+      path: '/recipes',
     },
     {
-      title: titles.origins,
-      children: <SvgSparklesMicro />,
-      path: '/origins',
+      title: titles.custom,
+      children: <SvgVariableMicro />,
+      path: '/',
     },
     {
       title: titles.cameras,
       children: <SvgCameraMicro />,
       path: '/cameras',
+    },
+    {
+      title: titles.origins,
+      children: <SvgSparklesMicro />,
+      path: '/origins',
     },
   ];
 

@@ -4,27 +4,16 @@ import { Camera } from '@/types/api';
 import { useMemo, useState } from 'react';
 import _filter from 'lodash/filter';
 
-const SIMULATIONS = [
-  'Provia',
-  'Velvia',
-  'Astia',
-  'Monochrome (_/Y/R/G/S)',
-  'Prog Neg Std',
-  'Prog Neg Hi',
-  'Classic Chrome',
-  'Acros (_/Y/R/G)',
-  'Eterna',
-  'Classic Negative',
-  'Eterna Bleach Bypass',
-  'Nostalgic Negative',
-];
-
 interface ICameraListProps {
   cameras: Camera[];
 }
 
 const CameraList = ({ cameras }: ICameraListProps) => {
   const [simulations, setSimulations] = useState<string[]>([]);
+
+  const allSimulations = cameras[cameras.length - 1].simulations
+    .split(',')
+    .map((simulation) => simulation.trim());
 
   const filteredSimulations = useMemo(() => {
     if (simulations.length === 0) return cameras;
@@ -39,7 +28,7 @@ const CameraList = ({ cameras }: ICameraListProps) => {
   return (
     <article className="w-full h-full p-3 pb-20 overflow-auto">
       <div className="w-11/12 pr-2">
-        {SIMULATIONS.map((simulation) => {
+        {allSimulations.map((simulation) => {
           const isIncluded = simulations.includes(simulation);
           const buttonClassName = isIncluded
             ? 'badge badge-secondary text-base-content mx-0.5'
@@ -54,9 +43,9 @@ const CameraList = ({ cameras }: ICameraListProps) => {
 
                 if (last === simulation) return setSimulations([]);
 
-                const targetIndex = SIMULATIONS.indexOf(simulation);
+                const targetIndex = allSimulations.indexOf(simulation);
 
-                return setSimulations(SIMULATIONS.slice(0, targetIndex + 1));
+                return setSimulations(allSimulations.slice(0, targetIndex + 1));
               }}
             >
               #{simulation}
