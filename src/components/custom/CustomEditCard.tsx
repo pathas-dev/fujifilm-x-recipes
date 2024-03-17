@@ -1,27 +1,26 @@
 'use client';
+import { Camera } from '@/types/api';
 import { SettingI18NLabels, SettingMessages } from '@/types/language';
+import dayjs from 'dayjs';
 import { produce } from 'immer';
 import { ReactElement, forwardRef, useEffect, useRef, useState } from 'react';
+import { v4 as uuidv4 } from 'uuid';
+import { SvgAirplaneSolid } from '../icon/svgs';
 import { CustomInput, CustomSelect } from './SettingInput';
 import SettingTab from './SettingTab';
-import {
-  COLOR_CHROME,
-  COLOR_CHROME_FX_BLUE,
-  D_RANGES,
-  GRAIN_ROUGHNESS,
-  GRAIN_SIZE,
-  WHITE_BALANCES,
-} from './fujiSettings';
-import { SvgAirplaneSolid, SvgPencilSquareSolid } from '../icon/svgs';
-import { Camera } from '@/types/api';
-import dayjs from 'dayjs';
-import { v4 as uuidv4 } from 'uuid';
 import {
   CustomRecipe,
   ERROR_TYPES,
   getInitialCustomRecipe,
   initialSettings,
 } from './customRecipe';
+import {
+  COLOR_CHROME,
+  COLOR_CHROME_FX_BLUE,
+  GRAIN_ROUGHNESS,
+  GRAIN_SIZE,
+  WHITE_BALANCES,
+} from './fujiSettings';
 
 export interface ICustomEditCardProps {
   customRecipe?: CustomRecipe;
@@ -75,8 +74,6 @@ const CustomEditCard = ({
 
   const [currentTab, setCurrentTab] =
     useState<keyof typeof settingLabels.labels>('tone');
-
-  const isUpdateMode = !!recipe._id;
 
   const grainRoughness = GRAIN_ROUGHNESS.map((value) => ({
     value: value,
@@ -409,6 +406,7 @@ const CustomEditCard = ({
 
     onSuccess({
       ...recipe,
+      _id: uuidv4(),
       colorType: isBW ? 'BW' : 'Color',
       createdAt: dayjs().format('YYYY-MM-DD HH:mm:ss'),
     });
@@ -423,27 +421,50 @@ const CustomEditCard = ({
 
     onSuccess({
       ...recipe,
-      _id: uuidv4(),
       updatedAt: dayjs().format('YYYY-MM-DD HH:mm:ss'),
     });
   };
 
+  const onChangeCamera: (value: any) => void = (value) =>
+    setRecipe(
+      produce(recipe, (draft) => {
+        draft.camera = value;
+        const target = cameras.find((camera) => camera.cameraType === value);
+        if (target) draft.sensor = target.sensor;
+      })
+    );
+
+  const onChangeBase: (value: any) => void = (value) =>
+    setRecipe(
+      produce(recipe, (draft) => {
+        draft.base = value;
+      })
+    );
+
+  const isUpdateMode = !!recipe._id;
+
+  const onClickAirplane = isUpdateMode
+    ? () => onClickUpdate(recipe)
+    : () => onClickCreate(recipe);
+
+  const title = isUpdateMode
+    ? settingLabels.updateTitle
+    : settingLabels.newTitle;
+
+  const articleClassName = isUpdateMode
+    ? 'card w-full min-w-96 bg-base-300 shadow-xl'
+    : 'card w-full min-w-96 bg-base-100 shadow-xl';
+
   return (
-    <article className="card w-full min-w-96 bg-base-300 shadow-xl">
+    <article className={articleClassName}>
       <div className="card-body">
         <header className="flex justify-between">
-          <h2 className="card-title">
-            {isUpdateMode ? settingLabels.updateTitle : settingLabels.newTitle}
-          </h2>
+          <h2 className="card-title">{title}</h2>
           <button
             className="btn btn-ghost btn-circle btn-primary btn-sm fill-accent"
-            onClick={
-              isUpdateMode
-                ? () => onClickUpdate(recipe)
-                : () => onClickCreate(recipe)
-            }
+            onClick={onClickAirplane}
           >
-            {isUpdateMode ? <SvgPencilSquareSolid /> : <SvgAirplaneSolid />}
+            <SvgAirplaneSolid />
           </button>
         </header>
         <CustomInput
@@ -462,29 +483,13 @@ const CustomEditCard = ({
             value={recipe.camera}
             placeholder={settingLabels.placeholders.camera}
             items={filters.cameras.map((v) => ({ label: v, value: v }))}
-            onChange={(value) =>
-              setRecipe(
-                produce(recipe, (draft) => {
-                  draft.camera = value;
-                  const target = cameras.find(
-                    (camera) => camera.cameraType === value
-                  );
-                  if (target) draft.sensor = target.sensor;
-                })
-              )
-            }
+            onChange={onChangeCamera}
           />
           <CustomSelect
             value={recipe.base}
             placeholder={settingLabels.placeholders.base}
             items={baseOptions}
-            onChange={(value) =>
-              setRecipe(
-                produce(recipe, (draft) => {
-                  draft.base = value;
-                })
-              )
-            }
+            onChange={onChangeBase}
           />
         </div>
         <TabNavigation

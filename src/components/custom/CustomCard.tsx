@@ -14,6 +14,7 @@ import { formatExposure, toStringWithSign } from './fujiSettings';
 import {
   SvgArrowUTurnLeft,
   SvgCalendarDaysMicro,
+  SvgPencilSquareSolid,
   SvgTrashMini,
 } from '../icon/svgs';
 
@@ -49,7 +50,10 @@ const CustomCard = ({
         customRecipe={customRecipe}
         filters={filters}
         settingLabels={settingLabels}
-        onSuccess={onUpdateSuccess}
+        onSuccess={(recipe) => {
+          onUpdateSuccess(recipe);
+          setMode('READ');
+        }}
         onError={onUpdateError}
       />
     );
@@ -197,7 +201,7 @@ const CustomCard = ({
   return (
     <div className="card card-compact w-full bg-base-300 shadow-xl">
       <div className="card-body">
-        <div className="w-full flex items-end">
+        <div className="w-full flex items-center justify-between">
           <h2 className="card-title gap-0 items-end">
             <span className="">
               {customRecipe.name}
@@ -206,6 +210,12 @@ const CustomCard = ({
               </span>
             </span>
           </h2>
+          <button
+            className="btn btn-circle btn-ghost fill-warning btn-sm"
+            onClick={() => setMode('UPDATE')}
+          >
+            <SvgPencilSquareSolid />
+          </button>
         </div>
 
         <details className="collapse collapse-arrow border border-base-300 bg-base-200">

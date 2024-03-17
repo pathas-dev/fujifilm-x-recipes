@@ -17,6 +17,7 @@ import {
 } from 'react';
 import {
   SvgArrowUpDownMicro,
+  SvgArrowUpSolid,
   SvgCameraMicro,
   SvgFilmMicro,
   SvgPlusSolid,
@@ -216,7 +217,18 @@ const CustomList = ({
   };
 
   const onUpdateSuccess = (recipe: CustomRecipe) => {
-    setCustomRecipes((prev) => [recipe, ...prev]);
+    const recipesUpdated = produce(customRecipes, (draft) => {
+      const index = draft.findIndex((value) => value._id === recipe._id);
+      draft = draft.with(index, recipe);
+      return draft;
+    });
+    setCustomRecipes(recipesUpdated);
+
+    localStorage.setItem(
+      CUSTOM_RECIPES_STORAGE_KEY,
+      JSON.stringify(recipesUpdated)
+    );
+
     setSuccessMessage(settingMessages.successes.update);
     setTimeout(() => {
       setSuccessMessage('');
@@ -272,10 +284,10 @@ const CustomList = ({
         </span>
       </header>
       <button
-        className="fixed z-[999] btn bottom-20 right-6 btn-primary btn-circle"
+        className="fixed z-[999] btn bottom-16 right-6 btn-accent btn-square btn-sm fill-white shadow-md"
         onClick={handleNewButton}
       >
-        <SvgPlusSolid />
+        <SvgArrowUpSolid />
       </button>
       <main
         className="w-full h-full p-3 pb-20 flex flex-col gap-2 items-center overflow-auto"
