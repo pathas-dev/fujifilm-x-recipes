@@ -18,7 +18,7 @@ const Origins = async ({
   const { origins } = await getOrigins();
 
   return (
-    <main className="w-full h-full pb-16 overflow-auto whitespace-nowrap text-ellipsis">
+    <main className="w-full h-full pb-16 overflow-auto whitespace-nowrap text-ellipsis scroll-smooth">
       <ul className="steps steps-vertical w-full p-2">
         <li data-content="♠" className="step step-neutral">
           <Link

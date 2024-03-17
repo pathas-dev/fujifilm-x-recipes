@@ -527,7 +527,7 @@ const TabNavigation = forwardRef<HTMLElement, ITabNavigationProps>(
     return (
       <nav
         role="tablist"
-        className="w-full tabs tabs-boxed overflow-auto"
+        className="w-full tabs tabs-boxed overflow-auto scroll-smooth"
         ref={ref}
       >
         {tabs.map((tab) => {

@@ -198,7 +198,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
           <SvgFilmMicro />x{sortedRecipes.length}
         </span>
       </header>
-      <main className="w-full h-full p-2 pb-20 overflow-auto">
+      <main className="w-full h-full p-2 pb-20 overflow-auto  scroll-smooth">
         {sortedRecipes.map((recipe) => (
           <Card recipe={recipe} key={recipe._id} />
         ))}
