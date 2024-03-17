@@ -20,6 +20,7 @@ import {
   WHITE_BALANCES,
   WHITE_BALANCE_K,
   formatExposure,
+  toStringWithSign,
 } from './fujiSettings';
 import { WhiteBalance } from './customRecipe';
 
@@ -37,7 +38,11 @@ const SettingTab = ({ children }: CustomFormProps) => {
 
 export const asJoinItem = (
   values: Array<number | string> | typeof D_RANGES
-): JoinItem[] => values.map((v) => ({ label: v.toString(), value: v }));
+): JoinItem[] =>
+  values.map((value) => ({
+    label: typeof value === 'number' ? toStringWithSign(value) : value,
+    value,
+  }));
 
 const highlights = asJoinItem(HIGHLIGHTS);
 const shadows = asJoinItem(SHADOWS);

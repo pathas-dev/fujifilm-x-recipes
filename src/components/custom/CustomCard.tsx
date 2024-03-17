@@ -259,7 +259,7 @@ const CustomCard = ({
 
           <div className="flex items-center gap-0.5">
             <SvgCalendarDaysMicro />
-            {dayjs(customRecipe.createdAt).format('YYYY-MM-DD')}
+            {dayjs(customRecipe.createdAt).format('YYYY-MM-DD HH:mm:ss')}
           </div>
         </div>
       </div>
