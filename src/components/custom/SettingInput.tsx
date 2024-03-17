@@ -198,11 +198,11 @@ export const WhiteBalanceShiftSelector = ({
   const MIN = -9;
   return (
     <div className="p-0 w-fit flex flex-col m-auto">
-      <div className="p-10 w-fit flex flex-col-reverse relative">
-        <h1 className="absolute text-lg font-medium top-3">
+      <div className="w-fit flex flex-col-reverse relative">
+        <h1 className="absolute text-lg font-medium -top-7">
           R:{shift.red} B: {shift.blue}
         </h1>
-        <div className="absolute flex flex-col gap-1 items-center top-[113px] left-[0px]">
+        <div className="absolute flex flex-col gap-1 items-center top-[32%] -left-10">
           <button
             className="btn btn-ghost flex btn-xs"
             onClick={() =>
@@ -227,7 +227,7 @@ export const WhiteBalanceShiftSelector = ({
             <SvgMinusMicro />
           </button>
         </div>
-        <div className="absolute flex gap-1 items-center left-[110px] bottom-2">
+        <div className="absolute flex gap-1 items-center left-[30%] -bottom-7">
           <button
             className="btn btn-ghost flex btn-xs"
             onClick={() =>

@@ -188,37 +188,74 @@ const ColorChromeBlue = ({
 
 const Sharpness = ({ value, onChange, label }: IJoinTabProps) => {
   return (
-    <Join
-      items={sharpnesses}
-      onClickRadio={onChange}
-      value={value}
+    <CustomSlider
+      included={false}
       label={label}
+      min={SHARPNESS[0]}
+      max={SHARPNESS[SHARPNESS.length - 1]}
+      marks={SHARPNESS.reduce(
+        (acc, cur) => ({ ...acc, [cur]: toStringWithSign(cur) }),
+        {}
+      )}
+      style={{ marginBottom: '3rem' }}
+      step={SHARPNESS[1] - SHARPNESS[0]}
+      value={value}
+      onChange={(value) => onChange(value as number)}
     />
   );
 };
 
 const Color = ({ value, onChange, label }: IJoinTabProps) => {
   return (
-    <Join items={colors} onClickRadio={onChange} value={value} label={label} />
+    <CustomSlider
+      included={false}
+      label={label}
+      min={COLORS[0]}
+      max={COLORS[COLORS.length - 1]}
+      marks={COLORS.reduce(
+        (acc, cur) => ({ ...acc, [cur]: toStringWithSign(cur) }),
+        {}
+      )}
+      style={{ marginBottom: '3rem' }}
+      step={COLORS[1] - COLORS[0]}
+      value={value}
+      onChange={(value) => onChange(value as number)}
+    />
   );
 };
 const Clarity = ({ value, onChange, label }: IJoinTabProps) => {
   return (
-    <Join
-      items={clarities}
-      onClickRadio={onChange}
-      value={value}
+    <CustomSlider
+      included={false}
       label={label}
+      min={CLARITIES[0]}
+      max={CLARITIES[CLARITIES.length - 1]}
+      marks={CLARITIES.reduce(
+        (acc, cur) => ({ ...acc, [cur]: toStringWithSign(cur) }),
+        {}
+      )}
+      style={{ marginBottom: '3rem' }}
+      step={CLARITIES[1] - CLARITIES[0]}
+      value={value}
+      onChange={(value) => onChange(value as number)}
     />
   );
 };
 const IsoNoiseReduction = ({ value, onChange, label }: IJoinTabProps) => {
   return (
-    <Join
-      items={isoNoiseReductions}
-      onClickRadio={onChange}
-      value={value}
+    <CustomSlider
+      included={false}
       label={label}
+      min={ISO_NOISE_REDUCTION[0]}
+      max={ISO_NOISE_REDUCTION[ISO_NOISE_REDUCTION.length - 1]}
+      marks={ISO_NOISE_REDUCTION.reduce(
+        (acc, cur) => ({ ...acc, [cur]: toStringWithSign(cur) }),
+        {}
+      )}
+      style={{ marginBottom: '3rem' }}
+      step={ISO_NOISE_REDUCTION[1] - ISO_NOISE_REDUCTION[0]}
+      value={value}
+      onChange={(value) => onChange(value as number)}
     />
   );
 };
@@ -346,10 +383,12 @@ const WhiteBalanceTab = ({
           />
         </div>
       )}
-      <WhiteBalanceShiftSelector
-        shift={whiteBanlance.shift ?? { red: 0, blue: 0 }}
-        onClick={onShiftCahnge}
-      />
+      <div className="w-full mt-10 mb-5">
+        <WhiteBalanceShiftSelector
+          shift={whiteBanlance.shift}
+          onClick={onShiftCahnge}
+        />
+      </div>
     </div>
   );
 };
