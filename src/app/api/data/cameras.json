@@ -212,13 +212,6 @@
       "simulations": "Provia, Velvia, Astia, Prog Neg Std, Prog Neg Hi, Monochrome (_/Y/R/G/S), Classic Chrome"
     },
     {
-      "_id": "65e822bcf74bd5a47b7ba174",
-      "cameraType": "X-A5",
-      "announced": "2018Q1",
-      "sensor": "BAYER (type unknown)",
-      "simulations": "Provia, Velvia, Astia, Prog Neg Std, Prog Neg Hi, Monochrome (_/Y/R/G/S), Classic Chrome"
-    },
-    {
       "_id": "65e822bcf74bd5a47b7ba173",
       "cameraType": "X-H1",
       "announced": "2018Q1",
@@ -357,6 +350,14 @@
       "announced": "2023Q2",
       "sensor": "X-Trans IV",
       "simulations": "Provia, Velvia, Astia, Prog Neg Std, Prog Neg Hi, Monochrome (_/Y/R/G/S), Classic Chrome, Acros (_/Y/R/G), Eterna, Classic Negative, Eterna Bleach Bypass, Nostalgic Negative",
+      "otherSpecifications": "CCFx, CCFxB, Clarity, BW Adjust (or Mono shift), Save extended settings"
+    },
+    {
+      "_id": "65e822bcf74bd5a47b7ba188",
+      "cameraType": "X100VI",
+      "announced": "2024Q1",
+      "sensor": "X-Trans V HR",
+      "simulations": "Provia, Velvia, Astia, Prog Neg Std, Prog Neg Hi, Monochrome (_/Y/R/G/S), Classic Chrome, Acros (_/Y/R/G), Eterna, Classic Negative, Eterna Bleach Bypass, Nostalgic Negative, Reala Ace",
       "otherSpecifications": "CCFx, CCFxB, Clarity, BW Adjust (or Mono shift), Save extended settings"
     }
   ]

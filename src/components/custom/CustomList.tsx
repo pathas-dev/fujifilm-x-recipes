@@ -3,6 +3,7 @@
 import { Camera } from '@/types/api';
 import { HeaderLabels, SettingMessages } from '@/types/language';
 import dayjs from 'dayjs';
+import { produce } from 'immer';
 import _reject from 'lodash/reject';
 import _some from 'lodash/some';
 import {
@@ -22,13 +23,11 @@ import {
   SvgChebronDoubleDownSolid,
   SvgChebronDoubleUpSolid,
   SvgFilmMicro,
-  SvgPlusSolid,
   SvgSensorMicro,
 } from '../icon/svgs';
-import { CustomRecipe, ERROR_TYPES } from './customRecipe';
-import CustomEditCard from './CustomEditCard';
 import CustomCard from './CustomCard';
-import { produce } from 'immer';
+import CustomEditCard from './CustomEditCard';
+import { CustomRecipe, ERROR_TYPES } from './customRecipe';
 
 interface ICardListProps {
   filters: {
@@ -57,12 +56,12 @@ const CustomList = ({
     () => [
       {
         label: [headerLabels.dateLabel, ASC_CHARACTER].join(DELIMETER),
-        value: 'published',
+        value: 'createdAt',
         isAsc: true,
       },
       {
         label: [headerLabels.dateLabel, DESC_CHARACTER].join(DELIMETER),
-        value: 'published',
+        value: 'createdAt',
       },
       {
         label: [headerLabels.nameLabel, ASC_CHARACTER].join(DELIMETER),
@@ -91,22 +90,12 @@ const CustomList = ({
         label: [headerLabels.baseLabel, DESC_CHARACTER].join(DELIMETER),
         value: 'base',
       },
-      {
-        label: [headerLabels.creatorLabel, ASC_CHARACTER].join(DELIMETER),
-        value: 'creator',
-        isAsc: true,
-      },
-      {
-        label: [headerLabels.creatorLabel, DESC_CHARACTER].join(DELIMETER),
-        value: 'creator',
-      },
     ],
     [
       headerLabels.dateLabel,
       headerLabels.nameLabel,
       headerLabels.cameraLabel,
       headerLabels.baseLabel,
-      headerLabels.creatorLabel,
     ]
   );
 
@@ -145,7 +134,7 @@ const CustomList = ({
       const isSensorIncluded =
         sensors.length === 0 || !!_some(sensors, { value: recipe.sensor });
 
-      const isBw = bwOnly ? !/color/i.test(recipe.colorType) : true;
+      const isBw = bwOnly ? recipe.colorType === 'BW' : true;
 
       return isBaseIncluded && isCameraIncluded && isSensorIncluded && isBw;
     });
@@ -153,10 +142,11 @@ const CustomList = ({
 
   const sortedRecipes = useMemo(() => {
     const copiedFilteredRecipes = [...filteredRecipes];
+
     const { value, isAsc } = sortType;
 
     const sort =
-      value === 'published' ? getSortDateCallback : getSortCharCallback;
+      value === 'createdAt' ? getSortDateCallback : getSortCharCallback;
 
     return copiedFilteredRecipes.sort(
       sort({ key: value as keyof Omit<CustomRecipe, 'settings'>, isAsc })
@@ -272,7 +262,7 @@ const CustomList = ({
 
   return (
     <>
-      <header className="w-full h-fit shadow-md flex items-center top-0 p-2 bg-base-100">
+      <header className="w-full h-fit shadow-md flex items-center top-0 p-2 bg-base-100  z-[999]">
         {dropboxProps.map((dropboxProps, index) => (
           <Dropbox {...dropboxProps} key={index} />
         ))}
@@ -376,6 +366,7 @@ const getSortCharCallback =
     isAsc?: boolean;
   }) =>
   (prev: CustomRecipe, next: CustomRecipe) => {
+    console.log(key);
     const diff = prev[key].localeCompare(next[key]);
 
     if (!isAsc) return diff * -1;

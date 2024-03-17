@@ -53,7 +53,7 @@ const CustomEditCard = ({
       _id: customRecipe?._id ?? '',
       base: customRecipe?.base ?? '',
       camera: customRecipe?.camera ?? '',
-      colorType: customRecipe?.colorType ?? '',
+      colorType: customRecipe?.colorType ?? 'Color',
       createdAt: customRecipe?.createdAt ?? '',
       updatedAt: customRecipe?.updatedAt ?? '',
       name: customRecipe?.name ?? '',
@@ -393,9 +393,15 @@ const CustomEditCard = ({
     },
   ];
 
-  const baseOptions = filters.bases
-    .filter((v) => v.toLowerCase().indexOf('dual') < 0)
-    .map((v) => ({ label: v, value: v }));
+  const baseOptions = filters.bases.map((base) => ({
+    label: base,
+    value: base,
+  }));
+
+  const cameraOptions = filters.cameras.map((camera) => ({
+    label: camera,
+    value: camera,
+  }));
 
   const onClickCreate = (recipe: CustomRecipe) => {
     if (!recipe.name) return onError('noName');
@@ -482,7 +488,7 @@ const CustomEditCard = ({
           <CustomSelect
             value={recipe.camera}
             placeholder={settingLabels.placeholders.camera}
-            items={filters.cameras.map((v) => ({ label: v, value: v }))}
+            items={cameraOptions}
             onChange={onChangeCamera}
           />
           <CustomSelect

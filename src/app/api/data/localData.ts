@@ -28,7 +28,15 @@ export const getCamerasWithFilters = async (): Promise<{
 }> => {
   return {
     cameras: camerasData.cameras as Camera[],
-    filters: filtersData.filters,
+    filters: {
+      cameras: camerasData.cameras.map((camera) => camera.cameraType),
+      bases: camerasData.cameras[camerasData.cameras.length - 1].simulations
+        .split(',')
+        .map((simulation) => simulation.trim()),
+      sensors: Array.from(
+        new Set(camerasData.cameras.map((camera) => camera.sensor))
+      ),
+    },
   };
 };
 

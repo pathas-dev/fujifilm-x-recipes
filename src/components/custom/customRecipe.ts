@@ -40,7 +40,7 @@ export type CustomRecipe = {
   base: string;
   camera: string;
   sensor: string;
-  colorType: string;
+  colorType: 'Color' | 'BW';
   createdAt: string;
   updatedAt: string;
   settings: FujiSetting;
@@ -82,7 +82,7 @@ export const initialCustomRecipe: CustomRecipe = {
   name: '',
   base: '',
   camera: '',
-  colorType: '',
+  colorType: 'Color',
   sensor: '',
   createdAt: '',
   updatedAt: '',
