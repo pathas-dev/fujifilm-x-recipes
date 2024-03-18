@@ -17,6 +17,7 @@ import {
   SvgPencilSquareSolid,
   SvgTrashMini,
 } from '../icon/svgs';
+import { motion } from 'framer-motion';
 
 const CARD_MODES = ['READ', 'UPDATE'] as const;
 
@@ -200,7 +201,12 @@ const CustomCard = ({
   };
 
   return (
-    <div className="card card-compact w-full bg-base-300 shadow-xl">
+    <motion.div
+      className="card card-compact w-full bg-base-300 shadow-xl"
+      transition={{ duration: 0.4 }}
+      initial={{ opacity: 0.3, translateY: '80%' }}
+      animate={{ opacity: 1, translateY: '0%' }}
+    >
       <div className="card-body">
         <div className="w-full flex items-center justify-between">
           <h2 className="card-title gap-0 items-end">
@@ -264,7 +270,7 @@ const CustomCard = ({
           </div>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 };
 

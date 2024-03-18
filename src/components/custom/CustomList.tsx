@@ -32,6 +32,7 @@ import CustomCard from './CustomCard';
 import CustomEditCard from './CustomEditCard';
 import { CustomRecipe, ERROR_TYPES } from './customRecipe';
 import Toast from '../common/Toast';
+import { motion } from 'framer-motion';
 
 interface ICardListProps {
   filters: {
@@ -240,7 +241,7 @@ const CustomList = ({
     }, TOAST_ALIVE_TIME);
   };
 
-  const handleNewButton = () => {
+  const handleToUpButton = () => {
     refMain.current?.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
@@ -273,12 +274,7 @@ const CustomList = ({
         filters={dropboxProps}
         recipesCount={sortedRecipes.length}
       />
-      <button
-        className="fixed z-[999] btn bottom-16 right-6 btn-accent btn-square btn-sm fill-white shadow-md"
-        onClick={handleNewButton}
-      >
-        <SvgArrowUpSolid />
-      </button>
+
       <main
         className="w-full h-full p-2 pb-20 flex flex-col gap-2 items-center overflow-auto scroll-smooth"
         ref={refMain}
@@ -288,17 +284,27 @@ const CustomList = ({
           <Toast message={settingMessages.errors[errorType]} type="Error" />
         )}
         <section className="w-full relative">
-          <button
+          <motion.button
             className="absolute btn btn-circle btn-accent z-10 left-0 right-0 mx-auto fill-white"
             onClick={onChebronClick}
+            transition={{ duration: 0.4 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            whileTap={{ scale: 0.9 }}
           >
             {shrinkCreateCard ? (
               <SvgChebronDoubleDownSolid />
             ) : (
               <SvgChebronDoubleUpSolid />
             )}
-          </button>
-          <div className={createCardClassName}>
+          </motion.button>
+
+          <motion.div
+            className={createCardClassName}
+            transition={{ duration: 0.5 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+          >
             <CustomEditCard
               cameras={cameras}
               filters={filters}
@@ -306,7 +312,7 @@ const CustomList = ({
               onSuccess={onCreateSuccess}
               onError={onError}
             />
-          </div>
+          </motion.div>
         </section>
         {sortedRecipes.map((customRecipe, index) => (
           <CustomCard
@@ -320,6 +326,16 @@ const CustomList = ({
             onDeleteSuccess={onDeleteSuccess}
           />
         ))}
+        <motion.button
+          className="fixed z-[999] btn bottom-16 right-6 btn-accent btn-circle btn-sm fill-white shadow-md"
+          onClick={handleToUpButton}
+          transition={{ duration: 0.4 }}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          whileTap={{ scale: 0.9 }}
+        >
+          <SvgArrowUpSolid />
+        </motion.button>
       </main>
     </>
   );

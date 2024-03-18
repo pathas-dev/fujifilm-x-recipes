@@ -10,6 +10,7 @@ import {
   SvgSparklesMicro,
   SvgVariableMicro,
 } from '../icon/svgs';
+import { motion } from 'framer-motion';
 
 interface INavigationProps {
   titles: {
@@ -51,7 +52,12 @@ const Navigation = ({ titles }: INavigationProps) => {
   ];
 
   return (
-    <nav className="btm-nav btm-nav-sm w-10/12 shadow-2xl rounded-xl mx-auto bottom-3 z-[9999] overflow-hidden">
+    <motion.nav
+      transition={{ duration: 0.4 }}
+      initial={{ opacity: 0.3, translateY: '150%' }}
+      animate={{ opacity: 1, translateY: '0%' }}
+      className="btm-nav btm-nav-sm w-10/12 shadow-2xl rounded-xl mx-auto bottom-3 z-[9999] overflow-hidden"
+    >
       {buttonProps.map((buttonProp) => (
         <NavButton
           title={buttonProp.title}
@@ -61,7 +67,7 @@ const Navigation = ({ titles }: INavigationProps) => {
           {buttonProp.children}
         </NavButton>
       ))}
-    </nav>
+    </motion.nav>
   );
 };
 
@@ -85,10 +91,14 @@ const NavButton = ({ children, title, path }: INavButtonProps) => {
   );
 
   return (
-    <button className={activeClassName} onClick={handleClick}>
+    <motion.button
+      className={activeClassName}
+      onClick={handleClick}
+      whileTap={{ scale: 0.9 }}
+    >
       {children}
       <span className="btm-nav-label">{title}</span>
-    </button>
+    </motion.button>
   );
 };
 

@@ -3,6 +3,7 @@
 import { Camera } from '@/types/api';
 import { useMemo, useState } from 'react';
 import _filter from 'lodash/filter';
+import { motion } from 'framer-motion';
 
 interface ICameraListProps {
   cameras: Camera[];
@@ -35,7 +36,7 @@ const CameraList = ({ cameras }: ICameraListProps) => {
             : 'badge badge-outline text-base-content mx-0.5';
 
           return (
-            <button
+            <motion.button
               className={buttonClassName}
               key={simulation}
               onClick={() => {
@@ -47,9 +48,12 @@ const CameraList = ({ cameras }: ICameraListProps) => {
 
                 return setSimulations(allSimulations.slice(0, targetIndex + 1));
               }}
+              transition={{ duration: 0.4 }}
+              initial={{ opacity: 0.3, translateX: '-150%' }}
+              animate={{ opacity: 1, translateX: '0%' }}
             >
               #{simulation}
-            </button>
+            </motion.button>
           );
         })}
       </div>
@@ -74,7 +78,11 @@ const Timeline = ({ camera, isLeft }: ITimelineProps) => {
     : 'timeline-end mb-10';
 
   return (
-    <li>
+    <motion.li
+      transition={{ duration: 0.4 }}
+      initial={{ opacity: 0.3, translateY: '90%' }}
+      animate={{ opacity: 1, translateY: '0%' }}
+    >
       <div className="timeline-middle">
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -105,7 +113,7 @@ const Timeline = ({ camera, isLeft }: ITimelineProps) => {
         </p>
       </div>
       <hr />
-    </li>
+    </motion.li>
   );
 };
 

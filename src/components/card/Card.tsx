@@ -6,6 +6,7 @@ import Image from 'next/image';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { SvgArrow, SvgLink } from '../icon/svgs';
 import { Link } from '@/navigation';
+import { animate, inView, motion } from 'framer-motion';
 
 interface ICardProps {
   recipe: Recipe;
@@ -155,11 +156,27 @@ const Card = ({ recipe }: ICardProps) => {
     ]
   );
 
+  const sekeletonRefCallback = (ref: HTMLDivElement) => {
+    setSkeletonElement(ref ?? undefined);
+    if (!ref) return;
+
+    inView(ref, (info) => {
+      const animation = animate([info.target], {
+        opacity: 1,
+        translateX: '0%',
+      });
+
+      return () => animation.stop();
+    });
+  };
+
   if (!openGraph)
     return (
-      <div
+      <motion.div
         className="skeleton w-full min-h-40 mb-2"
-        ref={(ref) => setSkeletonElement(ref ?? undefined)}
+        ref={sekeletonRefCallback}
+        transition={{ duration: 0.4 }}
+        initial={{ opacity: 0.3, translateX: '80%' }}
       />
     );
 
