@@ -160,11 +160,7 @@ const CustomCard = ({
         customRecipe.settings.iso.value
       }`,
     },
-    {
-      label: settingLabels.labels.bwAdj,
-      value: customRecipe.settings.bwAdj,
-      defaultValue: initialSettings.bwAdj,
-    },
+
     {
       label: settingLabels.labels.whiteBalance,
       value: customRecipe.settings.whiteBalance.type,
@@ -182,6 +178,11 @@ const CustomCard = ({
       defaultValue: getWhiteBalanceShiftValue(
         initialSettings.whiteBalance.shift
       ),
+    },
+    {
+      label: settingLabels.labels.bwAdj,
+      value: customRecipe.settings.bwAdj,
+      defaultValue: initialSettings.bwAdj,
     },
   ];
 
