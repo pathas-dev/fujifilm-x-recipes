@@ -20,6 +20,10 @@ import dayjs from 'dayjs';
 import _some from 'lodash/some';
 import _isEqual from 'lodash/isEqual';
 import _reject from 'lodash/reject';
+import RecipeFilterHeader, {
+  DropboxItem,
+  IDropboxProps,
+} from '../common/RecipeFilterHeader';
 
 interface ICardListProps {
   recipes: Recipe[];
@@ -43,7 +47,7 @@ const ASC_CHARACTER = '↑';
 const DELIMETER = ' ';
 
 const CardList = ({ filters, recipes, labels }: ICardListProps) => {
-  const sortTypes: Item[] = useMemo(
+  const sortTypes: DropboxItem[] = useMemo(
     () => [
       {
         label: [labels.dateLabel, ASC_CHARACTER].join(DELIMETER),
@@ -100,10 +104,10 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
     ]
   );
 
-  const [bases, setBases] = useState<Item[]>([]);
-  const [cameras, setCameras] = useState<Item[]>([]);
-  const [sensors, setSensors] = useState<Item[]>([]);
-  const [sortType, setSortType] = useState<Item>(sortTypes[1]);
+  const [bases, setBases] = useState<DropboxItem[]>([]);
+  const [cameras, setCameras] = useState<DropboxItem[]>([]);
+  const [sensors, setSensors] = useState<DropboxItem[]>([]);
+  const [sortType, setSortType] = useState<DropboxItem>(sortTypes[1]);
 
   const [bwOnly, setBwonly] = useState<boolean>(false);
 
@@ -145,7 +149,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
     value: sensor,
   }));
 
-  const dropboxProps: DropboxProps[] = [
+  const dropboxProps: IDropboxProps[] = [
     {
       selectedItems: bases,
       items: baseItems,
@@ -175,29 +179,17 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
     },
   ];
 
-  const onBwToggle = useCallback(() => setBwonly((prev) => !prev), []);
+  const onBwToggle = useCallback((checked: boolean) => setBwonly(checked), []);
 
   return (
     <>
-      <header className="w-full h-fit shadow-md flex items-center p-2 bg-base-100 z-[999]">
-        {dropboxProps.map((dropboxProps, index) => (
-          <Dropbox {...dropboxProps} key={index} />
-        ))}
-        <div className="form-control">
-          <label className="cursor-pointer label">
-            <input
-              type="checkbox"
-              className="toggle toggle-sm"
-              checked={bwOnly}
-              onChange={onBwToggle}
-            />
-            <span className="label-text text-xs ml-1">{labels.bwOnly}</span>
-          </label>
-        </div>
-        <span className="flex ml-1 text-xs">
-          <SvgFilmMicro />x{sortedRecipes.length}
-        </span>
-      </header>
+      <RecipeFilterHeader
+        bwOnly={bwOnly}
+        onBwOnlyChange={onBwToggle}
+        bwOnlyLabel={labels.bwOnly}
+        filters={dropboxProps}
+        recipesCount={sortedRecipes.length}
+      />
       <main className="w-full h-full p-2 pb-20 overflow-auto  scroll-smooth">
         {sortedRecipes.map((recipe) => (
           <Card recipe={recipe} key={recipe._id} />
@@ -208,8 +200,8 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
 };
 
 const getOnClickMenu =
-  (dispatch: Dispatch<SetStateAction<Item[]>>) =>
-  ({ item, checked }: { item: Item; checked: boolean }) => {
+  (dispatch: Dispatch<SetStateAction<DropboxItem[]>>) =>
+  ({ item, checked }: { item: DropboxItem; checked: boolean }) => {
     if (checked) dispatch((prev) => [...prev, item]);
     else dispatch((prev) => _reject(prev, item));
   };
@@ -231,64 +223,5 @@ const getSortCharCallback =
     if (!isAsc) return diff * -1;
     return diff;
   };
-
-type Item = {
-  value: string;
-  label: string;
-  isAsc?: boolean;
-};
-
-export interface DropboxProps {
-  items: Item[];
-  selectedItems: Item[];
-  onClickMenu: ({ item, checked }: { item: Item; checked: boolean }) => void;
-  children: React.ReactElement;
-  dropdownEnd?: boolean;
-  type?: HTMLInputTypeAttribute;
-}
-
-export const Dropbox = ({
-  items,
-  selectedItems,
-  onClickMenu,
-  children,
-  dropdownEnd,
-  type = 'checkbox',
-}: DropboxProps) => {
-  let inputClassName =
-    type === 'checkbox'
-      ? 'checkbox checkbox-primary checkbox-xs'
-      : 'dropbox dropbox-primary dropbox-xs';
-
-  return (
-    <details className={`dropdown ${dropdownEnd ? 'dropdown-end' : ''}`.trim()}>
-      <summary tabIndex={0} role="button" className="btn btn-sm m-1">
-        {children}
-      </summary>
-      <ul
-        tabIndex={0}
-        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box"
-      >
-        <div className="overflow-y-scroll max-h-64 w-max">
-          {items.map((item) => (
-            <li key={item.label}>
-              <label className="label cursor-pointer ">
-                <a className="label-text flex grow">{item.label}</a>
-                <input
-                  type={type}
-                  checked={!!_some(selectedItems, item)}
-                  onChange={({ target: { checked } }) => {
-                    onClickMenu({ item: item, checked });
-                  }}
-                  className={inputClassName}
-                />
-              </label>
-            </li>
-          ))}
-        </div>
-      </ul>
-    </details>
-  );
-};
 
 export default CardList;

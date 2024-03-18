@@ -8,7 +8,6 @@ import _reject from 'lodash/reject';
 import _some from 'lodash/some';
 import {
   Dispatch,
-  HTMLInputTypeAttribute,
   SetStateAction,
   useCallback,
   useEffect,
@@ -16,6 +15,10 @@ import {
   useRef,
   useState,
 } from 'react';
+import RecipeFilterHeader, {
+  DropboxItem,
+  IDropboxProps,
+} from '../common/RecipeFilterHeader';
 import {
   SvgArrowUpDownMicro,
   SvgArrowUpSolid,
@@ -28,6 +31,7 @@ import {
 import CustomCard from './CustomCard';
 import CustomEditCard from './CustomEditCard';
 import { CustomRecipe, ERROR_TYPES } from './customRecipe';
+import Toast from '../common/Toast';
 
 interface ICardListProps {
   filters: {
@@ -52,7 +56,7 @@ const CustomList = ({
   settingMessages,
   cameras,
 }: ICardListProps) => {
-  const sortTypes: Item[] = useMemo(
+  const sortTypes: DropboxItem[] = useMemo(
     () => [
       {
         label: [headerLabels.dateLabel, ASC_CHARACTER].join(DELIMETER),
@@ -101,10 +105,10 @@ const CustomList = ({
 
   const [customRecipes, setCustomRecipes] = useState<CustomRecipe[]>([]);
 
-  const [bases, setBases] = useState<Item[]>([]);
-  const [filterCameras, setFilterCameras] = useState<Item[]>([]);
-  const [sensors, setSensors] = useState<Item[]>([]);
-  const [sortType, setSortType] = useState<Item>(sortTypes[1]);
+  const [bases, setBases] = useState<DropboxItem[]>([]);
+  const [filterCameras, setFilterCameras] = useState<DropboxItem[]>([]);
+  const [sensors, setSensors] = useState<DropboxItem[]>([]);
+  const [sortType, setSortType] = useState<DropboxItem>(sortTypes[1]);
 
   const [bwOnly, setBwonly] = useState<boolean>(false);
 
@@ -164,7 +168,7 @@ const CustomList = ({
     value: sensor,
   }));
 
-  const dropboxProps: DropboxProps[] = [
+  const dropboxProps: IDropboxProps[] = [
     {
       selectedItems: bases,
       items: baseItems,
@@ -194,7 +198,7 @@ const CustomList = ({
     },
   ];
 
-  const onBwToggle = useCallback(() => setBwonly((prev) => !prev), []);
+  const onBwToggle = useCallback((checked: boolean) => setBwonly(checked), []);
 
   const TOAST_ALIVE_TIME = 900;
 
@@ -262,27 +266,13 @@ const CustomList = ({
 
   return (
     <>
-      <header className="w-full h-fit shadow-md flex items-center top-0 p-2 bg-base-100  z-[999]">
-        {dropboxProps.map((dropboxProps, index) => (
-          <Dropbox {...dropboxProps} key={index} />
-        ))}
-        <div className="form-control">
-          <label className="cursor-pointer label">
-            <input
-              type="checkbox"
-              className="toggle toggle-sm"
-              checked={bwOnly}
-              onChange={onBwToggle}
-            />
-            <span className="label-text text-xs ml-1">
-              {headerLabels.bwOnly}
-            </span>
-          </label>
-        </div>
-        <span className="flex ml-1 text-xs">
-          <SvgFilmMicro />x{sortedRecipes.length}
-        </span>
-      </header>
+      <RecipeFilterHeader
+        bwOnly={bwOnly}
+        onBwOnlyChange={onBwToggle}
+        bwOnlyLabel={headerLabels.bwOnly}
+        filters={dropboxProps}
+        recipesCount={sortedRecipes.length}
+      />
       <button
         className="fixed z-[999] btn bottom-16 right-6 btn-accent btn-square btn-sm fill-white shadow-md"
         onClick={handleNewButton}
@@ -293,9 +283,9 @@ const CustomList = ({
         className="w-full h-full p-2 pb-20 flex flex-col gap-2 items-center overflow-auto scroll-smooth"
         ref={refMain}
       >
-        {!!sccuessMessage && <SuccessToast message={sccuessMessage} />}
+        {!!sccuessMessage && <Toast message={sccuessMessage} type="Success" />}
         {!!errorType && (
-          <ErrorToast message={settingMessages.errors[errorType]} />
+          <Toast message={settingMessages.errors[errorType]} type="Error" />
         )}
         <section className="w-full relative">
           <button
@@ -336,8 +326,8 @@ const CustomList = ({
 };
 
 const getOnClickMenu =
-  (dispatch: Dispatch<SetStateAction<Item[]>>) =>
-  ({ item, checked }: { item: Item; checked: boolean }) => {
+  (dispatch: Dispatch<SetStateAction<DropboxItem[]>>) =>
+  ({ item, checked }: { item: DropboxItem; checked: boolean }) => {
     if (checked) dispatch((prev) => [...prev, item]);
     else dispatch((prev) => _reject(prev, item));
   };
@@ -372,88 +362,5 @@ const getSortCharCallback =
     if (!isAsc) return diff * -1;
     return diff;
   };
-
-type Item = {
-  value: string;
-  label: string;
-  isAsc?: boolean;
-};
-
-export interface DropboxProps {
-  items: Item[];
-  selectedItems: Item[];
-  onClickMenu: ({ item, checked }: { item: Item; checked: boolean }) => void;
-  children: React.ReactElement;
-  dropdownEnd?: boolean;
-  type?: HTMLInputTypeAttribute;
-}
-
-export const Dropbox = ({
-  items,
-  selectedItems,
-  onClickMenu,
-  children,
-  dropdownEnd,
-  type = 'checkbox',
-}: DropboxProps) => {
-  let inputClassName =
-    type === 'checkbox'
-      ? 'checkbox checkbox-primary checkbox-xs'
-      : 'dropbox dropbox-primary dropbox-xs';
-
-  return (
-    <details className={`dropdown ${dropdownEnd ? 'dropdown-end' : ''}`.trim()}>
-      <summary tabIndex={0} role="button" className="btn btn-sm m-1">
-        {children}
-      </summary>
-      <ul
-        tabIndex={0}
-        className="dropdown-content menu p-2 shadow bg-base-100 rounded-box"
-      >
-        <div className="overflow-y-scroll max-h-64 w-max">
-          {items.map((item) => (
-            <li key={item.label}>
-              <label className="label cursor-pointer ">
-                <a className="label-text flex grow">{item.label}</a>
-                <input
-                  type={type}
-                  checked={!!_some(selectedItems, item)}
-                  onChange={({ target: { checked } }) => {
-                    onClickMenu({ item: item, checked });
-                  }}
-                  className={inputClassName}
-                />
-              </label>
-            </li>
-          ))}
-        </div>
-      </ul>
-    </details>
-  );
-};
-
-interface IToastProps {
-  message: string;
-}
-
-const SuccessToast = ({ message }: IToastProps) => {
-  return (
-    <div className="toast toast-center toast-middle z-10">
-      <div className="alert alert-success shadow-lg text-base-100">
-        <span>{message}</span>
-      </div>
-    </div>
-  );
-};
-
-const ErrorToast = ({ message }: IToastProps) => {
-  return (
-    <div className="toast toast-center toast-middle z-10 ">
-      <div className="alert alert-error shadow-lg text-base-100">
-        <span>{message}</span>
-      </div>
-    </div>
-  );
-};
 
 export default CustomList;
