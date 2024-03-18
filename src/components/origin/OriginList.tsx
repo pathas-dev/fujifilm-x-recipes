@@ -4,7 +4,8 @@ import { Link } from '@/navigation';
 import { Origin } from '@/types/api';
 import dayjs from 'dayjs';
 import { SvgFilmMicro } from '../icon/svgs';
-import { motion } from 'framer-motion';
+import { animate, inView, motion } from 'framer-motion';
+import { useRef } from 'react';
 
 const HPCHAVAZ_BLOG_URL = 'https://hpchavaz-photography.blogspot.com/';
 const MY_BLOG_URL = 'https://pathas.tistory.com/';
@@ -18,11 +19,11 @@ const OriginList = ({ origins }: IOriginListProps) => {
     text.split('').map((char, index) => (
       <motion.span
         initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
         transition={{
-          duration: 0.25,
+          duration: 1.25,
           delay: index / 10,
         }}
+        animate={{ opacity: 1 }}
         key={index}
       >
         {char}
@@ -50,7 +51,7 @@ const OriginList = ({ origins }: IOriginListProps) => {
           <li
             key={origin._id}
             data-content="★"
-            className="step step-neutral w-full"
+            className="step step-neutral w-full h-50"
           >
             <div className="indicator">
               <div
@@ -60,8 +61,11 @@ const OriginList = ({ origins }: IOriginListProps) => {
               >
                 <motion.span
                   className="indicator-item badge badge-outline border-none text-xs text-accent"
-                  transition={{ duration: 0.4 }}
-                  initial={{ opacity: 0.3 }}
+                  transition={{
+                    duration: 0.5,
+                    delay: (origin.name.length - 1) / 10,
+                  }}
+                  initial={{ opacity: 0 }}
                   animate={{ opacity: 1 }}
                 >
                   <SvgFilmMicro />

@@ -190,7 +190,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
         filters={dropboxProps}
         recipesCount={sortedRecipes.length}
       />
-      <main className="w-full h-full p-2 pb-20 overflow-auto  scroll-smooth">
+      <main className="w-full h-full p-2 pb-20 overflow-y-auto overflow-x-hidden  scroll-smooth">
         {sortedRecipes.map((recipe) => (
           <Card recipe={recipe} key={recipe._id} />
         ))}

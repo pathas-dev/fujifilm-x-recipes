@@ -3,7 +3,14 @@ import { Camera } from '@/types/api';
 import { SettingI18NLabels, SettingMessages } from '@/types/language';
 import dayjs from 'dayjs';
 import { produce } from 'immer';
-import { ReactElement, forwardRef, useEffect, useRef, useState } from 'react';
+import {
+  ReactElement,
+  forwardRef,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { SvgAirplaneSolid } from '../icon/svgs';
 import { CustomInput, CustomSelect } from './SettingInput';
@@ -47,7 +54,7 @@ const CustomEditCard = ({
 
   const refTab = useRef<HTMLElement | null>(null);
 
-  useEffect(() => {
+  useLayoutEffect(() => {
     setRecipe((prev) => ({
       ...prev,
       _id: customRecipe?._id ?? '',

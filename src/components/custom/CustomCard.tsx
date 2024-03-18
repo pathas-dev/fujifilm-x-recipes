@@ -2,7 +2,14 @@
 
 import { SettingMessages } from '@/types/language';
 import dayjs from 'dayjs';
+import { animate, inView, motion } from 'framer-motion';
 import { useEffect, useState } from 'react';
+import {
+  SvgArrowUTurnLeft,
+  SvgCalendarDaysMicro,
+  SvgPencilSquareSolid,
+  SvgTrashMini,
+} from '../icon/svgs';
 import CustomEditCard, { ICustomEditCardProps } from './CustomEditCard';
 import {
   CustomRecipe,
@@ -11,13 +18,6 @@ import {
   initialSettings,
 } from './customRecipe';
 import { formatExposure, toStringWithSign } from './fujiSettings';
-import {
-  SvgArrowUTurnLeft,
-  SvgCalendarDaysMicro,
-  SvgPencilSquareSolid,
-  SvgTrashMini,
-} from '../icon/svgs';
-import { motion } from 'framer-motion';
 
 const CARD_MODES = ['READ', 'UPDATE'] as const;
 
@@ -41,6 +41,19 @@ const CustomCard = ({
 }: ICustomCardProps) => {
   const [mode, setMode] = useState<(typeof CARD_MODES)[number]>('READ');
   const [deleteTimer, setDeleteTimer] = useState<NodeJS.Timeout>();
+
+  const customCardRefCallback = (ref: HTMLDivElement) => {
+    if (!ref) return;
+
+    inView(ref, (info) => {
+      const animation = animate([info.target], {
+        opacity: 1,
+        translateX: '0%',
+      });
+
+      return () => animation.stop();
+    });
+  };
 
   const isReadMode = mode === 'READ';
 
@@ -204,8 +217,8 @@ const CustomCard = ({
     <motion.div
       className="card card-compact w-full bg-base-300 shadow-xl"
       transition={{ duration: 0.4 }}
-      initial={{ opacity: 0.3, translateY: '80%' }}
-      animate={{ opacity: 1, translateY: '0%' }}
+      initial={{ opacity: 0.3, translateX: '80%' }}
+      ref={customCardRefCallback}
     >
       <div className="card-body">
         <div className="w-full flex items-center justify-between">

@@ -276,7 +276,7 @@ const CustomList = ({
       />
 
       <main
-        className="w-full h-full p-2 pb-20 flex flex-col gap-2 items-center overflow-auto scroll-smooth"
+        className="w-full h-full p-2 pb-20 flex flex-col gap-2 items-center overflow-y-auto overflow-x-hidden scroll-smooth"
         ref={refMain}
       >
         {!!sccuessMessage && <Toast message={sccuessMessage} type="Success" />}
