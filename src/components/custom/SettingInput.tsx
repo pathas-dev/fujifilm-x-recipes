@@ -202,7 +202,7 @@ export const WhiteBalanceShiftSelector = ({
         <h1 className="absolute text-lg font-medium -top-7">
           R:{shift.red} B: {shift.blue}
         </h1>
-        <div className="absolute flex flex-col gap-1 items-center top-[32%] -left-10">
+        <div className="absolute flex flex-col gap-1 items-center top-[32%] -left-8">
           <button
             className="btn btn-ghost flex btn-xs"
             onClick={() =>
