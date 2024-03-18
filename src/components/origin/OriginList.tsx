@@ -14,13 +14,28 @@ interface IOriginListProps {
 }
 
 const OriginList = ({ origins }: IOriginListProps) => {
+  const getAnimatedText = (text: string) =>
+    text.split('').map((char, index) => (
+      <motion.span
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{
+          duration: 0.25,
+          delay: index / 10,
+        }}
+        key={index}
+      >
+        {char}
+      </motion.span>
+    ));
+
   return (
     <main className="w-full h-full pb-16 overflow-auto whitespace-nowrap text-ellipsis scroll-smooth">
       <motion.ul
         className="steps steps-vertical w-full p-2"
         transition={{ duration: 0.4 }}
-        initial={{ opacity: 0.3, translateX: '-150%' }}
-        animate={{ opacity: 1, translateX: '0%' }}
+        initial={{ opacity: 0.3 }}
+        animate={{ opacity: 1 }}
       >
         <li data-content="♠" className="step step-neutral">
           <Link
@@ -28,7 +43,7 @@ const OriginList = ({ origins }: IOriginListProps) => {
             className="link link-hover link-primary"
             target="_blank"
           >
-            Maintained By @Henri-Pierre Chavaz
+            {getAnimatedText('Maintained By @Henri-Pierre Chavaz')}
           </Link>
         </li>
         {origins.map((origin) => (
@@ -43,17 +58,22 @@ const OriginList = ({ origins }: IOriginListProps) => {
                 data-tip={`${dayjs(origin.firstPublication).format('YYYYMMDD')}~
                       ${dayjs(origin.lastPublication).format('YYYYMMDD')}`}
               >
-                <span className="indicator-item badge badge-outline border-none text-xs text-accent">
+                <motion.span
+                  className="indicator-item badge badge-outline border-none text-xs text-accent"
+                  transition={{ duration: 0.4 }}
+                  initial={{ opacity: 0.3 }}
+                  animate={{ opacity: 1 }}
+                >
                   <SvgFilmMicro />
                   {isNaN(Number(origin.count)) ? '' : `x${origin.count}`}
-                </span>
+                </motion.span>
                 <Link
                   id={origin.name}
                   href={origin.url ?? HPCHAVAZ_BLOG_URL}
                   className="link link-hover link-primary flex"
                   target="_blank"
                 >
-                  {origin.name}
+                  {getAnimatedText(origin.name)}
                 </Link>
               </div>
             </div>
@@ -66,7 +86,7 @@ const OriginList = ({ origins }: IOriginListProps) => {
             className="link link-hover link-primary"
             target="_blank"
           >
-            Developed by pathas
+            {getAnimatedText('Developed by pathas')}
           </Link>
         </li>
       </motion.ul>
