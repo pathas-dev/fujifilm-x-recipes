@@ -458,8 +458,8 @@ const CustomEditCard = ({
     : settingLabels.newTitle;
 
   const articleClassName = isUpdateMode
-    ? 'card w-full min-w-96 bg-base-300 shadow-xl'
-    : 'card w-full min-w-96 bg-base-100';
+    ? 'card w-full bg-base-300 shadow-xl'
+    : 'card w-full bg-base-100';
 
   return (
     <article className={articleClassName}>

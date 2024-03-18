@@ -290,7 +290,7 @@ const CustomList = ({
         <SvgArrowUpSolid />
       </button>
       <main
-        className="w-full h-full p-3 pb-20 flex flex-col gap-2 items-center overflow-auto scroll-smooth"
+        className="w-full h-full p-2 pb-20 flex flex-col gap-2 items-center overflow-auto scroll-smooth"
         ref={refMain}
       >
         {!!sccuessMessage && <SuccessToast message={sccuessMessage} />}
