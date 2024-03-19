@@ -224,7 +224,9 @@ const CustomCard = ({
         <div className="w-full flex items-center justify-between">
           <div className="w-full flex flex-col">
             <div className="card-title w-full flex justify-between">
-              <h2>{customRecipe.name}</h2>
+              <h2 className="text-ellipsis overflow-hidden text-nowrap">
+                {customRecipe.name}
+              </h2>
               <button
                 className="btn btn-circle btn-ghost fill-warning btn-sm"
                 onClick={() => setMode('UPDATE')}

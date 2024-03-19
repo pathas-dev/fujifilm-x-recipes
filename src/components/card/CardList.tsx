@@ -1,29 +1,30 @@
 'use client';
 
 import { Recipe } from '@/types/api';
-import Card from './Card';
+import dayjs from 'dayjs';
+import { useInView } from 'framer-motion';
+import _reject from 'lodash/reject';
+import _some from 'lodash/some';
 import {
   Dispatch,
-  HTMLInputTypeAttribute,
   SetStateAction,
   useCallback,
+  useEffect,
   useMemo,
+  useRef,
   useState,
 } from 'react';
+import RecipeFilterHeader, {
+  DropboxItem,
+  IDropboxProps,
+} from '../common/RecipeFilterHeader';
 import {
   SvgArrowUpDownMicro,
   SvgCameraMicro,
   SvgFilmMicro,
   SvgSensorMicro,
 } from '../icon/svgs';
-import dayjs from 'dayjs';
-import _some from 'lodash/some';
-import _isEqual from 'lodash/isEqual';
-import _reject from 'lodash/reject';
-import RecipeFilterHeader, {
-  DropboxItem,
-  IDropboxProps,
-} from '../common/RecipeFilterHeader';
+import Card from './Card';
 
 interface ICardListProps {
   recipes: Recipe[];
@@ -104,6 +105,8 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
     ]
   );
 
+  const [page, setPage] = useState(0);
+
   const [bases, setBases] = useState<DropboxItem[]>([]);
   const [cameras, setCameras] = useState<DropboxItem[]>([]);
   const [sensors, setSensors] = useState<DropboxItem[]>([]);
@@ -111,7 +114,28 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
 
   const [bwOnly, setBwonly] = useState<boolean>(false);
 
+  const refScroll = useRef<HTMLDivElement>(null);
+
+  const refSkeleton = useRef(null);
+  const isSkeletonInView = useInView(refSkeleton);
+
+  const PAGE_SIZE = 30;
+  const lastPage = Math.floor(recipes.length / PAGE_SIZE);
+  const sliceTo = (page + 1) * PAGE_SIZE;
+
+  useEffect(() => {
+    if (isSkeletonInView) {
+      setPage((prev) => prev + 1);
+    }
+  }, [isSkeletonInView]);
+
+  const resetPage = () => {
+    setPage(0);
+    if (refScroll.current) refScroll.current.scrollTo({ top: 0 });
+  };
+
   const filteredRecipes = useMemo(() => {
+    resetPage();
     return recipes.filter((recipe) => {
       const isBaseIncluded =
         bases.length === 0 || !!_some(bases, { value: recipe.base });
@@ -127,6 +151,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
   }, [recipes, bases, cameras, sensors, bwOnly]);
 
   const sortedRecipes = useMemo(() => {
+    resetPage();
     const copiedFilteredRecipes = [...filteredRecipes];
     const { value, isAsc } = sortType;
 
@@ -195,10 +220,19 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
         style={{
           gridAutoRows: 'min-content',
         }}
+        ref={refScroll}
       >
-        {sortedRecipes.map((recipe) => (
+        {sortedRecipes.slice(0, sliceTo).map((recipe) => (
           <Card recipe={recipe} key={recipe._id} />
         ))}
+        {page !== lastPage && (
+          <div
+            ref={refSkeleton}
+            className="skeleton card card-compact w-full min-h-44 h-fit flex items-center justify-center"
+          >
+            <span className="loading loading-infinity loading-lg"></span>
+          </div>
+        )}
       </main>
     </section>
   );

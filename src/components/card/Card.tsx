@@ -1,45 +1,66 @@
 'use client';
 
+import { Link } from '@/navigation';
 import { Recipe } from '@/types/api';
 import dayjs from 'dayjs';
+import { animate, inView, motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { SvgArrow, SvgLink } from '../icon/svgs';
-import { Link } from '@/navigation';
-import { animate, inView, motion } from 'framer-motion';
 
 interface ICardProps {
   recipe: Recipe;
 }
 const Card = ({ recipe }: ICardProps) => {
-  const [intersected, setIntersected] = useState(false);
   const [openGraph, setOpenGraph] = useState<undefined | OpenGraph>(undefined);
-  const [cardElement, setCardElement] = useState<HTMLDivElement | undefined>(
-    undefined
-  );
+  const refCard = useRef<HTMLDivElement>(null);
+  const refCardIsInView = useInView(refCard);
+  const refSkeleton = useRef<HTMLDivElement>(null);
+  const refSkeletonIsInView = useInView(refSkeleton, { once: true });
+
+  const onCardAnimationEnd = useCallback(async () => {
+    try {
+      const response = (await Promise.race([
+        fetch('/api/recipes/url', {
+          method: 'POST',
+          body: JSON.stringify({ url: recipe.url }),
+        }),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('timeout')), 5000)
+        ),
+      ])) as Response;
+
+      const data = await response.json();
+      if (!data?.urlHtml) return;
+
+      const parsedOpenGraph = getOpenGraph(data.urlHtml);
+      if (!parsedOpenGraph.image.url) throw new Error('no image');
+
+      setOpenGraph(parsedOpenGraph);
+    } catch (error) {
+      console.log(error);
+      setOpenGraph(getInitialOpenGraph());
+    }
+  }, [recipe.url]);
 
   useEffect(() => {
-    if (!cardElement) return;
+    if (!refSkeletonIsInView) return;
 
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(async (entry) => {
-        setIntersected(entry.intersectionRatio > 0);
-      });
+    const animation = animate([refCard.current], {
+      opacity: 1,
+      translateX: '0%',
     });
 
-    io.observe(cardElement);
+    onCardAnimationEnd();
 
-    return () => {
-      if (!cardElement || !io) return;
-      io.unobserve(cardElement);
-      setCardElement(undefined);
-    };
-  }, [cardElement]);
+    return () => animation.stop();
+  }, [refSkeletonIsInView, onCardAnimationEnd]);
 
   const isColor = /color/i.test(recipe.colorType);
   const colorClassName = isColor
     ? 'from-red-500 via-green-500 to-blue-500'
     : 'from-black to-white';
+
   const cardInner = useMemo(
     () => (
       <>
@@ -57,12 +78,12 @@ const Card = ({ recipe }: ICardProps) => {
         <Bookmark id={recipe._id} />
         <div className="card-body">
           <div className="w-full flex flex-col">
-            <div className="card-title w-full gap-1">
+            <div className="card-title w-9/12 gap-1 items-start">
               <h2>{recipe.name}</h2>
               <Link
                 href={recipe.url}
                 target="_blank"
-                className="link-hover flex"
+                className="link-hover flex leading-3 pt-1"
               >
                 <SvgArrow />
               </Link>
@@ -118,58 +139,20 @@ const Card = ({ recipe }: ICardProps) => {
     ]
   );
 
-  const sekeletonRefCallback = (ref: HTMLDivElement) => {
-    if (!ref) return;
-    setCardElement(ref);
-
-    inView(ref, (info) => {
-      const animation = animate([info.target], {
-        opacity: 1,
-        translateX: '0%',
-      });
-
-      (async () => await onCardAnimationEnd())();
-
-      return () => animation.stop();
-    });
-  };
-
-  const onCardAnimationEnd = async () => {
-    try {
-      const response = (await Promise.race([
-        fetch('/api/recipes/url', {
-          method: 'POST',
-          body: JSON.stringify({ url: recipe.url }),
-        }),
-        new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('timeout')), 5000)
-        ),
-      ])) as Response;
-
-      const data = await response.json();
-      if (!data?.urlHtml) return;
-
-      const parsedOpenGraph = getOpenGraph(data.urlHtml);
-      if (!parsedOpenGraph.image.url) throw new Error('no image');
-
-      setOpenGraph(parsedOpenGraph);
-    } catch (error) {
-      console.log(error);
-      setOpenGraph(getInitialOpenGraph());
-    }
-  };
-
   return (
     <motion.div
-      ref={sekeletonRefCallback}
+      ref={refCard}
       className="card card-compact w-full min-h-44 h-fit bg-base-100 shadow-xl image-full overflow-hidden"
       transition={{ duration: 0.4 }}
       initial={{ opacity: 0.3, translateX: '80%' }}
     >
       {!openGraph && (
-        <div className="skeleton absolute top-0 right-0 bottom-0 left-0 z-10 overflow-hidden" />
+        <div
+          className="skeleton absolute top-0 right-0 bottom-0 left-0 z-10 overflow-hidden"
+          ref={refSkeleton}
+        />
       )}
-      {intersected ? cardInner : null}
+      {refCardIsInView ? cardInner : null}
     </motion.div>
   );
 };
@@ -177,6 +160,7 @@ const Card = ({ recipe }: ICardProps) => {
 interface BookmarkProps {
   id: string;
 }
+
 export const STORAGE_BOOKMARK_KEY = 'bookmark';
 
 const Bookmark = ({ id }: BookmarkProps) => {
