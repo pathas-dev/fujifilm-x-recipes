@@ -60,7 +60,7 @@
       "whiteBalances": {
         "autoWhitePriority": "AUTO 화이트 우선",
         "auto": "자동",
-        "autoAmbiencePriority": "auto 분위기 우선",
+        "autoAmbiencePriority": "AUTO 분위기 우선",
         "measure": "측정",
         "k": "K",
         "sunlight": "직사광선",
