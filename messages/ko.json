@@ -22,8 +22,8 @@
     "updateTitle": "레시피 수정",
     "placeholders": {
       "name": "레시피 이름을 입력해주세요.",
-      "camera": "카메라를 골라주세요.",
-      "base": "바탕을 골라주세요."
+      "camera": "카메라 선택",
+      "base": "바탕 필름 선택"
     },
     "labels": {
       "highlight": "하이라이트",
