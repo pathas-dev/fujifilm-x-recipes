@@ -18,7 +18,7 @@ export default function ErrorCommon({
   const handleReset = useCallback(() => reset(), [reset]);
 
   return (
-    <main className="flex flex-col w-full h-[calc(100vh-4rem)] items-center justify-center">
+    <main className="flex flex-col w-full h-[calc(100dvh-4rem)] items-center justify-center">
       <h2 className="text-2xl font-bold">Error Occured</h2>
       <p className="text-xl">{message}</p>
       <button onClick={handleReset} className="btn btn-outline btn-error mt-2">

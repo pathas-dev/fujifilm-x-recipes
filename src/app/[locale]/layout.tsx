@@ -87,7 +87,7 @@ export default function RootLayout({
           'drawer-content',
           'flex',
           'flex-col',
-          'h-screen',
+          'h-dvh',
           'overflow-hidden',
           'w-full',
           'relative',

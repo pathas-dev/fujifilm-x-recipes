@@ -15,7 +15,7 @@ export default function NotFound() {
           notoSans.className,
           'drawer-content',
           'flex',
-          'h-screen',
+          'h-dvh',
           'w-full',
           'relative',
           'select-none',
