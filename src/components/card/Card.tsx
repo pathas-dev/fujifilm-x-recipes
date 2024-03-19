@@ -14,50 +14,9 @@ interface ICardProps {
 const Card = ({ recipe }: ICardProps) => {
   const [intersected, setIntersected] = useState(false);
   const [openGraph, setOpenGraph] = useState<undefined | OpenGraph>(undefined);
-  const [skeletonElement, setSkeletonElement] = useState<
-    HTMLDivElement | undefined
-  >(undefined);
   const [cardElement, setCardElement] = useState<HTMLDivElement | undefined>(
     undefined
   );
-
-  useEffect(() => {
-    if (!skeletonElement || !recipe.url) return;
-
-    const io = new IntersectionObserver((entries) => {
-      entries.forEach(async (entry) => {
-        if (entry.intersectionRatio > 0) {
-          try {
-            const response = await fetch('/api/recipes/url', {
-              method: 'POST',
-              body: JSON.stringify({ url: recipe.url }),
-            });
-            const data = await response.json();
-            if (!data?.urlHtml) return;
-
-            const parsedOpenGraph = getOpenGraph(data.urlHtml);
-            if (!parsedOpenGraph.image.url) throw new Error('no image');
-
-            if (skeletonElement) io.unobserve(skeletonElement);
-            setOpenGraph(parsedOpenGraph);
-            setIntersected(true);
-          } catch (error) {
-            setOpenGraph(getInitialOpenGraph());
-          } finally {
-            setSkeletonElement(undefined);
-          }
-        }
-      });
-    });
-
-    io.observe(skeletonElement);
-
-    return () => {
-      if (!skeletonElement || !io) return;
-      io.unobserve(skeletonElement);
-      setSkeletonElement(undefined);
-    };
-  }, [recipe.url, skeletonElement]);
 
   useEffect(() => {
     if (!cardElement) return;
@@ -161,7 +120,6 @@ const Card = ({ recipe }: ICardProps) => {
 
   const sekeletonRefCallback = (ref: HTMLDivElement) => {
     if (!ref) return;
-    setSkeletonElement(ref);
     setCardElement(ref);
 
     inView(ref, (info) => {
@@ -170,33 +128,35 @@ const Card = ({ recipe }: ICardProps) => {
         translateX: '0%',
       });
 
-      (async () => {
-        try {
-          const response = (await Promise.race([
-            fetch('/api/recipes/url', {
-              method: 'POST',
-              body: JSON.stringify({ url: recipe.url }),
-            }),
-            new Promise((_, reject) =>
-              setTimeout(() => reject(new Error('timeout')), 5000)
-            ),
-          ])) as Response;
-
-          const data = await response.json();
-          if (!data?.urlHtml) return;
-
-          const parsedOpenGraph = getOpenGraph(data.urlHtml);
-          if (!parsedOpenGraph.image.url) throw new Error('no image');
-
-          setOpenGraph(parsedOpenGraph);
-        } catch (error) {
-          console.log(error);
-          setOpenGraph(getInitialOpenGraph());
-        }
-      })();
+      (async () => await onCardAnimationEnd())();
 
       return () => animation.stop();
     });
+  };
+
+  const onCardAnimationEnd = async () => {
+    try {
+      const response = (await Promise.race([
+        fetch('/api/recipes/url', {
+          method: 'POST',
+          body: JSON.stringify({ url: recipe.url }),
+        }),
+        new Promise((_, reject) =>
+          setTimeout(() => reject(new Error('timeout')), 5000)
+        ),
+      ])) as Response;
+
+      const data = await response.json();
+      if (!data?.urlHtml) return;
+
+      const parsedOpenGraph = getOpenGraph(data.urlHtml);
+      if (!parsedOpenGraph.image.url) throw new Error('no image');
+
+      setOpenGraph(parsedOpenGraph);
+    } catch (error) {
+      console.log(error);
+      setOpenGraph(getInitialOpenGraph());
+    }
   };
 
   return (
@@ -217,7 +177,6 @@ const Card = ({ recipe }: ICardProps) => {
 interface BookmarkProps {
   id: string;
 }
-
 export const STORAGE_BOOKMARK_KEY = 'bookmark';
 
 const Bookmark = ({ id }: BookmarkProps) => {
