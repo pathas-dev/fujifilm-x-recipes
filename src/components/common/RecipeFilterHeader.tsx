@@ -20,7 +20,7 @@ const RecipeFilterHeader = ({
 }: IRecipeFilterHeader) => {
   return (
     <motion.header
-      className="w-full h-fit shadow-md flex items-center top-0 p-2 bg-base-100  z-[999]"
+      className="w-full h-14 shadow-md flex items-center p-2 bg-base-100 z-50 relative"
       transition={{ duration: 0.4 }}
       initial={{ opacity: 0.3, translateY: '-150%' }}
       animate={{ opacity: 1, translateY: '0%' }}

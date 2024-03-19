@@ -84,30 +84,33 @@ const Card = ({ recipe }: ICardProps) => {
   const cardInner = useMemo(
     () => (
       <>
-        <figure className="relative">
+        <figure>
           <Image
             src={openGraph?.image?.url ?? getImagePlaceholder()}
             alt={openGraph?.image?.alt ?? ''}
             fill
             quality={30}
-            style={{ objectFit: 'cover' }}
-            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+            style={{ objectFit: 'cover', transition: 'all' }}
+            sizes="33vw"
           />
         </figure>
+
+        <Bookmark id={recipe._id} />
         <div className="card-body">
-          <Bookmark id={recipe._id} />
-          <div className="w-full flex items-end">
-            <h2 className="card-title gap-0 items-end">
-              <span className="">
-                {recipe.name}
-                <span className="text-xs font-light leading-5">
-                  (from {recipe.base})
-                </span>
-              </span>
-              <Link href={recipe.url} target="_blank">
+          <div className="w-full flex flex-col">
+            <div className="card-title w-full gap-1">
+              <h2>{recipe.name}</h2>
+              <Link
+                href={recipe.url}
+                target="_blank"
+                className="link-hover flex"
+              >
                 <SvgArrow />
               </Link>
-            </h2>
+            </div>
+            <span className="text-xs font-light leading-3">
+              (from {recipe.base})
+            </span>
           </div>
 
           <details className="collapse collapse-arrow bg-base-100">
@@ -116,7 +119,7 @@ const Card = ({ recipe }: ICardProps) => {
                 <div
                   className={`mr-2 w-6 h-6 rounded transparent bg-clip bg-gradient-to-br ${colorClassName}`}
                 />
-                <h2 className={`text-lg font-medium`}>
+                <h2 className="text-lg font-medium overflow-hidden text-nowrap text-ellipsis">
                   {recipe.camera}
                   <span className="text-sm">({recipe.sensor})</span>
                 </h2>
@@ -157,8 +160,9 @@ const Card = ({ recipe }: ICardProps) => {
   );
 
   const sekeletonRefCallback = (ref: HTMLDivElement) => {
-    setSkeletonElement(ref ?? undefined);
     if (!ref) return;
+    setSkeletonElement(ref);
+    setCardElement(ref);
 
     inView(ref, (info) => {
       const animation = animate([info.target], {
@@ -166,27 +170,47 @@ const Card = ({ recipe }: ICardProps) => {
         translateX: '0%',
       });
 
+      (async () => {
+        try {
+          const response = (await Promise.race([
+            fetch('/api/recipes/url', {
+              method: 'POST',
+              body: JSON.stringify({ url: recipe.url }),
+            }),
+            new Promise((_, reject) =>
+              setTimeout(() => reject(new Error('timeout')), 5000)
+            ),
+          ])) as Response;
+
+          const data = await response.json();
+          if (!data?.urlHtml) return;
+
+          const parsedOpenGraph = getOpenGraph(data.urlHtml);
+          if (!parsedOpenGraph.image.url) throw new Error('no image');
+
+          setOpenGraph(parsedOpenGraph);
+        } catch (error) {
+          console.log(error);
+          setOpenGraph(getInitialOpenGraph());
+        }
+      })();
+
       return () => animation.stop();
     });
   };
 
-  if (!openGraph)
-    return (
-      <motion.div
-        className="skeleton w-full min-h-40 mb-2"
-        ref={sekeletonRefCallback}
-        transition={{ duration: 0.4 }}
-        initial={{ opacity: 0.3, translateX: '80%' }}
-      />
-    );
-
   return (
-    <div
-      ref={(ref) => setCardElement(ref ?? undefined)}
-      className="card card-compact w-full min-h-40 bg-base-100 mb-2 shadow-xl image-full overflow-hidden"
+    <motion.div
+      ref={sekeletonRefCallback}
+      className="card card-compact w-full min-h-44 h-fit bg-base-100 shadow-xl image-full overflow-hidden"
+      transition={{ duration: 0.4 }}
+      initial={{ opacity: 0.3, translateX: '80%' }}
     >
+      {!openGraph && (
+        <div className="skeleton absolute top-0 right-0 bottom-0 left-0 z-10 overflow-hidden" />
+      )}
       {intersected ? cardInner : null}
-    </div>
+    </motion.div>
   );
 };
 
@@ -224,7 +248,7 @@ const Bookmark = ({ id }: BookmarkProps) => {
   }, [marked, id]);
 
   return (
-    <div className="absolute top-2 right-2">
+    <div className="absolute z-30 top-2 right-2">
       <label className="swap">
         {/* this hidden checkbox controls the state */}
         <input

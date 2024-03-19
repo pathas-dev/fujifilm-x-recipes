@@ -15,13 +15,13 @@ export default function NotFound() {
           notoSans.className,
           'drawer-content',
           'flex',
-          'h-max min-h-[calc(100vh-4rem)]',
+          'h-screen',
           'w-full',
           'relative',
           'select-none',
         ].join(' ')}
       >
-        <main className="flex flex-col w-full min-h-screen items-center justify-center">
+        <main className="flex h-full flex-col w-full items-center justify-center">
           <h2 className="text-2xl font-bold">Not Found</h2>
           <p className="text-xl">Could not find requested page</p>
           <a href="/">

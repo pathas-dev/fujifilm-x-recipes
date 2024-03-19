@@ -22,7 +22,7 @@ interface INavigationProps {
   };
 }
 
-const Navigation = ({ titles }: INavigationProps) => {
+const NavigationBottom = ({ titles }: INavigationProps) => {
   const buttonProps: INavButtonProps[] = [
     {
       title: titles.bookmarks,
@@ -56,7 +56,7 @@ const Navigation = ({ titles }: INavigationProps) => {
       transition={{ duration: 0.4 }}
       initial={{ opacity: 0.3, translateY: '150%' }}
       animate={{ opacity: 1, translateY: '0%' }}
-      className="btm-nav btm-nav-sm w-10/12 shadow-2xl rounded-xl mx-auto bottom-3 z-[9999] overflow-hidden"
+      className="btm-nav btm-nav-md w-full z-50 relative md:hidden"
     >
       {buttonProps.map((buttonProp) => (
         <NavButton
@@ -102,4 +102,4 @@ const NavButton = ({ children, title, path }: INavButtonProps) => {
   );
 };
 
-export default Navigation;
+export default NavigationBottom;

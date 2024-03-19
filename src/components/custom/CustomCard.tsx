@@ -215,37 +215,36 @@ const CustomCard = ({
 
   return (
     <motion.div
-      className="card card-compact w-full bg-base-300 shadow-xl"
+      className="card card-compact w-full bg-base-300 shadow-xl min-h-42 h-fit"
       transition={{ duration: 0.4 }}
       initial={{ opacity: 0.3, translateX: '80%' }}
       ref={customCardRefCallback}
     >
       <div className="card-body">
         <div className="w-full flex items-center justify-between">
-          <h2 className="card-title gap-0 items-end">
-            <span className="">
-              {customRecipe.name}
-              <span className="text-xs font-light leading-5">
-                (from {customRecipe.base})
-              </span>
+          <div className="w-full flex flex-col">
+            <div className="card-title w-full flex justify-between">
+              <h2>{customRecipe.name}</h2>
+              <button
+                className="btn btn-circle btn-ghost fill-warning btn-sm"
+                onClick={() => setMode('UPDATE')}
+              >
+                <SvgPencilSquareSolid />
+              </button>
+            </div>
+            <span className="text-xs font-light leading-3">
+              (from {customRecipe.base})
             </span>
-          </h2>
-          <button
-            className="btn btn-circle btn-ghost fill-warning btn-sm"
-            onClick={() => setMode('UPDATE')}
-          >
-            <SvgPencilSquareSolid />
-          </button>
+          </div>
         </div>
 
-        <details className="collapse collapse-arrow border border-base-300 bg-base-200">
-          {/* <input type="checkbox" className="peer" /> */}
+        <details className="collapse collapse-arrow bg-base-200">
           <summary className="collapse-title text-base-content">
             <div className="flex items-end">
               <div
                 className={`mr-2 w-6 h-6 rounded transparent bg-clip bg-gradient-to-br ${colorClassName}`}
               />
-              <h2 className={`text-lg font-medium`}>
+              <h2 className="text-lg font-medium overflow-hidden text-nowrap text-ellipsis">
                 {customRecipe.camera}
                 <span className="text-sm">({customRecipe.sensor})</span>
               </h2>

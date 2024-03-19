@@ -31,11 +31,11 @@ const OriginList = ({ origins }: IOriginListProps) => {
     ));
 
   return (
-    <main className="w-full h-full pb-16 overflow-auto whitespace-nowrap text-ellipsis scroll-smooth">
+    <main className="w-full h-full overflow-auto whitespace-nowrap text-ellipsis scroll-smooth">
       <motion.ul
         className="steps steps-vertical w-full p-2"
-        transition={{ duration: 0.4 }}
-        initial={{ opacity: 0.3 }}
+        transition={{ duration: 1 }}
+        initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
       >
         <li data-content="♠" className="step step-neutral">

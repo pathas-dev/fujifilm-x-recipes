@@ -55,7 +55,7 @@ const ThemeSwitch = () => {
 
   return (
     <motion.label
-      className="swap swap-rotate fixed right-3 top-3 z-[9999]"
+      className="swap swap-rotate fixed right-3 top-3 md:top-4 md:right-4 z-[9999]"
       transition={{ duration: 0.4 }}
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}

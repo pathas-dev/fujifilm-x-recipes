@@ -1,12 +1,13 @@
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
-import Navigation from '@/components/common/Navigation';
+import NavigationBottom from '@/components/common/Navigation';
 import ThemeSwitch from '@/components/common/ThemeSwitch';
 import { localeIntl, locales } from '@/navigation';
 import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Noto_Sans_KR } from 'next/font/google';
+import NavigationTop from '@/components/common/NavigationTop';
 
 const notoSans = Noto_Sans_KR({
   subsets: ['latin'],
@@ -87,18 +88,20 @@ export default function RootLayout({
           'flex',
           'flex-col',
           'h-screen',
+          'overflow-hidden',
           'w-full',
           'relative',
           'select-none',
         ].join(' ')}
         suppressHydrationWarning
       >
-        {children}
+        <NavigationTop titles={navigationTitles} />
+        <main className="w-full h-[calc(100%-4rem)]">{children}</main>
+        <NavigationBottom titles={navigationTitles} />
+        <ThemeSwitch />
+
         <SpeedInsights />
         <Analytics />
-        <Navigation titles={navigationTitles} />
-
-        <ThemeSwitch />
       </body>
     </html>
   );

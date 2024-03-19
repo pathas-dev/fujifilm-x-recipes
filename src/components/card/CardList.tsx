@@ -182,7 +182,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
   const onBwToggle = useCallback((checked: boolean) => setBwonly(checked), []);
 
   return (
-    <>
+    <section className="w-full h-full">
       <RecipeFilterHeader
         bwOnly={bwOnly}
         onBwOnlyChange={onBwToggle}
@@ -190,12 +190,17 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
         filters={dropboxProps}
         recipesCount={sortedRecipes.length}
       />
-      <main className="w-full h-full p-2 pb-20 overflow-y-auto overflow-x-hidden  scroll-smooth">
+      <main
+        className="w-full h-[calc(100%-3.5rem)] p-2 grid grid-cols-1 md:grid-cols-3 gap-2 overflow-y-auto overflow-x-hidden scroll-smooth"
+        style={{
+          gridAutoRows: 'min-content',
+        }}
+      >
         {sortedRecipes.map((recipe) => (
           <Card recipe={recipe} key={recipe._id} />
         ))}
       </main>
-    </>
+    </section>
   );
 };
 

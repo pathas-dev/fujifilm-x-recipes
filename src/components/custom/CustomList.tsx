@@ -266,7 +266,7 @@ const CustomList = ({
   const onChebronClick = () => setShrinkCreateCard((prev) => !prev);
 
   return (
-    <>
+    <section className="w-full h-full">
       <RecipeFilterHeader
         bwOnly={bwOnly}
         onBwOnlyChange={onBwToggle}
@@ -276,8 +276,11 @@ const CustomList = ({
       />
 
       <main
-        className="w-full h-full p-2 pb-20 flex flex-col gap-2 items-center overflow-y-auto overflow-x-hidden scroll-smooth"
+        className="w-full h-[calc(100%-3.5rem)] p-2 grid grid-cols-1 md:grid-cols-3 gap-2 overflow-y-auto overflow-x-hidden scroll-smooth"
         ref={refMain}
+        style={{
+          gridAutoRows: 'min-content',
+        }}
       >
         {!!sccuessMessage && <Toast message={sccuessMessage} type="Success" />}
         {!!errorType && (
@@ -327,7 +330,7 @@ const CustomList = ({
           />
         ))}
         <motion.button
-          className="fixed z-[999] btn bottom-16 right-6 btn-accent btn-circle btn-sm fill-white shadow-md"
+          className="fixed z-[999] btn bottom-20 right-6 btn-accent btn-circle btn-sm md:btn-md fill-white shadow-md"
           onClick={handleToUpButton}
           transition={{ duration: 0.4 }}
           initial={{ opacity: 0 }}
@@ -337,7 +340,7 @@ const CustomList = ({
           <SvgArrowUpSolid />
         </motion.button>
       </main>
-    </>
+    </section>
   );
 };
 
