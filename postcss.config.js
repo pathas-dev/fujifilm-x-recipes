@@ -4,5 +4,10 @@ module.exports = {
     'tailwindcss/nesting': 'postcss-nesting',
     tailwindcss: {},
     autoprefixer: {},
+    'postcss-preset-env': {
+      features: {
+        'all-property': true,
+      },
+    },
   },
 };
