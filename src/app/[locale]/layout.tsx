@@ -20,7 +20,7 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-  const SITE_URL = 'https://www.fujifilm-x-recipes.site/';
+  const SITE_URL = 'https://www.fujifilm-x-recipes.site';
   // 도메인 만료 시 아래 vercel 링크로 변경
   // const SITE_URL = 'https://fujifilm-x-recipes.vercel.app/';
 
@@ -28,7 +28,7 @@ export async function generateMetadata({
     title: 'fujifilm-x-recipes',
     description: 'Fujifilm X-system recipes posted by Henri-Pierre Chavaz',
     applicationName: 'X-recipes',
-    manifest: `${SITE_URL}manifest.json`,
+    manifest: `${SITE_URL}/manifest.json`,
     openGraph: {
       title: 'fujifilm-x-recipes',
       description: t('description'),
