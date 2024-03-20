@@ -66,7 +66,7 @@ const Card = ({ recipe }: ICardProps) => {
       <>
         <figure>
           <Image
-            src={openGraph?.image?.url ?? getImagePlaceholder()}
+            src={openGraph?.image?.url ?? ''}
             alt={openGraph?.image?.alt ?? ''}
             fill
             quality={30}
