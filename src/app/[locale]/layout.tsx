@@ -37,8 +37,8 @@ export async function generateMetadata({
       images: [
         {
           url: `${SITE_URL}/og.png`, // Must be an absolute URL
-          width: 800,
-          height: 600,
+          width: 1200,
+          height: 630,
         },
         {
           url: `${SITE_URL}/og-alt.png`, // Must be an absolute URL
