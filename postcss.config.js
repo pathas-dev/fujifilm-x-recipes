@@ -5,9 +5,8 @@ module.exports = {
     tailwindcss: {},
     autoprefixer: {},
     'postcss-preset-env': {
-      features: {
-        'all-property': true,
-      },
+      stage: 0,
+      features: { 'nesting-rules': false },
     },
   },
 };
