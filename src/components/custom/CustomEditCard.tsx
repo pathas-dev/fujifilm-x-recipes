@@ -6,13 +6,12 @@ import { produce } from 'immer';
 import {
   ReactElement,
   forwardRef,
-  useEffect,
   useLayoutEffect,
   useRef,
   useState,
 } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { SvgAirplaneSolid } from '../icon/svgs';
+import { SvgAirplaneSolid, SvgCheckSolid } from '../icon/svgs';
 import { CustomInput, CustomSelect } from './SettingInput';
 import SettingTab from './SettingTab';
 import {
@@ -456,7 +455,7 @@ const CustomEditCard = ({
 
   const isUpdateMode = !!recipe._id;
 
-  const onClickAirplane = isUpdateMode
+  const onClickConfirm = isUpdateMode
     ? () => onClickUpdate(recipe)
     : () => onClickCreate(recipe);
 
@@ -468,16 +467,18 @@ const CustomEditCard = ({
     ? 'card w-full bg-base-300 shadow-xl'
     : 'card w-full bg-base-100';
 
+  const confirmIcon = isUpdateMode ? <SvgCheckSolid /> : <SvgAirplaneSolid />;
+
   return (
     <article className={articleClassName}>
       <div className="card-body">
         <header className="flex justify-between">
           <h2 className="card-title">{title}</h2>
           <button
-            className="btn btn-ghost btn-circle btn-primary btn-sm fill-accent"
-            onClick={onClickAirplane}
+            className="btn btn-ghost btn-circle btn-primary btn-sm fill-warning"
+            onClick={onClickConfirm}
           >
-            <SvgAirplaneSolid />
+            {confirmIcon}
           </button>
         </header>
         <CustomInput
