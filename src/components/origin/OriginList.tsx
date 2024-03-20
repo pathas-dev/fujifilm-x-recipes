@@ -5,7 +5,7 @@ import { Origin } from '@/types/api';
 import dayjs from 'dayjs';
 import { SvgFilmMicro } from '../icon/svgs';
 import { animate, inView, motion } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 const HPCHAVAZ_BLOG_URL = 'https://hpchavaz-photography.blogspot.com/';
 const MY_BLOG_URL = 'https://pathas.tistory.com/';
@@ -15,6 +15,13 @@ interface IOriginListProps {
 }
 
 const OriginList = ({ origins }: IOriginListProps) => {
+  useEffect(() => {
+    fetch('/api/recipes/file', {
+      method: 'POST',
+      body: JSON.stringify({ data: origins }),
+    });
+  }, []);
+
   const getAnimatedText = (text: string) =>
     text.split('').map((char, index) => (
       <motion.span
