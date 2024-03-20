@@ -1,16 +1,15 @@
 'use client';
 
 import { usePathname, useRouter } from '@/navigation';
+import { motion } from 'framer-motion';
 import { useCallback, useMemo } from 'react';
 import {
-  SvgBookmarkMicro,
-  SvgCameraMicro,
-  SvgPencilSquareMicro,
-  SvgPhotoMicro,
-  SvgSparklesMicro,
-  SvgVariableMicro,
+  SvgBookmarkMini,
+  SvgCameraMini,
+  SvgPhotoMini,
+  SvgSparklesMini,
+  SvgVariableMini,
 } from '../icon/svgs';
-import { motion } from 'framer-motion';
 
 interface INavigationProps {
   titles: {
@@ -26,27 +25,27 @@ const NavigationBottom = ({ titles }: INavigationProps) => {
   const buttonProps: INavButtonProps[] = [
     {
       title: titles.bookmarks,
-      children: <SvgBookmarkMicro />,
+      children: <SvgBookmarkMini />,
       path: '/bookmarks',
     },
     {
       title: titles.recipes,
-      children: <SvgPhotoMicro />,
+      children: <SvgPhotoMini />,
       path: '/recipes',
     },
     {
       title: titles.custom,
-      children: <SvgVariableMicro />,
+      children: <SvgVariableMini />,
       path: '/',
     },
     {
       title: titles.cameras,
-      children: <SvgCameraMicro />,
+      children: <SvgCameraMini />,
       path: '/cameras',
     },
     {
       title: titles.origins,
-      children: <SvgSparklesMicro />,
+      children: <SvgSparklesMini />,
       path: '/origins',
     },
   ];
@@ -56,7 +55,7 @@ const NavigationBottom = ({ titles }: INavigationProps) => {
       transition={{ duration: 0.4 }}
       initial={{ opacity: 0.3, translateY: '150%' }}
       animate={{ opacity: 1, translateY: '0%' }}
-      className="btm-nav btm-nav-md w-full z-50 relative md:hidden"
+      className="btm-nav w-full z-50 relative md:hidden"
     >
       {buttonProps.map((buttonProp) => (
         <NavButton
@@ -86,7 +85,7 @@ const NavButton = ({ children, title, path }: INavButtonProps) => {
   }, [path, router]);
 
   const activeClassName = useMemo(
-    () => (currentPath === path ? 'active' : ''),
+    () => (currentPath === path ? 'active text-primary' : ''),
     [path, currentPath]
   );
 
@@ -97,7 +96,7 @@ const NavButton = ({ children, title, path }: INavButtonProps) => {
       whileTap={{ scale: 0.9 }}
     >
       {children}
-      <span className="btm-nav-label">{title}</span>
+      <span className="btm-nav-label text-xs">{title}</span>
     </motion.button>
   );
 };

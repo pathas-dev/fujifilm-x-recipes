@@ -1,15 +1,6 @@
 'use client';
 
-import { Link, usePathname, useRouter } from '@/navigation';
-import { useCallback, useMemo } from 'react';
-import {
-  SvgBookmarkMicro,
-  SvgCameraMicro,
-  SvgPhotoMicro,
-  SvgSparklesMicro,
-  SvgVariableMicro,
-} from '../icon/svgs';
-import { motion } from 'framer-motion';
+import { Link, usePathname } from '@/navigation';
 
 interface INavigationProps {
   titles: {
