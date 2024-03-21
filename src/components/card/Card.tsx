@@ -64,15 +64,21 @@ const Card = ({ recipe }: ICardProps) => {
   const cardInner = useMemo(
     () => (
       <>
-        <figure>
-          <Image
-            src={openGraph?.image?.url ?? ''}
-            alt={openGraph?.image?.alt ?? ''}
-            fill
-            quality={30}
-            style={{ objectFit: 'cover', transition: 'all' }}
-            sizes="33vw"
-          />
+        <figure className="relative">
+          {openGraph?.image?.url && (
+            <Image
+              src={openGraph?.image?.url ?? ''}
+              alt={openGraph?.image?.alt ?? ''}
+              fill
+              quality={30}
+              style={{
+                objectFit: 'cover',
+                transition: 'all',
+                position: 'absolute',
+              }}
+              sizes="33vw"
+            />
+          )}
         </figure>
 
         <Bookmark id={recipe._id} />

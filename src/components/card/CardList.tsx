@@ -119,10 +119,6 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
   const refSkeleton = useRef(null);
   const isSkeletonInView = useInView(refSkeleton);
 
-  const PAGE_SIZE = 30;
-  const lastPage = Math.floor(recipes.length / PAGE_SIZE);
-  const sliceTo = (page + 1) * PAGE_SIZE;
-
   useEffect(() => {
     if (isSkeletonInView) {
       setPage((prev) => prev + 1);
@@ -205,6 +201,10 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
   ];
 
   const onBwToggle = useCallback((checked: boolean) => setBwonly(checked), []);
+
+  const PAGE_SIZE = 30;
+  const lastPage = Math.floor(sortedRecipes.length / PAGE_SIZE);
+  const sliceTo = (page + 1) * PAGE_SIZE;
 
   return (
     <section className="w-full h-full">
