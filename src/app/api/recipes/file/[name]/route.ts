@@ -1,6 +1,6 @@
-import { readFile, rm } from 'fs/promises';
+import { readFile, rm, stat } from 'fs/promises';
 import { Params } from 'next/dist/shared/lib/router/utils/route-matcher';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 import path from 'path';
 
 export const dynamic = 'force-dynamic'; // defaults to auto
@@ -8,21 +8,35 @@ export const dynamic = 'force-dynamic'; // defaults to auto
 const withPath = (filename: string) =>
   path.resolve('.', 'public', 'temp', filename);
 
-export async function GET(_request: Request, context: { params: Params }) {
+export async function GET(_request: NextRequest, context: { params: Params }) {
+  let fileNameWithPath = '';
   try {
     const fileName = context.params.name;
-    const file = await readFile(withPath(context.params.name), {
+    fileNameWithPath = withPath(fileName);
+
+    const file = await readFile(fileNameWithPath, {
       encoding: 'utf-8',
     });
 
     if (!file) throw Error('Not Found File!');
 
-    setTimeout(() => {
-      rm(withPath(fileName));
-    });
+    const fileStat = await stat(fileNameWithPath);
 
-    return NextResponse.json(file);
+    return new Response(file, {
+      headers: {
+        'content-type': 'application/json',
+        'Content-Length': fileStat.size.toString(),
+      },
+      status: 200,
+    });
   } catch (error) {
     return NextResponse.error();
+  } finally {
+    const file = await readFile(fileNameWithPath, {
+      encoding: 'utf-8',
+    });
+    if (fileNameWithPath && file) {
+      rm(fileNameWithPath);
+    }
   }
 }

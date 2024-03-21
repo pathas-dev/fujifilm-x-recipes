@@ -49,7 +49,7 @@ const DESC_CHARACTER = '↓';
 const ASC_CHARACTER = '↑';
 const DELIMETER = ' ';
 
-const CUSTOM_RECIPES_STORAGE_KEY = 'customRecipes';
+export const CUSTOM_RECIPES_STORAGE_KEY = 'customRecipes';
 
 const CustomList = ({
   filters,

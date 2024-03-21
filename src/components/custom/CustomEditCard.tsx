@@ -27,6 +27,7 @@ import {
   GRAIN_SIZE,
   WHITE_BALANCES,
 } from './fujiSettings';
+import ExportButton from './ExportButton';
 
 export interface ICustomEditCardProps {
   customRecipe?: CustomRecipe;
@@ -474,12 +475,15 @@ const CustomEditCard = ({
       <div className="card-body">
         <header className="flex justify-between">
           <h2 className="card-title">{title}</h2>
-          <button
-            className="btn btn-ghost btn-circle btn-primary btn-sm fill-warning"
-            onClick={onClickConfirm}
-          >
-            {confirmIcon}
-          </button>
+          <div className="flex gap-1">
+            {isUpdateMode ? null : <ExportButton />}
+            <button
+              className="btn btn-ghost btn-circle btn-primary btn-sm fill-warning"
+              onClick={onClickConfirm}
+            >
+              {confirmIcon}
+            </button>
+          </div>
         </header>
         <CustomInput
           value={recipe.name}
