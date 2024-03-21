@@ -1,7 +1,10 @@
-import { SvgArrowDownTraySolid } from '../icon/svgs';
+import { useState } from 'react';
+import { SvgEnvelopeSolid } from '../icon/svgs';
 import { CUSTOM_RECIPES_STORAGE_KEY } from './CustomList';
 
 const ExportButton = () => {
+  const [inputOpen, setInputOpen] = useState(false);
+
   const downloadCustomRecipes = async () => {
     const storedRecipes = JSON.parse(
       localStorage.getItem(CUSTOM_RECIPES_STORAGE_KEY) ?? '[]'
@@ -11,20 +14,8 @@ const ExportButton = () => {
 
     const fileCreateResponse = await fetch('/api/recipes/file', {
       method: 'POST',
-      body: JSON.stringify({ data: storedRecipes }),
+      body: JSON.stringify({ data: storedRecipes, email: '' }),
     });
-    const { filename } = await fileCreateResponse.json();
-
-    const fileGetResponse = await fetch(`/api/recipes/file/${filename}`);
-
-    const file = await fileGetResponse.blob();
-    const url = window.URL.createObjectURL(file);
-    const linkElement = document.createElement('a');
-    linkElement.href = url;
-    linkElement.download = filename;
-    document.body.appendChild(linkElement);
-    linkElement.click();
-    linkElement.remove();
   };
 
   const handleClick = async () => {
@@ -37,7 +28,7 @@ const ExportButton = () => {
         className="btn btn-ghost btn-circle btn-primary btn-sm fill-info"
         onClick={handleClick}
       >
-        <SvgArrowDownTraySolid />
+        <SvgEnvelopeSolid />
       </button>
     </div>
   );
