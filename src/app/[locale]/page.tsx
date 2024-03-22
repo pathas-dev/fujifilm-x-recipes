@@ -1,7 +1,11 @@
 import { getCamerasWithFilters } from '@/app/api/data/localData';
 import CustomList from '@/components/custom/CustomList';
 import { localeIntl } from '@/navigation';
-import { HeaderLabels, SettingMessages } from '@/types/language';
+import {
+  HeaderMessages,
+  SendEmailMessages,
+  SettingMessages,
+} from '@/types/language';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 export default async function CustomPage({
@@ -14,8 +18,9 @@ export default async function CustomPage({
 
   const tHeaders = await getTranslations('Headers');
   const tSettings = await getTranslations('Settings');
+  const tSendEmail = await getTranslations('SendEmail');
 
-  const headerLabels: HeaderLabels = {
+  const headerMessages: HeaderMessages = {
     bwOnly: tHeaders('bwOnly'),
     dateLabel: tHeaders('dateLabel'),
     nameLabel: tHeaders('nameLabel'),
@@ -24,7 +29,7 @@ export default async function CustomPage({
     creatorLabel: tHeaders('creatorLabel'),
   };
 
-  const settingLabels: SettingMessages = {
+  const settingMessages: SettingMessages = {
     newTitle: tSettings('newTitle'),
     updateTitle: tSettings('updateTitle'),
     placeholders: {
@@ -92,11 +97,21 @@ export default async function CustomPage({
     },
   };
 
+  const sendEmailMessages: SendEmailMessages = {
+    placeholder: tSendEmail('placeholder'),
+    success: tSendEmail('success'),
+    errors: {
+      noEmail: tSendEmail('errors.noEmail'),
+      noData: tSendEmail('errors.noData'),
+    },
+  };
+
   return (
     <CustomList
       filters={filters}
-      headerLabels={headerLabels}
-      settingMessages={settingLabels}
+      headerMessages={headerMessages}
+      settingMessages={settingMessages}
+      sendEmailMessages={sendEmailMessages}
       cameras={cameras}
     />
   );

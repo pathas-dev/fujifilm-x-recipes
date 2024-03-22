@@ -81,5 +81,13 @@
       "create": "Recipe created!",
       "update": "Recipe updated."
     }
+  },
+  "SendEmail": {
+    "placeholder": "Please enter recipient email.",
+    "success": "Your email has been sent!",
+    "errors": {
+      "noEmail": "Please enter your e-mail.",
+      "noData": "There are no saved recipes."
+    }
   }
 }

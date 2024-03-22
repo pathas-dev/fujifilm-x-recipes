@@ -1,4 +1,4 @@
-export type HeaderLabels = {
+export type HeaderMessages = {
   bwOnly: string;
   dateLabel: string;
   nameLabel: string;
@@ -7,7 +7,7 @@ export type HeaderLabels = {
   creatorLabel: string;
 };
 
-export type SettingI18NLabels = {
+export type SettingI18NMessages = {
   highlight: string;
   tone: string;
   shadow: string;
@@ -37,7 +37,7 @@ export type SettingMessages = {
     camera: string;
     base: string;
   };
-  labels: SettingI18NLabels;
+  labels: SettingI18NMessages;
   options: {
     effects: {
       off: string;
@@ -72,5 +72,14 @@ export type SettingMessages = {
   successes: {
     create: string;
     update: string;
+  };
+};
+
+export type SendEmailMessages = {
+  placeholder: string;
+  success: string;
+  errors: {
+    noEmail: string;
+    noData: string;
   };
 };

@@ -12,7 +12,7 @@ type ToastMessage = {
 
 type ToastStore = {
   toast: ToastMessage;
-  setMessage: (newToastMessage: ToastMessage) => void;
+  setMessage: (newToastMessage: Partial<ToastMessage>) => void;
   clear: () => void;
 };
 
@@ -23,8 +23,8 @@ const defaultToastMessage: ToastMessage = {
 
 const useToastStore = create<ToastStore>((set) => ({
   toast: { message: '', type: 'Success' },
-  setMessage: (newToastMessage: ToastMessage) =>
-    set(() => ({ toast: newToastMessage })),
+  setMessage: (newToastMessage = { message: '', type: 'Success' }) =>
+    set((state) => ({ toast: { ...state.toast, ...newToastMessage } })),
   clear: () => set(() => ({ toast: defaultToastMessage })),
 }));
 

@@ -1,6 +1,10 @@
 'use client';
 import { Camera } from '@/types/api';
-import { SettingI18NLabels, SettingMessages } from '@/types/language';
+import {
+  SendEmailMessages,
+  SettingI18NMessages,
+  SettingMessages,
+} from '@/types/language';
 import dayjs from 'dayjs';
 import { produce } from 'immer';
 import {
@@ -36,7 +40,8 @@ export interface ICustomEditCardProps {
     bases: string[];
     sensors: string[];
   };
-  settingLabels: SettingMessages;
+  settingMessages: SettingMessages;
+  sendEmailMessages?: SendEmailMessages;
   cameras: Camera[];
   onSuccess: (recipe: CustomRecipe) => void;
   onError: (errorType: (typeof ERROR_TYPES)[number]) => void;
@@ -45,7 +50,8 @@ export interface ICustomEditCardProps {
 const CustomEditCard = ({
   customRecipe,
   filters,
-  settingLabels,
+  settingMessages,
+  sendEmailMessages,
   cameras,
   onSuccess,
   onError,
@@ -80,37 +86,37 @@ const CustomEditCard = ({
   ]);
 
   const [currentTab, setCurrentTab] =
-    useState<keyof typeof settingLabels.labels>('tone');
+    useState<keyof typeof settingMessages.labels>('tone');
 
   const grainRoughness = GRAIN_ROUGHNESS.map((value) => ({
     value: value,
-    label: settingLabels.options.effects[value],
+    label: settingMessages.options.effects[value],
   }));
   const grainSizes = GRAIN_SIZE.map((value) => ({
     value: value,
-    label: settingLabels.options.sizes[value],
+    label: settingMessages.options.sizes[value],
   }));
   const colorChromes = COLOR_CHROME.map((value) => ({
     value: value,
-    label: settingLabels.options.effects[value],
+    label: settingMessages.options.effects[value],
   }));
   const colorChromeBlues = COLOR_CHROME_FX_BLUE.map((value) => ({
     value: value,
-    label: settingLabels.options.effects[value],
+    label: settingMessages.options.effects[value],
   }));
   const whiteBalanceTypes = WHITE_BALANCES.map((value) => ({
     value,
-    label: settingLabels.options.whiteBalances[value],
+    label: settingMessages.options.whiteBalances[value],
   }));
 
   const tabs: Array<{
-    id: keyof SettingI18NLabels;
+    id: keyof SettingI18NMessages;
     label: string;
     settingTab: ReactElement;
   }> = [
     {
       id: 'tone',
-      label: settingLabels.labels.tone,
+      label: settingMessages.labels.tone,
       settingTab: (
         <SettingTab.Tone
           highlight={recipe.settings.tone.highlight}
@@ -121,7 +127,7 @@ const CustomEditCard = ({
               })
             );
           }}
-          highlightLabel={settingLabels.labels.highlight}
+          highlightLabel={settingMessages.labels.highlight}
           shadow={recipe.settings.tone.shadow}
           onShadowChange={(value) => {
             setRecipe(
@@ -130,14 +136,14 @@ const CustomEditCard = ({
               })
             );
           }}
-          shadowLabel={settingLabels.labels.shadow}
+          shadowLabel={settingMessages.labels.shadow}
         />
       ),
     },
 
     {
       id: 'grainRoughness',
-      label: settingLabels.labels.grainRoughness,
+      label: settingMessages.labels.grainRoughness,
       settingTab: (
         <SettingTab.GrainRoughness
           value={recipe.settings.grain.roughness}
@@ -149,16 +155,16 @@ const CustomEditCard = ({
             );
           }}
           displayValue={
-            settingLabels.options.effects[recipe.settings.grain.roughness]
+            settingMessages.options.effects[recipe.settings.grain.roughness]
           }
-          label={settingLabels.labels.grainRoughness}
+          label={settingMessages.labels.grainRoughness}
           items={grainRoughness}
         />
       ),
     },
     {
       id: 'grainSize',
-      label: settingLabels.labels.grainSize,
+      label: settingMessages.labels.grainSize,
       settingTab: (
         <SettingTab.GrainSize
           value={recipe.settings.grain.size}
@@ -169,15 +175,17 @@ const CustomEditCard = ({
               })
             );
           }}
-          displayValue={settingLabels.options.sizes[recipe.settings.grain.size]}
-          label={settingLabels.labels.grainSize}
+          displayValue={
+            settingMessages.options.sizes[recipe.settings.grain.size]
+          }
+          label={settingMessages.labels.grainSize}
           items={grainSizes}
         />
       ),
     },
     {
       id: 'dynamicRange',
-      label: settingLabels.labels.dynamicRange,
+      label: settingMessages.labels.dynamicRange,
       settingTab: (
         <SettingTab.DynamicRange
           value={recipe.settings.dRange}
@@ -188,13 +196,13 @@ const CustomEditCard = ({
               })
             );
           }}
-          label={settingLabels.labels.dynamicRange}
+          label={settingMessages.labels.dynamicRange}
         />
       ),
     },
     {
       id: 'colorChromeEffect',
-      label: settingLabels.labels.colorChromeEffect,
+      label: settingMessages.labels.colorChromeEffect,
       settingTab: (
         <SettingTab.ColorChrome
           value={recipe.settings.colorChrome.effect}
@@ -205,17 +213,17 @@ const CustomEditCard = ({
               })
             );
           }}
-          label={settingLabels.labels.colorChromeEffect}
+          label={settingMessages.labels.colorChromeEffect}
           items={colorChromes}
           displayValue={
-            settingLabels.options.effects[recipe.settings.colorChrome.effect]
+            settingMessages.options.effects[recipe.settings.colorChrome.effect]
           }
         />
       ),
     },
     {
       id: 'colorChromeFXBlue',
-      label: settingLabels.labels.colorChromeFXBlue,
+      label: settingMessages.labels.colorChromeFXBlue,
       settingTab: (
         <SettingTab.ColorChromeBlue
           value={recipe.settings.colorChrome.fxBlue}
@@ -226,21 +234,21 @@ const CustomEditCard = ({
               })
             );
           }}
-          label={settingLabels.labels.colorChromeFXBlue}
+          label={settingMessages.labels.colorChromeFXBlue}
           items={colorChromeBlues}
           displayValue={
-            settingLabels.options.effects[recipe.settings.colorChrome.fxBlue]
+            settingMessages.options.effects[recipe.settings.colorChrome.fxBlue]
           }
         />
       ),
     },
     {
       id: 'sharpness',
-      label: settingLabels.labels.sharpness,
+      label: settingMessages.labels.sharpness,
       settingTab: (
         <SettingTab.Sharpness
           value={recipe.settings.sharpness}
-          label={settingLabels.labels.sharpness}
+          label={settingMessages.labels.sharpness}
           onChange={(value) => {
             setRecipe(
               produce(recipe, (draft) => {
@@ -254,11 +262,11 @@ const CustomEditCard = ({
     },
     {
       id: 'color',
-      label: settingLabels.labels.color,
+      label: settingMessages.labels.color,
       settingTab: (
         <SettingTab.Color
           value={recipe.settings.color}
-          label={settingLabels.labels.color}
+          label={settingMessages.labels.color}
           onChange={(value) => {
             setRecipe(
               produce(recipe, (draft) => {
@@ -272,11 +280,11 @@ const CustomEditCard = ({
     },
     {
       id: 'clarity',
-      label: settingLabels.labels.clarity,
+      label: settingMessages.labels.clarity,
       settingTab: (
         <SettingTab.Clarity
           value={recipe.settings.clarity}
-          label={settingLabels.labels.clarity}
+          label={settingMessages.labels.clarity}
           onChange={(value) => {
             setRecipe(
               produce(recipe, (draft) => {
@@ -290,11 +298,11 @@ const CustomEditCard = ({
     },
     {
       id: 'isoNoiseReduction',
-      label: settingLabels.labels.isoNoiseReduction,
+      label: settingMessages.labels.isoNoiseReduction,
       settingTab: (
         <SettingTab.IsoNoiseReduction
           value={recipe.settings.isoNoiseReduction}
-          label={settingLabels.labels.isoNoiseReduction}
+          label={settingMessages.labels.isoNoiseReduction}
           onChange={(value) => {
             setRecipe(
               produce(recipe, (draft) => {
@@ -308,10 +316,10 @@ const CustomEditCard = ({
     },
     {
       id: 'exposure',
-      label: settingLabels.labels.exposure,
+      label: settingMessages.labels.exposure,
       settingTab: (
         <SettingTab.Exposure
-          label={settingLabels.labels.exposure}
+          label={settingMessages.labels.exposure}
           value={recipe.settings.exposure}
           onChange={(value) => {
             setRecipe(
@@ -325,7 +333,7 @@ const CustomEditCard = ({
     },
     {
       id: 'iso',
-      label: settingLabels.labels.iso,
+      label: settingMessages.labels.iso,
       settingTab: (
         <SettingTab.Iso
           label="ISO"
@@ -350,7 +358,7 @@ const CustomEditCard = ({
     },
     {
       id: 'whiteBalance',
-      label: settingLabels.labels.whiteBalance,
+      label: settingMessages.labels.whiteBalance,
       settingTab: (
         <SettingTab.WhiteBalance
           types={whiteBalanceTypes}
@@ -383,10 +391,10 @@ const CustomEditCard = ({
     },
     {
       id: 'bwAdj',
-      label: settingLabels.labels.bwAdj,
+      label: settingMessages.labels.bwAdj,
       settingTab: (
         <SettingTab.BwAdjust
-          label={settingLabels.labels.bwAdj}
+          label={settingMessages.labels.bwAdj}
           value={recipe.settings.bwAdj}
           onChange={(value) => {
             setRecipe(
@@ -461,8 +469,8 @@ const CustomEditCard = ({
     : () => onClickCreate(recipe);
 
   const title = isUpdateMode
-    ? settingLabels.updateTitle
-    : settingLabels.newTitle;
+    ? settingMessages.updateTitle
+    : settingMessages.newTitle;
 
   const articleClassName = isUpdateMode
     ? 'card w-full bg-base-300 shadow-xl'
@@ -476,7 +484,9 @@ const CustomEditCard = ({
         <header className="flex justify-between">
           <h2 className="card-title">{title}</h2>
           <div className="flex gap-1">
-            {isUpdateMode ? null : <ExportButton />}
+            {isUpdateMode ? null : (
+              <ExportButton sendEmailMessages={sendEmailMessages} />
+            )}
             <button
               className="btn btn-ghost btn-circle btn-primary btn-sm fill-warning"
               onClick={onClickConfirm}
@@ -487,7 +497,7 @@ const CustomEditCard = ({
         </header>
         <CustomInput
           value={recipe.name}
-          placeholder={settingLabels.placeholders.name}
+          placeholder={settingMessages.placeholders.name}
           onChange={(value) =>
             setRecipe(
               produce(recipe, (draft) => {
@@ -499,13 +509,13 @@ const CustomEditCard = ({
         <div className="w-full flex gap-1">
           <CustomSelect
             value={recipe.camera}
-            placeholder={settingLabels.placeholders.camera}
+            placeholder={settingMessages.placeholders.camera}
             items={cameraOptions}
             onChange={onChangeCamera}
           />
           <CustomSelect
             value={recipe.base}
-            placeholder={settingLabels.placeholders.base}
+            placeholder={settingMessages.placeholders.base}
             items={baseOptions}
             onChange={onChangeBase}
           />
@@ -526,12 +536,12 @@ const CustomEditCard = ({
 
 interface ITabNavigationProps {
   tabs: Array<{
-    id: keyof SettingI18NLabels;
+    id: keyof SettingI18NMessages;
     label: string;
     settingTab: ReactElement;
   }>;
-  currentTab: keyof SettingI18NLabels;
-  onChangeTab: (tab: keyof SettingI18NLabels) => void;
+  currentTab: keyof SettingI18NMessages;
+  onChangeTab: (tab: keyof SettingI18NMessages) => void;
 }
 
 const TabNavigation = forwardRef<HTMLElement, ITabNavigationProps>(

@@ -1,7 +1,11 @@
 'use client';
 
 import { Camera } from '@/types/api';
-import { HeaderLabels, SettingMessages } from '@/types/language';
+import {
+  HeaderMessages,
+  SendEmailMessages,
+  SettingMessages,
+} from '@/types/language';
 import dayjs from 'dayjs';
 import { produce } from 'immer';
 import _reject from 'lodash/reject';
@@ -41,8 +45,9 @@ interface ICardListProps {
     bases: string[];
     sensors: string[];
   };
-  headerLabels: HeaderLabels;
+  headerMessages: HeaderMessages;
   settingMessages: SettingMessages;
+  sendEmailMessages: SendEmailMessages;
   cameras: Camera[];
 }
 
@@ -54,54 +59,55 @@ export const CUSTOM_RECIPES_STORAGE_KEY = 'customRecipes';
 
 const CustomList = ({
   filters,
-  headerLabels,
+  headerMessages,
   settingMessages,
+  sendEmailMessages,
   cameras,
 }: ICardListProps) => {
   const sortTypes: DropboxItem[] = useMemo(
     () => [
       {
-        label: [headerLabels.dateLabel, ASC_CHARACTER].join(DELIMETER),
+        label: [headerMessages.dateLabel, ASC_CHARACTER].join(DELIMETER),
         value: 'createdAt',
         isAsc: true,
       },
       {
-        label: [headerLabels.dateLabel, DESC_CHARACTER].join(DELIMETER),
+        label: [headerMessages.dateLabel, DESC_CHARACTER].join(DELIMETER),
         value: 'createdAt',
       },
       {
-        label: [headerLabels.nameLabel, ASC_CHARACTER].join(DELIMETER),
+        label: [headerMessages.nameLabel, ASC_CHARACTER].join(DELIMETER),
         value: 'name',
         isAsc: true,
       },
       {
-        label: [headerLabels.nameLabel, DESC_CHARACTER].join(DELIMETER),
+        label: [headerMessages.nameLabel, DESC_CHARACTER].join(DELIMETER),
         value: 'name',
       },
       {
-        label: [headerLabels.cameraLabel, ASC_CHARACTER].join(DELIMETER),
+        label: [headerMessages.cameraLabel, ASC_CHARACTER].join(DELIMETER),
         value: 'camera',
         isAsc: true,
       },
       {
-        label: [headerLabels.cameraLabel, DESC_CHARACTER].join(DELIMETER),
+        label: [headerMessages.cameraLabel, DESC_CHARACTER].join(DELIMETER),
         value: 'camera',
       },
       {
-        label: [headerLabels.baseLabel, ASC_CHARACTER].join(DELIMETER),
+        label: [headerMessages.baseLabel, ASC_CHARACTER].join(DELIMETER),
         value: 'base',
         isAsc: true,
       },
       {
-        label: [headerLabels.baseLabel, DESC_CHARACTER].join(DELIMETER),
+        label: [headerMessages.baseLabel, DESC_CHARACTER].join(DELIMETER),
         value: 'base',
       },
     ],
     [
-      headerLabels.dateLabel,
-      headerLabels.nameLabel,
-      headerLabels.cameraLabel,
-      headerLabels.baseLabel,
+      headerMessages.dateLabel,
+      headerMessages.nameLabel,
+      headerMessages.cameraLabel,
+      headerMessages.baseLabel,
     ]
   );
 
@@ -209,7 +215,6 @@ const CustomList = ({
 
     setToastMessage({
       message: settingMessages.successes.create,
-      type: 'Success',
     });
   };
 
@@ -228,7 +233,6 @@ const CustomList = ({
 
     setToastMessage({
       message: settingMessages.successes.update,
-      type: 'Success',
     });
   };
 
@@ -268,7 +272,7 @@ const CustomList = ({
       <RecipeFilterHeader
         bwOnly={bwOnly}
         onBwOnlyChange={onBwToggle}
-        bwOnlyLabel={headerLabels.bwOnly}
+        bwOnlyLabel={headerMessages.bwOnly}
         filters={dropboxProps}
         recipesCount={sortedRecipes.length}
       />
@@ -305,9 +309,10 @@ const CustomList = ({
             <CustomEditCard
               cameras={cameras}
               filters={filters}
-              settingLabels={settingMessages}
+              settingMessages={settingMessages}
               onSuccess={onCreateSuccess}
               onError={onError}
+              sendEmailMessages={sendEmailMessages}
             />
           </motion.div>
         </section>
@@ -317,7 +322,7 @@ const CustomList = ({
             key={index}
             customRecipe={customRecipe}
             filters={filters}
-            settingLabels={settingMessages}
+            settingMessages={settingMessages}
             onUpdateSuccess={onUpdateSuccess}
             onUpdateError={onError}
             onDeleteSuccess={onDeleteSuccess}

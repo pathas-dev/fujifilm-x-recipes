@@ -35,7 +35,7 @@ const CustomCard = ({
   filters,
   onUpdateError,
   onUpdateSuccess,
-  settingLabels,
+  settingMessages: settingLabels,
   customRecipe,
   onDeleteSuccess,
 }: ICustomCardProps) => {
@@ -63,7 +63,7 @@ const CustomCard = ({
         cameras={cameras}
         customRecipe={customRecipe}
         filters={filters}
-        settingLabels={settingLabels}
+        settingMessages={settingLabels}
         onSuccess={(recipe) => {
           onUpdateSuccess(recipe);
           setMode('READ');
