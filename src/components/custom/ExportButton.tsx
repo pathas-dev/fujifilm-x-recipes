@@ -75,12 +75,12 @@ const ExportButton = ({ sendEmailMessages }: IExportButtonProps) => {
         </button>
       </div>
       {inputOpen && (
-        <div className="absolute w-[60dvw] max-w-80 right-0 top-7 flex bg-transparent z-50">
+        <div className="absolute w-[66dvw] max-w-80 right-0 top-7 flex bg-transparent z-50">
           <label className="input input-bordered w-full flex items-center gap-2 fill-current">
             <SvgEnvelopeSolid />
             <input
-              type="text"
-              className="grow"
+              type="email"
+              className="grow pr-6"
               placeholder={placeholder}
               value={email}
               onChange={onEmailChange}
