@@ -8,6 +8,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Noto_Sans_KR } from 'next/font/google';
 import NavigationTop from '@/components/common/NavigationTop';
+import Toast from '@/components/common/Toast';
 
 const notoSans = Noto_Sans_KR({
   subsets: ['latin'],
@@ -97,6 +98,7 @@ export default function RootLayout({
       >
         <NavigationTop titles={navigationTitles} />
         <main className="w-full h-[calc(100%-4rem)]">{children}</main>
+        <Toast />
         <NavigationBottom titles={navigationTitles} />
         <ThemeSwitch />
 

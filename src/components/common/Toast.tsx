@@ -1,14 +1,22 @@
-export const toastType = {
-  error: 'Error',
-  success: 'Success',
-} as const;
+'use client';
 
-interface IToastProps {
-  message: string;
-  type: (typeof toastType)[keyof typeof toastType];
-}
+import useToastStore, { toastType } from '@/stores/toast';
+import { useEffect } from 'react';
 
-const Toast = ({ message, type }: IToastProps) => {
+const TOAST_ALIVE_TIME = 900;
+
+const Toast = () => {
+  const {
+    toast: { message, type },
+    clear,
+  } = useToastStore();
+
+  useEffect(() => {
+    if (!!message) {
+      setTimeout(() => clear(), TOAST_ALIVE_TIME);
+    }
+  }, [message, clear]);
+
   const classNameMap: {
     [key: string]: string;
   } = {
@@ -17,6 +25,8 @@ const Toast = ({ message, type }: IToastProps) => {
   };
 
   const className = classNameMap[type];
+
+  if (!message) return null;
 
   return (
     <div className="toast toast-center toast-middle z-10">

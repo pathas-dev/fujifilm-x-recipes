@@ -33,6 +33,7 @@ import CustomEditCard from './CustomEditCard';
 import { CustomRecipe, ERROR_TYPES } from './customRecipe';
 import Toast from '../common/Toast';
 import { motion } from 'framer-motion';
+import useToastStore from '@/stores/toast';
 
 interface ICardListProps {
   filters: {
@@ -104,6 +105,8 @@ const CustomList = ({
     ]
   );
 
+  const setToastMessage = useToastStore((state) => state.setMessage);
+
   const [customRecipes, setCustomRecipes] = useState<CustomRecipe[]>([]);
 
   const [bases, setBases] = useState<DropboxItem[]>([]);
@@ -112,11 +115,6 @@ const CustomList = ({
   const [sortType, setSortType] = useState<DropboxItem>(sortTypes[1]);
 
   const [bwOnly, setBwonly] = useState<boolean>(false);
-
-  const [sccuessMessage, setSuccessMessage] = useState('');
-  const [errorType, setErrorType] = useState<(typeof ERROR_TYPES)[number] | ''>(
-    ''
-  );
 
   const [shrinkCreateCard, setShrinkCreateCard] = useState(false);
 
@@ -209,10 +207,10 @@ const CustomList = ({
 
     localStorage.setItem(CUSTOM_RECIPES_STORAGE_KEY, JSON.stringify(recipes));
 
-    setSuccessMessage(settingMessages.successes.create);
-    setTimeout(() => {
-      setSuccessMessage('');
-    }, TOAST_ALIVE_TIME);
+    setToastMessage({
+      message: settingMessages.successes.create,
+      type: 'Success',
+    });
   };
 
   const onUpdateSuccess = (recipe: CustomRecipe) => {
@@ -228,17 +226,17 @@ const CustomList = ({
       JSON.stringify(recipesUpdated)
     );
 
-    setSuccessMessage(settingMessages.successes.update);
-    setTimeout(() => {
-      setSuccessMessage('');
-    }, TOAST_ALIVE_TIME);
+    setToastMessage({
+      message: settingMessages.successes.update,
+      type: 'Success',
+    });
   };
 
   const onError = (errorType: (typeof ERROR_TYPES)[number]) => {
-    setErrorType(errorType);
-    setTimeout(() => {
-      setErrorType('');
-    }, TOAST_ALIVE_TIME);
+    setToastMessage({
+      type: 'Error',
+      message: settingMessages.errors[errorType],
+    });
   };
 
   const handleToUpButton = () => {
@@ -282,10 +280,6 @@ const CustomList = ({
           gridAutoRows: 'min-content',
         }}
       >
-        {!!sccuessMessage && <Toast message={sccuessMessage} type="Success" />}
-        {!!errorType && (
-          <Toast message={settingMessages.errors[errorType]} type="Error" />
-        )}
         <section className="w-full relative">
           <motion.button
             className="absolute btn btn-circle btn-accent z-10 left-0 right-0 mx-auto fill-white"
