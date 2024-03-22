@@ -65,18 +65,17 @@ const ExportButton = ({ sendEmailMessages }: IExportButtonProps) => {
   };
 
   return (
-    <div
-      className="relative tooltip tooltip-left z-50"
-      data-tip={tooltipMessage}
-    >
-      <button
-        className="btn btn-ghost btn-circle btn-primary btn-sm fill-info"
-        onClick={handleClick}
-      >
-        <SvgEnvelopeSolid />
-      </button>
+    <div className="relative">
+      <div className="tooltip tooltip-left z-50" data-tip={tooltipMessage}>
+        <button
+          className="btn btn-ghost btn-circle btn-primary btn-sm fill-info"
+          onClick={handleClick}
+        >
+          <SvgEnvelopeSolid />
+        </button>
+      </div>
       {inputOpen && (
-        <div className="absolute w-80 right-0 top-7 flex bg-transparent z-50">
+        <div className="absolute w-[60dvw] max-w-80 right-0 top-7 flex bg-transparent z-50">
           <label className="input input-bordered w-full flex items-center gap-2 fill-current">
             <SvgEnvelopeSolid />
             <input
