@@ -248,12 +248,7 @@ const CustomList = ({
   };
 
   const onDeleteSuccess = (deletedRecipe: CustomRecipe): void => {
-    setCustomRecipes(
-      produce(customRecipes, (draft) => {
-        draft = _reject(draft, deletedRecipe);
-        return draft;
-      })
-    );
+    setCustomRecipes((prev) => _reject(prev, deletedRecipe));
     const storedItems = JSON.parse(
       localStorage.getItem(CUSTOM_RECIPES_STORAGE_KEY) ?? '[]'
     );
