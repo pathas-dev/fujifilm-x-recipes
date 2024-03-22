@@ -13,6 +13,7 @@ const ExportButton = ({ sendEmailMessages }: IExportButtonProps) => {
   const successMessage = sendEmailMessages?.success ?? '';
   const noDataErrorMessage = sendEmailMessages?.errors?.noData ?? '';
   const noEmailErrorMessage = sendEmailMessages?.errors?.noEmail ?? '';
+  const tooltipMessage = sendEmailMessages?.tooltip ?? '';
 
   const setToastMessage = useToastStore((state) => state.setMessage);
 
@@ -64,7 +65,10 @@ const ExportButton = ({ sendEmailMessages }: IExportButtonProps) => {
   };
 
   return (
-    <div className="relative">
+    <div
+      className="relative tooltip tooltip-left z-50"
+      data-tip={tooltipMessage}
+    >
       <button
         className="btn btn-ghost btn-circle btn-primary btn-sm fill-info"
         onClick={handleClick}
@@ -72,8 +76,8 @@ const ExportButton = ({ sendEmailMessages }: IExportButtonProps) => {
         <SvgEnvelopeSolid />
       </button>
       {inputOpen && (
-        <div className="absolute right-[100%] top-7 flex bg-transparent z-50">
-          <label className="input input-bordered flex items-center gap-2 fill-current">
+        <div className="absolute w-80 right-0 top-7 flex bg-transparent z-50">
+          <label className="input input-bordered w-full flex items-center gap-2 fill-current">
             <SvgEnvelopeSolid />
             <input
               type="text"

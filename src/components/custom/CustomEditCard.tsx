@@ -15,7 +15,8 @@ import {
   useState,
 } from 'react';
 import { v4 as uuidv4 } from 'uuid';
-import { SvgAirplaneSolid, SvgCheckSolid } from '../icon/svgs';
+import { SvgDocumentCheck, SvgDocumentPlus } from '../icon/svgs';
+import ExportButton from './ExportButton';
 import { CustomInput, CustomSelect } from './SettingInput';
 import SettingTab from './SettingTab';
 import {
@@ -31,7 +32,6 @@ import {
   GRAIN_SIZE,
   WHITE_BALANCES,
 } from './fujiSettings';
-import ExportButton from './ExportButton';
 
 export interface ICustomEditCardProps {
   customRecipe?: CustomRecipe;
@@ -476,7 +476,7 @@ const CustomEditCard = ({
     ? 'card w-full bg-base-300 shadow-xl'
     : 'card w-full bg-base-100';
 
-  const confirmIcon = isUpdateMode ? <SvgCheckSolid /> : <SvgAirplaneSolid />;
+  const confirmIcon = isUpdateMode ? <SvgDocumentCheck /> : <SvgDocumentPlus />;
 
   return (
     <article className={articleClassName}>

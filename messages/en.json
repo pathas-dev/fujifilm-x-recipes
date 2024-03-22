@@ -88,6 +88,7 @@
     "errors": {
       "noEmail": "Please enter your e-mail.",
       "noData": "There are no saved recipes."
-    }
+    },
+    "tooltip": "Email saved recipes"
   }
 }

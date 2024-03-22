@@ -104,6 +104,7 @@ export default async function CustomPage({
       noEmail: tSendEmail('errors.noEmail'),
       noData: tSendEmail('errors.noData'),
     },
+    tooltip: tSendEmail('tooltip'),
   };
 
   return (

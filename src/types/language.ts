@@ -82,4 +82,5 @@ export type SendEmailMessages = {
     noEmail: string;
     noData: string;
   };
+  tooltip: string;
 };
