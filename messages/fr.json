@@ -2,9 +2,9 @@
   "Navigation": {
     "bookmarks": "signet",
     "recipes": "recette",
-    "origins": "origine",
+    "origins": "créateurs",
     "cameras": "caméra",
-    "custom": "coutume"
+    "custom": "personnalisé"
   },
   "Headers": {
     "bwOnly": "N/B",
