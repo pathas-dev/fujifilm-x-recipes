@@ -1,6 +1,7 @@
 'use client';
 import { Camera } from '@/types/api';
 import {
+  ImportFileMessages,
   SendEmailMessages,
   SettingI18NMessages,
   SettingMessages,
@@ -32,6 +33,7 @@ import {
   GRAIN_SIZE,
   WHITE_BALANCES,
 } from './fujiSettings';
+import ImportButton from './ImportButton';
 
 export interface ICustomEditCardProps {
   customRecipe?: CustomRecipe;
@@ -42,9 +44,11 @@ export interface ICustomEditCardProps {
   };
   settingMessages: SettingMessages;
   sendEmailMessages?: SendEmailMessages;
+  importFileMessages?: ImportFileMessages;
   cameras: Camera[];
   onSuccess: (recipe: CustomRecipe) => void;
   onError: (errorType: (typeof ERROR_TYPES)[number]) => void;
+  onImportSuccess?: (unionRecipes: CustomRecipe[]) => void;
 }
 
 const CustomEditCard = ({
@@ -52,9 +56,11 @@ const CustomEditCard = ({
   filters,
   settingMessages,
   sendEmailMessages,
+  importFileMessages,
   cameras,
   onSuccess,
   onError,
+  onImportSuccess,
 }: ICustomEditCardProps) => {
   const [recipe, setRecipe] = useState(getInitialCustomRecipe());
 
@@ -484,6 +490,12 @@ const CustomEditCard = ({
         <header className="flex justify-between">
           <h2 className="card-title">{title}</h2>
           <div className="flex gap-1">
+            {isUpdateMode ? null : (
+              <ImportButton
+                importFileMessages={importFileMessages}
+                onImportSuccess={onImportSuccess}
+              />
+            )}
             {isUpdateMode ? null : (
               <ExportButton sendEmailMessages={sendEmailMessages} />
             )}

@@ -3,6 +3,7 @@
 import { Camera } from '@/types/api';
 import {
   HeaderMessages,
+  ImportFileMessages,
   SendEmailMessages,
   SettingMessages,
 } from '@/types/language';
@@ -48,6 +49,7 @@ interface ICardListProps {
   headerMessages: HeaderMessages;
   settingMessages: SettingMessages;
   sendEmailMessages: SendEmailMessages;
+  importFileMessages: ImportFileMessages;
   cameras: Camera[];
 }
 
@@ -62,6 +64,7 @@ const CustomList = ({
   headerMessages,
   settingMessages,
   sendEmailMessages,
+  importFileMessages,
   cameras,
 }: ICardListProps) => {
   const sortTypes: DropboxItem[] = useMemo(
@@ -262,6 +265,9 @@ const CustomList = ({
 
   const onChebronClick = () => setShrinkCreateCard((prev) => !prev);
 
+  const onImportSuccess = (unionRecipes: CustomRecipe[]) =>
+    setCustomRecipes(unionRecipes);
+
   return (
     <section className="w-full h-full">
       <RecipeFilterHeader
@@ -308,6 +314,8 @@ const CustomList = ({
               onSuccess={onCreateSuccess}
               onError={onError}
               sendEmailMessages={sendEmailMessages}
+              importFileMessages={importFileMessages}
+              onImportSuccess={onImportSuccess}
             />
           </motion.div>
         </section>

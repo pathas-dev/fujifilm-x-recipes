@@ -90,5 +90,14 @@
       "noData": "There are no saved recipes."
     },
     "tooltip": "Email saved recipes"
+  },
+  "ImportFile": {
+    "success": "The file has been loaded!",
+    "errors": {
+      "noFile": "There is no file.",
+      "noData": "There is no 'data' field",
+      "notJson": "It's not a JSON file."
+    },
+    "tooltip": "Load recipe JSON file"
   }
 }

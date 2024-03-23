@@ -84,3 +84,13 @@ export type SendEmailMessages = {
   };
   tooltip: string;
 };
+
+export type ImportFileMessages = {
+  success: string;
+  errors: {
+    noFile: string;
+    noData: string;
+    notJson: string;
+  };
+  tooltip: string;
+};

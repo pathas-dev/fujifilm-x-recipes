@@ -3,6 +3,7 @@ import CustomList from '@/components/custom/CustomList';
 import { localeIntl } from '@/navigation';
 import {
   HeaderMessages,
+  ImportFileMessages,
   SendEmailMessages,
   SettingMessages,
 } from '@/types/language';
@@ -19,6 +20,7 @@ export default async function CustomPage({
   const tHeaders = await getTranslations('Headers');
   const tSettings = await getTranslations('Settings');
   const tSendEmail = await getTranslations('SendEmail');
+  const tImportFile = await getTranslations('ImportFile');
 
   const headerMessages: HeaderMessages = {
     bwOnly: tHeaders('bwOnly'),
@@ -107,12 +109,23 @@ export default async function CustomPage({
     tooltip: tSendEmail('tooltip'),
   };
 
+  const importFileMessages: ImportFileMessages = {
+    success: tImportFile('success'),
+    errors: {
+      noFile: tImportFile('errors.noFile'),
+      noData: tImportFile('errors.noData'),
+      notJson: tImportFile('errors.notJson'),
+    },
+    tooltip: tImportFile('tooltip'),
+  };
+
   return (
     <CustomList
       filters={filters}
       headerMessages={headerMessages}
       settingMessages={settingMessages}
       sendEmailMessages={sendEmailMessages}
+      importFileMessages={importFileMessages}
       cameras={cameras}
     />
   );
