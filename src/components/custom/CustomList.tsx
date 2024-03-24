@@ -332,7 +332,7 @@ const CustomList = ({
           />
         ))}
         <motion.button
-          className="fixed z-[999] btn bottom-20 right-6 btn-accent btn-circle btn-sm md:btn-md fill-white shadow-md"
+          className="fixed z-[999] btn bottom-32 md:bottom-20 right-6 btn-accent btn-circle btn-sm md:btn-md fill-white shadow-md"
           onClick={handleToUpButton}
           transition={{ duration: 0.4 }}
           initial={{ opacity: 0 }}

@@ -9,6 +9,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Noto_Sans_KR } from 'next/font/google';
 import NavigationTop from '@/components/common/NavigationTop';
 import Toast from '@/components/common/Toast';
+import Help from '@/components/common/Help';
 
 const notoSans = Noto_Sans_KR({
   subsets: ['latin'],
@@ -101,6 +102,7 @@ export default function RootLayout({
         <Toast />
         <NavigationBottom titles={navigationTitles} />
         <ThemeSwitch />
+        <Help />
 
         <SpeedInsights />
         <Analytics />
