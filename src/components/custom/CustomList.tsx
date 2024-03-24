@@ -285,7 +285,7 @@ const CustomList = ({
           gridAutoRows: 'min-content',
         }}
       >
-        <section className="w-full relative">
+        <section className="w-full relative col-span-1 md:col-span-3">
           <motion.button
             className="absolute btn btn-circle btn-accent z-10 left-0 right-0 mx-auto fill-white"
             onClick={onChebronClick}
