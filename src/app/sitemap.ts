@@ -3,7 +3,7 @@ import { MetadataRoute } from 'next';
 
 const siteUrl = process.env.SITE_URL;
 
-const pages = ['', '/recipes', '/origins', '/bookmarks', '/cameras'];
+const pages = ['', '/recipes', '/origins', '/bookmarks', '/cameras', '/guide'];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
