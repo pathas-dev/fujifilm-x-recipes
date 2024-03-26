@@ -1,7 +1,6 @@
 import { localeIntl } from '@/navigation';
 import KoGuide from './ko.guide.mdx';
 import EnGuide from './en.guide.mdx';
-import FrGuide from './fr.guide.mdx';
 import 'github-markdown-css';
 
 const ManualPage = ({
@@ -12,7 +11,6 @@ const ManualPage = ({
   const manualMdx = {
     [localeIntl.ko]: <KoGuide />,
     [localeIntl.en]: <EnGuide />,
-    [localeIntl.fr]: <FrGuide />,
   };
 
   return (
