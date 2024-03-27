@@ -20,6 +20,7 @@ const nextConfig = {
         hostname: '*',
       },
     ],
+    unoptimized: true,
   },
   pageExtensions: ['js', 'jsx', 'mdx', 'ts', 'tsx'],
 };
