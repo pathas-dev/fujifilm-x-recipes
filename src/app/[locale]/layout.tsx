@@ -29,9 +29,26 @@ export async function generateMetadata({
 
   const metadata: Metadata = {
     title: 'fujifilm-x-recipes',
-    description: 'Fujifilm X-system recipes posted by Henri-Pierre Chavaz',
+    description: t('description'),
     applicationName: 'X-recipes',
     manifest: `${SITE_URL}/manifest.json`,
+    authors: [{ name: 'pathas', url: 'https://pathas.tistory.com/' }],
+    keywords: [
+      '후지필름',
+      '레시피',
+      '필름 시뮬레이션',
+      '필름 레시피',
+      '카메라',
+      'fujifilm',
+      'recipes',
+      'film simulation',
+      'film recipes',
+      'camera',
+    ],
+    icons: { icon: `${SITE_URL}/favicon.ico` },
+
+    robots: { follow: true, index: true },
+
     openGraph: {
       title: 'fujifilm-x-recipes',
       description: t('description'),

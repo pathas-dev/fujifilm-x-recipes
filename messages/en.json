@@ -15,7 +15,7 @@
     "creatorLabel": "Creator"
   },
   "Metadata": {
-    "description": "Il s'agit d'un site Web qui rassemble des recettes Fujifilm."
+    "description": "This is a website for searching Fujifilm recipes compiled by Henri-Pierre Chavaz and managing personal recipes."
   },
   "Settings": {
     "newTitle": "New Recipe",
