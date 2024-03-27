@@ -78,6 +78,8 @@ export async function generateMetadata({
   return metadata;
 }
 
+export const COOKIE_THEME_KEY = 'theme';
+
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));
 }
@@ -92,7 +94,7 @@ export default function RootLayout({
   const { locale } = params;
   unstable_setRequestLocale(locale);
 
-  const themeCookie = cookies().get(process.env.COOKIE_THEME_KEY ?? '');
+  const themeCookie = cookies().get(COOKIE_THEME_KEY);
   const theme = themeCookie?.value ?? DEFAULT_THEME;
 
   const t = useTranslations('Navigation');
