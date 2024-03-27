@@ -36,11 +36,13 @@ export async function generateMetadata({
     keywords: [
       '후지필름',
       '레시피',
+      '후지필름 레시피',
       '필름 시뮬레이션',
       '필름 레시피',
       '카메라',
       'fujifilm',
       'recipes',
+      'fujifilm recipes',
       'film simulation',
       'film recipes',
       'camera',
