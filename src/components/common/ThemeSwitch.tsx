@@ -1,57 +1,43 @@
 'use client';
 
+import { setCookieTheme } from '@/app/actions';
 import { motion } from 'framer-motion';
 import { useCallback, useEffect, useState } from 'react';
 
 const THEME_ATTRIBUTE = 'data-theme';
 const DARK_THEME = 'dracula';
 const LIGHT_THEME = 'retro';
-const THEME_STORAGE_KEY = 'theme';
+
+export const DEFAULT_THEME = DARK_THEME;
 
 const ThemeSwitch = () => {
   const [isDarkTheme, setIsDarkTheme] = useState(true);
 
   useEffect(() => {
-    let theme = localStorage.getItem(THEME_STORAGE_KEY);
+    const initialTheme =
+      document
+        .getElementsByTagName('html')
+        ?.item(0)
+        ?.getAttribute(THEME_ATTRIBUTE) ?? '';
 
-    if (!theme)
-      theme =
-        document
-          .getElementsByTagName('html')
-          .item(0)
-          ?.getAttribute(THEME_ATTRIBUTE) ?? '';
-
-    const isDarkThemeAtFirst = theme === DARK_THEME;
+    const isDarkThemeAtFirst = initialTheme === DARK_THEME;
     setIsDarkTheme(isDarkThemeAtFirst);
   }, []);
 
-  useEffect(() => {
-    const handleClose = () => {
-      localStorage.setItem(
-        THEME_STORAGE_KEY,
-        document
-          .getElementsByTagName('html')
-          .item(0)
-          ?.getAttribute(THEME_ATTRIBUTE) ?? ''
-      );
-    };
-
-    window.addEventListener('beforeunload', handleClose);
-
-    return () => {
-      window.removeEventListener('beforeunload', handleClose);
-    };
-  }, []);
-
-  useEffect(() => {
-    const html = document.getElementsByTagName('html').item(0);
-
-    html?.setAttribute(THEME_ATTRIBUTE, isDarkTheme ? DARK_THEME : LIGHT_THEME);
+  const handleClick = useCallback(async () => {
+    const nextTheme = isDarkTheme ? LIGHT_THEME : DARK_THEME;
+    try {
+      const response = await setCookieTheme(nextTheme);
+      const isSuccess = !!response;
+      if (isSuccess) {
+        const html = document.getElementsByTagName('html').item(0);
+        html?.setAttribute(THEME_ATTRIBUTE, nextTheme);
+        setIsDarkTheme(!isDarkTheme);
+      }
+    } catch (error) {
+      console.log(error);
+    }
   }, [isDarkTheme]);
-
-  const handleClick = useCallback(() => {
-    setIsDarkTheme((prev) => !prev);
-  }, []);
 
   return (
     <motion.label

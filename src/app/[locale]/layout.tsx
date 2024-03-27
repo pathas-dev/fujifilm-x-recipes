@@ -1,7 +1,7 @@
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
 import NavigationBottom from '@/components/common/Navigation';
-import ThemeSwitch from '@/components/common/ThemeSwitch';
+import ThemeSwitch, { DEFAULT_THEME } from '@/components/common/ThemeSwitch';
 import { localeIntl, locales } from '@/navigation';
 import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
@@ -11,6 +11,7 @@ import NavigationTop from '@/components/common/NavigationTop';
 import Toast from '@/components/common/Toast';
 import Help from '@/components/common/Help';
 import { GoogleAnalytics } from '@next/third-parties/google';
+import { cookies } from 'next/headers';
 
 const notoSans = Noto_Sans_KR({
   subsets: ['latin'],
@@ -91,6 +92,9 @@ export default function RootLayout({
   const { locale } = params;
   unstable_setRequestLocale(locale);
 
+  const themeCookie = cookies().get(process.env.COOKIE_THEME_KEY ?? '');
+  const theme = themeCookie?.value ?? DEFAULT_THEME;
+
   const t = useTranslations('Navigation');
 
   const navigationTitles = {
@@ -102,7 +106,7 @@ export default function RootLayout({
   };
 
   return (
-    <html lang={locale} data-theme="dracula">
+    <html lang={locale} data-theme={theme}>
       <body
         className={[
           notoSans.className,
