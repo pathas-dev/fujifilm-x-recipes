@@ -8,6 +8,7 @@ import { Link, localeIntl } from '@/navigation';
 import { SettingsPageMessages } from '@/types/language';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import HideCardImageToggle from '@/components/settings/HideCardImageToggle';
+import packageJson from '../../../../package.json';
 
 const SettingsPage = async ({
   params: { locale },
@@ -46,7 +47,9 @@ const SettingsPage = async ({
     <section className="w-full h-full">
       <main className="w-full h-full p-2 overflow-y-auto overflow-x-hidden scroll-smooth">
         <ul className="menu menu-lg h-full bg-base-200 w-full rounded-box">
-          <li className="menu-title">{settingsPageMessages.title}</li>
+          <li className="menu-title">
+            {settingsPageMessages.title}(v{packageJson.version})
+          </li>
           {pages.map((page) => (
             <li key={page.href}>
               <Link href={page.href}>
