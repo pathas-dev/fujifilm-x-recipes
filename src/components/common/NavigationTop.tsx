@@ -1,15 +1,10 @@
 'use client';
 
 import { Link, usePathname } from '@/navigation';
+import { NavigationTitleMessages } from '@/types/language';
 
 interface INavigationProps {
-  titles: {
-    bookmarks: string;
-    recipes: string;
-    origins: string;
-    cameras: string;
-    custom: string;
-  };
+  titles: NavigationTitleMessages;
 }
 
 const NavigationTop = ({ titles }: INavigationProps) => {
@@ -31,8 +26,8 @@ const NavigationTop = ({ titles }: INavigationProps) => {
       path: '/cameras',
     },
     {
-      title: titles.origins,
-      path: '/origins',
+      title: titles.settings,
+      path: '/settings',
     },
   ];
 
@@ -44,7 +39,7 @@ const NavigationTop = ({ titles }: INavigationProps) => {
         </Link>
       </div>
       <div className="flex-none">
-        <ul className="menu menu-horizontal px-1m mr-9">
+        <ul className="menu menu-horizontal px-1">
           {buttonProps.map((buttonProp) => (
             <NavLink
               title={buttonProp.title}

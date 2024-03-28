@@ -2,9 +2,14 @@
   "Navigation": {
     "bookmarks": "Bookmarks",
     "recipes": "Recipes",
-    "origins": "Origins",
     "cameras": "Cameras",
-    "custom": "Custom"
+    "custom": "Custom",
+    "settings": "Settings"
+  },
+  "SettingsPage": {
+    "title": "Settings",
+    "originsPage": "Origins Page",
+    "guidePage": "Guide Page"
   },
   "Headers": {
     "bwOnly": "B/W",

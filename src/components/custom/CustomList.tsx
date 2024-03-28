@@ -28,7 +28,7 @@ import {
   SvgArrowUpDownMicro,
   SvgArrowUpSolid,
   SvgCameraMicro,
-  SvgChebronDoubleDownSolid,
+  SvgChevronDoubleDownSolid,
   SvgChebronDoubleUpSolid,
   SvgFilmMicro,
   SvgSensorMicro,
@@ -295,7 +295,7 @@ const CustomList = ({
             whileTap={{ scale: 0.9 }}
           >
             {shrinkCreateCard ? (
-              <SvgChebronDoubleDownSolid />
+              <SvgChevronDoubleDownSolid />
             ) : (
               <SvgChebronDoubleUpSolid />
             )}

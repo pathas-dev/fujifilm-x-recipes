@@ -1,24 +1,19 @@
 'use client';
 
 import { usePathname, useRouter } from '@/navigation';
+import { NavigationTitleMessages } from '@/types/language';
 import { motion } from 'framer-motion';
 import { useCallback, useMemo } from 'react';
 import {
   SvgBookmarkMini,
   SvgCameraMini,
+  SvgCogMini,
   SvgPhotoMini,
-  SvgSparklesMini,
   SvgVariableMini,
 } from '../icon/svgs';
 
 interface INavigationProps {
-  titles: {
-    bookmarks: string;
-    recipes: string;
-    origins: string;
-    cameras: string;
-    custom: string;
-  };
+  titles: NavigationTitleMessages;
 }
 
 const NavigationBottom = ({ titles }: INavigationProps) => {
@@ -44,9 +39,9 @@ const NavigationBottom = ({ titles }: INavigationProps) => {
       path: '/cameras',
     },
     {
-      title: titles.origins,
-      children: <SvgSparklesMini />,
-      path: '/origins',
+      title: titles.settings,
+      children: <SvgCogMini />,
+      path: '/settings',
     },
   ];
 

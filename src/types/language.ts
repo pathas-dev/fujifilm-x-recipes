@@ -94,3 +94,17 @@ export type ImportFileMessages = {
   };
   tooltip: string;
 };
+
+export type NavigationTitleMessages = {
+  bookmarks: string;
+  recipes: string;
+  settings: string;
+  cameras: string;
+  custom: string;
+};
+
+export type SettingsPageMessages = {
+  title: string;
+  originsPage: string;
+  guidePage: string;
+};

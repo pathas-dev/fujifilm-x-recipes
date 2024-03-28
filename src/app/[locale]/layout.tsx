@@ -1,16 +1,16 @@
-import { SpeedInsights } from '@vercel/speed-insights/next';
-import { Analytics } from '@vercel/analytics/react';
+import Help from '@/components/common/Help';
 import NavigationBottom from '@/components/common/Navigation';
-import ThemeSwitch, { DEFAULT_THEME } from '@/components/common/ThemeSwitch';
+import NavigationTop from '@/components/common/NavigationTop';
+import { DEFAULT_THEME } from '@/components/common/ThemeSwitch';
+import Toast from '@/components/common/Toast';
 import { localeIntl, locales } from '@/navigation';
+import { GoogleAnalytics } from '@next/third-parties/google';
+import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
 import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Noto_Sans_KR } from 'next/font/google';
-import NavigationTop from '@/components/common/NavigationTop';
-import Toast from '@/components/common/Toast';
-import Help from '@/components/common/Help';
-import { GoogleAnalytics } from '@next/third-parties/google';
 import { cookies } from 'next/headers';
 
 const notoSans = Noto_Sans_KR({
@@ -102,7 +102,7 @@ export default function RootLayout({
   const navigationTitles = {
     bookmarks: t('bookmarks'),
     recipes: t('recipes'),
-    origins: t('origins'),
+    settings: t('settings'),
     cameras: t('cameras'),
     custom: t('custom'),
   };
@@ -127,7 +127,6 @@ export default function RootLayout({
         <main className="w-full h-[calc(100%-4rem)]">{children}</main>
         <Toast />
         <NavigationBottom titles={navigationTitles} />
-        <ThemeSwitch />
         <Help />
 
         <SpeedInsights />
