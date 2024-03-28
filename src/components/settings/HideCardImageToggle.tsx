@@ -31,7 +31,7 @@ const HideCardImageToggle = ({ label }: IHideCardImageToggleProps) => {
 
   return (
     <div className="form-control">
-      <label className="label cursor-pointer">
+      <label className="label cursor-pointer p-0">
         <input
           type="checkbox"
           className="toggle"
