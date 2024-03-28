@@ -12,6 +12,7 @@ import { useTranslations } from 'next-intl';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Noto_Sans_KR } from 'next/font/google';
 import { cookies } from 'next/headers';
+import { COOKIE_THEME_KEY } from '../constants/cookie';
 
 const notoSans = Noto_Sans_KR({
   subsets: ['latin'],
@@ -77,8 +78,6 @@ export async function generateMetadata({
   };
   return metadata;
 }
-
-export const COOKIE_THEME_KEY = 'theme';
 
 export function generateStaticParams() {
   return locales.map((locale) => ({ locale }));

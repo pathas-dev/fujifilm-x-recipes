@@ -1,7 +1,7 @@
 'use server';
 
 import { cookies } from 'next/headers';
-import { COOKIE_THEME_KEY } from './[locale]/layout';
+import { COOKIE_THEME_KEY } from './constants/cookie';
 
 export async function setCookieTheme(theme: string) {
   try {
