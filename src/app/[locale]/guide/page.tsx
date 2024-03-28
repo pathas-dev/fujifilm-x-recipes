@@ -2,8 +2,9 @@ import { localeIntl } from '@/navigation';
 import KoGuide from './ko.guide.mdx';
 import EnGuide from './en.guide.mdx';
 import 'github-markdown-css';
+import GuidePageWrapper from '@/components/guide/GuidePageWrapper';
 
-const ManualPage = ({
+const GuidePage = ({
   params: { locale },
 }: Readonly<{
   params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
@@ -14,12 +15,8 @@ const ManualPage = ({
   };
 
   return (
-    <main className="w-full h-full bg-base-100 p-3 overflow-y-auto scroll-smooth">
-      <div className="markdown-body rounded-lg p-3">
-        {manualMdx[locale] ?? <EnGuide />}
-      </div>
-    </main>
+    <GuidePageWrapper>{manualMdx[locale] ?? <EnGuide />}</GuidePageWrapper>
   );
 };
 
-export default ManualPage;
+export default GuidePage;

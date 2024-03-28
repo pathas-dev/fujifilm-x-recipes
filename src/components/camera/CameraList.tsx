@@ -1,9 +1,10 @@
 'use client';
 
 import { Camera } from '@/types/api';
-import { useMemo, useState } from 'react';
+import { useMemo, useRef, useState } from 'react';
 import _filter from 'lodash/filter';
 import { motion } from 'framer-motion';
+import ScrollUpButton from '../common/ScrollUpButton';
 
 interface ICameraListProps {
   cameras: Camera[];
@@ -11,6 +12,8 @@ interface ICameraListProps {
 
 const CameraList = ({ cameras }: ICameraListProps) => {
   const [simulations, setSimulations] = useState<string[]>([]);
+
+  const refMain = useRef<HTMLDivElement>(null);
 
   const allSimulations = cameras[cameras.length - 1].simulations
     .split(',')
@@ -27,7 +30,10 @@ const CameraList = ({ cameras }: ICameraListProps) => {
   }, [simulations, cameras]);
 
   return (
-    <article className="w-full h-full p-3 overflow-auto scroll-smooth">
+    <main
+      className="w-full h-full p-3 overflow-auto scroll-smooth"
+      ref={refMain}
+    >
       <div className="w-11/12 pr-2">
         {allSimulations.map((simulation) => {
           const isIncluded = simulations.includes(simulation);
@@ -63,7 +69,8 @@ const CameraList = ({ cameras }: ICameraListProps) => {
           <Timeline key={camera._id} camera={camera} isLeft={index % 2 === 0} />
         ))}
       </ul>
-    </article>
+      <ScrollUpButton refObject={refMain} />
+    </main>
   );
 };
 

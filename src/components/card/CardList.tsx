@@ -25,6 +25,7 @@ import {
   SvgSensorMicro,
 } from '../icon/svgs';
 import Card from './Card';
+import ScrollUpButton from '../common/ScrollUpButton';
 
 interface ICardListProps {
   recipes: Recipe[];
@@ -114,7 +115,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
 
   const [bwOnly, setBwonly] = useState<boolean>(false);
 
-  const refScroll = useRef<HTMLDivElement>(null);
+  const refMain = useRef<HTMLDivElement>(null);
 
   const refSkeleton = useRef(null);
   const isSkeletonInView = useInView(refSkeleton);
@@ -127,7 +128,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
 
   const resetPage = () => {
     setPage(0);
-    if (refScroll.current) refScroll.current.scrollTo({ top: 0 });
+    if (refMain.current) refMain.current.scrollTo({ top: 0 });
   };
 
   const filteredRecipes = useMemo(() => {
@@ -220,7 +221,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
         style={{
           gridAutoRows: 'min-content',
         }}
-        ref={refScroll}
+        ref={refMain}
       >
         {sortedRecipes.slice(0, sliceTo).map((recipe) => (
           <Card recipe={recipe} key={recipe._id} />
@@ -233,6 +234,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
             <span className="loading loading-infinity loading-lg"></span>
           </div>
         )}
+        <ScrollUpButton refObject={refMain} />
       </main>
     </section>
   );

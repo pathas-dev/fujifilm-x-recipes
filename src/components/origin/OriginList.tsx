@@ -4,6 +4,8 @@ import { Link } from '@/navigation';
 import { Origin } from '@/types/api';
 import dayjs from 'dayjs';
 import { motion } from 'framer-motion';
+import { useRef } from 'react';
+import ScrollUpButton from '../common/ScrollUpButton';
 import { SvgFilmMicro } from '../icon/svgs';
 
 const HPCHAVAZ_BLOG_URL = 'https://hpchavaz-photography.blogspot.com/';
@@ -14,6 +16,8 @@ interface IOriginListProps {
 }
 
 const OriginList = ({ origins }: IOriginListProps) => {
+  const refMain = useRef<HTMLElement>(null);
+
   const getAnimatedText = (text: string) =>
     text.split('').map((char, index) => (
       <motion.span
@@ -30,7 +34,10 @@ const OriginList = ({ origins }: IOriginListProps) => {
     ));
 
   return (
-    <main className="w-full h-full overflow-auto whitespace-nowrap text-ellipsis scroll-smooth">
+    <main
+      ref={refMain}
+      className="w-full h-full overflow-auto whitespace-nowrap text-ellipsis scroll-smooth"
+    >
       <motion.ul
         className="steps steps-vertical w-full p-2"
         transition={{ duration: 1 }}
@@ -93,6 +100,7 @@ const OriginList = ({ origins }: IOriginListProps) => {
           </Link>
         </li>
       </motion.ul>
+      <ScrollUpButton refObject={refMain} />
     </main>
   );
 };

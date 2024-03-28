@@ -1,5 +1,6 @@
 'use client';
 
+import useToastStore from '@/stores/toast';
 import { Camera } from '@/types/api';
 import {
   HeaderMessages,
@@ -8,6 +9,7 @@ import {
   SettingMessages,
 } from '@/types/language';
 import dayjs from 'dayjs';
+import { motion } from 'framer-motion';
 import { produce } from 'immer';
 import _reject from 'lodash/reject';
 import _some from 'lodash/some';
@@ -24,21 +26,18 @@ import RecipeFilterHeader, {
   DropboxItem,
   IDropboxProps,
 } from '../common/RecipeFilterHeader';
+import ScrollUpButton from '../common/ScrollUpButton';
 import {
   SvgArrowUpDownMicro,
-  SvgArrowUpSolid,
   SvgCameraMicro,
-  SvgChevronDoubleDownSolid,
   SvgChebronDoubleUpSolid,
+  SvgChevronDoubleDownSolid,
   SvgFilmMicro,
   SvgSensorMicro,
 } from '../icon/svgs';
 import CustomCard from './CustomCard';
 import CustomEditCard from './CustomEditCard';
 import { CustomRecipe, ERROR_TYPES } from './customRecipe';
-import Toast from '../common/Toast';
-import { motion } from 'framer-motion';
-import useToastStore from '@/stores/toast';
 
 interface ICardListProps {
   filters: {
@@ -208,8 +207,6 @@ const CustomList = ({
 
   const onBwToggle = useCallback((checked: boolean) => setBwonly(checked), []);
 
-  const TOAST_ALIVE_TIME = 900;
-
   const onCreateSuccess = (recipe: CustomRecipe) => {
     const recipes = [recipe, ...customRecipes];
     setCustomRecipes(recipes);
@@ -331,16 +328,7 @@ const CustomList = ({
             onDeleteSuccess={onDeleteSuccess}
           />
         ))}
-        <motion.button
-          className="fixed z-[999] btn bottom-32 md:bottom-20 right-6 btn-accent btn-circle btn-sm md:btn-md fill-white shadow-md"
-          onClick={handleToUpButton}
-          transition={{ duration: 0.4 }}
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          whileTap={{ scale: 0.9 }}
-        >
-          <SvgArrowUpSolid />
-        </motion.button>
+        <ScrollUpButton refObject={refMain} />
       </main>
     </section>
   );
