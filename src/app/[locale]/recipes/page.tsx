@@ -1,4 +1,4 @@
-import CardList from '@/components/card/CardList';
+import RecipeCardList from '@/components/recipe/RecipeCardList';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 
 import { localeIntl } from '@/navigation';
@@ -23,5 +23,5 @@ export default async function Home({
     creatorLabel: t('creatorLabel'),
   };
 
-  return <CardList recipes={recipes} filters={filters} labels={labels} />;
+  return <RecipeCardList recipes={recipes} filters={filters} labels={labels} />;
 }

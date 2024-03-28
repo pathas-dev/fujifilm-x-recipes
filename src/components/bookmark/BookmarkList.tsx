@@ -2,8 +2,8 @@
 
 import { Recipe } from '@/types/api';
 import { useEffect, useState } from 'react';
-import { STORAGE_BOOKMARK_KEY } from '../card/Card';
-import CardList from '../card/CardList';
+import { STORAGE_BOOKMARK_KEY } from '@/components/recipe/RecipeCard';
+import RecipeCardList from '@/components/recipe/RecipeCardList';
 
 interface IBookmarkListProps {
   recipes: Recipe[];
@@ -36,7 +36,9 @@ const BookmarkList = ({ filters, recipes, labels }: IBookmarkListProps) => {
     setMarkedRecipes(matchedRecipes);
   }, [recipes]);
 
-  return <CardList recipes={markedRecipes} filters={filters} labels={labels} />;
+  return (
+    <RecipeCardList recipes={markedRecipes} filters={filters} labels={labels} />
+  );
 };
 
 export default BookmarkList;

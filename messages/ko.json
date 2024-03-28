@@ -9,7 +9,8 @@
   "SettingsPage": {
     "title": "설정",
     "originsPage": "오리진 페이지",
-    "guidePage": "가이드 페이지"
+    "guidePage": "가이드 페이지",
+    "hideCardImage": "카드 이미지 숨기기"
   },
   "Headers": {
     "bwOnly": "흑백",

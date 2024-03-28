@@ -24,7 +24,7 @@ import {
   SvgFilmMicro,
   SvgSensorMicro,
 } from '../icon/svgs';
-import Card from './Card';
+import RecipeCard from './RecipeCard';
 import ScrollUpButton from '../common/ScrollUpButton';
 
 interface ICardListProps {
@@ -48,7 +48,7 @@ const DESC_CHARACTER = '↓';
 const ASC_CHARACTER = '↑';
 const DELIMETER = ' ';
 
-const CardList = ({ filters, recipes, labels }: ICardListProps) => {
+const RecipeCardList = ({ filters, recipes, labels }: ICardListProps) => {
   const sortTypes: DropboxItem[] = useMemo(
     () => [
       {
@@ -224,7 +224,7 @@ const CardList = ({ filters, recipes, labels }: ICardListProps) => {
         ref={refMain}
       >
         {sortedRecipes.slice(0, sliceTo).map((recipe) => (
-          <Card recipe={recipe} key={recipe._id} />
+          <RecipeCard recipe={recipe} key={recipe._id} />
         ))}
         {page !== lastPage && (
           <div
@@ -265,4 +265,4 @@ const getSortCharCallback =
     return diff;
   };
 
-export default CardList;
+export default RecipeCardList;

@@ -9,7 +9,8 @@
   "SettingsPage": {
     "title": "Settings",
     "originsPage": "Origins Page",
-    "guidePage": "Guide Page"
+    "guidePage": "Guide Page",
+    "hideCardImage": "Hide card image"
   },
   "Headers": {
     "bwOnly": "B/W",

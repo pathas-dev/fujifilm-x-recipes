@@ -1,4 +1,4 @@
-import ThemeSwitch from '@/components/common/ThemeSwitch';
+import ThemeSwitch from '@/components/settings/ThemeSwitch';
 import {
   SvgChevronRight,
   SvgQuestionMarkCircleMini,
@@ -7,6 +7,7 @@ import {
 import { Link, localeIntl } from '@/navigation';
 import { SettingsPageMessages } from '@/types/language';
 import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
+import HideCardImageToggle from '@/components/settings/HideCardImageToggle';
 
 const SettingsPage = async ({
   params: { locale },
@@ -21,6 +22,7 @@ const SettingsPage = async ({
     title: tSettingsPage('title'),
     originsPage: tSettingsPage('originsPage'),
     guidePage: tSettingsPage('guidePage'),
+    hideCardImage: tSettingsPage('hideCardImage'),
   };
 
   const pages: Array<{
@@ -58,6 +60,9 @@ const SettingsPage = async ({
             <div>
               <ThemeSwitch />
             </div>
+          </li>
+          <li>
+            <HideCardImageToggle label={settingsPageMessages.hideCardImage} />
           </li>
         </ul>
       </main>

@@ -7,18 +7,19 @@ import { animate, inView, motion, useInView } from 'framer-motion';
 import Image from 'next/image';
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { SvgArrow, SvgLink } from '../icon/svgs';
+import { STORAGE_HIDE_CARD_IMAGE_KEY } from '../settings/HideCardImageToggle';
 
-interface ICardProps {
+interface IRecipeCardProps {
   recipe: Recipe;
 }
-const Card = ({ recipe }: ICardProps) => {
+const RecipeCard = ({ recipe }: IRecipeCardProps) => {
   const [openGraph, setOpenGraph] = useState<undefined | OpenGraph>(undefined);
   const refCard = useRef<HTMLDivElement>(null);
   const refCardIsInView = useInView(refCard);
   const refSkeleton = useRef<HTMLDivElement>(null);
   const refSkeletonIsInView = useInView(refSkeleton, { once: true });
 
-  const onCardAnimationEnd = useCallback(async () => {
+  const fetchOpenGraphImage = useCallback(async () => {
     try {
       const response = (await Promise.race([
         fetch('/api/recipes/url', {
@@ -51,10 +52,15 @@ const Card = ({ recipe }: ICardProps) => {
       translateX: '0%',
     });
 
-    onCardAnimationEnd();
+    const hideImage = JSON.parse(
+      localStorage.getItem(STORAGE_HIDE_CARD_IMAGE_KEY) || 'false'
+    );
+
+    if (hideImage) setOpenGraph(getInitialOpenGraph());
+    else fetchOpenGraphImage();
 
     return () => animation.stop();
-  }, [refSkeletonIsInView, onCardAnimationEnd]);
+  }, [refSkeletonIsInView, fetchOpenGraphImage]);
 
   const isColor = /color/i.test(recipe.colorType);
   const colorClassName = isColor
@@ -336,4 +342,4 @@ const getOpenGraph = (urlHtml: string): OpenGraph => {
   }, getInitialOpenGraph());
 };
 
-export default Card;
+export default RecipeCard;

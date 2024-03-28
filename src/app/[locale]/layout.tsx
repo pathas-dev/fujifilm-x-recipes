@@ -1,7 +1,7 @@
 import Help from '@/components/common/Help';
 import NavigationBottom from '@/components/common/Navigation';
 import NavigationTop from '@/components/common/NavigationTop';
-import { DEFAULT_THEME } from '@/components/common/ThemeSwitch';
+import { DEFAULT_THEME } from '@/components/settings/ThemeSwitch';
 import Toast from '@/components/common/Toast';
 import { localeIntl, locales } from '@/navigation';
 import { GoogleAnalytics } from '@next/third-parties/google';

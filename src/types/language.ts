@@ -107,4 +107,5 @@ export type SettingsPageMessages = {
   title: string;
   originsPage: string;
   guidePage: string;
+  hideCardImage: string;
 };
