@@ -20,7 +20,7 @@ const ScrollUpButton = ({ refObject }: IScrollUpButtonProps) => {
     refObject?.current?.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const { scrollY } = useScroll({ container: refObject });
+  const { scrollY } = useScroll({ container: refObject, layoutEffect: false });
 
   useMotionValueEvent(scrollY, 'change', (latest) => {
     setScrollPosition(latest);
