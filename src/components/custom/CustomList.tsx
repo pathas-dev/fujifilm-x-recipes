@@ -184,6 +184,7 @@ const CustomList = ({
       JSON.stringify(addedStoredRecipe)
     );
 
+    setCustomRecipes(addedStoredRecipe);
     setToastMessage({ message: copyAndPasteMessages.paste.success });
     router.replace('/');
   }, [
