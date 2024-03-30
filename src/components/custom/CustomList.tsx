@@ -3,6 +3,7 @@
 import useToastStore from '@/stores/toast';
 import { Camera } from '@/types/api';
 import {
+  CopyAndPasteMessages,
   HeaderMessages,
   ImportFileMessages,
   SendEmailMessages,
@@ -13,6 +14,7 @@ import { motion } from 'framer-motion';
 import { produce } from 'immer';
 import _reject from 'lodash/reject';
 import _some from 'lodash/some';
+import lzString from 'lz-string';
 import {
   Dispatch,
   SetStateAction,
@@ -35,9 +37,12 @@ import {
   SvgFilmMicro,
   SvgSensorMicro,
 } from '../icon/svgs';
-import CustomCard from './CustomCard';
+import CustomCard, { QUERY_KEY_ADD_RECIPE } from './CustomCard';
 import CustomEditCard from './CustomEditCard';
-import { CustomRecipe, ERROR_TYPES } from './customRecipe';
+import { CustomRecipe, ERROR_TYPES, isCustomRecipeJSON } from './customRecipe';
+import { useRouter } from '@/navigation';
+import { useSearchParams } from 'next/navigation';
+import { v4 as uuidv4 } from 'uuid';
 
 interface ICardListProps {
   filters: {
@@ -49,6 +54,7 @@ interface ICardListProps {
   settingMessages: SettingMessages;
   sendEmailMessages: SendEmailMessages;
   importFileMessages: ImportFileMessages;
+  copyAndPasteMessages: CopyAndPasteMessages;
   cameras: Camera[];
 }
 
@@ -56,7 +62,7 @@ const DESC_CHARACTER = '↓';
 const ASC_CHARACTER = '↑';
 const DELIMETER = ' ';
 
-export const CUSTOM_RECIPES_STORAGE_KEY = 'customRecipes';
+export const STORAGE_CUSTOM_RECIPES_KEY = 'customRecipes';
 
 const CustomList = ({
   filters,
@@ -64,6 +70,7 @@ const CustomList = ({
   settingMessages,
   sendEmailMessages,
   importFileMessages,
+  copyAndPasteMessages,
   cameras,
 }: ICardListProps) => {
   const sortTypes: DropboxItem[] = useMemo(
@@ -113,6 +120,10 @@ const CustomList = ({
     ]
   );
 
+  const searchParams = useSearchParams();
+  const addParam = searchParams.get(QUERY_KEY_ADD_RECIPE);
+  const router = useRouter();
+
   const setToastMessage = useToastStore((state) => state.setMessage);
 
   const [customRecipes, setCustomRecipes] = useState<CustomRecipe[]>([]);
@@ -130,10 +141,59 @@ const CustomList = ({
 
   useEffect(() => {
     const storedRecipes = JSON.parse(
-      localStorage.getItem(CUSTOM_RECIPES_STORAGE_KEY) ?? '[]'
+      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? '[]'
     );
     setCustomRecipes(storedRecipes);
   }, []);
+
+  useEffect(() => {
+    if (!addParam) return;
+
+    const decompressedRecipe =
+      lzString.decompressFromEncodedURIComponent(addParam);
+
+    if (!decompressedRecipe) {
+      setToastMessage({
+        message: copyAndPasteMessages.paste.errors.invalidURL,
+      });
+      return router.replace('/');
+    }
+
+    const sharedRecipe = JSON.parse(decompressedRecipe) as CustomRecipe;
+    const isValidCustomRecipe = isCustomRecipeJSON(sharedRecipe);
+
+    if (!isValidCustomRecipe) {
+      setToastMessage({
+        message: copyAndPasteMessages.paste.errors.invalidScheme,
+      });
+      return router.replace('/');
+    }
+    const newRecipe: CustomRecipe = {
+      ...sharedRecipe,
+      _id: uuidv4(),
+      createdAt: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+    };
+
+    const storedRecipe = JSON.parse(
+      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? '[]'
+    );
+
+    const addedStoredRecipe = [newRecipe, ...storedRecipe];
+    localStorage.setItem(
+      STORAGE_CUSTOM_RECIPES_KEY,
+      JSON.stringify(addedStoredRecipe)
+    );
+
+    setToastMessage({ message: copyAndPasteMessages.paste.success });
+    router.replace('/');
+  }, [
+    addParam,
+    router,
+    setToastMessage,
+    copyAndPasteMessages.paste.errors.invalidScheme,
+    copyAndPasteMessages.paste.errors.invalidURL,
+    copyAndPasteMessages.paste.success,
+  ]);
 
   const filteredRecipes = useMemo(() => {
     return customRecipes.filter((recipe) => {
@@ -211,7 +271,7 @@ const CustomList = ({
     const recipes = [recipe, ...customRecipes];
     setCustomRecipes(recipes);
 
-    localStorage.setItem(CUSTOM_RECIPES_STORAGE_KEY, JSON.stringify(recipes));
+    localStorage.setItem(STORAGE_CUSTOM_RECIPES_KEY, JSON.stringify(recipes));
 
     setToastMessage({
       message: settingMessages.successes.create,
@@ -227,7 +287,7 @@ const CustomList = ({
     setCustomRecipes(recipesUpdated);
 
     localStorage.setItem(
-      CUSTOM_RECIPES_STORAGE_KEY,
+      STORAGE_CUSTOM_RECIPES_KEY,
       JSON.stringify(recipesUpdated)
     );
 
@@ -250,10 +310,10 @@ const CustomList = ({
   const onDeleteSuccess = (deletedRecipe: CustomRecipe): void => {
     setCustomRecipes((prev) => _reject(prev, deletedRecipe));
     const storedItems = JSON.parse(
-      localStorage.getItem(CUSTOM_RECIPES_STORAGE_KEY) ?? '[]'
+      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? '[]'
     );
     const filtered = _reject(storedItems, deletedRecipe);
-    localStorage.setItem(CUSTOM_RECIPES_STORAGE_KEY, JSON.stringify(filtered));
+    localStorage.setItem(STORAGE_CUSTOM_RECIPES_KEY, JSON.stringify(filtered));
   };
 
   const createCardClassName = shrinkCreateCard
@@ -326,6 +386,7 @@ const CustomList = ({
             onUpdateSuccess={onUpdateSuccess}
             onUpdateError={onError}
             onDeleteSuccess={onDeleteSuccess}
+            copyAndPasteMessages={copyAndPasteMessages}
           />
         ))}
         <ScrollUpButton refObject={refMain} />

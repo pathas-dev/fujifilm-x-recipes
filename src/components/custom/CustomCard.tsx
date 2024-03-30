@@ -1,12 +1,15 @@
 'use client';
 
+import useToastStore from '@/stores/toast';
 import { SettingMessages } from '@/types/language';
 import dayjs from 'dayjs';
 import { animate, inView, motion } from 'framer-motion';
+import lzString from 'lz-string';
 import { useEffect, useState } from 'react';
 import {
   SvgArrowUTurnLeft,
   SvgCalendarDaysMicro,
+  SvgClipBoard,
   SvgPencilSquareSolid,
   SvgTrashMini,
 } from '../icon/svgs';
@@ -23,6 +26,8 @@ const CARD_MODES = ['READ', 'UPDATE'] as const;
 
 const AUTO_DELETE_MILLISECONDS = 6000;
 
+export const QUERY_KEY_ADD_RECIPE = 'add';
+
 interface ICustomCardProps
   extends Omit<ICustomEditCardProps, 'onSuccess' | 'onError'> {
   onUpdateSuccess: (recipe: CustomRecipe) => void;
@@ -35,12 +40,14 @@ const CustomCard = ({
   filters,
   onUpdateError,
   onUpdateSuccess,
-  settingMessages: settingLabels,
+  settingMessages,
+  copyAndPasteMessages,
   customRecipe,
   onDeleteSuccess,
 }: ICustomCardProps) => {
   const [mode, setMode] = useState<(typeof CARD_MODES)[number]>('READ');
   const [deleteTimer, setDeleteTimer] = useState<NodeJS.Timeout>();
+  const setToastMessage = useToastStore((state) => state.setMessage);
 
   const customCardRefCallback = (ref: HTMLDivElement) => {
     if (!ref) return;
@@ -63,7 +70,7 @@ const CustomCard = ({
         cameras={cameras}
         customRecipe={customRecipe}
         filters={filters}
-        settingMessages={settingLabels}
+        settingMessages={settingMessages}
         onSuccess={(recipe) => {
           onUpdateSuccess(recipe);
           setMode('READ');
@@ -98,76 +105,80 @@ const CustomCard = ({
 
   const settingDisplayProps: ISettingDisplayProps[] = [
     {
-      label: settingLabels.labels.highlight,
+      label: settingMessages.labels.highlight,
       value: customRecipe.settings.tone.highlight,
       defaultValue: initialSettings.tone.highlight,
     },
     {
-      label: settingLabels.labels.shadow,
+      label: settingMessages.labels.shadow,
       value: customRecipe.settings.tone.shadow,
       defaultValue: initialSettings.tone.shadow,
     },
     {
-      label: settingLabels.labels.grainRoughness,
+      label: settingMessages.labels.grainRoughness,
       value: customRecipe.settings.grain.roughness,
       defaultValue: initialSettings.grain.roughness,
       displayValue:
-        settingLabels.options.effects[customRecipe.settings.grain.roughness],
+        settingMessages.options.effects[customRecipe.settings.grain.roughness],
     },
     {
-      label: settingLabels.labels.grainSize,
+      label: settingMessages.labels.grainSize,
       value: customRecipe.settings.grain.size,
       defaultValue: initialSettings.grain.size,
       displayValue:
-        settingLabels.options.sizes[customRecipe.settings.grain.size],
+        settingMessages.options.sizes[customRecipe.settings.grain.size],
     },
     {
-      label: settingLabels.labels.dynamicRange,
+      label: settingMessages.labels.dynamicRange,
       value: customRecipe.settings.dRange,
       defaultValue: initialSettings.dRange,
     },
     {
-      label: settingLabels.labels.colorChromeEffect,
+      label: settingMessages.labels.colorChromeEffect,
       value: customRecipe.settings.colorChrome.effect,
       defaultValue: initialSettings.colorChrome.effect,
       displayValue:
-        settingLabels.options.effects[customRecipe.settings.colorChrome.effect],
+        settingMessages.options.effects[
+          customRecipe.settings.colorChrome.effect
+        ],
     },
     {
-      label: settingLabels.labels.colorChromeFXBlue,
+      label: settingMessages.labels.colorChromeFXBlue,
       value: customRecipe.settings.colorChrome.fxBlue,
       defaultValue: initialSettings.colorChrome.fxBlue,
       displayValue:
-        settingLabels.options.effects[customRecipe.settings.colorChrome.fxBlue],
+        settingMessages.options.effects[
+          customRecipe.settings.colorChrome.fxBlue
+        ],
     },
     {
-      label: settingLabels.labels.sharpness,
+      label: settingMessages.labels.sharpness,
       value: customRecipe.settings.sharpness,
       defaultValue: initialSettings.sharpness,
     },
     {
-      label: settingLabels.labels.color,
+      label: settingMessages.labels.color,
       value: customRecipe.settings.color,
       defaultValue: initialSettings.color,
     },
     {
-      label: settingLabels.labels.clarity,
+      label: settingMessages.labels.clarity,
       value: customRecipe.settings.clarity,
       defaultValue: initialSettings.clarity,
     },
     {
-      label: settingLabels.labels.isoNoiseReduction,
+      label: settingMessages.labels.isoNoiseReduction,
       value: customRecipe.settings.isoNoiseReduction,
       defaultValue: initialSettings.isoNoiseReduction,
     },
     {
-      label: settingLabels.labels.exposure,
+      label: settingMessages.labels.exposure,
       value: customRecipe.settings.exposure,
       defaultValue: initialSettings.exposure,
       displayValue: formatExposure(customRecipe.settings.exposure),
     },
     {
-      label: settingLabels.labels.iso,
+      label: settingMessages.labels.iso,
       value: customRecipe.settings.iso.value,
       defaultValue: initialSettings.iso.value,
       displayValue: `${customRecipe.settings.iso.isAuto ? 'AUTO up to ' : ''}${
@@ -176,16 +187,16 @@ const CustomCard = ({
     },
 
     {
-      label: settingLabels.labels.whiteBalance,
+      label: settingMessages.labels.whiteBalance,
       value: customRecipe.settings.whiteBalance.type,
       defaultValue: initialSettings.whiteBalance.type,
       displayValue: getWhiteBalanceDisplayValue({
         whiteBalance: customRecipe.settings.whiteBalance,
-        settingLabel: settingLabels,
+        settingLabel: settingMessages,
       }),
     },
     {
-      label: settingLabels.labels.whiteBalanceShift,
+      label: settingMessages.labels.whiteBalanceShift,
       value: getWhiteBalanceShiftValue(
         customRecipe.settings.whiteBalance.shift
       ),
@@ -194,7 +205,7 @@ const CustomCard = ({
       ),
     },
     {
-      label: settingLabels.labels.bwAdj,
+      label: settingMessages.labels.bwAdj,
       value: customRecipe.settings.bwAdj,
       defaultValue: initialSettings.bwAdj,
     },
@@ -211,6 +222,22 @@ const CustomCard = ({
   const onUndoDeleteButtonClick = () => {
     clearTimeout(deleteTimer);
     setDeleteTimer(undefined);
+  };
+
+  const onShareButtonClick = () => {
+    const compressedRecipe = lzString.compressToEncodedURIComponent(
+      JSON.stringify(customRecipe)
+    );
+    const url = `${window.location.href}?${QUERY_KEY_ADD_RECIPE}=${compressedRecipe}`;
+    if (!!navigator.clipboard) {
+      navigator.clipboard.writeText(url);
+      setToastMessage({ message: copyAndPasteMessages?.copy.success });
+    } else {
+      setToastMessage({
+        type: 'Error',
+        message: copyAndPasteMessages?.copy.fail,
+      });
+    }
   };
 
   return (
@@ -256,6 +283,14 @@ const CustomCard = ({
             {settingDisplayProps.map((props) => (
               <SettingDisplay {...props} key={props.label} />
             ))}
+            <div className="flex w-full justify-end mt-1">
+              <button
+                onClick={onShareButtonClick}
+                className="btn btn-sm btn-ghost btn-circle fill-info"
+              >
+                <SvgClipBoard />
+              </button>
+            </div>
           </div>
         </details>
         <div className="card-actions justify-between flex items-center">

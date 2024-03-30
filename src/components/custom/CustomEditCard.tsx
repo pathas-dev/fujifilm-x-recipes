@@ -1,6 +1,7 @@
 'use client';
 import { Camera } from '@/types/api';
 import {
+  CopyAndPasteMessages,
   ImportFileMessages,
   SendEmailMessages,
   SettingI18NMessages,
@@ -45,6 +46,8 @@ export interface ICustomEditCardProps {
   settingMessages: SettingMessages;
   sendEmailMessages?: SendEmailMessages;
   importFileMessages?: ImportFileMessages;
+  copyAndPasteMessages?: CopyAndPasteMessages;
+
   cameras: Camera[];
   onSuccess: (recipe: CustomRecipe) => void;
   onError: (errorType: (typeof ERROR_TYPES)[number]) => void;

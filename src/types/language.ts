@@ -107,5 +107,20 @@ export type SettingsPageMessages = {
   title: string;
   originsPage: string;
   guidePage: string;
+  notePage: string;
   hideCardImage: string;
+};
+
+export type CopyAndPasteMessages = {
+  copy: {
+    success: string;
+    fail: string;
+  };
+  paste: {
+    success: string;
+    errors: {
+      invalidURL: string;
+      invalidScheme: string;
+    };
+  };
 };

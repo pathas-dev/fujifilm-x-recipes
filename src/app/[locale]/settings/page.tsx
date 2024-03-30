@@ -1,5 +1,6 @@
 import ThemeSwitch from '@/components/settings/ThemeSwitch';
 import {
+  SvgBeakerMini,
   SvgChevronRight,
   SvgQuestionMarkCircleMini,
   SvgSparklesMini,
@@ -23,6 +24,7 @@ const SettingsPage = async ({
     title: tSettingsPage('title'),
     originsPage: tSettingsPage('originsPage'),
     guidePage: tSettingsPage('guidePage'),
+    notePage: tSettingsPage('notePage'),
     hideCardImage: tSettingsPage('hideCardImage'),
   };
 
@@ -40,6 +42,11 @@ const SettingsPage = async ({
       href: '/guide',
       icon: <SvgQuestionMarkCircleMini />,
       label: settingsPageMessages.guidePage,
+    },
+    {
+      href: '/note',
+      icon: <SvgBeakerMini />,
+      label: settingsPageMessages.notePage,
     },
   ];
 

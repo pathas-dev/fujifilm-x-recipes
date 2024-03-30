@@ -6,6 +6,7 @@ import {
   GRAIN_SIZE,
   WHITE_BALANCES,
 } from './fujiSettings';
+import Ajv, { JSONSchemaType } from 'ajv';
 
 export type FujiSetting = {
   tone: { highlight: number; shadow: number };
@@ -121,3 +122,111 @@ export const initialCustomRecipe: CustomRecipe = {
 export const getInitialCustomRecipe = () => ({ ...initialCustomRecipe });
 
 export const ERROR_TYPES = ['noName', 'noCamera', 'noBase'] as const;
+
+export const isCustomRecipeJSON = (customRecipeJSON: CustomRecipe) => {
+  const ajv = new Ajv();
+  const schema: JSONSchemaType<CustomRecipe> = {
+    type: 'object',
+    required: [
+      '_id',
+      'base',
+      'camera',
+      'colorType',
+      'createdAt',
+      'name',
+      'sensor',
+      'settings',
+      'updatedAt',
+    ],
+    properties: {
+      _id: { type: 'string' },
+      name: { type: 'string' },
+      base: { type: 'string' },
+      camera: { type: 'string' },
+      sensor: { type: 'string' },
+      colorType: { type: 'string' },
+      createdAt: { type: 'string' },
+      updatedAt: { type: 'string' },
+      settings: {
+        type: 'object',
+        required: [
+          'bwAdj',
+          'clarity',
+          'color',
+          'colorChrome',
+          'dRange',
+          'exposure',
+          'grain',
+          'iso',
+          'isoNoiseReduction',
+          'sharpness',
+          'tone',
+        ],
+        properties: {
+          tone: {
+            type: 'object',
+            required: ['highlight', 'shadow'],
+            properties: {
+              highlight: { type: 'number' },
+              shadow: { type: 'number' },
+            },
+          },
+          color: { type: 'number' },
+          sharpness: { type: 'number' },
+          isoNoiseReduction: { type: 'number' },
+          clarity: { type: 'number' },
+          exposure: { type: 'number' },
+          iso: {
+            type: 'object',
+            required: ['isAuto', 'value'],
+            properties: {
+              value: { type: 'number' },
+              isAuto: { type: 'boolean' },
+            },
+          },
+          grain: {
+            type: 'object',
+            required: ['roughness', 'size'],
+            properties: {
+              size: { type: 'string' },
+              roughness: { type: 'string' },
+            },
+          },
+          colorChrome: {
+            type: 'object',
+            required: ['effect', 'fxBlue'],
+            properties: {
+              effect: { type: 'string' },
+              fxBlue: { type: 'string' },
+            },
+          },
+          dRange: { type: 'string' },
+          whiteBalance: {
+            type: 'object',
+            required: ['k', 'shift', 'type'],
+            properties: {
+              type: { type: 'string' },
+              shift: {
+                type: 'object',
+                required: ['blue', 'red'],
+                properties: {
+                  red: { type: 'number' },
+                  blue: { type: 'number' },
+                },
+              },
+              k: { type: 'number' },
+            },
+          },
+          bwAdj: { type: 'number' },
+        },
+      },
+    },
+  };
+  const validate = ajv.compile(schema);
+  if (validate(customRecipeJSON)) {
+    return true;
+  } else {
+    console.log(validate.errors);
+    return false;
+  }
+};

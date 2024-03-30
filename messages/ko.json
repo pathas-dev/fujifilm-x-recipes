@@ -10,6 +10,7 @@
     "title": "설정",
     "originsPage": "오리진 페이지",
     "guidePage": "가이드 페이지",
+    "notePage": "패치 노트",
     "hideCardImage": "카드 이미지 숨기기"
   },
   "Headers": {
@@ -105,5 +106,18 @@
       "notJson": "JSON 파일이 아닙니다."
     },
     "tooltip": "레시피 JSON 파일 로드"
+  },
+  "CopyAndPasteMessages": {
+    "copy": {
+      "success": "클립보드에 레시피 URL이 복사되었습니다.",
+      "fail": "클립보드 미지원 환경입니다."
+    },
+    "paste": {
+      "success": "공유된 레시피를 추가했습니다!",
+      "errors": {
+        "invalidURL": "올바르지 않은 URL 입니다.",
+        "invalidScheme": "올바르지 않은 JSON 형식입니다."
+      }
+    }
   }
 }

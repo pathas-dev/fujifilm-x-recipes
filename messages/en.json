@@ -10,6 +10,7 @@
     "title": "Settings",
     "originsPage": "Origins Page",
     "guidePage": "Guide Page",
+    "notePage": "Patch Notes",
     "hideCardImage": "Hide card image"
   },
   "Headers": {
@@ -105,5 +106,18 @@
       "notJson": "It's not a JSON file."
     },
     "tooltip": "Load recipe JSON file"
+  },
+  "CopyAndPasteMessages": {
+    "copy": {
+      "success": "Recipe URL copied to clipboard",
+      "fail": "Clipboard is not supported in this environment."
+    },
+    "paste": {
+      "success": "Added shared recipes!",
+      "errors": {
+        "invalidURL": "This is an incorrect URL.",
+        "invalidScheme": "Invalid JSON format."
+      }
+    }
   }
 }

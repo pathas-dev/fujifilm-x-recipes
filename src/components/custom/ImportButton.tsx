@@ -4,7 +4,7 @@ import _isEqual from 'lodash/isEqual';
 import _unionWith from 'lodash/unionWith';
 import { ChangeEventHandler, useState } from 'react';
 import { SvgArrowRightEndOnRectangle, SvgCheckSolid } from '../icon/svgs';
-import { CUSTOM_RECIPES_STORAGE_KEY } from './CustomList';
+import { STORAGE_CUSTOM_RECIPES_KEY } from './CustomList';
 import { CustomRecipe } from './customRecipe';
 
 interface IExportButtonProps {
@@ -74,12 +74,12 @@ const ImportButton = ({
       return setToastMessage({ type: 'Error', message: noFileErrorMessage });
 
     const storedRecipes = JSON.parse(
-      localStorage.getItem(CUSTOM_RECIPES_STORAGE_KEY) ?? '[]'
+      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? '[]'
     );
 
     const unionedRecipes = _unionWith(storedRecipes, uploadedRecipes, _isEqual);
     localStorage.setItem(
-      CUSTOM_RECIPES_STORAGE_KEY,
+      STORAGE_CUSTOM_RECIPES_KEY,
       JSON.stringify(unionedRecipes)
     );
 

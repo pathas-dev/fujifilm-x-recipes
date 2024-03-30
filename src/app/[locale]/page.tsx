@@ -2,6 +2,7 @@ import { getCamerasWithFilters } from '@/app/api/data/localData';
 import CustomList from '@/components/custom/CustomList';
 import { localeIntl } from '@/navigation';
 import {
+  CopyAndPasteMessages,
   HeaderMessages,
   ImportFileMessages,
   SendEmailMessages,
@@ -21,6 +22,7 @@ export default async function CustomPage({
   const tSettings = await getTranslations('Settings');
   const tSendEmail = await getTranslations('SendEmail');
   const tImportFile = await getTranslations('ImportFile');
+  const tCopyAndPasteMessages = await getTranslations('CopyAndPasteMessages');
 
   const headerMessages: HeaderMessages = {
     bwOnly: tHeaders('bwOnly'),
@@ -119,6 +121,20 @@ export default async function CustomPage({
     tooltip: tImportFile('tooltip'),
   };
 
+  const copyAndPasteMessages: CopyAndPasteMessages = {
+    copy: {
+      success: tCopyAndPasteMessages('copy.success'),
+      fail: tCopyAndPasteMessages('copy.fail'),
+    },
+    paste: {
+      success: tCopyAndPasteMessages('paste.success'),
+      errors: {
+        invalidURL: tCopyAndPasteMessages('paste.errors.invalidURL'),
+        invalidScheme: tCopyAndPasteMessages('paste.errors.invalidScheme'),
+      },
+    },
+  };
+
   return (
     <CustomList
       filters={filters}
@@ -127,6 +143,7 @@ export default async function CustomPage({
       sendEmailMessages={sendEmailMessages}
       importFileMessages={importFileMessages}
       cameras={cameras}
+      copyAndPasteMessages={copyAndPasteMessages}
     />
   );
 }

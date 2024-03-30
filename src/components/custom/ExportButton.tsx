@@ -1,6 +1,6 @@
 import { ChangeEventHandler, useState } from 'react';
 import { SvgAirplaneSolid, SvgEnvelopeSolid } from '../icon/svgs';
-import { CUSTOM_RECIPES_STORAGE_KEY } from './CustomList';
+import { STORAGE_CUSTOM_RECIPES_KEY } from './CustomList';
 import useToastStore from '@/stores/toast';
 import { SendEmailMessages } from '@/types/language';
 
@@ -23,7 +23,7 @@ const ExportButton = ({ sendEmailMessages }: IExportButtonProps) => {
 
   const sendMailRecipes = async () => {
     const storedRecipes = JSON.parse(
-      localStorage.getItem(CUSTOM_RECIPES_STORAGE_KEY) ?? '[]'
+      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? '[]'
     );
 
     if (!storedRecipes || storedRecipes.length === 0)
