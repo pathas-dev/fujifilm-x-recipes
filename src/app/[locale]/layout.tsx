@@ -49,7 +49,10 @@ export async function generateMetadata({
       'film recipes',
       'camera',
     ],
-    icons: { icon: `${SITE_URL}/favicon.ico` },
+    icons: {
+      icon: `${SITE_URL}/favicon.ico`,
+      shortcut: `${SITE_URL}/favicon.ico`,
+    },
 
     robots: { follow: true, index: true },
 
