@@ -13,6 +13,7 @@ import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
 import { Noto_Sans_KR } from 'next/font/google';
 import { cookies } from 'next/headers';
 import { COOKIE_THEME_KEY } from '../constants/cookie';
+import { SITE_URL } from '../sitemap';
 
 const notoSans = Noto_Sans_KR({
   subsets: ['latin'],
@@ -25,9 +26,7 @@ export async function generateMetadata({
 }) {
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
-  const SITE_URL = 'https://www.fujifilm-x-recipes.site';
   // 도메인 만료 시 아래 vercel 링크로 변경
-  // const SITE_URL = 'https://fujifilm-x-recipes.vercel.app/';
 
   const metadata: Metadata = {
     title: 'fujifilm-x-recipes',

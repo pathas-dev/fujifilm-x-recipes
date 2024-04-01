@@ -1,7 +1,7 @@
 import { locales } from '@/navigation';
 import { MetadataRoute } from 'next';
 
-const siteUrl = process.env.SITE_URL;
+export const SITE_URL = 'https://www.fujifilm-x-recipes.site';
 
 const pages = [
   '',
@@ -11,19 +11,19 @@ const pages = [
   '/cameras',
   '/settings',
   '/guide',
-  '/note'
+  '/note',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
-      url: `${siteUrl}`,
+      url: `${SITE_URL}`,
       lastModified: new Date(),
     },
     ...locales.reduce<MetadataRoute.Sitemap>((acc, locale) => {
       return acc.concat(
         pages.map((page) => ({
-          url: `${siteUrl}/${locale}${page}`,
+          url: `${SITE_URL}/${locale}${page}`,
           lastModified: new Date(),
         }))
       );
