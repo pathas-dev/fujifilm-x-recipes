@@ -52,7 +52,7 @@ export async function generateMetadata({
       icon: `${SITE_URL}/favicon.ico`,
       shortcut: `${SITE_URL}/favicon.ico`,
     },
-
+    alternates: { canonical: SITE_URL },
     robots: { follow: true, index: true },
 
     openGraph: {
