@@ -10,7 +10,7 @@ import { RefObject, useState } from 'react';
 import { SvgArrowUpSolid } from '../icon/svgs';
 
 interface IScrollUpButtonProps {
-  refObject: RefObject<HTMLElement> | undefined;
+  refObject: RefObject<HTMLElement | null> | undefined;
 }
 
 const ScrollUpButton = ({ refObject }: IScrollUpButtonProps) => {

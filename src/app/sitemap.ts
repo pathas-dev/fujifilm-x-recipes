@@ -1,17 +1,17 @@
-import { locales } from '@/navigation';
-import { MetadataRoute } from 'next';
+import { locales } from "@/i18n/navigation";
+import { MetadataRoute } from "next";
 
-export const SITE_URL = 'https://www.fujifilm-x-recipes.site';
+export const SITE_URL = "https://www.fujifilm-x-recipes.site";
 
 const pages = [
-  '',
-  '/recipes',
-  '/origins',
-  '/bookmarks',
-  '/cameras',
-  '/settings',
-  '/guide',
-  '/note',
+  "",
+  "/recipes",
+  "/origins",
+  "/bookmarks",
+  "/cameras",
+  "/settings",
+  "/guide",
+  "/note",
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

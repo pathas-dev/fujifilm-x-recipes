@@ -1,14 +1,17 @@
-import camearsData from '@/app/api/data/cameras.json';
-import CameraList from '@/components/camera/CameraList';
-import { localeIntl } from '@/navigation';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import camearsData from "@/app/api/data/cameras.json";
+import CameraList from "@/components/camera/CameraList";
+import { localeIntl } from "@/i18n/navigation";
+import { setRequestLocale } from "next-intl/server";
 
-const Cameras = async ({
-  params: { locale },
-}: Readonly<{
-  params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
-}>) => {
-  unstable_setRequestLocale(locale);
+const Cameras = async (
+  props: Readonly<{
+    params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+  }>
+) => {
+  const params = await props.params;
+
+  const { locale } = params;
+  setRequestLocale(locale);
 
   return <CameraList cameras={camearsData.cameras} />;
 };

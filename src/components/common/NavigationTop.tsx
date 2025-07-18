@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { Link, usePathname } from '@/navigation';
-import { NavigationTitleMessages } from '@/types/language';
+import { Link, usePathname } from "@/i18n/navigation";
+import { NavigationTitleMessages } from "@/types/language";
 
 interface INavigationProps {
   titles: NavigationTitleMessages;
@@ -11,23 +11,23 @@ const NavigationTop = ({ titles }: INavigationProps) => {
   const buttonProps: INavLinkProps[] = [
     {
       title: titles.bookmarks,
-      path: '/bookmarks',
+      path: "/bookmarks",
     },
     {
       title: titles.recipes,
-      path: '/recipes',
+      path: "/recipes",
     },
     {
       title: titles.custom,
-      path: '/',
+      path: "/",
     },
     {
       title: titles.cameras,
-      path: '/cameras',
+      path: "/cameras",
     },
     {
       title: titles.settings,
-      path: '/settings',
+      path: "/settings",
     },
   ];
 
@@ -63,8 +63,8 @@ const NavLink = ({ title, path }: INavLinkProps) => {
 
   const className =
     pathname === path
-      ? 'menu menu-horizontal px-1 text-primary'
-      : 'menu menu-horizontal px-1';
+      ? "menu menu-horizontal px-1 text-primary"
+      : "menu menu-horizontal px-1";
 
   return (
     <li className={className}>

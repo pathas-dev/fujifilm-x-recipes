@@ -1,13 +1,13 @@
-'use client';
+"use client";
 
-import { Link } from '@/navigation';
-import { Recipe } from '@/types/api';
-import dayjs from 'dayjs';
-import { animate, inView, motion, useInView } from 'framer-motion';
-import Image from 'next/image';
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { SvgArrow, SvgLink } from '../icon/svgs';
-import { STORAGE_HIDE_CARD_IMAGE_KEY } from '../settings/HideCardImageToggle';
+import { Link } from "@/i18n/navigation";
+import { Recipe } from "@/types/api";
+import dayjs from "dayjs";
+import { animate, inView, motion, useInView } from "framer-motion";
+import Image from "next/image";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { SvgArrow, SvgLink } from "../icon/svgs";
+import { STORAGE_HIDE_CARD_IMAGE_KEY } from "../settings/HideCardImageToggle";
 
 interface IRecipeCardProps {
   recipe: Recipe;
@@ -22,12 +22,12 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
   const fetchOpenGraphImage = useCallback(async () => {
     try {
       const response = (await Promise.race([
-        fetch('/api/recipes/url', {
-          method: 'POST',
+        fetch("/api/recipes/url", {
+          method: "POST",
           body: JSON.stringify({ url: recipe.url }),
         }),
         new Promise((_, reject) =>
-          setTimeout(() => reject(new Error('timeout')), 5000)
+          setTimeout(() => reject(new Error("timeout")), 5000)
         ),
       ])) as Response;
 
@@ -35,7 +35,7 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
       if (!data?.urlHtml) return;
 
       const parsedOpenGraph = getOpenGraph(data.urlHtml);
-      if (!parsedOpenGraph.image.url) throw new Error('no image');
+      if (!parsedOpenGraph.image.url) throw new Error("no image");
 
       setOpenGraph(parsedOpenGraph);
     } catch (error) {
@@ -49,11 +49,11 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
 
     const animation = animate([refCard.current], {
       opacity: 1,
-      translateX: '0%',
+      translateX: "0%",
     });
 
     const hideImage = JSON.parse(
-      localStorage.getItem(STORAGE_HIDE_CARD_IMAGE_KEY) || 'false'
+      localStorage.getItem(STORAGE_HIDE_CARD_IMAGE_KEY) || "false"
     );
 
     if (hideImage) setOpenGraph(getInitialOpenGraph());
@@ -64,8 +64,8 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
 
   const isColor = /color/i.test(recipe.colorType);
   const colorClassName = isColor
-    ? 'from-red-500 via-green-500 to-blue-500'
-    : 'from-black to-white';
+    ? "from-red-500 via-green-500 to-blue-500"
+    : "from-black to-white";
 
   const cardInner = useMemo(
     () => (
@@ -73,14 +73,14 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
         <figure className="relative">
           {openGraph?.image?.url && (
             <Image
-              src={openGraph?.image?.url ?? ''}
-              alt={openGraph?.image?.alt ?? ''}
+              src={openGraph?.image?.url ?? ""}
+              alt={openGraph?.image?.alt ?? ""}
               fill
               quality={30}
               style={{
-                objectFit: 'cover',
-                transition: 'all',
-                position: 'absolute',
+                objectFit: "cover",
+                transition: "all",
+                position: "absolute",
               }}
               sizes="33vw"
             />
@@ -129,7 +129,7 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
               className="card-actions self-end flex items-center gap-0 link link-hover"
             >
               <SvgLink />
-              {recipe.creator}, {dayjs(recipe.published).format('YYYY-MM-DD')}
+              {recipe.creator}, {dayjs(recipe.published).format("YYYY-MM-DD")}
             </Link>
           </div>
         </div>
@@ -156,7 +156,7 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
       ref={refCard}
       className="card card-compact w-full min-h-44 h-fit bg-base-100 shadow-xl image-full overflow-hidden"
       transition={{ duration: 0.4 }}
-      initial={{ opacity: 0.3, translateX: '80%' }}
+      initial={{ opacity: 0.3, translateX: "80%" }}
     >
       {!openGraph && (
         <div
@@ -173,14 +173,14 @@ interface BookmarkProps {
   id: string;
 }
 
-export const STORAGE_BOOKMARK_KEY = 'bookmark';
+export const STORAGE_BOOKMARK_KEY = "bookmark";
 
 const Bookmark = ({ id }: BookmarkProps) => {
   const [marked, setMarked] = useState(false);
 
   useEffect(() => {
     const bookmarkedIds = JSON.parse(
-      localStorage.getItem(STORAGE_BOOKMARK_KEY) ?? '[]'
+      localStorage.getItem(STORAGE_BOOKMARK_KEY) ?? "[]"
     ) as string[];
 
     setMarked(bookmarkedIds.includes(id));
@@ -188,7 +188,7 @@ const Bookmark = ({ id }: BookmarkProps) => {
 
   const handleBookmarkClick = useCallback(() => {
     const bookmarkedIds = JSON.parse(
-      localStorage.getItem(STORAGE_BOOKMARK_KEY) ?? '[]'
+      localStorage.getItem(STORAGE_BOOKMARK_KEY) ?? "[]"
     ) as string[];
     if (!marked) {
       bookmarkedIds.push(id);
@@ -248,7 +248,7 @@ const Bookmark = ({ id }: BookmarkProps) => {
 
 // Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
 const keyStr =
-  'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=';
+  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
 
 const triplet = (e1: number, e2: number, e3: number) =>
   keyStr.charAt(e1 >> 2) +
@@ -262,16 +262,16 @@ const rgbDataURL = (r: number, g: number, b: number) =>
   }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
 
 const ogProperties = [
-  'type',
-  'title',
-  'url',
-  'image',
-  'image:width',
-  'image:height',
-  'image:alt',
-  'description',
-  'site_name',
-  'locale',
+  "type",
+  "title",
+  "url",
+  "image",
+  "image:width",
+  "image:height",
+  "image:alt",
+  "description",
+  "site_name",
+  "locale",
 ];
 
 type OpenGraph = {
@@ -291,18 +291,18 @@ type OpenGraph = {
 };
 
 const initialOpenGraph: OpenGraph = {
-  title: '',
-  type: '',
-  url: '',
-  description: '',
-  site_name: '',
-  locale: '',
+  title: "",
+  type: "",
+  url: "",
+  description: "",
+  site_name: "",
+  locale: "",
   image: {
-    height: '',
-    width: '',
-    url: '',
-    alt: '',
-    type: '',
+    height: "",
+    width: "",
+    url: "",
+    alt: "",
+    type: "",
   },
 };
 
@@ -320,17 +320,17 @@ const getInitialOpenGraph = (): OpenGraph => {
 
 const getOpenGraph = (urlHtml: string): OpenGraph => {
   const parser = new DOMParser();
-  const doc = parser.parseFromString(urlHtml, 'text/html');
+  const doc = parser.parseFromString(urlHtml, "text/html");
 
   return ogProperties.reduce<OpenGraph>((acc, property) => {
     const content =
       doc
         .querySelector(`meta[property="og:${property}"]`)
-        ?.getAttribute('content') ?? '';
+        ?.getAttribute("content") ?? "";
 
-    if (property.indexOf('image') < 0) return { ...acc, [property]: content };
+    if (property.indexOf("image") < 0) return { ...acc, [property]: content };
 
-    const DELIMETER = ':';
+    const DELIMETER = ":";
 
     const [, imageProperty] = property.split(DELIMETER);
 

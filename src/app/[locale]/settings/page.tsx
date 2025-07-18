@@ -1,50 +1,53 @@
-import ThemeSwitch from '@/components/settings/ThemeSwitch';
+import ThemeSwitch from "@/components/settings/ThemeSwitch";
 import {
   SvgBeakerMini,
   SvgChevronRight,
   SvgQuestionMarkCircleMini,
   SvgSparklesMini,
-} from '@/components/icon/svgs';
-import { Link, localeIntl } from '@/navigation';
-import { SettingsPageMessages } from '@/types/language';
-import { getTranslations, unstable_setRequestLocale } from 'next-intl/server';
-import HideCardImageToggle from '@/components/settings/HideCardImageToggle';
-import packageJson from '../../../../package.json';
+} from "@/components/icon/svgs";
+import { Link, localeIntl } from "@/i18n/navigation";
+import { SettingsPageMessages } from "@/types/language";
+import { getTranslations, setRequestLocale } from "next-intl/server";
+import HideCardImageToggle from "@/components/settings/HideCardImageToggle";
+import packageJson from "../../../../package.json";
 
-const SettingsPage = async ({
-  params: { locale },
-}: Readonly<{
-  params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
-}>) => {
-  unstable_setRequestLocale(locale);
+const SettingsPage = async (
+  props: Readonly<{
+    params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+  }>
+) => {
+  const params = await props.params;
 
-  const tSettingsPage = await getTranslations('SettingsPage');
+  const { locale } = params;
+  setRequestLocale(locale);
+
+  const tSettingsPage = await getTranslations("SettingsPage");
 
   const settingsPageMessages: SettingsPageMessages = {
-    title: tSettingsPage('title'),
-    originsPage: tSettingsPage('originsPage'),
-    guidePage: tSettingsPage('guidePage'),
-    notePage: tSettingsPage('notePage'),
-    hideCardImage: tSettingsPage('hideCardImage'),
+    title: tSettingsPage("title"),
+    originsPage: tSettingsPage("originsPage"),
+    guidePage: tSettingsPage("guidePage"),
+    notePage: tSettingsPage("notePage"),
+    hideCardImage: tSettingsPage("hideCardImage"),
   };
 
   const pages: Array<{
     href: string;
-    icon: React.ReactElement;
+    icon: React.ReactElement<any>;
     label: string;
   }> = [
     {
-      href: '/origins',
+      href: "/origins",
       icon: <SvgSparklesMini />,
       label: settingsPageMessages.originsPage,
     },
     {
-      href: '/guide',
+      href: "/guide",
       icon: <SvgQuestionMarkCircleMini />,
       label: settingsPageMessages.guidePage,
     },
     {
-      href: '/note',
+      href: "/note",
       icon: <SvgBeakerMini />,
       label: settingsPageMessages.notePage,
     },

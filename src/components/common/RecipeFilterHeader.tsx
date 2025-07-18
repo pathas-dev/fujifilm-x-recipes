@@ -62,7 +62,7 @@ export interface IDropboxProps {
     item: DropboxItem;
     checked: boolean;
   }) => void;
-  children: React.ReactElement;
+  children: React.ReactElement<any>;
   dropdownEnd?: boolean;
   type?: HTMLInputTypeAttribute;
 }

@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { Link } from '@/navigation';
-import { Noto_Sans_KR } from 'next/font/google';
+import { Link } from "@/i18n/navigation";
+import { Noto_Sans_KR } from "next/font/google";
 
 const notoSans = Noto_Sans_KR({
-  subsets: ['latin'],
+  subsets: ["latin"],
 });
 
 export default function NotFound() {
@@ -13,22 +13,22 @@ export default function NotFound() {
       <body
         className={[
           notoSans.className,
-          'drawer-content',
-          'flex',
-          'h-dvh',
-          'w-full',
-          'relative',
-          'select-none',
-        ].join(' ')}
+          "drawer-content",
+          "flex",
+          "h-dvh",
+          "w-full",
+          "relative",
+          "select-none",
+        ].join(" ")}
       >
         <main className="flex h-full flex-col w-full items-center justify-center">
           <h2 className="text-2xl font-bold">Not Found</h2>
           <p className="text-xl">Could not find requested page</p>
-          <a href="/">
+          <Link href="/">
             <button className="btn btn-outline btn-error mt-2">
               Return Home
             </button>
-          </a>
+          </Link>
         </main>
       </body>
     </html>

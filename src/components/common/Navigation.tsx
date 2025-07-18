@@ -1,16 +1,16 @@
-'use client';
+"use client";
 
-import { usePathname, useRouter } from '@/navigation';
-import { NavigationTitleMessages } from '@/types/language';
-import { motion } from 'framer-motion';
-import { useCallback, useMemo } from 'react';
+import { usePathname, useRouter } from "@/i18n/navigation";
+import { NavigationTitleMessages } from "@/types/language";
+import { motion } from "framer-motion";
+import { useCallback, useMemo } from "react";
 import {
   SvgBookmarkMini,
   SvgCameraMini,
   SvgCogMini,
   SvgPhotoMini,
   SvgVariableMini,
-} from '../icon/svgs';
+} from "../icon/svgs";
 
 interface INavigationProps {
   titles: NavigationTitleMessages;
@@ -21,35 +21,35 @@ const NavigationBottom = ({ titles }: INavigationProps) => {
     {
       title: titles.bookmarks,
       children: <SvgBookmarkMini />,
-      path: '/bookmarks',
+      path: "/bookmarks",
     },
     {
       title: titles.recipes,
       children: <SvgPhotoMini />,
-      path: '/recipes',
+      path: "/recipes",
     },
     {
       title: titles.custom,
       children: <SvgVariableMini />,
-      path: '/',
+      path: "/",
     },
     {
       title: titles.cameras,
       children: <SvgCameraMini />,
-      path: '/cameras',
+      path: "/cameras",
     },
     {
       title: titles.settings,
       children: <SvgCogMini />,
-      path: '/settings',
+      path: "/settings",
     },
   ];
 
   return (
     <motion.nav
       transition={{ duration: 0.4 }}
-      initial={{ opacity: 0.3, translateY: '150%' }}
-      animate={{ opacity: 1, translateY: '0%' }}
+      initial={{ opacity: 0.3, translateY: "150%" }}
+      animate={{ opacity: 1, translateY: "0%" }}
       className="btm-nav w-full z-50 relative md:hidden"
     >
       {buttonProps.map((buttonProp) => (
@@ -66,7 +66,7 @@ const NavigationBottom = ({ titles }: INavigationProps) => {
 };
 
 interface INavButtonProps {
-  children: React.ReactElement;
+  children: React.ReactElement<any>;
   title: string;
   path: string;
 }
@@ -80,7 +80,7 @@ const NavButton = ({ children, title, path }: INavButtonProps) => {
   }, [path, router]);
 
   const activeClassName = useMemo(
-    () => (currentPath === path ? 'active text-primary' : ''),
+    () => (currentPath === path ? "active text-primary" : ""),
     [path, currentPath]
   );
 

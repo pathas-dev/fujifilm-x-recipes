@@ -1,14 +1,17 @@
-import { getOrigins } from '@/app/api/data/localData';
-import OriginList from '@/components/origin/OriginList';
-import { localeIntl } from '@/navigation';
-import { unstable_setRequestLocale } from 'next-intl/server';
+import { getOrigins } from "@/app/api/data/localData";
+import OriginList from "@/components/origin/OriginList";
+import { localeIntl } from "@/i18n/navigation";
+import { setRequestLocale } from "next-intl/server";
 
-const Origins = async ({
-  params: { locale },
-}: Readonly<{
-  params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
-}>) => {
-  unstable_setRequestLocale(locale);
+const Origins = async (
+  props: Readonly<{
+    params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+  }>
+) => {
+  const params = await props.params;
+
+  const { locale } = params;
+  setRequestLocale(locale);
 
   const { origins } = await getOrigins();
 

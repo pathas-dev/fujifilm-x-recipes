@@ -25,7 +25,7 @@ import {
 import { WhiteBalance } from './customRecipe';
 
 interface CustomFormProps {
-  children: ReactElement | null | Array<ReactElement | null>;
+  children: ReactElement<any> | null | Array<ReactElement<any> | null>;
 }
 
 const SettingTab = ({ children }: CustomFormProps) => {

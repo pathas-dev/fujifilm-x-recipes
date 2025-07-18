@@ -1,20 +1,20 @@
-'use client';
+"use client";
 
-import useToastStore from '@/stores/toast';
-import { Camera } from '@/types/api';
+import useToastStore from "@/stores/toast";
+import { Camera } from "@/types/api";
 import {
   CopyAndPasteMessages,
   HeaderMessages,
   ImportFileMessages,
   SendEmailMessages,
   SettingMessages,
-} from '@/types/language';
-import dayjs from 'dayjs';
-import { motion } from 'framer-motion';
-import { produce } from 'immer';
-import _reject from 'lodash/reject';
-import _some from 'lodash/some';
-import lzString from 'lz-string';
+} from "@/types/language";
+import dayjs from "dayjs";
+import { motion } from "framer-motion";
+import { produce } from "immer";
+import _reject from "lodash/reject";
+import _some from "lodash/some";
+import lzString from "lz-string";
 import {
   Dispatch,
   SetStateAction,
@@ -23,12 +23,12 @@ import {
   useMemo,
   useRef,
   useState,
-} from 'react';
+} from "react";
 import RecipeFilterHeader, {
   DropboxItem,
   IDropboxProps,
-} from '../common/RecipeFilterHeader';
-import ScrollUpButton from '../common/ScrollUpButton';
+} from "../common/RecipeFilterHeader";
+import ScrollUpButton from "../common/ScrollUpButton";
 import {
   SvgArrowUpDownMicro,
   SvgCameraMicro,
@@ -36,13 +36,13 @@ import {
   SvgChevronDoubleDownSolid,
   SvgFilmMicro,
   SvgSensorMicro,
-} from '../icon/svgs';
-import CustomCard, { QUERY_KEY_ADD_RECIPE } from './CustomCard';
-import CustomEditCard from './CustomEditCard';
-import { CustomRecipe, ERROR_TYPES, isCustomRecipeJSON } from './customRecipe';
-import { useRouter } from '@/navigation';
-import { useSearchParams } from 'next/navigation';
-import { v4 as uuidv4 } from 'uuid';
+} from "../icon/svgs";
+import CustomCard, { QUERY_KEY_ADD_RECIPE } from "./CustomCard";
+import CustomEditCard from "./CustomEditCard";
+import { CustomRecipe, ERROR_TYPES, isCustomRecipeJSON } from "./customRecipe";
+import { useRouter } from "@/i18n/navigation";
+import { useSearchParams } from "next/navigation";
+import { v4 as uuidv4 } from "uuid";
 
 interface ICardListProps {
   filters: {
@@ -58,11 +58,11 @@ interface ICardListProps {
   cameras: Camera[];
 }
 
-const DESC_CHARACTER = '↓';
-const ASC_CHARACTER = '↑';
-const DELIMETER = ' ';
+const DESC_CHARACTER = "↓";
+const ASC_CHARACTER = "↑";
+const DELIMETER = " ";
 
-export const STORAGE_CUSTOM_RECIPES_KEY = 'customRecipes';
+export const STORAGE_CUSTOM_RECIPES_KEY = "customRecipes";
 
 const CustomList = ({
   filters,
@@ -77,39 +77,39 @@ const CustomList = ({
     () => [
       {
         label: [headerMessages.dateLabel, ASC_CHARACTER].join(DELIMETER),
-        value: 'createdAt',
+        value: "createdAt",
         isAsc: true,
       },
       {
         label: [headerMessages.dateLabel, DESC_CHARACTER].join(DELIMETER),
-        value: 'createdAt',
+        value: "createdAt",
       },
       {
         label: [headerMessages.nameLabel, ASC_CHARACTER].join(DELIMETER),
-        value: 'name',
+        value: "name",
         isAsc: true,
       },
       {
         label: [headerMessages.nameLabel, DESC_CHARACTER].join(DELIMETER),
-        value: 'name',
+        value: "name",
       },
       {
         label: [headerMessages.cameraLabel, ASC_CHARACTER].join(DELIMETER),
-        value: 'camera',
+        value: "camera",
         isAsc: true,
       },
       {
         label: [headerMessages.cameraLabel, DESC_CHARACTER].join(DELIMETER),
-        value: 'camera',
+        value: "camera",
       },
       {
         label: [headerMessages.baseLabel, ASC_CHARACTER].join(DELIMETER),
-        value: 'base',
+        value: "base",
         isAsc: true,
       },
       {
         label: [headerMessages.baseLabel, DESC_CHARACTER].join(DELIMETER),
-        value: 'base',
+        value: "base",
       },
     ],
     [
@@ -141,7 +141,7 @@ const CustomList = ({
 
   useEffect(() => {
     const storedRecipes = JSON.parse(
-      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? '[]'
+      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? "[]"
     );
     setCustomRecipes(storedRecipes);
   }, []);
@@ -156,7 +156,7 @@ const CustomList = ({
       setToastMessage({
         message: copyAndPasteMessages.paste.errors.invalidURL,
       });
-      return router.replace('/');
+      return router.replace("/");
     }
 
     const sharedRecipe = JSON.parse(decompressedRecipe) as CustomRecipe;
@@ -166,16 +166,16 @@ const CustomList = ({
       setToastMessage({
         message: copyAndPasteMessages.paste.errors.invalidScheme,
       });
-      return router.replace('/');
+      return router.replace("/");
     }
     const newRecipe: CustomRecipe = {
       ...sharedRecipe,
       _id: uuidv4(),
-      createdAt: dayjs().format('YYYY-MM-DD HH:mm:ss'),
+      createdAt: dayjs().format("YYYY-MM-DD HH:mm:ss"),
     };
 
     const storedRecipe = JSON.parse(
-      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? '[]'
+      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? "[]"
     );
 
     const addedStoredRecipe = [newRecipe, ...storedRecipe];
@@ -186,7 +186,7 @@ const CustomList = ({
 
     setCustomRecipes(addedStoredRecipe);
     setToastMessage({ message: copyAndPasteMessages.paste.success });
-    router.replace('/');
+    router.replace("/");
   }, [
     addParam,
     router,
@@ -206,7 +206,7 @@ const CustomList = ({
       const isSensorIncluded =
         sensors.length === 0 || !!_some(sensors, { value: recipe.sensor });
 
-      const isBw = bwOnly ? recipe.colorType === 'BW' : true;
+      const isBw = bwOnly ? recipe.colorType === "BW" : true;
 
       return isBaseIncluded && isCameraIncluded && isSensorIncluded && isBw;
     });
@@ -218,10 +218,10 @@ const CustomList = ({
     const { value, isAsc } = sortType;
 
     const sort =
-      value === 'createdAt' ? getSortDateCallback : getSortCharCallback;
+      value === "createdAt" ? getSortDateCallback : getSortCharCallback;
 
     return copiedFilteredRecipes.sort(
-      sort({ key: value as keyof Omit<CustomRecipe, 'settings'>, isAsc })
+      sort({ key: value as keyof Omit<CustomRecipe, "settings">, isAsc })
     );
   }, [sortType, filteredRecipes]);
 
@@ -262,7 +262,7 @@ const CustomList = ({
         if (checked) setSortType(item);
       },
       children: <SvgArrowUpDownMicro />,
-      type: 'radio',
+      type: "radio",
     },
   ];
 
@@ -299,27 +299,27 @@ const CustomList = ({
 
   const onError = (errorType: (typeof ERROR_TYPES)[number]) => {
     setToastMessage({
-      type: 'Error',
+      type: "Error",
       message: settingMessages.errors[errorType],
     });
   };
 
   const handleToUpButton = () => {
-    refMain.current?.scrollTo({ top: 0, behavior: 'smooth' });
+    refMain.current?.scrollTo({ top: 0, behavior: "smooth" });
   };
 
   const onDeleteSuccess = (deletedRecipe: CustomRecipe): void => {
     setCustomRecipes((prev) => _reject(prev, deletedRecipe));
     const storedItems = JSON.parse(
-      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? '[]'
+      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? "[]"
     );
     const filtered = _reject(storedItems, deletedRecipe);
     localStorage.setItem(STORAGE_CUSTOM_RECIPES_KEY, JSON.stringify(filtered));
   };
 
   const createCardClassName = shrinkCreateCard
-    ? 'w-full h-12 invisible overflow-hidden'
-    : 'w-full h-full flex justify-center';
+    ? "w-full h-12 invisible overflow-hidden"
+    : "w-full h-full flex justify-center";
 
   const onChebronClick = () => setShrinkCreateCard((prev) => !prev);
 
@@ -340,7 +340,7 @@ const CustomList = ({
         className="w-full h-[calc(100%-3.5rem)] p-2 grid grid-cols-1 md:grid-cols-3 gap-2 overflow-y-auto overflow-x-hidden scroll-smooth"
         ref={refMain}
         style={{
-          gridAutoRows: 'min-content',
+          gridAutoRows: "min-content",
         }}
       >
         <section className="w-full relative col-span-1 md:col-span-3">
@@ -408,7 +408,7 @@ const getSortDateCallback =
     key,
     isAsc,
   }: {
-    key: keyof Omit<CustomRecipe, 'settings'>;
+    key: keyof Omit<CustomRecipe, "settings">;
     isAsc?: boolean;
   }) =>
   (prev: CustomRecipe, next: CustomRecipe) => {
@@ -423,7 +423,7 @@ const getSortCharCallback =
     key,
     isAsc,
   }: {
-    key: keyof Omit<CustomRecipe, 'settings'>;
+    key: keyof Omit<CustomRecipe, "settings">;
     isAsc?: boolean;
   }) =>
   (prev: CustomRecipe, next: CustomRecipe) => {

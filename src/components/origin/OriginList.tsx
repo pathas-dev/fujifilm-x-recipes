@@ -1,15 +1,15 @@
-'use client';
+"use client";
 
-import { Link } from '@/navigation';
-import { Origin } from '@/types/api';
-import dayjs from 'dayjs';
-import { motion } from 'framer-motion';
-import { useRef } from 'react';
-import ScrollUpButton from '../common/ScrollUpButton';
-import { SvgFilmMicro } from '../icon/svgs';
+import { Link } from "@/i18n/navigation";
+import { Origin } from "@/types/api";
+import dayjs from "dayjs";
+import { motion } from "framer-motion";
+import { useRef } from "react";
+import ScrollUpButton from "../common/ScrollUpButton";
+import { SvgFilmMicro } from "../icon/svgs";
 
-const HPCHAVAZ_BLOG_URL = 'https://hpchavaz-photography.blogspot.com/';
-const MY_BLOG_URL = 'https://pathas.tistory.com/';
+const HPCHAVAZ_BLOG_URL = "https://hpchavaz-photography.blogspot.com/";
+const MY_BLOG_URL = "https://pathas.tistory.com/";
 
 interface IOriginListProps {
   origins: Origin[];
@@ -19,7 +19,7 @@ const OriginList = ({ origins }: IOriginListProps) => {
   const refMain = useRef<HTMLElement>(null);
 
   const getAnimatedText = (text: string) =>
-    text.split('').map((char, index) => (
+    text.split("").map((char, index) => (
       <motion.span
         initial={{ opacity: 0 }}
         transition={{
@@ -50,7 +50,7 @@ const OriginList = ({ origins }: IOriginListProps) => {
             className="link link-hover link-primary"
             target="_blank"
           >
-            {getAnimatedText('Maintained By @Henri-Pierre Chavaz')}
+            {getAnimatedText("Maintained By @Henri-Pierre Chavaz")}
           </Link>
         </li>
         {origins.map((origin) => (
@@ -62,8 +62,8 @@ const OriginList = ({ origins }: IOriginListProps) => {
             <div className="indicator">
               <div
                 className="tooltip tooltip-bottom"
-                data-tip={`${dayjs(origin.firstPublication).format('YYYYMMDD')}~
-                      ${dayjs(origin.lastPublication).format('YYYYMMDD')}`}
+                data-tip={`${dayjs(origin.firstPublication).format("YYYYMMDD")}~
+                      ${dayjs(origin.lastPublication).format("YYYYMMDD")}`}
               >
                 <motion.span
                   className="indicator-item badge badge-outline border-none text-xs text-accent"
@@ -75,7 +75,7 @@ const OriginList = ({ origins }: IOriginListProps) => {
                   animate={{ opacity: 1 }}
                 >
                   <SvgFilmMicro />
-                  {isNaN(Number(origin.count)) ? '' : `x${origin.count}`}
+                  {isNaN(Number(origin.count)) ? "" : `x${origin.count}`}
                 </motion.span>
                 <Link
                   id={origin.name}
@@ -96,7 +96,7 @@ const OriginList = ({ origins }: IOriginListProps) => {
             className="link link-hover link-primary"
             target="_blank"
           >
-            {getAnimatedText('Developed by pathas')}
+            {getAnimatedText("Developed by pathas")}
           </Link>
         </li>
       </motion.ul>

@@ -121,7 +121,7 @@ const CustomEditCard = ({
   const tabs: Array<{
     id: keyof SettingI18NMessages;
     label: string;
-    settingTab: ReactElement;
+    settingTab: ReactElement<any>;
   }> = [
     {
       id: 'tone',
@@ -553,7 +553,7 @@ interface ITabNavigationProps {
   tabs: Array<{
     id: keyof SettingI18NMessages;
     label: string;
-    settingTab: ReactElement;
+    settingTab: ReactElement<any>;
   }>;
   currentTab: keyof SettingI18NMessages;
   onChangeTab: (tab: keyof SettingI18NMessages) => void;

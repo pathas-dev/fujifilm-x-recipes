@@ -1,10 +1,10 @@
-'use client';
+"use client";
 
-import { useRouter } from '@/navigation';
-import { motion } from 'framer-motion';
-import { useEffect, useState } from 'react';
+import { useRouter } from "@/i18n/navigation";
+import { motion } from "framer-motion";
+import { useEffect, useState } from "react";
 
-const STORAGE_HELP_CLICKED_KEY = 'helpClicked';
+const STORAGE_HELP_CLICKED_KEY = "helpClicked";
 
 const Help = () => {
   const [helpClicked, setHelpClicked] = useState(false);
@@ -12,13 +12,13 @@ const Help = () => {
   const router = useRouter();
 
   const visit = () => {
-    localStorage.setItem(STORAGE_HELP_CLICKED_KEY, 'true');
+    localStorage.setItem(STORAGE_HELP_CLICKED_KEY, "true");
   };
 
   const handleToUpButton = () => {
     visit();
     setHelpClicked(true);
-    router.push('/guide');
+    router.push("/guide");
   };
 
   useEffect(() => {
