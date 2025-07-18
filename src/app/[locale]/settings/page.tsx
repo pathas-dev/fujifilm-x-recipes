@@ -13,7 +13,7 @@ import packageJson from "../../../../package.json";
 
 const SettingsPage = async (
   props: Readonly<{
-    params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+    params: Promise<{ locale: (typeof localeIntl)[keyof typeof localeIntl] }>;
   }>
 ) => {
   const params = await props.params;

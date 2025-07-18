@@ -12,7 +12,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export default async function CustomPage(
   props: Readonly<{
-    params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+    params: Promise<{ locale: (typeof localeIntl)[keyof typeof localeIntl] }>;
   }>
 ) {
   const params = await props.params;

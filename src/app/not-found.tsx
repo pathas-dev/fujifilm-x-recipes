@@ -1,6 +1,3 @@
-"use client";
-
-import { Link } from "@/i18n/navigation";
 import { Noto_Sans_KR } from "next/font/google";
 
 const notoSans = Noto_Sans_KR({
@@ -24,11 +21,12 @@ export default function NotFound() {
         <main className="flex h-full flex-col w-full items-center justify-center">
           <h2 className="text-2xl font-bold">Not Found</h2>
           <p className="text-xl">Could not find requested page</p>
-          <Link href="/">
+          {/* eslint-disable-next-line */}
+          <a href="/">
             <button className="btn btn-outline btn-error mt-2">
               Return Home
             </button>
-          </Link>
+          </a>
         </main>
       </body>
     </html>

@@ -5,7 +5,7 @@ import { getTranslations, setRequestLocale } from "next-intl/server";
 
 export default async function Bookmarks(
   props: Readonly<{
-    params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+    params: Promise<{ locale: (typeof localeIntl)[keyof typeof localeIntl] }>;
   }>
 ) {
   const params = await props.params;

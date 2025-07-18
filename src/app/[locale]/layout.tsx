@@ -9,6 +9,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next";
 import { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Noto_Sans_KR } from "next/font/google";
+import { NextIntlClientProvider } from "next-intl";
 import { cookies } from "next/headers";
 import { COOKIE_THEME_KEY } from "../constants/cookie";
 import { SITE_URL } from "../sitemap";
@@ -126,7 +127,9 @@ export default async function RootLayout({
         suppressHydrationWarning
       >
         <NavigationTop titles={navigationTitles} />
-        <main className="w-full h-[calc(100%-4rem)]">{children}</main>
+        <main className="w-full h-[calc(100%-4rem)]">
+          <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        </main>
         <Toast />
         <NavigationBottom titles={navigationTitles} />
         <Help />

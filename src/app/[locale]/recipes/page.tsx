@@ -6,7 +6,7 @@ import { getRecipesWithFilters } from "@/app/api/data/localData";
 
 export default async function Home(
   props: Readonly<{
-    params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+    params: Promise<{ locale: (typeof localeIntl)[keyof typeof localeIntl] }>;
   }>
 ) {
   const params = await props.params;

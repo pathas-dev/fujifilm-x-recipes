@@ -7,7 +7,7 @@ import { setRequestLocale } from "next-intl/server";
 
 const GuidePage = async (
   props: Readonly<{
-    params: { locale: (typeof localeIntl)[keyof typeof localeIntl] };
+    params: Promise<{ locale: (typeof localeIntl)[keyof typeof localeIntl] }>;
   }>
 ) => {
   const params = await props.params;
