@@ -50,7 +50,7 @@ const NavigationBottom = ({ titles }: INavigationProps) => {
       transition={{ duration: 0.4 }}
       initial={{ opacity: 0.3, translateY: "150%" }}
       animate={{ opacity: 1, translateY: "0%" }}
-      className="btm-nav w-full z-50 relative md:hidden"
+      className="dock w-full z-50 relative md:hidden"
     >
       {buttonProps.map((buttonProp) => (
         <NavButton
