@@ -40,3 +40,6 @@ next-env.d.ts
 /public/sw.*
 /public/workbox-*
 /public/temp
+
+# editors
+.vscode/
