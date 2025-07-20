@@ -1,8 +1,7 @@
 "use client";
 
-import { useState, useRef, useEffect } from "react";
+import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import remarkBreaks from "remark-breaks";
 
 interface ChatMessage {
   id: string;
@@ -149,8 +148,56 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
               {message.isUser ? (
                 <p className="text-sm">{message.content}</p>
               ) : (
-                <div className="prose prose-sm max-w-none whitespace-pre-line prose-headings:text-base-content prose-p:text-base-content prose-strong:text-base-content prose-code:text-base-content prose-pre:bg-base-300 prose-code:bg-base-300">
-                  <ReactMarkdown>{message.content}</ReactMarkdown>
+                <div className="text-sm text-base-content">
+                  <ReactMarkdown
+                    components={{
+                      h1: ({ children }) => (
+                        <div className="text-lg font-bold mb-3 mt-4 text-base-content first:mt-0">
+                          {children}
+                        </div>
+                      ),
+                      h2: ({ children }) => (
+                        <div className="text-base font-bold mb-2 mt-3 text-base-content first:mt-0">
+                          {children}
+                        </div>
+                      ),
+                      h3: ({ children }) => (
+                        <div className="text-sm font-bold mb-2 mt-3 text-base-content first:mt-0">
+                          {children}
+                        </div>
+                      ),
+                      strong: ({ children }) => (
+                        <span className="font-bold text-base-content block mb-2 mt-2 first:mt-0">
+                          {children}
+                        </span>
+                      ),
+                      p: ({ children }) => (
+                        <div className="mb-2 text-base-content leading-relaxed">
+                          {children}
+                        </div>
+                      ),
+                      ul: ({ children }) => (
+                        <ul className="list-disc list-inside mb-3 space-y-1 text-base-content ml-2">
+                          {children}
+                        </ul>
+                      ),
+                      li: ({ children }) => (
+                        <li className="text-base-content">{children}</li>
+                      ),
+                      a: ({ href, children }) => (
+                        <a
+                          href={href}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="text-primary hover:text-primary-focus underline break-all"
+                        >
+                          {children}
+                        </a>
+                      ),
+                    }}
+                  >
+                    {message.content}
+                  </ReactMarkdown>
                 </div>
               )}
             </div>
