@@ -4,7 +4,16 @@
     "recipes": "레시피",
     "cameras": "카메라",
     "custom": "커스텀",
-    "settings": "설정"
+    "settings": "설정",
+    "chatbot": "AI 큐레이터"
+  },
+  "Chatbot": {
+    "title": "AI 큐레이터",
+    "placeholder": "필름 레시피에 대해 무엇이든 물어보세요...",
+    "send": "전송",
+    "thinking": "생각 중...",
+    "error": "죄송합니다. 문제가 발생했습니다. 다시 시도해 주세요.",
+    "welcome": "안녕하세요! 필름 레시피 도우미입니다. 오늘 무엇을 도와드릴까요?"
   },
   "SettingsPage": {
     "title": "설정",

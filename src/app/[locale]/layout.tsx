@@ -108,6 +108,7 @@ export default async function RootLayout({
     settings: t("settings"),
     cameras: t("cameras"),
     custom: t("custom"),
+    chatbot: t("chatbot"),
   };
 
   return (

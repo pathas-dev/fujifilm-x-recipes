@@ -4,7 +4,16 @@
     "recipes": "Recipes",
     "cameras": "Cameras",
     "custom": "Custom",
-    "settings": "Settings"
+    "settings": "Settings",
+    "chatbot": "AI Curator"
+  },
+  "Chatbot": {
+    "title": "AI Curator",
+    "placeholder": "Ask me anything about film recipes...",
+    "send": "Send",
+    "thinking": "Thinking...",
+    "error": "Sorry, something went wrong. Please try again.",
+    "welcome": "Hello! I'm your film recipe assistant. How can I help you today?"
   },
   "SettingsPage": {
     "title": "Settings",
