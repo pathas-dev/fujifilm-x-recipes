@@ -2,6 +2,7 @@
 
 import { useState, useRef, useEffect } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkBreaks from "remark-breaks";
 
 interface ChatMessage {
   id: string;
@@ -113,7 +114,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
     }
   };
 
-  const handleKeyPress = (e: React.KeyboardEvent) => {
+  const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
       handleSendMessage();
@@ -148,7 +149,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
               {message.isUser ? (
                 <p className="text-sm">{message.content}</p>
               ) : (
-                <div className="prose prose-sm max-w-none prose-headings:text-base-content prose-p:text-base-content prose-strong:text-base-content prose-code:text-base-content prose-pre:bg-base-300 prose-code:bg-base-300">
+                <div className="prose prose-sm max-w-none whitespace-pre-line prose-headings:text-base-content prose-p:text-base-content prose-strong:text-base-content prose-code:text-base-content prose-pre:bg-base-300 prose-code:bg-base-300">
                   <ReactMarkdown>{message.content}</ReactMarkdown>
                 </div>
               )}
@@ -174,16 +175,16 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
           <textarea
             value={inputValue}
             onChange={(e) => setInputValue(e.target.value)}
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyDown}
             placeholder={messages.placeholder}
             className="textarea textarea-bordered flex-1 resize-none min-h-12"
             disabled={isLoading}
-            rows={2}
+            rows={1}
           />
           <button
             onClick={handleSendMessage}
             disabled={!inputValue.trim() || isLoading}
-            className="btn btn-primary"
+            className="btn btn-primary h-12"
           >
             {messages.send}
           </button>
