@@ -101,6 +101,7 @@ export type NavigationTitleMessages = {
   settings: string;
   cameras: string;
   custom: string;
+  chatbot: string;
 };
 
 export type SettingsPageMessages = {
