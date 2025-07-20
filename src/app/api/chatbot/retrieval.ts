@@ -46,6 +46,6 @@ export const retrieve = async (query: string) => {
 
   return new EnsembleRetriever({
     retrievers: [pineconeRetriever, bm25Retriever],
-    weights: [0.8, 0.2],
+    weights: [0.6, 0.4],
   }).invoke(query);
 };
