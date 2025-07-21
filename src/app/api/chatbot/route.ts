@@ -1,8 +1,14 @@
 import { NextResponse } from "next/server";
 import { retrieve } from "@/app/api/chatbot/retrieval";
 import { formatContext } from "@/app/api/chatbot/context";
-import { createLLM, createPromptTemplate } from "@/app/api/chatbot/llm";
+import {
+  createLLM,
+  createCuratorPromptTemplate,
+  GoogleAIModel,
+  createParseQuestionPromptTemplate,
+} from "@/app/api/chatbot/llm";
 import { createStreamingResponse } from "@/app/api/chatbot/streaming";
+import { QuestionAnalysisSchema } from "@/app/api/chatbot/shema";
 
 export const dynamic = "force-dynamic";
 
@@ -10,14 +16,34 @@ export async function POST(request: Request) {
   try {
     const { question } = await request.json();
 
-    const results = await retrieve(question);
+    const parsingLLM = createLLM(GoogleAIModel.GeminiFlashLite);
+    const parsingPrompt = createParseQuestionPromptTemplate();
+    const parsingChain = parsingPrompt.pipe(
+      parsingLLM.withStructuredOutput(QuestionAnalysisSchema)
+    );
+    const parsedQuestion = await parsingChain.invoke({ question });
+
+    if (!parsedQuestion.isFilmRecipeQuestion) {
+      return NextResponse.json("필름 레시피에 대한 질문을 해주세요.", {
+        status: 200,
+      });
+    }
+
+    const results = await retrieve(question, {
+      colorType: parsedQuestion.colorType,
+      sensor: parsedQuestion.detectedSensorTypes,
+    });
     const context = formatContext(results);
 
-    const llm = createLLM();
-    const prompt = createPromptTemplate();
-    const chain = prompt.pipe(llm);
+    const curatorLLM = createLLM();
+    const curatorPrompt = createCuratorPromptTemplate();
+    const curatorChain = curatorPrompt.pipe(curatorLLM);
 
-    const stream = await createStreamingResponse(chain, context, question);
+    const stream = await createStreamingResponse(
+      curatorChain,
+      context,
+      question
+    );
 
     return new NextResponse(stream, {
       headers: {

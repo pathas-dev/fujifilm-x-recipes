@@ -2,6 +2,7 @@ import { PineconeEmbeddings, PineconeStore } from "@langchain/pinecone";
 import { Pinecone as PineconeClient } from "@pinecone-database/pinecone";
 import { BM25Retriever } from "@langchain/community/retrievers/bm25";
 import { EnsembleRetriever } from "langchain/retrievers/ensemble";
+import { ColorType, SensorType } from "@/app/api/chatbot/shema";
 
 export const createPineconeClient = () => {
   return new PineconeClient({
@@ -26,7 +27,10 @@ export const createVectorStore = async (
   });
 };
 
-export const retrieve = async (query: string) => {
+export const retrieve = async (
+  query: string,
+  metadata: { sensor?: SensorType; colorType?: ColorType }
+) => {
   const pinecone = createPineconeClient();
   const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX!);
   const embeddings = createEmbeddings();
@@ -36,6 +40,7 @@ export const retrieve = async (query: string) => {
     k: 3,
     searchType: "mmr",
     searchKwargs: { fetchK: 10 },
+    metadata,
   });
 
   const documents = await pineconeRetriever.invoke(query);
