@@ -1,7 +1,13 @@
 "use client";
 
+import {
+  SvgAiCurator,
+  SvgAirplaneOutline,
+  SvgAirplaneSolid,
+} from "@/components/icon/svgs";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
 
 interface ChatMessage {
   id: string;
@@ -32,6 +38,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   ]);
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isStreaming, setIsStreaming] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const scrollToBottom = () => {
@@ -84,12 +91,19 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
 
       setChatMessages((prev) => [...prev, botMessage]);
 
+      let isFirstChunk = true;
       while (true) {
         const { done, value } = await reader.read();
         if (done) break;
 
         const chunk = new TextDecoder().decode(value);
         botMessageContent += chunk;
+
+        // 첫 번째 청크가 도착하면 스트리밍 시작으로 간주
+        if (isFirstChunk) {
+          setIsStreaming(true);
+          isFirstChunk = false;
+        }
 
         setChatMessages((prev) =>
           prev.map((msg) =>
@@ -110,6 +124,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
       setChatMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
+      setIsStreaming(false);
     }
   };
 
@@ -123,33 +138,53 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   return (
     <section className="w-full h-full flex flex-col bg-base-100 select-text">
       {/* Header */}
-      <div className="flex items-center justify-center p-4 border-b border-base-300">
-        <h1 className="text-xl font-bold text-base-content">
-          {messages.title}
-        </h1>
+      <div className="flex items-center justify-center p-6 border-b border-base-300 bg-base-50/50 backdrop-blur-sm">
+        <div className="flex items-center space-x-3">
+          <div className="w-10 h-10 bg-gradient-to-br from-primary to-secondary rounded-xl flex items-center justify-center shadow-md relative overflow-hidden group">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-secondary/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <SvgAiCurator />
+          </div>
+          <div>
+            <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary inline-block text-transparent bg-clip-text">
+              {messages.title}
+            </h1>
+            <p className="text-xs text-base-content/70">
+              인공지능 필름 레시피 어시스턴트
+            </p>
+          </div>
+        </div>
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-4 space-y-4">
-        {chatMessages.map((message) => (
+      <div className="flex-1 overflow-y-auto p-6 space-y-6">
+        {chatMessages.map((message, index) => (
           <div
             key={message.id}
             className={`flex ${
               message.isUser ? "justify-end" : "justify-start"
-            }`}
+            } animate-in slide-in-from-bottom-2 duration-300`}
+            style={{ animationDelay: `${index * 50}ms` }}
           >
             <div
-              className={`max-w-xs md:max-w-md lg:max-w-lg px-4 py-3 rounded-lg ${
+              className={`max-w-xs md:max-w-md lg:max-w-2xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow ${
                 message.isUser
-                  ? "bg-primary text-primary-content"
-                  : "bg-base-200 text-base-content"
+                  ? "bg-primary text-primary-content rounded-br-md user-message-glow"
+                  : "bg-base-200 text-base-content rounded-bl-md border border-base-300 bot-message-glow"
               }`}
+              style={
+                {
+                  "--glow-delay": `${index * 0.8}s`,
+                } as React.CSSProperties
+              }
             >
               {message.isUser ? (
-                <p className="text-sm">{message.content}</p>
+                <p className="text-sm leading-relaxed whitespace-pre-wrap">
+                  {message.content}
+                </p>
               ) : (
                 <div className="text-sm text-base-content">
                   <ReactMarkdown
+                    remarkPlugins={[remarkGfm]}
                     components={{
                       h1: ({ children }) => (
                         <div className="text-lg font-bold mb-3 mt-4 text-base-content first:mt-0">
@@ -189,11 +224,23 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
                           href={href}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="text-primary hover:text-primary-focus underline break-all"
+                          className="text-primary hover:text-primary-focus underline break-all transition-colors duration-200"
                         >
                           {children}
                         </a>
                       ),
+                      code: ({ children, className }) => {
+                        const isInline = !className;
+                        return isInline ? (
+                          <code className="bg-base-300 text-base-content px-1.5 py-0.5 rounded text-xs font-mono">
+                            {children}
+                          </code>
+                        ) : (
+                          <pre className="bg-base-300 text-base-content p-3 rounded-lg overflow-x-auto text-xs font-mono my-2">
+                            <code>{children}</code>
+                          </pre>
+                        );
+                      },
                     }}
                   >
                     {message.content}
@@ -203,12 +250,14 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
             </div>
           </div>
         ))}
-        {isLoading && (
-          <div className="flex justify-start">
-            <div className="bg-base-200 text-base-content px-4 py-3 rounded-lg">
-              <div className="flex items-center space-x-2">
-                <span className="loading loading-dots loading-sm"></span>
-                <span className="text-sm">{messages.thinking}</span>
+        {isLoading && !isStreaming && (
+          <div className="flex justify-start animate-in slide-in-from-bottom-2 duration-300">
+            <div className="bg-base-200 text-base-content px-5 py-4 rounded-2xl rounded-bl-md border border-base-300 shadow-sm message-glow bot-message-glow">
+              <div className="flex items-center space-x-3">
+                <span className="loading loading-dots loading-sm text-primary"></span>
+                <span className="text-sm text-base-content/70">
+                  {messages.thinking}
+                </span>
               </div>
             </div>
           </div>
@@ -217,24 +266,43 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
       </div>
 
       {/* Input */}
-      <div className="p-4 border-t border-base-300">
-        <div className="flex space-x-2">
-          <textarea
-            value={inputValue}
-            onChange={(e) => setInputValue(e.target.value)}
-            onKeyDown={handleKeyDown}
-            placeholder={messages.placeholder}
-            className="textarea textarea-bordered flex-1 resize-none min-h-12"
-            disabled={isLoading}
-            rows={1}
-          />
-          <button
-            onClick={handleSendMessage}
-            disabled={!inputValue.trim() || isLoading}
-            className="btn btn-primary h-12"
-          >
-            {messages.send}
-          </button>
+      <div className="p-6 border-t border-base-300 bg-base-50">
+        <div className="max-w-4xl mx-auto">
+          <div className="flex items-end space-x-3">
+            <div className="flex-1 relative">
+              <textarea
+                value={inputValue}
+                onChange={(e) => setInputValue(e.target.value)}
+                onKeyDown={handleKeyDown}
+                placeholder={messages.placeholder}
+                className="textarea textarea-bordered w-full resize-none min-h-12 max-h-32 rounded-2xl border-2 border-base-300 focus:border-primary focus:outline-none transition-all duration-200 bg-base-100 text-base-content placeholder:text-base-content/50 px-4 py-3 pr-12"
+                disabled={isLoading}
+                rows={1}
+                style={{
+                  scrollbarWidth: "thin",
+                  scrollbarColor: "rgb(156 163 175) transparent",
+                }}
+                autoFocus
+              />
+              {inputValue.trim() && (
+                <div className="absolute right-3 bottom-3 text-xs text-base-content/40">
+                  Enter to send
+                </div>
+              )}
+            </div>
+            <button
+              onClick={handleSendMessage}
+              disabled={!inputValue.trim() || isLoading}
+              className="btn btn-primary btn-circle h-12 w-12 flex-shrink-0 shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+              title={messages.send}
+            >
+              {isLoading ? (
+                <span className="loading loading-spinner loading-sm"></span>
+              ) : (
+                <SvgAirplaneOutline />
+              )}
+            </button>
+          </div>
         </div>
       </div>
     </section>

@@ -13,7 +13,7 @@
     "send": "Send",
     "thinking": "Thinking...",
     "error": "Sorry, something went wrong. Please try again.",
-    "welcome": "Hello! I'm your film recipe assistant. How can I help you today?"
+    "welcome": "Hello! I am an AI film recipe curator. What recipe are you looking for?"
   },
   "SettingsPage": {
     "title": "Settings",

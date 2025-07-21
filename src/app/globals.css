@@ -28,4 +28,29 @@
       background: rgba(0, 0, 0, 0.9);
     }
   }
+
+  /* Chatbot message glow animations */
+  @keyframes borderGlow {
+    0%,
+    100% {
+      box-shadow: 0 0 5px rgba(var(--glow-color), 0.3);
+    }
+    50% {
+      box-shadow: 0 0 20px rgba(var(--glow-color), 0.6),
+        0 0 30px rgba(var(--glow-color), 0.3);
+    }
+  }
+
+  .message-glow {
+    animation: borderGlow 4s ease-in-out infinite;
+    animation-delay: var(--glow-delay, 0s);
+  }
+
+  .user-message-glow {
+    --glow-color: 59, 130, 246;
+  }
+
+  .bot-message-glow {
+    --glow-color: 156, 163, 175;
+  }
 }

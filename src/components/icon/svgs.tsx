@@ -525,3 +525,50 @@ export const SvgAiMini = () => (
     <path d="M3 5l.5-1.5L5 3l-1.5-.5L3 1l-.5 1.5L1 3l1.5.5L3 5zM17 15l.3-.9L18 14l-.7-.1L17 13l-.3.9L16 14l.7.1L17 15z" />
   </svg>
 );
+
+export const SvgAiCurator = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    className="w-6 h-6 text-primary-content relative z-10"
+  >
+    <path
+      fill="currentColor"
+      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+    />
+    <circle cx="9" cy="10" r="1.25" fill="currentColor" />
+    <circle cx="15" cy="10" r="1.25" fill="currentColor" />
+    <path
+      fill="currentColor"
+      d="M12 16c1.66 0 3-1.34 3-3H9c0 1.66 1.34 3 3 3z"
+    />
+    <path
+      stroke="currentColor"
+      strokeWidth="0.5"
+      fill="none"
+      d="M7 7l2 1M17 7l-2 1M8 14.5c1.33 1 2.67 1.5 4 1.5s2.67-.5 4-1.5"
+    />
+    <path
+      fill="currentColor"
+      opacity="0.5"
+      d="M5 4l1 2M19 4l-1 2M4 18l2-1M20 18l-2-1"
+    />
+  </svg>
+);
+
+export const SvgAirplaneOutline = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    fill="none"
+    viewBox="0 0 24 24"
+    strokeWidth={2}
+    stroke="currentColor"
+    className="w-5 h-5"
+  >
+    <path
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"
+    />
+  </svg>
+);
