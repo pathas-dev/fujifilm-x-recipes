@@ -20,6 +20,10 @@ export default async function ChatbotPage(
     thinking: t("thinking"),
     error: t("error"),
     welcome: t("welcome"),
+    examples: {
+      winter: t("examples.winter"),
+      cinematic: t("examples.cinematic"),
+    },
   };
 
   return <ChatbotClient messages={messages} />;

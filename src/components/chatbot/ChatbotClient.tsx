@@ -23,6 +23,10 @@ interface ChatbotClientProps {
     thinking: string;
     error: string;
     welcome: string;
+    examples: {
+      winter: string;
+      cinematic: string;
+    };
   };
 }
 
@@ -129,6 +133,11 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
       timestamp: new Date(),
     },
   ]);
+
+  // AI 응답이 있는지 확인 (welcome 메시지 제외)
+  const hasAiResponses = chatMessages.some(
+    (msg) => !msg.isUser && msg.id !== "welcome"
+  );
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
@@ -142,12 +151,13 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
     scrollToBottom();
   }, [chatMessages]);
 
-  const handleSendMessage = async () => {
-    if (!inputValue.trim() || isLoading) return;
+  const handleSendMessage = async (messageText?: string) => {
+    const messageToSend = messageText || inputValue;
+    if (!messageToSend.trim() || isLoading) return;
 
     const userMessage: ChatMessage = {
       id: Date.now().toString(),
-      content: inputValue,
+      content: messageToSend,
       isUser: true,
       timestamp: new Date(),
     };
@@ -162,7 +172,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ question: inputValue }),
+        body: JSON.stringify({ question: messageToSend }),
       });
 
       if (!response.ok) {
@@ -249,7 +259,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
       </div>
 
       {/* Messages */}
-      <div className="flex-1 overflow-y-auto p-6 space-y-6">
+      <div className="flex-1 overflow-y-auto p-6 space-y-6 flex flex-col">
         {chatMessages.map((message, index) => (
           <div
             key={message.id}
@@ -346,6 +356,41 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
             </div>
           </div>
         )}
+
+        {/* 예제 메시지들 - AI 응답이 없을 때만 표시 */}
+        {!hasAiResponses && !isLoading && (
+          <div className="flex-1 flex flex-col items-center justify-center space-y-3 animate-in slide-in-from-bottom-2 duration-500">
+            <div className="flex flex-col space-y-2 max-w-md w-full">
+              <button
+                onClick={() => handleSendMessage(messages.examples.winter)}
+                className="text-left p-4 bg-base-200/50 hover:bg-base-200 border border-base-300 rounded-xl transition-all duration-200 hover:shadow-md hover:scale-[1.02] group"
+              >
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">
+                    ❄️
+                  </div>
+                  <span className="text-sm text-base-content group-hover:text-primary transition-colors">
+                    {messages.examples.winter}
+                  </span>
+                </div>
+              </button>
+              <button
+                onClick={() => handleSendMessage(messages.examples.cinematic)}
+                className="text-left p-4 bg-base-200/50 hover:bg-base-200 border border-base-300 rounded-xl transition-all duration-200 hover:shadow-md hover:scale-[1.02] group"
+              >
+                <div className="flex items-center space-x-3">
+                  <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">
+                    🎬
+                  </div>
+                  <span className="text-sm text-base-content group-hover:text-primary transition-colors">
+                    {messages.examples.cinematic}
+                  </span>
+                </div>
+              </button>
+            </div>
+          </div>
+        )}
+
         <div ref={messagesEndRef} />
       </div>
 
@@ -375,7 +420,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
               )}
             </div>
             <button
-              onClick={handleSendMessage}
+              onClick={() => handleSendMessage()}
               disabled={!inputValue.trim() || isLoading}
               className="btn btn-primary btn-circle h-12 w-12 flex-shrink-0 shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               title={messages.send}
