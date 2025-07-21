@@ -1,6 +1,7 @@
 import ThemeSwitch from "@/components/settings/ThemeSwitch";
 import {
   SvgBeakerMini,
+  SvgCameraMini,
   SvgChevronRight,
   SvgQuestionMarkCircleMini,
   SvgSparklesMini,
@@ -28,6 +29,7 @@ const SettingsPage = async (
     originsPage: tSettingsPage("originsPage"),
     guidePage: tSettingsPage("guidePage"),
     notePage: tSettingsPage("notePage"),
+    camerasPage: tSettingsPage("camerasPage"),
     hideCardImage: tSettingsPage("hideCardImage"),
   };
 
@@ -40,6 +42,11 @@ const SettingsPage = async (
       href: "/origins",
       icon: <SvgSparklesMini />,
       label: settingsPageMessages.originsPage,
+    },
+    {
+      href: "/cameras",
+      icon: <SvgCameraMini />,
+      label: settingsPageMessages.camerasPage,
     },
     {
       href: "/guide",

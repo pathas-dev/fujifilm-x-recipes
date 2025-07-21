@@ -109,6 +109,7 @@ export type SettingsPageMessages = {
   originsPage: string;
   guidePage: string;
   notePage: string;
+  camerasPage: string;
   hideCardImage: string;
 };
 

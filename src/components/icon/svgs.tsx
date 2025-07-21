@@ -496,3 +496,32 @@ export const SvgBeakerMini = () => (
     />
   </svg>
 );
+
+export const SvgAiMini = () => (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 20 20"
+    fill="currentColor"
+    className="w-5 h-5"
+  >
+    {/* AI Brain with circuit patterns */}
+    <path
+      fillRule="evenodd"
+      d="M10 2C6.686 2 4 4.686 4 8c0 1.5.5 2.9 1.3 4.1.2.3.2.7 0 1-.8 1.2-1.3 2.6-1.3 4.1 0 .6.4 1 1 1h10c.6 0 1-.4 1-1 0-1.5-.5-2.9-1.3-4.1-.2-.3-.2-.7 0-1C15.5 10.9 16 9.5 16 8c0-3.314-2.686-6-6-6zm0 2c2.21 0 4 1.79 4 4 0 .8-.2 1.5-.6 2.2-.4.7-.4 1.6 0 2.3.4.7.6 1.4.6 2.2H6c0-.8.2-1.5.6-2.2.4-.7.4-1.6 0-2.3C6.2 9.5 6 8.8 6 8c0-2.21 1.79-4 4-4z"
+      clipRule="evenodd"
+    />
+    {/* Circuit nodes */}
+    <circle cx="8" cy="7" r="0.8" />
+    <circle cx="12" cy="7" r="0.8" />
+    <circle cx="10" cy="9.5" r="0.8" />
+    {/* Connecting lines */}
+    <path
+      d="M8.8 7h2.4M9.2 8.7l1.6-1.2M10.8 8.7L9.2 7.5"
+      stroke="currentColor"
+      strokeWidth="0.4"
+      fill="none"
+    />
+    {/* Sparkle effects */}
+    <path d="M3 5l.5-1.5L5 3l-1.5-.5L3 1l-.5 1.5L1 3l1.5.5L3 5zM17 15l.3-.9L18 14l-.7-.1L17 13l-.3.9L16 14l.7.1L17 15z" />
+  </svg>
+);

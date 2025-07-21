@@ -17,9 +17,10 @@
   },
   "SettingsPage": {
     "title": "Settings",
-    "originsPage": "Origins Page",
-    "guidePage": "Guide Page",
+    "originsPage": "Origins",
+    "guidePage": "Guide",
     "notePage": "Patch Notes",
+    "camerasPage": "Cameras",
     "hideCardImage": "Hide card image"
   },
   "Headers": {

@@ -25,10 +25,7 @@ const NavigationTop = ({ titles }: INavigationProps) => {
       title: titles.chatbot,
       path: "/chatbot",
     },
-    {
-      title: titles.cameras,
-      path: "/cameras",
-    },
+
     {
       title: titles.settings,
       path: "/settings",

@@ -121,7 +121,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   };
 
   return (
-    <section className="w-full h-full flex flex-col bg-base-100">
+    <section className="w-full h-full flex flex-col bg-base-100 select-text">
       {/* Header */}
       <div className="flex items-center justify-center p-4 border-b border-base-300">
         <h1 className="text-xl font-bold text-base-content">

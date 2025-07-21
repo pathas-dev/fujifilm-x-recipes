@@ -5,6 +5,7 @@ import { NavigationTitleMessages } from "@/types/language";
 import { motion } from "framer-motion";
 import { useCallback, useMemo } from "react";
 import {
+  SvgAiMini,
   SvgBookmarkMini,
   SvgCameraMini,
   SvgCogMini,
@@ -34,9 +35,9 @@ const NavigationBottom = ({ titles }: INavigationProps) => {
       path: "/",
     },
     {
-      title: titles.cameras,
-      children: <SvgCameraMini />,
-      path: "/cameras",
+      title: titles.chatbot,
+      children: <SvgAiMini />,
+      path: "/chatbot",
     },
     {
       title: titles.settings,
