@@ -2,8 +2,13 @@
 
 import { Link } from "@/i18n/navigation";
 import { Recipe } from "@/types/api";
+import {
+  getInitialOpenGraph,
+  getOpenGraph,
+  OpenGraph,
+} from "@/utils/getOpenGraph";
 import dayjs from "dayjs";
-import { animate, inView, motion, useInView } from "framer-motion";
+import { animate, motion, useInView } from "framer-motion";
 import Image from "next/image";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { SvgArrow, SvgLink } from "../icon/svgs";
@@ -244,102 +249,6 @@ const Bookmark = ({ id }: BookmarkProps) => {
       </label>
     </div>
   );
-};
-
-// Pixel GIF code adapted from https://stackoverflow.com/a/33919020/266535
-const keyStr =
-  "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=";
-
-const triplet = (e1: number, e2: number, e3: number) =>
-  keyStr.charAt(e1 >> 2) +
-  keyStr.charAt(((e1 & 3) << 4) | (e2 >> 4)) +
-  keyStr.charAt(((e2 & 15) << 2) | (e3 >> 6)) +
-  keyStr.charAt(e3 & 63);
-
-const rgbDataURL = (r: number, g: number, b: number) =>
-  `data:image/gif;base64,R0lGODlhAQABAPAA${
-    triplet(0, r, g) + triplet(b, 255, 255)
-  }/yH5BAAAAAAALAAAAAABAAEAAAICRAEAOw==`;
-
-const ogProperties = [
-  "type",
-  "title",
-  "url",
-  "image",
-  "image:width",
-  "image:height",
-  "image:alt",
-  "description",
-  "site_name",
-  "locale",
-];
-
-type OpenGraph = {
-  title: string;
-  type: string;
-  url: string;
-  image: {
-    height: string;
-    type: string;
-    url: string;
-    width: string;
-    alt: string;
-  };
-  description?: string;
-  site_name?: string;
-  locale?: string;
-};
-
-const initialOpenGraph: OpenGraph = {
-  title: "",
-  type: "",
-  url: "",
-  description: "",
-  site_name: "",
-  locale: "",
-  image: {
-    height: "",
-    width: "",
-    url: "",
-    alt: "",
-    type: "",
-  },
-};
-
-const getImagePlaceholder = () => {
-  const random = () => Math.ceil(Math.random() * 255);
-  return rgbDataURL(random(), random(), random());
-};
-
-const getInitialOpenGraph = (): OpenGraph => {
-  const random = () => Math.ceil(Math.random() * 255);
-  const newInitialOpenGraph = { ...initialOpenGraph };
-  newInitialOpenGraph.image.url = rgbDataURL(random(), random(), random());
-  return newInitialOpenGraph;
-};
-
-const getOpenGraph = (urlHtml: string): OpenGraph => {
-  const parser = new DOMParser();
-  const doc = parser.parseFromString(urlHtml, "text/html");
-
-  return ogProperties.reduce<OpenGraph>((acc, property) => {
-    const content =
-      doc
-        .querySelector(`meta[property="og:${property}"]`)
-        ?.getAttribute("content") ?? "";
-
-    if (property.indexOf("image") < 0) return { ...acc, [property]: content };
-
-    const DELIMETER = ":";
-
-    const [, imageProperty] = property.split(DELIMETER);
-
-    const isUrl = !imageProperty;
-
-    if (isUrl) return { ...acc, image: { ...acc.image, url: content } };
-
-    return { ...acc, image: { ...acc.image, [imageProperty]: content } };
-  }, getInitialOpenGraph());
 };
 
 export default RecipeCard;
