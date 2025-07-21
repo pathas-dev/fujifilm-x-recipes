@@ -30,7 +30,7 @@ export async function POST(request: Request) {
     }
 
     const results = await retrieve(question, {
-      colorType: parsedQuestion.colorType,
+      colorOrBw: parsedQuestion.colorOrBw,
       sensor: parsedQuestion.detectedSensorTypes,
     });
     const context = formatContext(results);

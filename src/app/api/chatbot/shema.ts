@@ -64,7 +64,7 @@ export const CameraModelSchema = z.enum([
 ]);
 
 // 색상 구분 정의
-export const ColorTypeSchema = z.enum(["Color", "B&W"]);
+export const ColorOrBwSchema = z.enum(["Color", "B&W"]);
 
 // 센서-카메라 매핑 스키마
 export const SensorCameraMappingSchema = z.object({
@@ -76,20 +76,20 @@ export const SensorCameraMappingSchema = z.object({
 export const CameraInfoSchema = z.object({
   model: CameraModelSchema,
   sensorType: SensorTypeSchema,
-  colorType: ColorTypeSchema,
+  colorType: ColorOrBwSchema,
 });
 
 // 질문 분석 결과 스키마
 export const QuestionAnalysisSchema = z.object({
   detectedCameras: CameraModelSchema.optional(),
   detectedSensorTypes: SensorTypeSchema.optional(),
-  colorType: ColorTypeSchema.optional(),
+  colorOrBw: ColorOrBwSchema.optional(),
   isFilmRecipeQuestion: z.boolean(),
 });
 
 export type SensorType = z.infer<typeof SensorTypeSchema>;
 export type CameraModel = z.infer<typeof CameraModelSchema>;
-export type ColorType = z.infer<typeof ColorTypeSchema>;
+export type ColorOrBw = z.infer<typeof ColorOrBwSchema>;
 export type SensorCameraMapping = z.infer<typeof SensorCameraMappingSchema>;
 export type CameraInfo = z.infer<typeof CameraInfoSchema>;
 export type QuestionAnalysis = z.infer<typeof QuestionAnalysisSchema>;
