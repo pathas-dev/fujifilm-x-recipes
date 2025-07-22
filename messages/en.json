@@ -9,6 +9,7 @@
   },
   "Chatbot": {
     "title": "AI Curator",
+    "subTitle": "AI Film Recipe Assistant",
     "placeholder": "Ask me anything about film recipes...",
     "send": "Send",
     "thinking": "Thinking...",
@@ -23,7 +24,33 @@
       "thinking": "Thinking",
       "thinkingDeeply": "Thinking deeply",
       "preparing": "Preparing the best answer",
-      "waiting": "Please wait a moment"
+      "waiting": "Please wait a moment",
+      "seconds": "s passed"
+    },
+    "curatedRecipe": {
+      "aiCustomRecipe": "AI Custom Recipe",
+      "recommendedRecipe": "Recommended Recipe",
+      "baseFilmSimulation": "Base Film Simulation",
+      "recommendationReason": "Recommendation Reason",
+      "cameraSettings": "Camera Settings",
+      "filmSimulation": "Film Simulation",
+      "dynamicRange": "Dynamic Range",
+      "whiteBalance": "White Balance",
+      "highlight": "Highlight",
+      "shadow": "Shadow",
+      "color": "Color",
+      "clarity": "Clarity",
+      "noiseReduction": "Noise Reduction"
+    },
+    "imageComparisonSlider": {
+      "title": "Image Comparison",
+      "source": "Before",
+      "retouched": "After"
+    },
+    "curatedRecipeUrlPreview": {
+      "title": "Original Recipe",
+      "loading": "Loading recipe information...",
+      "link": "View Original Recipe"
     }
   },
   "SettingsPage": {

@@ -6,11 +6,17 @@ import { useEffect, useRef, useState } from "react";
 interface ImageComparisonSliderProps {
   beforeImage: string;
   afterImage: string;
+  messages?: {
+    title: string;
+    source: string;
+    retouched: string;
+  };
 }
 
 const ImageComparisonSlider = ({
   beforeImage,
   afterImage,
+  messages,
 }: ImageComparisonSliderProps) => {
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
@@ -67,7 +73,7 @@ const ImageComparisonSlider = ({
   return (
     <div className="mb-6">
       <div className="text-sm font-medium text-base-content/80 mb-3">
-        보정 결과 비교
+        {messages?.title}
       </div>
       <div
         ref={containerRef}
@@ -78,7 +84,7 @@ const ImageComparisonSlider = ({
         {/* After Image (Full) */}
         <Image
           src={afterImage}
-          alt="보정된 이미지"
+          alt={messages?.retouched ?? ""}
           className="absolute inset-0 w-full h-full object-cover"
           draggable={false}
           unoptimized
@@ -93,7 +99,7 @@ const ImageComparisonSlider = ({
         >
           <Image
             src={beforeImage}
-            alt="원본 이미지"
+            alt={messages?.source ?? ""}
             className="w-full h-full object-cover"
             draggable={false}
             unoptimized
@@ -124,10 +130,10 @@ const ImageComparisonSlider = ({
 
         {/* Labels */}
         <div className="absolute top-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-          원본
+          {messages?.source}
         </div>
         <div className="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-          보정됨
+          {messages?.retouched}
         </div>
       </div>
     </div>

@@ -15,6 +15,7 @@ export default async function ChatbotPage(
 
   const messages = {
     title: t("title"),
+    subTitle: t("subTitle"),
     placeholder: t("placeholder"),
     send: t("send"),
     thinking: t("thinking"),
@@ -30,6 +31,32 @@ export default async function ChatbotPage(
       thinkingDeeply: t("loadings.thinkingDeeply"),
       preparing: t("loadings.preparing"),
       waiting: t("loadings.waiting"),
+      seconds: t("loadings.seconds"),
+    },
+    curatedRecipe: {
+      aiCustomRecipe: t("curatedRecipe.aiCustomRecipe"),
+      recommendedRecipe: t("curatedRecipe.recommendedRecipe"),
+      baseFilmSimulation: t("curatedRecipe.baseFilmSimulation"),
+      recommendationReason: t("curatedRecipe.recommendationReason"),
+      cameraSettings: t("curatedRecipe.cameraSettings"),
+      filmSimulation: t("curatedRecipe.filmSimulation"),
+      dynamicRange: t("curatedRecipe.dynamicRange"),
+      whiteBalance: t("curatedRecipe.whiteBalance"),
+      highlight: t("curatedRecipe.highlight"),
+      shadow: t("curatedRecipe.shadow"),
+      color: t("curatedRecipe.color"),
+      clarity: t("curatedRecipe.clarity"),
+      noiseReduction: t("curatedRecipe.noiseReduction"),
+    },
+    imageComparisonSlider: {
+      title: t("imageComparisonSlider.title"),
+      source: t("imageComparisonSlider.source"),
+      retouched: t("imageComparisonSlider.retouched"),
+    },
+    curatedRecipeUrlPreview: {
+      title: t("curatedRecipeUrlPreview.title"),
+      loading: t("curatedRecipeUrlPreview.loading"),
+      link: t("curatedRecipeUrlPreview.link"),
     },
   };
 

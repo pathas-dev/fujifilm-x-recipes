@@ -8,6 +8,7 @@ interface LoadingIndicatorProps {
     thinkingDeeply: string;
     preparing: string;
     waiting: string;
+    seconds: string;
   };
 }
 
@@ -59,7 +60,8 @@ export default function LoadingIndicator({ messages }: LoadingIndicatorProps) {
               {dots}
             </span>
             <span className="text-xs text-base-content/50 mt-1">
-              {elapsedTime.toFixed(1)}초 경과
+              {elapsedTime.toFixed(1)}
+              {messages.seconds}
             </span>
           </div>
         </div>

@@ -132,7 +132,9 @@ export default async function RootLayout({
           <NextIntlClientProvider>{children}</NextIntlClientProvider>
         </main>
         <Toast />
-        <NavigationBottom titles={navigationTitles} />
+        <NextIntlClientProvider>
+          <NavigationBottom titles={navigationTitles} />
+        </NextIntlClientProvider>
         <Help />
 
         <SpeedInsights />

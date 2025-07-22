@@ -5,9 +5,40 @@ import CuratedRecipeSettingItem from "./CuratedRecipeSettingItem";
 interface CuratedRecipeCardProps {
   recipe: any;
   type: "retrieved" | "generated";
+  messages: {
+    aiCustomRecipe: string;
+    recommendedRecipe: string;
+    baseFilmSimulation: string;
+    recommendationReason: string;
+    cameraSettings: string;
+    filmSimulation: string;
+    dynamicRange: string;
+    whiteBalance: string;
+    highlight: string;
+    shadow: string;
+    color: string;
+    clarity: string;
+    noiseReduction: string;
+  };
+  imageComparisonSliderMessages?: {
+    title: string;
+    source: string;
+    retouched: string;
+  };
+  curatedRecipeUrlPreviewMessages?: {
+    title: string;
+    loading: string;
+    link: string;
+  };
 }
 
-const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
+const CuratedRecipeCard = ({
+  recipe,
+  type,
+  messages,
+  imageComparisonSliderMessages,
+  curatedRecipeUrlPreviewMessages,
+}: CuratedRecipeCardProps) => {
   const isGenerated = type === "generated";
 
   return (
@@ -27,7 +58,9 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
           <div>
             <h3 className="font-bold text-base-content">{recipe.title}</h3>
             <p className="text-sm text-base-content/70">
-              {isGenerated ? "AI 맞춤 레시피" : "추천 레시피"}
+              {isGenerated
+                ? messages.aiCustomRecipe
+                : messages.recommendedRecipe}
             </p>
           </div>
         </div>
@@ -36,7 +69,7 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
       {/* Base Film Simulation */}
       <div className="mb-4 p-3 bg-base-200 rounded-lg">
         <div className="text-sm font-medium text-base-content/80 mb-1">
-          베이스 필름 시뮬레이션
+          {messages.baseFilmSimulation}
         </div>
         <div className="font-bold text-primary">
           {recipe.baseFilmSimulation}
@@ -46,7 +79,7 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
       {/* Recommendation Reason */}
       <div className="mb-6">
         <div className="text-sm font-medium text-base-content/80 mb-2">
-          추천 이유
+          {messages.recommendationReason}
         </div>
         <p className="text-sm text-base-content leading-relaxed">
           {recipe.recommendationReason}
@@ -54,55 +87,61 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
       </div>
 
       {/* Recipe URL Preview for Retrieved Recipe */}
-      {!isGenerated && recipe.url && <RecipeUrlPreview url={recipe.url} />}
+      {!isGenerated && recipe.url && (
+        <RecipeUrlPreview
+          url={recipe.url}
+          messages={curatedRecipeUrlPreviewMessages}
+        />
+      )}
 
       {/* Image Comparison Slider for Generated Recipe */}
       {isGenerated && recipe.sourceImage && recipe.retouchedImage && (
         <ImageComparisonSlider
           beforeImage={recipe.sourceImage}
           afterImage={recipe.retouchedImage}
+          messages={imageComparisonSliderMessages}
         />
       )}
 
       {/* Camera Settings */}
       <div>
         <div className="text-sm font-medium text-base-content/80 mb-3">
-          카메라 설정
+          {messages.cameraSettings}
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
           <div className="space-y-2">
             <CuratedRecipeSettingItem
-              label="필름 시뮬레이션"
+              label={messages.filmSimulation}
               value={recipe.settings.filmSimulation}
             />
             <CuratedRecipeSettingItem
-              label="다이나믹 레인지"
+              label={messages.dynamicRange}
               value={recipe.settings.dynamicRange}
             />
             <CuratedRecipeSettingItem
-              label="화이트 밸런스"
+              label={messages.whiteBalance}
               value={`${recipe.settings.whiteBalance} (R: ${recipe.settings.shiftRed}, B: ${recipe.settings.shiftBlue})`}
             />
             <CuratedRecipeSettingItem
-              label="하이라이트"
+              label={messages.highlight}
               value={recipe.settings.highlight}
             />
             <CuratedRecipeSettingItem
-              label="섀도우"
+              label={messages.shadow}
               value={recipe.settings.shadow}
             />
           </div>
           <div className="space-y-2">
             <CuratedRecipeSettingItem
-              label="색상"
+              label={messages.color}
               value={recipe.settings.color}
             />
             <CuratedRecipeSettingItem
-              label="선명도"
+              label={messages.clarity}
               value={recipe.settings.clarity}
             />
             <CuratedRecipeSettingItem
-              label="노이즈 감소"
+              label={messages.noiseReduction}
               value={recipe.settings.noiseReduction}
             />
           </div>

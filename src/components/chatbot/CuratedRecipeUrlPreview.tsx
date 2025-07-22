@@ -7,9 +7,14 @@ import z from "zod";
 
 interface RecipeUrlPreviewProps {
   url: string;
+  messages?: {
+    title: string;
+    loading: string;
+    link: string;
+  };
 }
 
-const RecipeUrlPreview = ({ url }: RecipeUrlPreviewProps) => {
+const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
   const [openGraph, setOpenGraph] = useState<null | OpenGraph>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -57,13 +62,13 @@ const RecipeUrlPreview = ({ url }: RecipeUrlPreviewProps) => {
   return (
     <div className="mb-6">
       <div className="text-sm font-medium text-base-content/80 mb-3">
-        원본 레시피
+        {messages?.title}
       </div>
       {isLoading ? (
         <div className="flex items-center justify-center p-8 bg-base-200 rounded-lg">
           <span className="loading loading-spinner loading-md"></span>
           <span className="ml-2 text-sm text-base-content/70">
-            레시피 정보를 불러오는 중...
+            {messages?.loading}
           </span>
         </div>
       ) : openGraph?.image?.url ? (
@@ -99,7 +104,7 @@ const RecipeUrlPreview = ({ url }: RecipeUrlPreviewProps) => {
                 </p>
               )}
               <div className="flex items-center mt-3 text-xs text-primary">
-                <span>원본 레시피 보기</span>
+                <span>{messages?.link}</span>
                 <svg
                   className="w-3 h-3 ml-1"
                   fill="none"
@@ -127,7 +132,7 @@ const RecipeUrlPreview = ({ url }: RecipeUrlPreviewProps) => {
           <div className="flex items-center justify-between">
             <div>
               <div className="text-sm font-medium text-base-content">
-                원본 레시피 보기
+                {messages?.link}
               </div>
               <div className="text-xs text-base-content/70 break-all">
                 {url}

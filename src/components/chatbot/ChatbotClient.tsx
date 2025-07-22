@@ -18,6 +18,7 @@ export interface ChatMessage {
 export interface ChatbotClientProps {
   messages: {
     title: string;
+    subTitle: string;
     placeholder: string;
     send: string;
     thinking: string;
@@ -33,6 +34,32 @@ export interface ChatbotClientProps {
       thinkingDeeply: string;
       preparing: string;
       waiting: string;
+      seconds: string;
+    };
+    curatedRecipe: {
+      aiCustomRecipe: string;
+      recommendedRecipe: string;
+      baseFilmSimulation: string;
+      recommendationReason: string;
+      cameraSettings: string;
+      filmSimulation: string;
+      dynamicRange: string;
+      whiteBalance: string;
+      highlight: string;
+      shadow: string;
+      color: string;
+      clarity: string;
+      noiseReduction: string;
+    };
+    imageComparisonSlider: {
+      title: string;
+      source: string;
+      retouched: string;
+    };
+    curatedRecipeUrlPreview: {
+      title: string;
+      loading: string;
+      link: string;
     };
   };
 }
@@ -179,9 +206,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
             <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary inline-block text-transparent bg-clip-text">
               {messages.title}
             </h1>
-            <p className="text-xs text-base-content/70">
-              인공지능 필름 레시피 어시스턴트
-            </p>
+            <p className="text-xs text-base-content/70">{messages.subTitle}</p>
           </div>
         </div>
       </div>
@@ -213,6 +238,11 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
               <div className="max-w-xl md:max-w-2xl lg:max-w-4xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow bg-base-200 text-base-content rounded-bl-md border border-base-300 bot-message-glow">
                 <ChatbotCuratedRecipeResponse
                   data={message.content as CuratorResponse}
+                  messages={messages.curatedRecipe}
+                  imageComparisonSliderMessages={messages.imageComparisonSlider}
+                  curatedRecipeUrlPreviewMessages={
+                    messages.curatedRecipeUrlPreview
+                  }
                 />
               </div>
             ) : (

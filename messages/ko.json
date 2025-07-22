@@ -9,6 +9,7 @@
   },
   "Chatbot": {
     "title": "AI 큐레이터",
+    "subTitle": "인공지능 필름 레시피 어시스턴트",
     "placeholder": "필름 레시피에 대해 무엇이든 물어보세요...",
     "send": "전송",
     "thinking": "생각 중...",
@@ -23,7 +24,33 @@
       "thinking": "생각 중입니다",
       "thinkingDeeply": "깊게 생각하고 있어요",
       "preparing": "최적의 답변을 준비하고 있어요",
-      "waiting": "조금만 더 기다려주세요"
+      "waiting": "조금만 더 기다려주세요",
+      "seconds": "초 경과"
+    },
+    "curatedRecipe": {
+      "aiCustomRecipe": "AI 맞춤 레시피",
+      "recommendedRecipe": "추천 레시피",
+      "baseFilmSimulation": "베이스 필름 시뮬레이션",
+      "recommendationReason": "추천 이유",
+      "cameraSettings": "카메라 설정",
+      "filmSimulation": "필름 시뮬레이션",
+      "dynamicRange": "다이나믹 레인지",
+      "whiteBalance": "화이트 밸런스",
+      "highlight": "하이라이트",
+      "shadow": "섀도우",
+      "color": "색상",
+      "clarity": "선명도",
+      "noiseReduction": "노이즈 감소"
+    },
+    "imageComparisonSlider": {
+      "title": "보정 결과 비교",
+      "source": "원본",
+      "retouched": "보정본"
+    },
+    "curatedRecipeUrlPreview": {
+      "title": "원본 레시피",
+      "loading": "레시피 정보를 불러오는 중...",
+      "link": "원본 레시피 보기"
     }
   },
   "SettingsPage": {
