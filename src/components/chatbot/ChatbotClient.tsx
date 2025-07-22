@@ -1,21 +1,20 @@
 "use client";
 
 import { SvgAiCurator, SvgAirplaneOutline } from "@/components/icon/svgs";
-import { getOpenGraph, OpenGraph } from "@/utils/getOpenGraph";
-import Image from "next/image";
+import { CuratorResponse } from "@/types/recipe-schema";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
-import remarkGfm from "remark-gfm";
-import z from "zod";
+import ChatbotCuratedRecipeResponse from "./CuratedRecipeResponse";
 
-interface ChatMessage {
+export interface ChatMessage {
   id: string;
-  content: string;
+  content: string | CuratorResponse;
   isUser: boolean;
   timestamp: Date;
+  type?: "text" | "recipe";
 }
 
-interface ChatbotClientProps {
+export interface ChatbotClientProps {
   messages: {
     title: string;
     placeholder: string;
@@ -30,100 +29,6 @@ interface ChatbotClientProps {
   };
 }
 
-const MarkdownLink = ({
-  href,
-  children,
-}: {
-  href?: string;
-  children?: React.ReactNode;
-}) => {
-  const [openGraph, setOpenGraph] = useState<null | OpenGraph>(null);
-
-  useEffect(() => {
-    if (!href) return;
-
-    const fetchOpenGraphImage = async () => {
-      if (openGraph) return;
-
-      const isValidURL = z.url().safeParse(href).success;
-      if (!isValidURL) return;
-
-      try {
-        const response = (await Promise.race([
-          fetch("/api/recipes/url", {
-            method: "POST",
-            body: JSON.stringify({ url: href }),
-          }),
-          new Promise((_, reject) =>
-            setTimeout(() => reject(new Error("timeout")), 5000)
-          ),
-        ])) as Response;
-
-        const data = await response.json();
-        if (!data?.urlHtml) return;
-
-        const parsedOpenGraph = getOpenGraph(data.urlHtml);
-        if (!parsedOpenGraph.image.url) return;
-
-        setOpenGraph(parsedOpenGraph);
-      } catch (error) {
-        console.log(error);
-        setOpenGraph(null);
-      }
-    };
-
-    fetchOpenGraphImage();
-  }, [href, openGraph]);
-
-  if (!href) return <>{children}</>;
-
-  return openGraph?.image?.url ? (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="block mt-3 mb-2 max-w-[300px] rounded-lg overflow-hidden border border-base-300 bg-base-100 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-[1.02]"
-    >
-      <div className="relative">
-        <Image
-          src={openGraph?.image?.url ?? ""}
-          alt={openGraph?.image?.alt ?? ""}
-          quality={30}
-          width={300}
-          height={160}
-          className="w-full h-40 object-cover"
-          style={{
-            aspectRatio: "15/8",
-          }}
-        />
-      </div>
-      {(openGraph?.title || openGraph?.description) && (
-        <div className="p-4">
-          {openGraph?.title && (
-            <h4 className="text-sm font-semibold text-base-content line-clamp-2 mb-2 leading-tight">
-              {openGraph.title}
-            </h4>
-          )}
-          {openGraph?.description && (
-            <p className="text-xs text-base-content/70 line-clamp-3 leading-relaxed">
-              {openGraph.description}
-            </p>
-          )}
-        </div>
-      )}
-    </a>
-  ) : (
-    <a
-      href={href}
-      target="_blank"
-      rel="noopener noreferrer"
-      className="text-primary hover:text-primary-focus underline break-all transition-colors duration-200"
-    >
-      {children}
-    </a>
-  );
-};
-
 const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
     {
@@ -131,6 +36,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
       content: messages.welcome,
       isUser: false,
       timestamp: new Date(),
+      type: "text",
     },
   ]);
 
@@ -179,43 +85,32 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
         throw new Error("Failed to get response");
       }
 
-      const reader = response.body?.getReader();
-      if (!reader) {
-        throw new Error("No reader available");
+      const data = (await response.json()) as CuratorResponse;
+      console.log("🚀 ~ handleSendMessage ~ data:", data);
+
+      // Check if it's a simple string response (like "필름 레시피에 대한 질문을 해주세요.")
+      if (typeof data === "string") {
+        const botMessage: ChatMessage = {
+          id: (Date.now() + 1).toString(),
+          content: data,
+          isUser: false,
+          timestamp: new Date(),
+          type: "text",
+        };
+        setChatMessages((prev) => [...prev, botMessage]);
+        return;
       }
 
-      let botMessageContent = "";
+      // Create structured recipe response
       const botMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
-        content: "",
+        content: data,
         isUser: false,
         timestamp: new Date(),
+        type: "recipe",
       };
 
       setChatMessages((prev) => [...prev, botMessage]);
-
-      let isFirstChunk = true;
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
-
-        const chunk = new TextDecoder().decode(value);
-        botMessageContent += chunk;
-
-        // 첫 번째 청크가 도착하면 스트리밍 시작으로 간주
-        if (isFirstChunk) {
-          setIsStreaming(true);
-          isFirstChunk = false;
-        }
-
-        setChatMessages((prev) =>
-          prev.map((msg) =>
-            msg.id === botMessage.id
-              ? { ...msg, content: botMessageContent }
-              : msg
-          )
-        );
-      }
     } catch (error) {
       console.error("Chatbot error:", error);
       const errorMessage: ChatMessage = {
@@ -223,6 +118,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
         content: messages.error,
         isUser: false,
         timestamp: new Date(),
+        type: "text",
       };
       setChatMessages((prev) => [...prev, errorMessage]);
     } finally {
@@ -268,80 +164,39 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
             } animate-in slide-in-from-bottom-2 duration-300`}
             style={{ animationDelay: `${index * 50}ms` }}
           >
-            <div
-              className={`max-w-xs md:max-w-md lg:max-w-2xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow ${
-                message.isUser
-                  ? "bg-primary text-primary-content rounded-br-md user-message-glow"
-                  : "bg-base-200 text-base-content rounded-bl-md border border-base-300 bot-message-glow"
-              }`}
-              style={
-                {
-                  "--glow-delay": `${index * 0.8}s`,
-                } as React.CSSProperties
-              }
-            >
-              {message.isUser ? (
+            {message.isUser ? (
+              <div
+                className="max-w-xs md:max-w-md lg:max-w-2xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow bg-primary text-primary-content rounded-br-md user-message-glow"
+                style={
+                  {
+                    "--glow-delay": `${index * 0.8}s`,
+                  } as React.CSSProperties
+                }
+              >
                 <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                  {message.content}
+                  {message.content as string}
                 </p>
-              ) : (
+              </div>
+            ) : message.type === "recipe" ? (
+              <div className="max-w-xl md:max-w-2xl lg:max-w-4xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow bg-base-200 text-base-content rounded-bl-md border border-base-300 bot-message-glow">
+                <ChatbotCuratedRecipeResponse
+                  data={message.content as CuratorResponse}
+                />
+              </div>
+            ) : (
+              <div
+                className="max-w-xs md:max-w-md lg:max-w-2xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow bg-base-200 text-base-content rounded-bl-md border border-base-300 bot-message-glow"
+                style={
+                  {
+                    "--glow-delay": `${index * 0.8}s`,
+                  } as React.CSSProperties
+                }
+              >
                 <div className="text-sm text-base-content">
-                  <ReactMarkdown
-                    remarkPlugins={[remarkGfm]}
-                    components={{
-                      h1: ({ children }) => (
-                        <div className="text-lg font-bold mb-3 mt-4 text-base-content first:mt-0">
-                          {children}
-                        </div>
-                      ),
-                      h2: ({ children }) => (
-                        <div className="text-base font-bold mb-2 mt-3 text-base-content first:mt-0">
-                          {children}
-                        </div>
-                      ),
-                      h3: ({ children }) => (
-                        <div className="text-sm font-bold mb-2 mt-3 text-base-content first:mt-0">
-                          {children}
-                        </div>
-                      ),
-                      strong: ({ children }) => (
-                        <span className="font-bold text-base-content block mb-2 mt-2 first:mt-0">
-                          {children}
-                        </span>
-                      ),
-                      p: ({ children }) => (
-                        <div className="mb-2 text-base-content leading-relaxed">
-                          {children}
-                        </div>
-                      ),
-                      ul: ({ children }) => (
-                        <ul className="list-disc list-inside mb-3 space-y-1 text-base-content ml-2">
-                          {children}
-                        </ul>
-                      ),
-                      li: ({ children }) => (
-                        <li className="text-base-content">{children}</li>
-                      ),
-                      a: (props) => <MarkdownLink {...props} />,
-                      code: ({ children, className }) => {
-                        const isInline = !className;
-                        return isInline ? (
-                          <code className="bg-base-300 text-base-content px-1.5 py-0.5 rounded text-xs font-mono">
-                            {children}
-                          </code>
-                        ) : (
-                          <pre className="bg-base-300 text-base-content p-3 rounded-lg overflow-x-auto text-xs font-mono my-2">
-                            <code>{children}</code>
-                          </pre>
-                        );
-                      },
-                    }}
-                  >
-                    {message.content}
-                  </ReactMarkdown>
+                  <ReactMarkdown>{message.content as string}</ReactMarkdown>
                 </div>
-              )}
-            </div>
+              </div>
+            )}
           </div>
         ))}
         {isLoading && !isStreaming && (
