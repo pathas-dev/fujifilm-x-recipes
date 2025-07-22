@@ -25,6 +25,7 @@ export interface ChatbotClientProps {
     examples: {
       winter: string;
       cinematic: string;
+      summer: string;
     };
   };
 }
@@ -49,6 +50,26 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   const [isStreaming, setIsStreaming] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
+  const examples = [
+    {
+      key: "winter",
+      text: messages.examples.winter,
+      icon: "❄️",
+      gradient: "from-blue-400 to-blue-600",
+    },
+    {
+      key: "cinematic",
+      text: messages.examples.cinematic,
+      icon: "🎬",
+      gradient: "from-purple-400 to-purple-600",
+    },
+    {
+      key: "summer",
+      text: messages.examples.summer,
+      icon: "☀️",
+      gradient: "from-green-400 to-teal-500",
+    },
+  ];
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
   };
@@ -216,32 +237,24 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
         {!hasAiResponses && !isLoading && (
           <div className="flex-1 flex flex-col items-center justify-center space-y-3 animate-in slide-in-from-bottom-2 duration-500">
             <div className="flex flex-col space-y-2 max-w-md w-full">
-              <button
-                onClick={() => handleSendMessage(messages.examples.winter)}
-                className="text-left p-4 bg-base-200/50 hover:bg-base-200 border border-base-300 rounded-xl transition-all duration-200 hover:shadow-md hover:scale-[1.02] group"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">
-                    ❄️
+              {examples.map((example) => (
+                <button
+                  key={example.key}
+                  onClick={() => handleSendMessage(example.text)}
+                  className="text-left p-4 bg-base-200/50 hover:bg-base-200 border border-base-300 rounded-xl transition-all duration-200 hover:shadow-md hover:scale-[1.02] group cursor-pointer"
+                >
+                  <div className="flex items-center space-x-3">
+                    <div
+                      className={`w-8 h-8 bg-gradient-to-br ${example.gradient} rounded-lg flex items-center justify-center text-white text-sm font-bold`}
+                    >
+                      {example.icon}
+                    </div>
+                    <span className="text-sm text-base-content group-hover:text-primary transition-colors">
+                      {example.text}
+                    </span>
                   </div>
-                  <span className="text-sm text-base-content group-hover:text-primary transition-colors">
-                    {messages.examples.winter}
-                  </span>
-                </div>
-              </button>
-              <button
-                onClick={() => handleSendMessage(messages.examples.cinematic)}
-                className="text-left p-4 bg-base-200/50 hover:bg-base-200 border border-base-300 rounded-xl transition-all duration-200 hover:shadow-md hover:scale-[1.02] group"
-              >
-                <div className="flex items-center space-x-3">
-                  <div className="w-8 h-8 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg flex items-center justify-center text-white text-sm font-bold">
-                    🎬
-                  </div>
-                  <span className="text-sm text-base-content group-hover:text-primary transition-colors">
-                    {messages.examples.cinematic}
-                  </span>
-                </div>
-              </button>
+                </button>
+              ))}
             </div>
           </div>
         )}
@@ -268,11 +281,6 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
                 }}
                 autoFocus
               />
-              {inputValue.trim() && (
-                <div className="absolute right-3 bottom-3 text-xs text-base-content/40">
-                  Enter to send
-                </div>
-              )}
             </div>
             <button
               onClick={() => handleSendMessage()}

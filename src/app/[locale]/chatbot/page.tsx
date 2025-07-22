@@ -23,6 +23,7 @@ export default async function ChatbotPage(
     examples: {
       winter: t("examples.winter"),
       cinematic: t("examples.cinematic"),
+      summer: t("examples.summer"),
     },
   };
 

@@ -16,7 +16,8 @@
     "welcome": "안녕하세요! 저는 AI 필름 레시피 큐레이터입니다. 어떤 레시피를 찾으시나요?",
     "examples": {
       "winter": "X-T5 겨울 느낌 나는 레시피 추천해줘",
-      "cinematic": "X-100V 영화 느낌 필름 레시피 추천해줘"
+      "cinematic": "X-100V 영화 느낌 필름 레시피 추천해줘",
+      "summer": "X-PRO2 청량한 여름 느낌 레시피 추천해줘"
     }
   },
   "SettingsPage": {
