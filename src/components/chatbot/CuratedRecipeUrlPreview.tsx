@@ -65,11 +65,16 @@ const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
         {messages?.title}
       </div>
       {isLoading ? (
-        <div className="flex items-center justify-center p-8 bg-base-200 rounded-lg">
-          <span className="loading loading-spinner loading-md"></span>
-          <span className="ml-2 text-sm text-base-content/70">
-            {messages?.loading}
-          </span>
+        <div className="bg-base-200 rounded-lg border border-base-300">
+          <div className="w-full h-48 bg-base-300 rounded-t-lg animate-pulse"></div>
+          <div className="p-4">
+            <div className="flex items-center justify-center py-2">
+              <span className="loading loading-spinner loading-md"></span>
+              <span className="ml-2 text-sm text-base-content/70">
+                {messages?.loading}
+              </span>
+            </div>
+          </div>
         </div>
       ) : openGraph?.image?.url ? (
         <a
