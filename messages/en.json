@@ -18,6 +18,12 @@
       "winter": "Recommend a winter-feeling recipe for X-T5",
       "cinematic": "Recommend a cinematic film recipe for X-100V",
       "summer": "Recommend a refreshing summer recipe for X-PRO2"
+    },
+    "loadings": {
+      "thinking": "Thinking",
+      "thinkingDeeply": "Thinking deeply",
+      "preparing": "Preparing the best answer",
+      "waiting": "Please wait a moment"
     }
   },
   "SettingsPage": {

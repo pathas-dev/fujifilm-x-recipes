@@ -25,6 +25,12 @@ export default async function ChatbotPage(
       cinematic: t("examples.cinematic"),
       summer: t("examples.summer"),
     },
+    loadings: {
+      thinking: t("loadings.thinking"),
+      thinkingDeeply: t("loadings.thinkingDeeply"),
+      preparing: t("loadings.preparing"),
+      waiting: t("loadings.waiting"),
+    },
   };
 
   return <ChatbotClient messages={messages} />;

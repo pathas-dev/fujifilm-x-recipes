@@ -5,6 +5,7 @@ import { CuratorResponse } from "@/types/recipe-schema";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import ChatbotCuratedRecipeResponse from "./CuratedRecipeResponse";
+import LoadingIndicator from "./LoadingIndicator";
 
 export interface ChatMessage {
   id: string;
@@ -26,6 +27,12 @@ export interface ChatbotClientProps {
       winter: string;
       cinematic: string;
       summer: string;
+    };
+    loadings: {
+      thinking: string;
+      thinkingDeeply: string;
+      preparing: string;
+      waiting: string;
     };
   };
 }
@@ -70,13 +77,6 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
       gradient: "from-green-400 to-teal-500",
     },
   ];
-  const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
-  };
-
-  useEffect(() => {
-    scrollToBottom();
-  }, [chatMessages]);
 
   const handleSendMessage = async (messageText?: string) => {
     const messageToSend = messageText || inputValue;
@@ -155,6 +155,17 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
     }
   };
 
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({
+      behavior: "smooth",
+      block: "end",
+    });
+  };
+
+  useEffect(() => {
+    scrollToBottom();
+  }, [chatMessages]);
+
   return (
     <section className="w-full h-full flex flex-col bg-base-100 select-text">
       {/* Header */}
@@ -221,16 +232,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
           </div>
         ))}
         {isLoading && !isStreaming && (
-          <div className="flex justify-start animate-in slide-in-from-bottom-2 duration-300">
-            <div className="bg-base-200 text-base-content px-5 py-4 rounded-2xl rounded-bl-md border border-base-300 shadow-sm message-glow bot-message-glow">
-              <div className="flex items-center space-x-3">
-                <span className="loading loading-dots loading-sm text-primary"></span>
-                <span className="text-sm text-base-content/70">
-                  {messages.thinking}
-                </span>
-              </div>
-            </div>
-          </div>
+          <LoadingIndicator messages={messages.loadings} />
         )}
 
         {/* 예제 메시지들 - AI 응답이 없을 때만 표시 */}
