@@ -25,6 +25,7 @@ export default async function ChatbotPage(
       winter: t("examples.winter"),
       cinematic: t("examples.cinematic"),
       summer: t("examples.summer"),
+      blackWhite: t("examples.blackWhite"),
     },
     loadings: {
       thinking: t("loadings.thinking"),

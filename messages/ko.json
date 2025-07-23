@@ -18,7 +18,8 @@
     "examples": {
       "winter": "X-T5 겨울 느낌 나는 레시피 추천해줘",
       "cinematic": "X-100V 영화 느낌 필름 레시피 추천해줘",
-      "summer": "X-PRO2 청량한 여름 느낌 레시피 추천해줘"
+      "summer": "X-PRO3 청량한 여름 느낌 레시피 추천해줘",
+      "blackWhite": "X-T30 고대비 흑백 레시피 추천해줘"
     },
     "loadings": {
       "thinking": "생각 중입니다",

@@ -18,7 +18,8 @@
     "examples": {
       "winter": "Recommend a winter-feeling recipe for X-T5",
       "cinematic": "Recommend a cinematic film recipe for X-100V",
-      "summer": "Recommend a refreshing summer recipe for X-PRO2"
+      "summer": "Recommend a refreshing summer recipe for X-PRO3",
+      "blackWhite": "Recommend a high-contrast black and white recipe for X-T30"
     },
     "loadings": {
       "thinking": "Thinking",

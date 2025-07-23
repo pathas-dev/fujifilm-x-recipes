@@ -57,10 +57,13 @@ export async function POST(request: Request) {
           const source = await retouchImage("source.jpg", "webp", {
             width: 800,
             returnBase64: true,
+            isBw: parsedQuestion.colorOrBw === "B&W",
           });
           const retouched = await retouchImage("source.jpg", "webp", {
             width: 800,
+            quality: 100,
             returnBase64: true,
+            isBw: parsedQuestion.colorOrBw === "B&W",
             cameraSettings: {
               highlightTone: settings.highlight,
               noiseReduction: settings.noiseReduction,

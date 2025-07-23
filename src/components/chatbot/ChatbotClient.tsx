@@ -28,6 +28,7 @@ export interface ChatbotClientProps {
       winter: string;
       cinematic: string;
       summer: string;
+      blackWhite: string;
     };
     loadings: {
       thinking: string;
@@ -102,6 +103,12 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
       text: messages.examples.summer,
       icon: "☀️",
       gradient: "from-green-400 to-teal-500",
+    },
+    {
+      key: "blackWhite",
+      text: messages.examples.blackWhite,
+      icon: "🎞️",
+      gradient: "from-black to-white",
     },
   ];
 
