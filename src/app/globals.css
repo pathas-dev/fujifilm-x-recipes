@@ -53,4 +53,17 @@
   .bot-message-glow {
     --glow-color: 156, 163, 175;
   }
+
+  @keyframes filmRoll {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-1040px);
+    }
+  }
+
+  .film-strip {
+    animation: filmRoll 13s linear infinite;
+  }
 }
