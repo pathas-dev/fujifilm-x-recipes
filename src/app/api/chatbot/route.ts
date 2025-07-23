@@ -26,10 +26,12 @@ export async function POST(request: Request) {
         parsingLLM.withStructuredOutput(QuestionAnalysisSchema)
       );
       const parsedQuestion = await parsingChain.invoke({ question });
-      console.log("Parsed question:", parsedQuestion);
 
-      if (!parsedQuestion.isFilmRecipeQuestion) {
-        return NextResponse.json("필름 레시피에 대한 질문을 해주세요.", {
+      if (
+        !parsedQuestion.isFilmRecipeQuestion &&
+        parsedQuestion.rejectionReason
+      ) {
+        return NextResponse.json(parsedQuestion.rejectionReason, {
           status: 200,
         });
       }

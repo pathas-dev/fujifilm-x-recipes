@@ -85,6 +85,7 @@ export const QuestionAnalysisSchema = z.object({
   detectedSensorTypes: SensorTypeSchema.optional(),
   colorOrBw: ColorOrBwSchema.optional(),
   isFilmRecipeQuestion: z.boolean(),
+  rejectionReason: z.string().optional(),
 });
 
 export type SensorType = z.infer<typeof SensorTypeSchema>;
