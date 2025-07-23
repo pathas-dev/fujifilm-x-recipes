@@ -77,12 +77,10 @@ const SettingsPage = async (
             </li>
           ))}
           <li>
-            <div>
-              <ThemeSwitch />
-            </div>
+            <HideCardImageToggle label={settingsPageMessages.hideCardImage} />
           </li>
           <li>
-            <HideCardImageToggle label={settingsPageMessages.hideCardImage} />
+            <ThemeSwitch />
           </li>
         </ul>
       </main>
