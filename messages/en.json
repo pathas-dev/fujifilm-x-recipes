@@ -41,7 +41,13 @@
       "shadow": "Shadow",
       "color": "Color",
       "clarity": "Clarity",
-      "noiseReduction": "Noise Reduction"
+      "noiseReduction": "Noise Reduction",
+      "grainEffect": "Grain Effect",
+      "grainSize": "Grain Size",
+      "colourChrome": "Color Chrome",
+      "colourChromeBlue": "Color Chrome Blue",
+      "colourChromeRed": "Color Chrome Red",
+      "priority": "Priority"
     },
     "imageComparisonSlider": {
       "title": "Image Comparison",

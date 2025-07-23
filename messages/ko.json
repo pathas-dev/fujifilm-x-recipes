@@ -41,7 +41,13 @@
       "shadow": "섀도우",
       "color": "색상",
       "clarity": "선명도",
-      "noiseReduction": "노이즈 감소"
+      "noiseReduction": "노이즈 감소",
+      "grainEffect": "그레인 효과",
+      "grainSize": "그레인 크기",
+      "colourChrome": "컬러 크롬",
+      "colourChromeBlue": "컬러 크롬 블루",
+      "colourChromeRed": "컬러 크롬 레드",
+      "priority": "우선순위"
     },
     "imageComparisonSlider": {
       "title": "보정 결과 비교",

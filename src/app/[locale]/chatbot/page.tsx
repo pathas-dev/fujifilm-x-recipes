@@ -48,6 +48,12 @@ export default async function ChatbotPage(
       color: t("curatedRecipe.color"),
       clarity: t("curatedRecipe.clarity"),
       noiseReduction: t("curatedRecipe.noiseReduction"),
+      grainEffect: t("curatedRecipe.grainEffect"),
+      grainSize: t("curatedRecipe.grainSize"),
+      colourChrome: t("curatedRecipe.colourChrome"),
+      colourChromeBlue: t("curatedRecipe.colourChromeBlue"),
+      colourChromeRed: t("curatedRecipe.colourChromeRed"),
+      priority: t("curatedRecipe.priority"),
     },
     imageComparisonSlider: {
       title: t("imageComparisonSlider.title"),

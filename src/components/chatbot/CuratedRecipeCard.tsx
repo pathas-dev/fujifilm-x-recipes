@@ -19,6 +19,12 @@ interface CuratedRecipeCardProps {
     color: string;
     clarity: string;
     noiseReduction: string;
+    grainEffect: string;
+    grainSize: string;
+    colourChrome: string;
+    colourChromeBlue: string;
+    colourChromeRed: string;
+    priority: string;
   };
   imageComparisonSliderMessages?: {
     title: string;
@@ -119,6 +125,10 @@ const CuratedRecipeCard = ({
               value={recipe.settings.dynamicRange}
             />
             <CuratedRecipeSettingItem
+              label={messages.priority}
+              value={recipe.settings.priority}
+            />
+            <CuratedRecipeSettingItem
               label={messages.whiteBalance}
               value={`${recipe.settings.whiteBalance} (R: ${recipe.settings.shiftRed}, B: ${recipe.settings.shiftBlue})`}
             />
@@ -130,12 +140,12 @@ const CuratedRecipeCard = ({
               label={messages.shadow}
               value={recipe.settings.shadow}
             />
-          </div>
-          <div className="space-y-2">
             <CuratedRecipeSettingItem
               label={messages.color}
               value={recipe.settings.color}
             />
+          </div>
+          <div className="space-y-2">
             <CuratedRecipeSettingItem
               label={messages.clarity}
               value={recipe.settings.clarity}
@@ -143,6 +153,22 @@ const CuratedRecipeCard = ({
             <CuratedRecipeSettingItem
               label={messages.noiseReduction}
               value={recipe.settings.noiseReduction}
+            />
+            <CuratedRecipeSettingItem
+              label={messages.grainEffect}
+              value={recipe.settings.grainEffect}
+            />
+            <CuratedRecipeSettingItem
+              label={messages.grainSize}
+              value={recipe.settings.grainSize}
+            />
+            <CuratedRecipeSettingItem
+              label={messages.colourChromeBlue}
+              value={recipe.settings.colourChromeBlue}
+            />
+            <CuratedRecipeSettingItem
+              label={messages.colourChromeRed}
+              value={recipe.settings.colourChromeRed}
             />
           </div>
         </div>
