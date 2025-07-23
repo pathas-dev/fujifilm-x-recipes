@@ -20,7 +20,7 @@ const notoSans = Noto_Sans_KR({
 
 export async function generateMetadata(props: {
   params: Promise<{ locale: (typeof localeIntl)[keyof typeof localeIntl] }>;
-}) {
+}): Promise<Metadata> {
   const params = await props.params;
 
   const { locale } = params;
