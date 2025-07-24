@@ -1,7 +1,7 @@
 import { locales } from "@/i18n/navigation";
 import { MetadataRoute } from "next";
 
-export const SITE_URL = "https://www.fujifilm-x-recipes.site";
+export const SITE_URL = "https://fujifilm-x-recipes.vercel.app";
 
 const pages = [
   "",
