@@ -40,6 +40,7 @@ export async function POST(request: Request) {
       const documents = await retrieve(question, {
         colorOrBw: parsedQuestion.colorOrBw,
         sensor: parsedQuestion.detectedSensorTypes,
+        filmSimulation: parsedQuestion.filmSimulation,
       });
       const context = formatContext(documents);
 

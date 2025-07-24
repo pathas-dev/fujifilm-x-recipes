@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { FilmSimulationTypes } from "@/types/recipe-schema";
 
 // 센서 타입 정의
 export const SensorTypeSchema = z.enum([
@@ -84,6 +85,7 @@ export const QuestionAnalysisSchema = z.object({
   detectedCameras: CameraModelSchema.optional(),
   detectedSensorTypes: SensorTypeSchema.optional(),
   colorOrBw: ColorOrBwSchema.optional(),
+  filmSimulation: z.enum(FilmSimulationTypes).optional(),
   isFilmRecipeQuestion: z.boolean(),
   rejectionReason: z.string().optional(),
 });

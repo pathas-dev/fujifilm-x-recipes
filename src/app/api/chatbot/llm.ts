@@ -1,5 +1,6 @@
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
+import { FilmSimulationTypes } from "@/types/recipe-schema";
 
 export enum GoogleAIModel {
   GeminiFlash = "gemini-2.0-flash",
@@ -20,7 +21,7 @@ export const createParseQuestionPromptTemplate = () => {
     [
       "system",
       `당신은 후지 필름 카메라 전문가입니다.
-       다음의 사용자 질문을 분석해서 어떤 센서에 대한 질문인지, 컬러인지 흑백인지 분석해주세요.
+       다음의 사용자 질문을 분석해서 어떤 센서에 대한 질문인지, 컬러인지 흑백인지, 그리고 어떤 필름 시뮬레이션에 대한 질문인지 분석해주세요.
 
        만약 후지 필름 카메라, 레시피, 필름, 사진 등과 관련이 없는 질문이라면 관련 없는 질문이라고 답변하세요. (true/false)
        
@@ -42,6 +43,9 @@ export const createParseQuestionPromptTemplate = () => {
 
        [색상 구분]
        Color / BW
+
+       [필름 시뮬레이션 타입]
+       ${FilmSimulationTypes.join(", ")}
     
     `,
     ],
