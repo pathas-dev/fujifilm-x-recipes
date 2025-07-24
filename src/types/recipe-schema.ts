@@ -1,11 +1,29 @@
 import { z } from "zod";
 
+// 필름 시뮬레이션 타입 정의 - film-recipes.csv에서 추출한 실제 데이터 기반
+export const FilmSimulationTypes = [
+  "Provia",
+  "Astia",
+  "Classic Chrome",
+  "Classic Negative",
+  "Reala Ace",
+  "Eterna",
+  "Eterna Bleach Bypass",
+  "Nostalgic Negative",
+  "Pro Neg. High",
+  "Pro Neg. Std",
+  "Velvia",
+  "Acros",
+  "Monochrome",
+  "Unknown",
+] as const;
+
 // 후지필름 레시피 세팅 스키마 - parse.ts의 모든 설정 항목 포함
 export const FujifilmSettingsSchema = z.object({
-  // 필름 시뮬레이션
+  // 필름 시뮬레이션 - enum으로 제한
   filmSimulation: z
-    .string()
-    .describe("필름 시뮬레이션 (예: Classic Chrome, Velvia, Provia 등)"),
+    .enum(FilmSimulationTypes)
+    .describe("필름 시뮬레이션 - CSV 데이터에서 추출한 실제 사용되는 타입들"),
 
   // 기본 이미지 설정
   dynamicRange: z.string().describe("Dynamic Range - 넓은 계조와 디테일 보존"),
@@ -76,6 +94,7 @@ export const CuratorResponseSchema = z.object({
 });
 
 // 타입 추출
+export type FilmSimulationType = (typeof FilmSimulationTypes)[number];
 export type FujifilmSettings = z.infer<typeof FujifilmSettingsSchema>;
 export type Recipe = z.infer<typeof RecipeSchema>;
 export type CuratorResponse = z.infer<typeof CuratorResponseSchema>;

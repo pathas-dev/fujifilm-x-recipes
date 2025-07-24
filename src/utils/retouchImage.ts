@@ -1,6 +1,203 @@
 import { writeFileSync } from "fs";
 import path from "path";
 import sharp from "sharp";
+import { type FilmSimulationType } from "../types/recipe-schema";
+
+/**
+ * 필름 시뮬레이션별 특성 및 보정값 정의
+ * analyze-image-stats.js의 분석 결과를 기반으로 한 프리셋
+ */
+const FilmSimulationPresets: Record<
+  FilmSimulationType,
+  {
+    name: string;
+    characteristics: string;
+    baseSettings: CameraSettings;
+  }
+> = {
+  Provia: {
+    name: "PROVIA",
+    characteristics: "Standard color reproduction, balanced contrast",
+    baseSettings: {
+      whiteBalanceR: 0,
+      whiteBalanceB: 0,
+      highlightTone: 0,
+      shadowTone: 0,
+      color: 0,
+      clarity: 0,
+      noiseReduction: 0,
+    },
+  },
+  Velvia: {
+    name: "Velvia",
+    characteristics: "High saturation, vivid colors, strong contrast",
+    baseSettings: {
+      whiteBalanceR: 1,
+      whiteBalanceB: -1,
+      highlightTone: 1,
+      shadowTone: 1,
+      color: 3,
+      clarity: 2,
+      noiseReduction: 0,
+    },
+  },
+  Astia: {
+    name: "ASTIA",
+    characteristics: "Soft skin tones, subdued colors",
+    baseSettings: {
+      whiteBalanceR: 2,
+      whiteBalanceB: 0,
+      highlightTone: 0,
+      shadowTone: 1,
+      color: -1,
+      clarity: -1,
+      noiseReduction: 1,
+    },
+  },
+  "Classic Chrome": {
+    name: "Classic Chrome",
+    characteristics: "Muted colors, film-like contrast",
+    baseSettings: {
+      whiteBalanceR: 0,
+      whiteBalanceB: 1,
+      highlightTone: -1,
+      shadowTone: 0,
+      color: -2,
+      clarity: 1,
+      noiseReduction: 0,
+    },
+  },
+  "Classic Negative": {
+    name: "Classic Negative",
+    characteristics: "Film negative emulation",
+    baseSettings: {
+      whiteBalanceR: 1,
+      whiteBalanceB: 0,
+      highlightTone: 0,
+      shadowTone: 2,
+      color: 1,
+      clarity: 0,
+      noiseReduction: 0,
+    },
+  },
+  "Reala Ace": {
+    name: "REALA ACE",
+    characteristics: "Natural skin tones, enhanced colors",
+    baseSettings: {
+      whiteBalanceR: 1,
+      whiteBalanceB: -1,
+      highlightTone: 0,
+      shadowTone: 1,
+      color: 2,
+      clarity: 1,
+      noiseReduction: 0,
+    },
+  },
+  Eterna: {
+    name: "ETERNA",
+    characteristics: "Cinematic look, low saturation",
+    baseSettings: {
+      whiteBalanceR: 0,
+      whiteBalanceB: 1,
+      highlightTone: -1,
+      shadowTone: 1,
+      color: -3,
+      clarity: -1,
+      noiseReduction: 1,
+    },
+  },
+  "Eterna Bleach Bypass": {
+    name: "ETERNA Bleach Bypass",
+    characteristics: "High contrast, desaturated highlights",
+    baseSettings: {
+      whiteBalanceR: 0,
+      whiteBalanceB: 2,
+      highlightTone: 2,
+      shadowTone: -1,
+      color: -4,
+      clarity: 2,
+      noiseReduction: 0,
+    },
+  },
+  "Nostalgic Negative": {
+    name: "Nostalgic Neg",
+    characteristics: "Vintage negative film look",
+    baseSettings: {
+      whiteBalanceR: 2,
+      whiteBalanceB: 1,
+      highlightTone: -1,
+      shadowTone: 2,
+      color: 0,
+      clarity: -1,
+      noiseReduction: 1,
+    },
+  },
+  "Pro Neg. High": {
+    name: "PRO Neg Hi",
+    characteristics: "High contrast negative film",
+    baseSettings: {
+      whiteBalanceR: 0,
+      whiteBalanceB: 0,
+      highlightTone: 1,
+      shadowTone: 1,
+      color: 1,
+      clarity: 1,
+      noiseReduction: 0,
+    },
+  },
+  "Pro Neg. Std": {
+    name: "PRO Neg Std",
+    characteristics: "Standard contrast negative film",
+    baseSettings: {
+      whiteBalanceR: 0,
+      whiteBalanceB: 0,
+      highlightTone: 0,
+      shadowTone: 1,
+      color: 0,
+      clarity: 0,
+      noiseReduction: 0,
+    },
+  },
+  Acros: {
+    name: "ACROS",
+    characteristics: "Black and white, smooth gradation",
+    baseSettings: {
+      whiteBalanceR: 0,
+      whiteBalanceB: 0,
+      highlightTone: 0,
+      shadowTone: 0,
+      color: 0,
+      clarity: 1,
+      noiseReduction: 1,
+    },
+  },
+  Monochrome: {
+    name: "Monochrome",
+    characteristics: "Standard black and white",
+    baseSettings: {
+      whiteBalanceR: 0,
+      whiteBalanceB: 0,
+      highlightTone: 0,
+      shadowTone: 0,
+      color: 0,
+      clarity: 0,
+      noiseReduction: 0,
+    },
+  },
+  Unknown: {
+    name: "Unknown",
+    characteristics: "Unknown film simulation",
+    baseSettings: {
+      whiteBalanceR: 0,
+      whiteBalanceB: 0,
+      highlightTone: 0,
+      shadowTone: 0,
+      color: 0,
+      clarity: 0,
+      noiseReduction: 0,
+    },
+  },
+};
 
 /**
  * 카메라 설정 타입 정의
@@ -26,6 +223,26 @@ interface SharpProcessingOptions {
   sharpness?: number;
   noiseReduction?: number;
 }
+
+/**
+ * 필름 시뮬레이션 기반 카메라 설정을 가져오는 함수
+ */
+const getFilmSimulationSettings = (
+  filmSimulation: FilmSimulationType
+): CameraSettings => {
+  const preset = FilmSimulationPresets[filmSimulation];
+  if (!preset) {
+    console.warn(
+      `Unknown film simulation: ${filmSimulation}, using default settings`
+    );
+    return FilmSimulationPresets["Unknown"].baseSettings;
+  }
+
+  console.log(
+    `Applied film simulation: ${preset.name} - ${preset.characteristics}`
+  );
+  return { ...preset.baseSettings };
+};
 
 /**
  * 카메라 설정을 Sharp 옵션으로 변환하는 함수
@@ -123,7 +340,9 @@ export const retouchImage = async (
     width?: number;
     height?: number;
     fit?: "cover" | "contain" | "fill" | "inside" | "outside";
-    // 카메라 설정 (원본 카메라 값 입력)
+    // 필름 시뮬레이션 (우선 적용)
+    filmSimulation?: FilmSimulationType;
+    // 카메라 설정 (필름 시뮬레이션에 추가로 적용)
     cameraSettings?: CameraSettings;
     // 또는 Sharp 옵션 직접 지정 (호환성 유지)
     whiteBalanceTint?: { r: number; g?: number; b: number };
@@ -148,15 +367,36 @@ export const retouchImage = async (
     const sourceImage = sharp(inputFilePath);
     let image = sourceImage.clone();
 
-    // 카메라 설정을 Sharp 옵션으로 변환
+    // 처리 옵션 초기화
     let processedOptions = { ...options };
+    let filmSimulationOptions: SharpProcessingOptions = {};
+    let userSettingsOptions: SharpProcessingOptions = {};
 
+    // 1. 필름 시뮬레이션 설정을 Sharp 옵션으로 변환
+    if (options.filmSimulation) {
+      const filmSettings = getFilmSimulationSettings(options.filmSimulation);
+      filmSimulationOptions = convertCameraSettingsToSharpOptions(filmSettings);
+
+      // 흑백 필름 시뮬레이션 자동 적용
+      if (
+        options.filmSimulation === "Acros" ||
+        options.filmSimulation === "Monochrome"
+      ) {
+        processedOptions.isBw = true;
+      }
+
+      console.log("Film simulation options prepared:", filmSimulationOptions);
+    }
+
+    // 2. 사용자 카메라 설정을 Sharp 옵션으로 변환
     if (options.cameraSettings) {
-      const convertedOptions = convertCameraSettingsToSharpOptions(
+      userSettingsOptions = convertCameraSettingsToSharpOptions(
         options.cameraSettings
       );
-      // 카메라 설정에서 변환된 옵션을 processedOptions에 병합
-      processedOptions = { ...processedOptions, ...convertedOptions };
+      console.log(
+        "User camera settings options prepared:",
+        userSettingsOptions
+      );
     }
 
     // 1. 이미지 크기 및 비율 조절
@@ -166,136 +406,377 @@ export const retouchImage = async (
       });
     }
 
-    // 2. 화이트 밸런스 조정 (linear transformation 사용)
-    if (processedOptions.whiteBalanceTint) {
+    // === 필름 시뮬레이션 적용 (1단계) ===
+    console.log("=== Applying Film Simulation (Step 1) ===");
+
+    // 2-A. 필름 시뮬레이션: 화이트 밸런스 조정
+    if (filmSimulationOptions.whiteBalanceTint) {
+      const r = filmSimulationOptions.whiteBalanceTint.r || 1.0;
+      const g = filmSimulationOptions.whiteBalanceTint.g || 1.0;
+      const b = filmSimulationOptions.whiteBalanceTint.b || 1.0;
+
+      console.log(
+        `Film WB adjustment - R: ${r.toFixed(2)}, G: ${g.toFixed(
+          2
+        )}, B: ${b.toFixed(2)}`
+      );
+      image = image.linear([r, g, b], [0, 0, 0]);
+    }
+
+    // 2-B. 필름 시뮬레이션: 하이라이트 톤
+    if (filmSimulationOptions.highlightTone !== undefined) {
+      const gamma = Math.max(
+        1.8,
+        Math.min(2.8, 2.2 + filmSimulationOptions.highlightTone * 0.2)
+      );
+
+      console.log(
+        `Film highlight tone - Value: ${
+          filmSimulationOptions.highlightTone
+        }, Gamma: ${gamma.toFixed(2)}`
+      );
+      image = image.gamma(gamma);
+    }
+
+    // 2-C. 필름 시뮬레이션: 섀도우 톤
+    if (filmSimulationOptions.shadowTone !== undefined) {
+      const brightness = Math.max(
+        0.7,
+        Math.min(2.0, 1.0 + filmSimulationOptions.shadowTone * 0.2)
+      );
+
+      console.log(
+        `Film shadow tone - Value: ${
+          filmSimulationOptions.shadowTone
+        }, Brightness: ${brightness.toFixed(2)}`
+      );
+      image = image.modulate({ brightness: brightness });
+    }
+
+    // 2-D. 필름 시뮬레이션: 색농도 (채도)
+    if (filmSimulationOptions.saturation !== undefined) {
+      const saturation = Math.max(
+        0.5,
+        Math.min(2.2, 1.0 + filmSimulationOptions.saturation * 0.25)
+      );
+
+      console.log(
+        `Film color saturation - Value: ${
+          filmSimulationOptions.saturation
+        }, Saturation: ${saturation.toFixed(2)}`
+      );
+      image = image.modulate({ saturation: saturation });
+    }
+
+    // 2-E. 필름 시뮬레이션: 샤프니스
+    if (filmSimulationOptions.sharpness !== undefined) {
+      if (filmSimulationOptions.sharpness > 0) {
+        const sigma = Math.max(
+          0.5,
+          Math.min(2.0, 1.0 + filmSimulationOptions.sharpness * 0.25)
+        );
+
+        console.log(
+          `Film sharpen - Value: ${
+            filmSimulationOptions.sharpness
+          }, Sigma: ${sigma.toFixed(2)}`
+        );
+
+        image = image.sharpen({
+          sigma: sigma,
+          m1: 0.5,
+          m2: 2.0,
+          x1: 2.0,
+          y2: 10.0,
+          y3: 20.0,
+        });
+      } else if (filmSimulationOptions.sharpness < 0) {
+        const blurAmount = Math.min(
+          1.0,
+          Math.abs(filmSimulationOptions.sharpness) * 0.2
+        );
+
+        console.log(
+          `Film soft blur - Value: ${
+            filmSimulationOptions.sharpness
+          }, Amount: ${blurAmount.toFixed(2)}`
+        );
+        image = image.blur(blurAmount);
+      }
+    }
+
+    // 2-F. 필름 시뮬레이션: 노이즈 리덕션
+    if (
+      filmSimulationOptions.noiseReduction !== undefined &&
+      filmSimulationOptions.noiseReduction > 0
+    ) {
+      const medianSize = Math.min(7, 3 + filmSimulationOptions.noiseReduction);
+
+      console.log(
+        `Film noise reduction - Value: ${filmSimulationOptions.noiseReduction}, Median size: ${medianSize}`
+      );
+      image = image.median(medianSize);
+    }
+
+    // === 사용자 설정 적용 (2단계) ===
+    console.log("=== Applying User Settings (Step 2) ===");
+
+    // 3-A. 사용자 설정: 화이트 밸런스 조정 (추가)
+    if (userSettingsOptions.whiteBalanceTint) {
+      const r = userSettingsOptions.whiteBalanceTint.r || 1.0;
+      const g = userSettingsOptions.whiteBalanceTint.g || 1.0;
+      const b = userSettingsOptions.whiteBalanceTint.b || 1.0;
+
+      console.log(
+        `User WB adjustment - R: ${r.toFixed(2)}, G: ${g.toFixed(
+          2
+        )}, B: ${b.toFixed(2)}`
+      );
+      image = image.linear([r, g, b], [0, 0, 0]);
+    }
+
+    // 3-B. 사용자 설정: 하이라이트 톤 (추가)
+    if (userSettingsOptions.highlightTone !== undefined) {
+      const gamma = Math.max(
+        1.8,
+        Math.min(2.8, 2.2 + userSettingsOptions.highlightTone * 0.2)
+      );
+
+      console.log(
+        `User highlight tone - Value: ${
+          userSettingsOptions.highlightTone
+        }, Gamma: ${gamma.toFixed(2)}`
+      );
+      image = image.gamma(gamma);
+    }
+
+    // 3-C. 사용자 설정: 섀도우 톤 (추가)
+    if (userSettingsOptions.shadowTone !== undefined) {
+      const brightness = Math.max(
+        0.7,
+        Math.min(2.0, 1.0 + userSettingsOptions.shadowTone * 0.2)
+      );
+
+      console.log(
+        `User shadow tone - Value: ${
+          userSettingsOptions.shadowTone
+        }, Brightness: ${brightness.toFixed(2)}`
+      );
+      image = image.modulate({ brightness: brightness });
+    }
+
+    // 3-D. 사용자 설정: 색농도 (채도) (추가)
+    if (userSettingsOptions.saturation !== undefined) {
+      const saturation = Math.max(
+        0.5,
+        Math.min(2.2, 1.0 + userSettingsOptions.saturation * 0.25)
+      );
+
+      console.log(
+        `User color saturation - Value: ${
+          userSettingsOptions.saturation
+        }, Saturation: ${saturation.toFixed(2)}`
+      );
+      image = image.modulate({ saturation: saturation });
+    }
+
+    // 3-E. 사용자 설정: 샤프니스 (추가)
+    if (userSettingsOptions.sharpness !== undefined) {
+      if (userSettingsOptions.sharpness > 0) {
+        const sigma = Math.max(
+          0.5,
+          Math.min(2.0, 1.0 + userSettingsOptions.sharpness * 0.25)
+        );
+
+        console.log(
+          `User sharpen - Value: ${
+            userSettingsOptions.sharpness
+          }, Sigma: ${sigma.toFixed(2)}`
+        );
+
+        image = image.sharpen({
+          sigma: sigma,
+          m1: 0.5,
+          m2: 2.0,
+          x1: 2.0,
+          y2: 10.0,
+          y3: 20.0,
+        });
+      } else if (userSettingsOptions.sharpness < 0) {
+        const blurAmount = Math.min(
+          1.0,
+          Math.abs(userSettingsOptions.sharpness) * 0.2
+        );
+
+        console.log(
+          `User soft blur - Value: ${
+            userSettingsOptions.sharpness
+          }, Amount: ${blurAmount.toFixed(2)}`
+        );
+        image = image.blur(blurAmount);
+      }
+    }
+
+    // 3-F. 사용자 설정: 노이즈 리덕션 (추가)
+    if (
+      userSettingsOptions.noiseReduction !== undefined &&
+      userSettingsOptions.noiseReduction > 0
+    ) {
+      const medianSize = Math.min(7, 3 + userSettingsOptions.noiseReduction);
+
+      console.log(
+        `User noise reduction - Value: ${userSettingsOptions.noiseReduction}, Median size: ${medianSize}`
+      );
+      image = image.median(medianSize);
+    }
+
+    // === 호환성 옵션 처리 (기존 방식) ===
+    console.log("=== Processing Legacy Options (Step 3) ===");
+
+    // 4-A. 기존 방식 화이트 밸런스 (직접 지정된 경우)
+    if (
+      processedOptions.whiteBalanceTint &&
+      !filmSimulationOptions.whiteBalanceTint &&
+      !userSettingsOptions.whiteBalanceTint
+    ) {
       const r = processedOptions.whiteBalanceTint.r || 1.0;
       const g = (processedOptions.whiteBalanceTint as any).g || 1.0;
       const b = processedOptions.whiteBalanceTint.b || 1.0;
 
       console.log(
-        `White balance adjustment - R: ${r.toFixed(2)}, G: ${g.toFixed(
+        `Legacy WB adjustment - R: ${r.toFixed(2)}, G: ${g.toFixed(
           2
         )}, B: ${b.toFixed(2)}`
       );
-
-      // Linear transformation을 사용한 화이트밸런스 조정
-      // 각 채널에 다른 승수를 적용하여 색온도 조정
       image = image.linear([r, g, b], [0, 0, 0]);
     }
 
-    // 3. 하이라이트 톤 (Gamma 조정 - 품질 보존 범위)
-    if (processedOptions.highlightTone !== undefined) {
-      // 품질 보존: gamma = 2.2 + (카메라값 * 0.2) - 더 자연스러운 범위
+    // 4-B. 기존 방식 하이라이트 톤 (직접 지정된 경우)
+    if (
+      processedOptions.highlightTone !== undefined &&
+      !filmSimulationOptions.highlightTone &&
+      !userSettingsOptions.highlightTone
+    ) {
       const gamma = Math.max(
         1.8,
         Math.min(2.8, 2.2 + processedOptions.highlightTone * 0.2)
       );
 
       console.log(
-        `Highlight tone - Camera value: ${
+        `Legacy highlight tone - Value: ${
           processedOptions.highlightTone
-        }, Gamma: ${gamma.toFixed(2)} (optimized)`
+        }, Gamma: ${gamma.toFixed(2)}`
       );
       image = image.gamma(gamma);
     }
 
-    // 4. 섀도우 톤 (Brightness 조정 - 품질 보존 범위)
-    if (processedOptions.shadowTone !== undefined) {
-      // 품질 보존: brightness = 1.0 + (카메라값 * 0.2) - 극단값 제거
+    // 4-C. 기존 방식 섀도우 톤 (직접 지정된 경우)
+    if (
+      processedOptions.shadowTone !== undefined &&
+      !filmSimulationOptions.shadowTone &&
+      !userSettingsOptions.shadowTone
+    ) {
       const brightness = Math.max(
         0.7,
         Math.min(2.0, 1.0 + processedOptions.shadowTone * 0.2)
       );
 
       console.log(
-        `Shadow tone - Camera value: ${
+        `Legacy shadow tone - Value: ${
           processedOptions.shadowTone
-        }, Brightness: ${brightness.toFixed(2)} (optimized)`
+        }, Brightness: ${brightness.toFixed(2)}`
       );
       image = image.modulate({ brightness: brightness });
     }
 
-    // 5. 색농도 (채도) 조절 - 개선된 범위
-    if (processedOptions.saturation !== undefined) {
-      // 개선된 공식: saturation = 1.0 + (카메라값 * 0.25), 최소값 0.5로 설정하여 완전 무채색 방지
+    // 4-D. 기존 방식 채도 (직접 지정된 경우)
+    if (
+      processedOptions.saturation !== undefined &&
+      !filmSimulationOptions.saturation &&
+      !userSettingsOptions.saturation
+    ) {
       const saturation = Math.max(
         0.5,
         Math.min(2.2, 1.0 + processedOptions.saturation * 0.25)
       );
 
       console.log(
-        `Color saturation - Camera value: ${
+        `Legacy color saturation - Value: ${
           processedOptions.saturation
         }, Saturation: ${saturation.toFixed(2)}`
       );
       image = image.modulate({ saturation: saturation });
     }
 
-    // 6. 자연스러운 컨트라스트 정규화 (Sharp 권장)
-    // 히스토그램 기반으로 자연스럽게 컨트라스트 개선
-    image = image.normalise({ lower: 1, upper: 99 });
-
-    // 7. 샤프니스 조절 - 자연스러운 unsharp mask
-    if (processedOptions.sharpness !== undefined) {
+    // 4-E. 기존 방식 샤프니스 (직접 지정된 경우)
+    if (
+      processedOptions.sharpness !== undefined &&
+      !filmSimulationOptions.sharpness &&
+      !userSettingsOptions.sharpness
+    ) {
       if (processedOptions.sharpness > 0) {
-        // 자연스러운 샤프닝: sigma를 낮추고 unsharp mask 파라미터 추가
         const sigma = Math.max(
           0.5,
           Math.min(2.0, 1.0 + processedOptions.sharpness * 0.25)
         );
 
         console.log(
-          `Sharpen - Camera value: ${
+          `Legacy sharpen - Value: ${
             processedOptions.sharpness
-          }, Sigma: ${sigma.toFixed(2)} (natural)`
+          }, Sigma: ${sigma.toFixed(2)}`
         );
 
-        // 자연스러운 unsharp mask (과샤프닝 방지)
         image = image.sharpen({
           sigma: sigma,
-          m1: 0.5, // flat area mask
-          m2: 2.0, // jagged area mask
-          x1: 2.0, // flat area sharpening
-          y2: 10.0, // maximum brightening
-          y3: 20.0, // maximum darkening
+          m1: 0.5,
+          m2: 2.0,
+          x1: 2.0,
+          y2: 10.0,
+          y3: 20.0,
         });
       } else if (processedOptions.sharpness < 0) {
-        // 매우 약한 블러 (자연스러운 소프트닝)
         const blurAmount = Math.min(
           1.0,
           Math.abs(processedOptions.sharpness) * 0.2
         );
 
         console.log(
-          `Soft blur - Camera value: ${
+          `Legacy soft blur - Value: ${
             processedOptions.sharpness
-          }, Amount: ${blurAmount.toFixed(2)} (gentle)`
+          }, Amount: ${blurAmount.toFixed(2)}`
         );
         image = image.blur(blurAmount);
       }
     }
 
-    // 8. 노이즈 리덕션 - Sharp의 median 필터 사용 (권장 방법)
+    // 4-F. 기존 방식 노이즈 리덕션 (직접 지정된 경우)
     if (
       processedOptions.noiseReduction !== undefined &&
-      processedOptions.noiseReduction > 0
+      processedOptions.noiseReduction > 0 &&
+      !filmSimulationOptions.noiseReduction &&
+      !userSettingsOptions.noiseReduction
     ) {
-      // Sharp 권장: median 필터로 노이즈 제거 (블러 대신)
-      // 카메라값 1-4를 median 윈도우 크기 3-7로 매핑
       const medianSize = Math.min(7, 3 + processedOptions.noiseReduction);
 
       console.log(
-        `Noise reduction - Camera value: ${processedOptions.noiseReduction}, Median size: ${medianSize} (natural)`
+        `Legacy noise reduction - Value: ${processedOptions.noiseReduction}, Median size: ${medianSize}`
       );
-
-      // median 필터는 블러 없이 자연스럽게 노이즈 제거
       image = image.median(medianSize);
     }
 
-    // 9. 흑백 변환 (greyscale)
+    // === 공통 후처리 ===
+    console.log("=== Final Processing ===");
+
+    // 5. 흑백 변환을 먼저 처리 (linear 변환과의 충돌 방지)
     if (processedOptions.isBw) {
-      image = image.greyscale();
+      console.log("Converting to grayscale");
+      // 중간 버퍼링으로 linear 변환 상태 해제
+      const tempBuffer = await image.toBuffer();
+      image = sharp(tempBuffer).greyscale();
     }
+
+    // 6. 자연스러운 컨트라스트 정규화 (Sharp 권장)
+    image = image.normalise({ lower: 1, upper: 99 });
 
     // 최종 출력 포맷 및 품질 설정 (품질 개선)
     switch (extension) {
@@ -365,108 +846,139 @@ export const retouchImage = async (
 
 // 검증용 간단한 테스트 함수
 export const runValidationTests = async () => {
-  console.log("=== 이미지 처리 검증 테스트 ===\n");
+  console.log("=== 필름 시뮬레이션 + 이미지 처리 검증 테스트 ===\n");
 
   const inputImagePath = "source.jpg";
 
   // 1. 원본 이미지 단순 리사이즈만 (기준점)
   console.log("1. 원본 이미지 단순 리사이즈 (기준점)");
   await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_01_original",
+    outputFileName: "validation_01_original.jpg",
     saveToFile: true,
     width: 1200,
     quality: 100,
   });
 
-  // 2. 화이트밸런스만 적용 (개선된 매핑 테스트)
-  console.log("\n2. 화이트밸런스만 적용 테스트 (개선된 매핑)");
+  // 2. Provia 필름 시뮬레이션 (기준 필름)
+  console.log("\n2. Provia 필름 시뮬레이션 적용");
   await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_02_wb_improved.jpg",
+    outputFileName: "validation_02_provia.jpg",
     saveToFile: true,
     width: 1200,
+    filmSimulation: "Provia",
+    quality: 100,
+  });
+
+  // 3. Velvia 필름 시뮬레이션 (고채도, 생생한 색상)
+  console.log("\n3. Velvia 필름 시뮬레이션 적용");
+  await retouchImage(inputImagePath, "jpg", {
+    outputFileName: "validation_03_velvia.jpg",
+    saveToFile: true,
+    width: 1200,
+    filmSimulation: "Velvia",
+    quality: 100,
+  });
+
+  // 4. Classic Chrome 필름 시뮬레이션 (차분한 색상)
+  console.log("\n4. Classic Chrome 필름 시뮬레이션 적용");
+  await retouchImage(inputImagePath, "jpg", {
+    outputFileName: "validation_04_classic_chrome.jpg",
+    saveToFile: true,
+    width: 1200,
+    filmSimulation: "Classic Chrome",
+    quality: 100,
+  });
+
+  // 5. Eterna 필름 시뮬레이션 (시네마틱 룩)
+  console.log("\n5. Eterna 필름 시뮬레이션 적용");
+  await retouchImage(inputImagePath, "jpg", {
+    outputFileName: "validation_05_eterna.jpg",
+    saveToFile: true,
+    width: 1200,
+    filmSimulation: "Eterna",
+    quality: 100,
+  });
+
+  // 6. Acros 필름 시뮬레이션 (흑백, 자동 적용)
+  console.log("\n6. Acros 필름 시뮬레이션 적용 (자동 흑백 변환)");
+  await retouchImage(inputImagePath, "jpg", {
+    outputFileName: "validation_06_acros.jpg",
+    saveToFile: true,
+    width: 1200,
+    filmSimulation: "Acros",
+    quality: 100,
+  });
+
+  // 7. Velvia + 사용자 설정 조합 (필름 먼저, 사용자 설정 추가)
+  console.log("\n7. Velvia + 사용자 추가 보정 적용 (순차 적용)");
+  await retouchImage(inputImagePath, "jpg", {
+    outputFileName: "validation_07_velvia_plus_user.jpg",
+    saveToFile: true,
+    width: 1200,
+    filmSimulation: "Velvia", // 1단계: Velvia 필름 특성 적용
     cameraSettings: {
-      whiteBalanceR: 6, // 따뜻한 톤 (더 강한 효과)
-      whiteBalanceB: -6, // 차가운 B 감소
+      // 2단계: 사용자 설정 추가 적용
+      whiteBalanceR: 2, // Velvia 기본값(+1)에 추가로 +2 = 총 +3
+      shadowTone: 1, // Velvia 기본값(+1)에 추가로 +1 = 총 +2
+      clarity: 1, // Velvia 기본값(+2)에 추가로 +1 = 총 +3
     },
     quality: 100,
   });
 
-  // 3. 하이라이트 톤만 적용 (개선된 범위)
-  console.log("\n3. 하이라이트 톤만 적용 테스트 (개선된 범위)");
+  // 8. 사용자 설정만 적용 (호환성 테스트)
+  console.log("\n8. 사용자 카메라 설정만 적용 (호환성 테스트)");
   await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_03_highlight_improved.jpg",
+    outputFileName: "validation_08_camera_only.jpg",
     saveToFile: true,
     width: 1200,
     cameraSettings: {
-      highlightTone: 2.0, // 더 강한 하이라이트 조정
+      whiteBalanceR: 4,
+      whiteBalanceB: -2,
+      highlightTone: 2,
+      shadowTone: 1,
+      color: 2,
+      clarity: 1,
     },
     quality: 100,
   });
 
-  // 4. 섀도우 톤만 적용 (개선된 범위)
-  console.log("\n4. 섀도우 톤만 적용 테스트 (개선된 범위)");
+  // 9. 기존 Sharp 옵션 직접 지정 (호환성 테스트)
+  console.log("\n9. 기존 Sharp 옵션 직접 지정 (호환성 테스트)");
   await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_04_shadow_improved.jpg",
+    outputFileName: "validation_09_legacy_options.jpg",
     saveToFile: true,
     width: 1200,
-    cameraSettings: {
-      shadowTone: 2.0, // 더 강한 섀도우 조정
-    },
+    whiteBalanceTint: { r: 1.2, b: 0.8 },
+    highlightTone: 1,
+    shadowTone: 2,
+    saturation: 2,
+    sharpness: 1,
     quality: 100,
   });
 
-  // 5. 채도만 적용 (개선된 범위)
-  console.log("\n5. 채도만 적용 테스트 (개선된 범위)");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_05_saturation_improved.jpg",
-    saveToFile: true,
-    width: 1200,
-    cameraSettings: {
-      color: 3, // 더 강한 채도 증가
-    },
-    quality: 100,
-  });
-
-  // 6. 샤프니스만 적용 (개선된 범위)
-  console.log("\n6. 샤프니스만 적용 테스트 (개선된 범위)");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_06_sharpness_improved.jpg",
-    saveToFile: true,
-    width: 1200,
-    cameraSettings: {
-      clarity: 3, // 더 강한 샤프닝
-    },
-    quality: 100,
-  });
-
-  // 7. 노이즈 리덕션만 적용 (개선된 범위)
-  console.log("\n7. 노이즈 리덕션만 적용 테스트 (개선된 범위)");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_07_nr_improved.jpg",
-    saveToFile: true,
-    width: 1200,
-    cameraSettings: {
-      noiseReduction: 3, // 더 강한 노이즈 리덕션
-    },
-    quality: 100,
-  });
-
-  console.log("\n=== 개선된 매핑 검증 테스트 완료 ===");
+  console.log("\n" + "=".repeat(80));
+  console.log("✅ 필름 시뮬레이션 순차 적용 검증 테스트 완료!");
   console.log("생성된 파일:");
   console.log("- validation_01_original.jpg (원본 기준)");
-  console.log("- validation_02_wb_improved.jpg (개선된 화이트밸런스)");
-  console.log("- validation_03_highlight_improved.jpg (개선된 하이라이트 톤)");
-  console.log("- validation_04_shadow_improved.jpg (개선된 섀도우 톤)");
-  console.log("- validation_05_saturation_improved.jpg (개선된 채도)");
-  console.log("- validation_06_sharpness_improved.jpg (개선된 샤프니스)");
-  console.log("- validation_07_nr_improved.jpg (개선된 노이즈 리덕션)");
-  console.log("\n개선사항:");
-  console.log("✅ 화이트밸런스: Sharp의 linear transformation 사용");
+  console.log("- validation_02_provia.jpg (Provia 필름)");
+  console.log("- validation_03_velvia.jpg (Velvia 필름 - 고채도)");
+  console.log("- validation_04_classic_chrome.jpg (Classic Chrome - 차분함)");
+  console.log("- validation_05_eterna.jpg (Eterna - 시네마틱)");
+  console.log("- validation_06_acros.jpg (Acros - 흑백)");
   console.log(
-    "✅ 하이라이트/섀도우: 품질 보존 범위 (1.8~2.8 gamma, 0.7~2.0 brightness)"
+    "- validation_07_velvia_plus_user.jpg (Velvia → 사용자 보정 순차 적용)"
   );
-  console.log("✅ 채도: 더 강한 효과 범위 (0.5~2.2)");
-  console.log("✅ 샤프니스: 품질 보존 매핑 (0.3~3.5 sigma, 0.3~1.6 blur)");
-  console.log("✅ 노이즈 리덕션: 품질 보존 범위 (0~1.0 blur)");
-  console.log("✅ 출력 품질: JPEG/WebP 95%, PNG 압축 최적화");
+  console.log("- validation_08_camera_only.jpg (사용자 카메라 설정만)");
+  console.log("- validation_09_legacy_options.jpg (기존 Sharp 옵션 직접 지정)");
+  console.log("\n🔄 새로운 순차 적용 방식:");
+  console.log("✅ 1단계: 필름 시뮬레이션 기본 특성 적용");
+  console.log("✅ 2단계: 사용자 카메라 설정 추가 적용");
+  console.log("✅ 3단계: 기존 Sharp 옵션 호환성 처리");
+  console.log("✅ 흑백 필름 자동 변환 (Acros, Monochrome)");
+  console.log("✅ FilmSimulationTypes enum 기반 타입 안전성");
+  console.log("✅ analyze-image-stats.js 분석 결과 적용");
+  console.log("\n📈 개선된 처리 순서:");
+  console.log(
+    "   필름 시뮬레이션 → 사용자 설정 → 컨트라스트 정규화 → 흑백 변환"
+  );
 };
