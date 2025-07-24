@@ -22,8 +22,6 @@ const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
     if (!url) return;
 
     const fetchOpenGraphImage = async () => {
-      if (openGraph || isLoading) return;
-
       const isValidURL = z.url().safeParse(url).success;
       if (!isValidURL) return;
 
@@ -39,6 +37,8 @@ const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
           ),
         ])) as Response;
 
+        if (!response.ok) return;
+
         const data = await response.json();
         if (!data?.urlHtml) return;
 
@@ -47,7 +47,7 @@ const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
 
         setOpenGraph(parsedOpenGraph);
       } catch (error) {
-        console.log(error);
+        console.log("Failed to fetch OpenGraph data:", error);
         setOpenGraph(null);
       } finally {
         setIsLoading(false);
@@ -55,7 +55,7 @@ const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
     };
 
     fetchOpenGraphImage();
-  }, [url, openGraph, isLoading]);
+  }, [url]);
 
   if (!url) return null;
 
