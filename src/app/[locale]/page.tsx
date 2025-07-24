@@ -1,153 +1,71 @@
-import { getCamerasWithFilters } from "@/app/api/data/localData";
-import CustomList from "@/components/custom/CustomList";
-import { localeIntl } from "@/i18n/navigation";
-import {
-  CopyAndPasteMessages,
-  HeaderMessages,
-  ImportFileMessages,
-  SendEmailMessages,
-  SettingMessages,
-} from "@/types/language";
 import { getTranslations, setRequestLocale } from "next-intl/server";
+import { localeIntl } from "@/i18n/navigation";
+import ChatbotClient from "@/components/chatbot/ChatbotClient";
 
-export default async function CustomPage(
+export default async function ChatbotPage(
   props: Readonly<{
     params: Promise<{ locale: (typeof localeIntl)[keyof typeof localeIntl] }>;
   }>
 ) {
   const params = await props.params;
-
   const { locale } = params;
-
   setRequestLocale(locale);
-  const { cameras, filters } = await getCamerasWithFilters();
 
-  const tHeaders = await getTranslations("Headers");
-  const tSettings = await getTranslations("Settings");
-  const tSendEmail = await getTranslations("SendEmail");
-  const tImportFile = await getTranslations("ImportFile");
-  const tCopyAndPasteMessages = await getTranslations("CopyAndPasteMessages");
+  const t = await getTranslations("Chatbot");
 
-  const headerMessages: HeaderMessages = {
-    bwOnly: tHeaders("bwOnly"),
-    dateLabel: tHeaders("dateLabel"),
-    nameLabel: tHeaders("nameLabel"),
-    baseLabel: tHeaders("baseLabel"),
-    cameraLabel: tHeaders("cameraLabel"),
-    creatorLabel: tHeaders("creatorLabel"),
-  };
-
-  const settingMessages: SettingMessages = {
-    newTitle: tSettings("newTitle"),
-    updateTitle: tSettings("updateTitle"),
-    placeholders: {
-      name: tSettings("placeholders.name"),
-      camera: tSettings("placeholders.camera"),
-      base: tSettings("placeholders.base"),
+  const messages = {
+    title: t("title"),
+    subTitle: t("subTitle"),
+    placeholder: t("placeholder"),
+    send: t("send"),
+    thinking: t("thinking"),
+    error: t("error"),
+    welcome: t("welcome"),
+    examples: {
+      winter: t("examples.winter"),
+      cinematic: t("examples.cinematic"),
+      summer: t("examples.summer"),
+      blackWhite: t("examples.blackWhite"),
     },
-    labels: {
-      highlight: tSettings("labels.highlight"),
-      tone: tSettings("labels.tone"),
-      shadow: tSettings("labels.shadow"),
-      grain: tSettings("labels.grain"),
-      grainSize: tSettings("labels.grainSize"),
-      grainRoughness: tSettings("labels.grainRoughness"),
-      dynamicRange: tSettings("labels.dynamicRange"),
-      colorChromeEffect: tSettings("labels.colorChromeEffect"),
-      colorChromeFXBlue: tSettings("labels.colorChromeFXBlue"),
-      sharpness: tSettings("labels.sharpness"),
-      color: tSettings("labels.color"),
-      clarity: tSettings("labels.clarity"),
-      isoNoiseReduction: tSettings("labels.isoNoiseReduction"),
-      exposure: tSettings("labels.exposure"),
-      iso: tSettings("labels.iso"),
-      whiteBalance: tSettings("labels.whiteBalance"),
-      whiteBalanceK: tSettings("labels.whiteBalanceK"),
-      whiteBalanceShift: tSettings("labels.whiteBalanceShift"),
-      bwAdj: tSettings("labels.bwAdj"),
+    loadings: {
+      thinking: t("loadings.thinking"),
+      thinkingDeeply: t("loadings.thinkingDeeply"),
+      preparing: t("loadings.preparing"),
+      waiting: t("loadings.waiting"),
+      seconds: t("loadings.seconds"),
     },
-    options: {
-      effects: {
-        off: tSettings("options.effects.off"),
-        strong: tSettings("options.effects.strong"),
-        weak: tSettings("options.effects.weak"),
-      },
-      sizes: {
-        off: tSettings("options.sizes.off"),
-        large: tSettings("options.sizes.large"),
-        small: tSettings("options.sizes.small"),
-      },
-      whiteBalances: {
-        autoWhitePriority: tSettings("options.whiteBalances.autoWhitePriority"),
-        auto: tSettings("options.whiteBalances.auto"),
-        autoAmbiencePriority: tSettings(
-          "options.whiteBalances.autoAmbiencePriority"
-        ),
-        measure: tSettings("options.whiteBalances.measure"),
-        k: tSettings("options.whiteBalances.k"),
-        sunlight: tSettings("options.whiteBalances.sunlight"),
-        shade: tSettings("options.whiteBalances.shade"),
-        daylight: tSettings("options.whiteBalances.daylight"),
-        warmWhite: tSettings("options.whiteBalances.warmWhite"),
-        coolWhite: tSettings("options.whiteBalances.coolWhite"),
-        incandescent: tSettings("options.whiteBalances.incandescent"),
-        underwater: tSettings("options.whiteBalances.underwater"),
-      },
+    curatedRecipe: {
+      aiCustomRecipe: t("curatedRecipe.aiCustomRecipe"),
+      recommendedRecipe: t("curatedRecipe.recommendedRecipe"),
+      baseFilmSimulation: t("curatedRecipe.baseFilmSimulation"),
+      recommendationReason: t("curatedRecipe.recommendationReason"),
+      cameraSettings: t("curatedRecipe.cameraSettings"),
+      filmSimulation: t("curatedRecipe.filmSimulation"),
+      dynamicRange: t("curatedRecipe.dynamicRange"),
+      whiteBalance: t("curatedRecipe.whiteBalance"),
+      highlight: t("curatedRecipe.highlight"),
+      shadow: t("curatedRecipe.shadow"),
+      color: t("curatedRecipe.color"),
+      clarity: t("curatedRecipe.clarity"),
+      noiseReduction: t("curatedRecipe.noiseReduction"),
+      grainEffect: t("curatedRecipe.grainEffect"),
+      grainSize: t("curatedRecipe.grainSize"),
+      colourChrome: t("curatedRecipe.colourChrome"),
+      colourChromeBlue: t("curatedRecipe.colourChromeBlue"),
+      colourChromeRed: t("curatedRecipe.colourChromeRed"),
+      priority: t("curatedRecipe.priority"),
     },
-    errors: {
-      noName: tSettings("errors.noName"),
-      noCamera: tSettings("errors.noCamera"),
-      noBase: tSettings("errors.noBase"),
+    imageComparisonSlider: {
+      title: t("imageComparisonSlider.title"),
+      source: t("imageComparisonSlider.source"),
+      retouched: t("imageComparisonSlider.retouched"),
     },
-    successes: {
-      create: tSettings("successes.create"),
-      update: tSettings("successes.update"),
+    curatedRecipeUrlPreview: {
+      title: t("curatedRecipeUrlPreview.title"),
+      loading: t("curatedRecipeUrlPreview.loading"),
+      link: t("curatedRecipeUrlPreview.link"),
     },
   };
 
-  const sendEmailMessages: SendEmailMessages = {
-    placeholder: tSendEmail("placeholder"),
-    success: tSendEmail("success"),
-    errors: {
-      noEmail: tSendEmail("errors.noEmail"),
-      noData: tSendEmail("errors.noData"),
-    },
-    tooltip: tSendEmail("tooltip"),
-  };
-
-  const importFileMessages: ImportFileMessages = {
-    success: tImportFile("success"),
-    errors: {
-      noFile: tImportFile("errors.noFile"),
-      noData: tImportFile("errors.noData"),
-      notJson: tImportFile("errors.notJson"),
-    },
-    tooltip: tImportFile("tooltip"),
-  };
-
-  const copyAndPasteMessages: CopyAndPasteMessages = {
-    copy: {
-      success: tCopyAndPasteMessages("copy.success"),
-      fail: tCopyAndPasteMessages("copy.fail"),
-    },
-    paste: {
-      success: tCopyAndPasteMessages("paste.success"),
-      errors: {
-        invalidURL: tCopyAndPasteMessages("paste.errors.invalidURL"),
-        invalidScheme: tCopyAndPasteMessages("paste.errors.invalidScheme"),
-      },
-    },
-  };
-
-  return (
-    <CustomList
-      filters={filters}
-      headerMessages={headerMessages}
-      settingMessages={settingMessages}
-      sendEmailMessages={sendEmailMessages}
-      importFileMessages={importFileMessages}
-      cameras={cameras}
-      copyAndPasteMessages={copyAndPasteMessages}
-    />
-  );
+  return <ChatbotClient messages={messages} />;
 }

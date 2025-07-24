@@ -30,14 +30,14 @@ const NavigationBottom = ({ titles }: INavigationProps) => {
       path: "/recipes",
     },
     {
-      title: titles.custom,
-      children: <SvgVariableMini />,
+      title: titles.chatbot,
+      children: <SvgAiMini />,
       path: "/",
     },
     {
-      title: titles.chatbot,
-      children: <SvgAiMini />,
-      path: "/chatbot",
+      title: titles.custom,
+      children: <SvgVariableMini />,
+      path: "/custom",
     },
     {
       title: titles.settings,

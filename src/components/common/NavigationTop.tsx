@@ -18,14 +18,13 @@ const NavigationTop = ({ titles }: INavigationProps) => {
       path: "/recipes",
     },
     {
-      title: titles.custom,
+      title: titles.chatbot,
       path: "/",
     },
     {
-      title: titles.chatbot,
-      path: "/chatbot",
+      title: titles.custom,
+      path: "/custom",
     },
-
     {
       title: titles.settings,
       path: "/settings",
