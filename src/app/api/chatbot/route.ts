@@ -42,18 +42,10 @@ export async function POST(request: Request) {
         parsingLLM.withStructuredOutput(QuestionAnalysisSchema)
       );
 
-      // Create RunnableWithMessageHistory for parsing chain
-      const parsingChainWithHistory = new RunnableWithMessageHistory({
-        runnable: parsingChain,
-        getMessageHistory: (sessionId: string) => getFilteredChatHistory(sessionId),
-        inputMessagesKey: "question",
-        historyMessagesKey: "chat_history",
+      const parsedQuestion = await parsingChain.invoke({
+        question,
+        chat_history: chatHistory,
       });
-
-      const parsedQuestion = await parsingChainWithHistory.invoke(
-        { question },
-        { configurable: { sessionId } }
-      );
 
       if (
         !parsedQuestion.isFilmRecipeQuestion &&
