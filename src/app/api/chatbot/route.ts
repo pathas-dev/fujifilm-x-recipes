@@ -59,10 +59,6 @@ export async function POST(request: Request) {
         !parsedQuestion.isFilmRecipeQuestion &&
         parsedQuestion.rejectionReason
       ) {
-        // Add rejection message to history
-        await addMessageToHistory(sessionId, new HumanMessage(question));
-        await addMessageToHistory(sessionId, new AIMessage(parsedQuestion.rejectionReason));
-        
         return NextResponse.json(parsedQuestion.rejectionReason, {
           status: 200,
         });
