@@ -1,7 +1,10 @@
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
-import { FilmSimulationTypes } from "@/types/recipe-schema";
-import { SENSOR_CAMERA_MAPPINGS, COLOR_TYPES } from "@/types/camera-schema";
+import {
+  SENSOR_CAMERA_MAPPINGS,
+  COLOR_TYPES,
+  FilmSimulations,
+} from "@/types/camera-schema";
 
 export enum GoogleAIModel {
   GeminiFlash = "gemini-2.0-flash",
@@ -19,9 +22,9 @@ export const createLLM = (model: GoogleAIModel = GoogleAIModel.GeminiFlash) => {
 
 // 센서-카메라 매핑 텍스트 생성
 const createSensorCameraMappingText = () => {
-  return SENSOR_CAMERA_MAPPINGS
-    .map(({ sensor, cameras }) => `       ${sensor}: ${cameras.join(", ")}`)
-    .join("\n");
+  return SENSOR_CAMERA_MAPPINGS.map(
+    ({ sensor, cameras }) => `       ${sensor}: ${cameras.join(", ")}`
+  ).join("\n");
 };
 
 export const createParseQuestionPromptTemplate = () => {
@@ -51,9 +54,9 @@ ${createSensorCameraMappingText()}
 ${COLOR_TYPES.join(" / ")}
 
 ### 필름 시뮬레이션
-${FilmSimulationTypes.join(", ")}
+${FilmSimulations.join(", ")}
 
-## 응답 형식
+## 주의 사항
 관련 없는 질문의 경우 판단 이유를 명확히 제시하세요.
 관련 질문의 경우 모든 분석 요소를 정확히 추출하세요.`;
 
@@ -74,74 +77,38 @@ export const createCuratorPromptTemplate = () => {
 - **첫 번째**: 검색된 레시피 중 가장 유사한 것
 - **두 번째**: 사용자 요청에 맞춘 AI 생성 레시피 (제목에 "(AI Generated)" 추가)
 - **각 레시피마다** 추천 이유를 간략히 설명하세요
-- **완전한 설정값**과 URL 정보를 포함하세요`;
+- **완전한 설정값**과 URL 정보를 포함하세요
+- **반드시 JSON 형식으로만** 응답하세요`;
 
   const settingsGuide = `## 카메라 설정 가이드
 
 ### 주요 설정 효과
+- **Film Simulation**: [${FilmSimulations.join(
+    ", "
+  )}] 후지필름 카메라의 필름 시뮬레이션 모드로, 각 모드에 따라 사진의 색감과 느낌이 달라짐.
 - **Dynamic Range**: 높을수록 계조가 풍부해짐 (밝고 어두운 부분 디테일 향상)
 - **Priority**: 'Off'로 설정 시 센서 원본 데이터가 직접 반영됨
-- **Grain**: 약한 강도 + 큰 입자 = 미묘한 아날로그 질감
-- **Colour Chrome**: 약한 강도로 자연스러운 색상 깊이 추가
-- **Colour Chrome Blue**: 강한 강도로 파란색 계열 강조
-- **Colour Chrome Red**: 붉은색 계열을 풍부하게 표현
-- **White Balance**: 'Auto WB'로 자연스러운 색온도 자동 조정
-- **Shift**: R 높음/B 낮음 = 따뜻한 톤, R 낮음/B 높음 = 차가운 톤
-- **Highlight**: 낮은 값(-) = 밝은 영역 디테일 보존, 부드러운 계조
-- **Shadow**: 낮은 값(-) = 어두운 영역 디테일 살림
-- **Color**: 높은 값 = 채도 강화, 생생한 색상
-- **Clarity**: 낮은 값(-) = 부드럽고 몽환적 느낌
-- **Noise Reduction**: 높은 값 = 깨끗하고 매끄러운 이미지`;
-
-  const jsonSchema = `## JSON 응답 스키마
-다음 구조로 정확히 응답하세요:
-
-\`\`\`json
-{
-  "recipes": {
-    "retrieved": {
-      "title": "검색된 레시피 제목",
-      "baseFilmSimulation": "베이스 필름 시뮬레이션",
-      "recommendationReason": "추천 이유",
-      "url": "레시피 URL (있는 경우)",
-      "settings": {
-        "filmSimulation": "필름 시뮬레이션명",
-        "dynamicRange": "DR값",
-        "priority": "Priority 설정",
-        "grainEffect": "Grain 강도",
-        "grainSize": "Grain 크기",
-        "colourChrome": "Colour Chrome 강도",
-        "colourChromeBlue": "Colour Chrome Blue 강도", 
-        "colourChromeRed": "Colour Chrome Red 강도",
-        "whiteBalance": "WB 설정",
-        "shiftRed": "Red 시프트 (-9~+9)",
-        "shiftBlue": "Blue 시프트 (-9~+9)", 
-        "highlight": "Highlight (-2~+4)",
-        "shadow": "Shadow (-2~+4)",
-        "color": "Color (-4~+4)",
-        "clarity": "Clarity (-5~+5)",
-        "noiseReduction": "Noise Reduction (-4~+4)"
-      }
-    },
-    "generated": {
-      "title": "AI 생성 레시피 제목 (AI Generated)",
-      "baseFilmSimulation": "베이스 필름 시뮬레이션",
-      "recommendationReason": "추천 이유",
-      "settings": { /* 동일한 구조 */ }
-    }
-  }
-}
-\`\`\``;
+- **Grain Size**: [off, small, large] 입자가 클수록 아날로그 필름 질감
+- **Grain Effect**: [off, weak, strong] 강할수록 입자감이 뚜렷해짐
+- **Colour Chrome**: [off, weak, strong] 고채도 영역에서 색 표현력을 향상시켜, 깊이감과 입체감을 더하고 자연스러운 선명함을 표현
+- **Colour Chrome FX Blue**: [off, weak, strong] 파란색 계열의 색감을 더욱 풍부하게 표현해 주는 기능
+- **White Balance**: 'Auto WB(AWB)'로 자연스러운 색온도 자동 조정, 촬영 환경에 따라 적절한 설정을 선택하여 사진의 색감을 조정
+- **Shift(Blue)**: [-9~+9] B 낮음 = 따뜻한 톤, B 높음 = 차가운 톤
+- **Shift(Red)**: [-9~+9] R 낮음 = 차가운 톤, R 높음 = 따뜻한 톤
+- **Highlight**: [-2~+4] 낮은 값(-) = 밝은 영역 디테일 보존, 부드러운 계조
+- **Shadow**: [-2~+4] 낮은 값(-) = 어두운 영역 디테일 살림
+- **Color**: [-4~+4] 높은 값 = 채도 강화, 생생한 색상
+- **Clarity**: [-4~+4] 낮은 값(-) = 이미지의 디테일 표현을 조절하는 기능으로 높을수록 사진이 또렷해짐
+- **Noise Reduction**: [-4~+4] 높은 값 = 깨끗하고 매끄러운 이미지`;
 
   const fullSystemMessage = [
     systemInstructions,
     "",
     settingsGuide,
-    "",
-    jsonSchema,
+
     "",
     "[검색된 문서 컨텍스트]",
-    "{context}"
+    "{context}",
   ].join("\n");
 
   return ChatPromptTemplate.fromMessages([

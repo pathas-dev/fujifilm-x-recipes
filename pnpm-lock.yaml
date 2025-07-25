@@ -24,6 +24,9 @@ importers:
       '@langchain/google-genai':
         specifier: ^0.2.15
         version: 0.2.15(@langchain/core@0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5)))
+      '@langchain/langgraph':
+        specifier: ^0.3.11
+        version: 0.3.11(@langchain/core@0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zod-to-json-schema@3.24.6(zod@4.0.5))
       '@langchain/ollama':
         specifier: ^0.2.3
         version: 0.2.3(@langchain/core@0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5)))
@@ -1737,6 +1740,36 @@ packages:
     engines: {node: '>=18'}
     peerDependencies:
       '@langchain/core': '>=0.3.58 <0.4.0'
+
+  '@langchain/langgraph-checkpoint@0.0.18':
+    resolution: {integrity: sha512-IS7zJj36VgY+4pf8ZjsVuUWef7oTwt1y9ylvwu0aLuOn1d0fg05Om9DLm3v2GZ2Df6bhLV1kfWAM0IAl9O5rQQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@langchain/core': '>=0.2.31 <0.4.0'
+
+  '@langchain/langgraph-sdk@0.0.101':
+    resolution: {integrity: sha512-b7dyI+LOaJH7flwveER+0Nf0Y9gnbto+4Deet7NZoJQNE9aT+flsMogKOO0D8H5/HbEv02Tx4yY03oO/ngkOYw==}
+    peerDependencies:
+      '@langchain/core': '>=0.2.31 <0.4.0'
+      react: ^18 || ^19
+      react-dom: ^18 || ^19
+    peerDependenciesMeta:
+      '@langchain/core':
+        optional: true
+      react:
+        optional: true
+      react-dom:
+        optional: true
+
+  '@langchain/langgraph@0.3.11':
+    resolution: {integrity: sha512-Lh8oga4ismQyw1NGZKoHPdeGke1g5HMF7V0nBlc5R7GnV8tfC6pdsXjiEH6sYsHsRDInfy8uQeob/BwEmMSSbQ==}
+    engines: {node: '>=18'}
+    peerDependencies:
+      '@langchain/core': '>=0.3.58 < 0.4.0'
+      zod-to-json-schema: ^3.x
+    peerDependenciesMeta:
+      zod-to-json-schema:
+        optional: true
 
   '@langchain/ollama@0.2.3':
     resolution: {integrity: sha512-1Obe45jgQspqLMBVlayQbGdywFmri8DgmGRdzNu0li56cG5RReYlRCFVDZBRMMvF9JhsP5eXRyfyivtKfITHWQ==}
@@ -6967,6 +7000,35 @@ snapshots:
       '@google/generative-ai': 0.24.1
       '@langchain/core': 0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5))
       uuid: 11.1.0
+
+  '@langchain/langgraph-checkpoint@0.0.18(@langchain/core@0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5)))':
+    dependencies:
+      '@langchain/core': 0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5))
+      uuid: 10.0.0
+
+  '@langchain/langgraph-sdk@0.0.101(@langchain/core@0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)':
+    dependencies:
+      '@types/json-schema': 7.0.15
+      p-queue: 6.6.2
+      p-retry: 4.6.2
+      uuid: 9.0.1
+    optionalDependencies:
+      '@langchain/core': 0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5))
+      react: 19.1.0
+      react-dom: 19.1.0(react@19.1.0)
+
+  '@langchain/langgraph@0.3.11(@langchain/core@0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)(zod-to-json-schema@3.24.6(zod@4.0.5))':
+    dependencies:
+      '@langchain/core': 0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5))
+      '@langchain/langgraph-checkpoint': 0.0.18(@langchain/core@0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5)))
+      '@langchain/langgraph-sdk': 0.0.101(@langchain/core@0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5)))(react-dom@19.1.0(react@19.1.0))(react@19.1.0)
+      uuid: 10.0.0
+      zod: 3.25.76
+    optionalDependencies:
+      zod-to-json-schema: 3.24.6(zod@4.0.5)
+    transitivePeerDependencies:
+      - react
+      - react-dom
 
   '@langchain/ollama@0.2.3(@langchain/core@0.3.66(openai@5.10.1(ws@8.18.3)(zod@4.0.5)))':
     dependencies:
