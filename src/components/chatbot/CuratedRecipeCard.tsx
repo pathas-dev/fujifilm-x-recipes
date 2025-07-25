@@ -13,6 +13,8 @@ interface CuratedRecipeCardProps {
     recommendationReason: string;
     cameraSettings: string;
     filmSimulation: string;
+    exposure: string;
+    tone: string;
     dynamicRange: string;
     whiteBalance: string;
     highlight: string;
@@ -125,6 +127,10 @@ const CuratedRecipeCard = ({
               value={recipe.settings.filmSimulation}
             />
             <CuratedRecipeSettingItem label="ISO" value={recipe.settings.iso} />
+            <CuratedRecipeSettingItem
+              label={messages.exposure}
+              value={recipe.settings.iso}
+            />
             <CuratedRecipeSettingItem
               label={messages.dynamicRange}
               value={recipe.settings.dynamicRange}

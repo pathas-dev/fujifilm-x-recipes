@@ -78,6 +78,7 @@ export const createCuratorPromptTemplate = () => {
 - **두 번째**: 사용자 요청에 맞춘 AI 생성 레시피 (제목에 "(AI Generated)" 추가)
 - **각 레시피마다** 추천 이유를 간략히 설명하세요
 - **완전한 설정값**과 URL 정보를 포함하세요
+- **설정값** 이 정확하게 매핑되지 않는 경우 기본값을 사용하세요
 - **반드시 JSON 형식으로만** 응답하세요`;
 
   const settingsGuide = `## 카메라 설정 가이드
@@ -87,6 +88,9 @@ export const createCuratorPromptTemplate = () => {
     ", "
   )}] 후지필름 카메라의 필름 시뮬레이션 모드로, 각 모드에 따라 사진의 색감과 느낌이 달라짐.
 - **Dynamic Range**: 높을수록 계조가 풍부해짐 (밝고 어두운 부분 디테일 향상)
+- **ISO**: 이미지 감도 설정, 낮을수록 노이즈 감소
+- **Exposure**: 노출 보정, 0이 기본값, 높을 수록 밝아짐
+- **Tone**: 색조 조절, 이미지의 따뜻함/차가움
 - **Priority**: 'Off'로 설정 시 센서 원본 데이터가 직접 반영됨
 - **Grain Size**: [off, small, large] 입자가 클수록 아날로그 필름 질감
 - **Grain Effect**: [off, weak, strong] 강할수록 입자감이 뚜렷해짐

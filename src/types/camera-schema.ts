@@ -118,23 +118,35 @@ export const FujifilmSettingsSchema = z.object({
 
   // 기본 이미지 설정
   iso: z.string().describe("ISO - 이미지 감도 설정"),
+  exposure: z.string().default("0").describe("Exposure - 노출 설정"),
+  tone: z.string().describe("Tone - 색조 설정"),
   dynamicRange: z
     .enum(dynamicRanges)
+    .default("AUTO")
     .describe("Dynamic Range - 넓은 계조와 디테일 보존"),
   priority: z
     .enum(priorities)
+    .default("auto")
     .describe("Priority - 센서 원본 데이터 활용 설정"),
 
   // 그레인 및 텍스처
-  grainEffect: z.enum(effects).describe("Grain 효과 강도 - 필름 아날로그 질감"),
-  grainSize: z.string().describe("Grain 입자 크기 - 거친 필름 질감"),
+  grainEffect: z
+    .enum(effects)
+    .default("off")
+    .describe("Grain 효과 강도 - 필름 아날로그 질감"),
+  grainSize: z
+    .string()
+    .default("off")
+    .describe("Grain 입자 크기 - 거친 필름 질감"),
 
   // 컬러 크롬 효과
   colourChrome: z
     .enum(effects)
+    .default("off")
     .describe("Colour Chrome - 채도, 색상 깊이와 풍부함"),
   colourChromeFXBlue: z
     .enum(effects)
+    .default("off")
     .describe("Colour Chrome Blue - 파란색 계열 강조"),
 
   // 화이트 밸런스
@@ -143,11 +155,13 @@ export const FujifilmSettingsSchema = z.object({
     .number()
     .min(-9)
     .max(9)
+    .default(0)
     .describe("Red 시프트 값 - 따뜻한 톤 조절"),
   shiftBlue: z
     .number()
     .min(-9)
     .max(9)
+    .default(0)
     .describe("Blue 시프트 값 - 차가운 톤 조절"),
 
   // 하이라이트/섀도우
@@ -155,11 +169,13 @@ export const FujifilmSettingsSchema = z.object({
     .number()
     .min(-2)
     .max(4)
+    .default(0)
     .describe("Highlight - 밝은 영역 디테일 보존"),
   shadow: z
     .number()
     .min(-2)
     .max(4)
+    .default(0)
     .describe("Shadow - 어두운 영역 디테일 보존"),
 
   // 색상 및 선명도
@@ -167,11 +183,13 @@ export const FujifilmSettingsSchema = z.object({
     .number()
     .min(-4)
     .max(-4)
+    .default(0)
     .describe("Color 채도 - 색상 생생함과 선명도"),
   clarity: z
     .number()
     .min(-4)
     .max(-4)
+    .default(0)
     .describe("Clarity 선명도 - 중간톤 대비 조절"),
 
   // 노이즈 감소
@@ -179,6 +197,7 @@ export const FujifilmSettingsSchema = z.object({
     .number()
     .min(-4)
     .max(-4)
+    .default(0)
     .describe("Noise Reduction - 디지털 노이즈 제거"),
 });
 

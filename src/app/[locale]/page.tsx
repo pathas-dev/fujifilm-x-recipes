@@ -42,6 +42,8 @@ export default async function ChatbotPage(
       recommendationReason: t("curatedRecipe.recommendationReason"),
       cameraSettings: t("curatedRecipe.cameraSettings"),
       filmSimulation: t("curatedRecipe.filmSimulation"),
+      exposure: t("curatedRecipe.exposure"),
+      tone: t("curatedRecipe.tone"),
       dynamicRange: t("curatedRecipe.dynamicRange"),
       whiteBalance: t("curatedRecipe.whiteBalance"),
       highlight: t("curatedRecipe.highlight"),

@@ -46,6 +46,8 @@ export interface ChatbotClientProps {
       recommendationReason: string;
       cameraSettings: string;
       filmSimulation: string;
+      exposure: string;
+      tone: string;
       dynamicRange: string;
       whiteBalance: string;
       highlight: string;
@@ -235,7 +237,6 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
       setChatMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
-      setLoadingMessage(messages.loadings.placeholder);
     }
   };
 

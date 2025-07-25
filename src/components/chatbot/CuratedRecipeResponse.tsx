@@ -10,6 +10,8 @@ interface RecipeResponseProps {
     recommendationReason: string;
     cameraSettings: string;
     filmSimulation: string;
+    exposure: string;
+    tone: string;
     dynamicRange: string;
     whiteBalance: string;
     highlight: string;
