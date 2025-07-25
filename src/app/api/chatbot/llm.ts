@@ -1,5 +1,7 @@
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
+import { FilmSimulationTypes } from "@/types/recipe-schema";
+import { SENSOR_CAMERA_MAPPINGS, COLOR_TYPES } from "@/types/camera-schema";
 
 export enum GoogleAIModel {
   GeminiFlash = "gemini-2.0-flash",
@@ -15,33 +17,39 @@ export const createLLM = (model: GoogleAIModel = GoogleAIModel.GeminiFlash) => {
   });
 };
 
+// 센서-카메라 매핑 텍스트 생성
+const createSensorCameraMappingText = () => {
+  return SENSOR_CAMERA_MAPPINGS
+    .map(({ sensor, cameras }) => `       ${sensor}: ${cameras.join(", ")}`)
+    .join("\n");
+};
+
 export const createParseQuestionPromptTemplate = () => {
   return ChatPromptTemplate.fromMessages([
     [
       "system",
       `당신은 후지 필름 카메라 전문가입니다.
-       다음의 사용자 질문을 분석해서 어떤 센서에 대한 질문인지, 컬러인지 흑백인지 분석해주세요.
+       다음의 사용자 질문을 분석해서 어떤 센서에 대한 질문인지, 컬러인지 흑백인지, 그리고 어떤 필름 시뮬레이션에 대한 질문인지 분석해주세요.
 
        만약 후지 필름 카메라, 레시피, 필름, 사진 등과 관련이 없는 질문이라면 관련 없는 질문이라고 답변하세요. (true/false)
        
        관련 없는 질문이라면 그렇게 판단한 이유를 알려주세요.
 
+       또한, 분석한 정보를 바탕으로 더 구체적이고 검색에 적합한 향상된 질문을 만들어주세요. 
+       예를 들어, "Classic Chrome으로 인물 사진 찍는 레시피 추천해줘"라는 질문이 있다면,
+       "Classic Chrome 필름 시뮬레이션을 사용한 인물 사진 촬영을 위한 후지필름 카메라 레시피 설정"과 같이 
+       더 자세하고 검색 친화적인 질문으로 개선해주세요.
+
        가능한 값들은 다음을 참고하세요.
 
        [센서 - 카메라 매핑] 
-       BAYER (type unknown): X100, Xt200, XT200
-       BAYER MF 100MP: GFX 100s
-       BAYER MF 50MP: GFX 50S
-       X-Trans I: X-E1, X-M1, X-PRO1, X-Pro1
-       X-Trans II: X100s, X100T, X70, X-E2, X-E2s, X-T1
-       X-Trans II 2/3: XQ1
-       X-Trans III: X100F, XE3, XF10, X-H1, X-PRO2, X-T2, XT20
-       X-Trans IV: X100v, X100V, X-E4, X-PRO3, X-Pro3, X-S10, X-T3, X-T30, X-T4
-       X-Trans V BSI Stkd: X-H2s
-       X-Trans V HR: X-H2, X-T5
+${createSensorCameraMappingText()}
 
        [색상 구분]
-       Color / BW
+       ${COLOR_TYPES.join(" / ")}
+
+       [필름 시뮬레이션 타입]
+       ${FilmSimulationTypes.join(", ")}
     
     `,
     ],

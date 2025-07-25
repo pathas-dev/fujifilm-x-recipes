@@ -2,7 +2,7 @@ import { PineconeEmbeddings, PineconeStore } from "@langchain/pinecone";
 import { Pinecone as PineconeClient } from "@pinecone-database/pinecone";
 import { BM25Retriever } from "@langchain/community/retrievers/bm25";
 import { EnsembleRetriever } from "langchain/retrievers/ensemble";
-import { ColorOrBw, SensorType } from "@/app/api/chatbot/shema";
+import { ColorOrBw, SensorType } from "@/types/camera-schema";
 
 export const createPineconeClient = () => {
   return new PineconeClient({

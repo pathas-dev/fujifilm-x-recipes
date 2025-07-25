@@ -37,7 +37,8 @@ export async function POST(request: Request) {
       }
 
       // 2. 문서 검색
-      const documents = await retrieve(question, {
+      const searchQuery = parsedQuestion.enhancedQuestion || question;
+      const documents = await retrieve(searchQuery, {
         colorOrBw: parsedQuestion.colorOrBw,
         sensor: parsedQuestion.detectedSensorTypes,
       });
