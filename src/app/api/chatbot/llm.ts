@@ -1,5 +1,5 @@
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
-import { ChatPromptTemplate, MessagesPlaceholder } from "@langchain/core/prompts";
+import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { FilmSimulationTypes } from "@/types/recipe-schema";
 import { SENSOR_CAMERA_MAPPINGS, COLOR_TYPES } from "@/types/camera-schema";
 
@@ -146,7 +146,6 @@ export const createCuratorPromptTemplate = () => {
         
       `,
     ],
-    new MessagesPlaceholder("chat_history"),
     ["human", "{question}"],
   ]);
 };

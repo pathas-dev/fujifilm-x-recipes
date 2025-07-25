@@ -7,18 +7,9 @@ import {
 } from "@/app/api/chatbot/llm";
 import { retrieve } from "@/app/api/chatbot/retrieval";
 import { QuestionAnalysisSchema } from "@/app/api/chatbot/shema";
-import {
-  getClientIpAddress,
-  getTrimmedMessages,
-  addMessageToHistory,
-  extractCommonFields,
-  getFilteredChatHistory,
-} from "@/app/api/chatbot/history";
 import { CuratorResponseSchema } from "@/types/recipe-schema";
 import { retouchImage } from "@/utils/retouchImage";
 import { NextResponse } from "next/server";
-import { RunnableWithMessageHistory } from "@langchain/core/runnables";
-import { HumanMessage, AIMessage } from "@langchain/core/messages";
 
 export const dynamic = "force-dynamic";
 
@@ -27,13 +18,6 @@ export async function POST(request: Request) {
     const { question } = await request.json();
     console.log("Processing question:", question);
 
-    // Extract IP address for session ID
-    const sessionId = getClientIpAddress(request);
-    console.log("Session ID:", sessionId);
-
-    // Get trimmed chat history
-    const chatHistory = await getTrimmedMessages(sessionId);
-
     // 1. 질문 파싱
     try {
       const parsingLLM = createLLM(GoogleAIModel.GeminiFlashLite);
@@ -41,10 +25,7 @@ export async function POST(request: Request) {
       const parsingChain = parsingPrompt.pipe(
         parsingLLM.withStructuredOutput(QuestionAnalysisSchema)
       );
-
-      const parsedQuestion = await parsingChain.invoke({
-        question,
-      });
+      const parsedQuestion = await parsingChain.invoke({ question });
 
       if (
         !parsedQuestion.isFilmRecipeQuestion &&
@@ -70,18 +51,7 @@ export async function POST(request: Request) {
         curatorLLM.withStructuredOutput(CuratorResponseSchema)
       );
 
-      // Create RunnableWithMessageHistory for curator chain
-      const curatorChainWithHistory = new RunnableWithMessageHistory({
-        runnable: curatorChain,
-        getMessageHistory: (sessionId: string) => getFilteredChatHistory(sessionId),
-        inputMessagesKey: "question",
-        historyMessagesKey: "chat_history",
-      });
-
-      const curated = await curatorChainWithHistory.invoke(
-        { context, question },
-        { configurable: { sessionId } }
-      );
+      const curated = await curatorChain.invoke({ context, question });
 
       // 4. 이미지 처리
       const settings = curated.recipes?.generated?.settings;
@@ -117,14 +87,6 @@ export async function POST(request: Request) {
           console.error("Image processing error:", imageError);
         }
       }
-
-      // 5. Add conversation to history (with common fields only)
-      await addMessageToHistory(sessionId, new HumanMessage(question));
-      const simplifiedRecipes = extractCommonFields(curated.recipes);
-      await addMessageToHistory(
-        sessionId, 
-        new AIMessage(JSON.stringify(simplifiedRecipes))
-      );
 
       return NextResponse.json({ recipes: curated.recipes });
     } catch (llmError) {
