@@ -2,13 +2,13 @@ import { InMemoryChatMessageHistory } from "@langchain/core/chat_history";
 import { trimMessages } from "@langchain/core/messages";
 import { ChatMessage, BaseMessage } from "@langchain/core/messages";
 
-// Store for managing chat histories by session ID
+// 세션 ID별 채팅 히스토리를 관리하는 저장소
 const chatHistories = new Map<string, InMemoryChatMessageHistory>();
 
-// Maximum tokens allowed in conversation history
+// 대화 히스토리에서 허용되는 최대 토큰 수
 const MAX_TOKENS = 1000;
 
-// Get or create chat history for a session
+// 세션의 채팅 히스토리를 가져오거나 생성
 export function getChatHistory(sessionId: string): InMemoryChatMessageHistory {
   if (!chatHistories.has(sessionId)) {
     chatHistories.set(sessionId, new InMemoryChatMessageHistory());
@@ -16,23 +16,23 @@ export function getChatHistory(sessionId: string): InMemoryChatMessageHistory {
   return chatHistories.get(sessionId)!;
 }
 
-// Create a filtered chat history with trimmed messages
+// 잘린 메시지로 필터링된 채팅 히스토리 생성
 export async function getFilteredChatHistory(sessionId: string): Promise<InMemoryChatMessageHistory> {
   const originalHistory = getChatHistory(sessionId);
   const messages = await originalHistory.getMessages();
   
-  // Trim messages to stay within MAX_TOKENS
+  // MAX_TOKENS 범위 내에 유지하기 위해 메시지 자르기
   const trimmedMessages = await trimMessages(messages, {
     maxTokens: MAX_TOKENS,
-    strategy: "last", // Keep the last messages that fit within the token limit
+    strategy: "last", // 토큰 제한 내에 맞는 마지막 메시지들 유지
     tokenCounter: (messages) => {
-      // Simple token estimation: roughly 4 characters per token
+      // 간단한 토큰 추정: 토큰당 대략 4글자
       const totalChars = messages.reduce((acc, msg) => acc + msg.content.toString().length, 0);
       return Math.ceil(totalChars / 4);
     },
   });
   
-  // Create a new temporary history with trimmed messages
+  // 잘린 메시지로 새로운 임시 히스토리 생성
   const filteredHistory = new InMemoryChatMessageHistory();
   for (const message of trimmedMessages) {
     await filteredHistory.addMessage(message);
@@ -41,17 +41,17 @@ export async function getFilteredChatHistory(sessionId: string): Promise<InMemor
   return filteredHistory;
 }
 
-// Trim messages to stay within token limit
+// 토큰 제한 내에 유지하기 위해 메시지 자르기
 export async function getTrimmedMessages(sessionId: string): Promise<BaseMessage[]> {
   const history = getChatHistory(sessionId);
   const messages = await history.getMessages();
   
-  // Trim messages to stay within MAX_TOKENS
+  // MAX_TOKENS 범위 내에 유지하기 위해 메시지 자르기
   const trimmedMessages = await trimMessages(messages, {
     maxTokens: MAX_TOKENS,
-    strategy: "last", // Keep the last messages that fit within the token limit
+    strategy: "last", // 토큰 제한 내에 맞는 마지막 메시지들 유지
     tokenCounter: (messages) => {
-      // Simple token estimation: roughly 4 characters per token
+      // 간단한 토큰 추정: 토큰당 대략 4글자
       const totalChars = messages.reduce((acc, msg) => acc + msg.content.toString().length, 0);
       return Math.ceil(totalChars / 4);
     },
@@ -60,7 +60,7 @@ export async function getTrimmedMessages(sessionId: string): Promise<BaseMessage
   return trimmedMessages;
 }
 
-// Add a message to chat history
+// 채팅 히스토리에 메시지 추가
 export async function addMessageToHistory(
   sessionId: string, 
   message: BaseMessage
@@ -69,7 +69,7 @@ export async function addMessageToHistory(
   await history.addMessage(message);
 }
 
-// Extract common fields from recipe objects for storage
+// 저장을 위해 레시피 객체에서 공통 필드 추출
 export function extractCommonFields(recipes: any) {
   if (!recipes) return null;
   
@@ -80,7 +80,7 @@ export function extractCommonFields(recipes: any) {
       title: recipe.title,
       baseFilmSimulation: recipe.baseFilmSimulation,
       recommendationReason: recipe.recommendationReason,
-      // Include basic settings without image data
+      // 이미지 데이터 없이 기본 설정 포함
       settings: recipe.settings ? {
         filmSimulation: recipe.settings.filmSimulation,
         dynamicRange: recipe.settings.dynamicRange,
@@ -95,12 +95,12 @@ export function extractCommonFields(recipes: any) {
   };
 }
 
-// Extract IP address from request
+// 요청에서 IP 주소 추출
 export function getClientIpAddress(request: Request): string {
-  // Try various headers for IP address
+  // IP 주소를 위해 다양한 헤더 시도
   const forwarded = request.headers.get('x-forwarded-for');
   if (forwarded) {
-    // x-forwarded-for may contain multiple IPs, take the first one
+    // x-forwarded-for에는 여러 IP가 있을 수 있으므로 첫 번째 것을 사용
     return forwarded.split(',')[0].trim();
   }
   
@@ -114,6 +114,6 @@ export function getClientIpAddress(request: Request): string {
     return clientIp;
   }
   
-  // Fallback to a default identifier if no IP is found
+  // IP를 찾을 수 없는 경우 기본 식별자로 대체
   return 'unknown-client';
 }
