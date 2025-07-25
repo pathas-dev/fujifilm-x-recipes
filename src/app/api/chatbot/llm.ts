@@ -1,5 +1,5 @@
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
-import { ChatPromptTemplate } from "@langchain/core/prompts";
+import { ChatPromptTemplate, MessagesPlaceholder } from "@langchain/core/prompts";
 import { FilmSimulationTypes } from "@/types/recipe-schema";
 import { SENSOR_CAMERA_MAPPINGS, COLOR_TYPES } from "@/types/camera-schema";
 
@@ -53,6 +53,7 @@ ${createSensorCameraMappingText()}
     
     `,
     ],
+    new MessagesPlaceholder("chat_history"),
     ["user", "{question}"],
   ]);
 };
@@ -80,7 +81,7 @@ export const createCuratorPromptTemplate = () => {
        - Colour Chrome Blue: 강도가 강할 때 파란색 계열의 색상이 매우 깊고 풍부하게 표현되어 특정 색상을 강조합니다.
        - Colour Chrome Red: 붉은색 계열의 색상을 더욱 풍부하고 깊이 있게 표현해 주는 특성이 있습니다.
        - White Balance: 'Auto WB'는 카메라가 촬영 환경의 광원을 분석하여 자동으로 색 온도를 조정, 자연스러운 색상을 얻게 해줍니다.
-       - Shift: R(레드) 값이 높고 B(블루) 값이 낮을 때 이미지 전체에 따뜻한(붉은/노란) 톤이 강조됩니다.
+       - Shift: R(레드) 값이 높고 B(블루) 값이 낮을 때 이미지 전체에 따뜻한(붉은/노간) 톤이 강조됩니다.
        - Highlight: 값이 낮으면 (음수) 밝은 영역의 대비가 약해져 디테일이 보존되고 계조가 부드러워집니다.
        - Shadow: 값이 낮으면 (음수) 어두운 영역의 대비가 약해져 디테일이 살아나고 정보 손실이 줄어듭니다.
        - Color: 값이 높으면 이미지 전체의 채도가 강하게 증가하여 색상이 더욱 선명하고 생생하게 표현됩니다.
@@ -146,6 +147,7 @@ export const createCuratorPromptTemplate = () => {
         
       `,
     ],
+    new MessagesPlaceholder("chat_history"),
     ["human", "{question}"],
   ]);
 };
