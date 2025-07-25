@@ -3,7 +3,6 @@ import { Pinecone as PineconeClient } from "@pinecone-database/pinecone";
 import { BM25Retriever } from "@langchain/community/retrievers/bm25";
 import { EnsembleRetriever } from "langchain/retrievers/ensemble";
 import { ColorOrBw, SensorType } from "@/types/camera-schema";
-import { FilmSimulationType } from "@/types/recipe-schema";
 
 export const createPineconeClient = () => {
   return new PineconeClient({
@@ -30,7 +29,7 @@ export const createVectorStore = async (
 
 export const retrieve = async (
   query: string,
-  metadata: { sensor?: SensorType; colorOrBw?: ColorOrBw; filmSimulation?: FilmSimulationType }
+  metadata: { sensor?: SensorType; colorOrBw?: ColorOrBw }
 ) => {
   const pinecone = createPineconeClient();
   const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX!);

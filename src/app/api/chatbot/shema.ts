@@ -17,6 +17,7 @@ export const QuestionAnalysisSchema = z.object({
   detectedSensorTypes: SensorTypeSchema.optional(),
   colorOrBw: ColorOrBwSchema.optional(),
   filmSimulation: z.enum(FilmSimulationTypes).optional(),
+  enhancedQuestion: z.string().optional(),
   isFilmRecipeQuestion: z.boolean(),
   rejectionReason: z.string().optional(),
 });
