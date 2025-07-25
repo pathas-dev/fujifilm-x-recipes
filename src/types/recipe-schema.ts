@@ -29,13 +29,38 @@ export const GeneratedByAIRecipeSchema = z
   })
   .extend(RecipeSchema.shape);
 
-// 큐레이터 응답 전체 스키마
-export const CuratorResponseSchema = z.object({
-  recipes: z.object({
-    retrieved: RetrievedRecipeSchema,
-    generated: GeneratedByAIRecipeSchema,
-  }),
+export const CuratedRecipesSchema = z.object({
+  retrieved: RetrievedRecipeSchema.describe("실제 레시피"),
+  generated: GeneratedByAIRecipeSchema.describe("AI 생성 레시피"),
 });
+
+export type CuratedRecipes = z.infer<typeof CuratedRecipesSchema>;
+
+export const MetaTimingSchema = z.object({
+  finalization: z.number().optional(),
+  total: z.number().optional(),
+  analysis: z.number().optional(),
+  search: z.number().optional(),
+  generation: z.number().optional(),
+  imageProcessing: z.number().optional(),
+});
+
+// 큐레이터 응답 전체 스키마
+export const CuratorResponseSchema = z
+  .object({
+    recipes: CuratedRecipesSchema,
+    meta: z
+      .object({
+        timing: MetaTimingSchema,
+        hasError: z.boolean(),
+        error: z.string().optional(),
+      })
+      .optional()
+      .describe("메타 정보"),
+  })
+  .or(z.string());
+
+export type MetaTiming = z.infer<typeof MetaTimingSchema>;
 
 export type FujifilmSettings = z.infer<typeof FujifilmSettingsSchema>;
 export type Recipe = z.infer<typeof RecipeSchema>;

@@ -6,6 +6,7 @@ import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import ChatbotCuratedRecipeResponse from "./CuratedRecipeResponse";
 import LoadingIndicator from "./LoadingIndicator";
+import { AgentStep } from "@/app/api/chatbot/agent";
 
 export interface ChatMessage {
   id: string;
@@ -21,7 +22,6 @@ export interface ChatbotClientProps {
     subTitle: string;
     placeholder: string;
     send: string;
-    thinking: string;
     error: string;
     welcome: string;
     examples: {
@@ -31,10 +31,12 @@ export interface ChatbotClientProps {
       blackWhite: string;
     };
     loadings: {
-      thinking: string;
-      thinkingDeeply: string;
-      preparing: string;
-      waiting: string;
+      placeholder: string;
+      analyzing: string;
+      searching: string;
+      generating: string;
+      processing: string;
+      completed: string;
       seconds: string;
     };
     curatedRecipe: {
@@ -87,7 +89,9 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   );
   const [inputValue, setInputValue] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [isStreaming, setIsStreaming] = useState(false);
+  const [loadingMessage, setLoadingMessage] = useState<string>(
+    messages.loadings.placeholder
+  );
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const examples = [
@@ -145,34 +149,82 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
         throw new Error("Failed to get response");
       }
 
-      const data = (await response.json()) as CuratorResponse;
-      console.log("🚀 ~ handleSendMessage ~ data:", data);
+      const reader = response.body?.getReader();
+      const decoder = new TextDecoder();
 
-      // Check if it's a simple string response (like "필름 레시피에 대한 질문을 해주세요.")
-      if (typeof data === "string") {
-        const botMessage: ChatMessage = {
-          id: (Date.now() + 1).toString(),
-          content: data,
-          isUser: false,
-          timestamp: new Date(),
-          type: "text",
-        };
-        setChatMessages((prev) => [...prev, botMessage]);
-        return;
+      if (!reader) {
+        throw new Error("No response body");
       }
 
-      // Create structured recipe response
-      const botMessage: ChatMessage = {
-        id: (Date.now() + 1).toString(),
-        content: data,
-        isUser: false,
-        timestamp: new Date(),
-        type: "recipe",
-      };
+      let buffer = "";
+      let currentEvent: "state" | "" | AgentStep = "";
 
-      setChatMessages((prev) => [...prev, botMessage]);
+      while (true) {
+        const { done, value } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || "";
+
+        for (const line of lines) {
+          if (line.startsWith("event: ")) {
+            currentEvent = line.substring(7).trim() as AgentStep | "state";
+
+            // 상태별 로딩 메시지 업데이트
+          } else if (line.startsWith("data: ")) {
+            const dataContent = line.substring(6);
+
+            try {
+              const eventData = JSON.parse(dataContent);
+
+              switch (currentEvent) {
+                case "completed":
+                  if (typeof eventData === "string") {
+                    const botMessage: ChatMessage = {
+                      id: (Date.now() + 2).toString(),
+                      content: eventData,
+                      isUser: false,
+                      timestamp: new Date(),
+                      type: "text",
+                    };
+                    return setChatMessages((prev) => [...prev, botMessage]);
+                  }
+                  const botMessage: ChatMessage = {
+                    id: (Date.now() + 2).toString(),
+                    content: eventData,
+                    isUser: false,
+                    timestamp: new Date(),
+                    type: "recipe",
+                  };
+                  return setChatMessages((prev) => [...prev, botMessage]);
+                case "error":
+                  throw new Error(eventData.error || "Unknown error");
+                default:
+                  const stateMessages = {
+                    analyzing: messages.loadings.analyzing,
+                    searching: messages.loadings.searching,
+                    generating: messages.loadings.generating,
+                    processing: messages.loadings.processing,
+                  };
+
+                  const currentStateMessage =
+                    stateMessages[
+                      eventData.step as keyof typeof stateMessages
+                    ] || messages.loadings.placeholder;
+
+                  setLoadingMessage(currentStateMessage);
+                  break;
+              }
+            } catch (parseError) {
+              console.error("Error parsing SSE data:", parseError);
+            }
+          }
+        }
+      }
     } catch (error) {
       console.error("Chatbot error:", error);
+
       const errorMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
         content: messages.error,
@@ -183,7 +235,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
       setChatMessages((prev) => [...prev, errorMessage]);
     } finally {
       setIsLoading(false);
-      setIsStreaming(false);
+      setLoadingMessage(messages.loadings.placeholder);
     }
   };
 
@@ -273,8 +325,11 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
             )}
           </div>
         ))}
-        {isLoading && !isStreaming && (
-          <LoadingIndicator messages={messages.loadings} />
+        {isLoading && (
+          <LoadingIndicator
+            loadingMessage={loadingMessage}
+            messages={{ seconds: messages.loadings.seconds }}
+          />
         )}
 
         {/* 예제 메시지들 - AI 응답이 없을 때만 표시 */}

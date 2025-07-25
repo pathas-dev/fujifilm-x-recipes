@@ -18,7 +18,6 @@ export default async function ChatbotPage(
     subTitle: t("subTitle"),
     placeholder: t("placeholder"),
     send: t("send"),
-    thinking: t("thinking"),
     error: t("error"),
     welcome: t("welcome"),
     examples: {
@@ -28,10 +27,12 @@ export default async function ChatbotPage(
       blackWhite: t("examples.blackWhite"),
     },
     loadings: {
-      thinking: t("loadings.thinking"),
-      thinkingDeeply: t("loadings.thinkingDeeply"),
-      preparing: t("loadings.preparing"),
-      waiting: t("loadings.waiting"),
+      placeholder: t("loadings.placeholder"),
+      analyzing: t("loadings.analyzing"),
+      searching: t("loadings.searching"),
+      generating: t("loadings.generating"),
+      processing: t("loadings.processing"),
+      completed: t("loadings.completed"),
       seconds: t("loadings.seconds"),
     },
     curatedRecipe: {

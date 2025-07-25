@@ -12,7 +12,6 @@
     "subTitle": "인공지능 필름 레시피 어시스턴트",
     "placeholder": "필름 레시피에 대해 물어보세요...",
     "send": "전송",
-    "thinking": "생각 중...",
     "error": "죄송합니다. 문제가 발생했습니다. 다시 시도해 주세요.",
     "welcome": "안녕하세요! 저는 AI 필름 레시피 큐레이터입니다. 어떤 레시피를 찾으시나요?",
     "examples": {
@@ -22,10 +21,12 @@
       "blackWhite": "X-T30 고대비 흑백 레시피 추천해줘"
     },
     "loadings": {
-      "thinking": "생각 중입니다",
-      "thinkingDeeply": "깊게 생각하고 있어요",
-      "preparing": "최적의 답변을 준비하고 있어요",
-      "waiting": "조금만 더 기다려주세요",
+      "placeholder": "어떤 레시피가 좋을까요?",
+      "analyzing": "질문을 분석하고 있습니다",
+      "searching": "레시피를 검색하고 있습니다",
+      "generating": "AI 레시피를 생성하고 있습니다",
+      "processing": "레시피 이미지를 보정하고 있습니다.",
+      "completed": "완료되었습니다",
       "seconds": "초 경과"
     },
     "curatedRecipe": {

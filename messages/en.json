@@ -12,7 +12,6 @@
     "subTitle": "AI Film Recipe Assistant",
     "placeholder": "Ask me anything about film recipes...",
     "send": "Send",
-    "thinking": "Thinking...",
     "error": "Sorry, something went wrong. Please try again.",
     "welcome": "Hello! I am an AI film recipe curator. What recipe are you looking for?",
     "examples": {
@@ -22,10 +21,12 @@
       "blackWhite": "Recommend a high-contrast black and white recipe for X-T30"
     },
     "loadings": {
-      "thinking": "Thinking",
-      "thinkingDeeply": "Thinking deeply",
-      "preparing": "Preparing the best answer",
-      "waiting": "Please wait a moment",
+      "placeholder": "What recipe would be good?",
+      "analyzing": "Analyzing your question",
+      "searching": "Searching for recipes",
+      "generating": "Generating AI recipes",
+      "processing": "Processing recipe images",
+      "completed": "Completed",
       "seconds": "s passed"
     },
     "curatedRecipe": {

@@ -124,15 +124,15 @@ const FilmStrip = ({ images }: FilmStripProps) => {
 
 interface LoadingIndicatorProps {
   messages: {
-    thinking: string;
-    thinkingDeeply: string;
-    preparing: string;
-    waiting: string;
     seconds: string;
   };
+  loadingMessage: string | null;
 }
 
-const LoadingIndicator = ({ messages }: LoadingIndicatorProps) => {
+const LoadingIndicator = ({
+  messages,
+  loadingMessage,
+}: LoadingIndicatorProps) => {
   const [elapsedTime, setElapsedTime] = useState(0);
   const [dots, setDots] = useState("");
 
@@ -159,13 +159,6 @@ const LoadingIndicator = ({ messages }: LoadingIndicatorProps) => {
     };
   }, []);
 
-  const getThinkingMessage = () => {
-    if (elapsedTime < 3) return messages.thinking;
-    if (elapsedTime < 6) return messages.thinkingDeeply;
-    if (elapsedTime < 10) return messages.preparing;
-    return messages.waiting;
-  };
-
   return (
     <div className="flex justify-start animate-in slide-in-from-bottom-2 duration-300">
       <div className="relative bg-base-200 text-base-content px-5 py-4 rounded-2xl rounded-bl-md border border-base-300 shadow-sm message-glow bot-message-glow overflow-hidden">
@@ -179,7 +172,7 @@ const LoadingIndicator = ({ messages }: LoadingIndicatorProps) => {
           </div>
           <div className="flex flex-col">
             <span className="text-sm text-base-content/80 font-medium">
-              {getThinkingMessage()}
+              {loadingMessage}
               {dots}
             </span>
             <span className="text-xs text-base-content/60 mt-1">

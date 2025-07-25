@@ -41,6 +41,10 @@ const ChatbotCuratedRecipeResponse = ({
   imageComparisonSliderMessages,
   curatedRecipeUrlPreviewMessages,
 }: RecipeResponseProps) => {
+  if (typeof data !== "object" || !data.recipes) {
+    return null;
+  }
+
   return (
     <div className="space-y-4">
       {data.recipes.retrieved && (
