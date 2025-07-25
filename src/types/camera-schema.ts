@@ -1,84 +1,66 @@
 import { z } from "zod";
 
-// 센서 타입 값들
-export const SENSOR_TYPES = [
-  "BAYER (type unknown)",
-  "BAYER MF 100MP",
-  "BAYER MF 50MP",
-  "X-Trans I",
-  "X-Trans II",
-  "X-Trans II 2/3",
-  "X-Trans III",
-  "X-Trans IV",
-  "X-Trans V BSI Stkd",
-  "X-Trans V HR",
-] as const;
-
-// 카메라 모델 값들
-export const CAMERA_MODELS = [
-  // BAYER (type unknown)
-  "X100",
-  "Xt200",
-  "XT200",
-  // BAYER MF 100MP
-  "GFX 100s",
-  // BAYER MF 50MP
-  "GFX 50S",
-  // X-Trans I
-  "X-E1",
-  "X-M1",
-  "X-PRO1",
-  "X-Pro1",
-  // X-Trans II
-  "X100s",
-  "X100T",
-  "X70",
-  "X-E2",
-  "X-E2s",
-  "X-T1",
-  // X-Trans II 2/3
-  "XQ1",
-  // X-Trans III
-  "X100F",
-  "XE3",
-  "XF10",
-  "X-H1",
-  "X-PRO2",
-  "X-T2",
-  "XT20",
-  // X-Trans IV
-  "X100v",
-  "X100V",
-  "X-E4",
-  "X-PRO3",
-  "X-Pro3",
-  "X-S10",
-  "X-T3",
-  "X-T30",
-  "X-T4",
-  // X-Trans V BSI Stkd
-  "X-H2s",
-  // X-Trans V HR
-  "X-H2",
-  "X-T5",
-] as const;
-
 // 색상 구분 값들
 export const COLOR_TYPES = ["Color", "B&W"] as const;
 
 // 센서-카메라 매핑 데이터
 export const SENSOR_CAMERA_MAPPINGS = [
-  { sensor: "BAYER (type unknown)" as const, cameras: ["X100", "Xt200", "XT200"] as const },
+  {
+    sensor: "BAYER (type unknown)" as const,
+    cameras: ["X100", "Xt200", "XT200"] as const,
+  },
   { sensor: "BAYER MF 100MP" as const, cameras: ["GFX 100s"] as const },
   { sensor: "BAYER MF 50MP" as const, cameras: ["GFX 50S"] as const },
-  { sensor: "X-Trans I" as const, cameras: ["X-E1", "X-M1", "X-PRO1", "X-Pro1"] as const },
-  { sensor: "X-Trans II" as const, cameras: ["X100s", "X100T", "X70", "X-E2", "X-E2s", "X-T1"] as const },
+  {
+    sensor: "X-Trans I" as const,
+    cameras: ["X-E1", "X-M1", "X-PRO1", "X-Pro1"] as const,
+  },
+  {
+    sensor: "X-Trans II" as const,
+    cameras: ["X100s", "X100T", "X70", "X-E2", "X-E2s", "X-T1"] as const,
+  },
   { sensor: "X-Trans II 2/3" as const, cameras: ["XQ1"] as const },
-  { sensor: "X-Trans III" as const, cameras: ["X100F", "XE3", "XF10", "X-H1", "X-PRO2", "X-T2", "XT20"] as const },
-  { sensor: "X-Trans IV" as const, cameras: ["X100v", "X100V", "X-E4", "X-PRO3", "X-Pro3", "X-S10", "X-T3", "X-T30", "X-T4"] as const },
+  {
+    sensor: "X-Trans III" as const,
+    cameras: [
+      "X100F",
+      "XE3",
+      "XF10",
+      "X-H1",
+      "X-PRO2",
+      "X-T2",
+      "XT20",
+    ] as const,
+  },
+  {
+    sensor: "X-Trans IV" as const,
+    cameras: [
+      "X100v",
+      "X100V",
+      "X-E4",
+      "X-PRO3",
+      "X-Pro3",
+      "X-S10",
+      "X-T3",
+      "X-T30",
+      "X-T4",
+    ] as const,
+  },
   { sensor: "X-Trans V BSI Stkd" as const, cameras: ["X-H2s"] as const },
-  { sensor: "X-Trans V HR" as const, cameras: ["X-H2", "X-T5"] as const },
+  {
+    sensor: "X-Trans V HR" as const,
+    cameras: ["X-H2", "X-T5", "X100VI", "X-M5"] as const,
+  },
 ] as const;
+
+export const SENSOR_TYPES = SENSOR_CAMERA_MAPPINGS.flatMap(
+  ({ sensor, cameras }) => sensor
+);
+
+// 카메라 모델 값들
+export const CAMERA_MODELS = SENSOR_CAMERA_MAPPINGS.flatMap(
+  ({ sensor, cameras }) => cameras
+);
 
 // 센서 타입 스키마
 export const SensorTypeSchema = z.enum(SENSOR_TYPES);
@@ -102,9 +84,107 @@ export const CameraInfoSchema = z.object({
   colorType: ColorOrBwSchema,
 });
 
-// 타입 추출
+// 필름 시뮬레이션 타입 정의 - film-recipes.csv에서 추출한 실제 데이터 기반
+export const FilmSimulations = [
+  "Provia",
+  "Astia",
+  "Classic Chrome",
+  "Classic Negative",
+  "Reala Ace",
+  "Eterna",
+  "Eterna Bleach Bypass",
+  "Nostalgic Neg.",
+  "Pro Neg. High",
+  "Pro Neg. Std",
+  "Velvia",
+  "Acros",
+  "Monochrome",
+  "Unknown",
+] as const;
+
+export const FilmSimulatioSchema = z
+  .enum(FilmSimulations)
+  .describe("필름 시뮬레이션 타입");
+
+export const sizes = ["off", "small", "large"] as const;
+export const effects = ["off", "weak", "strong"] as const;
+export const dynamicRanges = ["AUTO", "DR100%", "DR200%", "DR400%"] as const;
+export const priorities = ["auto", ...effects] as const;
+
+// 후지필름 레시피 세팅 스키마 - parse.ts의 모든 설정 항목 포함
+export const FujifilmSettingsSchema = z.object({
+  // 필름 시뮬레이션 - enum으로 제한
+  filmSimulation: FilmSimulatioSchema,
+
+  // 기본 이미지 설정
+  iso: z.string().describe("ISO - 이미지 감도 설정"),
+  dynamicRange: z
+    .enum(dynamicRanges)
+    .describe("Dynamic Range - 넓은 계조와 디테일 보존"),
+  priority: z
+    .enum(priorities)
+    .describe("Priority - 센서 원본 데이터 활용 설정"),
+
+  // 그레인 및 텍스처
+  grainEffect: z.enum(effects).describe("Grain 효과 강도 - 필름 아날로그 질감"),
+  grainSize: z.string().describe("Grain 입자 크기 - 거친 필름 질감"),
+
+  // 컬러 크롬 효과
+  colourChrome: z
+    .enum(effects)
+    .describe("Colour Chrome - 채도, 색상 깊이와 풍부함"),
+  colourChromeFXBlue: z
+    .enum(effects)
+    .describe("Colour Chrome Blue - 파란색 계열 강조"),
+
+  // 화이트 밸런스
+  whiteBalance: z.string().describe("White Balance - 색온도 자동 조정"),
+  shiftRed: z
+    .number()
+    .min(-9)
+    .max(9)
+    .describe("Red 시프트 값 - 따뜻한 톤 조절"),
+  shiftBlue: z
+    .number()
+    .min(-9)
+    .max(9)
+    .describe("Blue 시프트 값 - 차가운 톤 조절"),
+
+  // 하이라이트/섀도우
+  highlight: z
+    .number()
+    .min(-2)
+    .max(4)
+    .describe("Highlight - 밝은 영역 디테일 보존"),
+  shadow: z
+    .number()
+    .min(-2)
+    .max(4)
+    .describe("Shadow - 어두운 영역 디테일 보존"),
+
+  // 색상 및 선명도
+  color: z
+    .number()
+    .min(-4)
+    .max(-4)
+    .describe("Color 채도 - 색상 생생함과 선명도"),
+  clarity: z
+    .number()
+    .min(-4)
+    .max(-4)
+    .describe("Clarity 선명도 - 중간톤 대비 조절"),
+
+  // 노이즈 감소
+  noiseReduction: z
+    .number()
+    .min(-4)
+    .max(-4)
+    .describe("Noise Reduction - 디지털 노이즈 제거"),
+});
+
 export type SensorType = z.infer<typeof SensorTypeSchema>;
 export type CameraModel = z.infer<typeof CameraModelSchema>;
 export type ColorOrBw = z.infer<typeof ColorOrBwSchema>;
 export type SensorCameraMapping = z.infer<typeof SensorCameraMappingSchema>;
 export type CameraInfo = z.infer<typeof CameraInfoSchema>;
+export type FilmSimulationType = z.infer<typeof FilmSimulatioSchema>;

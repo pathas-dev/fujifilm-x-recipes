@@ -54,8 +54,7 @@ export interface ChatbotClientProps {
       grainEffect: string;
       grainSize: string;
       colourChrome: string;
-      colourChromeBlue: string;
-      colourChromeRed: string;
+      colourChromeFXBlue: string;
       priority: string;
     };
     imageComparisonSlider: {

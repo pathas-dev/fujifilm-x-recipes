@@ -45,8 +45,7 @@
       "grainEffect": "그레인 효과",
       "grainSize": "그레인 크기",
       "colourChrome": "컬러 크롬",
-      "colourChromeBlue": "컬러 크롬 블루",
-      "colourChromeRed": "컬러 크롬 레드",
+      "colourChromeFXBlue": "컬러 크롬 FX 블루",
       "priority": "우선순위"
     },
     "imageComparisonSlider": {

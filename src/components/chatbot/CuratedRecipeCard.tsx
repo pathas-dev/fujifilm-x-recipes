@@ -1,9 +1,10 @@
 import ImageComparisonSlider from "./ImageComparisonSlider";
 import RecipeUrlPreview from "./CuratedRecipeUrlPreview";
 import CuratedRecipeSettingItem from "./CuratedRecipeSettingItem";
+import { GeneratedByAIRecipe, RetrievedRecipe } from "@/types/recipe-schema";
 
 interface CuratedRecipeCardProps {
-  recipe: any;
+  recipe: RetrievedRecipe | GeneratedByAIRecipe;
   type: "retrieved" | "generated";
   messages: {
     aiCustomRecipe: string;
@@ -22,8 +23,7 @@ interface CuratedRecipeCardProps {
     grainEffect: string;
     grainSize: string;
     colourChrome: string;
-    colourChromeBlue: string;
-    colourChromeRed: string;
+    colourChromeFXBlue: string;
     priority: string;
   };
   imageComparisonSliderMessages?: {
@@ -93,7 +93,7 @@ const CuratedRecipeCard = ({
       </div>
 
       {/* Recipe URL Preview for Retrieved Recipe */}
-      {!isGenerated && recipe.url && (
+      {!isGenerated && "url" in recipe && recipe.url && (
         <RecipeUrlPreview
           url={recipe.url}
           messages={curatedRecipeUrlPreviewMessages}
@@ -101,13 +101,17 @@ const CuratedRecipeCard = ({
       )}
 
       {/* Image Comparison Slider for Generated Recipe */}
-      {isGenerated && recipe.sourceImage && recipe.retouchedImage && (
-        <ImageComparisonSlider
-          beforeImage={recipe.sourceImage}
-          afterImage={recipe.retouchedImage}
-          messages={imageComparisonSliderMessages}
-        />
-      )}
+      {isGenerated &&
+        "sourceImage" in recipe &&
+        "retouchedImage" in recipe &&
+        recipe.sourceImage &&
+        recipe.retouchedImage && (
+          <ImageComparisonSlider
+            beforeImage={recipe.sourceImage}
+            afterImage={recipe.retouchedImage}
+            messages={imageComparisonSliderMessages}
+          />
+        )}
 
       {/* Camera Settings */}
       <div>
@@ -120,6 +124,7 @@ const CuratedRecipeCard = ({
               label={messages.filmSimulation}
               value={recipe.settings.filmSimulation}
             />
+            <CuratedRecipeSettingItem label="ISO" value={recipe.settings.iso} />
             <CuratedRecipeSettingItem
               label={messages.dynamicRange}
               value={recipe.settings.dynamicRange}
@@ -140,12 +145,12 @@ const CuratedRecipeCard = ({
               label={messages.shadow}
               value={recipe.settings.shadow}
             />
+          </div>
+          <div className="space-y-2">
             <CuratedRecipeSettingItem
               label={messages.color}
               value={recipe.settings.color}
             />
-          </div>
-          <div className="space-y-2">
             <CuratedRecipeSettingItem
               label={messages.clarity}
               value={recipe.settings.clarity}
@@ -163,12 +168,12 @@ const CuratedRecipeCard = ({
               value={recipe.settings.grainSize}
             />
             <CuratedRecipeSettingItem
-              label={messages.colourChromeBlue}
-              value={recipe.settings.colourChromeBlue}
+              label={messages.colourChromeFXBlue}
+              value={recipe.settings.colourChromeFXBlue}
             />
             <CuratedRecipeSettingItem
-              label={messages.colourChromeRed}
-              value={recipe.settings.colourChromeRed}
+              label={messages.colourChrome}
+              value={recipe.settings.colourChrome}
             />
           </div>
         </div>

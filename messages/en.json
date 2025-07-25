@@ -45,8 +45,7 @@
       "grainEffect": "Grain Effect",
       "grainSize": "Grain Size",
       "colourChrome": "Color Chrome",
-      "colourChromeBlue": "Color Chrome Blue",
-      "colourChromeRed": "Color Chrome Red",
+      "colourChromeFXBlue": "Color Chrome FX Blue",
       "priority": "Priority"
     },
     "imageComparisonSlider": {

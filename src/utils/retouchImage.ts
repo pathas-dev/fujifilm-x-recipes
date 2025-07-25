@@ -1,7 +1,7 @@
+import { FilmSimulationType } from "@/types/camera-schema";
 import { writeFileSync } from "fs";
 import path from "path";
 import sharp from "sharp";
-import { type FilmSimulationType } from "../types/recipe-schema";
 
 /**
  * 필름 시뮬레이션별 특성 및 보정값 정의
@@ -119,8 +119,8 @@ const FilmSimulationPresets: Record<
       noiseReduction: 0,
     },
   },
-  "Nostalgic Negative": {
-    name: "Nostalgic Neg",
+  "Nostalgic Neg.": {
+    name: "Nostalgic Neg.",
     characteristics: "Vintage negative film look",
     baseSettings: {
       whiteBalanceR: 2,

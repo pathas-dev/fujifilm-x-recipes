@@ -20,8 +20,7 @@ interface RecipeResponseProps {
     grainEffect: string;
     grainSize: string;
     colourChrome: string;
-    colourChromeBlue: string;
-    colourChromeRed: string;
+    colourChromeFXBlue: string;
     priority: string;
   };
   imageComparisonSliderMessages: {
