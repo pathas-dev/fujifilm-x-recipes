@@ -53,7 +53,6 @@ ${createSensorCameraMappingText()}
     
     `,
     ],
-    new MessagesPlaceholder("chat_history"),
     ["user", "{question}"],
   ]);
 };

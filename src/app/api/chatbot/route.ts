@@ -44,7 +44,6 @@ export async function POST(request: Request) {
 
       const parsedQuestion = await parsingChain.invoke({
         question,
-        chat_history: chatHistory,
       });
 
       if (
