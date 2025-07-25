@@ -1,7 +1,7 @@
 import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
 import { ChatPromptTemplate } from "@langchain/core/prompts";
 import { FilmSimulationTypes } from "@/types/recipe-schema";
-import { SensorTypeSchema, ColorOrBwSchema } from "./shema";
+import { SENSOR_CAMERA_MAPPINGS, COLOR_TYPES } from "@/types/camera-schema";
 
 export enum GoogleAIModel {
   GeminiFlash = "gemini-2.0-flash",
@@ -17,22 +17,11 @@ export const createLLM = (model: GoogleAIModel = GoogleAIModel.GeminiFlash) => {
   });
 };
 
-// 센서-카메라 매핑 데이터 생성
+// 센서-카메라 매핑 텍스트 생성
 const createSensorCameraMappingText = () => {
-  const mappings = [
-    { sensor: "BAYER (type unknown)", cameras: ["X100", "Xt200", "XT200"] },
-    { sensor: "BAYER MF 100MP", cameras: ["GFX 100s"] },
-    { sensor: "BAYER MF 50MP", cameras: ["GFX 50S"] },
-    { sensor: "X-Trans I", cameras: ["X-E1", "X-M1", "X-PRO1", "X-Pro1"] },
-    { sensor: "X-Trans II", cameras: ["X100s", "X100T", "X70", "X-E2", "X-E2s", "X-T1"] },
-    { sensor: "X-Trans II 2/3", cameras: ["XQ1"] },
-    { sensor: "X-Trans III", cameras: ["X100F", "XE3", "XF10", "X-H1", "X-PRO2", "X-T2", "XT20"] },
-    { sensor: "X-Trans IV", cameras: ["X100v", "X100V", "X-E4", "X-PRO3", "X-Pro3", "X-S10", "X-T3", "X-T30", "X-T4"] },
-    { sensor: "X-Trans V BSI Stkd", cameras: ["X-H2s"] },
-    { sensor: "X-Trans V HR", cameras: ["X-H2", "X-T5"] },
-  ];
-  
-  return mappings.map(({ sensor, cameras }) => `       ${sensor}: ${cameras.join(", ")}`).join("\n");
+  return SENSOR_CAMERA_MAPPINGS
+    .map(({ sensor, cameras }) => `       ${sensor}: ${cameras.join(", ")}`)
+    .join("\n");
 };
 
 export const createParseQuestionPromptTemplate = () => {
@@ -52,7 +41,7 @@ export const createParseQuestionPromptTemplate = () => {
 ${createSensorCameraMappingText()}
 
        [색상 구분]
-       ${ColorOrBwSchema.options.join(" / ")}
+       ${COLOR_TYPES.join(" / ")}
 
        [필름 시뮬레이션 타입]
        ${FilmSimulationTypes.join(", ")}
