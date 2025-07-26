@@ -119,7 +119,6 @@ export const FujifilmSettingsSchema = z.object({
   // 기본 이미지 설정
   iso: z.string().describe("ISO - 이미지 감도 설정"),
   exposure: z.string().default("0").describe("Exposure - 노출 설정"),
-  tone: z.string().describe("Tone - 색조 설정"),
   dynamicRange: z
     .enum(dynamicRanges)
     .default("AUTO")
@@ -135,7 +134,7 @@ export const FujifilmSettingsSchema = z.object({
     .default("off")
     .describe("Grain 효과 강도 - 필름 아날로그 질감"),
   grainSize: z
-    .string()
+    .enum(sizes)
     .default("off")
     .describe("Grain 입자 크기 - 거친 필름 질감"),
 
@@ -182,21 +181,31 @@ export const FujifilmSettingsSchema = z.object({
   color: z
     .number()
     .min(-4)
-    .max(-4)
+    .max(4)
     .default(0)
     .describe("Color 채도 - 색상 생생함과 선명도"),
   clarity: z
     .number()
     .min(-4)
-    .max(-4)
+    .max(4)
     .default(0)
-    .describe("Clarity 선명도 - 중간톤 대비 조절"),
+    .describe(
+      "Clarity 명료도 - 중간톤 대비 조절, 이미지의 질감(Texture)과 입체감(Depth)을 향상"
+    ),
+  sharpness: z
+    .number()
+    .min(-2)
+    .max(4)
+    .default(0)
+    .describe(
+      "Sharpness 선명도 - 이미지의 윤곽선(Edges)과 경계의 대비를 조절하여 이미지를 더 또렷하게 보이게 하는 기능"
+    ),
 
   // 노이즈 감소
   noiseReduction: z
     .number()
     .min(-4)
-    .max(-4)
+    .max(4)
     .default(0)
     .describe("Noise Reduction - 디지털 노이즈 제거"),
 });

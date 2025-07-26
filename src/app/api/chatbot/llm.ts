@@ -87,23 +87,23 @@ export const createCuratorPromptTemplate = () => {
 - **Film Simulation**: [${FilmSimulations.join(
     ", "
   )}] 후지필름 카메라의 필름 시뮬레이션 모드로, 각 모드에 따라 사진의 색감과 느낌이 달라짐.
-- **Dynamic Range**: 높을수록 계조가 풍부해짐 (밝고 어두운 부분 디테일 향상)
+- **Dynamic Range**: [AUTO, DR100%, DR200%, DR400%] 기본값: AUTO - 높을수록 계조가 풍부해짐 (밝고 어두운 부분 디테일 향상)
 - **ISO**: 이미지 감도 설정, 낮을수록 노이즈 감소
-- **Exposure**: 노출 보정, 0이 기본값, 높을 수록 밝아짐
-- **Tone**: 색조 조절, 이미지의 따뜻함/차가움
-- **Priority**: 'Off'로 설정 시 센서 원본 데이터가 직접 반영됨
-- **Grain Size**: [off, small, large] 입자가 클수록 아날로그 필름 질감
-- **Grain Effect**: [off, weak, strong] 강할수록 입자감이 뚜렷해짐
-- **Colour Chrome**: [off, weak, strong] 고채도 영역에서 색 표현력을 향상시켜, 깊이감과 입체감을 더하고 자연스러운 선명함을 표현
-- **Colour Chrome FX Blue**: [off, weak, strong] 파란색 계열의 색감을 더욱 풍부하게 표현해 주는 기능
+- **Exposure**: 노출 보정, 기본값: 0 - 높을 수록 밝아짐
+- **Priority**: [auto, off, weak, strong] 기본값: auto - 'off'로 설정 시 센서 원본 데이터가 직접 반영됨
+- **Grain Size**: [off, small, large] 기본값: off - 입자가 클수록 아날로그 필름 질감
+- **Grain Effect**: [off, weak, strong] 기본값: off - 강할수록 입자감이 뚜렷해짐
+- **Colour Chrome**: [off, weak, strong] 기본값: off - 고채도 영역에서 색 표현력을 향상시켜, 깊이감과 입체감을 더하고 자연스러운 선명함을 표현
+- **Colour Chrome FX Blue**: [off, weak, strong] 기본값: off - 파란색 계열의 색감을 더욱 풍부하게 표현해 주는 기능
 - **White Balance**: 'Auto WB(AWB)'로 자연스러운 색온도 자동 조정, 촬영 환경에 따라 적절한 설정을 선택하여 사진의 색감을 조정
-- **Shift(Blue)**: [-9~+9] B 낮음 = 따뜻한 톤, B 높음 = 차가운 톤
-- **Shift(Red)**: [-9~+9] R 낮음 = 차가운 톤, R 높음 = 따뜻한 톤
-- **Highlight**: [-2~+4] 낮은 값(-) = 밝은 영역 디테일 보존, 부드러운 계조
-- **Shadow**: [-2~+4] 낮은 값(-) = 어두운 영역 디테일 살림
-- **Color**: [-4~+4] 높은 값 = 채도 강화, 생생한 색상
-- **Clarity**: [-4~+4] 낮은 값(-) = 이미지의 디테일 표현을 조절하는 기능으로 높을수록 사진이 또렷해짐
-- **Noise Reduction**: [-4~+4] 높은 값 = 깨끗하고 매끄러운 이미지`;
+- **Shift(Blue)**: [-9~+9] 기본값: 0 - 낮음 = 따뜻한 톤, 높음 = 차가운 톤
+- **Shift(Red)**: [-9~+9] 기본값: 0 - 낮음 = 차가운 톤, 높음 = 따뜻한 톤
+- **Highlight**: [-2~+4] 기본값: 0 - 높은 값(+) = 밝은 영역 디테일 보존, 부드러운 계조
+- **Shadow**: [-2~+4] 기본값: 0 - 높은 값(+) = 어두운 영역 디테일 살림
+- **Color**: [-4~+4] 기본값: 0 - 높은 값 = 채도 강화, 생생한 색상, Color 대신 Tone 에 대한 설명만 있다면 Color 에 할당
+- **Sharpness**: [-2~+4] 기본값: 0 - 높은 값(+) = 이미지의 디테일 표현을 조절하는 기능으로 높을수록 사진이 또렷해짐
+- **Clarity**: [-4~+4] 기본값: 0 - 높은 값(+) = 명료도 - 중간톤 대비 조절, 이미지의 질감과 입체감을 향상
+- **Noise Reduction**: [-4~+4] 기본값: 0 - 높은 값 = 깨끗하고 매끄러운 이미지`;
 
   const fullSystemMessage = [
     systemInstructions,

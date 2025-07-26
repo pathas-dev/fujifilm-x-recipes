@@ -14,12 +14,12 @@ interface CuratedRecipeCardProps {
     cameraSettings: string;
     filmSimulation: string;
     exposure: string;
-    tone: string;
     dynamicRange: string;
     whiteBalance: string;
     highlight: string;
     shadow: string;
     color: string;
+    sharpness: string;
     clarity: string;
     noiseReduction: string;
     grainEffect: string;
@@ -129,7 +129,7 @@ const CuratedRecipeCard = ({
             <CuratedRecipeSettingItem label="ISO" value={recipe.settings.iso} />
             <CuratedRecipeSettingItem
               label={messages.exposure}
-              value={recipe.settings.iso}
+              value={recipe.settings.exposure}
             />
             <CuratedRecipeSettingItem
               label={messages.dynamicRange}
@@ -156,6 +156,10 @@ const CuratedRecipeCard = ({
             <CuratedRecipeSettingItem
               label={messages.color}
               value={recipe.settings.color}
+            />
+            <CuratedRecipeSettingItem
+              label={messages.sharpness}
+              value={recipe.settings.sharpness}
             />
             <CuratedRecipeSettingItem
               label={messages.clarity}

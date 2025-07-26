@@ -11,12 +11,12 @@ interface RecipeResponseProps {
     cameraSettings: string;
     filmSimulation: string;
     exposure: string;
-    tone: string;
     dynamicRange: string;
     whiteBalance: string;
     highlight: string;
     shadow: string;
     color: string;
+    sharpness: string;
     clarity: string;
     noiseReduction: string;
     grainEffect: string;
