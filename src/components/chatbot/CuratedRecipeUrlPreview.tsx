@@ -83,14 +83,14 @@ const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
           rel="noopener noreferrer"
           className="block rounded-lg overflow-hidden border border-base-300 bg-base-100 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-[1.02]"
         >
-          <div className="relative">
+          <div className="relative w-full h-48 bg-base-300">
             <Image
               src={openGraph?.image?.url ?? ""}
               alt={openGraph?.image?.alt ?? ""}
               quality={30}
               width={400}
               height={200}
-              className="w-full h-48 object-cover"
+              className="w-full h-full object-cover"
               style={{
                 aspectRatio: "2/1",
               }}

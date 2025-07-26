@@ -248,10 +248,28 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   };
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({
-      behavior: "smooth",
-      block: "end",
-    });
+    const scroll = () => {
+      if (messagesEndRef.current) {
+        const messagesContainer =
+          messagesEndRef.current.closest(".overflow-y-auto");
+
+        if (messagesContainer) {
+          messagesContainer.scrollTo({
+            top: messagesContainer.scrollHeight,
+            behavior: "smooth",
+          });
+        }
+
+        // fallback: scrollIntoView
+        messagesEndRef.current.scrollIntoView({
+          behavior: "smooth",
+          block: "end",
+          inline: "nearest",
+        });
+      }
+    };
+
+    setTimeout(scroll, 100);
   };
 
   useEffect(() => {
