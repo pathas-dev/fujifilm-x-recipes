@@ -459,7 +459,7 @@ export const retouchImage = async (
     if (filmSimulationOptions.sharpness !== undefined) {
       if (filmSimulationOptions.sharpness > 0) {
         const sigma = Math.max(
-          0.5,
+          0.3, // Sharp 최소값 0.3
           Math.min(2.0, 1.0 + filmSimulationOptions.sharpness * 0.25)
         );
 
@@ -478,9 +478,9 @@ export const retouchImage = async (
           y3: 20.0,
         });
       } else if (filmSimulationOptions.sharpness < 0) {
-        const blurAmount = Math.min(
-          1.0,
-          Math.abs(filmSimulationOptions.sharpness) * 0.2
+        const blurAmount = Math.max(
+          0.3, // Sharp blur 최소값
+          Math.min(1.0, Math.abs(filmSimulationOptions.sharpness) * 0.3)
         );
 
         console.log(
@@ -571,7 +571,7 @@ export const retouchImage = async (
     if (userSettingsOptions.sharpness !== undefined) {
       if (userSettingsOptions.sharpness > 0) {
         const sigma = Math.max(
-          0.5,
+          0.3, // Sharp 최소값 0.3
           Math.min(2.0, 1.0 + userSettingsOptions.sharpness * 0.25)
         );
 
@@ -590,9 +590,9 @@ export const retouchImage = async (
           y3: 20.0,
         });
       } else if (userSettingsOptions.sharpness < 0) {
-        const blurAmount = Math.min(
-          1.0,
-          Math.abs(userSettingsOptions.sharpness) * 0.2
+        const blurAmount = Math.max(
+          0.3, // Sharp blur 최소값
+          Math.min(1.0, Math.abs(userSettingsOptions.sharpness) * 0.3)
         );
 
         console.log(
@@ -703,7 +703,7 @@ export const retouchImage = async (
     ) {
       if (processedOptions.sharpness > 0) {
         const sigma = Math.max(
-          0.5,
+          0.3, // Sharp 최소값 0.3
           Math.min(2.0, 1.0 + processedOptions.sharpness * 0.25)
         );
 
@@ -722,9 +722,9 @@ export const retouchImage = async (
           y3: 20.0,
         });
       } else if (processedOptions.sharpness < 0) {
-        const blurAmount = Math.min(
-          1.0,
-          Math.abs(processedOptions.sharpness) * 0.2
+        const blurAmount = Math.max(
+          0.3, // Sharp blur 최소값
+          Math.min(1.0, Math.abs(processedOptions.sharpness) * 0.3)
         );
 
         console.log(
