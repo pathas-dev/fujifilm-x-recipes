@@ -24,7 +24,7 @@ const FilmSimulationPresets: Record<
       highlightTone: 0,
       shadowTone: 0,
       color: 0,
-      clarity: 0,
+      sharpness: 0,
       noiseReduction: 0,
     },
   },
@@ -37,7 +37,7 @@ const FilmSimulationPresets: Record<
       highlightTone: 1,
       shadowTone: 1,
       color: 3,
-      clarity: 2,
+      sharpness: 2,
       noiseReduction: 0,
     },
   },
@@ -50,7 +50,7 @@ const FilmSimulationPresets: Record<
       highlightTone: 0,
       shadowTone: 1,
       color: -1,
-      clarity: -1,
+      sharpness: -1,
       noiseReduction: 1,
     },
   },
@@ -63,7 +63,7 @@ const FilmSimulationPresets: Record<
       highlightTone: -1,
       shadowTone: 0,
       color: -2,
-      clarity: 1,
+      sharpness: 1,
       noiseReduction: 0,
     },
   },
@@ -76,7 +76,7 @@ const FilmSimulationPresets: Record<
       highlightTone: 0,
       shadowTone: 2,
       color: 1,
-      clarity: 0,
+      sharpness: 0,
       noiseReduction: 0,
     },
   },
@@ -89,7 +89,7 @@ const FilmSimulationPresets: Record<
       highlightTone: 0,
       shadowTone: 1,
       color: 2,
-      clarity: 1,
+      sharpness: 1,
       noiseReduction: 0,
     },
   },
@@ -102,7 +102,7 @@ const FilmSimulationPresets: Record<
       highlightTone: -1,
       shadowTone: 1,
       color: -3,
-      clarity: -1,
+      sharpness: -1,
       noiseReduction: 1,
     },
   },
@@ -115,7 +115,7 @@ const FilmSimulationPresets: Record<
       highlightTone: 2,
       shadowTone: -1,
       color: -4,
-      clarity: 2,
+      sharpness: 2,
       noiseReduction: 0,
     },
   },
@@ -128,7 +128,7 @@ const FilmSimulationPresets: Record<
       highlightTone: -1,
       shadowTone: 2,
       color: 0,
-      clarity: -1,
+      sharpness: -1,
       noiseReduction: 1,
     },
   },
@@ -141,7 +141,7 @@ const FilmSimulationPresets: Record<
       highlightTone: 1,
       shadowTone: 1,
       color: 1,
-      clarity: 1,
+      sharpness: 1,
       noiseReduction: 0,
     },
   },
@@ -154,7 +154,7 @@ const FilmSimulationPresets: Record<
       highlightTone: 0,
       shadowTone: 1,
       color: 0,
-      clarity: 0,
+      sharpness: 0,
       noiseReduction: 0,
     },
   },
@@ -167,7 +167,7 @@ const FilmSimulationPresets: Record<
       highlightTone: 0,
       shadowTone: 0,
       color: 0,
-      clarity: 1,
+      sharpness: 1,
       noiseReduction: 1,
     },
   },
@@ -180,7 +180,7 @@ const FilmSimulationPresets: Record<
       highlightTone: 0,
       shadowTone: 0,
       color: 0,
-      clarity: 0,
+      sharpness: 0,
       noiseReduction: 0,
     },
   },
@@ -193,7 +193,7 @@ const FilmSimulationPresets: Record<
       highlightTone: 0,
       shadowTone: 0,
       color: 0,
-      clarity: 0,
+      sharpness: 0,
       noiseReduction: 0,
     },
   },
@@ -208,7 +208,7 @@ interface CameraSettings {
   highlightTone?: number; // -2~+4 범위 (0.5단위)
   shadowTone?: number; // -2~+4 범위 (0.5단위)
   color?: number; // -4~+4 범위 (1단위)
-  clarity?: number; // -4~+4 범위 (1단위)
+  sharpness?: number; // -2~+4 범위 (1단위)
   noiseReduction?: number; // -4~+4 범위 (1단위)
 }
 
@@ -318,8 +318,8 @@ const convertCameraSettingsToSharpOptions = (
   }
 
   // 샤프니스 -4~+4 → sharpen/blur 적용 (실제 적용은 이미지 처리 단계에서)
-  if (cameraSettings.clarity !== undefined) {
-    sharpOptions.sharpness = cameraSettings.clarity;
+  if (cameraSettings.sharpness !== undefined) {
+    sharpOptions.sharpness = cameraSettings.sharpness;
   }
 
   // 노이즈 리덕션 -4~+4 → blur 적용 (실제 적용은 이미지 처리 단계에서)
@@ -920,7 +920,7 @@ export const runValidationTests = async () => {
       // 2단계: 사용자 설정 추가 적용
       whiteBalanceR: 2, // Velvia 기본값(+1)에 추가로 +2 = 총 +3
       shadowTone: 1, // Velvia 기본값(+1)에 추가로 +1 = 총 +2
-      clarity: 1, // Velvia 기본값(+2)에 추가로 +1 = 총 +3
+      sharpness: 1, // Velvia 기본값(+2)에 추가로 +1 = 총 +3
     },
     quality: 100,
   });
@@ -937,7 +937,7 @@ export const runValidationTests = async () => {
       highlightTone: 2,
       shadowTone: 1,
       color: 2,
-      clarity: 1,
+      sharpness: 1,
     },
     quality: 100,
   });

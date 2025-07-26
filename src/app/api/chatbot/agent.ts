@@ -231,7 +231,7 @@ export class FujifilmRecipeAgent {
             noiseReduction: settings.noiseReduction,
             shadowTone: settings.shadow,
             color: settings.color,
-            clarity: settings.clarity,
+            sharpness: settings.sharpness,
             whiteBalanceR: settings.shiftRed,
             whiteBalanceB: settings.shiftBlue,
           },
