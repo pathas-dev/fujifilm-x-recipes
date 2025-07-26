@@ -152,12 +152,14 @@ export const FujifilmSettingsSchema = z.object({
   whiteBalance: z.string().describe("White Balance - 색온도 자동 조정"),
   shiftRed: z
     .number()
+    .int()
     .min(-9)
     .max(9)
     .default(0)
     .describe("Red 시프트 값 - 따뜻한 톤 조절"),
   shiftBlue: z
     .number()
+    .int()
     .min(-9)
     .max(9)
     .default(0)
@@ -166,12 +168,14 @@ export const FujifilmSettingsSchema = z.object({
   // 하이라이트/섀도우
   highlight: z
     .number()
+    .int()
     .min(-2)
     .max(4)
     .default(0)
     .describe("Highlight - 밝은 영역 디테일 보존"),
   shadow: z
     .number()
+    .int()
     .min(-2)
     .max(4)
     .default(0)
@@ -180,12 +184,14 @@ export const FujifilmSettingsSchema = z.object({
   // 색상 및 선명도
   color: z
     .number()
+    .int()
     .min(-4)
     .max(4)
     .default(0)
     .describe("Color 채도 - 색상 생생함과 선명도"),
   clarity: z
     .number()
+    .int()
     .min(-4)
     .max(4)
     .default(0)
@@ -194,6 +200,7 @@ export const FujifilmSettingsSchema = z.object({
     ),
   sharpness: z
     .number()
+    .int()
     .min(-2)
     .max(4)
     .default(0)
@@ -204,6 +211,7 @@ export const FujifilmSettingsSchema = z.object({
   // 노이즈 감소
   noiseReduction: z
     .number()
+    .int()
     .min(-4)
     .max(4)
     .default(0)
