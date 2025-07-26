@@ -43,7 +43,7 @@
 
 - Tailwind CSS v4 + DaisyUI v5 사용
 - 반응형 디자인 필수 (모바일 우선)
-- DaisyUI 테마 시스템 활용 (light-retro, dark-dracula)
+- DaisyUI 테마 시스템 활용 (light-nord, dark-dark)
 - `className` 배열을 `join(" ")` 방식으로 구성
 
 ### 3. 국제화 (i18n)

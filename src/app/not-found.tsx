@@ -1,12 +1,18 @@
+import { COOKIE_THEME_KEY } from "@/app/constants/cookie";
+import { DEFAULT_THEME } from "@/components/settings/ThemeSwitch";
 import { Noto_Sans_KR } from "next/font/google";
+import { cookies } from "next/headers";
 
 const notoSans = Noto_Sans_KR({
   subsets: ["latin"],
 });
 
-export default function NotFound() {
+export default async function NotFound() {
+  const themeCookie = (await cookies()).get(COOKIE_THEME_KEY);
+  const theme = themeCookie?.value ?? DEFAULT_THEME;
+
   return (
-    <html lang="en" data-theme="dracula">
+    <html lang="en" data-theme="dark">
       <body
         className={[
           notoSans.className,

@@ -430,7 +430,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
             <select
               value={cameraModel}
               onChange={(e) => setCameraModel(e.target.value as CameraModel)}
-              className="join-item select hidden sm:flex bg-base-100 border-base-300 focus:border-primary focus:outline-none w-28 text-xs min-h-12"
+              className="join-item select hidden sm:flex bg-base-100 border-base-300 focus:border-primary rounded-sm focus:outline-none w-28 text-xs min-h-12"
               disabled={isLoading}
             >
               {CAMERA_MODELS.toSorted().map((camera) => (

@@ -5,8 +5,8 @@ import { SvgSunMini, SvgMoonMini } from "@/components/icon/svgs";
 import { useCallback, useEffect, useState } from "react";
 
 const THEME_ATTRIBUTE = "data-theme";
-const DARK_THEME = "dracula";
-const LIGHT_THEME = "retro";
+const DARK_THEME = "dark";
+const LIGHT_THEME = "nord";
 
 export const DEFAULT_THEME = DARK_THEME;
 
