@@ -184,19 +184,6 @@ const FilmSimulationPresets: Record<
       noiseReduction: 0,
     },
   },
-  Unknown: {
-    name: "Unknown",
-    characteristics: "Unknown film simulation",
-    baseSettings: {
-      whiteBalanceR: 0,
-      whiteBalanceB: 0,
-      highlightTone: 0,
-      shadowTone: 0,
-      color: 0,
-      sharpness: 0,
-      noiseReduction: 0,
-    },
-  },
 };
 
 /**
@@ -235,7 +222,7 @@ const getFilmSimulationSettings = (
     console.warn(
       `Unknown film simulation: ${filmSimulation}, using default settings`
     );
-    return FilmSimulationPresets["Unknown"].baseSettings;
+    return FilmSimulationPresets.Provia.baseSettings;
   }
 
   console.log(
