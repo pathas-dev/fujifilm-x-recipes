@@ -1,46 +1,76 @@
-# v1.1.0
+# 📝 v1.1.0
 
-## Added features
+## ✨ Added features
 
-### Custom recipe sharing
+### 🔗 Custom recipe sharing
 When you click the custom recipe card expansion button (↓) and then click the clipboard button at the bottom, the sharing URL is copied to the clipboard.  
 And when you visit the current site by clicking the sharing URL, the shared recipe is automatically added to the custom recipe list.
 
-### Patch Notes
+### 📋 Patch Notes
 Patch notes have been added to describe features added or bugs fixed depending on the version.
 
-# v1.1.1
+# 🔧 v1.1.1
 
-## Bug fix
+## 🐛 Bug fix
 
-### Unable to add shared custom recipe
+### 🔗 Unable to add shared custom recipe
 Fixed an issue where recipes were not added in the deployment environment.
 
-# v2.0.0
+# 🚀 v2.0.0
 
-## Major Feature Addition
+## ✨ Major Feature Addition
 
-### 🤖 AI Curator (Chatbot)
-An AI-powered film recipe recommendation system has been added.
+### 🤖 AI Curator (Moved to Main Page)
+An AI-powered film recipe recommendation system has been added.  
+The existing recipes page has been separated from the main page, and AI Curator is now the new main page.
 
-#### Core Features
+#### ✨ Core Features
 - **Natural Language Queries**: Ask questions in natural language like "Recommend a winter-feeling recipe" or "Show me cinematic film recipes"
 - **Personalized Recommendations**: Customized recipe suggestions based on camera model, shooting conditions, and desired mood
-- **Real-time Image Preview**: See how your photos would look with AI-recommended settings applied in real-time
+- **Real-time Image Preview**: Compare before/after image processing results with an interactive slider
 - **Integration with Existing Recipes**: Leverages our verified recipe database for reliable recommendations
+- **Original Recipe Information**: Provides original recipe details and links
+- **Save as Custom**: Save preferred settings as personal recipes
 
-#### Technical Features
+#### 🔧 Technical Features
 - **LangChain + Google Gemini**: Cutting-edge AI technology for natural language processing
 - **Vector Search**: Semantic recipe search powered by Pinecone
 - **Image Processing**: Real-time film simulation using Sharp
 - **Structured Responses**: Consistent response format using Zod schemas
+- **Real-time Loading States**: Visual indication of step-by-step processing
 
-#### How to Use
-1. Select "AI Curator" from the navigation menu
-2. Ask questions about recipes in natural language
-3. Review AI-curated recipes with image previews
-4. Save preferred settings as custom recipes
+#### 🎨 UI/UX Improvements
+- **Chat Interface**: Intuitive conversational UI
+- **Image Comparison Slider**: Easy before/after image comparison
+- **Animation Effects**: Smooth transitions using Framer Motion
+- **Responsive Design**: Mobile-optimized layout
 
-#### Supported Languages
+#### 📝 How to Use
+1. Enter questions in the chat interface on the main page (AI Curator)
+2. AI analyzes your question and provides personalized recipe recommendations
+3. Preview image processing results with the comparison slider
+4. View original recipe information and links
+5. Save preferred settings as custom recipes
+
+#### 🌍 Supported Languages
 - Korean: Natural Korean language queries and responses
 - English: Full English support for global users
+
+## 🛠️ Technology Stack Updates
+
+### 🎨 Frontend
+- **Next.js 15**: Latest App Router and React 19 support
+- **Tailwind CSS v4**: Latest CSS framework
+- **DaisyUI v5**: Updated UI component library
+- **TypeScript 5.8**: Enhanced type safety
+
+### 🤖 AI & Backend
+- **LangChain 0.3**: Latest AI framework
+- **LangGraph**: Complex AI workflow management
+- **Google Gemini**: Gemini Flash and Gemini Flash Lite model support
+- **Pinecone**: Optimized vector database
+
+### ⚙️ Development Tools
+- **ESLint 9**: Latest linting rules
+- **pnpm**: Fast package management
+- **MDX**: Markdown-based content management
