@@ -1,8 +1,10 @@
 "use client";
 
-import { memo, useEffect, useState } from "react";
+import { useChatStore } from "@/stores/chat";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
+import { memo, useEffect, useState } from "react";
+import { useShallow } from "zustand/react/shallow";
 
 const filmImages = [
   "/films/acros-film-simulation.webp",
@@ -123,13 +125,16 @@ const FilmStrip = ({ images }: FilmStripProps) => {
   );
 };
 
-interface ChatbotLoadingIndicatorProps {
-  loadingMessage: string | null;
-}
+const ChatbotLoadingIndicator = memo(function LoadingIndicator() {
+  const { loadingMessage, isLoading } = useChatStore(
+    useShallow((state) => ({
+      loadingMessage: state.loadingMessage,
+      isLoading: state.isLoading,
+    }))
+  );
 
-const ChatbotLoadingIndicator = memo(function LoadingIndicator({
-  loadingMessage,
-}: ChatbotLoadingIndicatorProps) {
+  if (!isLoading) return null;
+
   return (
     <div className="flex justify-start animate-in slide-in-from-bottom-2 duration-300">
       <div className="relative bg-base-200 text-base-content px-5 py-4 rounded-2xl rounded-bl-md border border-base-300 shadow-sm message-glow bot-message-glow overflow-hidden">

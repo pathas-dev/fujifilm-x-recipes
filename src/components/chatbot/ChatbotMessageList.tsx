@@ -1,16 +1,15 @@
 "use client";
 
+import { useChatStore } from "@/stores/chat";
+import { CuratorResponse } from "@/types/recipe-schema";
 import { memo } from "react";
 import ReactMarkdown from "react-markdown";
-import { ChatMessage } from "./ChatbotClient";
-import { CuratorResponse } from "@/types/recipe-schema";
 import ChatbotCuratedRecipeResponse from "./CuratedRecipe/CuratedRecipeResponse";
+import { useShallow } from "zustand/react/shallow";
 
-interface ChatbotMessageListProps {
-  messages: ChatMessage[];
-}
+const ChatbotMessageList = memo(() => {
+  const messages = useChatStore(useShallow((state) => state.messages));
 
-const ChatbotMessageList = memo<ChatbotMessageListProps>(({ messages }) => {
   return (
     <>
       {messages.map((message, index) => (
