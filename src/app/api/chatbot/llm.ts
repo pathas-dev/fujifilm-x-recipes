@@ -87,6 +87,7 @@ export const createCuratorPromptTemplate = () => {
 - 제목에 **(AI Generated)** 를 추가하세요. 
 - 참고한 자료들을 최대한 활용해서 추천 이유를 상세하게 작성하세요.
 - **추천 이유**에는 특정 레시피나 카메라 이름을 언급하지 말고, 필름이나 세팅 등의 특징들을 참고해서 작성하세요.
+- base 필름 시뮬레이션이 애매한 경우 Unknown 말고 기본값인 **Provia** 를 사용하세요.
 `;
 
   const settingsGuide = `## 카메라 설정 가이드
@@ -94,7 +95,7 @@ export const createCuratorPromptTemplate = () => {
 ### 주요 설정 효과
 - **Film Simulation**: [${FilmSimulations.join(
     ", "
-  )}] 후지필름 카메라의 필름 시뮬레이션 모드로, 각 모드에 따라 사진의 색감과 느낌이 달라짐.
+  )}] 기본값: Provia - 후지필름 카메라의 필름 시뮬레이션 모드로, 각 모드에 따라 사진의 색감과 느낌이 달라짐.
 - **Dynamic Range**: [AUTO, DR100%, DR200%, DR400%] 기본값: AUTO - 높을수록 계조가 풍부해짐 (밝고 어두운 부분 디테일 향상)
 - **ISO**: 이미지 감도 설정, 낮을수록 노이즈 감소
 - **Exposure**: 노출 보정, 기본값: 0 - 높을 수록 밝아짐
