@@ -1,8 +1,8 @@
-import { ChangeEventHandler, useState } from 'react';
-import { SvgAirplaneSolid, SvgEnvelopeSolid } from '../icon/svgs';
-import { STORAGE_CUSTOM_RECIPES_KEY } from './CustomList';
-import useToastStore from '@/stores/toast';
-import { SendEmailMessages } from '@/types/language';
+import { ChangeEventHandler, useState } from "react";
+import { SvgAirplaneSolid, SvgEnvelopeSolid } from "../icon/svgs";
+import { STORAGE_CUSTOM_RECIPES_KEY } from "./CustomList";
+import useToastStore from "@/stores/toast";
+import { SendEmailMessages } from "@/types/language";
 
 interface IExportButtonProps {
   sendEmailMessages?: SendEmailMessages;
@@ -10,27 +10,27 @@ interface IExportButtonProps {
 
 const ExportButton = ({ sendEmailMessages }: IExportButtonProps) => {
   const placeholder = sendEmailMessages?.placeholder;
-  const successMessage = sendEmailMessages?.success ?? '';
-  const noDataErrorMessage = sendEmailMessages?.errors?.noData ?? '';
-  const noEmailErrorMessage = sendEmailMessages?.errors?.noEmail ?? '';
-  const tooltipMessage = sendEmailMessages?.tooltip ?? '';
+  const successMessage = sendEmailMessages?.success ?? "";
+  const noDataErrorMessage = sendEmailMessages?.errors?.noData ?? "";
+  const noEmailErrorMessage = sendEmailMessages?.errors?.noEmail ?? "";
+  const tooltipMessage = sendEmailMessages?.tooltip ?? "";
 
   const setToastMessage = useToastStore((state) => state.setMessage);
 
   const [inputOpen, setInputOpen] = useState(false);
-  const [email, setEmail] = useState('');
+  const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
   const sendMailRecipes = async () => {
     const storedRecipes = JSON.parse(
-      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? '[]'
+      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? "[]"
     );
 
     if (!storedRecipes || storedRecipes.length === 0)
       throw new Error(noDataErrorMessage);
 
-    const response = await fetch('/api/recipes/email', {
-      method: 'POST',
+    const response = await fetch("/api/recipes/email", {
+      method: "POST",
       body: JSON.stringify({ data: storedRecipes, email: email.trim() }),
     });
 
@@ -55,10 +55,10 @@ const ExportButton = ({ sendEmailMessages }: IExportButtonProps) => {
       if (res?.status !== 200) throw Error(res?.statusText);
 
       setToastMessage({ message: successMessage });
-      setEmail('');
+      setEmail("");
       setInputOpen(false);
     } catch (error) {
-      setToastMessage({ message: (error as Error).message, type: 'Error' });
+      setToastMessage({ message: (error as Error).message, type: "Error" });
     } finally {
       setLoading(false);
     }
@@ -85,18 +85,17 @@ const ExportButton = ({ sendEmailMessages }: IExportButtonProps) => {
               value={email}
               onChange={onEmailChange}
             />
+            {loading ? (
+              <span className="loading loading-spinner absolute right-2 h-full" />
+            ) : (
+              <button
+                className="btn btn-square btn-ghost fill-secondary absolute right-0"
+                onClick={onSendClick}
+              >
+                <SvgAirplaneSolid />
+              </button>
+            )}
           </label>
-
-          {loading ? (
-            <span className="loading loading-spinner absolute right-2 h-full" />
-          ) : (
-            <button
-              className="btn btn-square btn-ghost fill-secondary absolute right-0"
-              onClick={onSendClick}
-            >
-              <SvgAirplaneSolid />
-            </button>
-          )}
         </div>
       )}
     </div>
