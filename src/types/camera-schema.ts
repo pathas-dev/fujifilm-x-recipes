@@ -7,7 +7,7 @@ export const COLOR_TYPES = ["Color", "B&W"] as const;
 export const SENSOR_CAMERA_MAPPINGS = [
   {
     sensor: "BAYER (type unknown)" as const,
-    cameras: ["X100", "XT200", "XT200"] as const,
+    cameras: ["X100", "XT200"] as const,
   },
   { sensor: "BAYER MF 100MP" as const, cameras: ["GFX 100s"] as const },
   { sensor: "BAYER MF 50MP" as const, cameras: ["GFX 50S"] as const },
@@ -39,7 +39,6 @@ export const SENSOR_CAMERA_MAPPINGS = [
       "X100V",
       "X-E4",
       "X-PRO3",
-      "X-Pro3",
       "X-S10",
       "X-T3",
       "X-T30",
@@ -54,12 +53,12 @@ export const SENSOR_CAMERA_MAPPINGS = [
 ] as const;
 
 export const SENSOR_TYPES = SENSOR_CAMERA_MAPPINGS.flatMap(
-  ({ sensor, cameras }) => sensor
+  ({ sensor }) => sensor
 );
 
 // 카메라 모델 값들
 export const CAMERA_MODELS = SENSOR_CAMERA_MAPPINGS.flatMap(
-  ({ sensor, cameras }) => cameras
+  ({ cameras }) => cameras
 );
 
 // 센서 타입 스키마

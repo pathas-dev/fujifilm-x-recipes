@@ -2,6 +2,7 @@
 
 import { SvgAiCurator, SvgAirplaneOutline } from "@/components/icon/svgs";
 import { CuratorResponse } from "@/types/recipe-schema";
+import { CAMERA_MODELS, CameraModel } from "@/types/camera-schema";
 import { useEffect, useRef, useState } from "react";
 import ReactMarkdown from "react-markdown";
 import ChatbotCuratedRecipeResponse from "./CuratedRecipeResponse";
@@ -89,53 +90,71 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   const hasAiResponses = chatMessages.some(
     (msg) => !msg.isUser && msg.id !== "welcome"
   );
-  const [inputValue, setInputValue] = useState("");
+  const [message, setMessage] = useState("");
+  const [cameraModel, setCameraModel] = useState<CameraModel>("X100V");
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState<string>(
     messages.loadings.placeholder
   );
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const examples = [
+  const examples: {
+    key: keyof ChatbotClientProps["messages"]["examples"];
+    message: string;
+    cameraModel: CameraModel;
+    icon: string;
+    gradient: string;
+  }[] = [
     {
       key: "winter",
-      text: messages.examples.winter,
+      message: messages.examples.winter,
+      cameraModel: "X-T30",
       icon: "❄️",
       gradient: "from-blue-400 to-blue-600",
     },
     {
       key: "cinematic",
-      text: messages.examples.cinematic,
+      message: messages.examples.cinematic,
+      cameraModel: "X-PRO3",
       icon: "🎬",
       gradient: "from-purple-400 to-purple-600",
     },
     {
       key: "summer",
-      text: messages.examples.summer,
+      message: messages.examples.summer,
+      cameraModel: "X100VI",
       icon: "☀️",
       gradient: "from-green-400 to-teal-500",
     },
     {
       key: "blackWhite",
-      text: messages.examples.blackWhite,
+      message: messages.examples.blackWhite,
+      cameraModel: "X-T5",
       icon: "🎞️",
       gradient: "from-black to-white",
     },
   ];
 
-  const handleSendMessage = async (messageText?: string) => {
-    const messageToSend = messageText || inputValue;
-    if (!messageToSend.trim() || isLoading) return;
+  const handleSendMessage = async ({
+    cameraModel,
+    message,
+  }: {
+    message: string;
+    cameraModel: CameraModel;
+  }) => {
+    if (!message.trim() || !cameraModel || isLoading) return;
+
+    const question = `${cameraModel} ${message}`;
 
     const userMessage: ChatMessage = {
       id: Date.now().toString(),
-      content: messageToSend,
+      content: question,
       isUser: true,
       timestamp: new Date(),
     };
 
     setChatMessages((prev) => [...prev, userMessage]);
-    setInputValue("");
+    setMessage("");
     setIsLoading(true);
 
     try {
@@ -144,7 +163,9 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
         headers: {
           "Content-Type": "application/json",
         },
-        body: JSON.stringify({ question: messageToSend }),
+        body: JSON.stringify({
+          question,
+        }),
       });
 
       if (!response.ok) {
@@ -243,7 +264,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   const handleKeyDown = (e: React.KeyboardEvent) => {
     if (e.key === "Enter" && !e.shiftKey) {
       e.preventDefault();
-      handleSendMessage();
+      handleSendMessage({ message, cameraModel });
     }
   };
 
@@ -358,7 +379,12 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
               {examples.map((example) => (
                 <button
                   key={example.key}
-                  onClick={() => handleSendMessage(example.text)}
+                  onClick={() =>
+                    handleSendMessage({
+                      message: example.message,
+                      cameraModel: example.cameraModel,
+                    })
+                  }
                   className="text-left p-4 bg-base-200/50 hover:bg-base-200 border border-base-300 rounded-xl transition-all duration-200 hover:shadow-md hover:scale-[1.02] group cursor-pointer"
                 >
                   <div className="flex items-center space-x-3">
@@ -368,7 +394,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
                       {example.icon}
                     </div>
                     <span className="text-sm text-base-content group-hover:text-primary transition-colors">
-                      {example.text}
+                      {example.cameraModel} {example.message}
                     </span>
                   </div>
                 </button>
@@ -384,10 +410,27 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
       <div className="p-6 border-t border-base-300 bg-base-50">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-end space-x-3">
+            {/* Camera Selection */}
+            <div className="flex-shrink-0">
+              <select
+                value={cameraModel}
+                onChange={(e) => setCameraModel(e.target.value as CameraModel)}
+                className="select select-bordered h-12 bg-base-100 border-2 border-base-300 focus:border-primary focus:outline-none transition-all duration-200 text-sm rounded-2xl min-w-24"
+                disabled={isLoading}
+              >
+                {CAMERA_MODELS.toSorted().map((camera) => (
+                  <option key={camera} value={camera}>
+                    {camera}
+                  </option>
+                ))}
+              </select>
+            </div>
+
+            {/* Message Input */}
             <div className="flex-1 relative">
               <textarea
-                value={inputValue}
-                onChange={(e) => setInputValue(e.target.value)}
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder={messages.placeholder}
                 className="textarea textarea-bordered w-full resize-none min-h-12 max-h-32 rounded-2xl border-2 border-base-300 focus:border-primary focus:outline-none transition-all duration-200 bg-base-100 text-base-content placeholder:text-base-content/50 px-4 py-3 pr-12"
@@ -400,9 +443,10 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
                 autoFocus
               />
             </div>
+
             <button
-              onClick={() => handleSendMessage()}
-              disabled={!inputValue.trim() || isLoading}
+              onClick={() => handleSendMessage({ message, cameraModel })}
+              disabled={!message.trim() || isLoading}
               className="btn btn-primary btn-circle h-12 w-12 flex-shrink-0 shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
               title={messages.send}
             >
