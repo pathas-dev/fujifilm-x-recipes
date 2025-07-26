@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { memo, useEffect, useState } from "react";
 import { useTranslations } from "next-intl";
 import Image from "next/image";
 
@@ -123,11 +123,36 @@ const FilmStrip = ({ images }: FilmStripProps) => {
   );
 };
 
-interface LoadingIndicatorProps {
+interface ChatbotLoadingIndicatorProps {
   loadingMessage: string | null;
 }
 
-const LoadingIndicator = ({ loadingMessage }: LoadingIndicatorProps) => {
+const ChatbotLoadingIndicator = memo(function LoadingIndicator({
+  loadingMessage,
+}: ChatbotLoadingIndicatorProps) {
+  return (
+    <div className="flex justify-start animate-in slide-in-from-bottom-2 duration-300">
+      <div className="relative bg-base-200 text-base-content px-5 py-4 rounded-2xl rounded-bl-md border border-base-300 shadow-sm message-glow bot-message-glow overflow-hidden">
+        <FilmStrip images={filmImages} />
+
+        {/* 메인 콘텐츠 */}
+        <div className="relative z-10 flex items-center space-x-3">
+          <div className="relative">
+            <span className="loading loading-dots loading-sm text-primary"></span>
+            <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ping"></div>
+          </div>
+        </div>
+        <ElapsedTimer loadingMessage={loadingMessage} />
+      </div>
+    </div>
+  );
+});
+
+const ElapsedTimer = ({
+  loadingMessage,
+}: {
+  loadingMessage: string | null;
+}) => {
   const t = useTranslations("Chatbot");
   const [elapsedTime, setElapsedTime] = useState(0);
   const [dots, setDots] = useState("");
@@ -156,30 +181,17 @@ const LoadingIndicator = ({ loadingMessage }: LoadingIndicatorProps) => {
   }, []);
 
   return (
-    <div className="flex justify-start animate-in slide-in-from-bottom-2 duration-300">
-      <div className="relative bg-base-200 text-base-content px-5 py-4 rounded-2xl rounded-bl-md border border-base-300 shadow-sm message-glow bot-message-glow overflow-hidden">
-        <FilmStrip images={filmImages} />
-
-        {/* 메인 콘텐츠 */}
-        <div className="relative z-10 flex items-center space-x-3">
-          <div className="relative">
-            <span className="loading loading-dots loading-sm text-primary"></span>
-            <div className="absolute -top-1 -right-1 w-2 h-2 bg-primary rounded-full animate-ping"></div>
-          </div>
-          <div className="flex flex-col">
-            <span className="text-sm text-base-content/80 font-medium">
-              {loadingMessage}
-              {dots}
-            </span>
-            <span className="text-xs text-base-content/60 mt-1">
-              {elapsedTime.toFixed(1)}
-              {t("loadings.seconds")}
-            </span>
-          </div>
-        </div>
-      </div>
+    <div className="flex flex-col">
+      <span className="text-sm text-base-content/80 font-medium">
+        {loadingMessage}
+        {dots}
+      </span>
+      <span className="text-xs text-base-content/60 mt-1">
+        {elapsedTime.toFixed(1)}
+        {t("loadings.seconds")}
+      </span>
     </div>
   );
 };
 
-export default LoadingIndicator;
+export default ChatbotLoadingIndicator;

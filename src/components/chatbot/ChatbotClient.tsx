@@ -1,15 +1,15 @@
 "use client";
 
-import { SvgAiCurator, SvgAirplaneOutline } from "@/components/icon/svgs";
-import { CuratorResponse } from "@/types/recipe-schema";
-import { CAMERA_MODELS, CameraModel } from "@/types/camera-schema";
-import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
-import ReactMarkdown from "react-markdown";
-import ChatbotCuratedRecipeResponse from "./CuratedRecipeResponse";
-import LoadingIndicator from "./LoadingIndicator";
 import { AgentStep } from "@/app/api/chatbot/agent";
-import useCameraStore from "@/stores/camera";
+import { SvgAiCurator } from "@/components/icon/svgs";
+import { CuratorResponse } from "@/types/recipe-schema";
+import { CameraModel } from "@/types/camera-schema";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
+import ChatbotLoadingIndicator from "./ChatbotLoadingIndicator";
+import ChatbotMessageInput from "./ChatbotMessageInput";
+import ChatbotMessageList from "./ChatbotMessageList";
+import ChatbotExampleMessages from "./ChatbotExampleMessages";
 
 export interface ChatMessage {
   id: string;
@@ -32,189 +32,162 @@ const ChatbotClient = () => {
     },
   ]);
 
-  // AI 응답이 있는지 확인 (welcome 메시지 제외)
-  const hasAiResponses = chatMessages.some(
-    (msg) => !msg.isUser && msg.id !== "welcome"
-  );
-  const [message, setMessage] = useState("");
-  const { cameraModel, setCameraModel } = useCameraStore();
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState<string>(
     t("loadings.placeholder")
   );
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
-  const examples: {
-    key: string;
-    message: string;
-    cameraModel: CameraModel;
-    icon: string;
-    gradient: string;
-  }[] = [
-    {
-      key: "winter",
-      message: t("examples.winter"),
-      cameraModel: "X-T30",
-      icon: "❄️",
-      gradient: "from-blue-400 to-blue-600",
-    },
-    {
-      key: "cinematic",
-      message: t("examples.cinematic"),
-      cameraModel: "X-PRO3",
-      icon: "🎬",
-      gradient: "from-purple-400 to-purple-600",
-    },
-    {
-      key: "summer",
-      message: t("examples.summer"),
-      cameraModel: "X100VI",
-      icon: "☀️",
-      gradient: "from-green-400 to-teal-500",
-    },
-    {
-      key: "blackWhite",
-      message: t("examples.blackWhite"),
-      cameraModel: "X-T5",
-      icon: "🎞️",
-      gradient: "from-black to-white",
-    },
-  ];
+  // AI 응답이 있는지 확인 (welcome 메시지 제외) - useMemo로 최적화
+  const hasAiResponses = useMemo(
+    () => chatMessages.some((msg) => !msg.isUser && msg.id !== "welcome"),
+    [chatMessages]
+  );
 
-  const handleSendMessage = async ({
-    cameraModel,
-    message,
-  }: {
-    message: string;
-    cameraModel: CameraModel;
-  }) => {
-    if (!message.trim() || !cameraModel || isLoading) return;
+  const tAnalyzing = t("loadings.analyzing");
+  const tSearching = t("loadings.searching");
+  const tGenerating = t("loadings.generating");
+  const tProcessing = t("loadings.processing");
+  const tPlaceholder = t("loadings.placeholder");
+  const tError = t("error");
 
-    const question = `${cameraModel} ${message}`;
+  const handleSendMessage = useCallback(
+    async ({
+      cameraModel,
+      message,
+    }: {
+      message: string;
+      cameraModel: CameraModel;
+    }) => {
+      if (!message.trim() || !cameraModel || isLoading) return;
 
-    const userMessage: ChatMessage = {
-      id: Date.now().toString(),
-      content: question,
-      isUser: true,
-      timestamp: new Date(),
-    };
+      const question = `${cameraModel} ${message}`;
 
-    setChatMessages((prev) => [...prev, userMessage]);
-    setMessage("");
-    setIsLoading(true);
+      const userMessage: ChatMessage = {
+        id: Date.now().toString(),
+        content: question,
+        isUser: true,
+        timestamp: new Date(),
+      };
 
-    try {
-      const response = await fetch("/api/chatbot", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          question,
-        }),
-      });
+      setChatMessages((prev) => [...prev, userMessage]);
+      setIsLoading(true);
 
-      if (!response.ok) {
-        throw new Error("Failed to get response");
-      }
+      try {
+        const response = await fetch("/api/chatbot", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            question,
+          }),
+        });
 
-      const reader = response.body?.getReader();
-      const decoder = new TextDecoder();
+        if (!response.ok) {
+          throw new Error("Failed to get response");
+        }
 
-      if (!reader) {
-        throw new Error("No response body");
-      }
+        const reader = response.body?.getReader();
+        const decoder = new TextDecoder();
 
-      let buffer = "";
-      let currentEvent: "state" | "" | AgentStep = "";
+        if (!reader) {
+          throw new Error("No response body");
+        }
 
-      while (true) {
-        const { done, value } = await reader.read();
-        if (done) break;
+        let buffer = "";
+        let currentEvent: "state" | "" | AgentStep = "";
 
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split("\n");
-        buffer = lines.pop() || "";
+        while (true) {
+          const { done, value } = await reader.read();
+          if (done) break;
 
-        for (const line of lines) {
-          if (line.startsWith("event: ")) {
-            currentEvent = line.substring(7).trim() as AgentStep | "state";
+          buffer += decoder.decode(value, { stream: true });
+          const lines = buffer.split("\n");
+          buffer = lines.pop() || "";
 
-            // 상태별 로딩 메시지 업데이트
-          } else if (line.startsWith("data: ")) {
-            const dataContent = line.substring(6);
+          for (const line of lines) {
+            if (line.startsWith("event: ")) {
+              currentEvent = line.substring(7).trim() as AgentStep | "state";
 
-            try {
-              const eventData = JSON.parse(dataContent);
+              // 상태별 로딩 메시지 업데이트
+            } else if (line.startsWith("data: ")) {
+              const dataContent = line.substring(6);
 
-              switch (currentEvent) {
-                case "completed":
-                  if (typeof eventData === "string") {
+              try {
+                const eventData = JSON.parse(dataContent);
+
+                switch (currentEvent) {
+                  case "completed":
+                    if (typeof eventData === "string") {
+                      const botMessage: ChatMessage = {
+                        id: (Date.now() + 2).toString(),
+                        content: eventData,
+                        isUser: false,
+                        timestamp: new Date(),
+                        type: "text",
+                      };
+                      return setChatMessages((prev) => [...prev, botMessage]);
+                    }
                     const botMessage: ChatMessage = {
                       id: (Date.now() + 2).toString(),
                       content: eventData,
                       isUser: false,
                       timestamp: new Date(),
-                      type: "text",
+                      type: "recipe",
                     };
                     return setChatMessages((prev) => [...prev, botMessage]);
-                  }
-                  const botMessage: ChatMessage = {
-                    id: (Date.now() + 2).toString(),
-                    content: eventData,
-                    isUser: false,
-                    timestamp: new Date(),
-                    type: "recipe",
-                  };
-                  return setChatMessages((prev) => [...prev, botMessage]);
-                case "error":
-                  throw new Error(eventData.error || "Unknown error");
-                default:
-                  const stateMessages = {
-                    analyzing: t("loadings.analyzing"),
-                    searching: t("loadings.searching"),
-                    generating: t("loadings.generating"),
-                    processing: t("loadings.processing"),
-                  };
+                  case "error":
+                    throw new Error(eventData.error || "Unknown error");
+                  default:
+                    const stateMessages = {
+                      analyzing: tAnalyzing,
+                      searching: tSearching,
+                      generating: tGenerating,
+                      processing: tProcessing,
+                    };
 
-                  const currentStateMessage =
-                    stateMessages[
-                      eventData.step as keyof typeof stateMessages
-                    ] || t("loadings.placeholder");
+                    const currentStateMessage =
+                      stateMessages[
+                        eventData.step as keyof typeof stateMessages
+                      ] || tPlaceholder;
 
-                  setLoadingMessage(currentStateMessage);
-                  break;
+                    setLoadingMessage(currentStateMessage);
+                    break;
+                }
+              } catch (parseError) {
+                console.error("Error parsing SSE data:", parseError);
               }
-            } catch (parseError) {
-              console.error("Error parsing SSE data:", parseError);
             }
           }
         }
+      } catch (error) {
+        console.error("Chatbot error:", error);
+
+        const errorMessage: ChatMessage = {
+          id: (Date.now() + 1).toString(),
+          content: tError,
+          isUser: false,
+          timestamp: new Date(),
+          type: "text",
+        };
+        setChatMessages((prev) => [...prev, errorMessage]);
+      } finally {
+        setIsLoading(false);
       }
-    } catch (error) {
-      console.error("Chatbot error:", error);
+    },
+    [
+      isLoading,
+      tAnalyzing,
+      tSearching,
+      tGenerating,
+      tProcessing,
+      tPlaceholder,
+      tError,
+    ]
+  );
 
-      const errorMessage: ChatMessage = {
-        id: (Date.now() + 1).toString(),
-        content: t("error"),
-        isUser: false,
-        timestamp: new Date(),
-        type: "text",
-      };
-      setChatMessages((prev) => [...prev, errorMessage]);
-    } finally {
-      setIsLoading(false);
-    }
-  };
-
-  const handleKeyDown = (e: React.KeyboardEvent) => {
-    if (e.key === "Enter" && !e.shiftKey) {
-      e.preventDefault();
-      handleSendMessage({ message, cameraModel });
-    }
-  };
-
-  const scrollToBottom = () => {
+  const scrollToBottom = useCallback(() => {
     const scroll = () => {
       if (messagesEndRef.current) {
         const messagesContainer =
@@ -237,11 +210,11 @@ const ChatbotClient = () => {
     };
 
     setTimeout(scroll, 100);
-  };
+  }, []);
 
   useEffect(() => {
     scrollToBottom();
-  }, [chatMessages]);
+  }, [chatMessages, scrollToBottom]);
 
   return (
     <section className="w-full h-full flex flex-col bg-base-100 select-text">
@@ -263,148 +236,27 @@ const ChatbotClient = () => {
 
       {/* Messages */}
       <div className="flex-1 overflow-y-auto p-6 space-y-6 flex flex-col">
-        {chatMessages.map((message, index) => (
-          <div
-            key={message.id}
-            className={`flex ${
-              message.isUser ? "justify-end" : "justify-start"
-            } animate-in slide-in-from-bottom-2 duration-300`}
-            style={{ animationDelay: `${index * 50}ms` }}
-          >
-            {message.isUser ? (
-              <div
-                className="max-w-xs md:max-w-md lg:max-w-2xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow bg-primary text-primary-content rounded-br-md user-message-glow"
-                style={
-                  {
-                    "--glow-delay": `${index * 0.8}s`,
-                  } as React.CSSProperties
-                }
-              >
-                <p className="text-sm leading-relaxed whitespace-pre-wrap">
-                  {message.content as string}
-                </p>
-              </div>
-            ) : message.type === "recipe" ? (
-              <div className="max-w-xl md:max-w-2xl lg:max-w-4xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow bg-base-200 text-base-content rounded-bl-md border border-base-300 bot-message-glow">
-                <ChatbotCuratedRecipeResponse
-                  data={message.content as CuratorResponse}
-                />
-              </div>
-            ) : (
-              <div
-                className="max-w-xs md:max-w-md lg:max-w-2xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow bg-base-200 text-base-content rounded-bl-md border border-base-300 bot-message-glow"
-                style={
-                  {
-                    "--glow-delay": `${index * 0.8}s`,
-                  } as React.CSSProperties
-                }
-              >
-                <div className="text-sm text-base-content">
-                  <ReactMarkdown>{message.content as string}</ReactMarkdown>
-                </div>
-              </div>
-            )}
-          </div>
-        ))}
-        {isLoading && <LoadingIndicator loadingMessage={loadingMessage} />}
+        <ChatbotMessageList messages={chatMessages} />
+
+        {isLoading && (
+          <ChatbotLoadingIndicator loadingMessage={loadingMessage} />
+        )}
 
         {/* 예제 메시지들 - AI 응답이 없을 때만 표시 */}
-        {!hasAiResponses && !isLoading && (
-          <div className="flex-1 flex flex-col items-center justify-center space-y-3 animate-in slide-in-from-bottom-2 duration-500">
-            <div className="flex flex-col space-y-2 max-w-md w-full">
-              {examples.map((example) => (
-                <button
-                  key={example.key}
-                  onClick={() =>
-                    handleSendMessage({
-                      message: example.message,
-                      cameraModel,
-                    })
-                  }
-                  className="text-left p-4 bg-base-200/50 hover:bg-base-200 border border-base-300 rounded-xl transition-all duration-200 hover:shadow-md hover:scale-[1.02] group cursor-pointer"
-                >
-                  <div className="flex items-center space-x-3">
-                    <div
-                      className={`w-8 h-8 bg-gradient-to-br ${example.gradient} rounded-lg flex items-center justify-center text-white text-sm font-bold`}
-                    >
-                      {example.icon}
-                    </div>
-                    <span className="text-sm text-base-content group-hover:text-primary transition-colors">
-                      {example.message}
-                    </span>
-                  </div>
-                </button>
-              ))}
-            </div>
-          </div>
-        )}
+        <ChatbotExampleMessages
+          onSendMessage={handleSendMessage}
+          hasAiResponses={hasAiResponses}
+          isLoading={isLoading}
+        />
 
         <div ref={messagesEndRef} />
       </div>
 
       {/* Input */}
-      <div className="p-3 border-t border-base-300 bg-base-50">
-        <div className="max-w-4xl mx-auto space-y-1">
-          {/* Camera Selection - 모바일에서만 상단에 표시 */}
-          <select
-            value={cameraModel}
-            onChange={(e) => setCameraModel(e.target.value as CameraModel)}
-            className="select select-xs w-full sm:hidden bg-base-100 border border-base-300 focus:border-primary  text-xs focus:outline-none"
-            disabled={isLoading}
-          >
-            {CAMERA_MODELS.toSorted().map((camera) => (
-              <option key={camera} value={camera}>
-                {camera}
-              </option>
-            ))}
-          </select>
-
-          {/* Input Container */}
-          <div className="join w-full sm:gap-2">
-            {/* Camera Selection - sm 이상에서만 표시 */}
-            <select
-              value={cameraModel}
-              onChange={(e) => setCameraModel(e.target.value as CameraModel)}
-              className="join-item select hidden sm:flex bg-base-100 border-base-300 focus:border-primary rounded-sm focus:outline-none w-28 text-xs min-h-12"
-              disabled={isLoading}
-            >
-              {CAMERA_MODELS.toSorted().map((camera) => (
-                <option key={camera} value={camera}>
-                  {camera}
-                </option>
-              ))}
-            </select>
-
-            {/* Message Input */}
-            <div className="join-item flex-1 relative">
-              <textarea
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                onKeyDown={handleKeyDown}
-                placeholder={t("placeholder")}
-                className="textarea w-full resize-none min-h-12 max-h-32 bg-base-100 border-base-300 focus:border-primary focus:outline-none px-4 py-3 pr-12"
-                disabled={isLoading}
-                rows={1}
-                autoFocus
-              />
-
-              {/* Send Button */}
-              <button
-                onClick={() => handleSendMessage({ message, cameraModel })}
-                disabled={!message.trim() || isLoading}
-                className="absolute right-2 top-1/2 -translate-y-1/2 btn btn-primary btn-sm btn-square"
-                title={t("send")}
-              >
-                {isLoading ? (
-                  <span className="loading loading-spinner loading-sm"></span>
-                ) : (
-                  <SvgAirplaneOutline />
-                )}
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+      <ChatbotMessageInput
+        onSendMessage={handleSendMessage}
+        isLoading={isLoading}
+      />
     </section>
   );
 };

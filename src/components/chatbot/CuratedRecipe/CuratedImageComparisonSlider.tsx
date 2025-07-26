@@ -9,11 +9,11 @@ interface ImageComparisonSliderProps {
   afterImage: string;
 }
 
-const ImageComparisonSlider = ({
+const CuratedImageComparisonSlider = ({
   beforeImage,
   afterImage,
 }: ImageComparisonSliderProps) => {
-  const t = useTranslations('Chatbot');
+  const t = useTranslations("Chatbot");
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -69,7 +69,7 @@ const ImageComparisonSlider = ({
   return (
     <div className="mb-6">
       <div className="text-sm font-medium text-base-content/80 mb-3">
-        {t('imageComparisonSlider.title')}
+        {t("imageComparisonSlider.title")}
       </div>
       <div
         ref={containerRef}
@@ -80,7 +80,7 @@ const ImageComparisonSlider = ({
         {/* After Image (Full) */}
         <Image
           src={afterImage}
-          alt={t('imageComparisonSlider.retouched')}
+          alt={t("imageComparisonSlider.retouched")}
           className="absolute inset-0 w-full h-full object-cover"
           draggable={false}
           unoptimized
@@ -95,7 +95,7 @@ const ImageComparisonSlider = ({
         >
           <Image
             src={beforeImage}
-            alt={t('imageComparisonSlider.source')}
+            alt={t("imageComparisonSlider.source")}
             className="w-full h-full object-cover"
             draggable={false}
             unoptimized
@@ -126,14 +126,14 @@ const ImageComparisonSlider = ({
 
         {/* Labels */}
         <div className="absolute top-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-          {t('imageComparisonSlider.source')}
+          {t("imageComparisonSlider.source")}
         </div>
         <div className="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-          {t('imageComparisonSlider.retouched')}
+          {t("imageComparisonSlider.retouched")}
         </div>
       </div>
     </div>
   );
 };
 
-export default ImageComparisonSlider;
+export default CuratedImageComparisonSlider;

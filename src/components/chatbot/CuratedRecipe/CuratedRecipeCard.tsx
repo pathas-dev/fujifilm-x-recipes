@@ -1,4 +1,4 @@
-import ImageComparisonSlider from "./ImageComparisonSlider";
+import CuratedImageComparisonSlider from "./CuratedImageComparisonSlider";
 import RecipeUrlPreview from "./CuratedRecipeUrlPreview";
 import CuratedRecipeSettingItem from "./CuratedRecipeSettingItem";
 import { GeneratedByAIRecipe, RetrievedRecipe } from "@/types/recipe-schema";
@@ -69,7 +69,7 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
         "retouchedImage" in recipe &&
         recipe.sourceImage &&
         recipe.retouchedImage && (
-          <ImageComparisonSlider
+          <CuratedImageComparisonSlider
             beforeImage={recipe.sourceImage}
             afterImage={recipe.retouchedImage}
           />
