@@ -87,15 +87,27 @@ export const createCuratorPromptTemplate = () => {
 - 제목에 **(AI Generated)** 를 추가하세요. 
 - 참고한 자료들을 최대한 활용해서 추천 이유를 상세하게 작성하세요.
 - **추천 이유**에는 특정 레시피나 카메라 이름을 언급하지 말고, 필름이나 세팅 등의 특징들을 참고해서 작성하세요.
-- base 필름 시뮬레이션이 애매한 경우 Unknown 말고 기본값인 **Provia** 를 사용하세요.
+- base Film Simulation은 검색된 레시피 중에서 하나를 고르고 하나도 없는 경우 기본값인 **Provia** 를 사용하세요.
 `;
 
   const settingsGuide = `## 카메라 설정 가이드
 
+### Film Simulations
+- **PROVIA**: 표준, 만능, 자연스러운 색감
+- **Velvia**: 고채도, 고대비, 생생한 색감, 풍경용  
+- **ASTIA**: 소프트, 화사한 피부톤, 부드러운 색감, 인물용
+- **Classic Chrome**: 다큐멘터리, 차분한 색감, 낮은 채도, 매거진룩
+- **PRO Neg. Hi**: 인물용, 스튜디오, 강한 대비, 입체감
+- **PRO Neg. Std**: 인물용, 부드러운 계조, 자연스러운 피부톤
+- **Classic Negative**: 클래식필름, 스냅사진, 독특한 색감, 아날로그 감성
+- **ETERNA**: 영화적, 시네마틱, 낮은 채도, 영상용
+- **ETERNA Bleach Bypass**: 고대비 저채도, 하드한 느낌, 강렬함
+- **REALA ACE**: 충실한 색재현, 네거티브필름, 부드러운 계조
+- **NOSTALGIC Neg.**: 1970년대, 뉴컬러, 앰버톤, 따뜻한 감성
+- **ACROS**: 고품질 흑백, 풍부한 계조, 뛰어난 디테일
+- **Monochrome**: 표준 흑백, 깔끔함
+
 ### 주요 설정 효과
-- **Film Simulation**: [${FilmSimulations.join(
-    ", "
-  )}] 기본값: Provia - 후지필름 카메라의 필름 시뮬레이션 모드로, 각 모드에 따라 사진의 색감과 느낌이 달라짐.
 - **Dynamic Range**: [AUTO, DR100%, DR200%, DR400%] 기본값: AUTO - 높을수록 계조가 풍부해짐 (밝고 어두운 부분 디테일 향상)
 - **ISO**: 이미지 감도 설정, 낮을수록 노이즈 감소
 - **Exposure**: 노출 보정, 기본값: 0 - 높을 수록 밝아짐
