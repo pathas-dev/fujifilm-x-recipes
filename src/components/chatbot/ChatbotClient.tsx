@@ -4,6 +4,7 @@ import { SvgAiCurator, SvgAirplaneOutline } from "@/components/icon/svgs";
 import { CuratorResponse } from "@/types/recipe-schema";
 import { CAMERA_MODELS, CameraModel } from "@/types/camera-schema";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 import ReactMarkdown from "react-markdown";
 import ChatbotCuratedRecipeResponse from "./CuratedRecipeResponse";
 import LoadingIndicator from "./LoadingIndicator";
@@ -18,69 +19,13 @@ export interface ChatMessage {
   type?: "text" | "recipe";
 }
 
-export interface ChatbotClientProps {
-  messages: {
-    title: string;
-    subTitle: string;
-    placeholder: string;
-    send: string;
-    error: string;
-    welcome: string;
-    examples: {
-      winter: string;
-      cinematic: string;
-      summer: string;
-      blackWhite: string;
-    };
-    loadings: {
-      placeholder: string;
-      analyzing: string;
-      searching: string;
-      generating: string;
-      processing: string;
-      completed: string;
-      seconds: string;
-    };
-    curatedRecipe: {
-      aiCustomRecipe: string;
-      recommendedRecipe: string;
-      baseFilmSimulation: string;
-      recommendationReason: string;
-      cameraSettings: string;
-      filmSimulation: string;
-      exposure: string;
-      dynamicRange: string;
-      whiteBalance: string;
-      highlight: string;
-      shadow: string;
-      color: string;
-      sharpness: string;
-      clarity: string;
-      noiseReduction: string;
-      grainEffect: string;
-      grainSize: string;
-      colourChrome: string;
-      colourChromeFXBlue: string;
-      priority: string;
-    };
-    imageComparisonSlider: {
-      title: string;
-      source: string;
-      retouched: string;
-    };
-    curatedRecipeUrlPreview: {
-      title: string;
-      loading: string;
-      link: string;
-    };
-  };
-}
+const ChatbotClient = () => {
+  const t = useTranslations("Chatbot");
 
-const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
     {
       id: "welcome",
-      content: messages.welcome,
+      content: t("welcome"),
       isUser: false,
       timestamp: new Date(),
       type: "text",
@@ -95,12 +40,12 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   const { cameraModel, setCameraModel } = useCameraStore();
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState<string>(
-    messages.loadings.placeholder
+    t("loadings.placeholder")
   );
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const examples: {
-    key: keyof ChatbotClientProps["messages"]["examples"];
+    key: string;
     message: string;
     cameraModel: CameraModel;
     icon: string;
@@ -108,28 +53,28 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
   }[] = [
     {
       key: "winter",
-      message: messages.examples.winter,
+      message: t("examples.winter"),
       cameraModel: "X-T30",
       icon: "❄️",
       gradient: "from-blue-400 to-blue-600",
     },
     {
       key: "cinematic",
-      message: messages.examples.cinematic,
+      message: t("examples.cinematic"),
       cameraModel: "X-PRO3",
       icon: "🎬",
       gradient: "from-purple-400 to-purple-600",
     },
     {
       key: "summer",
-      message: messages.examples.summer,
+      message: t("examples.summer"),
       cameraModel: "X100VI",
       icon: "☀️",
       gradient: "from-green-400 to-teal-500",
     },
     {
       key: "blackWhite",
-      message: messages.examples.blackWhite,
+      message: t("examples.blackWhite"),
       cameraModel: "X-T5",
       icon: "🎞️",
       gradient: "from-black to-white",
@@ -226,16 +171,16 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
                   throw new Error(eventData.error || "Unknown error");
                 default:
                   const stateMessages = {
-                    analyzing: messages.loadings.analyzing,
-                    searching: messages.loadings.searching,
-                    generating: messages.loadings.generating,
-                    processing: messages.loadings.processing,
+                    analyzing: t("loadings.analyzing"),
+                    searching: t("loadings.searching"),
+                    generating: t("loadings.generating"),
+                    processing: t("loadings.processing"),
                   };
 
                   const currentStateMessage =
                     stateMessages[
                       eventData.step as keyof typeof stateMessages
-                    ] || messages.loadings.placeholder;
+                    ] || t("loadings.placeholder");
 
                   setLoadingMessage(currentStateMessage);
                   break;
@@ -251,7 +196,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
 
       const errorMessage: ChatMessage = {
         id: (Date.now() + 1).toString(),
-        content: messages.error,
+        content: t("error"),
         isUser: false,
         timestamp: new Date(),
         type: "text",
@@ -309,9 +254,9 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
           </div>
           <div>
             <h1 className="text-xl font-bold bg-gradient-to-r from-primary to-secondary inline-block text-transparent bg-clip-text">
-              {messages.title}
+              {t("title")}
             </h1>
-            <p className="text-xs text-base-content/70">{messages.subTitle}</p>
+            <p className="text-xs text-base-content/70">{t("subTitle")}</p>
           </div>
         </div>
       </div>
@@ -343,11 +288,6 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
               <div className="max-w-xl md:max-w-2xl lg:max-w-4xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow bg-base-200 text-base-content rounded-bl-md border border-base-300 bot-message-glow">
                 <ChatbotCuratedRecipeResponse
                   data={message.content as CuratorResponse}
-                  messages={messages.curatedRecipe}
-                  imageComparisonSliderMessages={messages.imageComparisonSlider}
-                  curatedRecipeUrlPreviewMessages={
-                    messages.curatedRecipeUrlPreview
-                  }
                 />
               </div>
             ) : (
@@ -366,12 +306,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
             )}
           </div>
         ))}
-        {isLoading && (
-          <LoadingIndicator
-            loadingMessage={loadingMessage}
-            messages={{ seconds: messages.loadings.seconds }}
-          />
-        )}
+        {isLoading && <LoadingIndicator loadingMessage={loadingMessage} />}
 
         {/* 예제 메시지들 - AI 응답이 없을 때만 표시 */}
         {!hasAiResponses && !isLoading && (
@@ -446,7 +381,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyDown={handleKeyDown}
-                placeholder={messages.placeholder}
+                placeholder={t("placeholder")}
                 className="textarea w-full resize-none min-h-12 max-h-32 bg-base-100 border-base-300 focus:border-primary focus:outline-none px-4 py-3 pr-12"
                 disabled={isLoading}
                 rows={1}
@@ -458,7 +393,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
                 onClick={() => handleSendMessage({ message, cameraModel })}
                 disabled={!message.trim() || isLoading}
                 className="absolute right-2 top-1/2 -translate-y-1/2 btn btn-primary btn-sm btn-square"
-                title={messages.send}
+                title={t("send")}
               >
                 {isLoading ? (
                   <span className="loading loading-spinner loading-sm"></span>

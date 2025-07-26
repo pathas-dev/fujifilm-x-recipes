@@ -3,18 +3,15 @@
 import { getOpenGraph, OpenGraph } from "@/utils/getOpenGraph";
 import Image from "next/image";
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import z from "zod";
 
 interface RecipeUrlPreviewProps {
   url: string;
-  messages?: {
-    title: string;
-    loading: string;
-    link: string;
-  };
 }
 
-const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
+const RecipeUrlPreview = ({ url }: RecipeUrlPreviewProps) => {
+  const t = useTranslations("Chatbot");
   const [openGraph, setOpenGraph] = useState<null | OpenGraph>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -62,7 +59,7 @@ const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
   return (
     <div className="mb-6">
       <div className="text-sm font-medium text-base-content/80 mb-3">
-        {messages?.title}
+        {t("curatedRecipeUrlPreview.title")}
       </div>
       {isLoading ? (
         <div className="bg-base-200 rounded-lg border border-base-300">
@@ -71,7 +68,7 @@ const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
             <div className="flex items-center justify-center py-2">
               <span className="loading loading-spinner loading-md"></span>
               <span className="ml-2 text-sm text-base-content/70">
-                {messages?.loading}
+                {t("curatedRecipeUrlPreview.loading")}
               </span>
             </div>
           </div>
@@ -109,7 +106,7 @@ const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
                 </p>
               )}
               <div className="flex items-center mt-3 text-xs text-primary">
-                <span>{messages?.link}</span>
+                <span>{t("curatedRecipeUrlPreview.link")}</span>
                 <svg
                   className="w-3 h-3 ml-1"
                   fill="none"
@@ -137,7 +134,7 @@ const RecipeUrlPreview = ({ url, messages }: RecipeUrlPreviewProps) => {
           <div className="flex items-center justify-between">
             <div>
               <div className="text-sm font-medium text-base-content">
-                {messages?.link}
+                {t("curatedRecipeUrlPreview.link")}
               </div>
               <div className="text-xs text-base-content/70 break-all">
                 {url}

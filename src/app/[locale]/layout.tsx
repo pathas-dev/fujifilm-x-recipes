@@ -113,33 +113,33 @@ export default async function RootLayout({
 
   return (
     <html lang={locale} data-theme={theme}>
-      <body
-        className={[
-          notoSans.className,
-          "drawer-content",
-          "flex",
-          "flex-col",
-          "h-dvh",
-          "overflow-hidden",
-          "w-full",
-          "relative",
-          "select-none",
-        ].join(" ")}
-        suppressHydrationWarning
-      >
-        <NavigationTop titles={navigationTitles} />
-        <main className="w-full h-[calc(100%-4rem)]">
-          <NextIntlClientProvider>{children}</NextIntlClientProvider>
-        </main>
-        <Toast />
-        <NextIntlClientProvider>
-          <NavigationBottom titles={navigationTitles} />
-        </NextIntlClientProvider>
-        <Help />
+      <NextIntlClientProvider>
+        <body
+          className={[
+            notoSans.className,
+            "drawer-content",
+            "flex",
+            "flex-col",
+            "h-dvh",
+            "overflow-hidden",
+            "w-full",
+            "relative",
+            "select-none",
+          ].join(" ")}
+          suppressHydrationWarning
+        >
+          <NavigationTop titles={navigationTitles} />
+          <main className="w-full h-[calc(100%-4rem)]">{children}</main>
+          <Toast />
 
-        <SpeedInsights />
-        <Analytics />
-      </body>
+          <NavigationBottom titles={navigationTitles} />
+
+          <Help />
+
+          <SpeedInsights />
+          <Analytics />
+        </body>
+      </NextIntlClientProvider>
     </html>
   );
 }

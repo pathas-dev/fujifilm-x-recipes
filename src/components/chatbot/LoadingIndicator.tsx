@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { useTranslations } from "next-intl";
 import Image from "next/image";
 
 const filmImages = [
@@ -123,16 +124,11 @@ const FilmStrip = ({ images }: FilmStripProps) => {
 };
 
 interface LoadingIndicatorProps {
-  messages: {
-    seconds: string;
-  };
   loadingMessage: string | null;
 }
 
-const LoadingIndicator = ({
-  messages,
-  loadingMessage,
-}: LoadingIndicatorProps) => {
+const LoadingIndicator = ({ loadingMessage }: LoadingIndicatorProps) => {
+  const t = useTranslations("Chatbot");
   const [elapsedTime, setElapsedTime] = useState(0);
   const [dots, setDots] = useState("");
 
@@ -177,7 +173,7 @@ const LoadingIndicator = ({
             </span>
             <span className="text-xs text-base-content/60 mt-1">
               {elapsedTime.toFixed(1)}
-              {messages.seconds}
+              {t("loadings.seconds")}
             </span>
           </div>
         </div>

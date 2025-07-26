@@ -2,22 +2,18 @@
 
 import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
+import { useTranslations } from "next-intl";
 
 interface ImageComparisonSliderProps {
   beforeImage: string;
   afterImage: string;
-  messages?: {
-    title: string;
-    source: string;
-    retouched: string;
-  };
 }
 
 const ImageComparisonSlider = ({
   beforeImage,
   afterImage,
-  messages,
 }: ImageComparisonSliderProps) => {
+  const t = useTranslations('Chatbot');
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -73,7 +69,7 @@ const ImageComparisonSlider = ({
   return (
     <div className="mb-6">
       <div className="text-sm font-medium text-base-content/80 mb-3">
-        {messages?.title}
+        {t('imageComparisonSlider.title')}
       </div>
       <div
         ref={containerRef}
@@ -84,7 +80,7 @@ const ImageComparisonSlider = ({
         {/* After Image (Full) */}
         <Image
           src={afterImage}
-          alt={messages?.retouched ?? ""}
+          alt={t('imageComparisonSlider.retouched')}
           className="absolute inset-0 w-full h-full object-cover"
           draggable={false}
           unoptimized
@@ -99,7 +95,7 @@ const ImageComparisonSlider = ({
         >
           <Image
             src={beforeImage}
-            alt={messages?.source ?? ""}
+            alt={t('imageComparisonSlider.source')}
             className="w-full h-full object-cover"
             draggable={false}
             unoptimized
@@ -130,10 +126,10 @@ const ImageComparisonSlider = ({
 
         {/* Labels */}
         <div className="absolute top-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-          {messages?.source}
+          {t('imageComparisonSlider.source')}
         </div>
         <div className="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-          {messages?.retouched}
+          {t('imageComparisonSlider.retouched')}
         </div>
       </div>
     </div>
