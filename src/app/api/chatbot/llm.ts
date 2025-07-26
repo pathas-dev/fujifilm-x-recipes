@@ -83,10 +83,12 @@ export const createCuratorPromptTemplate = () => {
 - **추천 이유**를 간략히 설명하세요
 
 ## 두 번째 레시피 요구사항
-- **제목**은 일관된 언어로 감성적으로 작성하세요
-- 제목에 **(AI Generated)** 를 추가하세요
+- **제목**은 일관된 언어로 감성적인 느낌을 살려서 작성하세요. ex) "한 여름밤의 꿈", "좋은 하루 끝", "Echoes of yesterday", "Dreaming in shades of twilight" 
+- 제목에 **(AI Generated)** 를 추가하세요. 
 - 추천 이유를 참고한 자료들을 최대한 활용해서 상세하게 작성하세요.
+- 추천 이유에 특정 레시피 이름은 언급하지 말고, 필름이나 세팅 등의 특징들을 주로 언급하세요.
 `;
+
   const settingsGuide = `## 카메라 설정 가이드
 
 ### 주요 설정 효과
