@@ -408,55 +408,65 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
       </div>
 
       {/* Input */}
-      <div className="p-6 border-t border-base-300 bg-base-50">
-        <div className="max-w-4xl mx-auto">
-          <div className="flex items-end space-x-3">
-            {/* Camera Selection */}
-            <div className="flex-shrink-0">
-              <select
-                value={cameraModel}
-                onChange={(e) => setCameraModel(e.target.value as CameraModel)}
-                className="select select-bordered h-12 bg-base-100 border-2 border-base-300 focus:border-primary focus:outline-none transition-all duration-200 text-sm rounded-2xl min-w-24"
-                disabled={isLoading}
-              >
-                {CAMERA_MODELS.toSorted().map((camera) => (
-                  <option key={camera} value={camera}>
-                    {camera}
-                  </option>
-                ))}
-              </select>
-            </div>
+      <div className="p-3 border-t border-base-300 bg-base-50">
+        <div className="max-w-4xl mx-auto space-y-1">
+          {/* Camera Selection - 모바일에서만 상단에 표시 */}
+          <select
+            value={cameraModel}
+            onChange={(e) => setCameraModel(e.target.value as CameraModel)}
+            className="select select-xs w-full sm:hidden bg-base-100 border border-base-300 focus:border-primary  text-xs focus:outline-none"
+            disabled={isLoading}
+          >
+            {CAMERA_MODELS.toSorted().map((camera) => (
+              <option key={camera} value={camera}>
+                {camera}
+              </option>
+            ))}
+          </select>
+
+          {/* Input Container */}
+          <div className="join w-full sm:gap-2">
+            {/* Camera Selection - sm 이상에서만 표시 */}
+            <select
+              value={cameraModel}
+              onChange={(e) => setCameraModel(e.target.value as CameraModel)}
+              className="join-item select hidden sm:flex bg-base-100 border-base-300 focus:border-primary focus:outline-none w-28 text-xs min-h-12"
+              disabled={isLoading}
+            >
+              {CAMERA_MODELS.toSorted().map((camera) => (
+                <option key={camera} value={camera}>
+                  {camera}
+                </option>
+              ))}
+            </select>
 
             {/* Message Input */}
-            <div className="flex-1 relative">
+            <div className="join-item flex-1 relative">
               <textarea
                 value={message}
                 onChange={(e) => setMessage(e.target.value)}
                 onKeyDown={handleKeyDown}
                 placeholder={messages.placeholder}
-                className="textarea textarea-bordered w-full resize-none min-h-12 max-h-32 rounded-2xl border-2 border-base-300 focus:border-primary focus:outline-none transition-all duration-200 bg-base-100 text-base-content placeholder:text-base-content/50 px-4 py-3 pr-12"
+                className="textarea w-full resize-none min-h-12 max-h-32 bg-base-100 border-base-300 focus:border-primary focus:outline-none px-4 py-3 pr-12"
                 disabled={isLoading}
                 rows={1}
-                style={{
-                  scrollbarWidth: "thin",
-                  scrollbarColor: "rgb(156 163 175) transparent",
-                }}
                 autoFocus
               />
-            </div>
 
-            <button
-              onClick={() => handleSendMessage({ message, cameraModel })}
-              disabled={!message.trim() || isLoading}
-              className="btn btn-primary btn-circle h-12 w-12 flex-shrink-0 shadow-lg hover:shadow-xl transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
-              title={messages.send}
-            >
-              {isLoading ? (
-                <span className="loading loading-spinner loading-sm"></span>
-              ) : (
-                <SvgAirplaneOutline />
-              )}
-            </button>
+              {/* Send Button */}
+              <button
+                onClick={() => handleSendMessage({ message, cameraModel })}
+                disabled={!message.trim() || isLoading}
+                className="absolute right-2 top-1/2 -translate-y-1/2 btn btn-primary btn-sm btn-square"
+                title={messages.send}
+              >
+                {isLoading ? (
+                  <span className="loading loading-spinner loading-sm"></span>
+                ) : (
+                  <SvgAirplaneOutline />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
