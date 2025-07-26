@@ -99,11 +99,11 @@ export const FilmSimulations = [
   "Velvia",
   "Acros",
   "Monochrome",
-  "Unknown",
 ] as const;
 
 export const FilmSimulatioSchema = z
   .enum(FilmSimulations)
+  .default("Provia")
   .describe("필름 시뮬레이션 타입");
 
 export const sizes = ["off", "small", "large"] as const;
