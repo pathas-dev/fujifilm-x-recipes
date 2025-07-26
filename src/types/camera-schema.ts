@@ -24,7 +24,7 @@ export const SENSOR_CAMERA_MAPPINGS = [
     sensor: "X-Trans III" as const,
     cameras: [
       "X100F",
-      "XE3",
+      "X-E3",
       "XF10",
       "X-H1",
       "X-PRO2",

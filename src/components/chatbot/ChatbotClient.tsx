@@ -8,6 +8,7 @@ import ReactMarkdown from "react-markdown";
 import ChatbotCuratedRecipeResponse from "./CuratedRecipeResponse";
 import LoadingIndicator from "./LoadingIndicator";
 import { AgentStep } from "@/app/api/chatbot/agent";
+import useCameraStore from "@/stores/camera";
 
 export interface ChatMessage {
   id: string;
@@ -91,7 +92,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
     (msg) => !msg.isUser && msg.id !== "welcome"
   );
   const [message, setMessage] = useState("");
-  const [cameraModel, setCameraModel] = useState<CameraModel>("X100V");
+  const { cameraModel, setCameraModel } = useCameraStore();
   const [isLoading, setIsLoading] = useState(false);
   const [loadingMessage, setLoadingMessage] = useState<string>(
     messages.loadings.placeholder
@@ -382,7 +383,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
                   onClick={() =>
                     handleSendMessage({
                       message: example.message,
-                      cameraModel: example.cameraModel,
+                      cameraModel,
                     })
                   }
                   className="text-left p-4 bg-base-200/50 hover:bg-base-200 border border-base-300 rounded-xl transition-all duration-200 hover:shadow-md hover:scale-[1.02] group cursor-pointer"
@@ -394,7 +395,7 @@ const ChatbotClient = ({ messages }: ChatbotClientProps) => {
                       {example.icon}
                     </div>
                     <span className="text-sm text-base-content group-hover:text-primary transition-colors">
-                      {example.cameraModel} {example.message}
+                      {example.message}
                     </span>
                   </div>
                 </button>
