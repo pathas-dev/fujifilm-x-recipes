@@ -7,13 +7,13 @@ export const COLOR_TYPES = ["Color", "B&W"] as const;
 export const SENSOR_CAMERA_MAPPINGS = [
   {
     sensor: "BAYER (type unknown)" as const,
-    cameras: ["X100", "Xt200", "XT200"] as const,
+    cameras: ["X100", "XT200", "XT200"] as const,
   },
   { sensor: "BAYER MF 100MP" as const, cameras: ["GFX 100s"] as const },
   { sensor: "BAYER MF 50MP" as const, cameras: ["GFX 50S"] as const },
   {
     sensor: "X-Trans I" as const,
-    cameras: ["X-E1", "X-M1", "X-PRO1", "X-Pro1"] as const,
+    cameras: ["X-E1", "X-M1", "X-PRO1"] as const,
   },
   {
     sensor: "X-Trans II" as const,
@@ -106,10 +106,10 @@ export const FilmSimulatioSchema = z
   .default("Provia")
   .describe("필름 시뮬레이션 타입");
 
-export const sizes = ["off", "small", "large"] as const;
-export const effects = ["off", "weak", "strong"] as const;
+export const sizes = ["OFF", "SMALL", "LARGE"] as const;
+export const effects = ["OFF", "WEAK", "STRONG"] as const;
 export const dynamicRanges = ["AUTO", "DR100%", "DR200%", "DR400%"] as const;
-export const priorities = ["auto", ...effects] as const;
+export const priorities = ["AUTO", ...effects] as const;
 
 // 후지필름 레시피 세팅 스키마 - parse.ts의 모든 설정 항목 포함
 export const FujifilmSettingsSchema = z.object({
@@ -125,27 +125,27 @@ export const FujifilmSettingsSchema = z.object({
     .describe("Dynamic Range - 넓은 계조와 디테일 보존"),
   priority: z
     .enum(priorities)
-    .default("auto")
+    .default("AUTO")
     .describe("Priority - 센서 원본 데이터 활용 설정"),
 
   // 그레인 및 텍스처
   grainEffect: z
     .enum(effects)
-    .default("off")
+    .default("OFF")
     .describe("Grain 효과 강도 - 필름 아날로그 질감"),
   grainSize: z
     .enum(sizes)
-    .default("off")
+    .default("OFF")
     .describe("Grain 입자 크기 - 거친 필름 질감"),
 
   // 컬러 크롬 효과
   colourChrome: z
     .enum(effects)
-    .default("off")
+    .default("OFF")
     .describe("Colour Chrome - 채도, 색상 깊이와 풍부함"),
   colourChromeFXBlue: z
     .enum(effects)
-    .default("off")
+    .default("OFF")
     .describe("Colour Chrome Blue - 파란색 계열 강조"),
 
   // 화이트 밸런스
