@@ -1,9 +1,9 @@
 'use client';
 import { Camera } from '@/types/api';
 import { SettingI18NMessages } from '@/types/language';
-import { useTranslations } from 'next-intl';
 import dayjs from 'dayjs';
 import { produce } from 'immer';
+import { useTranslations } from 'next-intl';
 import {
   ReactElement,
   forwardRef,
@@ -13,15 +13,13 @@ import {
 } from 'react';
 import { v4 as uuidv4 } from 'uuid';
 import { SvgDocumentCheck, SvgDocumentPlus } from '../icon/svgs';
-import ExportButton from './ExportButton';
-import { CustomInput, CustomSelect } from './SettingInput';
-import SettingTab from './SettingTab';
 import {
   CustomRecipe,
   ERROR_TYPES,
   getInitialCustomRecipe,
   initialSettings,
 } from './customRecipe';
+import ExportButton from './ExportButton';
 import {
   COLOR_CHROME,
   COLOR_CHROME_FX_BLUE,
@@ -30,6 +28,8 @@ import {
   WHITE_BALANCES,
 } from './fujiSettings';
 import ImportButton from './ImportButton';
+import { CustomInput, CustomSelect } from './SettingInput';
+import SettingTab from './SettingTab';
 
 export interface ICustomEditCardProps {
   customRecipe?: CustomRecipe;
@@ -641,18 +641,16 @@ const TabNavigation = forwardRef<HTMLElement, ITabNavigationProps>(
     return (
       <nav
         role="tablist"
-        className="tabs tabs-boxed w-full overflow-auto scroll-smooth"
+        className="tabs tabs-box w-full gap-2 overflow-auto scroll-smooth"
         ref={ref}
       >
         {tabs.map((tab) => {
           const isActive = tab.id === currentTab;
-          const className = isActive
-            ? 'tab min-w-max tab-active'
-            : 'tab min-w-max';
+
           return (
             <a
               role="tab"
-              className={className}
+              className={`tab min-w-10 p-2 text-xs ${isActive ? 'tab-active' : ''}`}
               key={tab.id}
               onClick={() => onChangeTab(tab.id)}
             >
