@@ -4,9 +4,7 @@ import { STORAGE_CUSTOM_RECIPES_KEY } from "./CustomList";
 import useToastStore from "@/stores/toast";
 import { useTranslations } from "next-intl";
 
-interface IExportButtonProps {}
-
-const ExportButton = ({}: IExportButtonProps) => {
+const ExportButton = () => {
   const tSendEmail = useTranslations("SendEmail");
   
   const placeholder = tSendEmail("placeholder");

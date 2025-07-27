@@ -7,13 +7,13 @@ import { SvgArrowRightEndOnRectangle, SvgCheckSolid } from '../icon/svgs';
 import { STORAGE_CUSTOM_RECIPES_KEY } from './CustomList';
 import { CustomRecipe } from './customRecipe';
 
-interface IExportButtonProps {
+interface IImportButtonProps {
   onImportSuccess?: (unionRecipes: CustomRecipe[]) => void;
 }
 
 const ImportButton = ({
   onImportSuccess,
-}: IExportButtonProps) => {
+}: IImportButtonProps) => {
   const tImportFile = useTranslations("ImportFile");
   
   const successMessage = tImportFile("success");
