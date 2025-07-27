@@ -1,17 +1,6 @@
-import ThemeSwitch from '@/components/settings/ThemeSwitch';
-import {
-  SvgBeakerMini,
-  SvgCameraMini,
-  SvgChevronRight,
-  SvgQuestionMarkCircleMini,
-  SvgSparklesMini,
-} from '@/components/icon/svgs';
-import { Link, localeIntl } from '@/i18n/navigation';
-import { setRequestLocale } from 'next-intl/server';
-import HideCardImageToggle from '@/components/settings/HideCardImageToggle';
-import packageJson from '../../../../package.json';
-import { NextIntlClientProvider } from 'next-intl';
 import SettingsContent from '@/components/settings/SettingsContent';
+import { localeIntl } from '@/i18n/navigation';
+import { setRequestLocale } from 'next-intl/server';
 
 const SettingsPage = async (
   props: Readonly<{
@@ -26,9 +15,7 @@ const SettingsPage = async (
   return (
     <section className="h-full w-full">
       <main className="h-full w-full overflow-x-hidden overflow-y-auto scroll-smooth p-2">
-        <NextIntlClientProvider>
-          <SettingsContent />
-        </NextIntlClientProvider>
+        <SettingsContent />
       </main>
     </section>
   );

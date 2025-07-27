@@ -1,7 +1,6 @@
-import { setRequestLocale } from 'next-intl/server';
-import { localeIntl } from '@/i18n/navigation';
 import ChatbotClient from '@/components/chatbot/ChatbotClient';
-import { NextIntlClientProvider } from 'next-intl';
+import { localeIntl } from '@/i18n/navigation';
+import { setRequestLocale } from 'next-intl/server';
 
 export default async function ChatbotPage(
   props: Readonly<{
@@ -12,9 +11,5 @@ export default async function ChatbotPage(
   const { locale } = params;
   setRequestLocale(locale);
 
-  return (
-    <NextIntlClientProvider>
-      <ChatbotClient />
-    </NextIntlClientProvider>
-  );
+  return <ChatbotClient />;
 }

@@ -2,7 +2,6 @@ import { getRecipesWithFilters } from '@/app/api/data/localData';
 import BookmarkList from '@/components/bookmark/BookmarkList';
 import { localeIntl } from '@/i18n/navigation';
 import { setRequestLocale } from 'next-intl/server';
-import { NextIntlClientProvider } from 'next-intl';
 
 export default async function Bookmarks(
   props: Readonly<{
@@ -16,9 +15,5 @@ export default async function Bookmarks(
 
   const { recipes, filters } = await getRecipesWithFilters();
 
-  return (
-    <NextIntlClientProvider>
-      <BookmarkList recipes={recipes} filters={filters} />
-    </NextIntlClientProvider>
-  );
+  return <BookmarkList recipes={recipes} filters={filters} />;
 }
