@@ -39,7 +39,7 @@ export const retrieve = async (
   const pineconeRetriever = vectorStore.asRetriever({
     k: 3,
     searchType: "mmr",
-    searchKwargs: { fetchK: 10 },
+    searchKwargs: { fetchK: 15, lambda: 0.2 },
     filter: { ...metadata },
   });
   console.log("🚀 ~ metadata:", metadata);
