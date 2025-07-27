@@ -1,11 +1,11 @@
 'use client';
 
 import useToastStore from '@/stores/toast';
-import { SettingMessages } from '@/types/language';
 import dayjs from 'dayjs';
 import { animate, inView, motion } from 'framer-motion';
 import lzString from 'lz-string';
 import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import {
   SvgArrowUTurnLeft,
   SvgCalendarDaysMicro,
@@ -30,6 +30,7 @@ export const QUERY_KEY_ADD_RECIPE = 'add';
 
 interface ICustomCardProps
   extends Omit<ICustomEditCardProps, 'onSuccess' | 'onError'> {
+  customRecipe: CustomRecipe;
   onUpdateSuccess: (recipe: CustomRecipe) => void;
   onUpdateError: (errorType: (typeof ERROR_TYPES)[number]) => void;
   onDeleteSuccess: (customRecipe: CustomRecipe) => void;
@@ -40,11 +41,96 @@ const CustomCard = ({
   filters,
   onUpdateError,
   onUpdateSuccess,
-  settingMessages,
-  copyAndPasteMessages,
   customRecipe,
   onDeleteSuccess,
 }: ICustomCardProps) => {
+  // Translation hooks  
+  const tSettings = useTranslations("Settings");
+  const tCopyAndPasteMessages = useTranslations("CopyAndPasteMessages");
+
+  // Create message objects from translations
+  const settingMessages = {
+    newTitle: tSettings("newTitle"),
+    updateTitle: tSettings("updateTitle"),
+    placeholders: {
+      name: tSettings("placeholders.name"),
+      camera: tSettings("placeholders.camera"),
+      base: tSettings("placeholders.base"),
+    },
+    labels: {
+      highlight: tSettings("labels.highlight"),
+      tone: tSettings("labels.tone"),
+      shadow: tSettings("labels.shadow"),
+      grain: tSettings("labels.grain"),
+      grainSize: tSettings("labels.grainSize"),
+      grainRoughness: tSettings("labels.grainRoughness"),
+      dynamicRange: tSettings("labels.dynamicRange"),
+      colorChromeEffect: tSettings("labels.colorChromeEffect"),
+      colorChromeFXBlue: tSettings("labels.colorChromeFXBlue"),
+      sharpness: tSettings("labels.sharpness"),
+      color: tSettings("labels.color"),
+      clarity: tSettings("labels.clarity"),
+      isoNoiseReduction: tSettings("labels.isoNoiseReduction"),
+      exposure: tSettings("labels.exposure"),
+      iso: tSettings("labels.iso"),
+      whiteBalance: tSettings("labels.whiteBalance"),
+      whiteBalanceK: tSettings("labels.whiteBalanceK"),
+      whiteBalanceShift: tSettings("labels.whiteBalanceShift"),
+      bwAdj: tSettings("labels.bwAdj"),
+    },
+    options: {
+      effects: {
+        off: tSettings("options.effects.off"),
+        strong: tSettings("options.effects.strong"),
+        weak: tSettings("options.effects.weak"),
+      },
+      sizes: {
+        off: tSettings("options.sizes.off"),
+        large: tSettings("options.sizes.large"),
+        small: tSettings("options.sizes.small"),
+      },
+      whiteBalances: {
+        autoWhitePriority: tSettings("options.whiteBalances.autoWhitePriority"),
+        auto: tSettings("options.whiteBalances.auto"),
+        autoAmbiencePriority: tSettings(
+          "options.whiteBalances.autoAmbiencePriority"
+        ),
+        measure: tSettings("options.whiteBalances.measure"),
+        k: tSettings("options.whiteBalances.k"),
+        sunlight: tSettings("options.whiteBalances.sunlight"),
+        shade: tSettings("options.whiteBalances.shade"),
+        daylight: tSettings("options.whiteBalances.daylight"),
+        warmWhite: tSettings("options.whiteBalances.warmWhite"),
+        coolWhite: tSettings("options.whiteBalances.coolWhite"),
+        incandescent: tSettings("options.whiteBalances.incandescent"),
+        underwater: tSettings("options.whiteBalances.underwater"),
+      },
+    },
+    errors: {
+      noName: tSettings("errors.noName"),
+      noCamera: tSettings("errors.noCamera"),
+      noBase: tSettings("errors.noBase"),
+    },
+    successes: {
+      create: tSettings("successes.create"),
+      update: tSettings("successes.update"),
+    },
+  };
+
+  const copyAndPasteMessages = {
+    copy: {
+      success: tCopyAndPasteMessages("copy.success"),
+      fail: tCopyAndPasteMessages("copy.fail"),
+    },
+    paste: {
+      success: tCopyAndPasteMessages("paste.success"),
+      errors: {
+        invalidURL: tCopyAndPasteMessages("paste.errors.invalidURL"),
+        invalidScheme: tCopyAndPasteMessages("paste.errors.invalidScheme"),
+      },
+    },
+  };
+
   const [mode, setMode] = useState<(typeof CARD_MODES)[number]>('READ');
   const [deleteTimer, setDeleteTimer] = useState<NodeJS.Timeout>();
   const setToastMessage = useToastStore((state) => state.setMessage);
@@ -70,7 +156,6 @@ const CustomCard = ({
         cameras={cameras}
         customRecipe={customRecipe}
         filters={filters}
-        settingMessages={settingMessages}
         onSuccess={(recipe) => {
           onUpdateSuccess(recipe);
           setMode('READ');
@@ -87,13 +172,11 @@ const CustomCard = ({
     : 'from-black to-white';
 
   const getWhiteBalanceDisplayValue = ({
-    settingLabel,
     whiteBalance,
   }: {
     whiteBalance: WhiteBalance;
-    settingLabel: SettingMessages;
   }) => {
-    const label = settingLabel.options.whiteBalances[whiteBalance.type];
+    const label = settingMessages.options.whiteBalances[whiteBalance.type];
 
     if (whiteBalance.type === 'k') return `${whiteBalance.k}${label}`;
 
@@ -192,7 +275,6 @@ const CustomCard = ({
       defaultValue: initialSettings.whiteBalance.type,
       displayValue: getWhiteBalanceDisplayValue({
         whiteBalance: customRecipe.settings.whiteBalance,
-        settingLabel: settingMessages,
       }),
     },
     {

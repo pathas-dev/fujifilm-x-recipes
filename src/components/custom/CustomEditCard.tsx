@@ -1,12 +1,9 @@
 'use client';
 import { Camera } from '@/types/api';
 import {
-  CopyAndPasteMessages,
-  ImportFileMessages,
-  SendEmailMessages,
   SettingI18NMessages,
-  SettingMessages,
 } from '@/types/language';
+import { useTranslations } from 'next-intl';
 import dayjs from 'dayjs';
 import { produce } from 'immer';
 import {
@@ -43,10 +40,6 @@ export interface ICustomEditCardProps {
     bases: string[];
     sensors: string[];
   };
-  settingMessages: SettingMessages;
-  sendEmailMessages?: SendEmailMessages;
-  importFileMessages?: ImportFileMessages;
-  copyAndPasteMessages?: CopyAndPasteMessages;
 
   cameras: Camera[];
   onSuccess: (recipe: CustomRecipe) => void;
@@ -57,14 +50,105 @@ export interface ICustomEditCardProps {
 const CustomEditCard = ({
   customRecipe,
   filters,
-  settingMessages,
-  sendEmailMessages,
-  importFileMessages,
   cameras,
   onSuccess,
   onError,
   onImportSuccess,
 }: ICustomEditCardProps) => {
+  // Translation hooks
+  const tSettings = useTranslations("Settings");
+  const tSendEmail = useTranslations("SendEmail");
+  const tImportFile = useTranslations("ImportFile");
+
+  // Create message objects from translations
+  const settingMessages = {
+    newTitle: tSettings("newTitle"),
+    updateTitle: tSettings("updateTitle"),
+    placeholders: {
+      name: tSettings("placeholders.name"),
+      camera: tSettings("placeholders.camera"),
+      base: tSettings("placeholders.base"),
+    },
+    labels: {
+      highlight: tSettings("labels.highlight"),
+      tone: tSettings("labels.tone"),
+      shadow: tSettings("labels.shadow"),
+      grain: tSettings("labels.grain"),
+      grainSize: tSettings("labels.grainSize"),
+      grainRoughness: tSettings("labels.grainRoughness"),
+      dynamicRange: tSettings("labels.dynamicRange"),
+      colorChromeEffect: tSettings("labels.colorChromeEffect"),
+      colorChromeFXBlue: tSettings("labels.colorChromeFXBlue"),
+      sharpness: tSettings("labels.sharpness"),
+      color: tSettings("labels.color"),
+      clarity: tSettings("labels.clarity"),
+      isoNoiseReduction: tSettings("labels.isoNoiseReduction"),
+      exposure: tSettings("labels.exposure"),
+      iso: tSettings("labels.iso"),
+      whiteBalance: tSettings("labels.whiteBalance"),
+      whiteBalanceK: tSettings("labels.whiteBalanceK"),
+      whiteBalanceShift: tSettings("labels.whiteBalanceShift"),
+      bwAdj: tSettings("labels.bwAdj"),
+    },
+    options: {
+      effects: {
+        off: tSettings("options.effects.off"),
+        strong: tSettings("options.effects.strong"),
+        weak: tSettings("options.effects.weak"),
+      },
+      sizes: {
+        off: tSettings("options.sizes.off"),
+        large: tSettings("options.sizes.large"),
+        small: tSettings("options.sizes.small"),
+      },
+      whiteBalances: {
+        autoWhitePriority: tSettings("options.whiteBalances.autoWhitePriority"),
+        auto: tSettings("options.whiteBalances.auto"),
+        autoAmbiencePriority: tSettings(
+          "options.whiteBalances.autoAmbiencePriority"
+        ),
+        measure: tSettings("options.whiteBalances.measure"),
+        k: tSettings("options.whiteBalances.k"),
+        sunlight: tSettings("options.whiteBalances.sunlight"),
+        shade: tSettings("options.whiteBalances.shade"),
+        daylight: tSettings("options.whiteBalances.daylight"),
+        warmWhite: tSettings("options.whiteBalances.warmWhite"),
+        coolWhite: tSettings("options.whiteBalances.coolWhite"),
+        incandescent: tSettings("options.whiteBalances.incandescent"),
+        underwater: tSettings("options.whiteBalances.underwater"),
+      },
+    },
+    errors: {
+      noName: tSettings("errors.noName"),
+      noCamera: tSettings("errors.noCamera"),
+      noBase: tSettings("errors.noBase"),
+    },
+    successes: {
+      create: tSettings("successes.create"),
+      update: tSettings("successes.update"),
+    },
+  };
+
+  const sendEmailMessages = {
+    placeholder: tSendEmail("placeholder"),
+    success: tSendEmail("success"),
+    errors: {
+      noEmail: tSendEmail("errors.noEmail"),
+      noData: tSendEmail("errors.noData"),
+    },
+    tooltip: tSendEmail("tooltip"),
+  };
+
+  const importFileMessages = {
+    success: tImportFile("success"),
+    errors: {
+      noFile: tImportFile("errors.noFile"),
+      noData: tImportFile("errors.noData"),
+      notJson: tImportFile("errors.notJson"),
+    },
+    tooltip: tImportFile("tooltip"),
+  };
+
   const [recipe, setRecipe] = useState(getInitialCustomRecipe());
 
   const refTab = useRef<HTMLElement | null>(null);
