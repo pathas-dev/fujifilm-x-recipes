@@ -93,18 +93,20 @@ const ChatbotMessageInput = memo(() => {
             />
 
             {/* Send Button */}
-            <button
-              onClick={handleSendMessage}
-              disabled={!message.trim() || isLoading}
-              className="btn btn-primary btn-sm btn-square absolute top-1/2 right-2 -translate-y-1/2"
-              title={t('send')}
-            >
-              {isLoading ? (
-                <span className="loading loading-spinner loading-sm"></span>
-              ) : (
-                <SvgAirplaneOutline />
-              )}
-            </button>
+            <div className="absolute top-1/2 right-2 -translate-y-1/2">
+              <button
+                onClick={handleSendMessage}
+                disabled={!message.trim() || isLoading}
+                className="btn btn-primary btn-sm btn-square"
+                title={t('send')}
+              >
+                {isLoading ? (
+                  <span className="loading loading-spinner loading-sm"></span>
+                ) : (
+                  <SvgAirplaneOutline />
+                )}
+              </button>
+            </div>
           </div>
         </div>
       </div>
