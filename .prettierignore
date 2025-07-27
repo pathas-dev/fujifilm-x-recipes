@@ -1,0 +1,41 @@
+# Dependencies
+node_modules/
+pnpm-lock.yaml
+
+# Build outputs
+.next/
+out/
+dist/
+build/
+
+# Environment files
+.env*
+
+# Logs
+*.log
+
+# Cache
+.cache/
+.turbo/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# IDE files
+.vscode/
+.idea/
+
+# Git
+.git/
+
+# Other
+*.min.js
+*.min.css
+public/
+coverage/
+.nyc_output/
+
+# MDX and Markdown (optional - remove if you want to format these)
+*.mdx
+*.md
