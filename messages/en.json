@@ -29,6 +29,18 @@
       "completed": "Completed",
       "seconds": "s passed"
     },
+    "history": {
+      "title": "Chat History",
+      "newChat": "New Chat",
+      "empty": "No saved conversations",
+      "emptySubtitle": "Start chatting with AI!",
+      "deleteConfirm": "Are you sure you want to delete this conversation?",
+      "deleteTitle": "Delete",
+      "cancel": "Cancel",
+      "delete": "Delete",
+      "messageCount": " messages",
+      "newConversation": "New Conversation"
+    },
     "curatedRecipe": {
       "aiCustomRecipe": "AI Custom Recipe",
       "recommendedRecipe": "Recommended Recipe",

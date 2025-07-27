@@ -29,6 +29,18 @@
       "completed": "완료되었습니다",
       "seconds": "초 경과"
     },
+    "history": {
+      "title": "대화 기록",
+      "newChat": "새 대화",
+      "empty": "저장된 대화가 없습니다",
+      "emptySubtitle": "AI와 대화를 시작해보세요!",
+      "deleteConfirm": "이 대화를 삭제하시겠습니까?",
+      "deleteTitle": "삭제",
+      "cancel": "취소",
+      "delete": "삭제",
+      "messageCount": "개 메시지",
+      "newConversation": "새로운 대화"
+    },
     "curatedRecipe": {
       "aiCustomRecipe": "AI 맞춤 레시피",
       "recommendedRecipe": "추천 레시피",
