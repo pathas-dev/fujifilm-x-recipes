@@ -75,27 +75,38 @@ src/
 │   │   ├── cameras/       # 카메라 API
 │   │   ├── origins/       # 오리진 API
 │   │   └── data/          # 데이터 API
-│   ├── constants/         # 상수 정의
 │   ├── globals.css        # 전역 스타일 (Tailwind + DaisyUI)
 │   └── actions.ts         # 서버 액션
 ├── components/
 │   ├── chatbot/           # AI 큐레이터 컴포넌트
 │   │   ├── ChatbotClient.tsx
-│   │   ├── CuratedRecipeCard.tsx
-│   │   ├── CuratedRecipeResponse.tsx
-│   │   ├── CuratedRecipeUrlPreview.tsx
-│   │   └── LoadingIndicator.tsx
+│   │   ├── ChatbotHistory.tsx
+│   │   ├── ChatbotHeader.tsx
+│   │   ├── ChatbotMessageInput.tsx
+│   │   ├── ChatbotMessageList.tsx
+│   │   ├── ChatbotLoadingIndicator.tsx
+│   │   ├── ChatbotExampleMessages.tsx
+│   │   ├── useChatMessages.ts
+│   │   └── CuratedRecipe/
+│   │       ├── CuratedImageComparisonSlider.tsx
+│   │       └── ...
 │   ├── recipe/            # 레시피 컴포넌트
 │   ├── camera/            # 카메라 컴포넌트
 │   ├── custom/            # 커스텀 레시피 컴포넌트
 │   ├── common/            # 공통 컴포넌트
-│   └── settings/          # 설정 컴포넌트
+│   │   ├── ConfirmModal.tsx
+│   │   └── ...
+│   ├── settings/          # 설정 컴포넌트
+│   └── icon/              # 아이콘 컴포넌트
 ├── hooks/                 # 커스텀 React 훅
 ├── i18n/                  # 국제화 설정 (next-intl)
 ├── stores/                # Zustand 스토어
-│   └── camera.ts          # 카메라 상태 관리
+│   ├── chat.ts            # 채팅 상태 관리
+│   ├── customRecipe.ts    # 커스텀 레시피 상태 관리
+│   └── ...
 ├── types/                 # TypeScript 타입 정의
-│   └── camera-schema.ts   # 카메라 스키마
+│   ├── recipe-schema.ts   # 레시피 스키마
+│   └── ...
 ├── utils/                 # 유틸리티 함수
 │   └── retouchImage.ts    # 이미지 보정 유틸
 └── mdx-components.tsx     # MDX 컴포넌트 설정
@@ -112,6 +123,9 @@ GOOGLE_API_KEY=your_google_api_key
 # Pinecone (벡터 검색)
 PINECONE_API_KEY=your_pinecone_api_key
 PINECONE_INDEX_NAME=your_index_name
+
+# MongoDB (선택사항 - 채팅 기록 저장)
+MONGODB_URI=your_mongodb_connection_string
 ```
 
 ## 주요 설정 파일
@@ -121,6 +135,9 @@ PINECONE_INDEX_NAME=your_index_name
 - `src/app/globals.css`: DaisyUI 테마 및 커스텀 스타일
 - `messages/`: 다국어 번역 파일 (ko.json, en.json)
 - `src/i18n/`: next-intl 국제화 설정
+- `.prettierrc`: Prettier 코드 포맷팅 설정
+- `.prettierignore`: Prettier 제외 파일 설정
+- `eslint.config.mjs`: ESLint 9 설정
 
 ## 🚀 빌드 & 배포
 
@@ -149,6 +166,8 @@ pnpm lint
 - Pinecone 벡터 데이터베이스를 통한 의미 기반 레시피 검색
 - Sharp를 이용한 실시간 이미지 보정 미리보기
 - Zod 스키마를 통한 구조화된 AI 응답 검증
+- 채팅 기록 관리 및 대화 히스토리 기능
+- 실시간 로딩 상태 및 단계별 처리 과정 표시
 
 ### 📱 PWA 지원
 
