@@ -2,13 +2,6 @@
 
 import useToastStore from "@/stores/toast";
 import { Camera } from "@/types/api";
-import {
-  CopyAndPasteMessages,
-  HeaderMessages,
-  ImportFileMessages,
-  SendEmailMessages,
-  SettingMessages,
-} from "@/types/language";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
 import { produce } from "immer";
@@ -24,6 +17,7 @@ import {
   useRef,
   useState,
 } from "react";
+import { useTranslations } from "next-intl";
 import RecipeFilterHeader, {
   DropboxItem,
   IDropboxProps,
@@ -50,11 +44,6 @@ interface ICardListProps {
     bases: string[];
     sensors: string[];
   };
-  headerMessages: HeaderMessages;
-  settingMessages: SettingMessages;
-  sendEmailMessages: SendEmailMessages;
-  importFileMessages: ImportFileMessages;
-  copyAndPasteMessages: CopyAndPasteMessages;
   cameras: Camera[];
 }
 
@@ -66,13 +55,105 @@ export const STORAGE_CUSTOM_RECIPES_KEY = "customRecipes";
 
 const CustomList = ({
   filters,
-  headerMessages,
-  settingMessages,
-  sendEmailMessages,
-  importFileMessages,
-  copyAndPasteMessages,
   cameras,
 }: ICardListProps) => {
+  // Translation hooks
+  const tHeaders = useTranslations("Headers");
+  const tSettings = useTranslations("Settings");
+  const tCopyAndPasteMessages = useTranslations("CopyAndPasteMessages");
+
+  // Create message objects from translations  
+  const headerMessages = {
+    bwOnly: tHeaders("bwOnly"),
+    dateLabel: tHeaders("dateLabel"),
+    nameLabel: tHeaders("nameLabel"),
+    baseLabel: tHeaders("baseLabel"),
+    cameraLabel: tHeaders("cameraLabel"),
+    creatorLabel: tHeaders("creatorLabel"),
+  };
+
+  const settingMessages = {
+    newTitle: tSettings("newTitle"),
+    updateTitle: tSettings("updateTitle"),
+    placeholders: {
+      name: tSettings("placeholders.name"),
+      camera: tSettings("placeholders.camera"),
+      base: tSettings("placeholders.base"),
+    },
+    labels: {
+      highlight: tSettings("labels.highlight"),
+      tone: tSettings("labels.tone"),
+      shadow: tSettings("labels.shadow"),
+      grain: tSettings("labels.grain"),
+      grainSize: tSettings("labels.grainSize"),
+      grainRoughness: tSettings("labels.grainRoughness"),
+      dynamicRange: tSettings("labels.dynamicRange"),
+      colorChromeEffect: tSettings("labels.colorChromeEffect"),
+      colorChromeFXBlue: tSettings("labels.colorChromeFXBlue"),
+      sharpness: tSettings("labels.sharpness"),
+      color: tSettings("labels.color"),
+      clarity: tSettings("labels.clarity"),
+      isoNoiseReduction: tSettings("labels.isoNoiseReduction"),
+      exposure: tSettings("labels.exposure"),
+      iso: tSettings("labels.iso"),
+      whiteBalance: tSettings("labels.whiteBalance"),
+      whiteBalanceK: tSettings("labels.whiteBalanceK"),
+      whiteBalanceShift: tSettings("labels.whiteBalanceShift"),
+      bwAdj: tSettings("labels.bwAdj"),
+    },
+    options: {
+      effects: {
+        off: tSettings("options.effects.off"),
+        strong: tSettings("options.effects.strong"),
+        weak: tSettings("options.effects.weak"),
+      },
+      sizes: {
+        off: tSettings("options.sizes.off"),
+        large: tSettings("options.sizes.large"),
+        small: tSettings("options.sizes.small"),
+      },
+      whiteBalances: {
+        autoWhitePriority: tSettings("options.whiteBalances.autoWhitePriority"),
+        auto: tSettings("options.whiteBalances.auto"),
+        autoAmbiencePriority: tSettings(
+          "options.whiteBalances.autoAmbiencePriority"
+        ),
+        measure: tSettings("options.whiteBalances.measure"),
+        k: tSettings("options.whiteBalances.k"),
+        sunlight: tSettings("options.whiteBalances.sunlight"),
+        shade: tSettings("options.whiteBalances.shade"),
+        daylight: tSettings("options.whiteBalances.daylight"),
+        warmWhite: tSettings("options.whiteBalances.warmWhite"),
+        coolWhite: tSettings("options.whiteBalances.coolWhite"),
+        incandescent: tSettings("options.whiteBalances.incandescent"),
+        underwater: tSettings("options.whiteBalances.underwater"),
+      },
+    },
+    errors: {
+      noName: tSettings("errors.noName"),
+      noCamera: tSettings("errors.noCamera"),
+      noBase: tSettings("errors.noBase"),
+    },
+    successes: {
+      create: tSettings("successes.create"),
+      update: tSettings("successes.update"),
+    },
+  };
+
+  const copyAndPasteMessages = {
+    copy: {
+      success: tCopyAndPasteMessages("copy.success"),
+      fail: tCopyAndPasteMessages("copy.fail"),
+    },
+    paste: {
+      success: tCopyAndPasteMessages("paste.success"),
+      errors: {
+        invalidURL: tCopyAndPasteMessages("paste.errors.invalidURL"),
+        invalidScheme: tCopyAndPasteMessages("paste.errors.invalidScheme"),
+      },
+    },
+  };
+
   const sortTypes: DropboxItem[] = useMemo(
     () => [
       {
@@ -368,11 +449,8 @@ const CustomList = ({
             <CustomEditCard
               cameras={cameras}
               filters={filters}
-              settingMessages={settingMessages}
               onSuccess={onCreateSuccess}
               onError={onError}
-              sendEmailMessages={sendEmailMessages}
-              importFileMessages={importFileMessages}
               onImportSuccess={onImportSuccess}
             />
           </motion.div>
@@ -383,11 +461,9 @@ const CustomList = ({
             key={index}
             customRecipe={customRecipe}
             filters={filters}
-            settingMessages={settingMessages}
             onUpdateSuccess={onUpdateSuccess}
             onUpdateError={onError}
             onDeleteSuccess={onDeleteSuccess}
-            copyAndPasteMessages={copyAndPasteMessages}
           />
         ))}
         <ScrollUpButton refObject={refMain} />
