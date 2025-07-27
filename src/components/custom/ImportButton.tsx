@@ -1,21 +1,19 @@
-import useToastStore from '@/stores/toast';
-import _isEqual from 'lodash/isEqual';
-import _unionWith from 'lodash/unionWith';
-import { ChangeEventHandler, useState } from 'react';
-import { useTranslations } from 'next-intl';
-import { SvgArrowRightEndOnRectangle, SvgCheckSolid } from '../icon/svgs';
-import { STORAGE_CUSTOM_RECIPES_KEY } from './CustomList';
-import { CustomRecipe } from './customRecipe';
+import useToastStore from "@/stores/toast";
+import useCustomRecipeStore from "@/stores/customRecipe";
+import _isEqual from "lodash/isEqual";
+import _unionWith from "lodash/unionWith";
+import { ChangeEventHandler, useState } from "react";
+import { useTranslations } from "next-intl";
+import { SvgArrowRightEndOnRectangle, SvgCheckSolid } from "../icon/svgs";
+import { CustomRecipe } from "./customRecipe";
 
 interface IImportButtonProps {
   onImportSuccess?: (unionRecipes: CustomRecipe[]) => void;
 }
 
-const ImportButton = ({
-  onImportSuccess,
-}: IImportButtonProps) => {
+const ImportButton = ({ onImportSuccess }: IImportButtonProps) => {
   const tImportFile = useTranslations("ImportFile");
-  
+
   const successMessage = tImportFile("success");
   const noFileErrorMessage = tImportFile("errors.noFile");
   const noDataErrorMessage = tImportFile("errors.noData");
@@ -23,6 +21,7 @@ const ImportButton = ({
   const tooltipMessage = tImportFile("tooltip");
 
   const setToastMessage = useToastStore((state) => state.setMessage);
+  const { customRecipes, setRecipes } = useCustomRecipeStore();
 
   const [inputOpen, setInputOpen] = useState(false);
   const [uploadedRecipes, setUploadedRecipes] = useState<CustomRecipe[]>([]);
@@ -35,7 +34,7 @@ const ImportButton = ({
     new Promise((resolve, reject) => {
       const onloader = new FileReader();
       onloader.onload = (e) => {
-        if (!e.target?.result) return reject('');
+        if (!e.target?.result) return reject("");
 
         const uploadedRecipes = JSON.parse(e.target.result as string);
         resolve(uploadedRecipes);
@@ -49,11 +48,11 @@ const ImportButton = ({
     const file = files?.[0];
 
     if (!file)
-      return setToastMessage({ message: noFileErrorMessage, type: 'Error' });
-    if (file.type !== 'application/json')
+      return setToastMessage({ message: noFileErrorMessage, type: "Error" });
+    if (file.type !== "application/json")
       return setToastMessage({
         message: notJsonErrorMessage,
-        type: 'Error',
+        type: "Error",
       });
 
     try {
@@ -64,23 +63,16 @@ const ImportButton = ({
       setUploadedRecipes(uploadedRecipes);
     } catch (error) {
       console.log(error);
-      setToastMessage({ message: (error as Error).message, type: 'Error' });
+      setToastMessage({ message: (error as Error).message, type: "Error" });
     }
   };
 
   const onCheckClick = async () => {
     if (!uploadedRecipes || uploadedRecipes.length === 0)
-      return setToastMessage({ type: 'Error', message: noFileErrorMessage });
+      return setToastMessage({ type: "Error", message: noFileErrorMessage });
 
-    const storedRecipes = JSON.parse(
-      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? '[]'
-    );
-
-    const unionedRecipes = _unionWith(storedRecipes, uploadedRecipes, _isEqual);
-    localStorage.setItem(
-      STORAGE_CUSTOM_RECIPES_KEY,
-      JSON.stringify(unionedRecipes)
-    );
+    const unionedRecipes = _unionWith(customRecipes, uploadedRecipes, _isEqual);
+    setRecipes(unionedRecipes);
 
     setInputOpen(false);
     setUploadedRecipes([]);

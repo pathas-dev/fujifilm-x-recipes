@@ -1,10 +1,10 @@
 "use client";
 
 import useToastStore from "@/stores/toast";
+import useCustomRecipeStore from "@/stores/customRecipe";
 import { Camera } from "@/types/api";
 import dayjs from "dayjs";
 import { motion } from "framer-motion";
-import { produce } from "immer";
 import _reject from "lodash/reject";
 import _some from "lodash/some";
 import lzString from "lz-string";
@@ -51,18 +51,13 @@ const DESC_CHARACTER = "↓";
 const ASC_CHARACTER = "↑";
 const DELIMETER = " ";
 
-export const STORAGE_CUSTOM_RECIPES_KEY = "customRecipes";
-
-const CustomList = ({
-  filters,
-  cameras,
-}: ICardListProps) => {
+const CustomList = ({ filters, cameras }: ICardListProps) => {
   // Translation hooks
   const tHeaders = useTranslations("Headers");
   const tSettings = useTranslations("Settings");
   const tCopyAndPasteMessages = useTranslations("CopyAndPasteMessages");
 
-  // Create message objects from translations  
+  // Create message objects from translations
   const headerMessages = {
     bwOnly: tHeaders("bwOnly"),
     dateLabel: tHeaders("dateLabel"),
@@ -207,7 +202,8 @@ const CustomList = ({
 
   const setToastMessage = useToastStore((state) => state.setMessage);
 
-  const [customRecipes, setCustomRecipes] = useState<CustomRecipe[]>([]);
+  const { customRecipes, addRecipe, updateRecipe, deleteRecipe, setRecipes } =
+    useCustomRecipeStore();
 
   const [bases, setBases] = useState<DropboxItem[]>([]);
   const [filterCameras, setFilterCameras] = useState<DropboxItem[]>([]);
@@ -219,13 +215,6 @@ const CustomList = ({
   const [shrinkCreateCard, setShrinkCreateCard] = useState(false);
 
   const refMain = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const storedRecipes = JSON.parse(
-      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? "[]"
-    );
-    setCustomRecipes(storedRecipes);
-  }, []);
 
   useEffect(() => {
     if (!addParam) return;
@@ -255,17 +244,7 @@ const CustomList = ({
       createdAt: dayjs().format("YYYY-MM-DD HH:mm:ss"),
     };
 
-    const storedRecipe = JSON.parse(
-      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? "[]"
-    );
-
-    const addedStoredRecipe = [newRecipe, ...storedRecipe];
-    localStorage.setItem(
-      STORAGE_CUSTOM_RECIPES_KEY,
-      JSON.stringify(addedStoredRecipe)
-    );
-
-    setCustomRecipes(addedStoredRecipe);
+    addRecipe(newRecipe);
     setToastMessage({ message: copyAndPasteMessages.paste.success });
     router.replace("/");
   }, [
@@ -275,6 +254,7 @@ const CustomList = ({
     copyAndPasteMessages.paste.errors.invalidScheme,
     copyAndPasteMessages.paste.errors.invalidURL,
     copyAndPasteMessages.paste.success,
+    addRecipe,
   ]);
 
   const filteredRecipes = useMemo(() => {
@@ -350,29 +330,14 @@ const CustomList = ({
   const onBwToggle = useCallback((checked: boolean) => setBwonly(checked), []);
 
   const onCreateSuccess = (recipe: CustomRecipe) => {
-    const recipes = [recipe, ...customRecipes];
-    setCustomRecipes(recipes);
-
-    localStorage.setItem(STORAGE_CUSTOM_RECIPES_KEY, JSON.stringify(recipes));
-
+    addRecipe(recipe);
     setToastMessage({
       message: settingMessages.successes.create,
     });
   };
 
   const onUpdateSuccess = (recipe: CustomRecipe) => {
-    const recipesUpdated = produce(customRecipes, (draft) => {
-      const index = draft.findIndex((value) => value._id === recipe._id);
-      draft = draft.with(index, recipe);
-      return draft;
-    });
-    setCustomRecipes(recipesUpdated);
-
-    localStorage.setItem(
-      STORAGE_CUSTOM_RECIPES_KEY,
-      JSON.stringify(recipesUpdated)
-    );
-
+    updateRecipe(recipe);
     setToastMessage({
       message: settingMessages.successes.update,
     });
@@ -390,12 +355,7 @@ const CustomList = ({
   };
 
   const onDeleteSuccess = (deletedRecipe: CustomRecipe): void => {
-    setCustomRecipes((prev) => _reject(prev, deletedRecipe));
-    const storedItems = JSON.parse(
-      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? "[]"
-    );
-    const filtered = _reject(storedItems, deletedRecipe);
-    localStorage.setItem(STORAGE_CUSTOM_RECIPES_KEY, JSON.stringify(filtered));
+    deleteRecipe(deletedRecipe);
   };
 
   const createCardClassName = shrinkCreateCard
@@ -405,7 +365,7 @@ const CustomList = ({
   const onChebronClick = () => setShrinkCreateCard((prev) => !prev);
 
   const onImportSuccess = (unionRecipes: CustomRecipe[]) =>
-    setCustomRecipes(unionRecipes);
+    setRecipes(unionRecipes);
 
   return (
     <section className="w-full h-full">

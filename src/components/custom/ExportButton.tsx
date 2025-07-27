@@ -1,12 +1,12 @@
 import { ChangeEventHandler, useState } from "react";
 import { SvgAirplaneSolid, SvgEnvelopeSolid } from "../icon/svgs";
-import { STORAGE_CUSTOM_RECIPES_KEY } from "./CustomList";
+import useCustomRecipeStore from "@/stores/customRecipe";
 import useToastStore from "@/stores/toast";
 import { useTranslations } from "next-intl";
 
 const ExportButton = () => {
   const tSendEmail = useTranslations("SendEmail");
-  
+
   const placeholder = tSendEmail("placeholder");
   const successMessage = tSendEmail("success");
   const noDataErrorMessage = tSendEmail("errors.noData");
@@ -14,22 +14,19 @@ const ExportButton = () => {
   const tooltipMessage = tSendEmail("tooltip");
 
   const setToastMessage = useToastStore((state) => state.setMessage);
+  const { customRecipes } = useCustomRecipeStore();
 
   const [inputOpen, setInputOpen] = useState(false);
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
 
   const sendMailRecipes = async () => {
-    const storedRecipes = JSON.parse(
-      localStorage.getItem(STORAGE_CUSTOM_RECIPES_KEY) ?? "[]"
-    );
-
-    if (!storedRecipes || storedRecipes.length === 0)
+    if (!customRecipes || customRecipes.length === 0)
       throw new Error(noDataErrorMessage);
 
     const response = await fetch("/api/recipes/email", {
       method: "POST",
-      body: JSON.stringify({ data: storedRecipes, email: email.trim() }),
+      body: JSON.stringify({ data: customRecipes, email: email.trim() }),
     });
 
     return response;
