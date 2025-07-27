@@ -1,9 +1,9 @@
-import { localeIntl } from "@/i18n/navigation";
-import KoNote from "./ko.note.mdx";
-import EnNote from "./en.note.mdx";
-import "github-markdown-css";
-import GuidePageWrapper from "@/components/guide/GuidePageWrapper";
-import { setRequestLocale } from "next-intl/server";
+import { localeIntl } from '@/i18n/navigation';
+import KoNote from './ko.note.mdx';
+import EnNote from './en.note.mdx';
+import 'github-markdown-css';
+import GuidePageWrapper from '@/components/guide/GuidePageWrapper';
+import { setRequestLocale } from 'next-intl/server';
 
 const NotePage = async (
   props: Readonly<{

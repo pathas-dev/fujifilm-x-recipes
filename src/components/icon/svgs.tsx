@@ -6,7 +6,7 @@ export const SvgArrow = () => {
       viewBox="0 0 24 24"
       strokeWidth={2}
       stroke="currentColor"
-      className="w-5 h-5"
+      className="h-5 w-5"
     >
       <path
         strokeLinecap="round"
@@ -24,7 +24,7 @@ export const SvgLink = () => {
       viewBox="0 0 25 25"
       strokeWidth={2}
       stroke="currentColor"
-      className="w-4 h-4"
+      className="h-4 w-4"
     >
       <path
         strokeLinecap="round"
@@ -40,7 +40,7 @@ export const SvgFilmMicro = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
     fill="currentColor"
-    className="w-4 h-4"
+    className="h-4 w-4"
   >
     <path
       fillRule="evenodd"
@@ -54,7 +54,7 @@ export const SvgCameraMicro = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
     fill="currentColor"
-    className="w-4 h-4"
+    className="h-4 w-4"
   >
     <path d="M9.5 8.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0Z" />
     <path
@@ -69,7 +69,7 @@ export const SvgSensorMicro = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
     fill="currentColor"
-    className="w-4 h-4"
+    className="h-4 w-4"
   >
     <path
       fillRule="evenodd"
@@ -83,7 +83,7 @@ export const SvgArrowUpDownMicro = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
     fill="currentColor"
-    className="w-4 h-4"
+    className="h-4 w-4"
   >
     <path
       fillRule="evenodd"
@@ -98,7 +98,7 @@ export const SvgBookmarkMini = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="w-5 h-5"
+    className="h-5 w-5"
   >
     <path
       fillRule="evenodd"
@@ -112,7 +112,7 @@ export const SvgVariableMini = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="w-5 h-5"
+    className="h-5 w-5"
   >
     <path
       fillRule="evenodd"
@@ -126,7 +126,7 @@ export const SvgSparklesMini = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="w-5 h-5"
+    className="h-5 w-5"
   >
     <path d="M15.98 1.804a1 1 0 0 0-1.96 0l-.24 1.192a1 1 0 0 1-.784.785l-1.192.238a1 1 0 0 0 0 1.962l1.192.238a1 1 0 0 1 .785.785l.238 1.192a1 1 0 0 0 1.962 0l.238-1.192a1 1 0 0 1 .785-.785l1.192-.238a1 1 0 0 0 0-1.962l-1.192-.238a1 1 0 0 1-.785-.785l-.238-1.192ZM6.949 5.684a1 1 0 0 0-1.898 0l-.683 2.051a1 1 0 0 1-.633.633l-2.051.683a1 1 0 0 0 0 1.898l2.051.684a1 1 0 0 1 .633.632l.683 2.051a1 1 0 0 0 1.898 0l.683-2.051a1 1 0 0 1 .633-.633l2.051-.683a1 1 0 0 0 0-1.898l-2.051-.683a1 1 0 0 1-.633-.633L6.95 5.684ZM13.949 13.684a1 1 0 0 0-1.898 0l-.184.551a1 1 0 0 1-.632.633l-.551.183a1 1 0 0 0 0 1.898l.551.183a1 1 0 0 1 .633.633l.183.551a1 1 0 0 0 1.898 0l.184-.551a1 1 0 0 1 .632-.633l.551-.183a1 1 0 0 0 0-1.898l-.551-.184a1 1 0 0 1-.633-.632l-.183-.551Z" />
   </svg>
@@ -136,7 +136,7 @@ export const SvgBookmarkMicro = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
     fill="currentColor"
-    className="w-4 h-4"
+    className="h-4 w-4"
   >
     <path d="M3.75 2a.75.75 0 0 0-.75.75v10.5a.75.75 0 0 0 1.28.53L8 10.06l3.72 3.72a.75.75 0 0 0 1.28-.53V2.75a.75.75 0 0 0-.75-.75h-8.5Z" />
   </svg>
@@ -146,7 +146,7 @@ export const SvgVariableMicro = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
     fill="currentColor"
-    className="w-4 h-4"
+    className="h-4 w-4"
   >
     <path d="M3.38 3.012a.75.75 0 1 0-1.408-.516A15.97 15.97 0 0 0 1 8c0 1.932.343 3.786.972 5.503a.75.75 0 0 0 1.408-.516A14.47 14.47 0 0 1 2.5 8c0-1.754.311-3.434.88-4.988ZM12.62 3.012a.75.75 0 1 1 1.408-.516A15.97 15.97 0 0 1 15 8a15.97 15.97 0 0 1-.972 5.503.75.75 0 0 1-1.408-.516c.569-1.554.88-3.233.88-4.987s-.311-3.434-.88-4.988ZM6.523 4.785a.75.75 0 0 1 .898.38l.758 1.515.812-.902a2.376 2.376 0 0 1 2.486-.674.75.75 0 1 1-.454 1.429.876.876 0 0 0-.918.249L8.9 8.122l.734 1.468.388-.124a.75.75 0 0 1 .457 1.428l-1 .32a.75.75 0 0 1-.899-.379L7.821 9.32l-.811.901a2.374 2.374 0 0 1-2.489.673.75.75 0 0 1 .458-1.428.874.874 0 0 0 .916-.248L7.1 7.878 6.366 6.41l-.389.124a.75.75 0 1 1-.454-1.43l1-.318Z" />
   </svg>
@@ -157,7 +157,7 @@ export const SvgPencilSquareMicro = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
     fill="currentColor"
-    className="w-4 h-4"
+    className="h-4 w-4"
   >
     <path d="M13.488 2.513a1.75 1.75 0 0 0-2.475 0L6.75 6.774a2.75 2.75 0 0 0-.596.892l-.848 2.047a.75.75 0 0 0 .98.98l2.047-.848a2.75 2.75 0 0 0 .892-.596l4.261-4.262a1.75 1.75 0 0 0 0-2.474Z" />
     <path d="M4.75 3.5c-.69 0-1.25.56-1.25 1.25v6.5c0 .69.56 1.25 1.25 1.25h6.5c.69 0 1.25-.56 1.25-1.25V9A.75.75 0 0 1 14 9v2.25A2.75 2.75 0 0 1 11.25 14h-6.5A2.75 2.75 0 0 1 2 11.25v-6.5A2.75 2.75 0 0 1 4.75 2H7a.75.75 0 0 1 0 1.5H4.75Z" />
@@ -169,7 +169,7 @@ export const SvgPlusMicro = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
     fill="currentColor"
-    className="w-4 h-4"
+    className="h-4 w-4"
   >
     <path d="M8.75 3.75a.75.75 0 0 0-1.5 0v3.5h-3.5a.75.75 0 0 0 0 1.5h3.5v3.5a.75.75 0 0 0 1.5 0v-3.5h3.5a.75.75 0 0 0 0-1.5h-3.5v-3.5Z" />
   </svg>
@@ -179,7 +179,7 @@ export const SvgMinusMicro = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
     fill="currentColor"
-    className="w-4 h-4"
+    className="h-4 w-4"
   >
     <path d="M3.75 7.25a.75.75 0 0 0 0 1.5h8.5a.75.75 0 0 0 0-1.5h-8.5Z" />
   </svg>
@@ -189,7 +189,7 @@ export const SvgAirplaneSolid = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path d="M3.478 2.404a.75.75 0 0 0-.926.941l2.432 7.905H13.5a.75.75 0 0 1 0 1.5H4.984l-2.432 7.905a.75.75 0 0 0 .926.94 60.519 60.519 0 0 0 18.445-8.986.75.75 0 0 0 0-1.218A60.517 60.517 0 0 0 3.478 2.404Z" />
   </svg>
@@ -198,7 +198,7 @@ export const SvgPencilSquareSolid = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path d="M21.731 2.269a2.625 2.625 0 0 0-3.712 0l-1.157 1.157 3.712 3.712 1.157-1.157a2.625 2.625 0 0 0 0-3.712ZM19.513 8.199l-3.712-3.712-8.4 8.4a5.25 5.25 0 0 0-1.32 2.214l-.8 2.685a.75.75 0 0 0 .933.933l2.685-.8a5.25 5.25 0 0 0 2.214-1.32l8.4-8.4Z" />
     <path d="M5.25 5.25a3 3 0 0 0-3 3v10.5a3 3 0 0 0 3 3h10.5a3 3 0 0 0 3-3V13.5a.75.75 0 0 0-1.5 0v5.25a1.5 1.5 0 0 1-1.5 1.5H5.25a1.5 1.5 0 0 1-1.5-1.5V8.25a1.5 1.5 0 0 1 1.5-1.5h5.25a.75.75 0 0 0 0-1.5H5.25Z" />
@@ -210,7 +210,7 @@ export const SvgPlusSolid = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 24 24"
-      className="w-6 h-6"
+      className="h-6 w-6"
     >
       <path
         fillRule="evenodd"
@@ -226,7 +226,7 @@ export const SvgCalendarDaysMicro = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 16 16"
     fill="currentColor"
-    className="w-4 h-4"
+    className="h-4 w-4"
   >
     <path d="M5.75 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM5 10.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM10.25 7.5a.75.75 0 1 0 0 1.5.75.75 0 0 0 0-1.5ZM7.25 8.25a.75.75 0 1 1 1.5 0 .75.75 0 0 1-1.5 0ZM8 9.5A.75.75 0 1 0 8 11a.75.75 0 0 0 0-1.5Z" />
     <path
@@ -242,7 +242,7 @@ export const SvgTrashMini = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
-      className="w-5 h-5"
+      className="h-5 w-5"
     >
       <path
         fillRule="evenodd"
@@ -258,7 +258,7 @@ export const SvgArrowUTurnLeft = () => {
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 20 20"
-      className="w-5 h-5"
+      className="h-5 w-5"
     >
       <path
         fillRule="evenodd"
@@ -273,7 +273,7 @@ export const SvgArrowUpSolid = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       fillRule="evenodd"
@@ -287,7 +287,7 @@ export const SvgChevronDoubleDownSolid = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       fillRule="evenodd"
@@ -306,7 +306,7 @@ export const SvgChebronDoubleUpSolid = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       fillRule="evenodd"
@@ -326,7 +326,7 @@ export const SvgPhotoMini = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="w-5 h-5"
+    className="h-5 w-5"
   >
     <path
       fillRule="evenodd"
@@ -341,7 +341,7 @@ export const SvgCameraMini = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="w-5 h-5"
+    className="h-5 w-5"
   >
     <path
       fillRule="evenodd"
@@ -355,7 +355,7 @@ export const SvgCheckSolid = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       fillRule="evenodd"
@@ -369,7 +369,7 @@ export const SvgEnvelopeSolid = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path d="M1.5 8.67v8.58a3 3 0 0 0 3 3h15a3 3 0 0 0 3-3V8.67l-8.928 5.493a3 3 0 0 1-3.144 0L1.5 8.67Z" />
     <path d="M22.5 6.908V6.75a3 3 0 0 0-3-3h-15a3 3 0 0 0-3 3v.158l9.714 5.978a1.5 1.5 0 0 0 1.572 0L22.5 6.908Z" />
@@ -380,7 +380,7 @@ export const SvgDocumentPlus = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       fillRule="evenodd"
@@ -395,7 +395,7 @@ export const SvgDocumentCheck = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       fillRule="evenodd"
@@ -410,7 +410,7 @@ export const SvgArrowRightEndOnRectangle = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       fillRule="evenodd"
@@ -425,7 +425,7 @@ export const SvgQuestionMarkCircleMini = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="w-5 h-5"
+    className="h-5 w-5"
   >
     <path
       fillRule="evenodd"
@@ -440,7 +440,7 @@ export const SvgCogMini = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="w-5 h-5"
+    className="h-5 w-5"
   >
     <path d="M13.024 9.25c.47 0 .827-.433.637-.863a4 4 0 0 0-4.094-2.364c-.468.05-.665.576-.43.984l1.08 1.868a.75.75 0 0 0 .649.375h2.158ZM7.84 7.758c-.236-.408-.79-.5-1.068-.12A3.982 3.982 0 0 0 6 10c0 .884.287 1.7.772 2.363.278.38.832.287 1.068-.12l1.078-1.868a.75.75 0 0 0 0-.75L7.839 7.758ZM9.138 12.993c-.235.408-.039.934.43.984a4 4 0 0 0 4.094-2.364c.19-.43-.168-.863-.638-.863h-2.158a.75.75 0 0 0-.65.375l-1.078 1.868Z" />
     <path
@@ -458,7 +458,7 @@ export const SvgChevronRight = () => (
     viewBox="0 0 24 24"
     strokeWidth={1.5}
     stroke="currentColor"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       strokeLinecap="round"
@@ -472,7 +472,7 @@ export const SvgClipBoard = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6"
+    className="h-6 w-6"
   >
     <path
       fillRule="evenodd"
@@ -487,7 +487,7 @@ export const SvgBeakerMini = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="w-5 h-5"
+    className="h-5 w-5"
   >
     <path
       fillRule="evenodd"
@@ -502,7 +502,7 @@ export const SvgAiMini = () => (
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 20 20"
     fill="currentColor"
-    className="w-5 h-5"
+    className="h-5 w-5"
   >
     {/* AI Brain with circuit patterns */}
     <path
@@ -530,7 +530,7 @@ export const SvgAiCurator = () => (
   <svg
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
-    className="w-6 h-6 text-primary-content relative z-10"
+    className="text-primary-content relative z-10 h-6 w-6"
   >
     <path
       fill="currentColor"
@@ -563,7 +563,7 @@ export const SvgAirplaneOutline = () => (
     viewBox="0 0 24 24"
     strokeWidth={2}
     stroke="currentColor"
-    className="w-5 h-5"
+    className="h-5 w-5"
   >
     <path
       strokeLinecap="round"
@@ -575,7 +575,7 @@ export const SvgAirplaneOutline = () => (
 
 export const SvgSunMini = () => (
   <svg
-    className="w-3 h-3 stroke-amber-400 fill-amber-400"
+    className="h-3 w-3 fill-amber-400 stroke-amber-400"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="none"
@@ -591,7 +591,7 @@ export const SvgSunMini = () => (
 
 export const SvgMoonMini = () => (
   <svg
-    className="w-3 h-3 stroke-blue-400 fill-blue-400"
+    className="h-3 w-3 fill-blue-400 stroke-blue-400"
     xmlns="http://www.w3.org/2000/svg"
     viewBox="0 0 24 24"
     fill="none"

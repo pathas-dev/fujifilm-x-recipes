@@ -1,14 +1,14 @@
-import { ChatGoogleGenerativeAI } from "@langchain/google-genai";
-import { ChatPromptTemplate } from "@langchain/core/prompts";
+import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
+import { ChatPromptTemplate } from '@langchain/core/prompts';
 import {
   SENSOR_CAMERA_MAPPINGS,
   COLOR_TYPES,
   FilmSimulations,
-} from "@/types/camera-schema";
+} from '@/types/camera-schema';
 
 export enum GoogleAIModel {
-  GeminiFlash = "gemini-2.0-flash",
-  GeminiFlashLite = "gemini-2.0-flash-lite",
+  GeminiFlash = 'gemini-2.0-flash',
+  GeminiFlashLite = 'gemini-2.0-flash-lite',
 }
 
 export const createLLM = (model: GoogleAIModel = GoogleAIModel.GeminiFlash) => {
@@ -23,8 +23,8 @@ export const createLLM = (model: GoogleAIModel = GoogleAIModel.GeminiFlash) => {
 // 센서-카메라 매핑 텍스트 생성
 const createSensorCameraMappingText = () => {
   return SENSOR_CAMERA_MAPPINGS.map(
-    ({ sensor, cameras }) => `       ${sensor}: ${cameras.join(", ")}`
-  ).join("\n");
+    ({ sensor, cameras }) => `       ${sensor}: ${cameras.join(', ')}`
+  ).join('\n');
 };
 
 export const createParseQuestionPromptTemplate = () => {
@@ -51,18 +51,18 @@ export const createParseQuestionPromptTemplate = () => {
 ${createSensorCameraMappingText()}
 
 ### 색상 타입
-${COLOR_TYPES.join(" / ")}
+${COLOR_TYPES.join(' / ')}
 
 ### 필름 시뮬레이션
-${FilmSimulations.join(", ")}
+${FilmSimulations.join(', ')}
 
 ## 주의 사항
 관련 없는 질문의 경우 판단 이유를 명확히 제시하세요.
 관련 질문의 경우 모든 분석 요소를 정확히 추출하세요.`;
 
   return ChatPromptTemplate.fromMessages([
-    ["system", systemMessage],
-    ["human", "{question}"],
+    ['system', systemMessage],
+    ['human', '{question}'],
   ]);
 };
 
@@ -128,16 +128,16 @@ export const createCuratorPromptTemplate = () => {
 
   const fullSystemMessage = [
     systemInstructions,
-    "",
+    '',
     settingsGuide,
 
-    "",
-    "[검색된 문서 컨텍스트]",
-    "{context}",
-  ].join("\n");
+    '',
+    '[검색된 문서 컨텍스트]',
+    '{context}',
+  ].join('\n');
 
   return ChatPromptTemplate.fromMessages([
-    ["system", fullSystemMessage],
-    ["human", "{question}"],
+    ['system', fullSystemMessage],
+    ['human', '{question}'],
   ]);
 };

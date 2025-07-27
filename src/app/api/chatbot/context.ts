@@ -1,4 +1,4 @@
-import { Document } from "@langchain/core/documents";
+import { Document } from '@langchain/core/documents';
 
 export const formatContext = (results: Document[]) => {
   return results.reduce((acc, current, index) => {
@@ -7,15 +7,15 @@ export const formatContext = (results: Document[]) => {
         ${current.pageContent},
 
         [세팅 ${index + 1}]
-        ${current.metadata["settings"]},
+        ${current.metadata['settings']},
         
         [URL ${index + 1}]
-        ${current.metadata["url"]},
+        ${current.metadata['url']},
       `
-      .split("\n\n")
+      .split('\n\n')
       .map((line) => line.trim())
-      .join("\n");
+      .join('\n');
 
-    return acc + "\n\n" + text;
-  }, "");
+    return acc + '\n\n' + text;
+  }, '');
 };

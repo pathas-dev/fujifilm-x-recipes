@@ -1,13 +1,13 @@
-import { CuratorResponse } from "@/types/recipe-schema";
-import { useTranslations } from "next-intl";
-import CuratedRecipeCard from "./CuratedRecipeCard";
+import { CuratorResponse } from '@/types/recipe-schema';
+import { useTranslations } from 'next-intl';
+import CuratedRecipeCard from './CuratedRecipeCard';
 
 interface RecipeResponseProps {
   data: CuratorResponse;
 }
 
 const ChatbotCuratedRecipeResponse = ({ data }: RecipeResponseProps) => {
-  if (typeof data !== "object" || !data.recipes) {
+  if (typeof data !== 'object' || !data.recipes) {
     return null;
   }
 

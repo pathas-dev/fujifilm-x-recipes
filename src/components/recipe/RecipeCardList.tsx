@@ -43,16 +43,16 @@ const DELIMETER = ' ';
 
 const RecipeCardList = ({ filters, recipes }: ICardListProps) => {
   // Translation hooks
-  const tHeaders = useTranslations("Headers");
+  const tHeaders = useTranslations('Headers');
 
   // Create labels object from translations
   const labels = {
-    bwOnly: tHeaders("bwOnly"),
-    dateLabel: tHeaders("dateLabel"),
-    nameLabel: tHeaders("nameLabel"),
-    baseLabel: tHeaders("baseLabel"),
-    cameraLabel: tHeaders("cameraLabel"),
-    creatorLabel: tHeaders("creatorLabel"),
+    bwOnly: tHeaders('bwOnly'),
+    dateLabel: tHeaders('dateLabel'),
+    nameLabel: tHeaders('nameLabel'),
+    baseLabel: tHeaders('baseLabel'),
+    cameraLabel: tHeaders('cameraLabel'),
+    creatorLabel: tHeaders('creatorLabel'),
   };
 
   const sortTypes: DropboxItem[] = useMemo(
@@ -214,7 +214,7 @@ const RecipeCardList = ({ filters, recipes }: ICardListProps) => {
   const sliceTo = (page + 1) * PAGE_SIZE;
 
   return (
-    <section className="w-full h-full">
+    <section className="h-full w-full">
       <RecipeFilterHeader
         bwOnly={bwOnly}
         onBwOnlyChange={onBwToggle}
@@ -223,7 +223,7 @@ const RecipeCardList = ({ filters, recipes }: ICardListProps) => {
         recipesCount={sortedRecipes.length}
       />
       <main
-        className="w-full h-[calc(100%-3.5rem)] p-2 grid grid-cols-1 md:grid-cols-3 gap-2 overflow-y-auto overflow-x-hidden scroll-smooth"
+        className="grid h-[calc(100%-3.5rem)] w-full grid-cols-1 gap-2 overflow-x-hidden overflow-y-auto scroll-smooth p-2 md:grid-cols-3"
         style={{
           gridAutoRows: 'min-content',
         }}
@@ -235,7 +235,7 @@ const RecipeCardList = ({ filters, recipes }: ICardListProps) => {
         {page !== lastPage && (
           <div
             ref={refSkeleton}
-            className="skeleton card card-compact w-full min-h-44 h-fit flex items-center justify-center"
+            className="skeleton card card-compact flex h-fit min-h-44 w-full items-center justify-center"
           >
             <span className="loading loading-infinity loading-lg"></span>
           </div>

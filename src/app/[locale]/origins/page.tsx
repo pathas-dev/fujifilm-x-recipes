@@ -1,7 +1,7 @@
-import { getOrigins } from "@/app/api/data/localData";
-import OriginList from "@/components/origin/OriginList";
-import { localeIntl } from "@/i18n/navigation";
-import { setRequestLocale } from "next-intl/server";
+import { getOrigins } from '@/app/api/data/localData';
+import OriginList from '@/components/origin/OriginList';
+import { localeIntl } from '@/i18n/navigation';
+import { setRequestLocale } from 'next-intl/server';
 
 const Origins = async (
   props: Readonly<{

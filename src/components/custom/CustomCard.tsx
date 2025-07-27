@@ -44,89 +44,89 @@ const CustomCard = ({
   customRecipe,
   onDeleteSuccess,
 }: ICustomCardProps) => {
-  // Translation hooks  
-  const tSettings = useTranslations("Settings");
-  const tCopyAndPasteMessages = useTranslations("CopyAndPasteMessages");
+  // Translation hooks
+  const tSettings = useTranslations('Settings');
+  const tCopyAndPasteMessages = useTranslations('CopyAndPasteMessages');
 
   // Create message objects from translations
   const settingMessages = {
-    newTitle: tSettings("newTitle"),
-    updateTitle: tSettings("updateTitle"),
+    newTitle: tSettings('newTitle'),
+    updateTitle: tSettings('updateTitle'),
     placeholders: {
-      name: tSettings("placeholders.name"),
-      camera: tSettings("placeholders.camera"),
-      base: tSettings("placeholders.base"),
+      name: tSettings('placeholders.name'),
+      camera: tSettings('placeholders.camera'),
+      base: tSettings('placeholders.base'),
     },
     labels: {
-      highlight: tSettings("labels.highlight"),
-      tone: tSettings("labels.tone"),
-      shadow: tSettings("labels.shadow"),
-      grain: tSettings("labels.grain"),
-      grainSize: tSettings("labels.grainSize"),
-      grainRoughness: tSettings("labels.grainRoughness"),
-      dynamicRange: tSettings("labels.dynamicRange"),
-      colorChromeEffect: tSettings("labels.colorChromeEffect"),
-      colorChromeFXBlue: tSettings("labels.colorChromeFXBlue"),
-      sharpness: tSettings("labels.sharpness"),
-      color: tSettings("labels.color"),
-      clarity: tSettings("labels.clarity"),
-      isoNoiseReduction: tSettings("labels.isoNoiseReduction"),
-      exposure: tSettings("labels.exposure"),
-      iso: tSettings("labels.iso"),
-      whiteBalance: tSettings("labels.whiteBalance"),
-      whiteBalanceK: tSettings("labels.whiteBalanceK"),
-      whiteBalanceShift: tSettings("labels.whiteBalanceShift"),
-      bwAdj: tSettings("labels.bwAdj"),
+      highlight: tSettings('labels.highlight'),
+      tone: tSettings('labels.tone'),
+      shadow: tSettings('labels.shadow'),
+      grain: tSettings('labels.grain'),
+      grainSize: tSettings('labels.grainSize'),
+      grainRoughness: tSettings('labels.grainRoughness'),
+      dynamicRange: tSettings('labels.dynamicRange'),
+      colorChromeEffect: tSettings('labels.colorChromeEffect'),
+      colorChromeFXBlue: tSettings('labels.colorChromeFXBlue'),
+      sharpness: tSettings('labels.sharpness'),
+      color: tSettings('labels.color'),
+      clarity: tSettings('labels.clarity'),
+      isoNoiseReduction: tSettings('labels.isoNoiseReduction'),
+      exposure: tSettings('labels.exposure'),
+      iso: tSettings('labels.iso'),
+      whiteBalance: tSettings('labels.whiteBalance'),
+      whiteBalanceK: tSettings('labels.whiteBalanceK'),
+      whiteBalanceShift: tSettings('labels.whiteBalanceShift'),
+      bwAdj: tSettings('labels.bwAdj'),
     },
     options: {
       effects: {
-        off: tSettings("options.effects.off"),
-        strong: tSettings("options.effects.strong"),
-        weak: tSettings("options.effects.weak"),
+        off: tSettings('options.effects.off'),
+        strong: tSettings('options.effects.strong'),
+        weak: tSettings('options.effects.weak'),
       },
       sizes: {
-        off: tSettings("options.sizes.off"),
-        large: tSettings("options.sizes.large"),
-        small: tSettings("options.sizes.small"),
+        off: tSettings('options.sizes.off'),
+        large: tSettings('options.sizes.large'),
+        small: tSettings('options.sizes.small'),
       },
       whiteBalances: {
-        autoWhitePriority: tSettings("options.whiteBalances.autoWhitePriority"),
-        auto: tSettings("options.whiteBalances.auto"),
+        autoWhitePriority: tSettings('options.whiteBalances.autoWhitePriority'),
+        auto: tSettings('options.whiteBalances.auto'),
         autoAmbiencePriority: tSettings(
-          "options.whiteBalances.autoAmbiencePriority"
+          'options.whiteBalances.autoAmbiencePriority'
         ),
-        measure: tSettings("options.whiteBalances.measure"),
-        k: tSettings("options.whiteBalances.k"),
-        sunlight: tSettings("options.whiteBalances.sunlight"),
-        shade: tSettings("options.whiteBalances.shade"),
-        daylight: tSettings("options.whiteBalances.daylight"),
-        warmWhite: tSettings("options.whiteBalances.warmWhite"),
-        coolWhite: tSettings("options.whiteBalances.coolWhite"),
-        incandescent: tSettings("options.whiteBalances.incandescent"),
-        underwater: tSettings("options.whiteBalances.underwater"),
+        measure: tSettings('options.whiteBalances.measure'),
+        k: tSettings('options.whiteBalances.k'),
+        sunlight: tSettings('options.whiteBalances.sunlight'),
+        shade: tSettings('options.whiteBalances.shade'),
+        daylight: tSettings('options.whiteBalances.daylight'),
+        warmWhite: tSettings('options.whiteBalances.warmWhite'),
+        coolWhite: tSettings('options.whiteBalances.coolWhite'),
+        incandescent: tSettings('options.whiteBalances.incandescent'),
+        underwater: tSettings('options.whiteBalances.underwater'),
       },
     },
     errors: {
-      noName: tSettings("errors.noName"),
-      noCamera: tSettings("errors.noCamera"),
-      noBase: tSettings("errors.noBase"),
+      noName: tSettings('errors.noName'),
+      noCamera: tSettings('errors.noCamera'),
+      noBase: tSettings('errors.noBase'),
     },
     successes: {
-      create: tSettings("successes.create"),
-      update: tSettings("successes.update"),
+      create: tSettings('successes.create'),
+      update: tSettings('successes.update'),
     },
   };
 
   const copyAndPasteMessages = {
     copy: {
-      success: tCopyAndPasteMessages("copy.success"),
-      fail: tCopyAndPasteMessages("copy.fail"),
+      success: tCopyAndPasteMessages('copy.success'),
+      fail: tCopyAndPasteMessages('copy.fail'),
     },
     paste: {
-      success: tCopyAndPasteMessages("paste.success"),
+      success: tCopyAndPasteMessages('paste.success'),
       errors: {
-        invalidURL: tCopyAndPasteMessages("paste.errors.invalidURL"),
-        invalidScheme: tCopyAndPasteMessages("paste.errors.invalidScheme"),
+        invalidURL: tCopyAndPasteMessages('paste.errors.invalidURL'),
+        invalidScheme: tCopyAndPasteMessages('paste.errors.invalidScheme'),
       },
     },
   };
@@ -324,16 +324,16 @@ const CustomCard = ({
 
   return (
     <motion.div
-      className="card card-compact w-full bg-base-300 shadow-xl min-h-42 h-fit"
+      className="card card-compact bg-base-300 h-fit min-h-42 w-full shadow-xl"
       transition={{ duration: 0.4 }}
       initial={{ opacity: 0.3, translateX: '80%' }}
       ref={customCardRefCallback}
     >
       <div className="card-body">
-        <div className="w-full flex items-center justify-between">
-          <div className="w-full flex flex-col">
-            <div className="card-title w-full flex justify-between">
-              <h2 className="text-ellipsis overflow-hidden text-nowrap">
+        <div className="flex w-full items-center justify-between">
+          <div className="flex w-full flex-col">
+            <div className="card-title flex w-full justify-between">
+              <h2 className="overflow-hidden text-nowrap text-ellipsis">
                 {customRecipe.name}
               </h2>
               <button
@@ -343,19 +343,19 @@ const CustomCard = ({
                 <SvgPencilSquareSolid />
               </button>
             </div>
-            <span className="text-xs font-light leading-3">
+            <span className="text-xs leading-3 font-light">
               (from {customRecipe.base})
             </span>
           </div>
         </div>
 
-        <details className="collapse collapse-arrow bg-base-200">
+        <details className="collapse-arrow bg-base-200 collapse">
           <summary className="collapse-title text-base-content">
             <div className="flex items-end">
               <div
-                className={`mr-2 w-6 h-6 rounded transparent bg-clip bg-gradient-to-br ${colorClassName}`}
+                className={`transparent bg-clip mr-2 h-6 w-6 rounded bg-gradient-to-br ${colorClassName}`}
               />
-              <h2 className="text-lg font-medium overflow-hidden text-nowrap text-ellipsis">
+              <h2 className="overflow-hidden text-lg font-medium text-nowrap text-ellipsis">
                 {customRecipe.camera}
                 <span className="text-sm">({customRecipe.sensor})</span>
               </h2>
@@ -365,7 +365,7 @@ const CustomCard = ({
             {settingDisplayProps.map((props) => (
               <SettingDisplay {...props} key={props.label} />
             ))}
-            <div className="flex w-full justify-end mt-1">
+            <div className="mt-1 flex w-full justify-end">
               <button
                 onClick={onShareButtonClick}
                 className="btn btn-sm btn-ghost btn-circle fill-info"
@@ -375,7 +375,7 @@ const CustomCard = ({
             </div>
           </div>
         </details>
-        <div className="card-actions justify-between flex items-center">
+        <div className="card-actions flex items-center justify-between">
           {!deleteTimer ? (
             <button
               className="btn btn-ghost btn-circle btn-xs fill-error"
@@ -386,7 +386,7 @@ const CustomCard = ({
           ) : (
             <div>
               <button
-                className="btn btn-ghost btn-xs flex fill-error text-error"
+                className="btn btn-ghost btn-xs fill-error text-error flex"
                 onClick={onUndoDeleteButtonClick}
               >
                 <SvgArrowUTurnLeft />

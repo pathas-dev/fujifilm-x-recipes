@@ -1,8 +1,8 @@
-import { PineconeEmbeddings, PineconeStore } from "@langchain/pinecone";
-import { Pinecone as PineconeClient } from "@pinecone-database/pinecone";
-import { BM25Retriever } from "@langchain/community/retrievers/bm25";
-import { EnsembleRetriever } from "langchain/retrievers/ensemble";
-import { ColorOrBw, SensorType } from "@/types/camera-schema";
+import { PineconeEmbeddings, PineconeStore } from '@langchain/pinecone';
+import { Pinecone as PineconeClient } from '@pinecone-database/pinecone';
+import { BM25Retriever } from '@langchain/community/retrievers/bm25';
+import { EnsembleRetriever } from 'langchain/retrievers/ensemble';
+import { ColorOrBw, SensorType } from '@/types/camera-schema';
 
 export const createPineconeClient = () => {
   return new PineconeClient({
@@ -13,7 +13,7 @@ export const createPineconeClient = () => {
 export const createEmbeddings = () => {
   return new PineconeEmbeddings({
     apiKey: process.env.PINECONE_API_KEY,
-    model: "multilingual-e5-large",
+    model: 'multilingual-e5-large',
   });
 };
 
@@ -38,14 +38,14 @@ export const retrieve = async (
 
   const pineconeRetriever = vectorStore.asRetriever({
     k: 3,
-    searchType: "mmr",
+    searchType: 'mmr',
     searchKwargs: { fetchK: 15, lambda: 0.2 },
     filter: { ...metadata },
   });
-  console.log("🚀 ~ metadata:", metadata);
+  console.log('🚀 ~ metadata:', metadata);
 
   const documents = await pineconeRetriever.invoke(query);
-  console.log("🚀 ~ documents:", documents);
+  console.log('🚀 ~ documents:', documents);
 
   const bm25Retriever = BM25Retriever.fromDocuments(documents, {
     k: 3,

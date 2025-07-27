@@ -1,17 +1,17 @@
-import ThemeSwitch from "@/components/settings/ThemeSwitch";
+import ThemeSwitch from '@/components/settings/ThemeSwitch';
 import {
   SvgBeakerMini,
   SvgCameraMini,
   SvgChevronRight,
   SvgQuestionMarkCircleMini,
   SvgSparklesMini,
-} from "@/components/icon/svgs";
-import { Link, localeIntl } from "@/i18n/navigation";
-import { setRequestLocale } from "next-intl/server";
-import HideCardImageToggle from "@/components/settings/HideCardImageToggle";
-import packageJson from "../../../../package.json";
-import { NextIntlClientProvider } from "next-intl";
-import SettingsContent from "@/components/settings/SettingsContent";
+} from '@/components/icon/svgs';
+import { Link, localeIntl } from '@/i18n/navigation';
+import { setRequestLocale } from 'next-intl/server';
+import HideCardImageToggle from '@/components/settings/HideCardImageToggle';
+import packageJson from '../../../../package.json';
+import { NextIntlClientProvider } from 'next-intl';
+import SettingsContent from '@/components/settings/SettingsContent';
 
 const SettingsPage = async (
   props: Readonly<{
@@ -24,8 +24,8 @@ const SettingsPage = async (
   setRequestLocale(locale);
 
   return (
-    <section className="w-full h-full">
-      <main className="w-full h-full p-2 overflow-y-auto overflow-x-hidden scroll-smooth">
+    <section className="h-full w-full">
+      <main className="h-full w-full overflow-x-hidden overflow-y-auto scroll-smooth p-2">
         <NextIntlClientProvider>
           <SettingsContent />
         </NextIntlClientProvider>

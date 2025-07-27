@@ -1,17 +1,17 @@
-"use client";
+'use client';
 
-import { getOpenGraph, OpenGraph } from "@/utils/getOpenGraph";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import { useTranslations } from "next-intl";
-import z from "zod";
+import { getOpenGraph, OpenGraph } from '@/utils/getOpenGraph';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
+import z from 'zod';
 
 interface RecipeUrlPreviewProps {
   url: string;
 }
 
 const RecipeUrlPreview = ({ url }: RecipeUrlPreviewProps) => {
-  const t = useTranslations("Chatbot");
+  const t = useTranslations('Chatbot');
   const [openGraph, setOpenGraph] = useState<null | OpenGraph>(null);
   const [isLoading, setIsLoading] = useState(false);
 
@@ -25,12 +25,12 @@ const RecipeUrlPreview = ({ url }: RecipeUrlPreviewProps) => {
       setIsLoading(true);
       try {
         const response = (await Promise.race([
-          fetch("/api/recipes/url", {
-            method: "POST",
+          fetch('/api/recipes/url', {
+            method: 'POST',
             body: JSON.stringify({ url }),
           }),
           new Promise((_, reject) =>
-            setTimeout(() => reject(new Error("timeout")), 5000)
+            setTimeout(() => reject(new Error('timeout')), 5000)
           ),
         ])) as Response;
 
@@ -44,7 +44,7 @@ const RecipeUrlPreview = ({ url }: RecipeUrlPreviewProps) => {
 
         setOpenGraph(parsedOpenGraph);
       } catch (error) {
-        console.log("Failed to fetch OpenGraph data:", error);
+        console.log('Failed to fetch OpenGraph data:', error);
         setOpenGraph(null);
       } finally {
         setIsLoading(false);
@@ -58,17 +58,17 @@ const RecipeUrlPreview = ({ url }: RecipeUrlPreviewProps) => {
 
   return (
     <div className="mb-6">
-      <div className="text-sm font-medium text-base-content/80 mb-3">
-        {t("curatedRecipeUrlPreview.title")}
+      <div className="text-base-content/80 mb-3 text-sm font-medium">
+        {t('curatedRecipeUrlPreview.title')}
       </div>
       {isLoading ? (
-        <div className="bg-base-200 rounded-lg border border-base-300">
-          <div className="w-full h-48 bg-base-300 rounded-t-lg animate-pulse"></div>
+        <div className="bg-base-200 border-base-300 rounded-lg border">
+          <div className="bg-base-300 h-48 w-full animate-pulse rounded-t-lg"></div>
           <div className="p-4">
             <div className="flex items-center justify-center py-2">
               <span className="loading loading-spinner loading-md"></span>
-              <span className="ml-2 text-sm text-base-content/70">
-                {t("curatedRecipeUrlPreview.loading")}
+              <span className="text-base-content/70 ml-2 text-sm">
+                {t('curatedRecipeUrlPreview.loading')}
               </span>
             </div>
           </div>
@@ -78,37 +78,37 @@ const RecipeUrlPreview = ({ url }: RecipeUrlPreviewProps) => {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="block rounded-lg overflow-hidden border border-base-300 bg-base-100 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-[1.02]"
+          className="border-base-300 bg-base-100 block overflow-hidden rounded-lg border shadow-sm transition-all duration-200 hover:scale-[1.02] hover:shadow-md"
         >
-          <div className="relative w-full h-48 bg-base-300">
+          <div className="bg-base-300 relative h-48 w-full">
             <Image
-              src={openGraph?.image?.url ?? ""}
-              alt={openGraph?.image?.alt ?? ""}
+              src={openGraph?.image?.url ?? ''}
+              alt={openGraph?.image?.alt ?? ''}
               quality={30}
               width={400}
               height={200}
-              className="w-full h-full object-cover"
+              className="h-full w-full object-cover"
               style={{
-                aspectRatio: "2/1",
+                aspectRatio: '2/1',
               }}
             />
           </div>
           {(openGraph?.title || openGraph?.description) && (
             <div className="p-4">
               {openGraph?.title && (
-                <h4 className="text-sm font-semibold text-base-content line-clamp-2 mb-2 leading-tight">
+                <h4 className="text-base-content mb-2 line-clamp-2 text-sm leading-tight font-semibold">
                   {openGraph.title}
                 </h4>
               )}
               {openGraph?.description && (
-                <p className="text-xs text-base-content/70 line-clamp-3 leading-relaxed">
+                <p className="text-base-content/70 line-clamp-3 text-xs leading-relaxed">
                   {openGraph.description}
                 </p>
               )}
-              <div className="flex items-center mt-3 text-xs text-primary">
-                <span>{t("curatedRecipeUrlPreview.link")}</span>
+              <div className="text-primary mt-3 flex items-center text-xs">
+                <span>{t('curatedRecipeUrlPreview.link')}</span>
                 <svg
-                  className="w-3 h-3 ml-1"
+                  className="ml-1 h-3 w-3"
                   fill="none"
                   stroke="currentColor"
                   viewBox="0 0 24 24"
@@ -129,19 +129,19 @@ const RecipeUrlPreview = ({ url }: RecipeUrlPreviewProps) => {
           href={url}
           target="_blank"
           rel="noopener noreferrer"
-          className="block p-4 bg-base-200 rounded-lg border border-base-300 hover:bg-base-300 transition-colors duration-200"
+          className="bg-base-200 border-base-300 hover:bg-base-300 block rounded-lg border p-4 transition-colors duration-200"
         >
           <div className="flex items-center justify-between">
             <div>
-              <div className="text-sm font-medium text-base-content">
-                {t("curatedRecipeUrlPreview.link")}
+              <div className="text-base-content text-sm font-medium">
+                {t('curatedRecipeUrlPreview.link')}
               </div>
-              <div className="text-xs text-base-content/70 break-all">
+              <div className="text-base-content/70 text-xs break-all">
                 {url}
               </div>
             </div>
             <svg
-              className="w-4 h-4 text-primary flex-shrink-0 ml-2"
+              className="text-primary ml-2 h-4 w-4 flex-shrink-0"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"

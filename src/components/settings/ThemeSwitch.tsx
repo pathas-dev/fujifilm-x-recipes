@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import { setCookieTheme } from "@/app/actions";
-import { SvgSunMini, SvgMoonMini } from "@/components/icon/svgs";
-import { useCallback, useEffect, useState } from "react";
+import { setCookieTheme } from '@/app/actions';
+import { SvgSunMini, SvgMoonMini } from '@/components/icon/svgs';
+import { useCallback, useEffect, useState } from 'react';
 
-const THEME_ATTRIBUTE = "data-theme";
-const DARK_THEME = "dark";
-const LIGHT_THEME = "nord";
+const THEME_ATTRIBUTE = 'data-theme';
+const DARK_THEME = 'dark';
+const LIGHT_THEME = 'nord';
 
 export const DEFAULT_THEME = DARK_THEME;
 
@@ -16,9 +16,9 @@ const ThemeSwitch = () => {
   useEffect(() => {
     const initialTheme =
       document
-        .getElementsByTagName("html")
+        .getElementsByTagName('html')
         ?.item(0)
-        ?.getAttribute(THEME_ATTRIBUTE) ?? "";
+        ?.getAttribute(THEME_ATTRIBUTE) ?? '';
 
     const isDarkThemeAtFirst = initialTheme === DARK_THEME;
     setIsDarkTheme(isDarkThemeAtFirst);
@@ -30,7 +30,7 @@ const ThemeSwitch = () => {
       const response = await setCookieTheme(nextTheme);
       const isSuccess = !!response;
       if (isSuccess) {
-        const html = document.getElementsByTagName("html").item(0);
+        const html = document.getElementsByTagName('html').item(0);
         html?.setAttribute(THEME_ATTRIBUTE, nextTheme);
         setIsDarkTheme(!isDarkTheme);
       }

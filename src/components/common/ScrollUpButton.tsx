@@ -30,7 +30,7 @@ const ScrollUpButton = ({ refObject }: IScrollUpButtonProps) => {
     <AnimatePresence>
       {scrollPosition > 0 && (
         <motion.button
-          className="fixed z-[999] btn bottom-20 md:bottom-6 right-6 btn-accent btn-circle btn-sm md:btn-md fill-white shadow-md"
+          className="btn btn-accent btn-circle btn-sm md:btn-md fixed right-6 bottom-20 z-[999] fill-white shadow-md md:bottom-6"
           onClick={handleToUpButton}
           transition={{ duration: 0.4 }}
           initial={{ opacity: 0 }}

@@ -1,8 +1,8 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import { CustomRecipe } from "@/components/custom/customRecipe";
-import { produce } from "immer";
-import _reject from "lodash/reject";
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import { CustomRecipe } from '@/components/custom/customRecipe';
+import { produce } from 'immer';
+import _reject from 'lodash/reject';
 
 type CustomRecipeStore = {
   customRecipes: CustomRecipe[];
@@ -51,7 +51,7 @@ const useCustomRecipeStore = create<CustomRecipeStore>()(
       },
     }),
     {
-      name: "custom-recipes-storage",
+      name: 'custom-recipes-storage',
     }
   )
 );

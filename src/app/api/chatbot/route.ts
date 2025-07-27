@@ -1,7 +1,7 @@
-import { AgentStep, FujifilmRecipeAgent } from "@/app/api/chatbot/agent";
-import { NextResponse } from "next/server";
+import { AgentStep, FujifilmRecipeAgent } from '@/app/api/chatbot/agent';
+import { NextResponse } from 'next/server';
 
-export const dynamic = "force-dynamic";
+export const dynamic = 'force-dynamic';
 
 // 서버 센트 이벤트 스트리밍 엔드포인트
 export async function POST(request: Request) {
@@ -14,7 +14,7 @@ export async function POST(request: Request) {
     const stream = new ReadableStream({
       start(controller) {
         // SSE 이벤트 전송 함수
-        const sendEvent = (event: "state" | AgentStep, data: any) => {
+        const sendEvent = (event: 'state' | AgentStep, data: any) => {
           const eventData = `event: ${event}\ndata: ${JSON.stringify(
             data
           )}\n\n`;
@@ -27,43 +27,43 @@ export async function POST(request: Request) {
             const agent = new FujifilmRecipeAgent(question);
 
             // 각 단계별로 상태 전송
-            sendEvent("state", agent.getState());
+            sendEvent('state', agent.getState());
 
             // 단계별 실행
             const shouldContinue = await agent.analyzeQuestion();
-            sendEvent("state", agent.getState());
+            sendEvent('state', agent.getState());
 
             if (!shouldContinue) {
-              sendEvent("completed", agent.getState().response);
+              sendEvent('completed', agent.getState().response);
               controller.close();
               return;
             }
 
             if (!(await agent.searchDocuments())) {
-              sendEvent("error", { error: agent.getState().error });
+              sendEvent('error', { error: agent.getState().error });
               controller.close();
               return;
             }
-            sendEvent("state", agent.getState());
+            sendEvent('state', agent.getState());
 
             if (!(await agent.generateRecipes())) {
-              sendEvent("error", { error: agent.getState().error });
+              sendEvent('error', { error: agent.getState().error });
               controller.close();
               return;
             }
-            sendEvent("state", agent.getState());
+            sendEvent('state', agent.getState());
 
             await agent.processImages();
-            sendEvent("state", agent.getState());
+            sendEvent('state', agent.getState());
 
             await agent.finalizeResponse();
 
             // 최종 결과 전송
-            sendEvent("completed", agent.getState().response);
+            sendEvent('completed', agent.getState().response);
             controller.close();
           } catch (error) {
-            console.error("Agent execution error:", error);
-            sendEvent("error", { error: "Failed to process agent request" });
+            console.error('Agent execution error:', error);
+            sendEvent('error', { error: 'Failed to process agent request' });
             controller.close();
           }
         };
@@ -74,18 +74,18 @@ export async function POST(request: Request) {
 
     return new Response(stream, {
       headers: {
-        "Content-Type": "text/event-stream",
-        "Cache-Control": "no-cache",
-        Connection: "keep-alive",
-        "Access-Control-Allow-Origin": "*",
-        "Access-Control-Allow-Methods": "POST",
-        "Access-Control-Allow-Headers": "Content-Type",
+        'Content-Type': 'text/event-stream',
+        'Cache-Control': 'no-cache',
+        Connection: 'keep-alive',
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'POST',
+        'Access-Control-Allow-Headers': 'Content-Type',
       },
     });
   } catch (error) {
-    console.error("SSE POST Error:", error);
+    console.error('SSE POST Error:', error);
     return NextResponse.json(
-      { error: "Failed to initialize streaming request" },
+      { error: 'Failed to initialize streaming request' },
       { status: 500 }
     );
   }

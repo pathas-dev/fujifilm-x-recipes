@@ -30,7 +30,7 @@ interface CustomFormProps {
 
 const SettingTab = ({ children }: CustomFormProps) => {
   return (
-    <article className="px-5 py-7 bg-base-200 flex-1 justify-center rounded-lg">
+    <article className="bg-base-200 flex-1 justify-center rounded-lg px-5 py-7">
       {children}
     </article>
   );
@@ -278,8 +278,8 @@ const Iso = ({ label, onChange, value, isAuto, onToggle }: IsoProps) => {
     return { ...acc, [cur]: ' ' };
   }, {});
   return (
-    <div className="w-full relative">
-      <div className="form-control absolute right-0 -top-1">
+    <div className="relative w-full">
+      <div className="form-control absolute -top-1 right-0">
         <label className="label cursor-pointer">
           <span className="label-text mr-2">AUTO</span>
           <input
@@ -365,7 +365,7 @@ const WhiteBalanceTab = ({
         />
       </div>
       {whiteBanlance.type === 'k' && (
-        <div className="w-11/12 mx-auto">
+        <div className="mx-auto w-11/12">
           <CustomSlider
             label="K"
             min={WHITE_BALANCE_K.min}
@@ -383,7 +383,7 @@ const WhiteBalanceTab = ({
           />
         </div>
       )}
-      <div className="w-full mt-10 mb-5">
+      <div className="mt-10 mb-5 w-full">
         <WhiteBalanceShiftSelector
           shift={whiteBanlance.shift}
           onClick={onShiftCahnge}
@@ -395,7 +395,7 @@ const WhiteBalanceTab = ({
 
 const BwAdjust = ({ value, label, onChange }: IJoinTabProps) => {
   return (
-    <div className="w-11/12 mx-auto">
+    <div className="mx-auto w-11/12">
       <CustomSlider
         included={false}
         label={label}

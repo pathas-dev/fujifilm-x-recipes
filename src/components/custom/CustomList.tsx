@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import useToastStore from "@/stores/toast";
-import useCustomRecipeStore from "@/stores/customRecipe";
-import { Camera } from "@/types/api";
-import dayjs from "dayjs";
-import { motion } from "framer-motion";
-import _reject from "lodash/reject";
-import _some from "lodash/some";
-import lzString from "lz-string";
+import useToastStore from '@/stores/toast';
+import useCustomRecipeStore from '@/stores/customRecipe';
+import { Camera } from '@/types/api';
+import dayjs from 'dayjs';
+import { motion } from 'framer-motion';
+import _reject from 'lodash/reject';
+import _some from 'lodash/some';
+import lzString from 'lz-string';
 import {
   Dispatch,
   SetStateAction,
@@ -16,13 +16,13 @@ import {
   useMemo,
   useRef,
   useState,
-} from "react";
-import { useTranslations } from "next-intl";
+} from 'react';
+import { useTranslations } from 'next-intl';
 import RecipeFilterHeader, {
   DropboxItem,
   IDropboxProps,
-} from "../common/RecipeFilterHeader";
-import ScrollUpButton from "../common/ScrollUpButton";
+} from '../common/RecipeFilterHeader';
+import ScrollUpButton from '../common/ScrollUpButton';
 import {
   SvgArrowUpDownMicro,
   SvgCameraMicro,
@@ -30,13 +30,13 @@ import {
   SvgChevronDoubleDownSolid,
   SvgFilmMicro,
   SvgSensorMicro,
-} from "../icon/svgs";
-import CustomCard, { QUERY_KEY_ADD_RECIPE } from "./CustomCard";
-import CustomEditCard from "./CustomEditCard";
-import { CustomRecipe, ERROR_TYPES, isCustomRecipeJSON } from "./customRecipe";
-import { useRouter } from "@/i18n/navigation";
-import { useSearchParams } from "next/navigation";
-import { v4 as uuidv4 } from "uuid";
+} from '../icon/svgs';
+import CustomCard, { QUERY_KEY_ADD_RECIPE } from './CustomCard';
+import CustomEditCard from './CustomEditCard';
+import { CustomRecipe, ERROR_TYPES, isCustomRecipeJSON } from './customRecipe';
+import { useRouter } from '@/i18n/navigation';
+import { useSearchParams } from 'next/navigation';
+import { v4 as uuidv4 } from 'uuid';
 
 interface ICardListProps {
   filters: {
@@ -47,104 +47,104 @@ interface ICardListProps {
   cameras: Camera[];
 }
 
-const DESC_CHARACTER = "↓";
-const ASC_CHARACTER = "↑";
-const DELIMETER = " ";
+const DESC_CHARACTER = '↓';
+const ASC_CHARACTER = '↑';
+const DELIMETER = ' ';
 
 const CustomList = ({ filters, cameras }: ICardListProps) => {
   // Translation hooks
-  const tHeaders = useTranslations("Headers");
-  const tSettings = useTranslations("Settings");
-  const tCopyAndPasteMessages = useTranslations("CopyAndPasteMessages");
+  const tHeaders = useTranslations('Headers');
+  const tSettings = useTranslations('Settings');
+  const tCopyAndPasteMessages = useTranslations('CopyAndPasteMessages');
 
   // Create message objects from translations
   const headerMessages = {
-    bwOnly: tHeaders("bwOnly"),
-    dateLabel: tHeaders("dateLabel"),
-    nameLabel: tHeaders("nameLabel"),
-    baseLabel: tHeaders("baseLabel"),
-    cameraLabel: tHeaders("cameraLabel"),
-    creatorLabel: tHeaders("creatorLabel"),
+    bwOnly: tHeaders('bwOnly'),
+    dateLabel: tHeaders('dateLabel'),
+    nameLabel: tHeaders('nameLabel'),
+    baseLabel: tHeaders('baseLabel'),
+    cameraLabel: tHeaders('cameraLabel'),
+    creatorLabel: tHeaders('creatorLabel'),
   };
 
   const settingMessages = {
-    newTitle: tSettings("newTitle"),
-    updateTitle: tSettings("updateTitle"),
+    newTitle: tSettings('newTitle'),
+    updateTitle: tSettings('updateTitle'),
     placeholders: {
-      name: tSettings("placeholders.name"),
-      camera: tSettings("placeholders.camera"),
-      base: tSettings("placeholders.base"),
+      name: tSettings('placeholders.name'),
+      camera: tSettings('placeholders.camera'),
+      base: tSettings('placeholders.base'),
     },
     labels: {
-      highlight: tSettings("labels.highlight"),
-      tone: tSettings("labels.tone"),
-      shadow: tSettings("labels.shadow"),
-      grain: tSettings("labels.grain"),
-      grainSize: tSettings("labels.grainSize"),
-      grainRoughness: tSettings("labels.grainRoughness"),
-      dynamicRange: tSettings("labels.dynamicRange"),
-      colorChromeEffect: tSettings("labels.colorChromeEffect"),
-      colorChromeFXBlue: tSettings("labels.colorChromeFXBlue"),
-      sharpness: tSettings("labels.sharpness"),
-      color: tSettings("labels.color"),
-      clarity: tSettings("labels.clarity"),
-      isoNoiseReduction: tSettings("labels.isoNoiseReduction"),
-      exposure: tSettings("labels.exposure"),
-      iso: tSettings("labels.iso"),
-      whiteBalance: tSettings("labels.whiteBalance"),
-      whiteBalanceK: tSettings("labels.whiteBalanceK"),
-      whiteBalanceShift: tSettings("labels.whiteBalanceShift"),
-      bwAdj: tSettings("labels.bwAdj"),
+      highlight: tSettings('labels.highlight'),
+      tone: tSettings('labels.tone'),
+      shadow: tSettings('labels.shadow'),
+      grain: tSettings('labels.grain'),
+      grainSize: tSettings('labels.grainSize'),
+      grainRoughness: tSettings('labels.grainRoughness'),
+      dynamicRange: tSettings('labels.dynamicRange'),
+      colorChromeEffect: tSettings('labels.colorChromeEffect'),
+      colorChromeFXBlue: tSettings('labels.colorChromeFXBlue'),
+      sharpness: tSettings('labels.sharpness'),
+      color: tSettings('labels.color'),
+      clarity: tSettings('labels.clarity'),
+      isoNoiseReduction: tSettings('labels.isoNoiseReduction'),
+      exposure: tSettings('labels.exposure'),
+      iso: tSettings('labels.iso'),
+      whiteBalance: tSettings('labels.whiteBalance'),
+      whiteBalanceK: tSettings('labels.whiteBalanceK'),
+      whiteBalanceShift: tSettings('labels.whiteBalanceShift'),
+      bwAdj: tSettings('labels.bwAdj'),
     },
     options: {
       effects: {
-        off: tSettings("options.effects.off"),
-        strong: tSettings("options.effects.strong"),
-        weak: tSettings("options.effects.weak"),
+        off: tSettings('options.effects.off'),
+        strong: tSettings('options.effects.strong'),
+        weak: tSettings('options.effects.weak'),
       },
       sizes: {
-        off: tSettings("options.sizes.off"),
-        large: tSettings("options.sizes.large"),
-        small: tSettings("options.sizes.small"),
+        off: tSettings('options.sizes.off'),
+        large: tSettings('options.sizes.large'),
+        small: tSettings('options.sizes.small'),
       },
       whiteBalances: {
-        autoWhitePriority: tSettings("options.whiteBalances.autoWhitePriority"),
-        auto: tSettings("options.whiteBalances.auto"),
+        autoWhitePriority: tSettings('options.whiteBalances.autoWhitePriority'),
+        auto: tSettings('options.whiteBalances.auto'),
         autoAmbiencePriority: tSettings(
-          "options.whiteBalances.autoAmbiencePriority"
+          'options.whiteBalances.autoAmbiencePriority'
         ),
-        measure: tSettings("options.whiteBalances.measure"),
-        k: tSettings("options.whiteBalances.k"),
-        sunlight: tSettings("options.whiteBalances.sunlight"),
-        shade: tSettings("options.whiteBalances.shade"),
-        daylight: tSettings("options.whiteBalances.daylight"),
-        warmWhite: tSettings("options.whiteBalances.warmWhite"),
-        coolWhite: tSettings("options.whiteBalances.coolWhite"),
-        incandescent: tSettings("options.whiteBalances.incandescent"),
-        underwater: tSettings("options.whiteBalances.underwater"),
+        measure: tSettings('options.whiteBalances.measure'),
+        k: tSettings('options.whiteBalances.k'),
+        sunlight: tSettings('options.whiteBalances.sunlight'),
+        shade: tSettings('options.whiteBalances.shade'),
+        daylight: tSettings('options.whiteBalances.daylight'),
+        warmWhite: tSettings('options.whiteBalances.warmWhite'),
+        coolWhite: tSettings('options.whiteBalances.coolWhite'),
+        incandescent: tSettings('options.whiteBalances.incandescent'),
+        underwater: tSettings('options.whiteBalances.underwater'),
       },
     },
     errors: {
-      noName: tSettings("errors.noName"),
-      noCamera: tSettings("errors.noCamera"),
-      noBase: tSettings("errors.noBase"),
+      noName: tSettings('errors.noName'),
+      noCamera: tSettings('errors.noCamera'),
+      noBase: tSettings('errors.noBase'),
     },
     successes: {
-      create: tSettings("successes.create"),
-      update: tSettings("successes.update"),
+      create: tSettings('successes.create'),
+      update: tSettings('successes.update'),
     },
   };
 
   const copyAndPasteMessages = {
     copy: {
-      success: tCopyAndPasteMessages("copy.success"),
-      fail: tCopyAndPasteMessages("copy.fail"),
+      success: tCopyAndPasteMessages('copy.success'),
+      fail: tCopyAndPasteMessages('copy.fail'),
     },
     paste: {
-      success: tCopyAndPasteMessages("paste.success"),
+      success: tCopyAndPasteMessages('paste.success'),
       errors: {
-        invalidURL: tCopyAndPasteMessages("paste.errors.invalidURL"),
-        invalidScheme: tCopyAndPasteMessages("paste.errors.invalidScheme"),
+        invalidURL: tCopyAndPasteMessages('paste.errors.invalidURL'),
+        invalidScheme: tCopyAndPasteMessages('paste.errors.invalidScheme'),
       },
     },
   };
@@ -153,39 +153,39 @@ const CustomList = ({ filters, cameras }: ICardListProps) => {
     () => [
       {
         label: [headerMessages.dateLabel, ASC_CHARACTER].join(DELIMETER),
-        value: "createdAt",
+        value: 'createdAt',
         isAsc: true,
       },
       {
         label: [headerMessages.dateLabel, DESC_CHARACTER].join(DELIMETER),
-        value: "createdAt",
+        value: 'createdAt',
       },
       {
         label: [headerMessages.nameLabel, ASC_CHARACTER].join(DELIMETER),
-        value: "name",
+        value: 'name',
         isAsc: true,
       },
       {
         label: [headerMessages.nameLabel, DESC_CHARACTER].join(DELIMETER),
-        value: "name",
+        value: 'name',
       },
       {
         label: [headerMessages.cameraLabel, ASC_CHARACTER].join(DELIMETER),
-        value: "camera",
+        value: 'camera',
         isAsc: true,
       },
       {
         label: [headerMessages.cameraLabel, DESC_CHARACTER].join(DELIMETER),
-        value: "camera",
+        value: 'camera',
       },
       {
         label: [headerMessages.baseLabel, ASC_CHARACTER].join(DELIMETER),
-        value: "base",
+        value: 'base',
         isAsc: true,
       },
       {
         label: [headerMessages.baseLabel, DESC_CHARACTER].join(DELIMETER),
-        value: "base",
+        value: 'base',
       },
     ],
     [
@@ -226,7 +226,7 @@ const CustomList = ({ filters, cameras }: ICardListProps) => {
       setToastMessage({
         message: copyAndPasteMessages.paste.errors.invalidURL,
       });
-      return router.replace("/");
+      return router.replace('/');
     }
 
     const sharedRecipe = JSON.parse(decompressedRecipe) as CustomRecipe;
@@ -236,17 +236,17 @@ const CustomList = ({ filters, cameras }: ICardListProps) => {
       setToastMessage({
         message: copyAndPasteMessages.paste.errors.invalidScheme,
       });
-      return router.replace("/");
+      return router.replace('/');
     }
     const newRecipe: CustomRecipe = {
       ...sharedRecipe,
       _id: uuidv4(),
-      createdAt: dayjs().format("YYYY-MM-DD HH:mm:ss"),
+      createdAt: dayjs().format('YYYY-MM-DD HH:mm:ss'),
     };
 
     addRecipe(newRecipe);
     setToastMessage({ message: copyAndPasteMessages.paste.success });
-    router.replace("/");
+    router.replace('/');
   }, [
     addParam,
     router,
@@ -267,7 +267,7 @@ const CustomList = ({ filters, cameras }: ICardListProps) => {
       const isSensorIncluded =
         sensors.length === 0 || !!_some(sensors, { value: recipe.sensor });
 
-      const isBw = bwOnly ? recipe.colorType === "BW" : true;
+      const isBw = bwOnly ? recipe.colorType === 'BW' : true;
 
       return isBaseIncluded && isCameraIncluded && isSensorIncluded && isBw;
     });
@@ -279,10 +279,10 @@ const CustomList = ({ filters, cameras }: ICardListProps) => {
     const { value, isAsc } = sortType;
 
     const sort =
-      value === "createdAt" ? getSortDateCallback : getSortCharCallback;
+      value === 'createdAt' ? getSortDateCallback : getSortCharCallback;
 
     return copiedFilteredRecipes.sort(
-      sort({ key: value as keyof Omit<CustomRecipe, "settings">, isAsc })
+      sort({ key: value as keyof Omit<CustomRecipe, 'settings'>, isAsc })
     );
   }, [sortType, filteredRecipes]);
 
@@ -323,7 +323,7 @@ const CustomList = ({ filters, cameras }: ICardListProps) => {
         if (checked) setSortType(item);
       },
       children: <SvgArrowUpDownMicro />,
-      type: "radio",
+      type: 'radio',
     },
   ];
 
@@ -345,13 +345,13 @@ const CustomList = ({ filters, cameras }: ICardListProps) => {
 
   const onError = (errorType: (typeof ERROR_TYPES)[number]) => {
     setToastMessage({
-      type: "Error",
+      type: 'Error',
       message: settingMessages.errors[errorType],
     });
   };
 
   const handleToUpButton = () => {
-    refMain.current?.scrollTo({ top: 0, behavior: "smooth" });
+    refMain.current?.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
   const onDeleteSuccess = (deletedRecipe: CustomRecipe): void => {
@@ -359,8 +359,8 @@ const CustomList = ({ filters, cameras }: ICardListProps) => {
   };
 
   const createCardClassName = shrinkCreateCard
-    ? "w-full h-12 invisible overflow-hidden"
-    : "w-full h-full flex justify-center";
+    ? 'w-full h-12 invisible overflow-hidden'
+    : 'w-full h-full flex justify-center';
 
   const onChebronClick = () => setShrinkCreateCard((prev) => !prev);
 
@@ -368,7 +368,7 @@ const CustomList = ({ filters, cameras }: ICardListProps) => {
     setRecipes(unionRecipes);
 
   return (
-    <section className="w-full h-full">
+    <section className="h-full w-full">
       <RecipeFilterHeader
         bwOnly={bwOnly}
         onBwOnlyChange={onBwToggle}
@@ -378,15 +378,15 @@ const CustomList = ({ filters, cameras }: ICardListProps) => {
       />
 
       <main
-        className="w-full h-[calc(100%-3.5rem)] p-2 grid grid-cols-1 md:grid-cols-3 gap-2 overflow-y-auto overflow-x-hidden scroll-smooth"
+        className="grid h-[calc(100%-3.5rem)] w-full grid-cols-1 gap-2 overflow-x-hidden overflow-y-auto scroll-smooth p-2 md:grid-cols-3"
         ref={refMain}
         style={{
-          gridAutoRows: "min-content",
+          gridAutoRows: 'min-content',
         }}
       >
-        <section className="w-full relative col-span-1 md:col-span-3">
+        <section className="relative col-span-1 w-full md:col-span-3">
           <motion.button
-            className="absolute btn btn-circle btn-accent z-10 left-0 right-0 mx-auto fill-white"
+            className="btn btn-circle btn-accent absolute right-0 left-0 z-10 mx-auto fill-white"
             onClick={onChebronClick}
             transition={{ duration: 0.4 }}
             initial={{ opacity: 0 }}
@@ -444,7 +444,7 @@ const getSortDateCallback =
     key,
     isAsc,
   }: {
-    key: keyof Omit<CustomRecipe, "settings">;
+    key: keyof Omit<CustomRecipe, 'settings'>;
     isAsc?: boolean;
   }) =>
   (prev: CustomRecipe, next: CustomRecipe) => {
@@ -459,7 +459,7 @@ const getSortCharCallback =
     key,
     isAsc,
   }: {
-    key: keyof Omit<CustomRecipe, "settings">;
+    key: keyof Omit<CustomRecipe, 'settings'>;
     isAsc?: boolean;
   }) =>
   (prev: CustomRecipe, next: CustomRecipe) => {

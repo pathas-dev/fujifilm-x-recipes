@@ -40,7 +40,7 @@ export const CustomSelect = ({
   return (
     <label className="form-control w-full">
       <select
-        className="w-full select select-bordered select-secondary select-sm"
+        className="select select-bordered select-secondary select-sm w-full"
         onChange={({ target: { value } }) => {
           onChange(value);
         }}
@@ -90,12 +90,12 @@ export const CustomSlider = (props: ISliderProps) => {
   };
 
   return (
-    <article className="w-full flex flex-col justify-center items-center gap-2 pb-5">
-      <div className="flex flex-col justify-center items-center">
+    <article className="flex w-full flex-col items-center justify-center gap-2 pb-5">
+      <div className="flex flex-col items-center justify-center">
         <h2 className="font-medium">{props.label}</h2>
-        <div className="flex my-2 gap-2 items-center">
+        <div className="my-2 flex items-center gap-2">
           <button
-            className="btn btn-ghost flex btn-xs"
+            className="btn btn-ghost btn-xs flex"
             onClick={
               !!props.onMinusClick
                 ? () => {
@@ -106,11 +106,11 @@ export const CustomSlider = (props: ISliderProps) => {
           >
             <SvgMinusMicro />
           </button>
-          <p className="text-lg w-16 text-center">
+          <p className="w-16 text-center text-lg">
             {props.displayValue ?? props.value}
           </p>
           <button
-            className="btn btn-ghost flex btn-xs"
+            className="btn btn-ghost btn-xs flex"
             onClick={
               !!props.onPlusClick
                 ? () => {
@@ -159,11 +159,11 @@ export const Join = ({
   displayValue,
 }: IJoinProps) => {
   return (
-    <article className="flex flex-col justify-center items-center gap-2 w-full">
-      <div className="flex flex-col justify-center items-center">
+    <article className="flex w-full flex-col items-center justify-center gap-2">
+      <div className="flex flex-col items-center justify-center">
         <h2 className="font-medium">{label}</h2>
-        <div className="flex my-2 gap-2 items-center">
-          <p className="text-lg w-16 text-center">{displayValue ?? value}</p>
+        <div className="my-2 flex items-center gap-2">
+          <p className="w-16 text-center text-lg">{displayValue ?? value}</p>
         </div>
       </div>
 
@@ -197,14 +197,14 @@ export const WhiteBalanceShiftSelector = ({
   const MAX = 9;
   const MIN = -9;
   return (
-    <div className="p-0 w-fit flex flex-col m-auto">
-      <div className="w-fit flex flex-col-reverse relative">
-        <h1 className="absolute text-lg font-medium -top-7">
+    <div className="m-auto flex w-fit flex-col p-0">
+      <div className="relative flex w-fit flex-col-reverse">
+        <h1 className="absolute -top-7 text-lg font-medium">
           R:{shift.red} B: {shift.blue}
         </h1>
-        <div className="absolute flex flex-col gap-1 items-center top-[32%] -left-8">
+        <div className="absolute top-[32%] -left-8 flex flex-col items-center gap-1">
           <button
-            className="btn btn-ghost flex btn-xs"
+            className="btn btn-ghost btn-xs flex"
             onClick={() =>
               onClick({
                 red: shift.red,
@@ -216,7 +216,7 @@ export const WhiteBalanceShiftSelector = ({
           </button>
           <h2>B</h2>
           <button
-            className="btn btn-ghost flex btn-xs"
+            className="btn btn-ghost btn-xs flex"
             onClick={() =>
               onClick({
                 red: shift.red,
@@ -227,9 +227,9 @@ export const WhiteBalanceShiftSelector = ({
             <SvgMinusMicro />
           </button>
         </div>
-        <div className="absolute flex gap-1 items-center left-[30%] -bottom-7">
+        <div className="absolute -bottom-7 left-[30%] flex items-center gap-1">
           <button
-            className="btn btn-ghost flex btn-xs"
+            className="btn btn-ghost btn-xs flex"
             onClick={() =>
               onClick({
                 red: shift.red > MIN ? shift.red - 1 : shift.red,
@@ -241,7 +241,7 @@ export const WhiteBalanceShiftSelector = ({
           </button>
           <h2>R</h2>
           <button
-            className="btn btn-ghost flex btn-xs"
+            className="btn btn-ghost btn-xs flex"
             onClick={() =>
               onClick({
                 red: shift.red < MAX ? shift.red + 1 : shift.red,
@@ -266,7 +266,7 @@ export const WhiteBalanceShiftSelector = ({
                 const button = selected ? (
                   <button
                     key={x + y}
-                    className="h-3 w-3 text-[7.5px] align-top leading-[7.5px] border-2 border-accent p-0"
+                    className="border-accent h-3 w-3 border-2 p-0 align-top text-[7.5px] leading-[7.5px]"
                     onClick={() => {
                       onClick({ red, blue });
                     }}
@@ -276,7 +276,7 @@ export const WhiteBalanceShiftSelector = ({
                 ) : (
                   <button
                     key={x + y}
-                    className="h-3 w-3 text-xs align-top leading-3 "
+                    className="h-3 w-3 align-top text-xs leading-3"
                     onClick={() => {
                       onClick({ red, blue });
                     }}

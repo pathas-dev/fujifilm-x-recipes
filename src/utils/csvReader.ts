@@ -1,5 +1,5 @@
-import fs from "fs";
-import Papa from "papaparse";
+import fs from 'fs';
+import Papa from 'papaparse';
 
 export interface FilmRecipe {
   creator: string;
@@ -24,9 +24,9 @@ export interface ParsedSettings {
  */
 export function parseSettings(settingsString: string) {
   // 줄바꿈으로 분리하고 reduce로 설정 객체 생성
-  const DELIMETER = ":";
+  const DELIMETER = ':';
 
-  const settings = settingsString.split("\n").reduce((settings, line) => {
+  const settings = settingsString.split('\n').reduce((settings, line) => {
     const trimmedLine = line.trim();
     if (trimmedLine && trimmedLine.includes(DELIMETER)) {
       const [key, value] = trimmedLine.split(DELIMETER);
@@ -43,7 +43,7 @@ export function parseSettings(settingsString: string) {
  */
 export function readCSV(filePath: string): FilmRecipe[] {
   try {
-    const csvContent = fs.readFileSync(filePath, "utf-8");
+    const csvContent = fs.readFileSync(filePath, 'utf-8');
 
     const result = Papa.parse<FilmRecipe>(csvContent, {
       header: true,
@@ -52,7 +52,7 @@ export function readCSV(filePath: string): FilmRecipe[] {
       transform: (value, field) => {
         const trimmedValue = value.trim();
         // Settings 필드인 경우 파싱해서 객체로 변환
-        if (field === "Settings") {
+        if (field === 'Settings') {
           return parseSettings(trimmedValue);
         }
         return trimmedValue;
@@ -61,13 +61,13 @@ export function readCSV(filePath: string): FilmRecipe[] {
     });
 
     if (result.errors.length > 0) {
-      console.warn("CSV 파싱 경고:", result.errors);
+      console.warn('CSV 파싱 경고:', result.errors);
     }
 
     // 필수 필드가 있는 레시피만 필터링
     return result.data.filter((recipe) => recipe.creator && recipe.name);
   } catch (error) {
-    console.error("CSV 파일 읽기 오류:", error);
+    console.error('CSV 파일 읽기 오류:', error);
     throw error;
   }
 }

@@ -1,19 +1,19 @@
-import { formatContext } from "@/app/api/chatbot/context";
+import { formatContext } from '@/app/api/chatbot/context';
 import {
   createCuratorPromptTemplate,
   createLLM,
   createParseQuestionPromptTemplate,
   GoogleAIModel,
-} from "@/app/api/chatbot/llm";
-import { retrieve } from "@/app/api/chatbot/retrieval";
-import { QuestionAnalysisSchema } from "@/app/api/chatbot/shema";
+} from '@/app/api/chatbot/llm';
+import { retrieve } from '@/app/api/chatbot/retrieval';
+import { QuestionAnalysisSchema } from '@/app/api/chatbot/shema';
 import {
   CuratedRecipesSchema,
   CuratorResponse,
   MetaTiming,
-} from "@/types/recipe-schema";
-import { retouchImage } from "@/utils/retouchImage";
-import z from "zod";
+} from '@/types/recipe-schema';
+import { retouchImage } from '@/utils/retouchImage';
+import z from 'zod';
 
 // LLM 인스턴스 관리 개선 (메모리 누수 방지)
 const llmCache = new Map<string, ReturnType<typeof createLLM>>();
@@ -27,9 +27,12 @@ const getOrCreateLLM = (model: GoogleAIModel): ReturnType<typeof createLLM> => {
     llmCache.set(cacheKey, llm);
 
     // 10분 후 자동 정리
-    setTimeout(() => {
-      llmCache.delete(cacheKey);
-    }, 10 * 60 * 1000);
+    setTimeout(
+      () => {
+        llmCache.delete(cacheKey);
+      },
+      10 * 60 * 1000
+    );
   }
 
   return llmCache.get(cacheKey)!;
@@ -56,7 +59,7 @@ const validatePromptInputs = (
       console.warn(`⚠️ ${templateName}: '${key}' is undefined`);
     } else if (value === null) {
       console.warn(`⚠️ ${templateName}: '${key}' is null`);
-    } else if (typeof value === "string" && value.trim() === "") {
+    } else if (typeof value === 'string' && value.trim() === '') {
       console.warn(`⚠️ ${templateName}: '${key}' is empty string`);
     }
   }
@@ -65,12 +68,12 @@ const validatePromptInputs = (
 };
 
 export const agentSteps = [
-  "analyzing",
-  "searching",
-  "generating",
-  "processing",
-  "completed",
-  "error",
+  'analyzing',
+  'searching',
+  'generating',
+  'processing',
+  'completed',
+  'error',
 ] as const;
 
 export type AgentStep = (typeof agentSteps)[number];
@@ -97,14 +100,14 @@ export class FujifilmRecipeAgent {
   constructor(question: string) {
     this.state = {
       question,
-      step: "analyzing",
+      step: 'analyzing',
     };
   }
 
   async analyzeQuestion(): Promise<boolean> {
     try {
-      console.log("🔍 Analyzing question:", this.state.question);
-      const endTime = measureTime("Question Analysis");
+      console.log('🔍 Analyzing question:', this.state.question);
+      const endTime = measureTime('Question Analysis');
 
       const parsingLLM = getOrCreateLLM(GoogleAIModel.GeminiFlashLite);
       const parsingPrompt = createParseQuestionPromptTemplate();
@@ -115,7 +118,7 @@ export class FujifilmRecipeAgent {
 
       const inputs = validatePromptInputs(
         { question: this.state.question },
-        "QuestionAnalysis"
+        'QuestionAnalysis'
       );
 
       const analysis = (await parsingChain.invoke(inputs)) as z.infer<
@@ -129,24 +132,24 @@ export class FujifilmRecipeAgent {
       // 관련 없는 질문 처리
       if (!analysis.isFilmRecipeQuestion) {
         this.state.response = analysis.rejectionReason;
-        this.state.step = "completed";
+        this.state.step = 'completed';
         return false; // 다음 단계로 진행하지 않음
       }
 
-      this.state.step = "searching";
+      this.state.step = 'searching';
       return true;
     } catch (error) {
-      console.error("Question analysis error:", error);
-      this.state.error = "질문 분석 중 오류가 발생했습니다.";
-      this.state.step = "error";
+      console.error('Question analysis error:', error);
+      this.state.error = '질문 분석 중 오류가 발생했습니다.';
+      this.state.step = 'error';
       return false;
     }
   }
 
   async searchDocuments(): Promise<boolean> {
     try {
-      console.log("📚 Searching documents");
-      const endTime = measureTime("Document Search");
+      console.log('📚 Searching documents');
+      const endTime = measureTime('Document Search');
 
       const searchQuery =
         this.state.analysis?.enhancedQuestion || this.state.question;
@@ -158,20 +161,20 @@ export class FujifilmRecipeAgent {
       this.state.context = formatContext(this.state.documents);
       const duration = endTime();
       this.state.timing = { ...this.state.timing, search: duration };
-      this.state.step = "generating";
+      this.state.step = 'generating';
       return true;
     } catch (error) {
-      console.error("Document search error:", error);
-      this.state.error = "문서 검색 중 오류가 발생했습니다.";
-      this.state.step = "error";
+      console.error('Document search error:', error);
+      this.state.error = '문서 검색 중 오류가 발생했습니다.';
+      this.state.step = 'error';
       return false;
     }
   }
 
   async generateRecipes(): Promise<boolean> {
     try {
-      console.log("👨‍🍳 Generating recipes");
-      const endTime = measureTime("Recipe Generation");
+      console.log('👨‍🍳 Generating recipes');
+      const endTime = measureTime('Recipe Generation');
 
       const curatorLLM = getOrCreateLLM(GoogleAIModel.GeminiFlash);
       const curatorPrompt = createCuratorPromptTemplate();
@@ -182,10 +185,10 @@ export class FujifilmRecipeAgent {
 
       const inputs = validatePromptInputs(
         {
-          context: this.state.context || "",
+          context: this.state.context || '',
           question: this.state.question,
         },
-        "RecipeGeneration"
+        'RecipeGeneration'
       );
 
       const recipes = (await curatorChain.invoke(inputs)) as z.infer<
@@ -195,37 +198,37 @@ export class FujifilmRecipeAgent {
       this.state.recipes = recipes;
       const duration = endTime();
       this.state.timing = { ...this.state.timing, generation: duration };
-      this.state.step = "processing";
+      this.state.step = 'processing';
       return true;
     } catch (error) {
-      console.error("Recipe generation error:", error);
-      this.state.error = "레시피 생성 중 오류가 발생했습니다.";
-      this.state.step = "error";
+      console.error('Recipe generation error:', error);
+      this.state.error = '레시피 생성 중 오류가 발생했습니다.';
+      this.state.step = 'error';
       return false;
     }
   }
 
   async processImages(): Promise<boolean> {
     try {
-      console.log("🖼️ Processing images");
-      const endTime = measureTime("Image Processing");
+      console.log('🖼️ Processing images');
+      const endTime = measureTime('Image Processing');
 
       const settings = this.state.recipes?.generated?.settings;
 
       // 병렬로 이미지 처리 시작
-      const sourcePromise = retouchImage("source.jpg", "webp", {
+      const sourcePromise = retouchImage('source.jpg', 'webp', {
         width: 800,
         returnBase64: true,
-        isBw: this.state.analysis?.colorOrBw === "B&W",
+        isBw: this.state.analysis?.colorOrBw === 'B&W',
       });
 
       let retouchedPromise: Promise<any> | null = null;
       if (settings) {
-        retouchedPromise = retouchImage("source.jpg", "webp", {
+        retouchedPromise = retouchImage('source.jpg', 'webp', {
           width: 800,
           quality: 100,
           returnBase64: true,
-          isBw: this.state.analysis?.colorOrBw === "B&W",
+          isBw: this.state.analysis?.colorOrBw === 'B&W',
           cameraSettings: {
             highlightTone: settings.highlight,
             noiseReduction: settings.noiseReduction,
@@ -251,20 +254,20 @@ export class FujifilmRecipeAgent {
 
       const duration = endTime();
       this.state.timing = { ...this.state.timing, imageProcessing: duration };
-      this.state.step = "completed";
+      this.state.step = 'completed';
       return true;
     } catch (error) {
-      console.error("Image processing error:", error);
+      console.error('Image processing error:', error);
       // 이미지 처리 실패해도 레시피는 반환
       this.state.images = {};
-      this.state.step = "completed";
+      this.state.step = 'completed';
       return true;
     }
   }
 
   async finalizeResponse() {
-    console.log("✅ Finalizing response");
-    const endTime = measureTime("Response Finalization");
+    console.log('✅ Finalizing response');
+    const endTime = measureTime('Response Finalization');
 
     // 전체 실행 시간 계산
     const totalTime = Object.values(this.state.timing || {}).reduce(
@@ -291,8 +294,8 @@ export class FujifilmRecipeAgent {
     };
 
     if (!this.state.recipes) {
-      this.state.error = "레시피 생성에 실패했습니다.";
-      this.state.step = "error";
+      this.state.error = '레시피 생성에 실패했습니다.';
+      this.state.step = 'error';
       return true;
     }
 

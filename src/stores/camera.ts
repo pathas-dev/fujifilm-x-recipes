@@ -1,6 +1,6 @@
-import { create } from "zustand";
-import { persist } from "zustand/middleware";
-import { CameraModel } from "@/types/camera-schema";
+import { create } from 'zustand';
+import { persist } from 'zustand/middleware';
+import { CameraModel } from '@/types/camera-schema';
 
 type CameraStore = {
   cameraModel: CameraModel;
@@ -10,11 +10,11 @@ type CameraStore = {
 const useCameraStore = create<CameraStore>()(
   persist(
     (set) => ({
-      cameraModel: "X100V",
+      cameraModel: 'X100V',
       setCameraModel: (model: CameraModel) => set({ cameraModel: model }),
     }),
     {
-      name: "camera-storage",
+      name: 'camera-storage',
     }
   )
 );

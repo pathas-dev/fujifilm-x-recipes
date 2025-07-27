@@ -1,8 +1,8 @@
-"use client";
+'use client';
 
-import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
-import { useTranslations } from "next-intl";
+import Image from 'next/image';
+import { useEffect, useRef, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 interface ImageComparisonSliderProps {
   beforeImage: string;
@@ -13,7 +13,7 @@ const CuratedImageComparisonSlider = ({
   beforeImage,
   afterImage,
 }: ImageComparisonSliderProps) => {
-  const t = useTranslations("Chatbot");
+  const t = useTranslations('Chatbot');
   const [sliderPosition, setSliderPosition] = useState(50);
   const [isDragging, setIsDragging] = useState(false);
   const containerRef = useRef<HTMLDivElement>(null);
@@ -56,32 +56,32 @@ const CuratedImageComparisonSlider = ({
     };
 
     if (isDragging) {
-      document.addEventListener("mouseup", handleGlobalMouseUp);
-      document.addEventListener("mousemove", handleGlobalMouseMove);
+      document.addEventListener('mouseup', handleGlobalMouseUp);
+      document.addEventListener('mousemove', handleGlobalMouseMove);
     }
 
     return () => {
-      document.removeEventListener("mouseup", handleGlobalMouseUp);
-      document.removeEventListener("mousemove", handleGlobalMouseMove);
+      document.removeEventListener('mouseup', handleGlobalMouseUp);
+      document.removeEventListener('mousemove', handleGlobalMouseMove);
     };
   }, [isDragging]);
 
   return (
     <div className="mb-6">
-      <div className="text-sm font-medium text-base-content/80 mb-3">
-        {t("imageComparisonSlider.title")}
+      <div className="text-base-content/80 mb-3 text-sm font-medium">
+        {t('imageComparisonSlider.title')}
       </div>
       <div
         ref={containerRef}
-        className="relative w-full h-64 rounded-lg overflow-hidden border border-base-300 cursor-col-resize select-none"
+        className="border-base-300 relative h-64 w-full cursor-col-resize overflow-hidden rounded-lg border select-none"
         onMouseMove={handleMouseMove}
         onTouchMove={handleTouchMove}
       >
         {/* After Image (Full) */}
         <Image
           src={afterImage}
-          alt={t("imageComparisonSlider.retouched")}
-          className="absolute inset-0 w-full h-full object-cover"
+          alt={t('imageComparisonSlider.retouched')}
+          className="absolute inset-0 h-full w-full object-cover"
           draggable={false}
           unoptimized
           width={600}
@@ -95,8 +95,8 @@ const CuratedImageComparisonSlider = ({
         >
           <Image
             src={beforeImage}
-            alt={t("imageComparisonSlider.source")}
-            className="w-full h-full object-cover"
+            alt={t('imageComparisonSlider.source')}
+            className="h-full w-full object-cover"
             draggable={false}
             unoptimized
             width={600}
@@ -106,30 +106,30 @@ const CuratedImageComparisonSlider = ({
 
         {/* Slider Line */}
         <div
-          className="absolute top-0 bottom-0 w-0.5 bg-white shadow-lg z-10"
+          className="absolute top-0 bottom-0 z-10 w-0.5 bg-white shadow-lg"
           style={{ left: `${sliderPosition}%` }}
         />
 
         {/* Slider Handle */}
         <div
-          className="absolute top-1/2 w-8 h-8 bg-white rounded-full shadow-lg border-2 border-gray-300 cursor-col-resize z-20 flex items-center justify-center transform -translate-y-1/2 -translate-x-1/2 hover:scale-110 transition-transform"
+          className="absolute top-1/2 z-20 flex h-8 w-8 -translate-x-1/2 -translate-y-1/2 transform cursor-col-resize items-center justify-center rounded-full border-2 border-gray-300 bg-white shadow-lg transition-transform hover:scale-110"
           style={{ left: `${sliderPosition}%` }}
           onMouseDown={handleMouseDown}
           onTouchStart={() => setIsDragging(true)}
           onTouchEnd={() => setIsDragging(false)}
         >
           <div className="flex space-x-0.5">
-            <div className="w-0.5 h-4 bg-gray-400 rounded"></div>
-            <div className="w-0.5 h-4 bg-gray-400 rounded"></div>
+            <div className="h-4 w-0.5 rounded bg-gray-400"></div>
+            <div className="h-4 w-0.5 rounded bg-gray-400"></div>
           </div>
         </div>
 
         {/* Labels */}
-        <div className="absolute top-2 left-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-          {t("imageComparisonSlider.source")}
+        <div className="absolute top-2 left-2 rounded bg-black/50 px-2 py-1 text-xs text-white">
+          {t('imageComparisonSlider.source')}
         </div>
-        <div className="absolute top-2 right-2 bg-black/50 text-white text-xs px-2 py-1 rounded">
-          {t("imageComparisonSlider.retouched")}
+        <div className="absolute top-2 right-2 rounded bg-black/50 px-2 py-1 text-xs text-white">
+          {t('imageComparisonSlider.retouched')}
         </div>
       </div>
     </div>

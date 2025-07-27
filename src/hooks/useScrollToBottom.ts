@@ -1,5 +1,5 @@
-import { useCallback, useEffect, useRef } from "react";
-import { ChatMessage } from "@/components/chatbot/ChatbotClient";
+import { useCallback, useEffect, useRef } from 'react';
+import { ChatMessage } from '@/components/chatbot/ChatbotClient';
 
 export const useScrollToBottom = (chatMessages: ChatMessage[]) => {
   const messagesEndRef = useRef<HTMLDivElement>(null);
@@ -8,20 +8,20 @@ export const useScrollToBottom = (chatMessages: ChatMessage[]) => {
     const scroll = () => {
       if (messagesEndRef.current) {
         const messagesContainer =
-          messagesEndRef.current.closest(".overflow-y-auto");
+          messagesEndRef.current.closest('.overflow-y-auto');
 
         if (messagesContainer) {
           messagesContainer.scrollTo({
             top: messagesContainer.scrollHeight,
-            behavior: "smooth",
+            behavior: 'smooth',
           });
         }
 
         // fallback: scrollIntoView
         messagesEndRef.current.scrollIntoView({
-          behavior: "smooth",
-          block: "end",
-          inline: "nearest",
+          behavior: 'smooth',
+          block: 'end',
+          inline: 'nearest',
         });
       }
     };

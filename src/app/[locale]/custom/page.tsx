@@ -1,8 +1,8 @@
-import { getCamerasWithFilters } from "@/app/api/data/localData";
-import CustomList from "@/components/custom/CustomList";
-import { localeIntl } from "@/i18n/navigation";
-import { setRequestLocale } from "next-intl/server";
-import { NextIntlClientProvider } from "next-intl";
+import { getCamerasWithFilters } from '@/app/api/data/localData';
+import CustomList from '@/components/custom/CustomList';
+import { localeIntl } from '@/i18n/navigation';
+import { setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 
 export default async function CustomPage(
   props: Readonly<{
@@ -18,10 +18,7 @@ export default async function CustomPage(
 
   return (
     <NextIntlClientProvider>
-      <CustomList
-        filters={filters}
-        cameras={cameras}
-      />
+      <CustomList filters={filters} cameras={cameras} />
     </NextIntlClientProvider>
   );
 }

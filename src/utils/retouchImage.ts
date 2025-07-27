@@ -1,7 +1,7 @@
-import { FilmSimulationType } from "@/types/camera-schema";
-import { writeFileSync } from "fs";
-import path from "path";
-import sharp from "sharp";
+import { FilmSimulationType } from '@/types/camera-schema';
+import { writeFileSync } from 'fs';
+import path from 'path';
+import sharp from 'sharp';
 
 /**
  * 필름 시뮬레이션별 특성 및 보정값 정의
@@ -16,8 +16,8 @@ const FilmSimulationPresets: Record<
   }
 > = {
   Provia: {
-    name: "PROVIA",
-    characteristics: "Standard color reproduction, balanced contrast",
+    name: 'PROVIA',
+    characteristics: 'Standard color reproduction, balanced contrast',
     baseSettings: {
       whiteBalanceR: 0,
       whiteBalanceB: 0,
@@ -29,8 +29,8 @@ const FilmSimulationPresets: Record<
     },
   },
   Velvia: {
-    name: "Velvia",
-    characteristics: "High saturation, vivid colors, strong contrast",
+    name: 'Velvia',
+    characteristics: 'High saturation, vivid colors, strong contrast',
     baseSettings: {
       whiteBalanceR: 1,
       whiteBalanceB: -1,
@@ -42,8 +42,8 @@ const FilmSimulationPresets: Record<
     },
   },
   Astia: {
-    name: "ASTIA",
-    characteristics: "Soft skin tones, subdued colors",
+    name: 'ASTIA',
+    characteristics: 'Soft skin tones, subdued colors',
     baseSettings: {
       whiteBalanceR: 2,
       whiteBalanceB: 0,
@@ -54,9 +54,9 @@ const FilmSimulationPresets: Record<
       noiseReduction: 1,
     },
   },
-  "Classic Chrome": {
-    name: "Classic Chrome",
-    characteristics: "Muted colors, film-like contrast",
+  'Classic Chrome': {
+    name: 'Classic Chrome',
+    characteristics: 'Muted colors, film-like contrast',
     baseSettings: {
       whiteBalanceR: 0,
       whiteBalanceB: 1,
@@ -67,9 +67,9 @@ const FilmSimulationPresets: Record<
       noiseReduction: 0,
     },
   },
-  "Classic Negative": {
-    name: "Classic Negative",
-    characteristics: "Film negative emulation",
+  'Classic Negative': {
+    name: 'Classic Negative',
+    characteristics: 'Film negative emulation',
     baseSettings: {
       whiteBalanceR: 1,
       whiteBalanceB: 0,
@@ -80,9 +80,9 @@ const FilmSimulationPresets: Record<
       noiseReduction: 0,
     },
   },
-  "Reala Ace": {
-    name: "REALA ACE",
-    characteristics: "Natural skin tones, enhanced colors",
+  'Reala Ace': {
+    name: 'REALA ACE',
+    characteristics: 'Natural skin tones, enhanced colors',
     baseSettings: {
       whiteBalanceR: 1,
       whiteBalanceB: -1,
@@ -94,8 +94,8 @@ const FilmSimulationPresets: Record<
     },
   },
   Eterna: {
-    name: "ETERNA",
-    characteristics: "Cinematic look, low saturation",
+    name: 'ETERNA',
+    characteristics: 'Cinematic look, low saturation',
     baseSettings: {
       whiteBalanceR: 0,
       whiteBalanceB: 1,
@@ -106,9 +106,9 @@ const FilmSimulationPresets: Record<
       noiseReduction: 1,
     },
   },
-  "Eterna Bleach Bypass": {
-    name: "ETERNA Bleach Bypass",
-    characteristics: "High contrast, desaturated highlights",
+  'Eterna Bleach Bypass': {
+    name: 'ETERNA Bleach Bypass',
+    characteristics: 'High contrast, desaturated highlights',
     baseSettings: {
       whiteBalanceR: 0,
       whiteBalanceB: 2,
@@ -119,9 +119,9 @@ const FilmSimulationPresets: Record<
       noiseReduction: 0,
     },
   },
-  "Nostalgic Neg.": {
-    name: "Nostalgic Neg.",
-    characteristics: "Vintage negative film look",
+  'Nostalgic Neg.': {
+    name: 'Nostalgic Neg.',
+    characteristics: 'Vintage negative film look',
     baseSettings: {
       whiteBalanceR: 2,
       whiteBalanceB: 1,
@@ -132,9 +132,9 @@ const FilmSimulationPresets: Record<
       noiseReduction: 1,
     },
   },
-  "Pro Neg. High": {
-    name: "PRO Neg Hi",
-    characteristics: "High contrast negative film",
+  'Pro Neg. High': {
+    name: 'PRO Neg Hi',
+    characteristics: 'High contrast negative film',
     baseSettings: {
       whiteBalanceR: 0,
       whiteBalanceB: 0,
@@ -145,9 +145,9 @@ const FilmSimulationPresets: Record<
       noiseReduction: 0,
     },
   },
-  "Pro Neg. Std": {
-    name: "PRO Neg Std",
-    characteristics: "Standard contrast negative film",
+  'Pro Neg. Std': {
+    name: 'PRO Neg Std',
+    characteristics: 'Standard contrast negative film',
     baseSettings: {
       whiteBalanceR: 0,
       whiteBalanceB: 0,
@@ -159,8 +159,8 @@ const FilmSimulationPresets: Record<
     },
   },
   Acros: {
-    name: "ACROS",
-    characteristics: "Black and white, smooth gradation",
+    name: 'ACROS',
+    characteristics: 'Black and white, smooth gradation',
     baseSettings: {
       whiteBalanceR: 0,
       whiteBalanceB: 0,
@@ -172,8 +172,8 @@ const FilmSimulationPresets: Record<
     },
   },
   Monochrome: {
-    name: "Monochrome",
-    characteristics: "Standard black and white",
+    name: 'Monochrome',
+    characteristics: 'Standard black and white',
     baseSettings: {
       whiteBalanceR: 0,
       whiteBalanceB: 0,
@@ -322,11 +322,11 @@ const convertCameraSettingsToSharpOptions = (
  */
 export const retouchImage = async (
   inputFileName: string,
-  extension: "png" | "jpg" | "jpeg" | "webp",
+  extension: 'png' | 'jpg' | 'jpeg' | 'webp',
   options: {
     width?: number;
     height?: number;
-    fit?: "cover" | "contain" | "fill" | "inside" | "outside";
+    fit?: 'cover' | 'contain' | 'fill' | 'inside' | 'outside';
     // 필름 시뮬레이션 (우선 적용)
     filmSimulation?: FilmSimulationType;
     // 카메라 설정 (필름 시뮬레이션에 추가로 적용)
@@ -349,7 +349,7 @@ export const retouchImage = async (
 ) => {
   // base64 문자열 또는 void 리턴
   try {
-    const inputFilePath = path.resolve(process.cwd(), "public", inputFileName);
+    const inputFilePath = path.resolve(process.cwd(), 'public', inputFileName);
 
     const sourceImage = sharp(inputFilePath);
     let image = sourceImage.clone();
@@ -366,13 +366,13 @@ export const retouchImage = async (
 
       // 흑백 필름 시뮬레이션 자동 적용
       if (
-        options.filmSimulation === "Acros" ||
-        options.filmSimulation === "Monochrome"
+        options.filmSimulation === 'Acros' ||
+        options.filmSimulation === 'Monochrome'
       ) {
         processedOptions.isBw = true;
       }
 
-      console.log("Film simulation options prepared:", filmSimulationOptions);
+      console.log('Film simulation options prepared:', filmSimulationOptions);
     }
 
     // 2. 사용자 카메라 설정을 Sharp 옵션으로 변환
@@ -381,7 +381,7 @@ export const retouchImage = async (
         options.cameraSettings
       );
       console.log(
-        "User camera settings options prepared:",
+        'User camera settings options prepared:',
         userSettingsOptions
       );
     }
@@ -389,12 +389,12 @@ export const retouchImage = async (
     // 1. 이미지 크기 및 비율 조절
     if (processedOptions.width || processedOptions.height) {
       image = image.resize(processedOptions.width, processedOptions.height, {
-        fit: processedOptions.fit || "cover",
+        fit: processedOptions.fit || 'cover',
       });
     }
 
     // === 필름 시뮬레이션 적용 (1단계) ===
-    console.log("=== Applying Film Simulation (Step 1) ===");
+    console.log('=== Applying Film Simulation (Step 1) ===');
 
     // 2-A. 필름 시뮬레이션: 화이트 밸런스 조정
     if (filmSimulationOptions.whiteBalanceTint) {
@@ -506,7 +506,7 @@ export const retouchImage = async (
     }
 
     // === 사용자 설정 적용 (2단계) ===
-    console.log("=== Applying User Settings (Step 2) ===");
+    console.log('=== Applying User Settings (Step 2) ===');
 
     // 3-A. 사용자 설정: 화이트 밸런스 조정 (추가)
     if (userSettingsOptions.whiteBalanceTint) {
@@ -618,7 +618,7 @@ export const retouchImage = async (
     }
 
     // === 호환성 옵션 처리 (기존 방식) ===
-    console.log("=== Processing Legacy Options (Step 3) ===");
+    console.log('=== Processing Legacy Options (Step 3) ===');
 
     // 4-A. 기존 방식 화이트 밸런스 (직접 지정된 경우)
     if (
@@ -752,11 +752,11 @@ export const retouchImage = async (
     }
 
     // === 공통 후처리 ===
-    console.log("=== Final Processing ===");
+    console.log('=== Final Processing ===');
 
     // 5. 흑백 변환을 먼저 처리 (linear 변환과의 충돌 방지)
     if (processedOptions.isBw) {
-      console.log("Converting to grayscale");
+      console.log('Converting to grayscale');
       // 중간 버퍼링으로 linear 변환 상태 해제
       const tempBuffer = await image.toBuffer();
       image = sharp(tempBuffer).greyscale();
@@ -767,18 +767,18 @@ export const retouchImage = async (
 
     // 최종 출력 포맷 및 품질 설정 (품질 개선)
     switch (extension) {
-      case "jpg":
-      case "jpeg":
+      case 'jpg':
+      case 'jpeg':
         image = image.jpeg({ quality: processedOptions.quality || 95 }); // 90% → 95%
         break;
-      case "png":
+      case 'png':
         image = image.png({
           compressionLevel: processedOptions.quality
             ? Math.round((processedOptions.quality / 100) * 6) // 더 보수적인 압축
             : 4, // 기본값 6 → 4로 낮춰 품질 향상
         });
         break;
-      case "webp":
+      case 'webp':
         image = image.webp({ quality: processedOptions.quality || 95 }); // 90% → 95%
         break;
     }
@@ -795,14 +795,14 @@ export const retouchImage = async (
     };
 
     if (options.returnBase64) {
-      const base64String = retouchedImageBuffer.toString("base64");
+      const base64String = retouchedImageBuffer.toString('base64');
       const mimeType =
         {
-          png: "image/png",
-          webp: "image/webp",
-          jpg: "image/jpeg",
-          jpeg: "image/jpeg",
-        }[extension] || "image/jpeg";
+          png: 'image/png',
+          webp: 'image/webp',
+          jpg: 'image/jpeg',
+          jpeg: 'image/jpeg',
+        }[extension] || 'image/jpeg';
 
       const dataUrl = `data:${mimeType};base64,${base64String}`;
 
@@ -818,7 +818,7 @@ export const retouchImage = async (
     if (options.saveToFile && options.outputFileName) {
       const outputFilePath = path.resolve(
         process.cwd(),
-        "public",
+        'public',
         options.outputFileName
       );
       writeFileSync(outputFilePath, retouchedImageBuffer);
@@ -827,82 +827,82 @@ export const retouchImage = async (
 
     return result;
   } catch (error) {
-    console.error("Error processing image:", error);
+    console.error('Error processing image:', error);
   }
 };
 
 // 검증용 간단한 테스트 함수
 export const runValidationTests = async () => {
-  console.log("=== 필름 시뮬레이션 + 이미지 처리 검증 테스트 ===\n");
+  console.log('=== 필름 시뮬레이션 + 이미지 처리 검증 테스트 ===\n');
 
-  const inputImagePath = "source.jpg";
+  const inputImagePath = 'source.jpg';
 
   // 1. 원본 이미지 단순 리사이즈만 (기준점)
-  console.log("1. 원본 이미지 단순 리사이즈 (기준점)");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_01_original.jpg",
+  console.log('1. 원본 이미지 단순 리사이즈 (기준점)');
+  await retouchImage(inputImagePath, 'jpg', {
+    outputFileName: 'validation_01_original.jpg',
     saveToFile: true,
     width: 1200,
     quality: 100,
   });
 
   // 2. Provia 필름 시뮬레이션 (기준 필름)
-  console.log("\n2. Provia 필름 시뮬레이션 적용");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_02_provia.jpg",
+  console.log('\n2. Provia 필름 시뮬레이션 적용');
+  await retouchImage(inputImagePath, 'jpg', {
+    outputFileName: 'validation_02_provia.jpg',
     saveToFile: true,
     width: 1200,
-    filmSimulation: "Provia",
+    filmSimulation: 'Provia',
     quality: 100,
   });
 
   // 3. Velvia 필름 시뮬레이션 (고채도, 생생한 색상)
-  console.log("\n3. Velvia 필름 시뮬레이션 적용");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_03_velvia.jpg",
+  console.log('\n3. Velvia 필름 시뮬레이션 적용');
+  await retouchImage(inputImagePath, 'jpg', {
+    outputFileName: 'validation_03_velvia.jpg',
     saveToFile: true,
     width: 1200,
-    filmSimulation: "Velvia",
+    filmSimulation: 'Velvia',
     quality: 100,
   });
 
   // 4. Classic Chrome 필름 시뮬레이션 (차분한 색상)
-  console.log("\n4. Classic Chrome 필름 시뮬레이션 적용");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_04_classic_chrome.jpg",
+  console.log('\n4. Classic Chrome 필름 시뮬레이션 적용');
+  await retouchImage(inputImagePath, 'jpg', {
+    outputFileName: 'validation_04_classic_chrome.jpg',
     saveToFile: true,
     width: 1200,
-    filmSimulation: "Classic Chrome",
+    filmSimulation: 'Classic Chrome',
     quality: 100,
   });
 
   // 5. Eterna 필름 시뮬레이션 (시네마틱 룩)
-  console.log("\n5. Eterna 필름 시뮬레이션 적용");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_05_eterna.jpg",
+  console.log('\n5. Eterna 필름 시뮬레이션 적용');
+  await retouchImage(inputImagePath, 'jpg', {
+    outputFileName: 'validation_05_eterna.jpg',
     saveToFile: true,
     width: 1200,
-    filmSimulation: "Eterna",
+    filmSimulation: 'Eterna',
     quality: 100,
   });
 
   // 6. Acros 필름 시뮬레이션 (흑백, 자동 적용)
-  console.log("\n6. Acros 필름 시뮬레이션 적용 (자동 흑백 변환)");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_06_acros.jpg",
+  console.log('\n6. Acros 필름 시뮬레이션 적용 (자동 흑백 변환)');
+  await retouchImage(inputImagePath, 'jpg', {
+    outputFileName: 'validation_06_acros.jpg',
     saveToFile: true,
     width: 1200,
-    filmSimulation: "Acros",
+    filmSimulation: 'Acros',
     quality: 100,
   });
 
   // 7. Velvia + 사용자 설정 조합 (필름 먼저, 사용자 설정 추가)
-  console.log("\n7. Velvia + 사용자 추가 보정 적용 (순차 적용)");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_07_velvia_plus_user.jpg",
+  console.log('\n7. Velvia + 사용자 추가 보정 적용 (순차 적용)');
+  await retouchImage(inputImagePath, 'jpg', {
+    outputFileName: 'validation_07_velvia_plus_user.jpg',
     saveToFile: true,
     width: 1200,
-    filmSimulation: "Velvia", // 1단계: Velvia 필름 특성 적용
+    filmSimulation: 'Velvia', // 1단계: Velvia 필름 특성 적용
     cameraSettings: {
       // 2단계: 사용자 설정 추가 적용
       whiteBalanceR: 2, // Velvia 기본값(+1)에 추가로 +2 = 총 +3
@@ -913,9 +913,9 @@ export const runValidationTests = async () => {
   });
 
   // 8. 사용자 설정만 적용 (호환성 테스트)
-  console.log("\n8. 사용자 카메라 설정만 적용 (호환성 테스트)");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_08_camera_only.jpg",
+  console.log('\n8. 사용자 카메라 설정만 적용 (호환성 테스트)');
+  await retouchImage(inputImagePath, 'jpg', {
+    outputFileName: 'validation_08_camera_only.jpg',
     saveToFile: true,
     width: 1200,
     cameraSettings: {
@@ -930,9 +930,9 @@ export const runValidationTests = async () => {
   });
 
   // 9. 기존 Sharp 옵션 직접 지정 (호환성 테스트)
-  console.log("\n9. 기존 Sharp 옵션 직접 지정 (호환성 테스트)");
-  await retouchImage(inputImagePath, "jpg", {
-    outputFileName: "validation_09_legacy_options.jpg",
+  console.log('\n9. 기존 Sharp 옵션 직접 지정 (호환성 테스트)');
+  await retouchImage(inputImagePath, 'jpg', {
+    outputFileName: 'validation_09_legacy_options.jpg',
     saveToFile: true,
     width: 1200,
     whiteBalanceTint: { r: 1.2, b: 0.8 },
@@ -943,29 +943,29 @@ export const runValidationTests = async () => {
     quality: 100,
   });
 
-  console.log("\n" + "=".repeat(80));
-  console.log("✅ 필름 시뮬레이션 순차 적용 검증 테스트 완료!");
-  console.log("생성된 파일:");
-  console.log("- validation_01_original.jpg (원본 기준)");
-  console.log("- validation_02_provia.jpg (Provia 필름)");
-  console.log("- validation_03_velvia.jpg (Velvia 필름 - 고채도)");
-  console.log("- validation_04_classic_chrome.jpg (Classic Chrome - 차분함)");
-  console.log("- validation_05_eterna.jpg (Eterna - 시네마틱)");
-  console.log("- validation_06_acros.jpg (Acros - 흑백)");
+  console.log('\n' + '='.repeat(80));
+  console.log('✅ 필름 시뮬레이션 순차 적용 검증 테스트 완료!');
+  console.log('생성된 파일:');
+  console.log('- validation_01_original.jpg (원본 기준)');
+  console.log('- validation_02_provia.jpg (Provia 필름)');
+  console.log('- validation_03_velvia.jpg (Velvia 필름 - 고채도)');
+  console.log('- validation_04_classic_chrome.jpg (Classic Chrome - 차분함)');
+  console.log('- validation_05_eterna.jpg (Eterna - 시네마틱)');
+  console.log('- validation_06_acros.jpg (Acros - 흑백)');
   console.log(
-    "- validation_07_velvia_plus_user.jpg (Velvia → 사용자 보정 순차 적용)"
+    '- validation_07_velvia_plus_user.jpg (Velvia → 사용자 보정 순차 적용)'
   );
-  console.log("- validation_08_camera_only.jpg (사용자 카메라 설정만)");
-  console.log("- validation_09_legacy_options.jpg (기존 Sharp 옵션 직접 지정)");
-  console.log("\n🔄 새로운 순차 적용 방식:");
-  console.log("✅ 1단계: 필름 시뮬레이션 기본 특성 적용");
-  console.log("✅ 2단계: 사용자 카메라 설정 추가 적용");
-  console.log("✅ 3단계: 기존 Sharp 옵션 호환성 처리");
-  console.log("✅ 흑백 필름 자동 변환 (Acros, Monochrome)");
-  console.log("✅ FilmSimulationTypes enum 기반 타입 안전성");
-  console.log("✅ analyze-image-stats.js 분석 결과 적용");
-  console.log("\n📈 개선된 처리 순서:");
+  console.log('- validation_08_camera_only.jpg (사용자 카메라 설정만)');
+  console.log('- validation_09_legacy_options.jpg (기존 Sharp 옵션 직접 지정)');
+  console.log('\n🔄 새로운 순차 적용 방식:');
+  console.log('✅ 1단계: 필름 시뮬레이션 기본 특성 적용');
+  console.log('✅ 2단계: 사용자 카메라 설정 추가 적용');
+  console.log('✅ 3단계: 기존 Sharp 옵션 호환성 처리');
+  console.log('✅ 흑백 필름 자동 변환 (Acros, Monochrome)');
+  console.log('✅ FilmSimulationTypes enum 기반 타입 안전성');
+  console.log('✅ analyze-image-stats.js 분석 결과 적용');
+  console.log('\n📈 개선된 처리 순서:');
   console.log(
-    "   필름 시뮬레이션 → 사용자 설정 → 컨트라스트 정규화 → 흑백 변환"
+    '   필름 시뮬레이션 → 사용자 설정 → 컨트라스트 정규화 → 흑백 변환'
   );
 };

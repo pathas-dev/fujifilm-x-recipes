@@ -1,8 +1,8 @@
-import { getRecipesWithFilters } from "@/app/api/data/localData";
-import BookmarkList from "@/components/bookmark/BookmarkList";
-import { localeIntl } from "@/i18n/navigation";
-import { setRequestLocale } from "next-intl/server";
-import { NextIntlClientProvider } from "next-intl";
+import { getRecipesWithFilters } from '@/app/api/data/localData';
+import BookmarkList from '@/components/bookmark/BookmarkList';
+import { localeIntl } from '@/i18n/navigation';
+import { setRequestLocale } from 'next-intl/server';
+import { NextIntlClientProvider } from 'next-intl';
 
 export default async function Bookmarks(
   props: Readonly<{

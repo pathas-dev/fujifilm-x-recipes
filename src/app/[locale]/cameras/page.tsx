@@ -1,7 +1,7 @@
-import camearsData from "@/app/api/data/cameras.json";
-import CameraList from "@/components/camera/CameraList";
-import { localeIntl } from "@/i18n/navigation";
-import { setRequestLocale } from "next-intl/server";
+import camearsData from '@/app/api/data/cameras.json';
+import CameraList from '@/components/camera/CameraList';
+import { localeIntl } from '@/i18n/navigation';
+import { setRequestLocale } from 'next-intl/server';
 
 const Cameras = async (
   props: Readonly<{

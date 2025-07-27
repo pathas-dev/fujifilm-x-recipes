@@ -6,9 +6,9 @@ import { useTranslations } from 'next-intl';
 export const STORAGE_HIDE_CARD_IMAGE_KEY = 'hideCardImage';
 
 const HideCardImageToggle = () => {
-  const tSettingsPage = useTranslations("SettingsPage");
-  const label = tSettingsPage("hideCardImage");
-  
+  const tSettingsPage = useTranslations('SettingsPage');
+  const label = tSettingsPage('hideCardImage');
+
   const [hideCardImage, setHideCardImage] = useState(true);
 
   useEffect(() => {

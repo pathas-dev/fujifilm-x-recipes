@@ -28,9 +28,7 @@ const BookmarkList = ({ filters, recipes }: IBookmarkListProps) => {
     setMarkedRecipes(matchedRecipes);
   }, [recipes]);
 
-  return (
-    <RecipeCardList recipes={markedRecipes} filters={filters} />
-  );
+  return <RecipeCardList recipes={markedRecipes} filters={filters} />;
 };
 
 export default BookmarkList;

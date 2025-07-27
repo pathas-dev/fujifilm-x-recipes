@@ -1,31 +1,31 @@
-import { ChangeEventHandler, useState } from "react";
-import { SvgAirplaneSolid, SvgEnvelopeSolid } from "../icon/svgs";
-import useCustomRecipeStore from "@/stores/customRecipe";
-import useToastStore from "@/stores/toast";
-import { useTranslations } from "next-intl";
+import { ChangeEventHandler, useState } from 'react';
+import { SvgAirplaneSolid, SvgEnvelopeSolid } from '../icon/svgs';
+import useCustomRecipeStore from '@/stores/customRecipe';
+import useToastStore from '@/stores/toast';
+import { useTranslations } from 'next-intl';
 
 const ExportButton = () => {
-  const tSendEmail = useTranslations("SendEmail");
+  const tSendEmail = useTranslations('SendEmail');
 
-  const placeholder = tSendEmail("placeholder");
-  const successMessage = tSendEmail("success");
-  const noDataErrorMessage = tSendEmail("errors.noData");
-  const noEmailErrorMessage = tSendEmail("errors.noEmail");
-  const tooltipMessage = tSendEmail("tooltip");
+  const placeholder = tSendEmail('placeholder');
+  const successMessage = tSendEmail('success');
+  const noDataErrorMessage = tSendEmail('errors.noData');
+  const noEmailErrorMessage = tSendEmail('errors.noEmail');
+  const tooltipMessage = tSendEmail('tooltip');
 
   const setToastMessage = useToastStore((state) => state.setMessage);
   const { customRecipes } = useCustomRecipeStore();
 
   const [inputOpen, setInputOpen] = useState(false);
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
   const [loading, setLoading] = useState(false);
 
   const sendMailRecipes = async () => {
     if (!customRecipes || customRecipes.length === 0)
       throw new Error(noDataErrorMessage);
 
-    const response = await fetch("/api/recipes/email", {
-      method: "POST",
+    const response = await fetch('/api/recipes/email', {
+      method: 'POST',
       body: JSON.stringify({ data: customRecipes, email: email.trim() }),
     });
 
@@ -50,10 +50,10 @@ const ExportButton = () => {
       if (res?.status !== 200) throw Error(res?.statusText);
 
       setToastMessage({ message: successMessage });
-      setEmail("");
+      setEmail('');
       setInputOpen(false);
     } catch (error) {
-      setToastMessage({ message: (error as Error).message, type: "Error" });
+      setToastMessage({ message: (error as Error).message, type: 'Error' });
     } finally {
       setLoading(false);
     }
@@ -70,8 +70,8 @@ const ExportButton = () => {
         </button>
       </div>
       {inputOpen && (
-        <div className="absolute w-[66dvw] max-w-80 right-0 top-7 flex bg-transparent z-50">
-          <label className="input input-bordered w-full flex items-center gap-2 fill-current">
+        <div className="absolute top-7 right-0 z-50 flex w-[66dvw] max-w-80 bg-transparent">
+          <label className="input input-bordered flex w-full items-center gap-2 fill-current">
             <SvgEnvelopeSolid />
             <input
               type="email"

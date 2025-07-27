@@ -1,5 +1,5 @@
-import { create } from "zustand";
-import { ChatMessage } from "@/components/chatbot/ChatbotClient";
+import { create } from 'zustand';
+import { ChatMessage } from '@/components/chatbot/ChatbotClient';
 
 interface ChatState {
   messages: ChatMessage[];
@@ -19,7 +19,7 @@ interface ChatState {
 export const useChatStore = create<ChatState>((set, get) => ({
   messages: [],
   isLoading: false,
-  loadingMessage: "",
+  loadingMessage: '',
   hasAIResponses: false,
 
   addMessage: (message) =>
@@ -28,7 +28,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
       return {
         messages: newMessages,
         hasAIResponses: newMessages.some(
-          (msg) => !msg.isUser && msg.id !== "welcome"
+          (msg) => !msg.isUser && msg.id !== 'welcome'
         ),
       };
     }),
@@ -37,7 +37,7 @@ export const useChatStore = create<ChatState>((set, get) => ({
     set({
       messages,
       hasAIResponses: messages.some(
-        (msg) => !msg.isUser && msg.id !== "welcome"
+        (msg) => !msg.isUser && msg.id !== 'welcome'
       ),
     }),
 
@@ -55,14 +55,14 @@ export const useChatStore = create<ChatState>((set, get) => ({
     const currentMessages = get().messages;
     if (
       currentMessages.length === 0 ||
-      !currentMessages.some((msg) => msg.id === "welcome")
+      !currentMessages.some((msg) => msg.id === 'welcome')
     ) {
       const welcomeMessage: ChatMessage = {
-        id: "welcome",
+        id: 'welcome',
         content: welcomeText,
         isUser: false,
         timestamp: new Date(),
-        type: "text",
+        type: 'text',
       };
       set({
         messages: [welcomeMessage],

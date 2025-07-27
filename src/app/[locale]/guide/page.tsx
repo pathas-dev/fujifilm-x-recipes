@@ -1,9 +1,9 @@
-import { localeIntl } from "@/i18n/navigation";
-import KoGuide from "./ko.guide.mdx";
-import EnGuide from "./en.guide.mdx";
-import "github-markdown-css";
-import GuidePageWrapper from "@/components/guide/GuidePageWrapper";
-import { setRequestLocale } from "next-intl/server";
+import { localeIntl } from '@/i18n/navigation';
+import KoGuide from './ko.guide.mdx';
+import EnGuide from './en.guide.mdx';
+import 'github-markdown-css';
+import GuidePageWrapper from '@/components/guide/GuidePageWrapper';
+import { setRequestLocale } from 'next-intl/server';
 
 const GuidePage = async (
   props: Readonly<{

@@ -31,7 +31,7 @@ const CameraList = ({ cameras }: ICameraListProps) => {
 
   return (
     <main
-      className="w-full h-full p-3 overflow-auto scroll-smooth"
+      className="h-full w-full overflow-auto scroll-smooth p-3"
       ref={refMain}
     >
       <div className="w-11/12 pr-2">

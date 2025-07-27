@@ -1,10 +1,10 @@
-import { COOKIE_THEME_KEY } from "@/app/constants/cookie";
-import { DEFAULT_THEME } from "@/components/settings/ThemeSwitch";
-import { Noto_Sans_KR } from "next/font/google";
-import { cookies } from "next/headers";
+import { COOKIE_THEME_KEY } from '@/app/constants/cookie';
+import { DEFAULT_THEME } from '@/components/settings/ThemeSwitch';
+import { Noto_Sans_KR } from 'next/font/google';
+import { cookies } from 'next/headers';
 
 const notoSans = Noto_Sans_KR({
-  subsets: ["latin"],
+  subsets: ['latin'],
 });
 
 export default async function NotFound() {
@@ -16,15 +16,15 @@ export default async function NotFound() {
       <body
         className={[
           notoSans.className,
-          "drawer-content",
-          "flex",
-          "h-dvh",
-          "w-full",
-          "relative",
-          "select-none",
-        ].join(" ")}
+          'drawer-content',
+          'flex',
+          'h-dvh',
+          'w-full',
+          'relative',
+          'select-none',
+        ].join(' ')}
       >
-        <main className="flex h-full flex-col w-full items-center justify-center">
+        <main className="flex h-full w-full flex-col items-center justify-center">
           <h2 className="text-2xl font-bold">Not Found</h2>
           <p className="text-xl">Could not find requested page</p>
           {/* eslint-disable-next-line */}

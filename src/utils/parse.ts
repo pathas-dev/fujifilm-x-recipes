@@ -1,19 +1,19 @@
-import { readCSV } from "@/utils/csvReader";
-import { Document } from "@langchain/core/documents";
-import { StringOutputParser } from "@langchain/core/output_parsers";
-import { ChatPromptTemplate } from "@langchain/core/prompts";
+import { readCSV } from '@/utils/csvReader';
+import { Document } from '@langchain/core/documents';
+import { StringOutputParser } from '@langchain/core/output_parsers';
+import { ChatPromptTemplate } from '@langchain/core/prompts';
 
-import { Ollama } from "@langchain/ollama";
-import { PineconeEmbeddings, PineconeStore } from "@langchain/pinecone";
-import { Pinecone as PineconeClient } from "@pinecone-database/pinecone";
+import { Ollama } from '@langchain/ollama';
+import { PineconeEmbeddings, PineconeStore } from '@langchain/pinecone';
+import { Pinecone as PineconeClient } from '@pinecone-database/pinecone';
 
-import path from "path";
+import path from 'path';
 
-export const dynamic = "force-dynamic"; // defaults to auto
+export const dynamic = 'force-dynamic'; // defaults to auto
 
 const promptTemplate = ChatPromptTemplate.fromMessages([
   [
-    "system", 
+    'system',
     `# 후지필름 X 시리즈 레시피 분석 전문가
 
 ## 역할
@@ -51,21 +51,24 @@ const promptTemplate = ChatPromptTemplate.fromMessages([
 - **Highlight/Shadow 낮음**: 부드러운 계조, 디테일 보존
 - **Color 높음**: 채도 강조, 생생한 색상
 - **Clarity 낮음**: 부드러운 이미지, 몽환적 느낌
-- **Noise Reduction 높음**: 깨끗하고 매끄러운 이미지`
+- **Noise Reduction 높음**: 깨끗하고 매끄러운 이미지`,
   ],
-  ["human", "위 정보를 바탕으로 이 레시피의 예상 느낌을 한 문장으로 요약해주세요."]
+  [
+    'human',
+    '위 정보를 바탕으로 이 레시피의 예상 느낌을 한 문장으로 요약해주세요.',
+  ],
 ]);
 
 // Ollama 모델 초기화
 const llm = new Ollama({
-  model: "gemma3", // 사용할 모델명
+  model: 'gemma3', // 사용할 모델명
 });
 
 const chain = promptTemplate.pipe(llm).pipe(new StringOutputParser());
 
 const embeddings = new PineconeEmbeddings({
   apiKey: process.env.PINECONE_API_KEY, // Defaults to process.env.HUGGINGFACEHUB_API_KEY
-  model: "multilingual-e5-large",
+  model: 'multilingual-e5-large',
 });
 
 const saveToPinecone = async (documents: Document[]) => {
@@ -86,7 +89,7 @@ const saveToPinecone = async (documents: Document[]) => {
 };
 
 try {
-  const fileRecipes = readCSV(path.resolve("public", "film-recipes.csv"));
+  const fileRecipes = readCSV(path.resolve('public', 'film-recipes.csv'));
 
   const BATCH_SIZE = 20;
 
@@ -127,5 +130,5 @@ try {
     console.log(`소요 시간: ${(Date.now() - start) / 1000}초`);
   }
 } catch (error) {
-  console.error("Chatbot API Error:", error);
+  console.error('Chatbot API Error:', error);
 }

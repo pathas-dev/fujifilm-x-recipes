@@ -1,16 +1,19 @@
-"use client";
+'use client';
 
-import { getOpenGraph, OpenGraph } from "@/utils/getOpenGraph";
-import Image from "next/image";
-import { useEffect, useState } from "react";
-import z from "zod";
+import { getOpenGraph, OpenGraph } from '@/utils/getOpenGraph';
+import Image from 'next/image';
+import { useEffect, useState } from 'react';
+import z from 'zod';
 
 interface CuratedRecipeMarkdownLinkProps {
   href?: string;
   children?: React.ReactNode;
 }
 
-const CuratedRecipeMarkdownLink = ({ href, children }: CuratedRecipeMarkdownLinkProps) => {
+const CuratedRecipeMarkdownLink = ({
+  href,
+  children,
+}: CuratedRecipeMarkdownLinkProps) => {
   const [openGraph, setOpenGraph] = useState<null | OpenGraph>(null);
 
   useEffect(() => {
@@ -24,12 +27,12 @@ const CuratedRecipeMarkdownLink = ({ href, children }: CuratedRecipeMarkdownLink
 
       try {
         const response = (await Promise.race([
-          fetch("/api/recipes/url", {
-            method: "POST",
+          fetch('/api/recipes/url', {
+            method: 'POST',
             body: JSON.stringify({ url: href }),
           }),
           new Promise((_, reject) =>
-            setTimeout(() => reject(new Error("timeout")), 5000)
+            setTimeout(() => reject(new Error('timeout')), 5000)
           ),
         ])) as Response;
 
@@ -56,30 +59,30 @@ const CuratedRecipeMarkdownLink = ({ href, children }: CuratedRecipeMarkdownLink
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="block mt-3 mb-2 max-w-[300px] rounded-lg overflow-hidden border border-base-300 bg-base-100 shadow-sm hover:shadow-md transition-all duration-200 hover:scale-[1.02]"
+      className="border-base-300 bg-base-100 mt-3 mb-2 block max-w-[300px] overflow-hidden rounded-lg border shadow-sm transition-all duration-200 hover:scale-[1.02] hover:shadow-md"
     >
       <div className="relative">
         <Image
-          src={openGraph?.image?.url ?? ""}
-          alt={openGraph?.image?.alt ?? ""}
+          src={openGraph?.image?.url ?? ''}
+          alt={openGraph?.image?.alt ?? ''}
           quality={30}
           width={300}
           height={160}
-          className="w-full h-40 object-cover"
+          className="h-40 w-full object-cover"
           style={{
-            aspectRatio: "15/8",
+            aspectRatio: '15/8',
           }}
         />
       </div>
       {(openGraph?.title || openGraph?.description) && (
         <div className="p-4">
           {openGraph?.title && (
-            <h4 className="text-sm font-semibold text-base-content line-clamp-2 mb-2 leading-tight">
+            <h4 className="text-base-content mb-2 line-clamp-2 text-sm leading-tight font-semibold">
               {openGraph.title}
             </h4>
           )}
           {openGraph?.description && (
-            <p className="text-xs text-base-content/70 line-clamp-3 leading-relaxed">
+            <p className="text-base-content/70 line-clamp-3 text-xs leading-relaxed">
               {openGraph.description}
             </p>
           )}
@@ -91,7 +94,7 @@ const CuratedRecipeMarkdownLink = ({ href, children }: CuratedRecipeMarkdownLink
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className="text-primary hover:text-primary-focus underline break-all transition-colors duration-200"
+      className="text-primary hover:text-primary-focus break-all underline transition-colors duration-200"
     >
       {children}
     </a>

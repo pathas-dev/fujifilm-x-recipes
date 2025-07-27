@@ -1,17 +1,17 @@
-import { locales } from "@/i18n/navigation";
-import { MetadataRoute } from "next";
+import { locales } from '@/i18n/navigation';
+import { MetadataRoute } from 'next';
 
-export const SITE_URL = "https://fujifilm-x-recipes.vercel.app";
+export const SITE_URL = 'https://fujifilm-x-recipes.vercel.app';
 
 const pages = [
-  "",
-  "/recipes",
-  "/origins",
-  "/bookmarks",
-  "/cameras",
-  "/settings",
-  "/guide",
-  "/note",
+  '',
+  '/recipes',
+  '/origins',
+  '/bookmarks',
+  '/cameras',
+  '/settings',
+  '/guide',
+  '/note',
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {

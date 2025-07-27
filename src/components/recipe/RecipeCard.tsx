@@ -1,18 +1,18 @@
-"use client";
+'use client';
 
-import { Link } from "@/i18n/navigation";
-import { Recipe } from "@/types/api";
+import { Link } from '@/i18n/navigation';
+import { Recipe } from '@/types/api';
 import {
   getInitialOpenGraph,
   getOpenGraph,
   OpenGraph,
-} from "@/utils/getOpenGraph";
-import dayjs from "dayjs";
-import { animate, motion, useInView } from "framer-motion";
-import Image from "next/image";
-import { useCallback, useEffect, useMemo, useRef, useState } from "react";
-import { SvgArrow, SvgLink } from "../icon/svgs";
-import { STORAGE_HIDE_CARD_IMAGE_KEY } from "../settings/HideCardImageToggle";
+} from '@/utils/getOpenGraph';
+import dayjs from 'dayjs';
+import { animate, motion, useInView } from 'framer-motion';
+import Image from 'next/image';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
+import { SvgArrow, SvgLink } from '../icon/svgs';
+import { STORAGE_HIDE_CARD_IMAGE_KEY } from '../settings/HideCardImageToggle';
 
 interface IRecipeCardProps {
   recipe: Recipe;
@@ -27,12 +27,12 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
   const fetchOpenGraphImage = useCallback(async () => {
     try {
       const response = (await Promise.race([
-        fetch("/api/recipes/url", {
-          method: "POST",
+        fetch('/api/recipes/url', {
+          method: 'POST',
           body: JSON.stringify({ url: recipe.url }),
         }),
         new Promise((_, reject) =>
-          setTimeout(() => reject(new Error("timeout")), 5000)
+          setTimeout(() => reject(new Error('timeout')), 5000)
         ),
       ])) as Response;
 
@@ -40,7 +40,7 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
       if (!data?.urlHtml) return;
 
       const parsedOpenGraph = getOpenGraph(data.urlHtml);
-      if (!parsedOpenGraph.image.url) throw new Error("no image");
+      if (!parsedOpenGraph.image.url) throw new Error('no image');
 
       setOpenGraph(parsedOpenGraph);
     } catch (error) {
@@ -54,11 +54,11 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
 
     const animation = animate([refCard.current], {
       opacity: 1,
-      translateX: "0%",
+      translateX: '0%',
     });
 
     const hideImage = JSON.parse(
-      localStorage.getItem(STORAGE_HIDE_CARD_IMAGE_KEY) || "false"
+      localStorage.getItem(STORAGE_HIDE_CARD_IMAGE_KEY) || 'false'
     );
 
     if (hideImage) setOpenGraph(getInitialOpenGraph());
@@ -69,8 +69,8 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
 
   const isColor = /color/i.test(recipe.colorType);
   const colorClassName = isColor
-    ? "from-red-500 via-green-500 to-blue-500"
-    : "from-black to-white";
+    ? 'from-red-500 via-green-500 to-blue-500'
+    : 'from-black to-white';
 
   const cardInner = useMemo(
     () => (
@@ -78,14 +78,14 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
         <figure className="relative">
           {openGraph?.image?.url && (
             <Image
-              src={openGraph?.image?.url ?? ""}
-              alt={openGraph?.image?.alt ?? ""}
+              src={openGraph?.image?.url ?? ''}
+              alt={openGraph?.image?.alt ?? ''}
               fill
               quality={30}
               style={{
-                objectFit: "cover",
-                transition: "all",
-                position: "absolute",
+                objectFit: 'cover',
+                transition: 'all',
+                position: 'absolute',
               }}
               sizes="33vw"
             />
@@ -94,47 +94,47 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
 
         <Bookmark id={recipe._id} />
         <div className="card-body">
-          <div className="w-full flex flex-col">
-            <div className="card-title w-9/12 gap-1 items-start">
+          <div className="flex w-full flex-col">
+            <div className="card-title w-9/12 items-start gap-1">
               <h2>{recipe.name}</h2>
               <Link
                 href={recipe.url}
                 target="_blank"
-                className="link-hover flex leading-3 pt-1"
+                className="link-hover flex pt-1 leading-3"
               >
                 <SvgArrow />
               </Link>
             </div>
-            <span className="text-xs font-light leading-3">
+            <span className="text-xs leading-3 font-light">
               (from {recipe.base})
             </span>
           </div>
 
-          <details className="collapse collapse-arrow bg-base-100">
+          <details className="collapse-arrow bg-base-100 collapse">
             <summary className="collapse-title text-base-content">
               <div className="flex items-end">
                 <div
-                  className={`mr-2 w-6 h-6 rounded transparent bg-clip bg-gradient-to-br ${colorClassName}`}
+                  className={`transparent bg-clip mr-2 h-6 w-6 rounded bg-gradient-to-br ${colorClassName}`}
                 />
-                <h2 className="text-lg font-medium overflow-hidden text-nowrap text-ellipsis">
+                <h2 className="overflow-hidden text-lg font-medium text-nowrap text-ellipsis">
                   {recipe.camera}
                   <span className="text-sm">({recipe.sensor})</span>
                 </h2>
               </div>
             </summary>
             <div className="collapse-content">
-              <p className="whitespace-pre-line text-sm text-base-content">
+              <p className="text-base-content text-sm whitespace-pre-line">
                 {recipe.settings}
               </p>
             </div>
           </details>
-          <div className="card-actions self-end flex items-center gap-0">
+          <div className="card-actions flex items-center gap-0 self-end">
             <Link
               href={`/origins#${recipe.creator}`}
-              className="card-actions self-end flex items-center gap-0 link link-hover"
+              className="card-actions link link-hover flex items-center gap-0 self-end"
             >
               <SvgLink />
-              {recipe.creator}, {dayjs(recipe.published).format("YYYY-MM-DD")}
+              {recipe.creator}, {dayjs(recipe.published).format('YYYY-MM-DD')}
             </Link>
           </div>
         </div>
@@ -159,9 +159,9 @@ const RecipeCard = ({ recipe }: IRecipeCardProps) => {
   return (
     <motion.div
       ref={refCard}
-      className="card card-compact w-full min-h-44 h-fit bg-base-100 shadow-xl image-full overflow-hidden"
+      className="card card-compact bg-base-100 image-full h-fit min-h-44 w-full overflow-hidden shadow-xl"
       transition={{ duration: 0.4 }}
-      initial={{ opacity: 0.3, translateX: "80%" }}
+      initial={{ opacity: 0.3, translateX: '80%' }}
     >
       {!openGraph && (
         <div
@@ -178,14 +178,14 @@ interface BookmarkProps {
   id: string;
 }
 
-export const STORAGE_BOOKMARK_KEY = "bookmark";
+export const STORAGE_BOOKMARK_KEY = 'bookmark';
 
 const Bookmark = ({ id }: BookmarkProps) => {
   const [marked, setMarked] = useState(false);
 
   useEffect(() => {
     const bookmarkedIds = JSON.parse(
-      localStorage.getItem(STORAGE_BOOKMARK_KEY) ?? "[]"
+      localStorage.getItem(STORAGE_BOOKMARK_KEY) ?? '[]'
     ) as string[];
 
     setMarked(bookmarkedIds.includes(id));
@@ -193,7 +193,7 @@ const Bookmark = ({ id }: BookmarkProps) => {
 
   const handleBookmarkClick = useCallback(() => {
     const bookmarkedIds = JSON.parse(
-      localStorage.getItem(STORAGE_BOOKMARK_KEY) ?? "[]"
+      localStorage.getItem(STORAGE_BOOKMARK_KEY) ?? '[]'
     ) as string[];
     if (!marked) {
       bookmarkedIds.push(id);
@@ -208,7 +208,7 @@ const Bookmark = ({ id }: BookmarkProps) => {
   }, [marked, id]);
 
   return (
-    <div className="absolute z-30 top-2 right-2">
+    <div className="absolute top-2 right-2 z-30">
       <label className="swap">
         {/* this hidden checkbox controls the state */}
         <input
@@ -222,7 +222,7 @@ const Bookmark = ({ id }: BookmarkProps) => {
           xmlns="http://www.w3.org/2000/svg"
           viewBox="0 0 24 24"
           fill="currentColor"
-          className="w-7 h-7 swap-on fill-green-400"
+          className="swap-on h-7 w-7 fill-green-400"
         >
           <path
             fillRule="evenodd"
@@ -238,7 +238,7 @@ const Bookmark = ({ id }: BookmarkProps) => {
           strokeWidth={1.5}
           fill="none"
           stroke="currentColor"
-          className="w-7 h-7 swap-off"
+          className="swap-off h-7 w-7"
         >
           <path
             strokeLinecap="round"

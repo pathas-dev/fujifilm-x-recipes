@@ -1,10 +1,10 @@
-"use client";
+'use client';
 
-import { useRouter } from "@/i18n/navigation";
-import { motion } from "framer-motion";
-import { useEffect, useState } from "react";
+import { useRouter } from '@/i18n/navigation';
+import { motion } from 'framer-motion';
+import { useEffect, useState } from 'react';
 
-const STORAGE_HELP_CLICKED_KEY = "helpClicked";
+const STORAGE_HELP_CLICKED_KEY = 'helpClicked';
 
 const Help = () => {
   const [helpClicked, setHelpClicked] = useState(false);
@@ -12,13 +12,13 @@ const Help = () => {
   const router = useRouter();
 
   const visit = () => {
-    localStorage.setItem(STORAGE_HELP_CLICKED_KEY, "true");
+    localStorage.setItem(STORAGE_HELP_CLICKED_KEY, 'true');
   };
 
   const handleToUpButton = () => {
     visit();
     setHelpClicked(true);
-    router.push("/guide");
+    router.push('/guide');
   };
 
   useEffect(() => {
@@ -30,7 +30,7 @@ const Help = () => {
 
   return (
     <motion.button
-      className="fixed z-[999] btn bottom-32 md:bottom-20 right-6 btn-info btn-circle btn-sm md:btn-md  shadow-md"
+      className="btn btn-info btn-circle btn-sm md:btn-md fixed right-6 bottom-32 z-[999] shadow-md md:bottom-20"
       onClick={handleToUpButton}
       transition={{ duration: 0.4 }}
       initial={{ opacity: 0 }}

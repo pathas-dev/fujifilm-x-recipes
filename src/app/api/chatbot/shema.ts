@@ -1,4 +1,4 @@
-import { z } from "zod";
+import { z } from 'zod';
 import {
   SensorTypeSchema,
   CameraModelSchema,
@@ -9,7 +9,7 @@ import {
   type SensorCameraMapping,
   type CameraInfo,
   FilmSimulatioSchema,
-} from "@/types/camera-schema";
+} from '@/types/camera-schema';
 
 // 질문 분석 결과 스키마
 export const QuestionAnalysisSchema = z.object({

@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { Link, usePathname } from "@/i18n/navigation";
-import { NavigationTitleMessages } from "@/types/language";
+import { Link, usePathname } from '@/i18n/navigation';
+import { NavigationTitleMessages } from '@/types/language';
 
 interface INavigationProps {
   titles: NavigationTitleMessages;
@@ -11,28 +11,28 @@ const NavigationTop = ({ titles }: INavigationProps) => {
   const buttonProps: INavLinkProps[] = [
     {
       title: titles.bookmarks,
-      path: "/bookmarks",
+      path: '/bookmarks',
     },
     {
       title: titles.recipes,
-      path: "/recipes",
+      path: '/recipes',
     },
     {
       title: titles.chatbot,
-      path: "/",
+      path: '/',
     },
     {
       title: titles.custom,
-      path: "/custom",
+      path: '/custom',
     },
     {
       title: titles.settings,
-      path: "/settings",
+      path: '/settings',
     },
   ];
 
   return (
-    <nav className="navbar bg-base-100 w-full z-[100] h-16 relative hidden md:flex">
+    <nav className="navbar bg-base-100 relative z-[100] hidden h-16 w-full md:flex">
       <div className="flex-1">
         <Link className="btn btn-ghost text-xl" href="/">
           Fujifilm-X-Recipes
@@ -63,8 +63,8 @@ const NavLink = ({ title, path }: INavLinkProps) => {
 
   const className =
     pathname === path
-      ? "menu menu-horizontal px-1 text-primary"
-      : "menu menu-horizontal px-1";
+      ? 'menu menu-horizontal px-1 text-primary'
+      : 'menu menu-horizontal px-1';
 
   return (
     <li className={className}>

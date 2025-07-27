@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import { usePathname, useRouter } from "@/i18n/navigation";
-import { NavigationTitleMessages } from "@/types/language";
-import { motion } from "framer-motion";
-import { useCallback, useMemo } from "react";
+import { usePathname, useRouter } from '@/i18n/navigation';
+import { NavigationTitleMessages } from '@/types/language';
+import { motion } from 'framer-motion';
+import { useCallback, useMemo } from 'react';
 import {
   SvgAiMini,
   SvgBookmarkMini,
@@ -11,7 +11,7 @@ import {
   SvgCogMini,
   SvgPhotoMini,
   SvgVariableMini,
-} from "../icon/svgs";
+} from '../icon/svgs';
 
 interface INavigationProps {
   titles: NavigationTitleMessages;
@@ -22,36 +22,36 @@ const NavigationBottom = ({ titles }: INavigationProps) => {
     {
       title: titles.bookmarks,
       children: <SvgBookmarkMini />,
-      path: "/bookmarks",
+      path: '/bookmarks',
     },
     {
       title: titles.recipes,
       children: <SvgPhotoMini />,
-      path: "/recipes",
+      path: '/recipes',
     },
     {
       title: titles.chatbot,
       children: <SvgAiMini />,
-      path: "/",
+      path: '/',
     },
     {
       title: titles.custom,
       children: <SvgVariableMini />,
-      path: "/custom",
+      path: '/custom',
     },
     {
       title: titles.settings,
       children: <SvgCogMini />,
-      path: "/settings",
+      path: '/settings',
     },
   ];
 
   return (
     <motion.nav
       transition={{ duration: 0.4 }}
-      initial={{ opacity: 0.3, translateY: "150%" }}
-      animate={{ opacity: 1, translateY: "0%" }}
-      className="dock w-full z-50 relative md:hidden"
+      initial={{ opacity: 0.3, translateY: '150%' }}
+      animate={{ opacity: 1, translateY: '0%' }}
+      className="dock relative z-50 w-full md:hidden"
     >
       {buttonProps.map((buttonProp) => (
         <NavButton
@@ -81,7 +81,7 @@ const NavButton = ({ children, title, path }: INavButtonProps) => {
   }, [path, router]);
 
   const activeClassName = useMemo(
-    () => (currentPath === path ? "active text-primary" : ""),
+    () => (currentPath === path ? 'active text-primary' : ''),
     [path, currentPath]
   );
 

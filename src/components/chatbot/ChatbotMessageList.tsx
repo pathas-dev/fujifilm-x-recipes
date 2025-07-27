@@ -1,11 +1,11 @@
-"use client";
+'use client';
 
-import { useChatStore } from "@/stores/chat";
-import { CuratorResponse } from "@/types/recipe-schema";
-import { memo } from "react";
-import ReactMarkdown from "react-markdown";
-import ChatbotCuratedRecipeResponse from "./CuratedRecipe/CuratedRecipeResponse";
-import { useShallow } from "zustand/react/shallow";
+import { useChatStore } from '@/stores/chat';
+import { CuratorResponse } from '@/types/recipe-schema';
+import { memo } from 'react';
+import ReactMarkdown from 'react-markdown';
+import ChatbotCuratedRecipeResponse from './CuratedRecipe/CuratedRecipeResponse';
+import { useShallow } from 'zustand/react/shallow';
 
 const ChatbotMessageList = memo(() => {
   const messages = useChatStore(useShallow((state) => state.messages));
@@ -16,16 +16,16 @@ const ChatbotMessageList = memo(() => {
         <div
           key={message.id}
           className={`flex ${
-            message.isUser ? "justify-end" : "justify-start"
+            message.isUser ? 'justify-end' : 'justify-start'
           } animate-in slide-in-from-bottom-2 duration-300`}
           style={{ animationDelay: `${index * 50}ms` }}
         >
           {message.isUser ? (
             <div
-              className="max-w-xs md:max-w-md lg:max-w-2xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow bg-primary text-primary-content rounded-br-md user-message-glow"
+              className="message-glow bg-primary text-primary-content user-message-glow max-w-xs rounded-2xl rounded-br-md px-5 py-4 shadow-sm transition-all duration-200 hover:shadow-md md:max-w-md lg:max-w-2xl"
               style={
                 {
-                  "--glow-delay": `${index * 0.8}s`,
+                  '--glow-delay': `${index * 0.8}s`,
                 } as React.CSSProperties
               }
             >
@@ -33,22 +33,22 @@ const ChatbotMessageList = memo(() => {
                 {message.content as string}
               </p>
             </div>
-          ) : message.type === "recipe" ? (
-            <div className="max-w-xl md:max-w-2xl lg:max-w-4xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow bg-base-200 text-base-content rounded-bl-md border border-base-300 bot-message-glow">
+          ) : message.type === 'recipe' ? (
+            <div className="message-glow bg-base-200 text-base-content border-base-300 bot-message-glow max-w-xl rounded-2xl rounded-bl-md border px-5 py-4 shadow-sm transition-all duration-200 hover:shadow-md md:max-w-2xl lg:max-w-4xl">
               <ChatbotCuratedRecipeResponse
                 data={message.content as CuratorResponse}
               />
             </div>
           ) : (
             <div
-              className="max-w-xs md:max-w-md lg:max-w-2xl px-5 py-4 rounded-2xl shadow-sm transition-all duration-200 hover:shadow-md message-glow bg-base-200 text-base-content rounded-bl-md border border-base-300 bot-message-glow"
+              className="message-glow bg-base-200 text-base-content border-base-300 bot-message-glow max-w-xs rounded-2xl rounded-bl-md border px-5 py-4 shadow-sm transition-all duration-200 hover:shadow-md md:max-w-md lg:max-w-2xl"
               style={
                 {
-                  "--glow-delay": `${index * 0.8}s`,
+                  '--glow-delay': `${index * 0.8}s`,
                 } as React.CSSProperties
               }
             >
-              <div className="text-sm text-base-content">
+              <div className="text-base-content text-sm">
                 <ReactMarkdown>{message.content as string}</ReactMarkdown>
               </div>
             </div>
@@ -59,6 +59,6 @@ const ChatbotMessageList = memo(() => {
   );
 });
 
-ChatbotMessageList.displayName = "MessageList";
+ChatbotMessageList.displayName = 'MessageList';
 
 export default ChatbotMessageList;

@@ -1,6 +1,10 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, nord, dark;
+  themes:
+    light --default,
+    dark --prefersdark,
+    nord,
+    dark;
 }
 
 @layer utilities {
@@ -36,7 +40,8 @@
       box-shadow: 0 0 5px rgba(var(--glow-color), 0.3);
     }
     50% {
-      box-shadow: 0 0 20px rgba(var(--glow-color), 0.6),
+      box-shadow:
+        0 0 20px rgba(var(--glow-color), 0.6),
         0 0 30px rgba(var(--glow-color), 0.3);
     }
   }

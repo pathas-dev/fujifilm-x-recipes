@@ -1,6 +1,6 @@
 export default function NotFound() {
   return (
-    <main className="w-full h-[calc(100dvh-4rem)] flex flex-col items-center justify-center m-auto">
+    <main className="m-auto flex h-[calc(100dvh-4rem)] w-full flex-col items-center justify-center">
       <h2 className="text-2xl font-bold">Not Found</h2>
       <p className="text-xl">Could not find requested page</p>
       {/* eslint-disable-next-line */}

@@ -1,5 +1,5 @@
-import createMiddleware from "next-intl/middleware";
-import { localeIntl, localePrefix, locales } from "./i18n/navigation";
+import createMiddleware from 'next-intl/middleware';
+import { localeIntl, localePrefix, locales } from './i18n/navigation';
 
 export default createMiddleware({
   // A list of all locales that are supported
@@ -12,5 +12,5 @@ export default createMiddleware({
 
 export const config = {
   // Match only internationalized pathnames
-  matcher: ["/", "/(ko|en)/:path*"],
+  matcher: ['/', '/(ko|en)/:path*'],
 };
