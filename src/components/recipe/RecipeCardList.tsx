@@ -14,6 +14,7 @@ import {
   useRef,
   useState,
 } from 'react';
+import { useTranslations } from 'next-intl';
 import RecipeFilterHeader, {
   DropboxItem,
   IDropboxProps,
@@ -34,21 +35,26 @@ interface ICardListProps {
     bases: string[];
     sensors: string[];
   };
-  labels: {
-    bwOnly: string;
-    dateLabel: string;
-    nameLabel: string;
-    baseLabel: string;
-    cameraLabel: string;
-    creatorLabel: string;
-  };
 }
 
 const DESC_CHARACTER = '↓';
 const ASC_CHARACTER = '↑';
 const DELIMETER = ' ';
 
-const RecipeCardList = ({ filters, recipes, labels }: ICardListProps) => {
+const RecipeCardList = ({ filters, recipes }: ICardListProps) => {
+  // Translation hooks
+  const tHeaders = useTranslations("Headers");
+
+  // Create labels object from translations
+  const labels = {
+    bwOnly: tHeaders("bwOnly"),
+    dateLabel: tHeaders("dateLabel"),
+    nameLabel: tHeaders("nameLabel"),
+    baseLabel: tHeaders("baseLabel"),
+    cameraLabel: tHeaders("cameraLabel"),
+    creatorLabel: tHeaders("creatorLabel"),
+  };
+
   const sortTypes: DropboxItem[] = useMemo(
     () => [
       {

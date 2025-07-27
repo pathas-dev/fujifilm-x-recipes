@@ -1,8 +1,9 @@
 import RecipeCardList from "@/components/recipe/RecipeCardList";
-import { getTranslations, setRequestLocale } from "next-intl/server";
+import { setRequestLocale } from "next-intl/server";
 
 import { localeIntl } from "@/i18n/navigation";
 import { getRecipesWithFilters } from "@/app/api/data/localData";
+import { NextIntlClientProvider } from "next-intl";
 
 export default async function Home(
   props: Readonly<{
@@ -15,16 +16,9 @@ export default async function Home(
   setRequestLocale(locale);
   const { recipes, filters } = await getRecipesWithFilters();
 
-  const t = await getTranslations("Headers");
-
-  const labels = {
-    bwOnly: t("bwOnly"),
-    dateLabel: t("dateLabel"),
-    nameLabel: t("nameLabel"),
-    baseLabel: t("baseLabel"),
-    cameraLabel: t("cameraLabel"),
-    creatorLabel: t("creatorLabel"),
-  };
-
-  return <RecipeCardList recipes={recipes} filters={filters} labels={labels} />;
+  return (
+    <NextIntlClientProvider>
+      <RecipeCardList recipes={recipes} filters={filters} />
+    </NextIntlClientProvider>
+  );
 }

@@ -1,27 +1,26 @@
 import useToastStore from '@/stores/toast';
-import { ImportFileMessages } from '@/types/language';
 import _isEqual from 'lodash/isEqual';
 import _unionWith from 'lodash/unionWith';
 import { ChangeEventHandler, useState } from 'react';
+import { useTranslations } from 'next-intl';
 import { SvgArrowRightEndOnRectangle, SvgCheckSolid } from '../icon/svgs';
 import { STORAGE_CUSTOM_RECIPES_KEY } from './CustomList';
 import { CustomRecipe } from './customRecipe';
 
 interface IExportButtonProps {
-  importFileMessages?: ImportFileMessages;
   onImportSuccess?: (unionRecipes: CustomRecipe[]) => void;
 }
 
 const ImportButton = ({
-  importFileMessages,
   onImportSuccess,
 }: IExportButtonProps) => {
-  const successMessage = importFileMessages?.success ?? '';
-  const noFileErrorMessage = importFileMessages?.errors?.noFile ?? '';
-  const noDataErrorMessage = importFileMessages?.errors?.noData ?? '';
-  const notJsonErrorMessage = importFileMessages?.errors?.notJson ?? '';
-
-  const tooltipMessage = importFileMessages?.tooltip ?? '';
+  const tImportFile = useTranslations("ImportFile");
+  
+  const successMessage = tImportFile("success");
+  const noFileErrorMessage = tImportFile("errors.noFile");
+  const noDataErrorMessage = tImportFile("errors.noData");
+  const notJsonErrorMessage = tImportFile("errors.notJson");
+  const tooltipMessage = tImportFile("tooltip");
 
   const setToastMessage = useToastStore((state) => state.setMessage);
 

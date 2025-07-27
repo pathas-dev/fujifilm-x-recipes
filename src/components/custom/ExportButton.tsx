@@ -2,18 +2,18 @@ import { ChangeEventHandler, useState } from "react";
 import { SvgAirplaneSolid, SvgEnvelopeSolid } from "../icon/svgs";
 import { STORAGE_CUSTOM_RECIPES_KEY } from "./CustomList";
 import useToastStore from "@/stores/toast";
-import { SendEmailMessages } from "@/types/language";
+import { useTranslations } from "next-intl";
 
-interface IExportButtonProps {
-  sendEmailMessages?: SendEmailMessages;
-}
+interface IExportButtonProps {}
 
-const ExportButton = ({ sendEmailMessages }: IExportButtonProps) => {
-  const placeholder = sendEmailMessages?.placeholder;
-  const successMessage = sendEmailMessages?.success ?? "";
-  const noDataErrorMessage = sendEmailMessages?.errors?.noData ?? "";
-  const noEmailErrorMessage = sendEmailMessages?.errors?.noEmail ?? "";
-  const tooltipMessage = sendEmailMessages?.tooltip ?? "";
+const ExportButton = ({}: IExportButtonProps) => {
+  const tSendEmail = useTranslations("SendEmail");
+  
+  const placeholder = tSendEmail("placeholder");
+  const successMessage = tSendEmail("success");
+  const noDataErrorMessage = tSendEmail("errors.noData");
+  const noEmailErrorMessage = tSendEmail("errors.noEmail");
+  const tooltipMessage = tSendEmail("tooltip");
 
   const setToastMessage = useToastStore((state) => state.setMessage);
 

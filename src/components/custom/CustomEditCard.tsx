@@ -579,12 +579,11 @@ const CustomEditCard = ({
           <div className="flex gap-1">
             {isUpdateMode ? null : (
               <ImportButton
-                importFileMessages={importFileMessages}
                 onImportSuccess={onImportSuccess}
               />
             )}
             {isUpdateMode ? null : (
-              <ExportButton sendEmailMessages={sendEmailMessages} />
+              <ExportButton />
             )}
             <button
               className="btn btn-ghost btn-circle btn-primary btn-sm fill-warning"

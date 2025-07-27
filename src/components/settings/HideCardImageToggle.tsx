@@ -1,14 +1,14 @@
 'use client';
 
 import { ChangeEvent, useCallback, useEffect, useState } from 'react';
+import { useTranslations } from 'next-intl';
 
 export const STORAGE_HIDE_CARD_IMAGE_KEY = 'hideCardImage';
 
-interface IHideCardImageToggleProps {
-  label: string;
-}
-
-const HideCardImageToggle = ({ label }: IHideCardImageToggleProps) => {
+const HideCardImageToggle = () => {
+  const tSettingsPage = useTranslations("SettingsPage");
+  const label = tSettingsPage("hideCardImage");
+  
   const [hideCardImage, setHideCardImage] = useState(true);
 
   useEffect(() => {
