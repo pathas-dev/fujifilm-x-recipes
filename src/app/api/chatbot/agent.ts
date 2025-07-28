@@ -6,7 +6,11 @@ import {
   GoogleAIModel,
 } from '@/app/api/chatbot/llm';
 import { retrieve } from '@/app/api/chatbot/retrieval';
-import { QuestionAnalysisSchema } from '@/app/api/chatbot/shema';
+import {
+  CameraModel,
+  QuestionAnalysisSchema,
+  SensorType,
+} from '@/app/api/chatbot/shema';
 import {
   CuratedRecipesSchema,
   CuratorResponse,
@@ -14,6 +18,7 @@ import {
 } from '@/types/recipe-schema';
 import { retouchImage } from '@/utils/retouchImage';
 import z from 'zod';
+import { SENSOR_CAMERA_MAPPINGS } from '../../../types/camera-schema';
 
 // LLM 인스턴스 관리 개선 (메모리 누수 방지)
 const llmCache = new Map<string, ReturnType<typeof createLLM>>();
@@ -67,6 +72,29 @@ const validatePromptInputs = (
   return inputs;
 };
 
+/**
+ * 카메라 모델에 호환되는 센서 타입을 찾는 함수
+ * @param cameraModel - 카메라 모델명
+ * @returns 해당하는 센서 타입 배열
+ */
+export function findSensorsByCameraModel(
+  cameraModel: CameraModel
+): SensorType[] {
+  const foundMapping = SENSOR_CAMERA_MAPPINGS.find((mapping) =>
+    mapping.cameras.find(
+      (camera) => camera.toUpperCase() === cameraModel.toUpperCase()
+    )
+  );
+
+  const sensors = SENSOR_CAMERA_MAPPINGS.filter(
+    (mapping) =>
+      mapping.series === foundMapping?.series &&
+      mapping.level <= foundMapping?.level
+  ).map((mapping) => mapping.sensor);
+
+  return sensors;
+}
+
 export const agentSteps = [
   'analyzing',
   'searching',
@@ -80,6 +108,8 @@ export type AgentStep = (typeof agentSteps)[number];
 
 export interface FujifilmRecipeAgentState {
   question: string;
+  cameraModel?: string;
+  detectedSensors?: SensorType[];
   step: AgentStep;
   analysis?: z.infer<typeof QuestionAnalysisSchema>;
   documents?: any[];
@@ -97,14 +127,34 @@ export interface FujifilmRecipeAgentState {
 export class FujifilmRecipeAgent {
   private state: FujifilmRecipeAgentState;
 
-  constructor(question: string) {
+  constructor(question: string, cameraModel: CameraModel) {
+    const detectedSensors = findSensorsByCameraModel(cameraModel);
+
     this.state = {
       question,
+      cameraModel,
+      detectedSensors,
       step: 'analyzing',
     };
+
+    if (cameraModel && detectedSensors.length > 0) {
+      console.log(
+        `📷 Camera model detected: ${cameraModel} -> Sensor: ${detectedSensors}`
+      );
+      console.log('FujifilmRecipeAgent 초기화 완료');
+    } else {
+      console.log('FujifilmRecipeAgent 센서 감지 실패');
+    }
   }
 
   async analyzeQuestion(): Promise<boolean> {
+    if (!this.state.cameraModel || !this.state.detectedSensors) {
+      console.error('Detection Sensor error');
+      this.state.error = '센서 감지 중 오류가 발생했습니다.';
+      this.state.step = 'error';
+      return false;
+    }
+
     try {
       console.log('🔍 Analyzing question:', this.state.question);
       const endTime = measureTime('Question Analysis');
@@ -153,9 +203,10 @@ export class FujifilmRecipeAgent {
 
       const searchQuery =
         this.state.analysis?.enhancedQuestion || this.state.question;
+
       this.state.documents = await retrieve(searchQuery, {
-        colorOrBw: this.state.analysis?.colorOrBw || undefined,
-        sensor: this.state.analysis?.detectedSensorTypes || undefined,
+        colorOrBw: this.state.analysis?.colorOrBw ?? 'Color',
+        sensors: this.state.detectedSensors ?? [],
       });
 
       this.state.context = formatContext(this.state.documents);

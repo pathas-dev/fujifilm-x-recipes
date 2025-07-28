@@ -8,18 +8,39 @@ export const SENSOR_CAMERA_MAPPINGS = [
   {
     sensor: 'BAYER (type unknown)' as const,
     cameras: ['X100', 'XT200'] as const,
+    series: 'X',
+    level: 0,
   },
-  { sensor: 'BAYER MF 100MP' as const, cameras: ['GFX 100s'] as const },
-  { sensor: 'BAYER MF 50MP' as const, cameras: ['GFX 50S'] as const },
+  {
+    sensor: 'BAYER MF 50MP' as const,
+    cameras: ['GFX 50S'] as const,
+    series: 'GFX',
+    level: 0,
+  },
+  {
+    sensor: 'BAYER MF 100MP' as const,
+    cameras: ['GFX 100s'] as const,
+    series: 'GFX',
+    level: 1,
+  },
   {
     sensor: 'X-Trans I' as const,
     cameras: ['X-E1', 'X-M1', 'X-PRO1'] as const,
+    series: 'X',
+    level: 1,
   },
   {
     sensor: 'X-Trans II' as const,
     cameras: ['X100s', 'X100T', 'X70', 'X-E2', 'X-E2s', 'X-T1'] as const,
+    series: 'X',
+    level: 2,
   },
-  { sensor: 'X-Trans II 2/3' as const, cameras: ['XQ1'] as const },
+  {
+    sensor: 'X-Trans II 2/3' as const,
+    cameras: ['XQ1'] as const,
+    series: 'X',
+    level: 2,
+  },
   {
     sensor: 'X-Trans III' as const,
     cameras: [
@@ -31,6 +52,8 @@ export const SENSOR_CAMERA_MAPPINGS = [
       'X-T2',
       'XT20',
     ] as const,
+    series: 'X',
+    level: 3,
   },
   {
     sensor: 'X-Trans IV' as const,
@@ -44,11 +67,20 @@ export const SENSOR_CAMERA_MAPPINGS = [
       'X-T30',
       'X-T4',
     ] as const,
+    series: 'X',
+    level: 4,
   },
-  { sensor: 'X-Trans V BSI Stkd' as const, cameras: ['X-H2s'] as const },
+  {
+    sensor: 'X-Trans V BSI Stkd' as const,
+    cameras: ['X-H2s'] as const,
+    series: 'X',
+    level: 5,
+  },
   {
     sensor: 'X-Trans V HR' as const,
     cameras: ['X-H2', 'X-T5', 'X100VI', 'X-M5'] as const,
+    series: 'X',
+    level: 5,
   },
 ] as const;
 

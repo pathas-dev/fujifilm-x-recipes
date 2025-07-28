@@ -1,10 +1,6 @@
-import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
+import { COLOR_TYPES } from '@/types/camera-schema';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
-import {
-  SENSOR_CAMERA_MAPPINGS,
-  COLOR_TYPES,
-  FilmSimulations,
-} from '@/types/camera-schema';
+import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
 
 export enum GoogleAIModel {
   GeminiFlash = 'gemini-2.0-flash',
@@ -20,12 +16,22 @@ export const createLLM = (model: GoogleAIModel = GoogleAIModel.GeminiFlash) => {
   });
 };
 
-// 센서-카메라 매핑 텍스트 생성
-const createSensorCameraMappingText = () => {
-  return SENSOR_CAMERA_MAPPINGS.map(
-    ({ sensor, cameras }) => `       ${sensor}: ${cameras.join(', ')}`
-  ).join('\n');
-};
+const filmSimulationInstruction = `
+### Film Simulations
+- **Provia**: 표준, 만능, 자연스러운 색감
+- **Velvia**: 고채도, 고대비, 생생한 색감, 풍경용  
+- **Astia**: 소프트, 화사한 피부톤, 부드러운 색감, 인물용
+- **Classic Chrome**: 다큐멘터리, 차분한 색감, 낮은 채도, 매거진룩
+- **PRO Neg. Hi**: 인물용, 스튜디오, 강한 대비, 입체감
+- **PRO Neg. Std**: 인물용, 부드러운 계조, 자연스러운 피부톤
+- **Classic Negative**: 클래식필름, 스냅사진, 독특한 색감, 아날로그 감성
+- **Eterna**: 영화적, 시네마틱, 낮은 채도, 영상용
+- **Eterna Bleach Bypass**: 고대비 저채도, 하드한 느낌, 강렬함
+- **Reala Ace**: 충실한 색재현, 네거티브필름, 부드러운 계조
+- **Nostalgic Neg.**: 1970년대, 뉴컬러, 앰버톤, 따뜻한 감성
+- **Acros**: 고품질 흑백, 풍부한 계조, 뛰어난 디테일
+- **Monochrome**: 표준 흑백, 깔끔함
+`;
 
 export const createParseQuestionPromptTemplate = () => {
   const systemMessage = `# 후지필름 카메라 질문 분석 전문가
@@ -36,25 +42,23 @@ export const createParseQuestionPromptTemplate = () => {
 ## 주요 작업
 사용자의 질문을 분석하여 다음을 파악하세요:
 1. **관련성 판단**: 후지필름 카메라/레시피/필름/사진 관련 질문인지 확인
-2. **센서 타입 식별**: 질문에서 언급된 카메라의 센서 타입 추출
-3. **색상 모드 분석**: 컬러 또는 흑백 사진 관련 질문인지 판단
-4. **필름 시뮬레이션**: 특정 필름 시뮬레이션 언급 여부 확인
-5. **질문 개선**: 검색에 최적화된 구체적인 질문으로 재구성
+2. **색상 모드 분석**: 컬러 또는 흑백 사진 관련 질문인지 판단
+3. **필름 시뮬레이션**: 특정 필름 시뮬레이션을 직접 언급한 경우 해당 필름 시뮬레이션, 그렇지 않은 경우 비슷한 느낌의 시뮬레이션을 복수 포함
+4. **질문 개선**: 사용자의 질문을 좀 더 감성적이고 풍부하게 확장해서 벡터 검색에 용이하게 수정, 필름 시뮬레이션이 언급된 경우 해당 시뮬레이션의 특징을 활용, 필름 시뮬레이션과 설정 이름은 영어로만 작성
 
 ## 질문 개선 예시
-- 입력: "Classic Chrome으로 인물 사진 찍는 레시피 추천해줘"
-- 출력: "Classic Chrome 필름 시뮬레이션을 사용한 인물 사진 촬영용 후지필름 카메라 레시피 설정"
+- 입력1: "Classic Chrome 으로 인물 사진 찍는 레시피 추천해줘"
+- 출력1: "차분한 색감과 낮은 채도를 기반으로 한 인물 사진 촬영에 적합한 레시피"
+- 입력2: "X-T30 겨울 느낌 사진 추천해줘"
+- 출력2: "차가운 겨울의 느낌을 청명하게 잘 살리면서 은은한 대비를 통해 겨울의 감성을 표현한 레시피"
 
 ## 참조 데이터
-
-### 센서-카메라 매핑
-${createSensorCameraMappingText()}
 
 ### 색상 타입
 ${COLOR_TYPES.join(' / ')}
 
-### 필름 시뮬레이션
-${FilmSimulations.join(', ')}
+
+${filmSimulationInstruction}
 
 ## 주의 사항
 관련 없는 질문의 경우 판단 이유를 명확히 제시하세요.
@@ -80,7 +84,7 @@ export const createCuratorPromptTemplate = () => {
 
 ## 첫 번째 레시피 요구사항
 - **검색된 레시피 중** 가장 유사한 것을 제시하세요.
-- **추천 이유**를 간략히 설명하세요
+- **추천 이유**를 검색된 문서에 충실하게 설명하세요.
 
 ## 두 번째 레시피 요구사항
 - **제목**은 일관된 언어로 감성적인 느낌을 살려서 작성하세요. ex) "한 여름밤의 꿈", "좋은 하루 끝", "Echoes of yesterday", "Dreaming in shades of twilight" 
@@ -91,20 +95,7 @@ export const createCuratorPromptTemplate = () => {
 
   const settingsGuide = `## 카메라 설정 가이드
 
-### Film Simulations
-- **PROVIA**: 표준, 만능, 자연스러운 색감
-- **Velvia**: 고채도, 고대비, 생생한 색감, 풍경용  
-- **ASTIA**: 소프트, 화사한 피부톤, 부드러운 색감, 인물용
-- **Classic Chrome**: 다큐멘터리, 차분한 색감, 낮은 채도, 매거진룩
-- **PRO Neg. Hi**: 인물용, 스튜디오, 강한 대비, 입체감
-- **PRO Neg. Std**: 인물용, 부드러운 계조, 자연스러운 피부톤
-- **Classic Negative**: 클래식필름, 스냅사진, 독특한 색감, 아날로그 감성
-- **ETERNA**: 영화적, 시네마틱, 낮은 채도, 영상용
-- **ETERNA Bleach Bypass**: 고대비 저채도, 하드한 느낌, 강렬함
-- **REALA ACE**: 충실한 색재현, 네거티브필름, 부드러운 계조
-- **NOSTALGIC Neg.**: 1970년대, 뉴컬러, 앰버톤, 따뜻한 감성
-- **ACROS**: 고품질 흑백, 풍부한 계조, 뛰어난 디테일
-- **Monochrome**: 표준 흑백, 깔끔함
+${filmSimulationInstruction}
 
 ### 주요 설정 효과
 - **Dynamic Range**: [AUTO, DR100%, DR200%, DR400%] 기본값: AUTO - 높을수록 계조가 풍부해짐 (밝고 어두운 부분 디테일 향상)

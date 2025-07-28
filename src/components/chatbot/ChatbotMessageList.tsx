@@ -4,8 +4,8 @@ import { useChatStore } from '@/stores/chat';
 import { CuratorResponse } from '@/types/recipe-schema';
 import { memo } from 'react';
 import ReactMarkdown from 'react-markdown';
-import ChatbotCuratedRecipeResponse from './CuratedRecipe/CuratedRecipeResponse';
 import { useShallow } from 'zustand/react/shallow';
+import ChatbotCuratedRecipeResponse from './CuratedRecipe/CuratedRecipeResponse';
 
 const ChatbotMessageList = memo(() => {
   const messages = useChatStore(useShallow((state) => state.messages));
@@ -37,6 +37,7 @@ const ChatbotMessageList = memo(() => {
             <div className="message-glow bg-base-200 text-base-content border-base-300 bot-message-glow max-w-xl rounded-2xl rounded-bl-md border px-5 py-4 shadow-sm transition-all duration-200 hover:shadow-md md:max-w-2xl lg:max-w-4xl">
               <ChatbotCuratedRecipeResponse
                 data={message.content as CuratorResponse}
+                cameraModel={message.cameraModel}
               />
             </div>
           ) : (

@@ -46,11 +46,9 @@ export const useChatMessages = (): {
     }) => {
       if (!message.trim() || !cameraModel || isLoading) return;
 
-      const question = `${cameraModel} ${message}`;
-
       const userMessage: ChatMessage = {
         id: Date.now().toString(),
-        content: question,
+        content: message,
         isUser: true,
         timestamp: new Date(),
       };
@@ -65,7 +63,8 @@ export const useChatMessages = (): {
             'Content-Type': 'application/json',
           },
           body: JSON.stringify({
-            question,
+            question: message,
+            cameraModel,
           }),
         });
 
@@ -120,6 +119,7 @@ export const useChatMessages = (): {
                       isUser: false,
                       timestamp: new Date(),
                       type: 'recipe',
+                      cameraModel,
                     };
                     return addMessage(botMessage);
                   case 'error':

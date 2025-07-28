@@ -5,6 +5,7 @@ import { useScrollToBottom } from '@/hooks/useScrollToBottom';
 import { useChatStore } from '@/stores/chat';
 import { CuratorResponse } from '@/types/recipe-schema';
 import { useShallow } from 'zustand/react/shallow';
+import { CameraModel } from '../../types/camera-schema';
 import ChatbotExampleMessages from './ChatbotExampleMessages';
 import ChatbotLoadingIndicator from './ChatbotLoadingIndicator';
 import ChatbotMessageInput from './ChatbotMessageInput';
@@ -16,6 +17,7 @@ export interface ChatMessage {
   isUser: boolean;
   timestamp: Date;
   type?: 'text' | 'recipe';
+  cameraModel?: CameraModel;
 }
 
 const ScrollPlaceholder = () => {

@@ -1,33 +1,28 @@
-import { z } from 'zod';
 import {
-  SensorTypeSchema,
-  CameraModelSchema,
-  ColorOrBwSchema,
-  type SensorType,
+  type CameraInfo,
   type CameraModel,
   type ColorOrBw,
-  type SensorCameraMapping,
-  type CameraInfo,
+  ColorOrBwSchema,
   FilmSimulatioSchema,
+  type SensorCameraMapping,
+  type SensorType,
 } from '@/types/camera-schema';
+import { z } from 'zod';
 
 // 질문 분석 결과 스키마
 export const QuestionAnalysisSchema = z.object({
-  detectedCameras: CameraModelSchema.optional(),
-  detectedSensorTypes: SensorTypeSchema.optional(),
-  colorOrBw: ColorOrBwSchema.optional(),
-  filmSimulation: FilmSimulatioSchema.optional(),
+  colorOrBw: ColorOrBwSchema.default('Color'),
+  filmSimulations: z.array(FilmSimulatioSchema).optional(),
   enhancedQuestion: z.string().optional(),
   isFilmRecipeQuestion: z.boolean(),
   rejectionReason: z.string().optional(),
 });
 
-// Re-export types for backward compatibility
 export type {
-  SensorType,
+  CameraInfo,
   CameraModel,
   ColorOrBw,
   SensorCameraMapping,
-  CameraInfo,
+  SensorType,
 };
 export type QuestionAnalysis = z.infer<typeof QuestionAnalysisSchema>;

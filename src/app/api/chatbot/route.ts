@@ -1,12 +1,16 @@
 import { AgentStep, FujifilmRecipeAgent } from '@/app/api/chatbot/agent';
 import { NextResponse } from 'next/server';
+import { CameraModel } from './shema';
 
 export const dynamic = 'force-dynamic';
 
 // 서버 센트 이벤트 스트리밍 엔드포인트
 export async function POST(request: Request) {
   try {
-    const { question } = await request.json();
+    const { question, cameraModel } = (await request.json()) as {
+      question: string;
+      cameraModel: CameraModel;
+    };
 
     // 스트리밍 응답 설정
     const encoder = new TextEncoder();
@@ -24,7 +28,7 @@ export async function POST(request: Request) {
         // Agent 생성 및 실행
         const executeAgent = async () => {
           try {
-            const agent = new FujifilmRecipeAgent(question);
+            const agent = new FujifilmRecipeAgent(question, cameraModel);
 
             // 각 단계별로 상태 전송
             sendEvent('state', agent.getState());
