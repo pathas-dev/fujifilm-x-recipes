@@ -188,7 +188,7 @@ export const FujifilmSettingsSchema = z.object({
     .min(-4)
     .max(4)
     .default(0)
-    .describe('Color 채도 - 색상 생생함과 선명도'),
+    .describe('Color 색농도 - 색상 생생함과 선명도'),
   clarity: z
     .number()
     .int()
