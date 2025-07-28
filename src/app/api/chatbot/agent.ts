@@ -230,13 +230,13 @@ export class FujifilmRecipeAgent {
           returnBase64: true,
           isBw: this.state.analysis?.colorOrBw === 'B&W',
           cameraSettings: {
-            highlightTone: settings.highlight,
+            highlightTone: settings.tone.highlight,
             noiseReduction: settings.noiseReduction,
-            shadowTone: settings.shadow,
+            shadowTone: settings.tone.shadow,
             color: settings.color,
             sharpness: settings.sharpness,
-            whiteBalanceR: settings.shiftRed,
-            whiteBalanceB: settings.shiftBlue,
+            whiteBalanceR: settings.whiteBalance.shift.red,
+            whiteBalanceB: settings.whiteBalance.shift.blue,
           },
         });
       }

@@ -198,7 +198,10 @@ export const UnifiedFujiSettingsSchema = z.object({
 
   // White balance - unified structure
   whiteBalance: z.object({
-    type: z.enum(whiteBalanceTypes).describe('White balance type'),
+    type: z.union([
+      z.enum(whiteBalanceTypes),
+      z.string()
+    ]).describe('White balance type'),
     shift: z.object({
       red: z.number().int().min(-9).max(9).default(0).describe('Red shift'),
       blue: z.number().int().min(-9).max(9).default(0).describe('Blue shift'),

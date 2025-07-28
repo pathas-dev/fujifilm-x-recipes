@@ -119,8 +119,8 @@ const FilmSimulationPresets: Record<
       noiseReduction: 0,
     },
   },
-  'Nostalgic Neg.': {
-    name: 'Nostalgic Neg.',
+  'Nostalgic Negative': {
+    name: 'Nostalgic Negative',
     characteristics: 'Vintage negative film look',
     baseSettings: {
       whiteBalanceR: 2,
@@ -132,7 +132,7 @@ const FilmSimulationPresets: Record<
       noiseReduction: 1,
     },
   },
-  'Pro Neg. High': {
+  'Prog Neg Hi': {
     name: 'PRO Neg Hi',
     characteristics: 'High contrast negative film',
     baseSettings: {
@@ -145,7 +145,7 @@ const FilmSimulationPresets: Record<
       noiseReduction: 0,
     },
   },
-  'Pro Neg. Std': {
+  'Prog Neg Std': {
     name: 'PRO Neg Std',
     characteristics: 'Standard contrast negative film',
     baseSettings: {

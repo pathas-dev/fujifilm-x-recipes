@@ -86,10 +86,13 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
               label={t('curatedRecipe.filmSimulation')}
               value={recipe.settings.filmSimulation}
             />
-            <CuratedRecipeSettingItem label="ISO" value={recipe.settings.iso} />
+            <CuratedRecipeSettingItem 
+              label="ISO" 
+              value={typeof recipe.settings.iso === 'string' ? recipe.settings.iso : `${recipe.settings.iso.value}`} 
+            />
             <CuratedRecipeSettingItem
               label={t('curatedRecipe.exposure')}
-              value={recipe.settings.exposure}
+              value={typeof recipe.settings.exposure === 'string' ? recipe.settings.exposure : `${recipe.settings.exposure}`}
             />
             <CuratedRecipeSettingItem
               label={t('curatedRecipe.dynamicRange')}
@@ -101,15 +104,15 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
             />
             <CuratedRecipeSettingItem
               label={t('curatedRecipe.whiteBalance')}
-              value={`${recipe.settings.whiteBalance} (R: ${recipe.settings.shiftRed}, B: ${recipe.settings.shiftBlue})`}
+              value={`${recipe.settings.whiteBalance.type} (R: ${recipe.settings.whiteBalance.shift.red}, B: ${recipe.settings.whiteBalance.shift.blue})`}
             />
             <CuratedRecipeSettingItem
               label={t('curatedRecipe.highlight')}
-              value={recipe.settings.highlight}
+              value={recipe.settings.tone.highlight}
             />
             <CuratedRecipeSettingItem
               label={t('curatedRecipe.shadow')}
-              value={recipe.settings.shadow}
+              value={recipe.settings.tone.shadow}
             />
           </div>
           <div className="space-y-2">
@@ -131,19 +134,19 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
             />
             <CuratedRecipeSettingItem
               label={t('curatedRecipe.grainEffect')}
-              value={recipe.settings.grainEffect}
+              value={recipe.settings.grain.effect}
             />
             <CuratedRecipeSettingItem
               label={t('curatedRecipe.grainSize')}
-              value={recipe.settings.grainSize}
+              value={recipe.settings.grain.size}
             />
             <CuratedRecipeSettingItem
               label={t('curatedRecipe.colourChromeFXBlue')}
-              value={recipe.settings.colourChromeFXBlue}
+              value={recipe.settings.colorChrome.fxBlue}
             />
             <CuratedRecipeSettingItem
               label={t('curatedRecipe.colourChrome')}
-              value={recipe.settings.colourChrome}
+              value={recipe.settings.colorChrome.effect}
             />
           </div>
         </div>

@@ -1,4 +1,4 @@
-import { FujifilmSettingsSchema } from '@/types/camera-schema';
+import { UnifiedFujiSettingsSchema } from '@/types/camera-schema';
 import { z } from 'zod';
 
 // 단일 레시피 스키마
@@ -6,7 +6,7 @@ export const RecipeSchema = z.object({
   title: z.string().describe('레시피 제목'),
   baseFilmSimulation: z.string().describe('베이스 필름 시뮬레이션'),
   recommendationReason: z.string().describe('추천 이유'),
-  settings: FujifilmSettingsSchema.describe('후지필름 카메라 세팅 정보'),
+  settings: UnifiedFujiSettingsSchema.describe('후지필름 카메라 세팅 정보'),
 });
 
 // 단일 레시피 스키마
@@ -62,7 +62,7 @@ export const CuratorResponseSchema = z
 
 export type MetaTiming = z.infer<typeof MetaTimingSchema>;
 
-export type FujifilmSettings = z.infer<typeof FujifilmSettingsSchema>;
+export type FujifilmSettings = z.infer<typeof UnifiedFujiSettingsSchema>;
 export type Recipe = z.infer<typeof RecipeSchema>;
 export type RetrievedRecipe = z.infer<typeof RetrievedRecipeSchema>;
 export type GeneratedByAIRecipe = z.infer<typeof GeneratedByAIRecipeSchema>;
