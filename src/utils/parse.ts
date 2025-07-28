@@ -1,52 +1,28 @@
 import { readCSV } from '@/utils/csvReader';
 import { Document } from '@langchain/core/documents';
+import { StringOutputParser } from '@langchain/core/output_parsers';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { Ollama } from '@langchain/ollama';
 import { PineconeEmbeddings, PineconeStore } from '@langchain/pinecone';
 import { Pinecone as PineconeClient } from '@pinecone-database/pinecone';
 
 import path from 'path';
-import z from 'zod';
-import {
-  CameraModelSchema,
-  ColorOrBwSchema,
-  FilmSimulatioSchema,
-  FujifilmSettingsSchema,
-  SensorTypeSchema,
-} from '../types/camera-schema';
-
-// Parse chain용 구조화된 출력 스키마
-export const ParseChainOutputSchema = z.object({
-  summary: z
-    .string()
-    .describe(
-      '레시피 요약 (2-3문장으로 필름 시뮬레이션과 설정값을 참고하여 작성)'
-    ),
-  camera: CameraModelSchema.describe('카메라 모델'),
-  sensor: SensorTypeSchema.describe('센서 타입'),
-  filmSimulation: FilmSimulatioSchema.describe('필름 시뮬레이션'),
-  colorOrBw: ColorOrBwSchema.describe('컬러 또는 흑백'),
-  settings: FujifilmSettingsSchema.describe('후지필름 카메라 설정'),
-});
-
-export type ParseChainOutput = z.infer<typeof ParseChainOutputSchema>;
 
 export const dynamic = 'force-dynamic'; // defaults to auto
 
 const promptTemplate = ChatPromptTemplate.fromMessages([
   [
     'system',
-    `# 후지필름 X 시리즈 레시피 분석 전문가
-
-## 역할
-주어진 후지필름 카메라 레시피 설정을 분석하여 구조화된 데이터를 출력합니다.
+    `
+# 역할
+후지필름 X 시리즈 레시피 분석 전문가
 
 ## 요구사항
-1. **Summary**: 2-3문장으로 필름 시뮬레이션과 설정값을 최대한 참고하여 레시피의 특징과 느낌을 설명
-2. **Camera Settings**: 제공된 설정을 정확히 파싱하여 구조화된 형태로 변환
-3. **Color Mode**: 레시피가 컬러인지 흑백인지 판별 ('color' 또는 'bw')
+1. **Summary**: 필름 시뮬레이션과 설정값을 최대한 참고하여 주어진 레시피의 특징과 느낌을 2-3문장으로 감성적으로 설명
 
-## Summary 작성 가이드
+## Summary 작성 예시 
+"이 레시피는 한여름 밤의 꿈처럼 아련하고, 고요하지만 생명력이 느껴지는, 그리고 어딘가 모르게 신비로운 감성을 담은 사진을 만들어 줄 수 있을 것입니다. 아마도 깊은 밤의 도시 풍경, 인적이 드문 한적한 길, 달빛 아래의 자연, 또는 창가에서 깊은 생각에 잠긴 인물 사진 등에 특히 잘 어울릴 것 같네요."
+
 
 ### Film Simulations 특징
 - **Provia**: 표준, 만능, 자연스러운 색감
@@ -69,20 +45,16 @@ const promptTemplate = ChatPromptTemplate.fromMessages([
 - **Grain 효과**: 필름룩, 아날로그 감성, 빈티지
 - **Colour Chrome**: 색감 강조, 깊이 있는 색상  
 - **Colour Chrome FX Blue**: 파란색 계열 강조, 하늘과 바다의 선명도 향상
-- **Colour Chrome Blue**: 파란색 계열 색상 개선, 자연스러운 파란색 표현
-- **Shift**: R 높음/B 낮음 = 따뜻한 톤
+- **Shift-B**: B 높음 = 차가운 톤
+- **Shift-R**: R 높음 = 따뜻한 톤
 - **Highlight/Shadow 낮음**: 부드러운 계조, 디테일 보존
 - **Color 높음**: 채도 강조, 생생한 색상
 - **Clarity 낮음**: 부드러운 이미지, 몽환적 느낌
 - **Noise Reduction 높음**: 깨끗하고 매끄러운 이미지
 
-### Summary 작성 예시
-"이 {name} 레시피는 {camera} 카메라, {base} 필름 레시피, {sensor} 센서를 기반으로 한 [설정과 구체적인 느낌 설명]을 줍니다."
-
-[카메라 및 설정 정보]
-{context}`,
+`,
   ],
-  ['human', '위 정보를 바탕으로 이 레시피를 구조화된 형태로 분석해주세요.'],
+  ['human', `{recipe}`],
 ]);
 
 // Ollama 모델 초기화
@@ -90,9 +62,7 @@ const llm = new Ollama({
   model: 'gemma3', // 사용할 모델명
 });
 
-const chain = promptTemplate.pipe(
-  llm.withStructuredOutput!<ParseChainOutput>(ParseChainOutputSchema)
-);
+const chain = promptTemplate.pipe(llm).pipe(new StringOutputParser());
 
 const embeddings = new PineconeEmbeddings({
   apiKey: process.env.PINECONE_API_KEY, // Defaults to process.env.HUGGINGFACEHUB_API_KEY
@@ -116,44 +86,64 @@ const saveToPinecone = async (documents: Document[]) => {
   });
 };
 
-try {
-  const fileRecipes = readCSV(path.resolve('public', 'film-recipes.csv'));
+export const processRecipes = async () => {
+  try {
+    const fileRecipes = readCSV(path.resolve('public', 'film-recipes.csv'));
 
-  const BATCH_SIZE = 20;
+    const BATCH_SIZE = 20;
+    const start = Date.now();
 
-  const start = Date.now();
+    console.log(`총 ${fileRecipes.length}개 레시피 처리 시작...`);
 
-  for (let i = 0; i < fileRecipes.length; i += BATCH_SIZE) {
-    const batch = fileRecipes.slice(i, i + BATCH_SIZE);
-    const batchDocuments = await Promise.all(
-      batch.map(async (recipe, batchIndex: number) => {
-        const parsedOutput = await chain.invoke({
-          context: JSON.stringify(recipe),
-        });
+    for (let i = 0; i < fileRecipes.length; i += BATCH_SIZE) {
+      const batch = fileRecipes.slice(i, i + BATCH_SIZE);
+      const batchDocuments = await Promise.all(
+        batch.map(async (recipe, batchIndex: number) => {
+          try {
+            const summary = await chain.invoke({
+              recipe: JSON.stringify(recipe),
+            });
 
-        return new Document({
-          pageContent: parsedOutput.summary,
-          metadata: {
-            id: i + batchIndex,
-            creator: recipe.creator,
-            name: recipe.name,
-            type: recipe.type,
-            url: recipe.url,
-            // Use LLM structured output as metadata
-            camera: parsedOutput.camera,
-            sensor: parsedOutput.sensor,
-            filmSimulation: parsedOutput.filmSimulation,
-            colorOrBw: parsedOutput.colorOrBw,
-            settings: parsedOutput.settings,
-          },
-        });
-      })
-    );
-    await saveToPinecone(batchDocuments);
+            return new Document({
+              pageContent: summary,
+              metadata: {
+                id: i + batchIndex,
+                creator: recipe.creator,
+                name: recipe.name,
+                type: recipe.type,
+                colorOrBw: recipe.colorOrBw,
+                camera: recipe.camera,
+                sensor: recipe.sensor,
+                base: recipe.base,
+                url: recipe.url,
+                settings: recipe.settings,
+              },
+            });
+          } catch (error) {
+            console.error(`레시피 ${i + batchIndex} 처리 중 오류:`, error);
+            throw error; // 배치 전체를 실패시키려면 throw, 계속하려면 null 반환
+          }
+        })
+      );
 
-    console.log(`${i + 20}개 인덱싱 생성 완료`);
-    console.log(`소요 시간: ${(Date.now() - start) / 1000}초`);
+      await saveToPinecone(batchDocuments);
+
+      const processed = Math.min(i + BATCH_SIZE, fileRecipes.length);
+      console.log(`${processed}/${fileRecipes.length}개 인덱싱 생성 완료`);
+      console.log(`소요 시간: ${(Date.now() - start) / 1000}초`);
+    }
+
+    console.log('모든 레시피 처리 완료!');
+    return { success: true, processed: fileRecipes.length };
+  } catch (error) {
+    console.error('Chatbot API Error:', error);
+    return { success: false, error };
   }
-} catch (error) {
-  console.error('Chatbot API Error:', error);
+};
+// 직접 실행할 때만 처리 (스크립트로 실행)
+if (require.main === module) {
+  processRecipes().then((result) => {
+    console.log('처리 결과:', result);
+    process.exit(result.success ? 0 : 1);
+  });
 }
