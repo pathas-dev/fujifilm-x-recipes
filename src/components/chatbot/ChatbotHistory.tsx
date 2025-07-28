@@ -302,7 +302,7 @@ const ChatbotHistory = () => {
                             </div>
                             <button
                               onClick={(e) => handleDeleteChat(e, chat.id)}
-                              className="text-error hover:bg-error/10 cursor-pointer rounded-md p-2 opacity-0 transition-all duration-200 group-hover:opacity-100"
+                              className="text-error hover:bg-error/10 cursor-pointer rounded-md p-2 transition-all duration-200"
                               title={t('deleteTitle')}
                             >
                               <SvgModernDelete />
