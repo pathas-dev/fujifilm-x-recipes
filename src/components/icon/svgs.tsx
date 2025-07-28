@@ -532,110 +532,53 @@ export const SvgAiCurator = () => (
     viewBox="0 0 24 24"
     className="text-primary-content relative z-10 h-6 w-6"
   >
-    {/* Film strip circular frame */}
-    <circle
-      cx="12"
-      cy="12"
-      r="10"
+    {/* Film strip frame */}
+    <rect
+      x="3"
+      y="5"
+      width="18"
+      height="14"
+      rx="1"
       fill="none"
       stroke="currentColor"
       strokeWidth="1.5"
-      strokeDasharray="2 1"
-      opacity="0.4"
     />
     
-    {/* Film perforation holes around the circle */}
-    <circle cx="12" cy="2.5" r="0.8" fill="currentColor" opacity="0.3" />
-    <circle cx="19.5" cy="6" r="0.8" fill="currentColor" opacity="0.3" />
-    <circle cx="21.5" cy="12" r="0.8" fill="currentColor" opacity="0.3" />
-    <circle cx="19.5" cy="18" r="0.8" fill="currentColor" opacity="0.3" />
-    <circle cx="12" cy="21.5" r="0.8" fill="currentColor" opacity="0.3" />
-    <circle cx="4.5" cy="18" r="0.8" fill="currentColor" opacity="0.3" />
-    <circle cx="2.5" cy="12" r="0.8" fill="currentColor" opacity="0.3" />
-    <circle cx="4.5" cy="6" r="0.8" fill="currentColor" opacity="0.3" />
+    {/* Film perforation holes - top */}
+    <rect x="5" y="3" width="2" height="2" rx="0.3" fill="currentColor" />
+    <rect x="8.5" y="3" width="2" height="2" rx="0.3" fill="currentColor" />
+    <rect x="12" y="3" width="2" height="2" rx="0.3" fill="currentColor" />
+    <rect x="15.5" y="3" width="2" height="2" rx="0.3" fill="currentColor" />
     
-    {/* Central camera body */}
+    {/* Film perforation holes - bottom */}
+    <rect x="5" y="19" width="2" height="2" rx="0.3" fill="currentColor" />
+    <rect x="8.5" y="19" width="2" height="2" rx="0.3" fill="currentColor" />
+    <rect x="12" y="19" width="2" height="2" rx="0.3" fill="currentColor" />
+    <rect x="15.5" y="19" width="2" height="2" rx="0.3" fill="currentColor" />
+    
+    {/* Robot face - background */}
     <rect
-      x="7"
-      y="9"
-      width="10"
-      height="7"
-      rx="1.5"
+      x="6"
+      y="8"
+      width="12"
+      height="8"
+      rx="3"
       fill="currentColor"
       opacity="0.9"
     />
     
-    {/* Camera top */}
-    <rect
-      x="9"
-      y="7.5"
-      width="6"
-      height="2"
-      rx="0.5"
-      fill="currentColor"
-      opacity="0.7"
-    />
+    {/* Robot eyes */}
+    <circle cx="9.5" cy="11.5" r="1.2" fill="white" opacity="0.9" />
+    <circle cx="14.5" cy="11.5" r="1.2" fill="white" opacity="0.9" />
     
-    {/* Lens outer ring */}
-    <circle
-      cx="12"
-      cy="12.5"
-      r="3"
-      fill="none"
-      stroke="currentColor"
+    {/* Robot smile */}
+    <path
+      d="M9 14c1 1 2 1 3 1s2 0 3-1"
+      stroke="white"
       strokeWidth="1.2"
-    />
-    
-    {/* Lens inner ring */}
-    <circle
-      cx="12"
-      cy="12.5"
-      r="1.8"
-      fill="currentColor"
-      opacity="0.2"
-      stroke="currentColor"
-      strokeWidth="0.8"
-    />
-    
-    {/* Lens center */}
-    <circle cx="12" cy="12.5" r="0.8" fill="currentColor" />
-    
-    {/* Viewfinder */}
-    <rect
-      x="8.5"
-      y="8"
-      width="1.5"
-      height="1"
-      rx="0.2"
-      fill="currentColor"
-      opacity="0.6"
-    />
-    
-    {/* Flash */}
-    <rect
-      x="13.5"
-      y="8"
-      width="1.5"
-      height="1"
-      rx="0.2"
-      fill="currentColor"
-      opacity="0.4"
-    />
-    
-    {/* AI circuit connection lines */}
-    <path
-      stroke="currentColor"
-      strokeWidth="0.5"
+      strokeLinecap="round"
       fill="none"
-      opacity="0.5"
-      d="M17 9L19 7M7 9L5 7M17 16L19 18M7 16L5 18"
-    />
-    
-    {/* AI sparkle elements */}
-    <path
-      fill="currentColor"
-      opacity="0.6"
-      d="M19 11l0.3 0.6L20 11l-0.7-0.3L19 11zM5 11l-0.3 0.6L4 11l0.7-0.3L5 11z"
+      opacity="0.9"
     />
   </svg>
 );
