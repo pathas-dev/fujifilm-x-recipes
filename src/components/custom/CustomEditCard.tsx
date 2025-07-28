@@ -18,7 +18,9 @@ import {
   ERROR_TYPES,
   getInitialCustomRecipe,
   initialSettings,
+  EnhancedFujiSetting,
 } from './customRecipe';
+import { FilmSimulations } from '@/types/camera-schema';
 import ExportButton from './ExportButton';
 import {
   COLOR_CHROME,
@@ -152,18 +154,30 @@ const CustomEditCard = ({
   const refTab = useRef<HTMLElement | null>(null);
 
   useLayoutEffect(() => {
-    setRecipe((prev) => ({
-      ...prev,
-      _id: customRecipe?._id ?? '',
-      base: customRecipe?.base ?? '',
-      camera: customRecipe?.camera ?? '',
-      colorType: customRecipe?.colorType ?? 'Color',
-      createdAt: customRecipe?.createdAt ?? '',
-      updatedAt: customRecipe?.updatedAt ?? '',
-      name: customRecipe?.name ?? '',
-      sensor: customRecipe?.sensor ?? '',
-      settings: customRecipe?.settings ?? initialSettings,
-    }));
+    setRecipe((prev) => {
+      const base = customRecipe?.base ?? 'Provia';
+      const settings = customRecipe?.settings ?? initialSettings;
+      
+      // Ensure filmSimulation matches base and is a valid enum value
+      const filmSim = base as (typeof FilmSimulations)[number];
+      const updatedSettings: EnhancedFujiSetting = {
+        ...settings,
+        filmSimulation: filmSim,
+      };
+
+      return {
+        ...prev,
+        _id: customRecipe?._id ?? '',
+        base,
+        camera: customRecipe?.camera ?? '',
+        colorType: customRecipe?.colorType ?? 'Color',
+        createdAt: customRecipe?.createdAt ?? '',
+        updatedAt: customRecipe?.updatedAt ?? '',
+        name: customRecipe?.name ?? '',
+        sensor: customRecipe?.sensor ?? '',
+        settings: updatedSettings,
+      };
+    });
   }, [
     customRecipe?._id,
     customRecipe?.base,
@@ -550,6 +564,8 @@ const CustomEditCard = ({
     setRecipe(
       produce(recipe, (draft) => {
         draft.base = value;
+        // Also update the filmSimulation in settings to keep them in sync
+        draft.settings.filmSimulation = value as (typeof FilmSimulations)[number];
       })
     );
 
