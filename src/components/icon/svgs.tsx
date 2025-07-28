@@ -532,50 +532,111 @@ export const SvgAiCurator = () => (
     viewBox="0 0 24 24"
     className="text-primary-content relative z-10 h-6 w-6"
   >
-    {/* Main circle - friendly face */}
+    {/* Film strip circular frame */}
     <circle
       cx="12"
       cy="12"
-      r="9"
-      fill="currentColor"
-      opacity="0.1"
+      r="10"
+      fill="none"
       stroke="currentColor"
       strokeWidth="1.5"
+      strokeDasharray="2 1"
+      opacity="0.4"
     />
     
-    {/* Friendly eyes - smaller and more pleasant */}
-    <circle cx="9.5" cy="10.5" r="1" fill="currentColor" />
-    <circle cx="14.5" cy="10.5" r="1" fill="currentColor" />
+    {/* Film perforation holes around the circle */}
+    <circle cx="12" cy="2.5" r="0.8" fill="currentColor" opacity="0.3" />
+    <circle cx="19.5" cy="6" r="0.8" fill="currentColor" opacity="0.3" />
+    <circle cx="21.5" cy="12" r="0.8" fill="currentColor" opacity="0.3" />
+    <circle cx="19.5" cy="18" r="0.8" fill="currentColor" opacity="0.3" />
+    <circle cx="12" cy="21.5" r="0.8" fill="currentColor" opacity="0.3" />
+    <circle cx="4.5" cy="18" r="0.8" fill="currentColor" opacity="0.3" />
+    <circle cx="2.5" cy="12" r="0.8" fill="currentColor" opacity="0.3" />
+    <circle cx="4.5" cy="6" r="0.8" fill="currentColor" opacity="0.3" />
     
-    {/* Eye highlights for friendliness */}
-    <circle cx="9.8" cy="10.2" r="0.3" fill="currentColor" opacity="0.3" />
-    <circle cx="14.8" cy="10.2" r="0.3" fill="currentColor" opacity="0.3" />
+    {/* Central camera body */}
+    <rect
+      x="7"
+      y="9"
+      width="10"
+      height="7"
+      rx="1.5"
+      fill="currentColor"
+      opacity="0.9"
+    />
     
-    {/* Happy smile */}
+    {/* Camera top */}
+    <rect
+      x="9"
+      y="7.5"
+      width="6"
+      height="2"
+      rx="0.5"
+      fill="currentColor"
+      opacity="0.7"
+    />
+    
+    {/* Lens outer ring */}
+    <circle
+      cx="12"
+      cy="12.5"
+      r="3"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="1.2"
+    />
+    
+    {/* Lens inner ring */}
+    <circle
+      cx="12"
+      cy="12.5"
+      r="1.8"
+      fill="currentColor"
+      opacity="0.2"
+      stroke="currentColor"
+      strokeWidth="0.8"
+    />
+    
+    {/* Lens center */}
+    <circle cx="12" cy="12.5" r="0.8" fill="currentColor" />
+    
+    {/* Viewfinder */}
+    <rect
+      x="8.5"
+      y="8"
+      width="1.5"
+      height="1"
+      rx="0.2"
+      fill="currentColor"
+      opacity="0.6"
+    />
+    
+    {/* Flash */}
+    <rect
+      x="13.5"
+      y="8"
+      width="1.5"
+      height="1"
+      rx="0.2"
+      fill="currentColor"
+      opacity="0.4"
+    />
+    
+    {/* AI circuit connection lines */}
     <path
       stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
+      strokeWidth="0.5"
       fill="none"
-      d="M8.5 14.5c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8"
+      opacity="0.5"
+      d="M17 9L19 7M7 9L5 7M17 16L19 18M7 16L5 18"
     />
     
-    {/* Friendly sparkles around the face */}
+    {/* AI sparkle elements */}
     <path
       fill="currentColor"
       opacity="0.6"
-      d="M6 6l0.5 1L7.5 6l-1-0.5L6 6zM18 6l-0.5 1L16.5 6l1-0.5L18 6z"
+      d="M19 11l0.3 0.6L20 11l-0.7-0.3L19 11zM5 11l-0.3 0.6L4 11l0.7-0.3L5 11z"
     />
-    <path
-      fill="currentColor"
-      opacity="0.4"
-      d="M5 16l0.3 0.6L5.9 16l-0.6-0.3L5 16zM19 16l-0.3 0.6L18.1 16l0.6-0.3L19 16z"
-    />
-    
-    {/* Tech elements - subtle circuit nodes */}
-    <circle cx="12" cy="7" r="0.5" fill="currentColor" opacity="0.3" />
-    <circle cx="7" cy="12" r="0.5" fill="currentColor" opacity="0.3" />
-    <circle cx="17" cy="12" r="0.5" fill="currentColor" opacity="0.3" />
   </svg>
 );
 
