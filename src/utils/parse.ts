@@ -141,9 +141,31 @@ export const processRecipes = async () => {
   }
 };
 // 직접 실행할 때만 처리 (스크립트로 실행)
-if (require.main === module) {
-  processRecipes().then((result) => {
-    console.log('처리 결과:', result);
-    process.exit(result.success ? 0 : 1);
-  });
-}
+// if (require.main === module) {
+//   processRecipes().then((result) => {
+//     console.log('처리 결과:', result);
+//     process.exit(result.success ? 0 : 1);
+//   });
+// }
+
+// const search = async (query: string) => {
+//   const pinecone = new PineconeClient({
+//     apiKey: process.env.PINECONE_API_KEY!,
+//   });
+
+//   const pineconeIndex = pinecone.Index(process.env.PINECONE_INDEX!);
+
+//   const vectorStore = await PineconeStore.fromExistingIndex(embeddings, {
+//     pineconeIndex,
+//     maxConcurrency: 50,
+//   });
+
+//   const results = await vectorStore.similaritySearch(query, 3, {
+//     sensor: { $in: ['X-Trans V HR', 'X-Trans IV'] }, // $in 연산자로 배열 내 포함 여부 검색
+//   });
+//   console.log('🚀 ~ search ~ results:', results);
+
+//   return results;
+// };
+
+// search('여름');
