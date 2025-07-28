@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 // 색상 구분 값들
-export const COLOR_TYPES = ['color', 'bw'] as const;
+export const COLOR_TYPES = ['Color', 'B&W'] as const;
 
 // 센서-카메라 매핑 데이터
 export const SENSOR_CAMERA_MAPPINGS = [
@@ -145,7 +145,11 @@ export const FujifilmSettingsSchema = z.object({
   colourChromeFXBlue: z
     .enum(effects)
     .default('OFF')
-    .describe('Colour Chrome Blue - 파란색 계열 강조'),
+    .describe('Colour Chrome FX Blue - 파란색 계열 강조'),
+  colourChromeBlue: z
+    .enum(effects)
+    .default('OFF')
+    .describe('Colour Chrome Blue - 파란색 계열 색상 개선'),
 
   // 화이트 밸런스
   whiteBalance: z.string().describe('White Balance - 색온도 자동 조정'),

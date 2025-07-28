@@ -157,7 +157,7 @@ const CustomEditCard = ({
       _id: customRecipe?._id ?? '',
       base: customRecipe?.base ?? '',
       camera: customRecipe?.camera ?? '',
-      colorType: customRecipe?.colorType ?? 'color',
+      colorType: customRecipe?.colorType ?? 'Color',
       createdAt: customRecipe?.createdAt ?? '',
       updatedAt: customRecipe?.updatedAt ?? '',
       name: customRecipe?.name ?? '',
@@ -519,7 +519,7 @@ const CustomEditCard = ({
     onSuccess({
       ...recipe,
       _id: uuidv4(),
-      colorType: isBW ? 'bw' : 'color',
+      colorType: isBW ? 'BW' : 'Color',
       createdAt: dayjs().format('YYYY-MM-DD HH:mm:ss'),
     });
     setCurrentTab('tone');

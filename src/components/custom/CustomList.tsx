@@ -267,7 +267,7 @@ const CustomList = ({ filters, cameras }: ICardListProps) => {
       const isSensorIncluded =
         sensors.length === 0 || !!_some(sensors, { value: recipe.sensor });
 
-      const isBw = bwOnly ? recipe.colorType === 'bw' : true;
+      const isBw = bwOnly ? recipe.colorType === 'BW' : true;
 
       return isBaseIncluded && isCameraIncluded && isSensorIncluded && isBw;
     });

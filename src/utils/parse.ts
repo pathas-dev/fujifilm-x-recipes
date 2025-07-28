@@ -44,11 +44,16 @@ const promptTemplate = ChatPromptTemplate.fromMessages([
 - **Dynamic Range 높음**: 넓은 계조, 디테일 보존
 - **Grain 효과**: 필름룩, 아날로그 감성, 빈티지
 - **Colour Chrome**: 색감 강조, 깊이 있는 색상  
+- **Colour Chrome FX Blue**: 파란색 계열 강조, 하늘과 바다의 선명도 향상
+- **Colour Chrome Blue**: 파란색 계열 색상 개선, 자연스러운 파란색 표현
 - **Shift**: R 높음/B 낮음 = 따뜻한 톤
 - **Highlight/Shadow 낮음**: 부드러운 계조, 디테일 보존
 - **Color 높음**: 채도 강조, 생생한 색상
 - **Clarity 낮음**: 부드러운 이미지, 몽환적 느낌
 - **Noise Reduction 높음**: 깨끗하고 매끄러운 이미지
+
+### Summary 작성 예시
+"이 {name} 레시피는 {camera} 카메라, {base} 필름 레시피, {sensor} 센서를 기반으로 한 [설정과 구체적인 느낌 설명]을 줍니다."
 
 [카메라 및 설정 정보]
 {context}`,
