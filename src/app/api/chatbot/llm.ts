@@ -84,7 +84,6 @@ export const createCuratorPromptTemplate = () => {
 
 ## 두 번째 레시피 요구사항
 - **제목**은 일관된 언어로 감성적인 느낌을 살려서 작성하세요. ex) "한 여름밤의 꿈", "좋은 하루 끝", "Echoes of yesterday", "Dreaming in shades of twilight" 
-- 제목에 **(AI Generated)** 를 추가하세요. 
 - 참고한 자료들을 최대한 활용해서 추천 이유를 상세하게 작성하세요.
 - **추천 이유**에는 검색된 레시피의 이름이나 카메라 이름을 언급하지 말고, 필름이나 세팅 등의 특징들을 참고해서 작성하세요.
 - base Film Simulation은 검색된 레시피 중에서 하나를 고르고 하나도 없는 경우 컬러는 **Provia**, 흑백은 **ACROS** 를 사용하세요.
