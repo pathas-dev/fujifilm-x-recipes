@@ -219,7 +219,7 @@ export class FujifilmRecipeAgent {
       const sourcePromise = retouchImage('source.jpg', 'webp', {
         width: 800,
         returnBase64: true,
-        isBw: this.state.analysis?.colorOrBw === 'B&W',
+        isBw: this.state.analysis?.colorOrBw === 'bw',
       });
 
       let retouchedPromise: Promise<any> | null = null;
@@ -228,7 +228,7 @@ export class FujifilmRecipeAgent {
           width: 800,
           quality: 100,
           returnBase64: true,
-          isBw: this.state.analysis?.colorOrBw === 'B&W',
+          isBw: this.state.analysis?.colorOrBw === 'bw',
           cameraSettings: {
             highlightTone: settings.highlight,
             noiseReduction: settings.noiseReduction,

@@ -1,7 +1,7 @@
 import { z } from 'zod';
 
 // 색상 구분 값들
-export const COLOR_TYPES = ['Color', 'B&W'] as const;
+export const COLOR_TYPES = ['color', 'bw'] as const;
 
 // 센서-카메라 매핑 데이터
 export const SENSOR_CAMERA_MAPPINGS = [
@@ -223,3 +223,15 @@ export type ColorOrBw = z.infer<typeof ColorOrBwSchema>;
 export type SensorCameraMapping = z.infer<typeof SensorCameraMappingSchema>;
 export type CameraInfo = z.infer<typeof CameraInfoSchema>;
 export type FilmSimulationType = z.infer<typeof FilmSimulatioSchema>;
+
+// Parse chain용 구조화된 출력 스키마
+export const ParseChainOutputSchema = z.object({
+  summary: z.string().describe('레시피 요약 (2-3문장으로 필름 시뮬레이션과 설정값을 참고하여 작성)'),
+  camera: CameraModelSchema.describe('카메라 모델'),
+  sensor: SensorTypeSchema.describe('센서 타입'),
+  filmSimulation: FilmSimulatioSchema.describe('필름 시뮬레이션'),
+  colorOrBw: ColorOrBwSchema.describe('컬러 또는 흑백'),
+  settings: FujifilmSettingsSchema.describe('후지필름 카메라 설정'),
+});
+
+export type ParseChainOutput = z.infer<typeof ParseChainOutputSchema>;
