@@ -84,13 +84,13 @@ const ConfirmModal = ({
           <div className="flex gap-3">
             <button
               onClick={onClose}
-              className="border-base-300 bg-base-200 text-base-content hover:bg-base-300 flex-1 rounded-lg border px-4 py-2 text-sm font-medium transition-colors"
+              className="border-base-300 bg-base-200 text-base-content hover:bg-base-300 flex-1 cursor-pointer rounded-lg border px-4 py-2 text-sm font-medium transition-colors"
             >
               {cancelText}
             </button>
             <button
               onClick={handleConfirm}
-              className={`flex-1 rounded-lg px-4 py-2 text-sm font-medium transition-colors ${confirmButtonClass}`}
+              className={`flex-1 cursor-pointer rounded-lg px-4 py-2 text-sm font-medium transition-colors ${confirmButtonClass}`}
             >
               {confirmText}
             </button>
