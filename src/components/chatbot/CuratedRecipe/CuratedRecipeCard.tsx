@@ -19,7 +19,7 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
       <div className="mb-4 flex items-start justify-between">
         <div className="flex items-center space-x-3">
           <div
-            className={`flex h-10 w-10 items-center justify-center rounded-lg text-lg text-white ${
+            className={`flex h-10 w-10 min-w-10 items-center justify-center rounded-lg text-lg text-white ${
               isGenerated
                 ? 'bg-gradient-to-br from-purple-500 to-pink-500'
                 : 'bg-gradient-to-br from-blue-500 to-cyan-500'
@@ -28,7 +28,7 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
             {isGenerated ? '🤖' : '📸'}
           </div>
           <div>
-            <h3 className="text-base-content font-bold">{recipe.title}</h3>
+            <h3 className="text-base-content text-sm font-bold">{recipe.title}</h3>
             <p className="text-base-content/70 text-sm">
               {isGenerated
                 ? t('curatedRecipe.aiCustomRecipe')
