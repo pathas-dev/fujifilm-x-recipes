@@ -146,10 +146,6 @@ export const FujifilmSettingsSchema = z.object({
     .enum(effects)
     .default('OFF')
     .describe('Colour Chrome FX Blue - 파란색 계열 강조'),
-  colourChromeBlue: z
-    .enum(effects)
-    .default('OFF')
-    .describe('Colour Chrome Blue - 파란색 계열 색상 개선'),
 
   // 화이트 밸런스
   whiteBalance: z.string().describe('White Balance - 색온도 자동 조정'),
