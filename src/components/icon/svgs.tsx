@@ -532,27 +532,50 @@ export const SvgAiCurator = () => (
     viewBox="0 0 24 24"
     className="text-primary-content relative z-10 h-6 w-6"
   >
-    <path
+    {/* Main circle - friendly face */}
+    <circle
+      cx="12"
+      cy="12"
+      r="9"
       fill="currentColor"
-      d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 16c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z"
+      opacity="0.1"
+      stroke="currentColor"
+      strokeWidth="1.5"
     />
-    <circle cx="9" cy="10" r="1.25" fill="currentColor" />
-    <circle cx="15" cy="10" r="1.25" fill="currentColor" />
-    <path
-      fill="currentColor"
-      d="M12 16c1.66 0 3-1.34 3-3H9c0 1.66 1.34 3 3 3z"
-    />
+    
+    {/* Friendly eyes - smaller and more pleasant */}
+    <circle cx="9.5" cy="10.5" r="1" fill="currentColor" />
+    <circle cx="14.5" cy="10.5" r="1" fill="currentColor" />
+    
+    {/* Eye highlights for friendliness */}
+    <circle cx="9.8" cy="10.2" r="0.3" fill="currentColor" opacity="0.3" />
+    <circle cx="14.8" cy="10.2" r="0.3" fill="currentColor" opacity="0.3" />
+    
+    {/* Happy smile */}
     <path
       stroke="currentColor"
-      strokeWidth="0.5"
+      strokeWidth="1.5"
+      strokeLinecap="round"
       fill="none"
-      d="M7 7l2 1M17 7l-2 1M8 14.5c1.33 1 2.67 1.5 4 1.5s2.67-.5 4-1.5"
+      d="M8.5 14.5c1 1.2 2.2 1.8 3.5 1.8s2.5-.6 3.5-1.8"
+    />
+    
+    {/* Friendly sparkles around the face */}
+    <path
+      fill="currentColor"
+      opacity="0.6"
+      d="M6 6l0.5 1L7.5 6l-1-0.5L6 6zM18 6l-0.5 1L16.5 6l1-0.5L18 6z"
     />
     <path
       fill="currentColor"
-      opacity="0.5"
-      d="M5 4l1 2M19 4l-1 2M4 18l2-1M20 18l-2-1"
+      opacity="0.4"
+      d="M5 16l0.3 0.6L5.9 16l-0.6-0.3L5 16zM19 16l-0.3 0.6L18.1 16l0.6-0.3L19 16z"
     />
+    
+    {/* Tech elements - subtle circuit nodes */}
+    <circle cx="12" cy="7" r="0.5" fill="currentColor" opacity="0.3" />
+    <circle cx="7" cy="12" r="0.5" fill="currentColor" opacity="0.3" />
+    <circle cx="17" cy="12" r="0.5" fill="currentColor" opacity="0.3" />
   </svg>
 );
 
