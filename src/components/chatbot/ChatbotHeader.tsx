@@ -1,4 +1,3 @@
-import { SvgAiCurator } from '@/components/icon/svgs';
 import { useTranslations } from 'next-intl';
 import { memo } from 'react';
 import ChatbotHistory from './ChatbotHistory';
@@ -11,7 +10,7 @@ const ChatbotHeader = memo(function ChatbotHeader() {
       <div className="flex items-center space-x-3">
         <div className="from-primary to-secondary group relative flex h-10 w-10 items-center justify-center overflow-hidden rounded-xl bg-gradient-to-br shadow-md">
           <div className="from-primary/20 to-secondary/20 absolute inset-0 bg-gradient-to-r opacity-0 transition-opacity duration-300 group-hover:opacity-100"></div>
-          <SvgAiCurator />
+          <span className="text-xl">🤖</span>
         </div>
         <div>
           <h1 className="from-primary to-secondary inline-block bg-gradient-to-r bg-clip-text text-xl font-bold text-transparent">
