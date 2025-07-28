@@ -42,7 +42,7 @@
       "newConversation": "New Conversation"
     },
     "curatedRecipe": {
-      "aiCustomRecipe": "AI Custom Recipe",
+      "aiGeneratedRecipe": "AI Generated Recipe",
       "recommendedRecipe": "Recommended Recipe",
       "baseFilmSimulation": "Base Film Simulation",
       "recommendationReason": "Recommendation Reason",

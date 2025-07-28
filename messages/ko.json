@@ -42,7 +42,7 @@
       "newConversation": "새로운 대화"
     },
     "curatedRecipe": {
-      "aiCustomRecipe": "AI 맞춤 레시피",
+      "aiGeneratedRecipe": "AI 생성 레시피",
       "recommendedRecipe": "추천 레시피",
       "baseFilmSimulation": "베이스 필름 시뮬레이션",
       "recommendationReason": "추천 이유",

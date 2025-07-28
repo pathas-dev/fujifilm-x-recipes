@@ -1,8 +1,8 @@
-import CuratedImageComparisonSlider from './CuratedImageComparisonSlider';
-import RecipeUrlPreview from './CuratedRecipeUrlPreview';
-import CuratedRecipeSettingItem from './CuratedRecipeSettingItem';
 import { GeneratedByAIRecipe, RetrievedRecipe } from '@/types/recipe-schema';
 import { useTranslations } from 'next-intl';
+import CuratedImageComparisonSlider from './CuratedImageComparisonSlider';
+import CuratedRecipeSettingItem from './CuratedRecipeSettingItem';
+import RecipeUrlPreview from './CuratedRecipeUrlPreview';
 
 interface CuratedRecipeCardProps {
   recipe: RetrievedRecipe | GeneratedByAIRecipe;
@@ -28,10 +28,12 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
             {isGenerated ? '🤖' : '📸'}
           </div>
           <div>
-            <h3 className="text-base-content text-sm font-bold">{recipe.title}</h3>
+            <h3 className="text-base-content text-sm font-bold">
+              {recipe.title}
+            </h3>
             <p className="text-base-content/70 text-sm">
               {isGenerated
-                ? t('curatedRecipe.aiCustomRecipe')
+                ? t('curatedRecipe.aiGeneratedRecipe')
                 : t('curatedRecipe.recommendedRecipe')}
             </p>
           </div>
