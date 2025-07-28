@@ -10,13 +10,13 @@ import sharp from 'sharp';
 const FilmSimulationPresets: Record<
   FilmSimulationType,
   {
-    name: string;
+    name: FilmSimulationType;
     characteristics: string;
     baseSettings: CameraSettings;
   }
 > = {
   Provia: {
-    name: 'PROVIA',
+    name: 'Provia',
     characteristics: 'Standard color reproduction, balanced contrast',
     baseSettings: {
       whiteBalanceR: 0,
@@ -42,7 +42,7 @@ const FilmSimulationPresets: Record<
     },
   },
   Astia: {
-    name: 'ASTIA',
+    name: 'Astia',
     characteristics: 'Soft skin tones, subdued colors',
     baseSettings: {
       whiteBalanceR: 2,
@@ -81,7 +81,7 @@ const FilmSimulationPresets: Record<
     },
   },
   'Reala Ace': {
-    name: 'REALA ACE',
+    name: 'Reala Ace',
     characteristics: 'Natural skin tones, enhanced colors',
     baseSettings: {
       whiteBalanceR: 1,
@@ -94,7 +94,7 @@ const FilmSimulationPresets: Record<
     },
   },
   Eterna: {
-    name: 'ETERNA',
+    name: 'Eterna',
     characteristics: 'Cinematic look, low saturation',
     baseSettings: {
       whiteBalanceR: 0,
@@ -107,7 +107,7 @@ const FilmSimulationPresets: Record<
     },
   },
   'Eterna Bleach Bypass': {
-    name: 'ETERNA Bleach Bypass',
+    name: 'Eterna Bleach Bypass',
     characteristics: 'High contrast, desaturated highlights',
     baseSettings: {
       whiteBalanceR: 0,
@@ -133,7 +133,7 @@ const FilmSimulationPresets: Record<
     },
   },
   'Pro Neg. High': {
-    name: 'PRO Neg Hi',
+    name: 'Pro Neg. High',
     characteristics: 'High contrast negative film',
     baseSettings: {
       whiteBalanceR: 0,
@@ -146,7 +146,7 @@ const FilmSimulationPresets: Record<
     },
   },
   'Pro Neg. Std': {
-    name: 'PRO Neg Std',
+    name: 'Pro Neg. Std',
     characteristics: 'Standard contrast negative film',
     baseSettings: {
       whiteBalanceR: 0,
@@ -159,7 +159,7 @@ const FilmSimulationPresets: Record<
     },
   },
   Acros: {
-    name: 'ACROS',
+    name: 'Acros',
     characteristics: 'Black and white, smooth gradation',
     baseSettings: {
       whiteBalanceR: 0,
@@ -182,6 +182,19 @@ const FilmSimulationPresets: Record<
       color: 0,
       sharpness: 0,
       noiseReduction: 0,
+    },
+  },
+  Sepia: {
+    name: 'Sepia',
+    characteristics: 'Warm brown vintage tone, nostalgic sepia effect',
+    baseSettings: {
+      whiteBalanceR: 4, // 따뜻한 갈색 톤을 위한 적색 증가
+      whiteBalanceB: -3, // 청색 감소로 황갈색 효과
+      highlightTone: -0.5, // 하이라이트를 약간 낮춰 부드러운 느낌
+      shadowTone: 1, // 섀도우를 밝게 해서 빈티지 느낌
+      color: -2, // 채도를 낮춰 세피아 특유의 단조로운 색감
+      sharpness: -1, // 약간 소프트하게 해서 빈티지 느낌
+      noiseReduction: 1, // 노이즈 리덕션으로 부드러운 질감
     },
   },
 };
@@ -367,7 +380,8 @@ export const retouchImage = async (
       // 흑백 필름 시뮬레이션 자동 적용
       if (
         options.filmSimulation === 'Acros' ||
-        options.filmSimulation === 'Monochrome'
+        options.filmSimulation === 'Monochrome' ||
+        options.filmSimulation === 'Sepia'
       ) {
         processedOptions.isBw = true;
       }
