@@ -139,7 +139,25 @@ export const processRecipes = async () => {
                 sensor: recipe.sensor,
                 base: recipe.base,
                 url: recipe.url,
-                settings: analysis.settings, // 구조화된 설정 객체 저장
+                // 설정을 1 depth로 평탄화하여 저장 (Pinecone 중첩 JSON 구조 제한 대응)
+                settings_filmSimulation: analysis.settings.filmSimulation,
+                settings_iso: analysis.settings.iso,
+                settings_exposure: analysis.settings.exposure,
+                settings_dynamicRange: analysis.settings.dynamicRange,
+                settings_priority: analysis.settings.priority,
+                settings_grainEffect: analysis.settings.grainEffect,
+                settings_grainSize: analysis.settings.grainSize,
+                settings_colourChrome: analysis.settings.colourChrome,
+                settings_colourChromeFXBlue: analysis.settings.colourChromeFXBlue,
+                settings_whiteBalance: analysis.settings.whiteBalance,
+                settings_shiftRed: analysis.settings.shiftRed,
+                settings_shiftBlue: analysis.settings.shiftBlue,
+                settings_highlight: analysis.settings.highlight,
+                settings_shadow: analysis.settings.shadow,
+                settings_color: analysis.settings.color,
+                settings_clarity: analysis.settings.clarity,
+                settings_sharpness: analysis.settings.sharpness,
+                settings_noiseReduction: analysis.settings.noiseReduction,
                 rawSettings: recipe.settings, // 원본 설정 문자열도 보존
               },
             });
