@@ -1,7 +1,7 @@
 import { COLOR_TYPES } from '@/types/camera-schema';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
-import { createLangfuseCallbackManager } from './langfuse';
+import { createLangfuseCallbackHandler } from './langfuse';
 
 export enum GoogleAIModel {
   GeminiFlash = 'gemini-2.0-flash',
@@ -26,16 +26,20 @@ export const createLLM = (
     temperature: 0.3,
   });
 
-  // Langfuse 콜백 매니저 추가 (환경 변수가 설정된 경우에만)
+  // Note: Langfuse callbacks are passed at invoke time, not during construction
+  // This is kept for potential future use or custom configurations
   if (options) {
-    const callbackManager = createLangfuseCallbackManager(
+    const callbackHandler = createLangfuseCallbackHandler(
       options.traceName,
       options.sessionId,
       options.userId,
       options.metadata
     );
     
-    llm.callbacks = callbackManager;
+    // Store the callback handler for later use
+    if (callbackHandler) {
+      (llm as any)._langfuseHandler = callbackHandler;
+    }
   }
 
   return llm;

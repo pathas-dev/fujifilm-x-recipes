@@ -1,5 +1,5 @@
-import { CallbackManager } from '@langchain/core/callbacks';
-import { LangfuseCallbackHandler } from 'langfuse-langchain';
+import { CallbackManager } from '@langchain/core/callbacks/manager';
+import { CallbackHandler } from 'langfuse-langchain';
 
 /**
  * Langfuse 설정 인터페이스
@@ -44,7 +44,7 @@ export function createLangfuseCallbackHandler(
   sessionId?: string,
   userId?: string,
   metadata?: Record<string, any>
-): LangfuseCallbackHandler | null {
+): CallbackHandler | null {
   const config = getLangfuseConfig();
   
   if (!config) {
@@ -53,11 +53,10 @@ export function createLangfuseCallbackHandler(
   }
 
   try {
-    const handler = new LangfuseCallbackHandler({
+    const handler = new CallbackHandler({
       secretKey: config.secretKey,
       publicKey: config.publicKey,
       baseUrl: config.baseUrl,
-      traceName,
       sessionId,
       userId,
       metadata,
@@ -69,25 +68,4 @@ export function createLangfuseCallbackHandler(
     console.error('Failed to create Langfuse callback handler:', error);
     return null;
   }
-}
-
-/**
- * Langfuse 콜백 매니저를 생성하는 함수
- */
-export function createLangfuseCallbackManager(
-  traceName?: string,
-  sessionId?: string,
-  userId?: string,
-  metadata?: Record<string, any>
-): CallbackManager {
-  const langfuseHandler = createLangfuseCallbackHandler(
-    traceName,
-    sessionId,
-    userId,
-    metadata
-  );
-
-  const callbacks = langfuseHandler ? [langfuseHandler] : [];
-  
-  return CallbackManager.fromHandlers(callbacks);
 }

@@ -6,7 +6,7 @@ import {
   GoogleAIModel,
   LLMOptions,
 } from '@/app/api/chatbot/llm';
-import { isLangfuseEnabled } from '@/app/api/chatbot/langfuse';
+import { isLangfuseEnabled, createLangfuseCallbackHandler } from '@/app/api/chatbot/langfuse';
 import { retrieve } from '@/app/api/chatbot/retrieval';
 import {
   CameraModel,
@@ -196,9 +196,19 @@ export class FujifilmRecipeAgent {
         'QuestionAnalysis'
       );
 
-      const analysis = (await parsingChain.invoke(inputs)) as z.infer<
-        typeof QuestionAnalysisSchema
-      >;
+      // Langfuse 콜백 핸들러 생성 및 invoke에 전달
+      const langfuseHandler = createLangfuseCallbackHandler(
+        'question-analysis',
+        this.sessionId,
+        'fujifilm-user',
+        llmOptions.metadata
+      );
+
+      const callbacks = langfuseHandler ? [langfuseHandler] : [];
+
+      const analysis = (await parsingChain.invoke(inputs, {
+        callbacks,
+      })) as z.infer<typeof QuestionAnalysisSchema>;
 
       this.state.analysis = analysis;
       const duration = endTime();
@@ -282,9 +292,19 @@ export class FujifilmRecipeAgent {
         'RecipeGeneration'
       );
 
-      const recipes = (await curatorChain.invoke(inputs)) as z.infer<
-        typeof CuratedRecipesSchema
-      >;
+      // Langfuse 콜백 핸들러 생성 및 invoke에 전달
+      const langfuseHandler = createLangfuseCallbackHandler(
+        'recipe-generation',
+        this.sessionId,
+        'fujifilm-user',
+        llmOptions.metadata
+      );
+
+      const callbacks = langfuseHandler ? [langfuseHandler] : [];
+
+      const recipes = (await curatorChain.invoke(inputs, {
+        callbacks,
+      })) as z.infer<typeof CuratedRecipesSchema>;
 
       this.state.recipes = recipes;
       const duration = endTime();
