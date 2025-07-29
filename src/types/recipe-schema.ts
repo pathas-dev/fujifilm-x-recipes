@@ -9,7 +9,11 @@ export const RecipeSchema = z.object({
   settings: FujifilmSettingsSchema.describe('후지필름 카메라 세팅 정보'),
   keywords: z
     .array(z.string())
-    .describe('레시피 키워드 (3 ~ 5개), Keywords, Moods, ShootingTypes 참고'),
+    .min(3)
+    .max(5)
+    .describe(
+      '레시피 관련 키워드 (3~5개), Keywords, Moods, ShootingTypes 참고해서 최대한 겹치지 않게 추출'
+    ),
 });
 
 // 단일 레시피 스키마
