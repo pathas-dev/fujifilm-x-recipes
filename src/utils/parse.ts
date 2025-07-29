@@ -31,7 +31,7 @@ const RecipeAnalysisSchema = z.object({
         'portrait',
         'landscape',
         'night',
-        'documentry',
+        'documentary',
         'weddings',
         'snap',
         'daily',
