@@ -15,10 +15,10 @@
     "error": "Sorry, something went wrong. Please try again.",
     "welcome": "Hello! I am an AI film recipe curator. What recipe are you looking for?",
     "examples": {
-      "winter": "Recommend a winter-feeling recipe",
-      "cinematic": "Recommend a cinematic film recipe",
-      "summer": "Recommend a refreshing summer recipe",
-      "blackWhite": "Recommend a high-contrast black and white recipe"
+      "winter": "Recommend a recipe that suits winter well",
+      "cinematic": "Recommend a recipe that feels like an old movie",
+      "summer": "Recommend a recipe that captures a refreshing summer",
+      "blackWhite": "Recommend a black and white photo recipe with emphasized grain"
     },
     "loadings": {
       "placeholder": "What recipe would be good?",
