@@ -1,48 +1,28 @@
 import { COLOR_TYPES } from '@/types/camera-schema';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
-import { createLangfuseCallbackHandler } from './langfuse';
+import { createLangfuseCallback } from './langfuse-callback';
 
 export enum GoogleAIModel {
   GeminiFlash = 'gemini-2.0-flash',
   GeminiFlashLite = 'gemini-2.0-flash-lite',
 }
 
-export interface LLMOptions {
-  traceName?: string;
-  sessionId?: string;
-  userId?: string;
-  metadata?: Record<string, any>;
-}
-
 export const createLLM = (
   model: GoogleAIModel = GoogleAIModel.GeminiFlash,
-  options?: LLMOptions
+  options?: {
+    sessionId?: string;
+  }
 ) => {
-  const llm = new ChatGoogleGenerativeAI({
+  const callback = createLangfuseCallback(options?.sessionId);
+  
+  return new ChatGoogleGenerativeAI({
     apiKey: process.env.GOOGLE_API_KEY,
     model,
     streaming: false,
     temperature: 0.3,
+    callbacks: callback ? [callback] : undefined,
   });
-
-  // Note: Langfuse callbacks are passed at invoke time, not during construction
-  // This is kept for potential future use or custom configurations
-  if (options) {
-    const callbackHandler = createLangfuseCallbackHandler(
-      options.traceName,
-      options.sessionId,
-      options.userId,
-      options.metadata
-    );
-    
-    // Store the callback handler for later use
-    if (callbackHandler) {
-      (llm as any)._langfuseHandler = callbackHandler;
-    }
-  }
-
-  return llm;
 };
 
 const filmSimulationInstruction = `
