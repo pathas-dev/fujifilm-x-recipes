@@ -1,19 +1,44 @@
 import { COLOR_TYPES } from '@/types/camera-schema';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
 import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
+import { createLangfuseCallbackManager } from './langfuse';
 
 export enum GoogleAIModel {
   GeminiFlash = 'gemini-2.0-flash',
   GeminiFlashLite = 'gemini-2.0-flash-lite',
 }
 
-export const createLLM = (model: GoogleAIModel = GoogleAIModel.GeminiFlash) => {
-  return new ChatGoogleGenerativeAI({
+export interface LLMOptions {
+  traceName?: string;
+  sessionId?: string;
+  userId?: string;
+  metadata?: Record<string, any>;
+}
+
+export const createLLM = (
+  model: GoogleAIModel = GoogleAIModel.GeminiFlash,
+  options?: LLMOptions
+) => {
+  const llm = new ChatGoogleGenerativeAI({
     apiKey: process.env.GOOGLE_API_KEY,
     model,
     streaming: false,
     temperature: 0.3,
   });
+
+  // Langfuse 콜백 매니저 추가 (환경 변수가 설정된 경우에만)
+  if (options) {
+    const callbackManager = createLangfuseCallbackManager(
+      options.traceName,
+      options.sessionId,
+      options.userId,
+      options.metadata
+    );
+    
+    llm.callbacks = callbackManager;
+  }
+
+  return llm;
 };
 
 const filmSimulationInstruction = `

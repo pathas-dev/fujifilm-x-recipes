@@ -4,7 +4,9 @@ import {
   createLLM,
   createParseQuestionPromptTemplate,
   GoogleAIModel,
+  LLMOptions,
 } from '@/app/api/chatbot/llm';
+import { isLangfuseEnabled } from '@/app/api/chatbot/langfuse';
 import { retrieve } from '@/app/api/chatbot/retrieval';
 import {
   CameraModel,
@@ -23,11 +25,14 @@ import { SENSOR_CAMERA_MAPPINGS } from '../../../types/camera-schema';
 // LLM 인스턴스 관리 개선 (메모리 누수 방지)
 const llmCache = new Map<string, ReturnType<typeof createLLM>>();
 
-const getOrCreateLLM = (model: GoogleAIModel): ReturnType<typeof createLLM> => {
-  const cacheKey = `llm_${model}`;
+const getOrCreateLLM = (
+  model: GoogleAIModel,
+  options?: LLMOptions
+): ReturnType<typeof createLLM> => {
+  const cacheKey = `llm_${model}_${JSON.stringify(options || {})}`;
 
   if (!llmCache.has(cacheKey)) {
-    const llm = createLLM(model);
+    const llm = createLLM(model, options);
     llm.temperature = 0.3;
     llmCache.set(cacheKey, llm);
 
@@ -126,9 +131,13 @@ export interface FujifilmRecipeAgentState {
 
 export class FujifilmRecipeAgent {
   private state: FujifilmRecipeAgentState;
+  private sessionId: string;
 
   constructor(question: string, cameraModel: CameraModel) {
     const detectedSensors = findSensorsByCameraModel(cameraModel);
+    
+    // 세션 ID 생성 (Langfuse 트레이싱용)
+    this.sessionId = `recipe-agent-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
 
     this.state = {
       question,
@@ -141,6 +150,9 @@ export class FujifilmRecipeAgent {
       console.log(
         `📷 Camera model detected: ${cameraModel} -> Sensor: ${detectedSensors}`
       );
+      if (isLangfuseEnabled()) {
+        console.log(`🔍 Langfuse session: ${this.sessionId}`);
+      }
       console.log('FujifilmRecipeAgent 초기화 완료');
     } else {
       console.log('FujifilmRecipeAgent 센서 감지 실패');
@@ -159,7 +171,20 @@ export class FujifilmRecipeAgent {
       console.log('🔍 Analyzing question:', this.state.question);
       const endTime = measureTime('Question Analysis');
 
-      const parsingLLM = getOrCreateLLM(GoogleAIModel.GeminiFlashLite);
+      // Langfuse 트레이싱 옵션 설정
+      const llmOptions: LLMOptions = {
+        traceName: 'question-analysis',
+        sessionId: this.sessionId,
+        userId: 'fujifilm-user',
+        metadata: {
+          step: 'analyzing',
+          cameraModel: this.state.cameraModel,
+          sensors: this.state.detectedSensors,
+          question: this.state.question,
+        },
+      };
+
+      const parsingLLM = getOrCreateLLM(GoogleAIModel.GeminiFlashLite, llmOptions);
       const parsingPrompt = createParseQuestionPromptTemplate();
 
       const parsingChain = parsingPrompt.pipe(
@@ -227,7 +252,22 @@ export class FujifilmRecipeAgent {
       console.log('👨‍🍳 Generating recipes');
       const endTime = measureTime('Recipe Generation');
 
-      const curatorLLM = getOrCreateLLM(GoogleAIModel.GeminiFlash);
+      // Langfuse 트레이싱 옵션 설정
+      const llmOptions: LLMOptions = {
+        traceName: 'recipe-generation',
+        sessionId: this.sessionId,
+        userId: 'fujifilm-user',
+        metadata: {
+          step: 'generating',
+          cameraModel: this.state.cameraModel,
+          sensors: this.state.detectedSensors,
+          question: this.state.question,
+          analysis: this.state.analysis,
+          documentsCount: this.state.documents?.length || 0,
+        },
+      };
+
+      const curatorLLM = getOrCreateLLM(GoogleAIModel.GeminiFlash, llmOptions);
       const curatorPrompt = createCuratorPromptTemplate();
 
       const curatorChain = curatorPrompt.pipe(
