@@ -42,11 +42,28 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
 
       {/* Base Film Simulation */}
       <div className="bg-base-200 mb-4 rounded-lg p-3">
-        <div className="text-base-content/80 mb-1 text-sm font-medium">
-          {t('curatedRecipe.baseFilmSimulation')}
-        </div>
-        <div className="text-primary font-bold">
-          {recipe.baseFilmSimulation}
+        <div className="flex items-start justify-between">
+          <div className="flex-1">
+            <div className="text-base-content/80 mb-1 text-sm font-medium">
+              {t('curatedRecipe.baseFilmSimulation')}
+            </div>
+            <div className="text-primary font-bold">
+              {recipe.baseFilmSimulation}
+            </div>
+          </div>
+          {/* Tags */}
+          {recipe.keywords && recipe.keywords.length > 0 && (
+            <div className="ml-4 flex flex-wrap gap-1">
+              {recipe.keywords.map((keyword, index) => (
+                <span
+                  key={index}
+                  className="bg-primary/10 text-primary rounded-full px-2 py-1 text-xs font-medium"
+                >
+                  {keyword}
+                </span>
+              ))}
+            </div>
+          )}
         </div>
       </div>
 

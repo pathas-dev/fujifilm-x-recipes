@@ -7,6 +7,9 @@ export const RecipeSchema = z.object({
   baseFilmSimulation: z.string().describe('베이스 필름 시뮬레이션'),
   recommendationReason: z.string().describe('추천 이유'),
   settings: FujifilmSettingsSchema.describe('후지필름 카메라 세팅 정보'),
+  keywords: z
+    .array(z.string())
+    .describe('레시피 키워드 (3 ~ 5개), Keywords, Moods, ShootingTypes 참고'),
 });
 
 // 단일 레시피 스키마
