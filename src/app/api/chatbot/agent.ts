@@ -19,16 +19,19 @@ import {
 import { retouchImage } from '@/utils/retouchImage';
 import z from 'zod';
 import { SENSOR_CAMERA_MAPPINGS } from '../../../types/camera-schema';
+import langfuseHandler from '../../../utils/langfuse';
 
 // LLM 인스턴스 관리 개선 (메모리 누수 방지)
 const llmCache = new Map<string, ReturnType<typeof createLLM>>();
 
-const getOrCreateLLM = (model: GoogleAIModel): ReturnType<typeof createLLM> => {
+const getOrCreateLLM = (
+  model: GoogleAIModel,
+  temperature: number = 1
+): ReturnType<typeof createLLM> => {
   const cacheKey = `llm_${model}`;
 
   if (!llmCache.has(cacheKey)) {
-    const llm = createLLM(model);
-    llm.temperature = 0.3;
+    const llm = createLLM(model, temperature);
     llmCache.set(cacheKey, llm);
 
     // 10분 후 자동 정리
@@ -171,9 +174,9 @@ export class FujifilmRecipeAgent {
         'QuestionAnalysis'
       );
 
-      const analysis = (await parsingChain.invoke(inputs)) as z.infer<
-        typeof QuestionAnalysisSchema
-      >;
+      const analysis = (await parsingChain.invoke(inputs, {
+        callbacks: [langfuseHandler],
+      })) as z.infer<typeof QuestionAnalysisSchema>;
 
       this.state.analysis = analysis;
       const duration = endTime();
@@ -207,6 +210,7 @@ export class FujifilmRecipeAgent {
       this.state.documents = await retrieve(searchQuery, {
         colorOrBw: this.state.analysis?.colorOrBw ?? 'Color',
         sensors: this.state.detectedSensors ?? [],
+        filmSimultations: this.state.analysis?.filmSimulations,
       });
 
       this.state.context = formatContext(this.state.documents);
@@ -242,9 +246,9 @@ export class FujifilmRecipeAgent {
         'RecipeGeneration'
       );
 
-      const recipes = (await curatorChain.invoke(inputs)) as z.infer<
-        typeof CuratedRecipesSchema
-      >;
+      const recipes = (await curatorChain.invoke(inputs, {
+        callbacks: [langfuseHandler],
+      })) as z.infer<typeof CuratedRecipesSchema>;
 
       this.state.recipes = recipes;
       const duration = endTime();
