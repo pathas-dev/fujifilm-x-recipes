@@ -59,7 +59,7 @@ const CuratedRecipeCard = ({ recipe, type }: CuratedRecipeCardProps) => {
                   key={index}
                   className="bg-primary/10 text-primary rounded-full px-2 py-1 text-xs font-medium"
                 >
-                  {keyword}
+                  #{keyword}
                 </span>
               ))}
             </div>
