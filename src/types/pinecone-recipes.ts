@@ -1,0 +1,5297 @@
+export interface PineconeRecipe {
+  id: string;
+  pageContent: string;
+}
+
+export const PineconeRecipesForKeywordSearch: PineconeRecipe[] = [
+  {
+    id: '0',
+    pageContent:
+      '[Summary] 이 레시피는 쿠바의 뜨거운 태양 아래, 오래된 필름 카메라로 촬영한 듯한 빈티지한 감성을 선사합니다. 강렬한 색감과 깊이 있는 그림자는 당신의 사진에 드라마틱한 분위기를 더해줄 것입니다. 특히, 여행, 거리 풍경, 인물 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,쿠바,필름,따뜻한,선명한\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: 400% D-Range\r\nPriority: Off\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome Blue Effect: Strong\r\nWhite-balance: Auto WB\r\nShift: R:4 B:-5\r\nHighlights: -2\r\nShadows: -0.5\r\nColor: +4\r\nClarity: -3',
+  },
+  {
+    id: '1',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 톤을 연출합니다. 특히, 노란색 계열의 색상을 강조하여 영화 같은 분위기를 자아내며, 일상적인 스냅 사진에 독특한 감성을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,색감,영화,노란색\n[Moods] 따뜻한,빈티지,몽환적인,영화 같은\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: 9900K\r\nWB Shift: 1 Red, -9 Blue\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: -2\r\nColor: -4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '10',
+    pageContent:
+      '[Summary] 이 레시피는 차가운 겨울 풍경 속에서 은은한 필름 느낌과 몽환적인 분위기를 연출합니다. DR400 설정은 하이라이트와 섀도우의 디테일을 살리고, 색상과 채도를 낮춰 차분하고 고요한 겨울의 감성을 표현합니다. 차가운 색감과 부드러운 그레인은 겨울의 쓸쓸함과 아름다움을 동시에 담아낼 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 차가운,겨울,대비,필름,몽환적인\n[Moods] 차분한,몽환적인,고요한,차가운\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: -1 Red, 2 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: 0\r\nColor: -2\r\nSharpness: 1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '11',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 부드러운 색감과 Shade 화이트 밸런스의 조화로, 마치 오래된 사진첩을 넘기는 듯한 아련하고 빈티지한 분위기를 연출합니다. 특히, 자연광 아래에서 인물이나 풍경을 촬영할 때 은은하고 따뜻한 감성을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,차분한,부드러운,필름\n[Moods] 따뜻한,차분한,몽환적인,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: -2 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: 2\r\nShadows: 0\r\nColor: -4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV suggestion: 0',
+  },
+  {
+    id: '12',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로, 부드러운 피부톤과 함께 선명하고 화사한 색감을 연출합니다. DR400 설정은 밝은 영역의 디테일을 살리고, 색상과 선명도를 높여 생동감 넘치는 사진을 만들어줍니다. 따뜻한 색감과 부드러운 분위기가 조화롭게 어우러져 인물 사진에 특히 매력적입니다.\n[Base Film Simulation] Astia\n[Keywords] 화사함,인물,선명함,필름,따뜻함\n[Moods] 따뜻한,화사한,생동감 있는,선명한\n[ShootingTypes] snap,portrait\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, -4 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: -2\r\nColor: 4\r\nSharpness: 1\r\nISO Noise Reduction: -4\r\nClarity: 2\r\nEV suggestion: 0',
+  },
+  {
+    id: '13',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 Eterna 필름 시뮬레이션을 기반으로, 은은한 그레인과 색상 보정을 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 브론즈 색감과 대비를 강조하여 독특하고 매력적인 이미지를 만들어낼 수 있습니다. 일상 속 스냅 사진이나 특별한 순간을 기록하는 데 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,빈티지,브론즈,대비,필름\n[Moods] 따뜻한,드라마틱,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 7700K\r\nWB Shift: 7 Red, -7 Blue\r\nDynamic Range: DR200\r\nHighlights: 1\r\nShadows: -1\r\nColor: -3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: -1/3',
+  },
+  {
+    id: '100',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 크리미한 색감과 함께, 은은한 빈티지 감성을 담아낼 수 있습니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 잘 어울리며, 몽환적이면서도 따뜻한 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,부드러운,몽환적인,크리미,필름\n[Moods] 따뜻한,부드러운,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: 6600K\r\nWB Shift: 4 Red, -1 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: 0\r\nColor: 0\r\nSharpness: -4\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '101',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로, 부드럽고 따뜻한 색감과 은은한 그레인 효과를 더하여 자연의 아름다움을 담아냅니다. 특히, DR400 설정은 풍부한 계조를 제공하여 하이라이트와 섀도우 디테일을 살려, 몽환적이면서도 깊이 있는 이미지를 연출합니다. 따뜻한 색감과 부드러운 분위기는 풍경 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Astia\n[Keywords] 자연,풍경,색감,따뜻함,부드러움\n[Moods] 따뜻한,몽환적인,부드러운,자연스러운\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 3 Red, -3 Blue\r\nDynamic Range: DR400\r\nHighlights: 0.5\r\nShadows: 0.5\r\nColor: 4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '102',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하면서도 몽환적인 분위기를 자아내며, 특히 파란색 계열의 색상을 강조하여 독특한 감성을 표현합니다. 클래식 네거티브 필름 시뮬레이션과 섬세한 설정들이 조화를 이루어, 일상 속 특별한 순간들을 빈티지한 감성으로 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식 네거티브,파란색 강조,빈티지,따뜻함,몽환적인\n[Moods] 따뜻한,몽환적인,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: 5000K\r\nWB Shift: 5 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 0\r\nColor: -3\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '103',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강렬한 색상과 대비, 그리고 필름 그레인의 질감을 통해 빈티지한 감성을 극대화합니다. 특히, 파란색 계열의 색상을 강조하여 더욱 드라마틱하고 인상적인 사진을 연출할 수 있습니다. 일상 속 스냅 사진이나, 특별한 순간을 기록하는 데 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,색감,대비,선명함\n[Moods] 따뜻한,선명한,빈티지,강렬한\n[ShootingTypes] snap,daily\n[Settings] DYNAMIC RANGE DR400\r\nGRAIN EFFECT Strong Large\r\nWB Auto, -3 Red & -9 Blue\r\nCOLOR CHROME EFFECT Strong\r\nCOLOR CHROME EFFECT BLUE Strong\r\nHIGHLIGHT +3\r\nSHADOW 0\r\nCOLOR +4\r\nSHARPNESS -4\r\nCLARITY -4\r\nNOISE REDUCTION/HIGH ISO NR -4\r\nISO up to ISO 6400',
+  },
+  {
+    id: '104',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 그레인 효과를 통해 아련한 필름 사진의 감성을 재현합니다. 특히 인물 사진에서 부드러운 피부톤과 빈티지한 분위기를 연출하며, 일상적인 스냅 사진에 적합합니다.\n[Base Film Simulation] Nostalgic Neg.\n[Keywords] 빈티지,따뜻함,필름,색감,인물\n[Moods] 따뜻한,부드러운,빈티지,레트로\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome FX Blue: Off\r\nWhite Balance: 5000K, -1 Red & +3 Blue\r\nDynamic Range: DR100\r\nHighlight: +1.5\r\nShadow: +1.5\r\nColor: +1\r\nSharpness: -1\r\nHigh ISO NR: -4\r\nClarity: -2\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +0 to +1/3 (typically)',
+  },
+  {
+    id: '105',
+    pageContent:
+      '[Summary] 이 레시피는 1960년대 여름의 따뜻하고 아련한 추억을 담아내듯, 앰버 톤과 강렬한 파란색의 대비를 통해 빈티지한 감성을 자극합니다. 필름 그레인과 부드러운 선명도는 아날로그 감성을 더하며, 잊혀져 가는 여름날의 한 장면을 연상시킵니다. 특히, 햇살 가득한 야외 풍경이나 인물 사진에 매력적인 분위기를 부여할 것입니다.\n[Base Film Simulation] Nostalgic Neg.\n[Keywords] 빈티지,따뜻함,필름,색감,파랑\n[Moods] 따뜻한,몽환적인,빈티지,레트로\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: 5250K, -3 Red & -5 Blue\r\nDynamic Range: DR400\r\nHighlight: +4\r\nShadow: +2\r\nColor: +3\r\nSharpness: -4\r\nHigh ISO NR: -4\r\nClarity: -3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '106',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 밤거리를 거니는 꿈결 같은 순간들을 포착하기에 적합합니다. Classic Chrome의 차분한 색감과 강렬한 그레인 효과는 잊혀지지 않는 빈티지한 분위기를 연출하며, 선명한 디테일과 대비는 사진에 깊이와 드라마틱함을 더합니다. 어두운 골목길, 네온사인의 불빛, 그리고 도시의 숨결을 담아보세요.\n[Base Film Simulation] Classic Chrome\n[Keywords] 도시,거리,빈티지,필름,선명함\n[Moods] 차가운,몽환적인,드라마틱,강렬한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nColor: +2\r\nNoise Reduction: -2\r\nSharpness: -1\r\nClarity: +2\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Auto, 0 Red & +2 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '107',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 하여, 부드러운 하이라이트와 강렬한 섀도우, 그리고 약간의 색상 보정을 통해 따뜻하고 빈티지한 느낌을 연출합니다. 특히, 일상 스냅 사진이나 인물 사진에서 매력적인 분위기를 자아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,대비,색감,부드러움\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2 (Soft)\r\nShadow: +2 (Hard)\r\nColor: +2 (High)\r\nSharpness: -1 (Medium-Soft)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Fluorescent 3, -2 Red & -2 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '108',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여, 선명하고 생동감 넘치는 색감과 인물 사진에 적합한 설정을 제공합니다. 특히, 하이라이트와 섀도우를 강조하여 대비를 높이고, 화이트 밸런스 조정을 통해 따뜻한 느낌을 더했습니다. 일상 스냅이나 인물 사진에 활용하면 좋은 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 선명한,색감,인물,대비,필름\n[Moods] 따뜻한,선명한,생동감있는\n[ShootingTypes] snap,daily\n[Settings] DR: 400\r\nHighlight: Medium Hard\r\nShadow: Medium Hard\r\nColor: High (I might turn this down in future)\r\nNoise Reduction: Low\r\n\r\nSharpening: Medium Soft (I might turn this up in future)\r\nWhite Balance: Auto (R+2 B-3)',
+  },
+  {
+    id: '109',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 색감을 모방하여, 선명하고 빈티지한 느낌을 줍니다. 특히 풍경 사진에서 톤의 깊이와 색상의 대비를 살려, 기억에 남는 이미지를 만들 수 있습니다. 강렬한 색상과 디테일이 살아있는 사진을 원한다면 이 레시피를 사용해 보세요.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,선명한,풍경,색감\n[Moods] 따뜻한,선명한,빈티지,극적인\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Weak\r\nWhite Balance: Auto, +2 Red & -4 Blue\r\nDynamic Range: DR400\r\nHighlight: +0.5\r\nShadow: -0.5\r\nColor: +1\r\nSharpness: +3\r\nHigh ISO NR: -4\r\nClarity: +3\r\nISO: Auto, up to ISO 1600',
+  },
+  {
+    id: '110',
+    pageContent:
+      '[Summary] 이 레시피는 Ilford Delta 흑백 필름의 특징을 재현하여, 강렬한 대비와 풍부한 톤을 통해 흑백 사진의 깊이를 더합니다. 특히, 디테일 묘사에 중점을 두어, 흑백 특유의 드라마틱하고 빈티지한 감성을 표현합니다. 어두운 골목길, 오래된 건물, 인물의 표정 등, 흑백의 매력을 극대화하여 피사체의 본질을 담아낼 수 있습니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,고대비,디테일,필름,모노크롬\n[Moods] 드라마틱,강렬한,차분한,빈티지\n[ShootingTypes] documentry,snap\n[Settings] wb: auto\r\nwb shift: 0 red, 0 blue\r\ndynamic range: dr400\r\nshadow: 3.0\r\nsharpness: -3\r\nnoise reduction: -4\r\niso: 160 to 6400\r\nexposure compensation: +1/3 to +2/3',
+  },
+  {
+    id: '111',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 Tri-X 400 흑백 필름의 질감을 재현하여, 강렬하고 거친 흑백 사진을 만들어줍니다. 특히, 높은 ISO 설정과 강한 그레인 효과는 드라마틱하고 빈티지한 분위기를 연출하며, 톤 대비를 강조하여 묵직한 느낌을 더합니다. 다큐멘터리나 스냅 사진에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,빈티지,모노크롬,거친\n[Moods] 드라마틱,강렬한,빈티지,거친\n[ShootingTypes] snap,documentry\n[Settings] grain: strong, large\r\ncolor chrome effect: strong\r\nwb: daylight\r\nwb shift: 9 red, -9 blue\r\ndynamic range: dr200\r\nshadow: 3.0\r\nsharpness: 1\r\nnoise reduction: -4\r\nclarity: 4\r\niso: 1600 to 12800\r\nexposure compensation: +1/3 to +1',
+  },
+  {
+    id: '112',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 네온과 자연의 조화로운 대비를 통해 독특한 분위기를 연출합니다. 부드러운 그레인과 색상 강조는 빈티지한 감성을 더하고, DR400 설정은 풍부한 계조를 제공하여 자연의 아름다움을 더욱 돋보이게 합니다. 따뜻하면서도 몽환적인, 신비로운 분위기를 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 네온,자연,선명함,빈티지,따뜻함\n[Moods] 몽환적인,따뜻한,활기찬,신비로운\n[ShootingTypes] snap,landscape\n[Settings] grain: weak, small\r\ncolor chrome effect: weak\r\ncolor chrome effect blue: weak\r\nwb: fluorescent 1\r\nwb shift: 2 red, -5 blue\r\ndynamic range: dr400\r\nshadow: 2.0\r\ncolor: 3\r\nsharpness: -2\r\nnoise reduction: -4\r\nclarity: -4\r\niso: 160 to 6400\r\nexposure compensation: +1/3 to +1',
+  },
+  {
+    id: '113',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 흑백 대비와 거친 질감을 통해, 잊혀져가는 도시의 뒷골목이나 인물의 깊은 내면을 표현하기에 적합합니다. 특히, 빛과 그림자의 극적인 대비를 살려 드라마틱한 흑백 사진을 연출할 수 있습니다. 오래된 영화의 한 장면처럼, 강렬하고 잊을 수 없는 인상을 남길 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,고대비,질감,모노크롬\n[Moods] 드라마틱,강렬한,빈티지,거친,모던한\n[ShootingTypes] snap,documentry\n[Settings] mono wc: 2, mono mg: 0\r\ngrain: weak, large\r\ncolor chrome effect: strong\r\ncolor chrome effect blue: strong\r\nwb: auto\r\nwb shift: 0 red, 0 blue\r\ndynamic range: dr400\r\nshadow: 2.0\r\nsharpness: -1\r\nnoise reduction: -4\r\nclarity: -4\r\niso: 160 to 12800\r\nexposure compensation: +1/3 to +2/3',
+  },
+  {
+    id: '114',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 Superia Xtra 400 필름의 특징을 살려, 따뜻하면서도 선명하고, 푸른색이 강조된 빈티지한 색감을 연출합니다. 특히, 일상 스냅 사진에서 매력적인 결과물을 얻을 수 있을 것입니다. 강한 그레인 효과와 섬세한 디테일 표현이 인상적입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,색감,선명함,푸른색\n[Moods] 따뜻한,선명한,생동감있는,빈티지\n[ShootingTypes] snap,daily\n[Settings] grain: strong, small\r\ncolor chrome effect blue: strong\r\nwb: auto\r\nwb shift: 3 red, -5 blue\r\ndynamic range: dr400\r\nshadow: -1.0\r\ncolor: 4\r\nsharpness: -1\r\nnoise reduction: -4\r\nclarity: -2\r\niso: 160 to 6400\r\nexposure compensation: 0 to +1',
+  },
+  {
+    id: '115',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이와 선명함을 극대화하여, 마치 오래된 영화 속 한 장면을 보는 듯한 강렬한 인상을 줍니다. 특히, 강한 대비와 섬세한 질감 표현을 통해, 피사체의 본질을 더욱 돋보이게 하며, 흑백 사진 특유의 클래식하고 드라마틱한 분위기를 연출합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,클래식,빈티지,선명한\n[Moods] 드라마틱,강렬한,고전적인,세련된\n[ShootingTypes] snap,documentry\n[Settings] mono wc: 1, mono mg: 0\r\ngrain: weak, small\r\ncolor chrome effect: strong\r\ncolor chrome effect blue: strong\r\nwb: auto\r\nwb shift: 0 red, 0 blue\r\ndynamic range: dr100\r\nhighlight: 4.0\r\nshadow: 2.0\r\nsharpness: 1\r\nnoise reduction: -4\r\nclarity: 4\r\niso: 160 to 12800\r\nexposure compensation: -1/3 to +1/3',
+  },
+  {
+    id: '116',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 따뜻하고 매력적인 색감과 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하면서도, 강한 색상 대비와 선명함으로 잊을 수 없는 순간을 담아낼 수 있습니다. 일상 속 스냅 사진에 활용하면 더욱 특별한 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,인물,따뜻함,선명함\n[Moods] 따뜻한,선명한,빈티지,매력적인\n[ShootingTypes] snap,daily\n[Settings] grain: weak, small\r\ncolor chrome effect: strong\r\ncolor chrome effect blue: weak\r\nwb: auto\r\nwb shift: 0 red, 0 blue\r\ndynamic range: dr200\r\nhighlight: 1.0\r\nshadow: 1.5\r\ncolor: 3\r\nsharpness: 1\r\nnoise reduction: -4\r\niso: 160 to 6400\r\nexposure compensation: +1/3 to +1',
+  },
+  {
+    id: '117',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감으로, 아련한 추억을 떠올리게 하는 사진을 만들어 줍니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 잘 어울리며, 노스텔지어한 감성을 자극하는 매력적인 결과물을 선사할 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,색감,노스텔지어\n[Moods] 따뜻한,몽환적인,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] grain: weak, large\r\ncolor chrome effect: strong\r\ncolor chrome effect blue: strong\r\nwb: auto\r\nwb shift: 3 red, -5 blue\r\ndynamic range: dr200\r\nhighlight: -1.0\r\ncolor: 4\r\nnoise reduction: -4\r\nclarity: -5\r\niso: 160 to 6400\r\nexposure compensation: +1/3 to +1',
+  },
+  {
+    id: '118',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 따뜻하고 크리미한 색감과 부드러운 질감을 표현합니다. 강한 그레인과 색상 강조를 통해 빈티지한 감성을 극대화하며, 하이라이트와 섀도우를 조절하여 부드러우면서도 깊이 있는 이미지를 연출합니다. 일상 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,크리미,부드러운,필름\n[Moods] 따뜻한,몽환적인,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] grain: strong, large\r\ncolor chrome effect: strong\r\ncolor chrome effect blue: strong\r\nwb: 8700k\r\nwb shift: 4 red, 6 blue\r\ndynamic range: dr400\r\nhighlight: 4.0\r\nshadow: 4.0\r\ncolor: -4\r\nsharpness: -4\r\nnoise reduction: -4\r\nclarity: -5\r\niso: 160 to 6400\r\nexposure compensation: +1/3',
+  },
+  {
+    id: '119',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 포트라 800 필름의 부드럽고 따뜻한 색감을 후지필름 시뮬레이션으로 재현합니다. 클래식 크롬을 기반으로, 강한 그레인과 색상 보정을 통해 빈티지하면서도 몽환적인 분위기를 연출하며, 인물 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,포트라,따뜻한,빈티지,인물\n[Moods] 따뜻한,빈티지,부드러운,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] grain: strong, small\r\ncolor chrome effect: strong\r\ncolor chrome effect blue: strong\r\nwb: daylight\r\nwb shift: 3 red, -6 blue\r\ndynamic range: dr400\r\nshadow: -2.0\r\ncolor: -4\r\nsharpness: -2\r\nnoise reduction: -4\r\nclarity: -5\r\niso: 160 to 6400\r\nexposure compensation: -2/3 to +1',
+  },
+  {
+    id: '120',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감으로 인물 사진에 최적화되어 있습니다. 특히, DR400 설정은 밝은 부분의 디테일을 살려주며, 샤프니스를 낮춰 부드러운 피부톤을 연출합니다. 따뜻한 색감과 부드러운 분위기는 일상 스냅이나 인물 사진에 좋은 선택이 될 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 부드러운,피부톤,따뜻한,필름,인물\n[Moods] 따뜻한,부드러운,화사한\n[ShootingTypes] portrait,snap\n[Settings] wb: daylight\r\nwb shift: 0 red, 0 blue\r\ndynamic range: dr400\r\nsharpness: -3\r\nnoise reduction: -4\r\niso: 160 to 6400\r\nexposure compensation: 0 to +2/3',
+  },
+  {
+    id: '121',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 피부톤과 풍부한 색감을 살려 인물 사진에 최적화되어 있습니다. 특히, 따뜻한 색감과 선명한 디테일이 조화롭게 어우러져, 일상 속 소중한 순간들을 아름답게 담아낼 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 필름,인물,색감,선명함,피부톤\n[Moods] 따뜻한,화사한,선명한,부드러운\n[ShootingTypes] portrait,snap\n[Settings] color chrome effect: strong\r\nwb: daylight\r\nwb shift: 1 red, -3 blue\r\ndynamic range: dr400\r\ncolor: 1\r\nsharpness: -3\r\nnoise reduction: -4\r\niso: 160 to 6400\r\nexposure compensation: 0 to +2/3',
+  },
+  {
+    id: '122',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하면서도 선명하고, 몽환적인 분위기를 연출합니다. 특히, 강한 그레인과 파란색 강조 효과는 빈티지한 감성을 더하며, 풍경 사진이나 인물 사진에 매력적인 표현을 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,색감,풍경,인물\n[Moods] 따뜻한,선명한,몽환적인,드라마틱\n[ShootingTypes] snap,landscape\n[Settings] grain: weak, large\r\ncolor chrome effect: weak\r\ncolor chrome effect blue: strong\r\nwb: fluorescent 2\r\nwb shift: -3 red, -1 blue\r\ndynamic range: dr400\r\nshadow: 1.0\r\ncolor: 2\r\nnoise reduction: -4\r\nclarity: -3\r\niso: 160 to 6400\r\nexposure compensation: +1/3 to +2/3',
+  },
+  {
+    id: '123',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여 부드럽고 화사한 색감과 함께, 은은한 필름 그레인과 빈티지한 느낌을 더해줍니다. 특히 인물 사진에서 피부톤을 아름답게 표현하며, 따뜻하고 몽환적인 분위기를 연출합니다. 밝은 하이라이트와 풍부한 색감은 사진에 생동감을 불어넣어 줄 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,화사함,필름,빈티지\n[Moods] 따뜻한,화사한,몽환적인,부드러운\n[ShootingTypes] portrait,snap\n[Settings] grain: weak, small\r\ncolor chrome effect: weak\r\ncolor chrome effect blue: weak\r\nwb: fluorescent 2\r\nwb shift: -3 red, -1 blue\r\ndynamic range: dr400\r\nhighlight: 2.0\r\nshadow: 1.0\r\ncolor: 2\r\nsharpness: -1\r\nnoise reduction: -4\r\nclarity: 2\r\niso: 160 to 6400\r\nexposure compensation: +2/3 to +1',
+  },
+  {
+    id: '124',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하면서도 선명하고, 빈티지한 느낌을 자아냅니다. 특히, 푸른색 계열의 색상을 강조하여 하늘이나 바다를 더욱 돋보이게 하며, 강렬한 대비와 함께 드라마틱한 분위기를 연출합니다. 일상 스냅 사진이나 풍경 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻함,선명함,파랑\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] grain: weak, large\r\ncolor chrome effect: weak\r\ncolor chrome effect blue: strong\r\nwb: auto white priority\r\nwb shift: -3 red, -1 blue\r\ndynamic range: dr400\r\nhighlight: -1.0\r\nshadow: 1.0\r\ncolor: 2\r\nnoise reduction: -4\r\nclarity: 2\r\niso: 160 to 6400\r\nexposure compensation: +2/3 to +1',
+  },
+  {
+    id: '125',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 그레인 효과를 통해 빈티지한 감성을 자아냅니다. 인물 사진이나 일상 스냅에 적합하며, 차분하고 편안한 분위기를 연출할 수 있습니다. 특히, 빛이 부드럽게 스며드는 순간을 담아내기에 좋을 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,따뜻한,색감,인물,부드러운\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] grain: weak, small or large\r\nwb: shade\r\nwb shift: 0 red, -4 blue\r\ndynamic range: dr200\r\nhighlight: -1.0\r\nnoise reduction: -4\r\niso: 160 to 6400\r\nexposure compensation: +1/3 to +2/3',
+  },
+  {
+    id: '126',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 필름 특유의 질감을 살려 빈티지한 분위기를 연출합니다. 특히 일상 스냅 사진에서 아련한 추억을 담아내기에 적합하며, 1970년대의 사진을 연상시키는 매력을 가지고 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻함,필름,노란색,스냅\n[Moods] 따뜻한,빈티지,부드러운,레트로\n[ShootingTypes] snap,daily\n[Settings] grain: strong, large\r\ncolor chrome effect: weak\r\nwb: 5800k\r\nwb shift: 2 red, 4 blue\r\ndynamic range: dr200\r\nshadow: -1.0\r\ncolor: -1\r\nsharpness: -1\r\nnoise reduction: -4\r\nclarity: -2\r\niso: 160 to 6400\r\nexposure compensation: 0 to +2/3',
+  },
+  {
+    id: '127',
+    pageContent:
+      '[Summary] 이 레시피는 500T 필름의 따뜻하고 빈티지한 색감을 재현하여, 영화 같은 분위기를 연출합니다. 강한 그레인과 색상 효과는 사진에 깊이와 몽환적인 느낌을 더하며, 일상 스냅이나 특별한 순간을 담기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻함,시네마틱,색감\n[Moods] 따뜻한,빈티지한,영화같은,몽환적인\n[ShootingTypes] snap,daily\n[Settings] grain: strong, large\r\ncolor chrome effect: strong\r\ncolor chrome effect blue: strong\r\nwb: 3200k\r\nwb shift: -1 red, 4 blue\r\ndynamic range: dr-auto\r\nhighlight: -2.0\r\nshadow: -1.0\r\ncolor: -1\r\nsharpness: -1\r\nnoise reduction: -2\r\niso: 160 to 6400\r\nexposure compensation: -1/3 to +1/3',
+  },
+  {
+    id: '128',
+    pageContent:
+      '[Summary] 이 레시피는 거친 입자와 강렬한 대비를 통해 흑백 필름의 질감을 극대화하여, 마치 오래된 다큐멘터리 사진을 보는 듯한 느낌을 줍니다. 특히, 빛과 그림자의 극적인 연출을 통해 잊혀져가는 도시의 풍경이나 인물의 깊은 내면을 표현하는 데 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,필름,빈티지,모노크롬,거친\n[Moods] 드라마틱,거친,빈티지,강렬한\n[ShootingTypes] snap,documentry\n[Settings] grain: strong, large\r\nwb: daylight\r\nwb shift: 1 red, -8 blue\r\ndynamic range: dr400\r\nhighlight: -1.0\r\nshadow: 1.0\r\nsharpness: -2\r\nnoise reduction: -4\r\niso: 160 to 6400\r\nexposure compensation: -2/3 to +2/3',
+  },
+  {
+    id: '129',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로 부드럽고 따뜻한 색감과 필름 특유의 질감을 살려, 인물 사진에 특히 매력적인 분위기를 연출합니다. 레트로 감성과 빈티지한 느낌을 동시에 담아내어, 아련하고 몽환적인 분위기를 자아낼 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 인물,따뜻한,빈티지,필름,부드러움\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] portrait,snap\n[Settings] grain: weak, small\r\ncolor chrome effect: strong\r\ncolor chrome effect blue: weak\r\nwb: auto\r\nwb shift: 2 red, -4 blue\r\ndynamic range: dr-auto\r\nhighlight: -1.0\r\nshadow: -1.0\r\ncolor: 2\r\nsharpness: -2\r\nnoise reduction: -4\r\niso: 160 to 6400\r\nexposure compensation: +1/3 to +1',
+  },
+  {
+    id: '130',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 질감을 표현합니다. 강한 그레인 효과와 낮은 채도는 옛 사진의 향수를 불러일으키며, 일상적인 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,따뜻한,색감,노스텔지어\n[Moods] 따뜻한,빈티지,레트로,부드러운\n[ShootingTypes] snap,daily\n[Settings] grain: strong, small or large\r\nwb: 9100k\r\nwb shift: -4 red, 4 blue\r\ndynamic range: dr200\r\nhighlight: 2.0\r\ncolor: -4\r\nsharpness: -1\r\nnoise reduction: -4\r\niso: 160 to 12800\r\nexposure compensation: -1/3 to +1/3',
+  },
+  {
+    id: '131',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 따뜻하고 몽환적인 분위기를 연출합니다. 강렬한 색상과 푸른색 강조는 영화적인 느낌을 더하며, 부드러운 질감과 필름 그레인은 빈티지한 감성을 자극합니다. 일상 스냅이나 특별한 순간을 기록하는 데 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 시네마틱,빈티지,색감 강조,필름,몽환적인\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] DR400\r\nWB K4000\r\nWB Shift R-1 B+5\r\nNoise reduction  -4\r\nH-Tone 0\r\nColor+4\r\nS-Tone+1\r\nCCR Strong\r\nCCB Strong\r\nSharp-4\r\nClarity-5\r\nGrain Waek Small',
+  },
+  {
+    id: '132',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 강렬한 색상과 필름 그레인 효과를 통해 빈티지한 감성을 극대화합니다. 따뜻한 색감과 섀도우, 하이라이트 조절을 통해 드라마틱한 분위기를 연출하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감 강조,필름,따뜻한\n[Moods] 따뜻한,빈티지,선명한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: -1\r\nShadow: -1\r\nColor: +2\r\nNoise Reduction:\r\nSharpening: -2\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nWB : Daylight, \r\nWB Shift: +4 Red & -5 Blue',
+  },
+  {
+    id: '133',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 64 필름을 연상시키는 따뜻하고 선명한 색감과 미세한 그레인, 그리고 깊이 있는 색상 표현을 특징으로 합니다. 특히 풍경 사진에서 쨍한 하늘과 대비를 살려주며, 빈티지한 감성을 더해줄 것입니다. 따뜻한 햇살 아래의 풍경이나 스냅 사진에 활용하면 좋은 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻한,선명한,풍경\n[Moods] 따뜻한,선명한,생생한,레트로\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Off\r\nWhite Balance: Daylight, +2 Red & -5 Blue\r\nDynamic Range: DR200\r\nHighlight: 0\r\nShadow: +0.5\r\nColor: +2\r\nSharpness: +1\r\nHigh ISO NR: -4\r\nClarity: +3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '134',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 빈티지하면서도 선명한 색감과 강렬한 대비를 통해 독특한 분위기를 연출합니다. 특히 일상 스냅 사진에서 돋보이며, 따뜻하면서도 차분한 느낌을 동시에 담아낼 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,클래식,색감,선명함\n[Moods] 따뜻한,차분한,빈티지한,선명한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: 0\r\nShadow: +1\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity: +3\r\nGrain Effect: Weak\r\nLarge\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: K4660\r\n+4 Red & -4 Blue\r\nISO: Auto\r\nup to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '135',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 긍정적인 분위기를 연출하며, 인물 사진에 특히 적합합니다. 하이라이트와 섀도우 톤 조절을 통해 부드러우면서도 입체적인 표현이 가능하며, 선명한 색감과 샤프니스로 생동감 넘치는 사진을 만들 수 있습니다. 전반적으로 따뜻한 색감과 대비를 통해 매력적인 인물 사진을 담아낼 수 있습니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 인물,따뜻함,선명함,대비,필름\n[Moods] 따뜻한,선명한,생동감있는,긍정적인\n[ShootingTypes] portrait,snap\n[Settings] White Balance: 10,000K\r\nWb Shift: R-7 B8\r\nDynamic Range: Dr100\r\nExposure: Push +2/3 Stops\r\nHighlight Tone: +1\r\nShadow Tone: +1.5\r\nColor: +1\r\nSharpness: +2\r\nClarity: 0\r\nColor Chrome Effect: Off\r\nColor Chrome Fx Blue: Off',
+  },
+  {
+    id: '1000',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 필름 그레인 효과를 통해, 마치 오래된 사진첩을 펼쳐보는 듯한 아련한 느낌을 선사합니다. 빛 바랜 듯한 색감과 부드러운 톤은 일상 속 소중한 순간들을 더욱 특별하게 만들어 줄 것입니다. 특히, 햇살 좋은 날의 스냅 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,따뜻함,색감,필름,노이즈\n[Moods] 따뜻한,빈티지,레트로,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2\r\nShadow: +3\r\nColor: +4\r\nNoise Reduction: -3\r\nSharpening: 0\r\nGrain Effect: Strong\r\nWB: Auto, +5 Red & -3 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 (typically)',
+  },
+  {
+    id: '1001',
+    pageContent:
+      '[Summary] 이 레시피는 여행의 생생한 순간들을 담아내기 위해 Velvia 필름 시뮬레이션의 특징을 최대한 활용합니다. 높은 채도와 강렬한 색감은 눈앞의 풍경을 더욱 드라마틱하게 만들어주며, 하이라이트와 섀도우 톤 조절을 통해 입체감 있는 사진을 연출합니다. 여행의 기억을 선명하고 강렬하게 기록하고 싶을 때 이 레시피를 사용해보세요.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,여행,선명한,고채도,강렬한\n[Moods] 생생한,강렬한,선명한,역동적인\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR100\r\nD Range Priority: Off\r\nHighlight Tone: +1\r\nShadow Tone: +1\r\nColor +2\r\nSharpness: +1\r\nNoise Reduction: -3\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong',
+  },
+  {
+    id: '1002',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 강렬한 대비를 통해 묵직하고 드라마틱한 이미지를 연출합니다. 특히, 그림자가 강조되어 피사체의 질감과 디테일을 더욱 돋보이게 하며, 일상적인 스냅 사진에도 특별한 감성을 부여할 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,대비,질감,디테일\n[Moods] 차분한,드라마틱,강렬한,클래식\n[ShootingTypes] snap,daily\n[Settings] Acros R\r\nDR Auto\r\nGrain Off\r\nWB Auto +1 Red\r\nHighlight -1\r\nShadow +3\r\nSharpness +1\r\nNR -1',
+  },
+  {
+    id: '1003',
+    pageContent:
+      '[Summary] 벨비아 필름 시뮬레이션의 특징을 살려, 자연의 색감을 극대화하고 강렬한 대비를 통해 생동감 넘치는 이미지를 연출합니다. 특히 풍경 사진에서 돋보이며, 맑은 날씨 아래의 풍경을 더욱 선명하고 드라마틱하게 표현해 줍니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,대비,선명한,강렬한\n[Moods] 생동감 있는,선명한,강렬한,극적인\n[ShootingTypes] landscape,snap\n[Settings] DR Auto\r\nGrain Off\r\nWB Auto +1 Red\r\nHighlight -1\r\nShadow +3\r\nColor +4\r\nSharpness +2\r\nNR -1',
+  },
+  {
+    id: '1004',
+    pageContent:
+      '[Summary] Astia 필름 시뮬레이션과 따뜻한 화이트 밸런스 설정은 여행의 설렘을 부드럽고 화사하게 담아냅니다. 하이라이트와 샤도우의 섬세한 조절은 풍부한 색감과 함께 몽환적인 분위기를 연출하며, 일상 속 특별한 순간들을 따뜻하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Astia\n[Keywords] 여행,인물,부드러움,따뜻함,색감\n[Moods] 따뜻한,부드러운,화사한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: Auto\r\nGrain Effect: Off\r\nWhite Balance: Auto, +1 Red\r\nHighlight: -1\r\nShadow: +2\r\nColor: +2\r\nSharpness: -1\r\nNoise Reduction: -3',
+  },
+  {
+    id: '1005',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 생생한 색감과 필름 특유의 질감을 살려, 일상 속의 소중한 순간들을 매력적으로 담아낼 수 있습니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하면서도, 선명하고 활기찬 분위기를 연출하는 데에 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,따뜻한,색감,인물,선명한\n[Moods] 따뜻한,선명한,활기찬\n[ShootingTypes] snap,daily\n[Settings] Grain Weak\r\nWB Daylight -2 Red -3 Blue\r\nHighlight +1\r\nShadow +2\r\nColor +4\r\nSharpness +1\r\nDR 200\r\nNR -1',
+  },
+  {
+    id: '1006',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 피부톤과 은은한 필름 그레인, 그리고 따뜻한 색감으로 인물 사진에 최적화된 레시피입니다. 하이라이트와 섀도우의 섬세한 조절을 통해, 인물의 디테일을 살리면서도 빈티지한 감성을 더해줍니다. 일상 속 인물 사진이나, 따뜻한 분위기의 스냅 사진에 활용하면 좋을 것 같습니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,부드러움,빈티지,피부톤,대비\n[Moods] 따뜻한,차분한,부드러운,빈티지\n[ShootingTypes] portrait,daily\n[Settings] Grain Weak\r\nWB Auto +1 Red\r\nHighlight -2\r\nShadow +2\r\nColor -3\r\nSharpness +1\r\nNR -2',
+  },
+  {
+    id: '1007',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 차분함과 따뜻한 색감, 그리고 섀도우와 샤픈의 조절을 통해 도시의 일상적인 풍경을 매력적으로 담아낼 수 있습니다. 특히, 대비가 강조되어 거친 도시의 질감을 생생하게 표현하며, 빈티지한 감성을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,도시,선명한,대비,필름\n[Moods] 따뜻한,선명한,도시적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Off\r\nWB Auto +1 Red\r\nHighlight 0\r\nShadow +2\r\nColor +3\r\nSharpness +3\r\nDR Auto\r\nNR -3',
+  },
+  {
+    id: '1008',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 강렬한 대비를 통해 피사체의 디테일을 살리는 데 중점을 둡니다. 하이라이트와 섀도우를 강조하여 드라마틱한 흑백 사진을 연출하며, 일상적인 스냅 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,선명한,대비,디테일\n[Moods] 차분한,드라마틱,강렬한,고전적인\n[ShootingTypes] daily,documentry\n[Settings] Grain Off\r\nWB Auto +1 Red\r\nHighlight +2\r\nShadow +2\r\nSharpness +2\r\nDR 200\r\nNR -2',
+  },
+  {
+    id: '1009',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 벨비아 필름 시뮬레이션을 기반으로 하여, 풍경 사진에 생동감과 강렬한 색감을 부여합니다. 하이라이트와 섀도우, 그리고 색상 설정을 통해 대비를 강조하고, 선명도를 조절하여 더욱 돋보이는 이미지를 연출합니다. 자연의 아름다움을 극적으로 표현하고 싶을 때 이 레시피를 사용해보세요.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,풍경,선명한,강렬한,대비\n[Moods] 생동감 있는,화려한,극적인\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: 0 (+1 in low-contrast situations, -1 in high-contrast situations)\r\nShadow: +1\r\nColor: +2\r\nNoise Reduction: -2\r\nSharpening: -1\r\nWB: Auto, +1 Red & -3 Blue',
+  },
+  {
+    id: '1010',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 강렬한 대비를 통해, 일상 속의 순간들을 드라마틱하게 담아냅니다. 특히, 인물이나 풍경의 디테일을 살리면서도, 차분하고 클래식한 분위기를 연출하여 줍니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,대비,디테일,선명함\n[Moods] 차분한,드라마틱,강렬한,클래식\n[ShootingTypes] snap,documentry\n[Settings] Monochrome Y\r\nDynamic Range: DR-Auto\r\nHighlight: +1 (+2 in low-contrast situations)\r\nShadow: +2 (+1 in high-contrast situations)\r\nNoise Reduction: -2\r\nSharpening: -1',
+  },
+  {
+    id: '1011',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 느낌을 주면서도, 하이라이트와 섀도우를 조절하여 드라마틱한 대비를 더했습니다. 일상 스냅 사진이나, 다큐멘터리적인 느낌을 담고 싶을 때 사용하면 좋을 것 같습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,다큐멘터리,스냅,대비\n[Moods] 차분한,빈티지,따뜻한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: +1 (0 sometimes in high-contrast situations)\r\nShadow: +2\r\nColor: +1\r\nNoise Reduction: -2\r\nSharpening: -1\r\nWB: Auto, +3 Red & -4 Blue',
+  },
+  {
+    id: '1012',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로, 따뜻하면서도 빈티지한 색감과 적절한 대비를 통해 인물 사진에 매력적인 분위기를 부여합니다. 특히, 약간의 하이라이트와 섀도우 조절은 사진에 깊이와 입체감을 더해줍니다. 일상 속 특별한 순간들을 기록하기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,채도,대비,인물\n[Moods] 따뜻한,선명한,빈티지한,드라마틱한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nAuto-WB Shift: +4 Red, -5 Blue\r\nHighlights: +1\r\nShadows: +1\r\nColor: +3\r\nNoise reduction: -4\r\nSharpening: 0\r\nGrain effect: Off\r\nExposure compensation: typically between +1/3 and +2/3',
+  },
+  {
+    id: '1013',
+    pageContent:
+      '[Summary] 이 레시피는 Tri-X 필름을 밀어 촬영한 듯한 강렬하고 드라마틱한 흑백 사진을 연출합니다. 높은 ISO와 섀도우, 하이라이트 설정을 통해 깊이 있는 명암비와 거친 질감을 표현하며, 흑백 필름 특유의 클래식한 감성을 담아냅니다. 일상 스냅이나 거리 사진에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,고대비,디테일,필름,노이즈\n[Moods] 강렬한,드라마틱한,거친,클래식한\n[ShootingTypes] snap,daily\n[Settings] Acros R\r\nDynamic Range: DR200\r\nHighlights: +3\r\nShadows: +4\r\nNoise reduction: -4\r\nSharpening: -1\r\nGrain effect: off\r\nISO: 12800 (in bright sunlight I sometimes have to reduce the ISO, in which case I’ll usually switch to Auto-ISO with a minimum of 2000)',
+  },
+  {
+    id: '1014',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 강렬한 대비를 통해 돋보이는 이미지를 연출합니다. 특히, 하이라이트와 섀도우를 강조하여 드라마틱한 분위기를 자아내며, 선명한 디테일을 통해 피사체의 질감을 생생하게 담아낼 수 있습니다. 일상 스냅이나 다큐멘터리 사진에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,선명함,대비,디테일\n[Moods] 차분한,드라마틱,고전적인,강렬한\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR200\r\nHighlight: +2\r\nShadows: +2\r\nNoise Reduction: -2\r\nSharpening: +2\r\nGrain Effect: Off\r\nISO: Auto up to 12800\r\nExposure Compensation: +1 (typically)',
+  },
+  {
+    id: '1015',
+    pageContent:
+      '[Summary] 이 레시피는 Tri-X 흑백 필름의 거친 질감과 강렬한 콘트라스트를 재현하여, 다큐멘터리나 스냅 사진에 적합합니다. 특히, 어두운 그림자와 밝은 하이라이트의 대비를 통해 드라마틱하고 빈티지한 느낌을 연출합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,콘트라스트,필름,질감\n[Moods] 드라마틱,강렬한,거친,빈티지,클래식\n[ShootingTypes] documentry,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: +3\r\nShadow: +4\r\nNoise Reduction: -4\r\nSharpening: -1\r\nGrain Effect: Off\r\nISO: Auto between 3200 & 12800\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '1016',
+    pageContent:
+      '[Summary] 따뜻한 색감과 강렬한 대비를 통해 인물 사진에 생동감을 불어넣는 레시피입니다. 하이라이트와 섀도우를 강조하여 드라마틱한 분위기를 연출하며, 부드러운 노이즈 감소로 깔끔한 이미지를 제공합니다. 일상 속 스냅 사진이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 따뜻함,대비,인물,선명함,필름\n[Moods] 따뜻한,선명한,드라마틱한\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: +3\r\nShadow: +4\r\nNoise Reduction: -4\r\nSharpening: -1\r\nGrain Effect: Off\r\nISO: Auto between 3200 & 12800\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '1017',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 빈티지한 색감을 클래식 크롬을 기반으로 재현합니다. 하이라이트와 섀도우의 미세한 조절을 통해 필름 특유의 부드러움과 깊이 있는 톤을 살리고, 약한 그레인 효과로 아날로그 감성을 더합니다. 일상 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,빈티지,따뜻한,필름,색감\n[Moods] 따뜻한,빈티지,레트로,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: +2\r\nColor: -1\r\nNoise Reduction: -3\r\nSharpening: 1\r\nGrain Effect: Weak\r\nWB: Auto, +3 Red & -4 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '1018',
+    pageContent:
+      '[Summary] Agfa Scala 레시피는 흑백 필름의 깊이 있는 표현을 재현하여, 강렬한 콘트라스트와 섬세한 질감을 통해 드라마틱한 흑백 사진을 연출합니다. 특히, 빛과 그림자의 대비를 강조하여 빈티지하면서도 세련된 느낌을 줍니다. 일상 속 순간들을 흑백의 예술 작품으로 담아낼 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,콘트라스트,필름,빈티지,모노크롬\n[Moods] 클래식,드라마틱,차분한,빈티지\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR100\r\nHighlight: +4\r\nShadow: 0\r\nNoise Reduction: -3\r\nSharpening: 0\r\nGrain Effect: Weak\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: -1/3 to +1/3 (typically)Film Simulation:',
+  },
+  {
+    id: '1019',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로 하여, 빈티지한 색감과 강한 그레인 효과를 통해 아날로그 필름의 감성을 재현합니다. 따뜻하고 부드러운 톤은 일상적인 스냅 사진에 향수를 더하며, 잊혀져 가는 옛 추억을 떠올리게 합니다. 특히, 빛 바랜 듯한 색감은 사진에 독특한 분위기를 부여합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,따뜻한,색감,그레인\n[Moods] 따뜻한,빈티지,레트로,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: +2\r\nShadow: +1\r\nColor: -4\r\nNoise Reduction: -3\r\nSharpening: 0\r\nGrain Effect: Strong\r\nWB: Auto, -3 Red & -4 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: -1/3 to -2/3 (typically)',
+  },
+  {
+    id: '1020',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션을 기반으로 하여, 자연의 풍경을 더욱 선명하고 강렬하게 담아낼 수 있도록 설계되었습니다. 특히, 하이라이트와 섀도우의 섬세한 조절을 통해 풍부한 색감과 깊이 있는 대비를 동시에 표현하며, 쨍한 색감과 디테일을 살려 역동적인 풍경 사진을 연출합니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,대비,선명함,필름\n[Moods] 강렬한,생생한,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Grain: Off\r\nHighlights: -1\r\nShadows: +2\r\nColour: +2\r\nSharpness: +2\r\nNoise Reduction: -1',
+  },
+  {
+    id: '1021',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 대비와 은은한 필름 그레인, 그리고 약간의 채도 감소를 통해 빈티지한 감성을 자아냅니다. 특히 인물 사진에서 따뜻하고 차분한 분위기를 연출하며, 일상적인 스냅 사진에 매력적인 깊이를 더해줄 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,스냅,대비,빈티지,필름\n[Moods] 따뜻한,차분한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain: Weak\r\nHighlights: -1\r\nShadows: +1\r\nColour: -2\r\nSharpness: +1\r\nNoise Reduction: -2',
+  },
+  {
+    id: '1022',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 부드러운 색감과 대비를 살려, 거리의 생생한 순간들을 빈티지하면서도 드라마틱하게 포착합니다. 일상 속에서 발견하는 특별한 장면들을 따뜻하고 차분한 분위기로 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,거리,스냅,대비\n[Moods] 차분한,빈티지한,따뜻한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain: Off\r\nHighlights: -1\r\nShadows: +2\r\nColour: -1\r\nSharpness: +1\r\nNoise Reduction: 0',
+  },
+  {
+    id: '1023',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 강렬한 질감을 통해, 마치 오래된 필름 사진을 보는 듯한 빈티지한 감성을 선사합니다. 특히, 인물의 강렬한 표정이나 도시의 거친 풍경을 담아낼 때, 잊혀지지 않는 드라마틱한 흑백 사진을 만들어 줄 것입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,필름,빈티지,질감\n[Moods] 차분한,클래식한,드라마틱한,거친\n[ShootingTypes] snap,documentry\n[Settings] Monochrome R\r\nGrain: Strong\r\nHighlights: 0\r\nShadows: +3\r\nSharpness: +1\r\nNoise Reduction: 0',
+  },
+  {
+    id: '1024',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 인물의 섬세한 묘사에 초점을 맞춘 듯 합니다. 하이라이트와 섀도우의 미세한 조절을 통해, 인물의 표정과 질감을 더욱 돋보이게 하며, 클래식한 분위기를 자아냅니다. 흑백 인물 사진에 최적화된 레시피입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,인물,클래식,대비,디테일\n[Moods] 차분한,고전적인,드라마틱,깊이있는\n[ShootingTypes] portrait\n[Settings] Acros G\r\nGrain: Off\r\nHighlights: -1\r\nShadows: +2\r\nSharpness: 0\r\nNoise Reduction: -1',
+  },
+  {
+    id: '1025',
+    pageContent:
+      '[Summary] 밤의 고요함과 도시의 불빛을 담아내는 데 특화된 레시피입니다. Acros 필름 시뮬레이션과 섀도우 설정을 통해 어둠 속에서도 섬세한 디테일을 살리고, 드라마틱한 흑백 사진을 연출합니다. 도시의 야경, 밤하늘 아래의 인물, 또는 어두운 골목길을 촬영하는 데 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,야경,모노크롬,대비,디테일\n[Moods] 차분한,몽환적인,드라마틱,고독한\n[ShootingTypes] night,snap\n[Settings] Acros Y\r\nGrain: Off\r\nHighlights: 0\r\nShadows: +1\r\nSharpness: 0\r\nNoise Reduction: -2',
+  },
+  {
+    id: '1026',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 섬세한 디테일을 살려, 일상 속 순간들을 드라마틱하게 담아낼 수 있습니다. 특히, 대비를 강조하여 피사체의 질감과 형태를 더욱 선명하게 표현하며, 흑백 사진 특유의 고전적인 분위기를 연출합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,선명한,대비,디테일\n[Moods] 차분한,고전적인,드라마틱,강렬한\n[ShootingTypes] snap,daily\n[Settings] Acros R\r\nGrain: Off\r\nHighlights: -1\r\nShadows: +2\r\nSharpness: +1\r\nNoise Reduction: -1',
+  },
+  {
+    id: '1027',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 에크타 100 필름의 특징을 재현하여, 맑고 선명하며 따뜻한 색감을 선사합니다. 특히 풍경 사진에서 생생한 색상과 디테일을 강조하며, 인물 사진에서도 자연스러운 피부톤과 부드러운 분위기를 연출합니다.\n[Base Film Simulation] Astia\n[Keywords] 선명한,따뜻한,풍경,인물,필름\n[Moods] 따뜻한,선명한,활기찬\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: +1\r\nShadow: +3\r\nColor: +4\r\nNoise Reduction: -3\r\nSharpening: +1\r\nGrain Effect: Off\r\nWB: Auto, +3 Red & -2 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: 0 to +1/3 (typically)',
+  },
+  {
+    id: '1028',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 에크타 100 필름의 특징을 후지필름 카메라로 재현하고자 합니다. Astia 필름 시뮬레이션을 기반으로, 선명하고 화사하며, 풍경과 인물 사진에 모두 잘 어울리는 따뜻하고 생동감 넘치는 색감을 제공합니다. 특히, 하이라이트와 섀도우의 섬세한 조절을 통해 입체감 있는 사진을 연출할 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 선명한,풍경,인물,채도,필름\n[Moods] 따뜻한,선명한,화사한,생동감있는\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: +1\r\nShadow: +3\r\nColor: +4\r\nNoise Reduction: -3\r\nSharpening: +1\r\nGrain Effect: Off\r\nWB: Auto, +3 Red & -2 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: 0 to +1/3 (typically)',
+  },
+  {
+    id: '1029',
+    pageContent:
+      '[Summary] 코닥 포트라 400 필름을 연상시키는 이 레시피는 부드럽고 따뜻한 색감과 함께, 은은한 그레인 효과로 아날로그 감성을 자극합니다. DR400과 섀도우, 하이라이트 조절을 통해 풍부한 계조와 섬세한 표현이 가능하며, 일상 스냅 사진에 특별한 분위기를 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 포트라,필름,따뜻한,부드러운,빈티지\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +2\r\nColor: -2\r\nNoise Reduction: -3\r\nSharpening: +1\r\nGrain: Strong\r\nWB: Custom, +2 Red & -5 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1 to +1-1/3 (typically)',
+  },
+  {
+    id: '1030',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로, 강렬한 하이라이트와 섀도우, 그리고 강한 그레인 효과를 통해 드라마틱하고 빈티지한 분위기를 연출합니다. 흑백 사진과 같은 강렬한 대비와 차가운 색감은 보는 이의 시선을 사로잡을 것입니다. 도시의 풍경이나 인물 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 드라마틱,클래식,빈티지,흑백,대비\n[Moods] 강렬한,극적인,빈티지한,차가운,세련된\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: +3\r\nShadow: +3\r\nColor: 0\r\nNoise Reduction: -3\r\nSharpening: +1\r\nGrain Effect: Strong\r\nWB: Auto, -1 Red & +1 Blue\r\nISO: Auto up to 12800\r\nExposure Compensation: +1/3 or +2/3 (typically)',
+  },
+  {
+    id: '1031',
+    pageContent:
+      '[Summary] 이 레시피는 시네마틱한 분위기를 연출하며, 따뜻하고 부드러운 색감과 강한 그레인 효과로 필름 사진 특유의 감성을 재현합니다. 특히 야경이나 인물 사진에서 몽환적이고 드라마틱한 분위기를 연출하는데 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 시네마틱,따뜻함,필름,야경,인물\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] night,snap\n[Settings] PRO Neg. Std\r\nDynamic Range: DR200\r\nHighlight: +3 (+2 when there is a bright light source in the image)\r\nShadow: +1\r\nColor: -1\r\nNoise Reduction: -3\r\nSharpening: +1\r\nGrain Effect: Strong\r\nWB: 3200K\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: 0 to +1/3 (typically)',
+  },
+  {
+    id: '1032',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 그림자와 낮은 채도를 통해 따뜻하고 빈티지한 느낌을 연출하며, 영화 같은 분위기를 자아냅니다. 특히, 일상적인 스냅 사진이나 인물 사진에 적합하며, 은은한 필름 그레인 효과가 아날로그 감성을 더해줍니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 시네마틱,부드러운,빈티지,따뜻한,필름\n[Moods] 따뜻한,차분한,몽환적인,영화 같은\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadows: -1\r\nColor: -4\r\nNoise-Reduction: -4\r\nSharpening: +1\r\nGrain Effect: Weak\r\nWhite Balance: Auto, +2 Red & +2 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1 (typically)',
+  },
+  {
+    id: '1033',
+    pageContent:
+      '[Summary] 후지필름 Superia 800 필름을 연상시키는 이 레시피는 따뜻하고 부드러운 색감과 함께 필름 특유의 질감을 살려, 일상 속 소중한 순간들을 아련하고 빈티지하게 담아낼 수 있습니다. 특히 인물 사진에서 자연스러운 피부톤과 함께 긍정적인 분위기를 연출하는 데에 효과적입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,빈티지,따뜻한,색감,인물\n[Moods] 따뜻한,빈티지,부드러운,생동감있는\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadows: +2\r\nColor: +4\r\nNoise Reduction: -3\r\nSharpening: +1\r\nGrain Effect: Strong\r\nWB: Auto, -2 Red & -3 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +2/3 (typically)',
+  },
+  {
+    id: '1034',
+    pageContent:
+      '[Summary] 이 레시피는 스튜디오 촬영에 적합하며, 인물의 피부톤을 자연스럽게 표현하면서도 강렬한 대비와 선명함을 통해 드라마틱한 분위기를 연출합니다. 필름 그레인 효과는 아날로그 감성을 더해줍니다. 따뜻하면서도 선명한 색감은 인물 사진에 생동감을 불어넣어 줄 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,스튜디오,선명함,대비,필름\n[Moods] 따뜻한,선명한,드라마틱,강렬한\n[ShootingTypes] portrait\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: -1\r\nColor: +1\r\nNoise Reduction: -3\r\nSharpening: +1\r\nGrain Effect: Weak\r\nWB: Auto\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)\r\nFlash: On (typically)',
+  },
+  {
+    id: '1035',
+    pageContent:
+      '[Summary] 이 레시피는 흑백 필름의 깊이 있는 질감과 강렬한 콘트라스트를 통해, 마치 오래된 다큐멘터리 사진을 보는 듯한 느낌을 선사합니다. 특히, 빛과 그림자의 대비를 극대화하여 드라마틱하고 빈티지한 분위기를 연출하며, 흑백 사진 특유의 클래식한 매력을 강조합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,콘트라스트,질감,모노크롬\n[Moods] 클래식,빈티지,드라마틱,강렬한,거친\n[ShootingTypes] snap,documentry\n[Settings] Acros / Acros Y/Acros R/ Acros G\r\nDynamic Range: DR200\r\nHighlight: +4\r\nShadow: +2\r\nNoise Reduction: -3\r\nSharpening: 0\r\nGrain Effect: Strong\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: 0 (typically)',
+  },
+  {
+    id: '1036',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 콘트라스트와 거친 질감을 통해 드라마틱하고 빈티지한 분위기를 연출합니다. 특히, 빛과 그림자의 대비를 강조하여 흑백 사진 특유의 깊이 있는 표현을 가능하게 합니다. 오래된 영화의 한 장면처럼, 기억 속에 깊이 각인될 순간들을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,콘트라스트,필름,질감\n[Moods] 드라마틱,강렬한,빈티지,거친,클래식\n[ShootingTypes] snap,documentry\n[Settings] Acros /Acros R/ Acros G\r\nDynamic Range: DR200\r\nHighlights: +4\r\nShadows: +3\r\nNoise Reduction: -3\r\nSharpening: +1\r\nGrain Effect: Strong\r\nISO: Auto up to 6400 (typically)\r\nExposure Compensation: +1 (typically)',
+  },
+  {
+    id: '1037',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 따뜻하고 빈티지한 느낌을 강조하여, 마치 오래된 코닥 필름으로 촬영한 듯한 레트로 감성을 선사합니다. 강한 그레인 효과와 색상, 톤 조절을 통해, 일상적인 풍경이나 스냅 사진에 특별한 분위기를 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,색감,레트로\n[Moods] 따뜻한,빈티지,레트로,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +4\r\nShadow: -2\r\nColor: +4\r\nSharpening: +1\r\nNoise Reduction: -3\r\nGrain: Strong\r\nWB: Auto, +2 Red, -4 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: -1/3 to -1 (typically)',
+  },
+  {
+    id: '1038',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 화사한 피부톤과 따뜻한 색감을 강조하여 인물 사진에 최적화되어 있습니다. Astia 필름 시뮬레이션과 섬세한 설정은 마치 꿈결 같은 분위기를 연출하며, 일상 속 소중한 순간들을 아름답게 담아낼 수 있게 해줍니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,화사함,필름,따뜻함\n[Moods] 따뜻한,부드러운,화사한,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: -2\r\nColor: +1\r\nNoise Reduction: -3\r\nSharpening: +1\r\nGrain Effect: Weak\r\nWB: Auto\r\nISO: Auto up to ISO 12800\r\nExposure Compensation: +1/3 (typically)',
+  },
+  {
+    id: '1039',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 Velvia 필름 시뮬레이션을 기반으로, 풍경 사진에 적합한 선명하고 생생한 색감과 강렬한 대비를 제공합니다. 특히 자연의 아름다움을 극적으로 표현하며, 은은한 그레인 효과가 아날로그 감성을 더합니다. 전반적으로 화려하고 인상적인 이미지를 연출합니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,대비,선명함,필름\n[Moods] 생생한,강렬한,극적인,화려한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: 0\r\nColor: +2\r\nNoise Reduction: -2\r\nSharpening: +2\r\nGrain Effect: Weak\r\nWB: Auto, +1 Red & -1 Blue\r\nISO: Auto up to ISO 12800\r\nExposure Compensation: +2/3 (typically)',
+  },
+  {
+    id: '1040',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 강렬한 대비를 통해 여행의 순간들을 드라마틱하게 담아냅니다. 특히, 하이라이트와 섀도우 톤을 강조하여 흑백 사진 특유의 톤을 살리고, 선명도를 높여 디테일을 살리는 데 중점을 둡니다. 여행의 기억을 흑백의 클래식한 감성으로 영원히 간직할 수 있게 해줍니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,여행,모노크롬,선명한,대비\n[Moods] 클래식,드라마틱,강렬한,차분한\n[ShootingTypes] snap,daily\n[Settings] Acros R\r\nDynamic Range: 100\r\nHighlight Tone: +4\r\nShadow Tone: +4\r\nSharpness: +2\r\nNoise Reduction: -4\r\nGrain Effect: OFF',
+  },
+  {
+    id: '1041',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감으로, 마치 오래된 필름 사진을 보는 듯한 빈티지한 느낌을 줍니다. 인물 사진에 특히 잘 어울리며, 일상 속의 소중한 순간들을 아련하게 담아낼 수 있을 것입니다. 부드러운 하이라이트와 섀도우 표현은 사진에 깊이와 따뜻함을 더해줍니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 필름,인물,따뜻함,빈티지,부드러움\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2\r\nShadow: +2\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpening: +1\r\nGrain Effect: Weak\r\nColor Chrome Effect: Off\r\nWhite Balance: Daylight Fluorescent (1), -2 Red & +4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '1042',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 부드러운 그레인과 함께 빈티지하고 차분한 분위기를 연출합니다. 약간의 색상 보정을 통해 따뜻한 느낌을 더하여, 일상적인 스냅 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,다큐멘터리,채도,대비\n[Moods] 차분한,빈티지한,따뜻한,고전적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: +1\r\nColor: +2\r\nNoise Reduction: -2\r\nSharpening: +2\r\nGrain Effect: Weak\r\nWB: Auto, +1 Red & -1 Blue\r\nISO: Auto up to 12800\r\nExposure Compensation: +2/3 (typically)',
+  },
+  {
+    id: '1043',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 거친 질감과 디테일을 살려, 흑백의 강렬한 대비를 통해 스트리트 사진의 본질을 담아냅니다. 하이라이트와 섀도우를 강조하여 드라마틱한 분위기를 연출하며, 선명한 이미지를 통해 모던하고 세련된 느낌을 줍니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,스트리트,선명한,대비,디테일\n[Moods] 강렬한,드라마틱,모던한,도시적인\n[ShootingTypes] snap,documentry\n[Settings] Acros R\r\nDynamic Range: 100\r\nHighlight Tone: +4\r\nShadow Tone: +4\r\nSharpness: +2\r\nNoise Reduction: -1\r\nGrain Effect: OFF',
+  },
+  {
+    id: '1044',
+    pageContent:
+      '[Summary] Velvia 필름 시뮬레이션과 약한 그레인 효과는 풍경 사진에 생동감과 깊이를 더해줍니다. 하이라이트와 섀도우 톤 조절을 통해 드라마틱한 대비를 연출하여, 자연의 아름다움을 더욱 강렬하게 표현할 수 있습니다. 선명함과 색상 조절을 통해 사진의 디테일을 살리고, 잊을 수 없는 순간을 기록해보세요.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,풍경,대비,필름,선명함\n[Moods] 강렬한,생생한,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak\r\nHighlight Tone: -2\r\nShadow Tone: +2\r\nColour: -2',
+  },
+  {
+    id: '1045',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로 하여, 부드럽고 따뜻한 색감과 함께 빈티지한 느낌을 자아냅니다. 하이라이트와 섀도우 톤을 조절하여 섬세한 톤 표현이 가능하며, 인물 사진이나 일상 스냅에 적합합니다.\n[Base Film Simulation] Provia\n[Keywords] 색감,부드러움,빈티지,인물,따뜻함\n[Moods] 따뜻한,부드러운,차분한\n[ShootingTypes] portrait,daily\n[Settings] Highlight Tone: -2\r\nShadow Tone: -1\r\nColour: -3',
+  },
+  {
+    id: '1046',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 그레인 효과를 통해 따뜻하고 빈티지한 분위기를 연출합니다. 인물 사진에서 부드러운 피부톤과 섬세한 톤 표현을, 스냅 사진에서는 아련한 감성을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,인물,부드러움,필름,톤\n[Moods] 따뜻한,차분한,부드러운\n[ShootingTypes] portrait,snap\n[Settings] Grain Effect: Weak\r\nHighlight Tone: -2\r\nShadow Tone: -2\r\nColour: -1\r\nSharpness: -4',
+  },
+  {
+    id: '1047',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 빈티지하면서도 깊이 있는 색감을 표현합니다. 하이라이트와 섀도우 톤 조절을 통해 대비를 살리고, 인물 사진에 적합한 따뜻하고 드라마틱한 분위기를 연출합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,인물,대비\n[Moods] 따뜻한,차분한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nHighlight Tone: +2\r\nShadow Tone: +2\r\nColour: -2',
+  },
+  {
+    id: '1048',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬함과 대비를 통해, 마치 윈도그런드의 사진처럼, 거리의 순간들을 포착하여 드라마틱하고 거친 느낌을 표현합니다. 하이라이트와 섀도우 톤 조절을 통해 흑백의 깊이와 질감을 극대화하여, 잊을 수 없는 흑백 사진을 만들어낼 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,빈티지,거리,스냅\n[Moods] 드라마틱,강렬한,고독한,거친,클래식\n[ShootingTypes] snap,documentry\n[Settings] Highlight Tone: -2\r\nShadow Tone: -2',
+  },
+  {
+    id: '1049',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 깊은 그림자를 통해 도시의 거친 질감과 드라마틱한 분위기를 표현합니다. 특히, 거리의 스냅 사진이나 다큐멘터리 사진에 적합하며, 흑백 특유의 강렬한 인상을 남길 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,대비,질감,거리\n[Moods] 강렬한,드라마틱한,거친,도시적인\n[ShootingTypes] snap,documentry\n[Settings] Acros R\r\nDynamic Range: DR100\r\nHighlight Tone: +4\r\nShadow Tone: +4',
+  },
+  {
+    id: '1050',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬함과 섬세함을 동시에 담아내어, 인물의 깊이 있는 표정과 묘한 분위기를 극대화합니다. 하이라이트 톤을 강조하여 대비를 높이고, 섀도우 톤을 조절하여 흑백 사진 특유의 드라마틱한 감성을 표현합니다. 특히 인물 사진에 적합하며, 흑백 특유의 클래식하고 세련된 느낌을 연출할 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,인물,디테일,선명함\n[Moods] 차분한,고전적인,드라마틱,강렬한\n[ShootingTypes] portrait,snap\n[Settings] Acros Y\r\nHighlight Tone: +2\r\nShadow Tone: 0',
+  },
+  {
+    id: '1051',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 필름 느낌을 살려, 일상 속의 순간들을 드라마틱하게 담아낼 수 있습니다. 특히, 빛과 그림자의 대비를 강조하여 흑백 사진 특유의 매력을 극대화합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,빈티지,필름,디테일\n[Moods] 차분한,고전적인,드라마틱,깊이있는\n[ShootingTypes] snap,daily\n[Settings] Acros / Acros G\r\nDynamic Range: Auto\r\nNoise Reduction: -2\r\nHighlight tone: -2\r\nShadow Tone: +2\r\nSharpness: +2\r\nGrain Effect: Weak',
+  },
+  {
+    id: '1052',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 선명한 디테일을 강조합니다. 하이라이트와 섀도우를 조절하여 드라마틱한 톤을 연출하며, 노이즈 감소를 통해 깔끔하고 모던한 흑백 사진을 만들어낼 수 있습니다. 일상 속 순간들을 묵직하고 클래식한 분위기로 담아보세요.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,선명함,대비,디테일\n[Moods] 차분한,모던한,드라마틱,클래식\n[ShootingTypes] snap,daily\n[Settings] Acros R\r\nSharpness +1\r\nHighlights +1\r\nShadows +2\r\nNoise Reduction -4',
+  },
+  {
+    id: '1053',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 깔끔하면서도 섬세한 질감을 선사합니다. 하이라이트와 섀도우의 미세한 조절을 통해 드라마틱한 흑백 사진을 연출하며, 일상 속의 순간들을 특별하게 기록할 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,디테일,선명함,빈티지\n[Moods] 차분한,고전적인,드라마틱,빈티지한\n[ShootingTypes] snap,daily\n[Settings] Acros R\r\nGrain Effect: Off\r\nNoise Reduction: -3\r\nDynamic Range: Auto\r\nHighlight: -1\r\nShadow: +3\r\nSharpness: +1',
+  },
+  {
+    id: '1054',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 강렬한 대비를 통해, 찰나의 순간을 드라마틱하게 담아냅니다. 특히, 인물의 감정선이나 도시의 거친 질감을 표현하는데 탁월하며, 흑백 사진 특유의 클래식하고 세련된 분위기를 연출합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,선명한,대비,디테일\n[Moods] 드라마틱,강렬한,차분한,고전적인\n[ShootingTypes] documentry,snap\n[Settings] Acros + G\r\nHighlight: -1\r\nShadow: +3\r\nNoise Reduction: -3\r\nSharpness: +3',
+  },
+  {
+    id: '1055',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 느낌을 강조합니다. 색상 채도를 높여, 다큐멘터리 사진이나 거리 사진에 적합한, 톤을 만들어 줍니다. 노이즈 감소 설정을 통해 깔끔한 이미지를 얻을 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,다큐멘터리,채도,거리\n[Moods] 차분한,빈티지한,고전적인,사실적인\n[ShootingTypes] snap,documentry\n[Settings] Noise Reduction: -3\r\nColour: +3\r\nDynamic Range: DR100',
+  },
+  {
+    id: '1056',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 색감과 함께 적절한 대비를 통해 다큐멘터리적인 느낌을 연출합니다. 특히, 일상 스냅 사진이나 다큐멘터리 사진에 적합하며, 과거의 기억을 떠올리게 하는 매력적인 이미지를 만들어 줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,다큐멘터리,채도,대비\n[Moods] 차분한,빈티지한,고전적인,드라마틱한\n[ShootingTypes] documentry,snap\n[Settings] Noise Reduction: -2\r\nSharpness: +2\r\nHighlights: -1\r\nShadows: 0\r\nColour: +2\r\nDynamic Range: 200\r\nWhite Balance: Auto',
+  },
+  {
+    id: '1057',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 드라마틱한 콘트라스트를 통해 일상 속 순간들을 강렬하게 담아냅니다. 하이라이트와 섀도우 조절을 통해 흑백 사진 특유의 질감과 디테일을 살려, 잊을 수 없는 흑백의 감성을 선사합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,콘트라스트,디테일,질감\n[Moods] 차분한,드라마틱한,고전적인,강렬한\n[ShootingTypes] snap,daily\n[Settings] Acros R\r\nHighlights: -1\r\nShadows: +3\r\nISO: 2000',
+  },
+  {
+    id: '2',
+    pageContent:
+      '[Summary] 이 레시피는 숲 속의 따뜻하고 아련한 풍경을 담아내기에 적합합니다. 클래식 네거티브 필름 시뮬레이션과 약한 그레인 효과, 그리고 색상 보정을 통해 빈티지하면서도 자연스러운 분위기를 연출합니다. 특히, 나무와 숲의 디테일을 살리면서도 부드러운 색감으로 따뜻한 감성을 더해줍니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식 네거티브,야외,나무,빈티지,따뜻함\n[Moods] 따뜻한,차분한,빈티지,자연스러운\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: 1 Red, -5 Blue\r\nDynamic Range: DR100\r\nHighlights: 0.5\r\nShadows: -0.5\r\nColor: 2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '14',
+    pageContent:
+      '[Summary] 이 레시피는 가을의 풍경을 담아내기 위해 최적화된 설정을 제공합니다. 따뜻한 색감과 깊이 있는 그림자 표현은 단풍의 아름다움을 더욱 강조하며, 시네마틱한 분위기를 연출합니다. 특히, 늦가을의 햇살 아래에서 촬영하면 더욱 풍성하고 드라마틱한 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 가을,단풍,따뜻함,시네마틱,필름\n[Moods] 따뜻한,선명한,드라마틱,풍성한\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: 5 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: 0\r\nColor: 4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '15',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드럽고 따뜻한 색감과 함께 필름 특유의 질감을 살려 아날로그 감성을 극대화합니다. 특히 자연스러운 풍경이나 인물 사진에서 은은하면서도 깊이 있는 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,아날로그,따뜻한,자연스러운,필름\n[Moods] 따뜻한,부드러운,빈티지,자연스러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 4000K\r\nWB Shift: 6 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: 1\r\nShadows: -1\r\nColor: 4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: -4\r\nEV suggestion: 0',
+  },
+  {
+    id: '16',
+    pageContent:
+      '[Summary] 이 레시피는 가을의 따뜻함과 부드러움을 담아내어, 마치 오래된 필름 사진처럼 아련하고 빈티지한 감성을 자아냅니다. 은은한 색감과 부드러운 질감은 일상 속 소중한 순간들을 더욱 특별하게 만들어 줄 것입니다. 특히, 햇살 좋은 날의 스냅 사진이나, 따뜻한 분위기의 일상 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Classic Negative\n[Keywords] 가을,따뜻한,빈티지,부드러운,필름\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Fluorescent 1\r\nWB Shift: 1 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: -1\r\nColor: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV suggestion: 0',
+  },
+  {
+    id: '17',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 몽환적인 분위기를 연출하며, 특히 밤하늘이나 어두운 실내에서 촬영할 때 독특한 색감과 질감을 더해줄 것입니다. 은은한 그레인과 낮은 채도는 마치 꿈결 같은 이미지를 만들어내며, 보는 이의 감성을 자극할 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,몽환적인,부드러운,빈티지,저채도\n[Moods] 몽환적인,부드러운,차분한,따뜻한\n[ShootingTypes] snap,night\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Fluorescent 2\r\nWB Shift: 3 Red, -7 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: -2\r\nColor: -4\r\nSharpness: -3\r\nISO Noise Reduction: -4\r\nClarity: -3\r\nEV suggestion: -1/3',
+  },
+  {
+    id: '18',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 하여, 영화적인 분위기와 빈티지한 감성을 동시에 담아냅니다. 특히, 푸른색 계열의 색상을 강조하여 몽환적이면서도 드라마틱한 느낌을 연출하며, 일상적인 스냅 사진에 특별한 분위기를 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 시네마틱,빈티지,필름,푸른색,몽환적인\n[Moods] 몽환적인,차분한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: 2 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: -2\r\nColor: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV suggestion: -1/3',
+  },
+  {
+    id: '19',
+    pageContent:
+      '[Summary] 이 레시피는 황금빛 노을 아래에서 포착한 사진처럼 따뜻하고 부드러운 색감과 몽환적인 분위기를 연출합니다. 특히, 은은한 필름 그레인과 색상 대비를 통해 빈티지하면서도 선명한 이미지를 만들어낼 수 있습니다. 일상 속 특별한 순간들을 따뜻하게 기록하고 싶을 때 사용해보세요.\n[Base Film Simulation] Classic Chrome\n[Keywords] 따뜻한,황금빛,선명한,빈티지,몽환적인\n[Moods] 따뜻한,몽환적인,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 4 Red, 4 Blue\r\nDynamic Range: DR400\r\nHighlights: 0\r\nShadows: -1\r\nColor: 3\r\nSharpness: -3\r\nISO Noise Reduction: -4\r\nClarity: -3\r\nEV suggestion: -1/3',
+  },
+  {
+    id: '20',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 빈티지한 흑백 사진을 위한 레시피입니다. 은은한 그레인과 부드러운 선명도는 아련한 분위기를 연출하며, DR400 설정은 풍부한 계조를 제공하여 흑백의 깊이를 더합니다. 일상 속에서 발견하는 흑백의 아름다움을 표현하기에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,빈티지,모노크롬,부드러운,필름\n[Moods] 차분한,몽환적인,고독한,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Acros Yellow\r\nGrain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, 0 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: -1\r\nMono Shift: WC +4, MG +2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -4\r\nEV suggestion: +2/3',
+  },
+  {
+    id: '21',
+    pageContent:
+      '[Summary] 이 레시피는 에테르나 필름 시뮬레이션을 기반으로 하여, 따뜻하고 강렬한 색감과 함께 독특한 질감을 표현합니다. 특히, 푸른색 강조와 강한 그레인 효과는 빈티지하면서도 드라마틱한 분위기를 연출하며, 일상적인 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻한,빈티지,강렬한,필름\n[Moods] 따뜻한,드라마틱,강렬한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: Underwater\r\nWB Shift: 4 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: -1\r\nColor: 4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '22',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드럽고 빈티지한 색감과 은은한 그레인 효과를 더하여 아련한 분위기를 연출합니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 잘 어울리며, 일상 속 소중한 순간들을 따뜻하게 기록할 수 있도록 해줍니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,저대비,부드러움,색감\n[Moods] 따뜻한,차분한,몽환적인,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 4800K\r\nWB Shift: 3 Red, -3 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: -2\r\nColor: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '136',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 생생한 색감을 후지필름 특유의 클래식 크롬 필름 시뮬레이션으로 재현합니다. 강한 그레인과 선명한 색상, 그리고 약간의 하이라이트와 섀도우 조절을 통해 빈티지하면서도 매력적인 이미지를 연출합니다. 일상 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻함,선명함,색감\n[Moods] 따뜻한,선명한,활기찬,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome FX Blue: Off\r\nWhite Balance: Auto, +1 Red & -5 Blue\r\nDynamic Range: DR-Auto\r\nHighlight: +1\r\nShadow: +1\r\nColor: +4\r\nSharpness: 0\r\nHigh ISO NR: -4\r\nClarity: +3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '137',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 Astia 필름 시뮬레이션을 기반으로, 강한 그레인과 색상 대비를 통해 빈티지하면서도 따뜻한 분위기를 연출합니다. 특히, 파란색 계열의 색상을 은은하게 강조하여, 몽환적이면서도 드라마틱한 느낌을 더해줍니다. 일상적인 스냅 사진에 독특한 감성을 불어넣어 줄 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 시네마틱,필름,따뜻한,빈티지,색감\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap\n[Settings] Grain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Weak\r\nWhite Balance: Fluorescent 1, -2 Red & +4 Blue\r\nDynamic Range: DR200\r\nHighlight: -2\r\nShadow: 0\r\nColor: +2\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -4\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '138',
+    pageContent:
+      '[Summary] 이 레시피는 시네마틱한 분위기와 필름 느낌을 살려, 따뜻하면서도 몽환적인 이미지를 연출합니다. 특히, 푸른색 강조와 빈티지한 색감은 드라마틱한 분위기를 더하며, 일상 스냅 사진에 매력적인 표현을 더할 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 시네마틱,필름,따뜻한,푸른색 강조,빈티지\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Fluorescent 1, -6 Red & -3 Blue\r\nDynamic Range: DR200\r\nHighlight: +3\r\nShadow: +1\r\nColor: +2\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -4\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '139',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 입자와 따뜻한 색감, 그리고 은은한 브론즈 톤을 통해 빈티지한 감성을 자아냅니다. 마치 오래된 사진첩을 펼쳐보는 듯한 아련함과 향수를 불러일으키며, 일상 속 소중한 순간들을 더욱 특별하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,브론즈,따뜻한,필름,레트로\n[Moods] 따뜻한,빈티지,차분한,레트로\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Off\r\nWhite Balance: Daylight, +6 Red & -8 Blue\r\nDynamic Range: DR200\r\nHighlight: 0\r\nShadow: -1\r\nColor: 0\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -2\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -2/3 to 0 (typically)',
+  },
+  {
+    id: '140',
+    pageContent:
+      '[Summary] 이 레시피는 1980년대의 따뜻하고 낭만적인 분위기를 담아내어, 오래된 사진첩을 펼쳐보는 듯한 향수를 불러일으킵니다. 강렬한 색감과 필름 그레인, 그리고 부드러운 하이라이트와 섀도우 표현은 일상적인 순간들을 특별하게 만들어 줄 것입니다. 특히 햇살 좋은 날의 스냅 사진이나, 소중한 사람들과의 추억을 담기에 적합합니다.\n[Base Film Simulation] Nostalgic Neg.\n[Keywords] 빈티지,따뜻함,색감 강조,필름,레트로\n[Moods] 따뜻한,빈티지,향수를 불러일으키는,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Off\r\nWhite Balance: Daylight, +2 Red & -1 Blue\r\nDynamic Range: DR400\r\nHighlight: -2\r\nShadow: +2\r\nColor: +4\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1-1/3 (typically)',
+  },
+  {
+    id: '141',
+    pageContent:
+      '[Summary] 이 레시피는 영화적인 느낌과 함께, 강렬하면서도 몽환적인 분위기를 연출합니다. 특히, 어두운 밤거리나 네온사인 아래에서 촬영하면 독특한 색감과 질감을 통해 잊을 수 없는 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,빈티지,몽환적인,필름,색감\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] snap,night\n[Settings] ISO Range: 800-3200\r\nDynamic Range: 400\r\nNR: 0\r\nHighlights: -1.5\r\nShadows: -1\r\nColor: -4\r\nClarity: +5 (recommended)\r\nColor Chrome: Strong\r\nColor Chrome FX Blue: Strong\r\nSharpness: +2\r\nGrain: Strong and small\r\nWB: Daylight / Auto  R -3, B +3\r\nExposure Compensation: 0 no need for over or under exposure, adjust depending on the light',
+  },
+  {
+    id: '142',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 세피아 톤의 따뜻함을 결합하여, 오래된 사진첩을 넘기는 듯한 아련하고 빈티지한 감성을 선사합니다. 강렬한 그레인과 색상 강조는 사진에 드라마틱한 분위기를 더하며, 잊혀져 가는 과거의 기억을 불러일으키는 듯합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,빈티지,세피아,필름,노스텔지어\n[Moods] 따뜻한,그리운,빈티지한,드라마틱한\n[ShootingTypes] snap,daily\n[Settings] Film Simulation: Acros Red\r\nDynamic Range: 400\r\nClarity: -5\r\nNR: -4\r\nH: -1\r\nS: +3 / +5\r\nSharpness: +2\r\nGrain: Large & Strong\r\nWB: Auto / Daylight R 9 B -9\r\nColor Chrome FX & FX Blue: Strong\r\nMonochromatic Color: WC+4 MG-4\r\nExposure Compensation: -2/3 to +2/3 depending on the scene and light',
+  },
+  {
+    id: '143',
+    pageContent:
+      '[Summary] 이 레시피는 차갑고 몽환적인 분위기를 연출하며, 강렬한 색상과 대비를 통해 드라마틱한 느낌을 더합니다. 특히, 흐린 날씨나 어두운 환경에서 촬영하여 독특한 분위기를 연출하는 데 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,차가운,대비,필름,몽환적인\n[Moods] 차가운,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR 400 (or 100/200 for more contrast)\r\nHighlight: +1\r\nShadow: +3\r\nColor: +2\r\nNoise Reduction: -4 \r\nSharpening: -2\r\nClarity: +2\r\nGrain Effect: weak large\r\nColor Chrome Effect: strong\r\nColor Chrome Effect Blue: strong\r\nWhite Balance: shade R-1  B-3\r\nISO: Auto, up to ISO 6400\r\nSlightly underexposed',
+  },
+  {
+    id: '144',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 활기찬 분위기를 클래식 네거티브 필름 시뮬레이션과 강렬한 색감으로 담아냅니다. 강한 대비와 선명함, 그리고 은은한 필름 그레인이 어우러져, 마치 오래된 영화 속 한 장면을 보는 듯한 빈티지한 느낌을 선사합니다. 도시의 일상, 거리의 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 도시,빈티지,선명한,대비,필름\n[Moods] 따뜻한,강렬한,드라마틱,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR 200\r\nHighlight: -1\r\nShadow: +2 |  Color: +4\r\nNoise Reduction: -4 \r\nSharpening: -4\r\nClarity: +3\r\nGrain Effect: weak large\r\nColor Chrome Effect: strong\r\nColor Chrome Effect Blue: off\r\nWhite Balance: K4700 R1  B-4\r\nISO: Auto, up to ISO 6400',
+  },
+  {
+    id: '145',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 강렬한 색상과 부드러운 그림자를 통해 빈티지하면서도 매력적인 분위기를 연출합니다. 특히, 따뜻한 색감과 섬세한 디테일 표현이 돋보이며, 일상적인 스냅 사진에 특별한 감성을 더해줄 것입니다. 노을 아래 풍경, 오래된 골목길, 또는 인물 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,대비,필름\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: 6150K\r\nWB Shift: +1 Red, -3 Blue\r\nDynamic Range: DR200\r\nHighlights: -0.5\r\nShadows: +1.0\r\nColor: +1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '146',
+    pageContent:
+      '[Summary] 이 레시피는 바닷속 풍경이나 수중 촬영에 적합하며, 강렬한 색감과 대비를 통해 독특하고 드라마틱한 분위기를 연출합니다. 특히, 따뜻한 색감과 몽환적인 느낌을 동시에 담아내어 잊을 수 없는 순간을 기록할 수 있게 해줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,언더워터,강렬한,대비,필름\n[Moods] 따뜻한,드라마틱,몽환적인,강렬한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Off\r\nWhite Balance: Underwater\r\nWB Shift: +4 Red, 0 Blue\r\nDynamic Range: DR400\r\nHighlights: +1.0\r\nShadows: +1.0\r\nColor: +4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '147',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 필름 느낌과 따뜻한 색감, 그리고 파란색의 깊이를 더하여 몽환적인 분위기를 연출합니다. 특히, 일상 속의 소중한 순간들을 따뜻하고 차분하게 기록하고 싶은 분들에게 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻함,파랑,부드러움,필름\n[Moods] 몽환적인,따뜻한,차분한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: 7000K\r\nWB Shift: -2 Red, +5 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.0\r\nShadows: +3.0\r\nColor: +3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '148',
+    pageContent:
+      '[Summary] 이 레시피는 폴라로이드 사진의 따뜻하고 빈티지한 감성을 재현하여, 아련하고 몽환적인 분위기를 연출합니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 적합하며, 레트로한 색감과 필름 특유의 질감을 통해 특별한 추억을 담아낼 수 있습니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,따뜻한,레트로,색감,필름\n[Moods] 따뜻한,몽환적인,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Shade\r\nWB Shift: +6 Red, +6 Blue\r\nDynamic Range: DR200\r\nHighlights: -2.0\r\nShadows: +1.0\r\nColor: -4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +2/3',
+  },
+  {
+    id: '149',
+    pageContent:
+      '[Summary] 이 레시피는 차가운 겨울 풍경을 담아내기 위해 설계되었으며, Classic Negative 필름 시뮬레이션과 색상 크롬 효과를 통해 몽환적이면서도 대비가 강한 이미지를 연출합니다. 차가운 색감과 부드러운 톤, 그리고 섬세한 디테일 표현은 겨울의 고요함과 신비로움을 담아낼 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 차가운,겨울,대비,필름,몽환적인\n[Moods] 차가운,몽환적인,고요한,신비로운\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: 6150K\r\nWB Shift: -1 Red, -2 Blue\r\nDynamic Range: DR100\r\nHighlights: -0.5\r\nShadows: +1.0\r\nColor: +1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '150',
+    pageContent:
+      '[Summary] 이 레시피는 마치 방사능에 오염된 듯한 기괴하고 몽환적인 분위기를 연출합니다. 강렬한 녹색 톤과 높은 대비는 초현실적인 느낌을 주며, SF 영화의 한 장면을 연상시킵니다. 어둡고 차가운 색감은 보는 이에게 깊은 인상을 남길 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] SF,녹색,몽환,대비,필름\n[Moods] 신비로운,몽환적인,초현실적인,강렬한,차가운\n[ShootingTypes] snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, -8 Blue\r\nDynamic Range: DR400\r\nHighlights: -2.0\r\nShadows: +2.0\r\nColor: +4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -4 or use a mist/bloom filter\r\nEV compensation: -1/3 for apocalyptic deepness',
+  },
+  {
+    id: '151',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 필름 그레인, 그리고 약간의 빈티지한 느낌을 담아, 마치 오래된 사진첩을 넘기는 듯한 아련한 감성을 선사합니다. 특히 자연광 아래 인물 사진이나 풍경 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,따뜻한,풍경,인물,필름\n[Moods] 따뜻한,차분한,몽환적인,빈티지\n[ShootingTypes] snap,landscape\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Daylight\r\nWB Shift: +3 Red, -4 Blue\r\nDynamic Range: DR-Auto\r\nHighlights: -1.0\r\nShadows: +2.0\r\nColor: -3\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +2/3',
+  },
+  {
+    id: '152',
+    pageContent:
+      '[Summary] 이 레시피는 차가운 겨울 풍경을 클래식 크롬 필름 시뮬레이션과 강렬한 색상 대비를 통해 묘사합니다. 특히, 차가운 색감과 몽환적인 분위기를 연출하여 겨울의 고요함과 드라마틱한 감성을 담아낼 수 있습니다. 눈 덮인 풍경이나 차가운 도시의 모습을 촬영하는 데 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,차가운,겨울,대비,필름\n[Moods] 차가운,몽환적인,차분한,드라마틱\n[ShootingTypes] snap,landscape\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: -3 Red, -2 Blue\r\nDynamic Range: DR400\r\nHighlights: 0.0\r\nShadows: +1.0\r\nColor: -1\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -4 (this will slow down saving, but it’s important\r\nEV compensation: 0',
+  },
+  {
+    id: '153',
+    pageContent:
+      '[Summary] 이 레시피는 숲의 깊은 곳, 특히 해 질 녘이나 새벽녘의 풍경을 담기에 적합하며, 따뜻하면서도 몽환적인 분위기를 연출합니다. 강렬한 색감과 부드러운 입자, 그리고 깊은 그림자는 마치 한 폭의 그림 같은 인상을 주어, 자연의 아름다움을 더욱 돋보이게 합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,숲,따뜻함,깊이,필름\n[Moods] 몽환적인,따뜻한,드라마틱,깊이있는\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: 4400K\r\nWB Shift: 0 Red, -4 Blue\r\nDynamic Range: DR400\r\nHighlights: -2.0\r\nShadows: +2.0\r\nColor: +4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -4 (you may be tempted to zero this, but it is important)\r\nEV compensation: +1/3',
+  },
+  {
+    id: '154',
+    pageContent:
+      '[Summary] 이 레시피는 마치 옛 서부 영화의 한 장면처럼, 거칠고 낡은 질감과 따뜻한 색감을 통해 향수를 불러일으키는 사진을 만들어줍니다. 강렬한 대비와 푸른색 강조는 드라마틱한 분위기를 더하며, 잊혀진 시간 속의 이야기를 담아낼 듯합니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,영화,따뜻한,필름,거친\n[Moods] 따뜻한,드라마틱,거친,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +8 Red, -8 Blue\r\nDynamic Range: DR200\r\nHighlights: +2.0\r\nShadows: +2.0\r\nColor: -4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '155',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 필름 그레인으로, 오후 햇살 아래의 평화로운 일상을 담아내기에 적합합니다. 특히, 빈티지한 감성을 더하여 아련하고 몽환적인 분위기를 연출할 수 있을 것입니다. 일상 속 소중한 순간들을 더욱 특별하게 기록하고 싶을 때 사용해 보세요.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻함,부드러움,색감,필름\n[Moods] 따뜻한,부드러운,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Underwater\r\nWB Shift: +1 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: -1.0\r\nShadows: 0.0\r\nColor: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: +1\r\nEV compensation: +1/3',
+  },
+  {
+    id: '156',
+    pageContent:
+      '[Summary] 흑백 필름의 질감과 푸른색 강조를 통해, 오래된 사진첩에서 발견한 듯한 빈티지한 느낌을 자아냅니다. 강렬한 흑백 대비와 섬세한 그레인은 잊혀진 기억을 불러일으키는 듯한 드라마틱한 분위기를 연출하며, 일상 속 특별한 순간들을 담아낼 수 있습니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,필름,빈티지,모노크롬,질감\n[Moods] 클래식,드라마틱,빈티지,차분한\n[ShootingTypes] snap,documentry\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: +1.0\r\nShadows: -1.0\r\nMono Shift: WC 1, MG 0 (ignore for pure mono)\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '157',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 하여, 부드럽고 빈티지한 색감과 함께 파란색을 강조하여 몽환적인 분위기를 연출합니다. 특히, 따뜻한 색감과 높은 다이나믹 레인지는 풍경 사진이나 일상 스냅에 적합하며, 은은한 필름 느낌을 더해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,대비,필름\n[Moods] 차분한,따뜻한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Daylight\r\nWB Shift: +4 Red, -4 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: 0\r\nColour: -3\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: +1/3',
+  },
+  {
+    id: '158',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션의 특징을 살려, 자연의 풍경을 더욱 생생하고 드라마틱하게 표현합니다. DR400과 하이라이트, 섀도우 조절을 통해 풍부한 계조와 대비를 확보하고, 색상과 선명도를 조절하여 따뜻하면서도 선명한 이미지를 연출합니다. 특히, 노란색과 붉은색 계열의 색감을 강조하여, 석양이나 단풍, 또는 따뜻한 햇살 아래의 풍경을 담기에 적합합니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,대비,따뜻함,선명함\n[Moods] 따뜻한,선명한,생동감있는,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: 5500K\r\nWB Shift: +6 Red, -6 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.0\r\nShadows: +1.0\r\nColor: -2\r\nSharpness: -3\r\nISO Noise Reduction: -4\r\nClarity: -3\r\nEV compensation: +1/3',
+  },
+  {
+    id: '159',
+    pageContent:
+      '[Summary] 이 레시피는 꿈결처럼 따뜻하고 아련한 분위기를 자아냅니다. Classic Negative 필름 시뮬레이션과 섬세한 색상 조정은 부드러우면서도 빈티지한 감성을 더하며, 몽환적인 분위기를 연출합니다. 일상 속의 소중한 순간들을 따뜻하게 기록하기에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 몽환적인,따뜻한,빈티지,꿈결같은,부드러운\n[Moods] 따뜻한,몽환적인,부드러운,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 5500K\r\nWB Shift: +5 Red, -5 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.0\r\nShadows: +1.0\r\nColor: +3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -3\r\nEV compensation: +1/3',
+  },
+  {
+    id: '160',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이와 질감을 살려, 몽환적이면서도 드라마틱한 분위기를 연출합니다. 강한 그레인 효과와 색상 대비를 통해, 마치 오래된 필름 사진을 보는 듯한 빈티지한 감성을 느낄 수 있습니다. 특히, 거리의 스냅 사진이나 다큐멘터리 사진에 잘 어울릴 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,빈티지,필름,질감\n[Moods] 차분한,드라마틱,고전적인,몽환적인\n[ShootingTypes] snap,documentry\n[Settings] Acros +Y\r\nGrain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, 0 Blue\r\nDynamic Range: DR100\r\nHighlights: +1.0\r\nShadows: +1.0\r\nMono Shift: WC 1, MG 0\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: -1/3',
+  },
+  {
+    id: '161',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 질감을 더하여, 마치 오래된 필름 사진을 보는 듯한 아련한 느낌을 선사합니다. 일상 속 소중한 순간들을 따뜻하고 감성적으로 기록하기에 적합하며, 지나간 시간의 아름다움을 표현해 줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,따뜻한,색감,클래식\n[Moods] 따뜻한,빈티지,아련한,그리운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: +2.0\r\nShadows: -2.0\r\nColor: 0\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -1\r\nEV compensation: -1/3',
+  },
+  {
+    id: '162',
+    pageContent:
+      '[Summary] 이 레시피는 일상 속의 소중한 순간들을 부드럽고 따뜻한 색감으로 담아내어, 마치 오래된 필름 사진첩을 펼쳐보는 듯한 아련한 감성을 선사합니다. 은은한 그레인과 빈티지한 색감은 평범한 풍경도 특별하게 만들어 줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,클래식,빈티지,따뜻함,색감\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: +0.5\r\nShadows: -2.0\r\nColor: +2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '163',
+    pageContent:
+      '[Summary] 이 레시피는 달빛 아래의 고요함과 몽환적인 분위기를 흑백으로 담아내어, 깊은 밤의 정취를 표현합니다. 특히, 강한 대비와 섬세한 그레인은 마치 오래된 흑백 영화의 한 장면을 연상시키며, 당신의 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,달빛,몽환적인,고대비,필름\n[Moods] 몽환적인,신비로운,차분한,드라마틱\n[ShootingTypes] night,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, -6 Blue\r\nDynamic Range: DR400\r\nHighlights: +1.0\r\nShadows: +2.0\r\nMono Shift: WC -6, MG +2\r\nSharpness: +2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '164',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 하여, 레트로하고 따뜻한 골든 톤의 이미지를 연출합니다. 강한 그레인 효과와 색상 보정을 통해 빈티지한 감성을 극대화하며, DR400 설정은 하이라이트와 섀도우의 디테일을 살려줍니다. 따뜻하고 몽환적인 분위기를 원하는 분들에게 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 레트로,따뜻한,빈티지,골든,필름\n[Moods] 따뜻한,빈티지,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +6 Red, -8 Blue\r\nDynamic Range: DR400\r\nHighlights: +0.5\r\nShadows: -1.0\r\nColor: -3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: +1/3',
+  },
+  {
+    id: '165',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감으로, 일상 속의 소중한 순간들을 파스텔톤으로 담아낼 수 있도록 설계되었습니다. 특히 인물 사진에 적합하며, 은은한 필름 느낌을 더해 줍니다. 부드러운 하이라이트와 섀도우, 그리고 색상 보정을 통해 편안하고 따뜻한 분위기를 연출합니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 부드러운,따뜻한,파스텔,인물,필름\n[Moods] 따뜻한,부드러운,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +3 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: +1\r\nShadows: 0\r\nColour: -2 (turn this up, if you prefer a bold look)\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '166',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로 하여, 부드럽고 따뜻한 색감과 은은한 필름 그레인을 더해, 일상 속의 소중한 순간들을 아련하고 빈티지한 감성으로 담아낼 수 있게 해줍니다. 특히, 햇살 좋은 날의 스냅 사진이나, 따뜻한 분위기의 인물 사진에 잘 어울릴 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,부드러운,색감,필름\n[Moods] 따뜻한,차분한,아련한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 5500K\r\nWB Shift: +5 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -0.5\r\nShadows: -1.5\r\nColor: +2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: 0',
+  },
+  {
+    id: '167',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로, 가을의 따뜻하고 부드러운 분위기를 담아냅니다. 색상과 섀도우 조정을 통해 은은하면서도 깊이 있는 색감을 표현하며, 선명함과 노이즈 감소를 통해 부드럽고 깨끗한 이미지를 연출합니다. 특히, 단풍, 노을, 그리고 가을의 풍경을 담기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 가을,따뜻함,빈티지,부드러움,단풍\n[Moods] 따뜻한,차분한,그리운,몽환적인\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: +5 Red, -3 Blue\r\nDynamic Range: DR-Auto\r\nHighlights: -1.0\r\nShadows: +2.0\r\nColor: -4\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: +3\r\nEV compensation: 0',
+  },
+  {
+    id: '168',
+    pageContent:
+      '[Summary] 이 레시피는 90년대 레트로 감성을 파스텔톤으로 재현하여, 부드럽고 따뜻한 분위기를 연출합니다. Astia 필름 시뮬레이션과 DR400 설정은 풍부한 계조와 부드러운 색감을 제공하며, +1 2/3 노출 보정은 사진에 은은한 빛을 더해 줍니다. 일상 속 소중한 순간들을 아련하고 몽환적인 분위기로 담아낼 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 레트로,파스텔,빈티지,부드러움,색감\n[Moods] 따뜻한,몽환적인,부드러운,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: 6300K\r\nWB Shift: -1 Red, -2 Blue\r\nDynamic Range: DR400\r\nHighlights: -2.0\r\nShadows: -2.0\r\nColor: -3\r\nSharpness: -4\r\nISO Noise Reduction: -4\r\nClarity: -2 or use a mist filter\r\nEV compensation: +1 2/3 (yes, almost +2 over exposure)',
+  },
+  {
+    id: '169',
+    pageContent:
+      '[Summary] 이 레시피는 어두운 밤, 차가운 새벽의 고요함 속에서 피어나는 몽환적인 분위기를 담아냅니다. Astia 필름 시뮬레이션과 섬세한 색상 보정을 통해, 어둠 속에서도 디테일을 놓치지 않으면서도 빈티지한 감성을 자아냅니다. 특히, 빛과 그림자의 대비를 강조하여 드라마틱한 분위기를 연출합니다.\n[Base Film Simulation] Astia\n[Keywords] 어두운,드라마틱,빈티지,색감,필름\n[Moods] 몽환적인,차가운,어두운,고독한,신비로운\n[ShootingTypes] night,snap\n[Settings] Grain effect: Off\r\nColor Chrome effect: Weak\r\nColor Chrome FX blue: Off\r\nWhite balance: Incandescent\r\nWhite balance shift: R5 B3\r\nDynamic range: 400\r\nHighlights: -1\r\nShadows: -2\r\nColour: +1 (0 and -1 also works)\r\nSharpness: 0\r\nHigh ISO noise reduction: -4\r\nISO: Auto 800–1600 with a lowest shutter speed of 125 (subjective)\r\nExposure compensation: 0 to -0.66 typically\r\nPhotometry: Multi',
+  },
+  {
+    id: '170',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 그레인, 그리고 색상 대비를 통해 따뜻하고 빈티지한 분위기를 연출합니다. 특히 인물 사진이나 거리 풍경에서 아련하고 몽환적인 느낌을 담아낼 수 있을 것입니다. 마치 오래된 필름 카메라로 촬영한 듯한, 추억을 불러일으키는 사진을 만들어 보세요.\n[Base Film Simulation] Astia\n[Keywords] 인물,거리,따뜻한,빈티지,필름\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic range: 200\r\nHighlights: 0\r\nShadows: +1\r\nSaturation: -2\r\nWhite balance: 4850K\r\nWhileBalance Shift: R2, B-3\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Weak\r\nGrain: Weak, small\r\nNoise reduction: -4\r\nSharpness: -2\r\nClarity: 0\r\nExposure: Generally around 0',
+  },
+  {
+    id: '171',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 강렬한 색상 대비를 통해, 아련하면서도 선명한 인상을 주는 사진을 만들어줍니다. 특히, 인물 사진에서 피부톤을 아름답게 표현하고, 빈티지한 감성을 더하여 특별한 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 필름,따뜻함,선명함,빈티지,인물\n[Moods] 따뜻한,선명한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: 200\r\nWhite balance: Daylight or other non-auto setting\r\nWB Offset: R+5 B-4\r\nColor Chrome Effect: Strong\r\nColorChrome FX Blue: Strong\r\nHighlight: -1\r\nShadow: 0\r\nColor: -3\r\nSharpness: -4\r\nNoise Reduction: -3\r\nClarity: 0\r\nGrain: Strong/Small\r\nExposure compensation: +0.3 to +0.7 for daylight, -0.3 to -0.7 for dusk and night.',
+  },
+  {
+    id: '172',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 매력적인 색감과 강렬한 대비를 통해, 마치 오래된 필름 사진을 보는 듯한 빈티지한 감성을 선사합니다. 특히, 햇빛 아래에서 촬영하면 더욱 드라마틱하고 인상적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 필름,따뜻한,색감,선명함,빈티지\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: 200\r\nWhite balance: Daylight or other non-auto setting\r\nWB Offset: R+5 B-4\r\nColor Chrome Effect: Strong\r\nColorChrome FX Blue: Strong\r\nHighlight: -1\r\nShadow: 0\r\nColor: -3\r\nSharpness: -4\r\nNoise Reduction: -3\r\nClarity: 0\r\nGrain: Strong/Small\r\nExposure compensation: +0.3 to +0.7 for daylight, -0.3 to -0.7 for dusk and night.',
+  },
+  {
+    id: '173',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 피부톤과 함께 선명하고 따뜻한 색감을 제공하여 인물 사진에 적합합니다. 특히, 클래식한 분위기를 연출하며, 강렬한 색상 대비와 디테일을 살려 빈티지한 느낌을 더해줍니다. 일상 스냅 사진에서도 훌륭한 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 클래식,인물,빈티지,선명함,따뜻함\n[Moods] 따뜻한,선명한,클래식한,빈티지한\n[ShootingTypes] portrait,snap\n[Settings] Push/Pull (Exposure): 0\r\nDynamic Range: DR200\r\nGrain Effect: Off\r\nColour Chrome Effect: Strong\r\nWhite Balance: Auto\r\nWB Shift: R: 2 B: 1\r\nHighlight Tone: –2\r\nShadow Tone: -1\r\nColour: 3\r\nSharpness: 2\r\nNoise Reduction: 0',
+  },
+  {
+    id: '174',
+    pageContent:
+      '[Summary] 이 레시피는 도쿄의 밤거리를 몽환적이고 빈티지한 감성으로 담아내기 위한 레시피입니다. Classic Negative 필름 시뮬레이션과 섬세한 색상 보정을 통해, 부드럽고 따뜻하면서도 깊이 있는 분위기를 연출합니다. 특히 야경 사진에서 독특한 분위기를 자아낼 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 시네마틱,몽환적인,빈티지,파스텔톤,필름\n[Moods] 따뜻한,몽환적인,차분한,부드러운\n[ShootingTypes] snap,night\n[Settings] Dynamic Range: DR100\r\nHighlight: -2\r\nShadow: +2\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpening: -4\r\nClarity: -4\r\nGrain Effect: Weak/Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: 5800K, -6 Red & -2 Blue\r\nISO: Auto – 6400\r\nExposure compensation 0 to +2/3',
+  },
+  {
+    id: '175',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 강렬한 색상과 대비를 통해 독특하고 드라마틱한 분위기를 연출합니다. 특히, DR400 설정과 섀도우, 컬러, 그리고 블루 색상 강조는 몽환적이면서도 차가운 느낌을 주며, 흑백 사진과 같은 빈티지한 감성을 자아냅니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,드라마틱,색감,대비,흑백\n[Moods] 몽환적인,차가운,드라마틱,강렬한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: +1.5\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -4\r\nClarity: 0\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: 4000K, +4 Red & -7 Blue\r\nISO: Auto – 6400\r\nExposure compensation 0 to +1',
+  },
+  {
+    id: '176',
+    pageContent:
+      '[Summary] 후지필름의 Classic Negative 필름 시뮬레이션을 기반으로, Superia X-TRA 400 필름의 따뜻하고 빈티지한 색감을 재현합니다. 강한 그레인과 색상 대비를 통해 아날로그 감성을 극대화하며, 선명하고 매력적인 이미지를 연출합니다. 일상 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,색감,선명함,노이즈\n[Moods] 따뜻한,선명한,거친,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1.5\r\nShadow: +1\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: +2\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: 5500K, -2 Red & -1 Blue\r\nISO: Auto – 6400',
+  },
+  {
+    id: '177',
+    pageContent:
+      '[Summary] 이 레시피는 Ilford FP4 Plus 125 필름을 모방하여, 강렬한 입자와 깊이 있는 흑백 톤을 통해 빈티지한 감성을 자극합니다. 특히, 빛과 그림자의 대비를 살려 드라마틱하고 고전적인 분위기를 연출하며, 흑백 사진 특유의 아련한 감성을 표현합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,필름,빈티지,모노크롬,디테일\n[Moods] 차분한,고전적인,빈티지한,드라마틱한\n[ShootingTypes] snap,documentry\n[Settings] Grain Effect: Weak, Large\r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Off\r\nWhite Balance: Daylight, +6 Red & -8 Blue\r\nDynamic Range: DR100\r\nHighlight: 0\r\nShadow: -1\r\nMonochromatic Color: 0 WC & 0 MG\r\nSharpness: 0\r\nHigh ISO NR: -4\r\nClarity: +2\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1 to -1/3 (typically)',
+  },
+  {
+    id: '178',
+    pageContent:
+      '[Summary] Ilford FP4 Plus 125 레시피는 흑백 필름의 깊이 있는 질감과 빈티지한 감성을 재현합니다. 강한 그레인과 부드러운 톤은 오래된 사진첩을 넘기는 듯한 아련한 느낌을 주며, 흑백 사진 특유의 드라마틱한 분위기를 연출합니다. 일상 속 스냅 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,필름,빈티지,모노크롬,질감\n[Moods] 차분한,고전적인,빈티지,드라마틱\n[ShootingTypes] snap,documentry\n[Settings] Grain Effect: Weak, Large\r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Off\r\nWhite Balance: Daylight, +6 Red & -8 Blue\r\nDynamic Range: DR200\r\nHighlight: -0.5\r\nShadow: -1.5\r\nMonochromatic Color: 0 WC & 0 MG\r\nSharpness: 0\r\nHigh ISO NR: -4\r\nClarity: +2\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1 to -1/3 (typically)',
+  },
+  {
+    id: '179',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감으로, 아련한 옛 추억을 떠올리게 하는 사진을 만들어 줍니다. 특히 인물 사진이나 일상 스냅에 적합하며, 빈티지한 분위기를 연출하고 싶을 때 사용하면 좋습니다. 부드러운 하이라이트와 섀도우 표현은 사진에 깊이감을 더해줍니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,따뜻한,부드러운,인물,스냅\n[Moods] 따뜻한,차분한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -1 (Medium-Soft)\r\nShadow: +1 (Medium-Hard)\r\nColor: -2 (Low)\r\nSharpness: -1 (Medium-Soft)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Daylight/Fine, -1 Red & -4 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '180',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 필름 특유의 질감과 빈티지한 감성을 담아냅니다. 특히, 인물 사진이나 일상 스냅에서 은은하면서도 매력적인 분위기를 연출할 수 있을 것입니다. 마치 오래된 필름 카메라로 촬영한 듯한 아련한 느낌을 선사할 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,포트라,따뜻한,부드러운,빈티지\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Off\r\nWhite Balance: 5200K, +1 Red & -6 Blue\r\nDynamic Range: DR400\r\nHighlight: 0\r\nShadow: -2\r\nColor: +2\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -2\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '181',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 입자와 은은한 색감, 그리고 따뜻한 톤을 통해 아련한 빈티지 감성을 자아냅니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하며, 몽환적인 분위기를 연출하여 일상 속 특별한 순간들을 기록하기에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,필름,따뜻한,색감,인물\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: -1\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: -2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Auto, +4 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '182',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께 은은한 필름 그레인, 그리고 톤의 깊이를 더하여, 마치 오래된 필름 사진을 보는 듯한 아련한 감성을 선사합니다. 특히 햇살 좋은 날의 인물 사진이나, 일상 속 소중한 순간들을 기록하는 데에 적합할 것입니다.\n[Base Film Simulation] Nostalgic Neg.\n[Keywords] 따뜻한,빈티지,필름,색감,인물\n[Moods] 따뜻한,빈티지,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: 3000K, +8 Red & -9 Blue\r\nDynamic Range: DR100\r\nHighlight: -2\r\nShadow: -1\r\nColor: +2\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -2\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '183',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강렬한 그레인과 따뜻한 색감, 그리고 푸른색 강조를 통해 빈티지한 감성을 극대화합니다. 특히, 밝은 야외 풍경이나 일상 스냅 사진에서 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Weak\r\nWhite Balance: Auto, +3 Red & -5 Blue\r\nDynamic Range: DR400\r\nHighlight: 0\r\nShadow: -1\r\nColor: +4\r\nSharpness: -1\r\nHigh ISO NR: -4\r\nClarity: -2\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +1 (typically)',
+  },
+  {
+    id: '184',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 차분함과 따뜻한 색감, 그리고 강한 그레인 효과를 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 하이라이트와 섀도우를 강조하여 대비를 높이고, 붉은색과 푸른색의 미묘한 조정을 통해 독특한 색감을 표현합니다. 일상 속의 특별한 순간들을 필름 사진처럼 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,선명한,대비\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +3\r\nShadow: +4\r\nColor: 0\r\nColor Chrome Effect: N/A (X-Trans III) or Off (X-T3/X-T30)\r\nSharpness: -4\r\nNoise Reduction: +4\r\nGrain: Strong\r\nWhite Balance: Daylight, +3 Red & -5 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '185',
+    pageContent:
+      '[Summary] 이 레시피는 푸른 바다와 하늘을 담아내기 위해 고안되었으며, 강렬한 색감과 대비, 그리고 필름 그레인의 질감을 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 하이라이트와 섀도우의 섬세한 조절은 사진에 깊이와 입체감을 더해줍니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 파란색,대비,필름,선명함,빈티지\n[Moods] 시원한,선명한,강렬한,드라마틱,빈티지\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Weak\r\nWhite Balance: 5800K, +1 Red & -3 Blue\r\nDynamic Range: DR400\r\nHighlight: -2\r\nShadow: +3\r\nColor: +4\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '186',
+    pageContent:
+      '[Summary] 어두운 밤, 텅 빈 거리의 고독함과 쓸쓸함을 담아낸 이 레시피는, 흑백 영화의 한 장면처럼 깊고 드라마틱한 분위기를 연출합니다. Astia 필름 시뮬레이션과 섬세한 설정들은 당신의 사진에 잊혀지지 않는 감성을 불어넣어 줄 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 어두운,드라마틱,빈티지,흑백,필름\n[Moods] 차분한,몽환적인,어두운,고독한,신비로운\n[ShootingTypes] night,snap\n[Settings] Grain effect: Off\r\nColor Chrome effect: Weak\r\nColor Chrome FX blue: Off\r\nWhite balance: Incandescent\r\nWhite balance shift: R5 B3\r\nDynamic range: 400\r\nHighlights: -1\r\nShadows: -2\r\nColour: +1 (0 and -1 also works)\r\nSharpness: 0\r\nHigh ISO noise reduction: -4\r\nISO: Auto 800–1600 with a lowest shutter speed of 125 (subjective)\r\nExposure compensation: 0 to -0.66 typically\r\nPhotometry: Multi',
+  },
+  {
+    id: '187',
+    pageContent:
+      '[Summary] 이 레시피는 1970년대의 따뜻하고 아련한 여름날을 연상시키는 사진을 만들어줍니다. 강렬한 그레인과 색상, 그리고 푸른색 강조는 빈티지한 감성을 극대화하며, 하이라이트와 섀도우 조절을 통해 부드러우면서도 깊이 있는 톤을 연출합니다. 햇살 가득한 풍경이나 인물 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Nostalgic Neg.\n[Keywords] 빈티지,따뜻함,색감,필름,레트로\n[Moods] 따뜻한,몽환적인,레트로,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: 6500K, -1 Red & -4 Blue\r\nDynamic Range: DR400\r\nHighlight: -2\r\nShadow: -0.5\r\nColor: -2\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '188',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 생생한 색감과 함께, 필름 특유의 질감을 살려 빈티지한 감성을 자아냅니다. 특히, 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 촬영할 때, 마치 오래된 필름 카메라로 찍은 듯한 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,필름,색감,선명함\n[Moods] 따뜻한,선명한,활기찬,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: +1\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Daylight, +4 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 1/3 (typically)',
+  },
+  {
+    id: '189',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 필름 느낌을 통해 아련한 노스텔지어를 자극하는 사진을 만들어줍니다. 강렬한 색상과 부드러운 질감의 조화는 일상 속 특별한 순간들을 더욱 돋보이게 할 것입니다. 오래된 사진첩을 펼쳐보는 듯한 감성을 느껴보세요.\n[Base Film Simulation] Nostalgic Neg.\n[Keywords] 빈티지,따뜻함,색감 강조,필름,노스텔지어\n[Moods] 따뜻한,빈티지,몽환적인,향수를 불러일으키는\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Weak\r\nWhite Balance: Daylight, +3 Red & -3 Blue\r\nDynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nColor: +4\r\nSharpness: -1\r\nHigh ISO NR: -4\r\nClarity: -3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '190',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 부드러운 질감을 통해 아련한 분위기를 연출합니다. 특히 인물 사진에서 몽환적인 분위기를 자아내며, 일상적인 스냅 사진에 독특한 감성을 더해줄 것입니다. 노스텔지어 네거티브 필름 시뮬레이션과 섬세한 설정들이 조화를 이루어, 잊혀져가는 옛 추억을 떠올리게 하는 사진을 만들어 줍니다.\n[Base Film Simulation] Nostalgic Neg.\n[Keywords] 빈티지,따뜻한,필름,인물,몽환적인\n[Moods] 따뜻한,몽환적인,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Off\r\nWhite Balance: Auto, +2 Red & -3 Blue\r\nDynamic Range: DR400\r\nHighlight: +2\r\nShadow: -2\r\nColor: -3\r\nSharpness: 0\r\nHigh ISO NR: -4\r\nClarity: -2\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -2/3 to +1/3 (typically)',
+  },
+  {
+    id: '191',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 강렬한 그레인 효과를 더하여, 마치 오래된 코닥 필름 사진을 연상시키는 매력적인 결과물을 만들어 줍니다. 특히 일상 스냅이나 풍경 사진에 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,필름,빈티지,따뜻함,색감\n[Moods] 따뜻한,빈티지,선명한,클래식\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: +1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: -1\r\nGrain Effect: Strong\r\nColor Chrome Effect: Off\r\nWhite Balance: Shade, -1 Red & +2 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +1',
+  },
+  {
+    id: '192',
+    pageContent:
+      '[Summary] 코닥 포트라 필름의 부드럽고 따뜻한 색감을 재현하여, 인물 사진에 특히 잘 어울리는 레시피입니다. 은은한 그레인과 색상 보정을 통해, 아련하고 몽환적인 분위기를 연출합니다. 부드러운 피부톤과 따뜻한 색감은 일상 스냅 사진에도 매력적인 표현을 더해줍니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 포트라,필름,인물,따뜻한,부드러운\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Daylight\r\nWB Shift: +5 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: -1.0\r\nShadows: 0.0\r\nColor: -4\r\nSharpness: -3\r\nISO Noise Reduction: -4\r\nClarity: -1\r\nEV compensation: +1 for the creamy Portra aesthetic',
+  },
+  {
+    id: '193',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로, 강렬한 그레인과 따뜻한 색감, 그리고 흑백의 대비를 통해 빈티지하면서도 몽환적인 분위기를 연출합니다. 특히, 일상적인 스냅 사진이나 인물 사진에 활용하면 독특한 감성을 더할 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,흑백,필름,질감,몽환적인\n[Moods] 차분한,몽환적인,빈티지,따뜻한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: 7700K\r\nWB Shift: -4 Red, +4 Blue\r\nDynamic Range: DR200\r\nHighlights: 0.0\r\nShadows: +2.0\r\nColor: -3\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '194',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 가을 햇살 아래에서 촬영한 영화 같은 장면을 연출하기에 적합합니다. 특히, 자연의 색감을 풍부하게 담아내면서도 은은한 필름 느낌을 더하여, 아련하고 빈티지한 분위기를 자아낼 것입니다. 늦가을의 풍경이나 인물 사진에 활용하면 더욱 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,가을,따뜻함,빈티지,필름\n[Moods] 따뜻한,몽환적인,차분한,빈티지\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Shade\r\nWB Shift: +8 Red, -7 Blue\r\nDynamic Range: DR400\r\nHighlights: +1.0\r\nShadows: +1.0\r\nColor: +2\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0 (or try -3 for a nostalgic haze)\r\nEV compensation: -1/3',
+  },
+  {
+    id: '195',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 따뜻하면서도 강렬한 색감과 빈티지한 분위기를 연출합니다. 특히, DR400 설정과 섀도우 조절을 통해 풍부한 계조와 깊이 있는 이미지를 표현하며, 선명함과 노이즈 감소를 통해 깔끔하면서도 필름 특유의 질감을 살립니다. 일상 스냅이나 빈티지한 감성을 담고 싶은 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,컬러,대비,선명함,필름\n[Moods] 따뜻한,강렬한,선명한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: +1 Red, -4 Blue\r\nDynamic Range: DR400\r\nHighlights: -0.5\r\nShadows: -1.5\r\nColor: +3\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '196',
+    pageContent:
+      '[Summary] 이 레시피는 보라색의 매혹적인 분위기를 담아내며, 따뜻하면서도 몽환적인 느낌을 선사합니다. 부드러운 필름 그레인과 색상 보정을 통해 빈티지하면서도 신비로운 이미지를 연출할 수 있습니다. 특히, 일상적인 스냅 사진이나 특별한 순간을 기록하는 데 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 보라색,따뜻함,필름,빈티지,몽환적인\n[Moods] 몽환적인,따뜻한,신비로운,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: +6 Red, +8 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.0\r\nShadows: +2.0\r\nColor: +2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '197',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이와 디테일을 살려, 일상 속 순간들을 드라마틱하게 담아낼 수 있도록 설계되었습니다. 강한 그레인 효과와 색상 대비를 통해 빈티지하면서도 선명한, 잊혀지지 않는 흑백 사진을 만들어낼 것입니다. 특히, 거리의 스냅 사진이나 인물 사진에 잘 어울릴 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,필름,빈티지,디테일\n[Moods] 차분한,고전적인,드라마틱,선명한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, 0 Blue\r\nDynamic Range: DR100\r\nHighlights: +1.0\r\nShadows: +1.0\r\nMono Shift: WC 2, MG 0\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: -1/3',
+  },
+  {
+    id: '198',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 가을 햇살 아래에서 포착한 풍경 사진처럼, 은은한 색감과 깊이 있는 그림자를 통해 아련하고 빈티지한 분위기를 연출합니다. 특히, 노을 아래의 풍경이나, 붉게 물든 단풍, 그리고 따스한 빛을 받은 인물 사진에 잘 어울릴 것 같습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 가을,따뜻함,빈티지,색감,대비\n[Moods] 따뜻한,빈티지,차분한,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: 5200K\r\nWB Shift: +1 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1.0\r\nShadows: +2.0\r\nColor: -2\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 1',
+  },
+  {
+    id: '199',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 크리미한 색감과 함께 몽환적인 분위기를 연출하며, 특히 파란색 계열의 색상을 강조하여 독특한 분위기를 자아냅니다. 빈티지한 느낌과 필름 특유의 질감을 살려 일상적인 스냅 사진에 매력적인 표현을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,몽환적인,부드러운,색감,필름\n[Moods] 따뜻한,몽환적인,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +7 Red, -7 Blue\r\nDynamic Range: DR400\r\nHighlights: 0.0\r\nShadows: +1.0\r\nColor: -4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: +2\r\nEV compensation: +2/3',
+  },
+  {
+    id: '200',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 활기찬 색감과 빈티지한 느낌을 동시에 담아, 일상 속의 소중한 순간들을 더욱 특별하게 기록해 줄 것입니다. 특히, 햇살 가득한 야외 풍경이나 인물 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Classic Negative\n[Keywords] 따뜻한,선명한,색감,빈티지,필름\n[Moods] 활기찬,따뜻한,생동감있는\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +1 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: -2.0\r\nShadows: +1.0\r\nColor: +2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -1\r\nEV compensation: +2/3',
+  },
+  {
+    id: '201',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 빈티지한 느낌을 주며, 따뜻한 색감과 은은한 그레인 효과로 아련한 분위기를 연출합니다. 특히, 자연스러운 풍경이나 일상적인 스냅 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,따뜻한,자연스러운,부드러운,필름\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: Fluorescent 3\r\nWB Shift: +3 Red, -9 Blue\r\nDynamic Range: DR400\r\nHighlights: 0.0\r\nShadows: -1.0\r\nColor: +2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '202',
+    pageContent:
+      '[Summary] 이 레시피는 마치 화성 표면을 탐험하는 듯한, 강렬하면서도 몽환적인 분위기를 연출합니다. 푸른색 강조와 높은 다이나믹 레인지는 독특한 색감과 깊이 있는 그림자를 만들어내며, 드라마틱한 장면을 담아낼 수 있을 것입니다. 도시의 야경, 인물 사진, 또는 특별한 순간들을 이 레시피로 기록해보세요.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,몽환적인,푸른색,대비,선명함\n[Moods] 몽환적인,차가운,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: 7700K\r\nWB Shift: +9 Red, -7 Blue\r\nDynamic Range: DR400\r\nHighlights: 0.0\r\nShadows: -1.0\r\nColor: +4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: +3\r\nEV compensation: +1/3',
+  },
+  {
+    id: '203',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 황금빛 톤으로, 아날로그 필름의 질감과 몽환적인 분위기를 연출합니다. 특히, 햇빛 아래의 풍경이나 인물 사진에 적합하며, 빈티지한 감성을 더해줍니다.\n[Base Film Simulation] Astia\n[Keywords] 빈티지,따뜻한,황금빛,필름,디테일\n[Moods] 따뜻한,몽환적인,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: +2 Red, -4 Blue\r\nDynamic Range: DR400\r\nHighlights: +1.0\r\nShadows: +0.5\r\nColor: -1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: +4 (adds mid tone detail, but skip for faster shooting)\r\nEV compensation: +1/3',
+  },
+  {
+    id: '204',
+    pageContent:
+      '[Summary] 이 레시피는 다큐멘터리 사진에 적합하며, 클래식 크롬의 차분한 색감과 파란색 강조를 통해 현실적이면서도 빈티지한 느낌을 줍니다. DR200 설정은 하이라이트와 섀도우의 디테일을 살려주고, 따뜻한 색감 보정을 통해 편안한 분위기를 연출합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 다큐멘터리,클래식 크롬,빈티지,파란색 강조,선명함\n[Moods] 차분한,사실적인,선명한,따뜻한\n[ShootingTypes] documentry,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: -0.5\r\nShadows: -0.5\r\nColour: +1\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '205',
+    pageContent:
+      '[Summary] 알프스 산맥의 햇살을 담은 이 레시피는, 클래식 네거티브 필름 시뮬레이션을 기반으로 따뜻하고 선명한 색감과 드라마틱한 분위기를 연출합니다. 강렬한 색상 대비와 섬세한 디테일 묘사로, 마치 여름날의 산을 그대로 담아낸 듯한 생생한 사진을 만들어낼 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 산,여름,따뜻함,선명함,필름\n[Moods] 따뜻한,선명한,생생한,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: -1 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: +0.5\r\nShadows: -1.5\r\nColour: +2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '206',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 Astia 필름 시뮬레이션을 기반으로, 파란색을 강조하고 색감을 살짝 줄여, 따뜻하면서도 몽환적인 분위기를 연출합니다. 밝고 화사한 색감과 부드러운 톤으로 일상 스냅이나 인물 사진에 적합하며, 특히 자연광 아래에서 더욱 매력적인 결과물을 얻을 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 화사함,부드러움,선명함,파스텔,필름\n[Moods] 따뜻한,부드러운,화사한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +4 Red, -3 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: -2\r\nColour: -2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: +1/3',
+  },
+  {
+    id: '207',
+    pageContent:
+      '[Summary] 이 흑백 레시피는 강렬한 대비와 깊이 있는 톤으로, 마치 오래된 영화 속 한 장면을 연상시킵니다. 특히, 빛과 그림자의 극적인 연출을 통해 레트로 감성을 극대화하여, 잊혀진 과거의 향수를 불러일으키는 사진을 만들 수 있습니다. 거친 질감과 섬세한 디테일이 공존하는 매력적인 흑백 사진을 경험해보세요.\n[Base Film Simulation] Acros\n[Keywords] 흑백,레트로,빈티지,강렬함,대비\n[Moods] 드라마틱,강렬한,빈티지,고풍스러운\n[ShootingTypes] snap,daily\n[Settings] Acros Green Filter\r\nGrain Effect: Strong, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Daylight\r\nWB Shift: +9 Red, +9 Blue\r\nDynamic Range: DR400\r\nHighlights: +1.0\r\nShadows: -1.0\r\nMono Shift: WC +3, MG 0 (or leave at 0, 0 for pure mono)\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: -2/3 for the moody look',
+  },
+  {
+    id: '208',
+    pageContent:
+      '[Summary] 강렬한 흑백 대비와 거친 입자, 그리고 깊은 그림자는 마치 오래된 영화의 한 장면을 연상시킵니다. 이 레시피는 흑백의 강렬함과 빈티지한 감성을 동시에 담아내어, 인물의 감정을 극대화하고 다큐멘터리적인 분위기를 연출하는 데 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,거친,빈티지,디테일\n[Moods] 드라마틱,강렬한,빈티지,거친\n[ShootingTypes] snap,documentry\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: +4 Red, +9 Blue\r\nDynamic Range: DR400\r\nHighlights: +1.0\r\nShadows: +1.0\r\nMono Shift: WC +1, MG +4\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: +4\r\nEV compensation: 0',
+  },
+  {
+    id: '209',
+    pageContent:
+      '[Summary] 이 레시피는 흐린 날의 풍경을 부드럽고 따뜻하게 담아내도록 설계되었습니다. Pro Neg. Std 필름 시뮬레이션과 섬세한 색상 보정을 통해 빈티지하면서도 몽환적인 분위기를 연출하며, 파란색을 강조하여 하늘의 아름다움을 더욱 돋보이게 합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 따뜻한,부드러운,빈티지,풍경,흐린 날씨\n[Moods] 따뜻한,차분한,몽환적인\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Daylight\r\nWB Shift: +2 Red, -7 Blue\r\nDynamic Range: DR100\r\nHighlights: -1\r\nShadows: -1\r\nColour: -4\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3 to +2/3',
+  },
+  {
+    id: '210',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 부드러운 톤을 통해, 오래된 흑백 사진 특유의 아련하고 빈티지한 감성을 자아냅니다. 특히, 빛과 그림자의 대비를 살려 드라마틱하고 몽환적인 분위기를 연출하는 데 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노톤,빈티지,하이라이트,섀도우\n[Moods] 차분한,고전적인,드라마틱한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, 0 Blue\r\nMono Shift: WC +7, MG +2\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: -1\r\nColour: N/A\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '211',
+    pageContent:
+      '[Summary] 이 레시피는 숲의 생명력과 따뜻함을 담아, 마치 한 폭의 그림 같은 사진을 만들어줍니다. Classic Chrome의 부드러운 색감과 Grain Effect, 그리고 푸른색 강조는 숲의 싱그러움을 더욱 돋보이게 하며, 따뜻하고 몽환적인 분위기를 연출합니다. 숲 속의 고요함과 생동감을 동시에 담아내어, 보는 이에게 깊은 인상을 남길 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 숲,싱그러움,빈티지,따뜻함,필름\n[Moods] 따뜻한,차분한,몽환적인,싱그러운\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Fluorescent 2\r\nWB Shift: +3 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1.0\r\nShadows: +1.0\r\nColor: +3\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '212',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 햇살 아래 부드럽게 빛나는 해변의 풍경을 담아내기에 적합합니다. Classic Chrome의 부드러운 색감과 강한 그레인 효과는 아련한 빈티지 감성을 더하며, DR400 설정은 풍부한 계조를 제공하여 하이라이트와 섀도우 디테일을 살려줍니다. 해변의 낭만적인 순간들을 파스텔톤으로 표현해 보세요.\n[Base Film Simulation] Classic Chrome\n[Keywords] 해변,따뜻함,빈티지,필름,파스텔\n[Moods] 따뜻한,몽환적인,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +8 Red, -8 Blue\r\nDynamic Range: DR400\r\nHighlights: +2\r\nShadows: -2\r\nColour: -3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +2/3',
+  },
+  {
+    id: '213',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로 따뜻하고 부드러운 색감과 빈티지한 느낌을 살려줍니다. 특히 인물 사진에서 자연스러운 피부톤과 은은한 분위기를 연출하며, 파란색 계열의 색상을 강조하여 몽환적인 느낌을 더합니다. 일상 스냅이나 데일리 사진에 적합하며, 따뜻하고 아련한 분위기를 담아낼 수 있습니다.\n[Base Film Simulation] Provia\n[Keywords] 따뜻한,필름,인물,색감,빈티지\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +4 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -0.5\r\nShadows: +0.5\r\nColour: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '214',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 Tri-X 33 필름의 거친 질감과 강렬한 대비를 재현하여, 흑백 사진 특유의 드라마틱하고 빈티지한 분위기를 연출합니다. 특히, 강한 그레인 효과와 섀도우 강조는 잊혀진 시간의 조각들을 담아내는 듯한 인상을 줍니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,빈티지,강렬함,질감\n[Moods] 드라마틱,거친,강렬한,빈티지\n[ShootingTypes] documentry,snap\n[Settings] Acros + Green Filter\r\nGrain Effect: Strong, Large\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, 0 Blue\r\nMono Shift: WC +3, MG +3\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: +3\r\nColour: N/A\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: +4\r\nEV compensation: +2/3',
+  },
+  {
+    id: '215',
+    pageContent:
+      '[Summary] 이 레시피는 흑백 영화의 한 장면처럼, 거친 질감과 따뜻한 색감으로 기억을 담아내는 듯한 인상을 줍니다. 특히, 빛 바랜 사진 속에서 느껴지는 아련함과 향수를 불러일으키는 사진을 만들기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,흑백,질감,따뜻한,필름\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: 7500K\r\nWB Shift: 0 Red, 0 Blue\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: +2\r\nColour: -3\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '216',
+    pageContent:
+      '[Summary] 이 레시피는 버려진 도시의 숨겨진 아름다움을 탐험하는 듯한, 차갑고 몽환적인 분위기를 연출합니다. 특히 푸른색을 강조하여, 어두운 밤이나 흐린 날씨 속에서도 드라마틱하고 신비로운 느낌을 담아낼 수 있습니다. 거친 그레인과 높은 채도는 잊혀진 공간에 생명력을 불어넣는 듯한 인상을 줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,어반,탐험,필름,푸른색\n[Moods] 몽환적인,차가운,드라마틱,신비로운\n[ShootingTypes] snap,night\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Daylight\r\nWB Shift: +2 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: +2.0\r\nShadows: +3.0\r\nColor: -4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: +2\r\nEV compensation: +2/3',
+  },
+  {
+    id: '217',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이와 섬세함, 그리고 자연의 생생함을 담아내어, 마치 오래된 흑백 사진첩을 펼쳐보는 듯한 아련한 감성을 선사합니다. 특히, 풍경 사진에서 은은한 그린 필터 효과와 부드러운 질감을 통해 자연의 아름다움을 더욱 돋보이게 합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,자연,그린필터,디테일,빈티지\n[Moods] 차분한,몽환적인,고전적인,섬세한\n[ShootingTypes] landscape,snap\n[Settings] Acros + Green Filter\r\nGrain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, 0 Blue\r\nMono Shift: WC +4, MG +8\r\nDynamic Range: DR200\r\nHighlights: -0.5\r\nShadows: +0.5\r\nColour: N/A\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '218',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 그레인과 높은 콘트라스트를 통해 흑백 필름의 질감과 빈티지한 감성을 극대화합니다. 특히, 빛과 그림자의 대비를 강조하여 드라마틱하고 깊이 있는 흑백 사진을 연출하며, 오래된 사진첩 속의 한 장면을 연상시키는 듯한 인상을 줍니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,필름,그레인,빈티지\n[Moods] 차분한,빈티지,거친,드라마틱\n[ShootingTypes] snap,documentry\n[Settings] Acros + Green Filter\r\nGrain Effect: Strong, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, 0 Blue\r\nMono Shift: WC +6, MG -2\r\nDynamic Range: DR400\r\nHighlights: +1.5\r\nShadows: -0.5\r\nColour: N/A\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '219',
+    pageContent:
+      '[Summary] Fomapan 400 필름의 질감과 흑백의 대비를 살린 레시피입니다. 강렬한 색상 대비와 톤, 그리고 적절한 노이즈 감소를 통해 클래식하면서도 드라마틱한 흑백 사진을 연출합니다. 일상 속 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,필름,콘트라스트,질감\n[Moods] 빈티지,드라마틱,강렬한,거친,클래식\n[ShootingTypes] snap,daily\n[Settings] Monochrome +G\r\nGrain off\r\nCCr/CCb: strong\r\nWB: 10k +2r -5b\r\nDRP auto (mandatory, or Dr200 and hl+1 sh+2 for a push effect) \r\nSharpness +2\r\nNoise reduction - 2\r\nClarity +2',
+  },
+  {
+    id: '220',
+    pageContent:
+      '[Summary] 이 레시피는 광활한 평원의 풍경을 담아내기 위해, 따뜻하고 부드러운 색감과 은은한 필름 그레인을 사용하여 자연의 웅장함과 평온함을 동시에 표현합니다. 특히 석양 아래의 풍경이나, 맑은 날씨의 야외 촬영에 적합하며, 시네마틱한 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Eterna\n[Keywords] 풍경,자연,따뜻함,시네마틱,필름\n[Moods] 따뜻한,차분한,드라마틱,몽환적인\n[ShootingTypes] landscape,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: 6400k\r\nWB Shift: +1 Red, +1 Blue\r\nDynamic Range: DR100\r\nHighlights: +1\r\nShadows: -1\r\nColour: 0\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0 or +1/3',
+  },
+  {
+    id: '221',
+    pageContent:
+      '[Summary] 이 레시피는 네덜란드의 풍경을 담기 위해 Velvia 필름의 특징을 Astia 필름 시뮬레이션에 적용하여, 선명하고 생생한 색감과 함께 따뜻하고 극적인 분위기를 연출합니다. 특히, 자연의 아름다움을 강조하고 싶을 때 사용하면 좋습니다.\n[Base Film Simulation] Astia\n[Keywords] 풍경,선명한,채도,필름,따뜻한\n[Moods] 따뜻한,선명한,생생한,극적인\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR 200\r\nHighlight: +1\r\nShadow: +2\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: +4\r\nGrain Effect: weak/small\r\nColor Chrome Effect: strong\r\nColor Chrome Effect Blue: weak\r\nWhite Balance: auto R2  B-4\r\nISO: Auto, up to ISO 800\r\nNormal exposure',
+  },
+  {
+    id: '222',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 아스티아 필름 시뮬레이션을 기반으로, 따뜻하고 화사한 색감과 은은한 필름 그레인을 더하여 인물 사진에 특히 잘 어울리는 레시피입니다.  몽환적인 분위기를 연출하며,  따뜻한 감성을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,따뜻함,색감,필름\n[Moods] 따뜻한,부드러운,화사한,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Grain Effect: Weak/small\r\nColour Chome FX: Weak\r\nColour Chrome FX Blue: Weak\r\nWhite Balance: 6200k, +2 Red, -4 Blue\r\nDynamic Range: 400\r\nCurve: Highlights -1, Shadows -2\r\nColour: +4\r\nSharpness: 0\r\nNoise Reduction:\r\nClarity: O\r\nExposure Comp: +1/3 or 2/3',
+  },
+  {
+    id: '223',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 색감과 높은 대비를 통해, 마치 슬라이드 필름으로 촬영한 듯한 인상을 줍니다. 특히 파란색 계열의 색상을 강조하여, 풍경 사진이나 스냅 사진에서 시원하고 청량한 느낌을 극대화할 수 있습니다. 쨍한 하늘과 깊은 그림자를 담아, 기억에 남는 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 선명한,대비,채도,필름,푸른색\n[Moods] 강렬한,선명한,극적인,차가운\n[ShootingTypes] snap,landscape\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: +3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Daylight, -3 Red & +1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '224',
+    pageContent:
+      '[Summary] 강렬한 대비와 톤, 그리고 은은한 그레인이 돋보이는 흑백 사진을 위한 레시피입니다. 특히, 붉은색 필터를 사용하여 드라마틱하고 빈티지한 느낌을 강조하며, 섀도우와 하이라이트 조절을 통해 깊이 있는 흑백의 세계를 표현합니다. 오래된 영화 속 한 장면처럼, 강렬하면서도 몽환적인 분위기를 연출합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,레드필터,대비,빈티지,드라마틱\n[Moods] 강렬한,극적인,빈티지한,고전적인\n[ShootingTypes] snap,documentry\n[Settings] Acros Red\r\nDR : 200\r\nWhite Balance: 2500k\r\nWB Color Shift: -9R, 0B\r\nGrain: Weak\r\nColor: N/A\r\nHighlights: +1\r\nShadows: +4\r\nSharpness: -2\r\nNr: -4\r\nExp comp: 2/3 to 2, even 2⅔ (play with these a lot)',
+  },
+  {
+    id: '225',
+    pageContent:
+      '[Summary] 이 레시피는 영화적인 분위기를 연출하며, 따뜻하고 드라마틱한 색감으로 빈티지한 감성을 자극합니다. 특히, 인물이나 스냅 사진에서 매력적인 결과물을 얻을 수 있을 것입니다. 부드러운 그레인과 강렬한 색상 대비는 사진에 깊이와 개성을 더해줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,빈티지,따뜻함,드라마틱\n[Moods] 몽환적인,따뜻한,드라마틱\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: -1\r\nGrain Effect: Weak\r\nColor Chrome Effect: Strong\r\nWhite Balance: Incandescent, +8 Red & -9 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: 0 to +2/3',
+  },
+  {
+    id: '3',
+    pageContent:
+      '[Summary] 이 레시피는 거친 입자와 강렬한 대비를 통해 아날로그 흑백 필름의 질감을 완벽하게 재현합니다. 특히, 파란색 계열의 톤을 강조하여 흑백 사진에 깊이와 드라마틱한 분위기를 더하며, 잊혀져 가는 과거의 기억을 불러일으키는 듯한 인상을 줍니다. 어두운 밤거리, 오래된 건물, 또는 인물의 강렬한 표정을 담기에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,거친,대비,모노크롬\n[Moods] 드라마틱,강렬한,빈티지,거친\n[ShootingTypes] snap,documentry\n[Settings] Acros Red Filter\r\nGrain Effect: Strong, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Fluorescent 2\r\nWB Shift: 0 Red, 0 Blue\r\nDynamic Range: DR400\r\nHighlights: 2\r\nShadows: 2\r\nMono Shift: WC -1, MG +0\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '23',
+    pageContent:
+      '[Summary] 이 레시피는 여름날의 따스함과 부드러움을 담아, 아련하고 몽환적인 분위기를 연출합니다. 필름 특유의 질감과 색감, 그리고 은은한 푸른색 표현은 일상 속 특별한 순간들을 더욱 아름답게 기록해 줄 것입니다. 특히, 햇살 아래의 풍경이나 인물 사진에 잘 어울립니다.\n[Base Film Simulation] Eterna\n[Keywords] 필름,여름,따뜻함,빈티지,부드러움\n[Moods] 따뜻한,몽환적인,차분한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 1 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: 2\r\nColor: 4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -4\r\nEV suggestion: 0',
+  },
+  {
+    id: '24',
+    pageContent:
+      '[Summary] 이 레시피는 바닷속 깊은 곳을 탐험하는 듯한 신비로운 분위기를 연출합니다. 차가운 색감과 강렬한 색상 대비는 몽환적이면서도 드라마틱한 느낌을 주며, 특히 야간 촬영이나 물속 풍경에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,차가운,바다,깊이,몽환적인\n[Moods] 차가운,몽환적인,신비로운,드라마틱\n[ShootingTypes] snap,night\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Underwater\r\nWB Shift: -3 Red, 3 Blue\r\nDynamic Range: DR200\r\nHighlights: 4\r\nShadows: 1\r\nColor: -4\r\nSharpness: 1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: -2/3',
+  },
+  {
+    id: '25',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 낭만적인 휴가 분위기를 담아내기 위해 설계되었습니다. 부드러운 필름 그레인과 색상, 그리고 은은한 색상 대비는 마치 오래된 영화 속 한 장면처럼 아련하고 빈티지한 느낌을 선사합니다. 여행의 설렘과 추억을 따뜻하게 기록하고 싶을 때 사용해 보세요.\n[Base Film Simulation] Eterna\n[Keywords] 따뜻함,여행,필름,빈티지,색감\n[Moods] 따뜻한,로맨틱한,아련한,빈티지한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 7060K\r\nWB Shift: 3 Red, 1 Blue\r\nDynamic Range: DR100\r\nHighlights: 2\r\nShadows: 2\r\nColor: 2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '26',
+    pageContent:
+      '[Summary] 이 레시피는 은은한 필름 그레인과 부드러운 색감, 그리고 푸른색 강조를 통해 아련하고 빈티지한 분위기를 연출합니다. 따뜻한 색감과 톤 다운된 섀도우는 향수를 불러일으키는 듯한 사진을 만들어 줄 것입니다. 일상 속 소중한 순간들을 기록하기에 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,필름,따뜻한,색감,노스텔지어\n[Moods] 따뜻한,빈티지,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: 4 Red, -6 Blue\r\nDynamic Range: DR400\r\nHighlights: 0\r\nShadows: -1\r\nColor: -2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '27',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 은은한 필름 그레인, 그리고 시네마틱한 분위기를 연출하여, 일상 속의 소중한 순간들을 몽환적이고 빈티지한 감성으로 담아낼 수 있도록 도와줍니다. 특히, 인물 사진이나 스냅 사진에 적합하며, 따뜻하고 부드러운 분위기를 연출하고 싶을 때 사용하면 좋습니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,부드러운,필름,빈티지,따뜻한\n[Moods] 몽환적인,따뜻한,부드러운,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Fluorescent 1\r\nWB Shift: -2 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: 1\r\nColor: -1\r\nSharpness: -3\r\nISO Noise Reduction: -4\r\nClarity: -3\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '28',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 함께 몽환적인 분위기를 연출하여, 일상 속의 소중한 순간들을 아름답게 담아낼 수 있도록 해줍니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 잘 어울릴 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,부드러운,몽환적인,따뜻한,빈티지\n[Moods] 따뜻한,몽환적인,부드러운,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: 6000K\r\nWB Shift: 3 Red, 4 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.5\r\nShadows: -1.5\r\nColor: 3\r\nSharpness: -3\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '29',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로 하여, 자연스러운 색감과 부드러운 질감을 동시에 표현합니다. 특히 푸른색 계열의 색상을 강조하여, 풍경 사진에 생동감을 더하며, 은은한 필름 그레인 효과가 아날로그 감성을 더해줍니다. 맑은 날의 풍경이나 스냅 사진에 적합합니다.\n[Base Film Simulation] Provia\n[Keywords] 자연,풍경,색감,필름,선명함\n[Moods] 따뜻한,자연스러운,선명한,부드러운\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Fluorescent 1\r\nWB Shift: -5 Red, 0 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: -1\r\nColor: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '30',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 C200 필름의 부드럽고 따뜻한 색감을 재현하여, 일상 속 소중한 순간들을 아련하고 빈티지한 감성으로 담아낼 수 있게 해줍니다. 특히, 은은한 그레인과 부드러운 톤은 사진에 깊이와 매력을 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,색감,부드러움\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 1 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: -2\r\nColor: 1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '31',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 강렬한 그레인과 색감, 그리고 톤 조절을 통해 빈티지하면서도 몽환적인 분위기를 연출합니다. 특히, 빛 바랜 듯한 색감과 거친 질감이 조화를 이루어 아날로그 감성을 자극하며, 일상 속 스냅 사진에 매력적인 표현을 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,몽환적인,거친,흑백\n[Moods] 따뜻한,차분한,몽환적인,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nWhite Balance: K6880, Red: -3, Blue: -2\r\nISO Noise Reduction: -4\r\nColor: -2\r\nSharpness: -4\r\nHighlight Tone: -2\r\nShadow Tone: -1.5\r\nClarity: -5\r\nColor Chrome Effect: Strong\r\nColor Chrome Blue: Off\r\nGrain Effect: Strong, Large',
+  },
+  {
+    id: '226',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 필름 그레인을 통해, 마치 오래된 사진첩을 펼쳐보는 듯한 아련한 감성을 선사합니다. 인물 사진이나 일상 스냅에서 자연스러운 분위기를 연출하고 싶을 때 사용하면 좋을 것 같네요.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,따뜻함,빈티지,인물,색감\n[Moods] 따뜻한,빈티지한,부드러운,자연스러운\n[ShootingTypes] snap,daily\n[Settings] DR : 100\r\nWhite Balance: Daylight\r\nWB Color Shift: +2R, -1B\r\nGrain: Weak\r\nColor: +4\r\nHighlights: 0\r\nShadows: +2\r\nSharpness: +2\r\nNr: -4\r\nExp comp: -⅓ to +⅓, normally 0',
+  },
+  {
+    id: '227',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 자연스러운 피부 표현을 통해 인물 사진에 최적화된 레시피입니다. 따뜻한 색감과 필름 느낌을 더하여 빈티지하면서도 매력적인 사진을 연출할 수 있습니다. 일상 스냅이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,부드러움,따뜻함,필름,색감\n[Moods] 따뜻한,부드러운,자연스러운,빈티지\n[ShootingTypes] portrait,daily\n[Settings] DR : auto\r\nWhite Balance: 6300-6700K (-1 R, 0 B)\r\nHighlights: -2\r\nShadows: 0 \r\nColor: 0\r\nSharpness: -2\r\nNr: -2\r\nExp comp: as you like, I usually give it +1, +1⅓',
+  },
+  {
+    id: '228',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 자연스러운 피부 표현을 강조하여, 마치 실제 필름으로 촬영한 듯한 빈티지한 인물 사진을 연출합니다. 특히, 햇살 좋은 날 야외에서 촬영하거나, 인물 중심의 스냅 사진에 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,인물,따뜻한,부드러운,빈티지\n[Moods] 따뜻한,부드러운,빈티지,자연스러운\n[ShootingTypes] portrait,snap\n[Settings] DR: 100\r\nWb: Auto(+1 R, -3 B)\r\nHighlights: -2\r\nShadows: 0\r\nColor: +1\r\nSharpness: -1\r\nNR: Doesn’t matter\r\nExp comp: +⅔ to +1(depending on conditions)',
+  },
+  {
+    id: '229',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로 하여, 은은한 그레인과 부드러운 색감, 그리고 약간의 빈티지한 느낌을 더해줍니다. 전체적으로 차분하고 따뜻한 분위기를 연출하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,톤,대비,클래식\n[Moods] 차분한,빈티지한,부드러운,따뜻한\n[ShootingTypes] snap,daily\n[Settings] DR : 100\r\nWhite Balance: 6000K\r\nWB Color Shift: (0R,0B)\r\nGrain: Weak Large\r\nColor: -3\r\nHighlights: 0\r\nShadows: 0\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Off\r\nColor chrome FX blue: Off\r\nClarity: 0\r\nExp comp: +1',
+  },
+  {
+    id: '230',
+    pageContent:
+      '[Summary] 녹슨 크롬 레시피는 Classic Chrome을 기반으로, 따뜻하고 빈티지한 색감과 강렬한 대비를 통해 독특한 분위기를 연출합니다. 특히, 붉은색과 파란색의 섬세한 조절은 사진에 깊이와 개성을 더하며, 일상 속 스냅 사진에 매력적인 표현을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,따뜻함,대비,색감\n[Moods] 따뜻한,빈티지한,강렬한,선명한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: +7 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: +2.0\r\nShadows: 0.0\r\nColor: +3\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: +3\r\nEV compensation: +1/3',
+  },
+  {
+    id: '231',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감으로 가을의 정취를 담아내며, 은은한 그레인과 몽환적인 분위기를 더해줍니다. 호박밭의 풍경이나 따스한 햇살 아래에서의 스냅 사진에 특히 잘 어울릴 것 같습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 따뜻함,가을,빈티지,몽환적인,호박\n[Moods] 따뜻한,몽환적인,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 6750K\r\nWB Shift: +6 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: -1.5\r\nShadows: +0.5\r\nColor: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: +1/3',
+  },
+  {
+    id: '232',
+    pageContent:
+      '[Summary] 이 레시피는 여행과 탐험의 설렘을 담아, 따뜻하고 생동감 넘치는 색감으로 기억을 기록합니다. 특히 파란 하늘과 푸른 바다를 더욱 선명하게 표현하여, 여행지의 아름다움을 강조하며, 부드러운 필름 그레인과 색상으로 아련한 감성을 더합니다.\n[Base Film Simulation] Eterna\n[Keywords] 여행,탐험,따뜻함,선명함,필름\n[Moods] 따뜻한,선명한,활기찬,생동감있는\n[ShootingTypes] snap,landscape\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +4 Red, -7 Blue\r\nDynamic Range: DR400\r\nHighlights: 0.0\r\nShadows: +2.0\r\nColor: +2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '233',
+    pageContent:
+      '[Summary] 이 레시피는 1970년대 코닥 필름의 따뜻하고 부드러운 색감을 재현하여, 향수를 자극하는 빈티지한 사진을 만들어줍니다. 은은한 그레인과 파란색 강조는 레트로 감성을 더하며, 일상 속 소중한 순간들을 아련하게 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 레트로,빈티지,따뜻한,필름,색감\n[Moods] 따뜻한,빈티지,향수를 불러일으키는,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +5 Red, -7 Blue\r\nDynamic Range: DR200\r\nHighlights: -0.5\r\nShadows: +0.5\r\nColor: -3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '234',
+    pageContent:
+      '[Summary] 이 레시피는 가을의 화려한 색감을 극대화하여, 따뜻하고 선명한 이미지를 연출합니다. Classic Negative 필름 시뮬레이션과 색상, 채도, 화이트 밸런스 조정을 통해 단풍의 아름다움을 더욱 강조하며, 몽환적인 분위기를 더합니다. 가을 풍경, 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 가을,단풍,따뜻함,선명함,필름\n[Moods] 따뜻한,선명한,풍성한,극적인\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: +8 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: 0.0\r\nShadows: -1.0\r\nColor: +3\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '235',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 에어로컬러 필름을 기반으로 하여, 따뜻하고 부드러운 색감과 함께 푸른 하늘을 더욱 선명하게 표현해 줍니다. 특히, 은은한 그레인 효과와 높은 채도를 통해 빈티지하면서도 매력적인 사진을 연출할 수 있습니다. 풍경 사진이나 스냅 사진에 활용하면 좋습니다.\n[Base Film Simulation] Eterna\n[Keywords] 필름,색감,빈티지,하늘,따뜻함\n[Moods] 따뜻한,몽환적인,선명한\n[ShootingTypes] snap,landscape\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: 6450K\r\nWB Shift: +4 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: +1.0\r\nShadows: +3.0\r\nColor: +1\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '236',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로 하여, 강렬한 그레인과 색상 대비를 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 따뜻한 색감과 선명한 디테일이 조화롭게 어우러져, 일상적인 스냅 사진에 깊이와 개성을 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻함,필름,선명함,대비\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +1 Red, -3 Blue\r\nDynamic Range: DR400\r\nHighlights: +0.5 (use 1 if your camera doesn’t support 0.5)\r\nShadows: -1.5 (use -1 if your camera doesn’t support -1.5)\r\nColor: +2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: +4\r\nEV compensation: 0',
+  },
+  {
+    id: '237',
+    pageContent:
+      '[Summary] 이 레시피는 숲의 깊은 곳, 햇살이 부드럽게 쏟아지는 풍경을 담아내기 위해 고안되었습니다. Classic Chrome의 부드러운 색감과 Grain Effect, 그리고 Blue의 강조는 몽환적이면서도 빈티지한 분위기를 연출하며, 따뜻함과 신비로움을 동시에 느낄 수 있게 해줍니다. 숲 속의 고요함과 생명력을 사진에 담아보세요.\n[Base Film Simulation] Classic Chrome\n[Keywords] 숲,나무,그린,빈티지,몽환적인\n[Moods] 차분한,몽환적인,신비로운,따뜻한\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +7 Red, -5 Blue\r\nDynamic Range: DR400\r\nHighlights: -0.5 (use 0 if you need to)\r\nShadows: +1.5 (use +2 if you need to)\r\nColor: -4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: -2/3 to 0 aiming for moody shadow areas',
+  },
+  {
+    id: '238',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 가을 햇살 아래에서 촬영한 듯한, 부드럽고 빈티지한 색감을 선사합니다. Classic Chrome의 차분함과 색상 보정, 그리고 DR200의 적절한 계조 표현은 은은하면서도 깊이 있는 분위기를 연출하며, 일상 속 소중한 순간들을 더욱 특별하게 기록할 수 있도록 해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 가을,따뜻함,빈티지,클래식,색감\n[Moods] 따뜻한,차분한,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: 5200K\r\nWB Shift: +1 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1.0\r\nShadows: +2.0\r\nColor: -2\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 1',
+  },
+  {
+    id: '239',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 강렬한 그레인 효과를 통해 독특한 분위기를 연출합니다. 특히, 석양 아래 인물이나 풍경을 촬영할 때, 붉은 톤과 푸른 톤의 조화가 돋보이며, 몽환적이면서도 드라마틱한 사진을 만들어낼 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,선명한,색감 강조,필름\n[Moods] 따뜻한,몽환적인,드라마틱,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: Shade\r\nWB Shift: +7 Red, -3 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: -1\r\nColour: -4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '240',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감으로, 아련한 추억을 떠올리게 하는 사진을 만들어줍니다. 특히 인물 사진에서 부드러운 피부톤과 함께 몽환적인 분위기를 연출하며, 일상 속 소중한 순간들을 더욱 특별하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,노스텔지어,필름,인물\n[Moods] 따뜻한,차분한,몽환적인,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: +7 Red, -7 Blue\r\nDynamic Range: DR100\r\nHighlights: +0.5 (Use 0 if your camera doesn’t support 0.5)\r\nShadows: -1.5 (Use -2 if your camera doesn’t support -1.5)\r\nColour: -3\r\nSharpness: -0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '241',
+    pageContent:
+      '[Summary] 이 레시피는 시네마틱한 느낌을 주면서도, 따뜻하고 부드러운 색감으로 일상적인 순간들을 아름답게 담아낼 수 있도록 설계되었습니다. 특히, 밝은 햇살 아래에서 인물이나 풍경 사진을 촬영할 때, 부드러운 필름 느낌과 함께 몽환적인 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,따뜻한,부드러운,색감\n[Moods] 따뜻한,몽환적인,부드러운,영화같은\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large (remove for smoothest images)\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: Daylight\r\nWB Shift: +1 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: +2\r\nColour: -1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -1\r\nEV compensation: +1/3',
+  },
+  {
+    id: '242',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 은은한 필름 그레인과 파란색 강조를 통해 따뜻하면서도 생동감 넘치는 분위기를 연출합니다. 특히, 일상 스냅 사진이나 풍경 사진에서 매력적인 색감을 표현할 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,클래식 크롬,채도,대비,따뜻함\n[Moods] 따뜻한,선명한,빈티지,생동감 있는\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto Ambience\r\nWB Shift: +3 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1.5\r\nShadows: +1.5\r\nColor: +3\r\nSharpness: +2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0 or +1/3',
+  },
+  {
+    id: '243',
+    pageContent:
+      '[Summary] 이 레시피는 푸른색과 차가운 색감을 강조하여 몽환적이고 드라마틱한 분위기를 연출합니다. 특히, 하늘이나 바다를 담은 풍경 사진에 적합하며, 필름 그레인과 색상 대비를 통해 독특한 감성을 더합니다. 마치 영화의 한 장면처럼 기억에 남는 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,푸른색,대비,필름,몽환적인\n[Moods] 몽환적인,차가운,드라마틱,신비로운\n[ShootingTypes] snap,landscape\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: 5800K\r\nWB Shift: +3 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: 0.0\r\nShadows: -0.5\r\nColor: +4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: +2\r\nEV compensation: +1/3',
+  },
+  {
+    id: '244',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 햇살 아래 지중해의 풍경을 담아낸 듯한, 선명하고 생생한 색감의 사진을 만들어줍니다. Classic Chrome의 차분함과 Colour Chrome의 강렬한 색상 표현이 조화롭게 어우러져, 기억 속에 오래도록 간직하고 싶은 순간들을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,지중해,선명한,채도,필름\n[Moods] 따뜻한,선명한,생생한,화사한\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: 0.0\r\nShadows: 0.0\r\nColor: +3\r\nSharpness: 0\r\nISO Noise Reduction: -2\r\nClarity: 0\r\nEV compensation: 0 – 1 as required',
+  },
+  {
+    id: '245',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 질감을 선사합니다. 강한 그레인 효과와 파란색 계열의 섬세한 표현은 아련한 분위기를 더하며, 인물 사진이나 일상 스냅에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,필름,인물,노스텔지어\n[Moods] 따뜻한,빈티지,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto White Priority\r\nWB Shift: +4 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: -0.5 (or 0 if your camera doesn’t do 0.5)\r\nShadows: +1.5 (or 1 if your camera doesn’t do 0.5)\r\nColor: +1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '246',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 부드러운 그레인과 색상, 그리고 파란색 강조를 통해 빈티지하면서도 몽환적인 분위기를 연출합니다. 특히, 일상 스냅이나 로우파이 감성을 담은 사진에 적합하며, 따뜻하고 차분한 느낌을 선사할 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,색감,로파이,몽환적인\n[Moods] 따뜻한,차분한,몽환적인,레트로,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto White Priority\r\nWB Shift: +3 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: +2.0\r\nShadows: -1.0\r\nColor: -3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: -1/3 (to balance out the +2 highlights)',
+  },
+  {
+    id: '247',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 금속적인 질감을 통해 빈티지하면서도 세련된 느낌을 자아냅니다. 특히, 빛과 그림자의 대비를 극대화하여 드라마틱한 분위기를 연출하며, 흑백 사진 특유의 고전적인 매력을 더합니다. 도시의 풍경이나 인물 사진에 적용하면 독특한 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,빈티지,금속,질감\n[Moods] 차분한,고전적인,세련된,드라마틱한\n[ShootingTypes] snap,documentry\n[Settings] Acros + green\r\nGrain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: -1 Red, +1 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.0\r\nShadows: +1.0\r\nMono Shift: WC -1, MG -1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '248',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 햇살 아래 도시의 활기찬 모습을 담아내기에 적합하며, 강렬한 색감과 필름 그레인이 어우러져 독특한 분위기를 연출합니다. 특히, 역동적인 도시 풍경이나 인물 사진에 활용하면 드라마틱한 느낌을 더할 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻함,도시,선명함,필름\n[Moods] 따뜻한,선명한,활기찬,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: 6250K\r\nWB Shift: -1 Red, -3 Blue\r\nDynamic Range: DR100\r\nHighlights: +2.0\r\nShadows: +0.5\r\nColor: +4\r\nSharpness: +2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '249',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로 하여, 은은한 그레인과 부드러운 색감, 그리고 따뜻한 톤을 더해 빈티지하면서도 아련한 분위기를 연출합니다. 특히 인물 사진에서 부드러운 피부 표현과 함께 몽환적인 느낌을 자아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,따뜻한,색감,인물\n[Moods] 따뜻한,차분한,그리운,빈티지,클래식\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: +1 Red, -4 Blue\r\nDynamic Range: DR400\r\nHighlights: -0.5\r\nShadows: -1.5\r\nColor: +3\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '250',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 울트라맥스 필름을 연상시키는 따뜻하고 부드러운 색감과 은은한 그레인, 그리고 파란색 강조를 통해 쨍한 느낌을 더하여, 일상 스냅 사진에 적합한 레시피입니다. 특히 인물 사진에서 자연스러운 피부톤과 함께 매력적인 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 필름,따뜻한,색감,인물,스냅\n[Moods] 따뜻한,선명한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Underwater\r\nWB Shift: +3 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: +0.5 (use +1 if your camera doesn’t support 0.5)\r\nShadows: +0.5 (use 0 if your camera doesn’t support 0.5)\r\nColor: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '251',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 레트로한 감성을 담아내는 데 초점을 맞추고 있습니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 적용하면, 아련하면서도 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻함,레트로,필름,색감\n[Moods] 따뜻한,빈티지,레트로,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Shade\r\nWB Shift: +3 Red, -4 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.0\r\nShadows: -1.0\r\nColor: -1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '252',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 파스텔톤과 빈티지한 색감으로, 아련하고 몽환적인 분위기를 연출합니다. 특히, 파란색 계열의 색상을 강조하여 하늘이나 바다를 더욱 아름답게 표현하며, 따뜻한 느낌을 더해 일상 속 소중한 순간들을 기록하기에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,필름,파스텔,몽환적인\n[Moods] 따뜻한,몽환적인,아련한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +3 Red, -6 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.5\r\nShadows: +0.5\r\nColour: -4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '253',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 파란색 강조를 통해 도시의 일상적인 풍경을 몽환적이고 빈티지한 분위기로 담아냅니다. 특히, 부드러운 하이라이트와 섀도우 설정은 따뜻하고 차분한 느낌을 주어, 사진에 깊이와 감성을 더합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,도시,부드러움,빈티지,파스텔\n[Moods] 몽환적인,부드러운,차분한,따뜻한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Fluorescent 1\r\nWB Shift: -5 Red, +5 Blue\r\nDynamic Range: DR200\r\nHighlights: +1.0\r\nShadows: +2.0\r\nColor: -4\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '254',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 필름 그레인, 그리고 파란색의 강조를 통해 아련한 빈티지 감성을 표현합니다. 특히, 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 촬영할 때, 아련하고 따뜻한 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,따뜻함,부드러움,색감,필름\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Daylight\r\nWB Shift: +6 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: +1.0\r\nShadows: +1.0\r\nColor: +4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: +1/3',
+  },
+  {
+    id: '255',
+    pageContent:
+      '[Summary] 이 레시피는 차분하면서도 영화적인 분위기를 연출하며, 부드러운 그레인과 차가운 색감으로 몽환적인 느낌을 더합니다. 특히, 야간 촬영이나 인물 사진에 적합하며, 드라마틱한 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,차가운,필름,빈티지,색감\n[Moods] 몽환적인,차가운,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: 6600K\r\nWB Shift: +1 Red, +2 Blue\r\nDynamic Range: DR400\r\nHighlights: -2.0\r\nShadows: 0.0\r\nColor: +2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '256',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 파스텔톤과 하이키 스타일을 통해 몽환적이고 따뜻한 분위기를 연출합니다. 인물 사진이나 일상 스냅에서 부드럽고 화사한 느낌을 담아낼 수 있으며, 특히 햇살 좋은 날 야외 촬영에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 파스텔,부드러움,화사함,인물,하이키\n[Moods] 따뜻한,몽환적인,부드러운,화사한\n[ShootingTypes] snap,portrait\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off (Weak or High as needed for blue skies)\r\nWhite Balance: Auto\r\nWB Shift: -1 Red, 0 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: -1\r\nColour: +3\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: +2\r\nEV compensation: +1 for a high key style',
+  },
+  {
+    id: '257',
+    pageContent:
+      '[Summary] 이 레시피는 여행의 따뜻한 기억을 필름 사진 특유의 질감과 색감으로 담아냅니다. Classic Negative 필름 시뮬레이션과 섬세한 색상 보정을 통해, 마치 오래된 사진첩을 펼쳐보는 듯한 아련한 감성을 선사합니다. 특히, 파란색 계열의 색상을 강조하여 맑은 하늘과 바다를 더욱 생생하게 표현해 줍니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 여행,필름,빈티지,따뜻함,색감\n[Moods] 따뜻한,빈티지,선명한,레트로\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +3 Red, -5 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: -1\r\nColour: -1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '258',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여, 부드럽고 따뜻한 색감과 함께 은은한 필름 그레인 효과를 더해 빈티지한 감성을 자아냅니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 잘 어울리며, 아련하고 몽환적인 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 빈티지,부드러운,따뜻한,레트로,필름\n[Moods] 따뜻한,몽환적인,차분한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: +5 Red, -3 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: -1\r\nColour: -4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '259',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 하여, 흑백 필름의 강렬한 대비와 거친 질감을 재현합니다. 따뜻한 색감과 섀도우의 강조는 드라마틱한 분위기를 연출하며, 일상적인 스냅 사진에 빈티지한 감성을 더해줍니다. 마치 오래된 영화 필름을 보는 듯한 느낌을 선사합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,흑백,필름,질감,대비\n[Moods] 따뜻한,차분한,드라마틱,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: 7500K\r\nWB Shift: 0 Red, 0 Blue\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: +2\r\nColour: -3\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '260',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로 하여, 맑고 깨끗한 느낌을 주면서도, 색상과 대비를 살려 풍경 사진이나 인물 사진에 적합합니다. 특히, DR400 설정은 밝은 부분의 디테일을 살리고, Clarity와 Sharpness 설정을 통해 선명하고 디테일한 이미지를 표현합니다.\n[Base Film Simulation] Provia\n[Keywords] 선명한,깨끗한,풍경,인물,대비\n[Moods] 화사한,선명한,깨끗한,자연스러운\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +1 Red, -3 Blue\r\nDynamic Range: DR400\r\nHighlights: -0.5\r\nShadows: +0.5\r\nColour: -2\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: +3\r\nEV compensation: +1/3',
+  },
+  {
+    id: '261',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 필름 그레인과 은은한 색감, 그리고 푸른색과 붉은색의 미묘한 조화를 통해 따뜻하면서도 빈티지한 분위기를 연출합니다. 특히 인물 사진이나 자연스러운 풍경을 담기에 적합하며, 일상 속 소중한 순간들을 아련하게 기록할 수 있도록 도와줄 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 필름,빈티지,색감,인물,풍경\n[Moods] 따뜻한,부드러운,생생한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: -2 Red, +1 Blue\r\nDynamic Range: DR400\r\nHighlights: +1\r\nShadows: -1\r\nColour: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '262',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 몽환적인 분위기를 연출하며, 특히 인물 사진에 적합합니다. 따뜻한 색감과 은은한 그레인 효과는 빈티지한 감성을 더하고, 파란색 계열의 강조는 사진에 깊이를 더해줄 것입니다. 부드러운 하이라이트와 섀도우는 전체적인 톤을 차분하게 만들어, 편안하고 따뜻한 느낌을 선사할 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 부드러운,파스텔,몽환적인,빈티지,인물\n[Moods] 따뜻한,몽환적인,부드러운,차분한\n[ShootingTypes] portrait,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +7 Red, -7 Blue\r\nDynamic Range: DR100\r\nHighlights: -2\r\nShadows: -2\r\nColour: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: +2\r\nEV compensation: -1/3',
+  },
+  {
+    id: '263',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 색감과 강렬한 입자, 그리고 넓은 다이나믹 레인지를 통해 마치 오래된 영화 필름을 보는 듯한 빈티지한 느낌을 선사합니다. 특히, 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 드라마틱하게 담아내기에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻함,필름,색감,다이나믹\n[Moods] 따뜻한,빈티지,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: +6 Red, -5 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: 0\r\nColour: +1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: -1\r\nEV compensation: 0',
+  },
+  {
+    id: '264',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 바다의 시원함과 따뜻함을 동시에 담아내는 독특한 분위기를 연출합니다. 특히, 파란색 계열의 색상을 강조하여 맑고 깨끗한 느낌을 주며, 은은한 그레인 효과와 부드러운 톤으로 빈티지한 감성을 더합니다. 일상 속에서 마주하는 아름다운 순간들을 필름 사진 특유의 감성으로 기록하기에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식 네거티브,바다,파란색,빈티지,필름\n[Moods] 청량한,따뜻한,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: 5000K\r\nWB Shift: -1 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: -2\r\nColour: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: 0',
+  },
+  {
+    id: '265',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 그레인, 그리고 따뜻한 색조를 통해 마치 코닥 포트라 필름으로 촬영한 듯한 빈티지한 느낌을 선사합니다. 일상 속의 소중한 순간들을 부드럽고 따뜻하게 기록하고 싶은 분들께 추천합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 부드러움,따뜻함,인물,필름,빈티지\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] daily,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +1 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: +0.5\r\nShadows: -1.5\r\nColour: +1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3 or +2/3 to give a brighter look',
+  },
+  {
+    id: '266',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 필름 그레인, 그리고 빈티지한 느낌을 담아 일상적인 스냅 사진에 적합합니다. 특히, 인물 사진에서 자연스러운 피부톤과 부드러운 분위기를 연출하며, 톤 조정과 화이트 밸런스 설정을 통해 따뜻하고 매력적인 이미지를 만들어줍니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 따뜻한,필름,인물,스냅,빈티지\n[Moods] 따뜻한,부드러운,빈티지,레트로\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Daylight\r\nWB Shift: +4 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: +1\r\nColour: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '267',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 질감과 은은한 색감, 그리고 영화 같은 분위기를 연출하여 일상적인 순간들을 특별하게 담아낼 수 있도록 합니다. 특히, 따뜻하면서도 몽환적인 분위기를 통해 기억에 남는 사진을 만들 수 있습니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,부드러움,필름,색감,드라마틱\n[Moods] 몽환적인,따뜻한,차분한,영화 같은\n[ShootingTypes] daily,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: 8000K\r\nWB Shift: +1 Red, +5 Blue\r\nDynamic Range: DR400\r\nHighlights: 0\r\nShadows: +2\r\nColour: -4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '268',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로 따뜻하고 긍정적인 분위기를 연출하며, 부드러운 그레인과 색상 대비를 통해 빈티지한 감성을 더합니다. 특히, 밝은 야외 풍경이나 일상 스냅 사진에 적합하며, 긍정적이고 행복한 분위기를 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 따뜻한,빈티지,선명한,필름,색감\n[Moods] 따뜻한,활기찬,빈티지,행복한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto (White Priority)\r\nWB Shift: +5 Red, -7 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: +1\r\nColour: -3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '269',
+    pageContent:
+      '[Summary] 이 레시피는 마치 오래된 영화 필름처럼 부드럽고, 따뜻하며, 은은한 색감과 함께 몽환적인 분위기를 연출합니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 잘 어울리며, 아련한 추억을 불러일으키는 듯한 사진을 만들어 줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 레트로,빈티지,필름,따뜻함,색감\n[Moods] 따뜻한,빈티지,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: 400\r\nHighlight: -1\r\nShadow: -2\r\nColor: +1\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: 0\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 5200K, +1 Red & -6 Blue\r\nISO: Auto, up to ISO 6400',
+  },
+  {
+    id: '270',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 필름 특유의 질감을 살려 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 피부톤을 자연스럽게 표현하며, 몽환적인 분위기를 더해줄 것입니다. 오래된 사진첩을 열어보는 듯한 아련한 감성을 느낄 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,인물,따뜻한,필름,색감\n[Moods] 따뜻한,빈티지,몽환적인,부드러운\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: +3\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpening: -4\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nImage Quality: Normal\r\nAspect Ratio: 1:1\r\nWhite Balance: 6300K, +6 Red & +3 Blue\r\nISO: 3200 – 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '271',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 따뜻하고 부드러운 색감과 필름 그레인의 질감을 더하여 빈티지한 분위기를 연출합니다. 인물 사진에 특히 잘 어울리며, 아련하고 따뜻한 감성을 담아낼 수 있습니다. 노출 보정을 통해 더욱 풍부한 표현이 가능합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,인물,필름,색감\n[Moods] 따뜻한,빈티지,부드러운,아련한\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +2\r\nColor: -2\r\nSharpening: +2\r\nNoise Reduction: -4\r\nGrain: Strong\r\nColor Chrome Effect: Off\r\nWhite Balance: 6300K, -1 Red & -4 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +2/3 to + 1-1/3 (typically)',
+  },
+  {
+    id: '272',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 따뜻하면서도 빈티지한 색감과 강렬한 입자감을 통해 아련한 분위기를 연출합니다. 특히, 깊이 있는 색상 표현과 드라마틱한 대비는 일상적인 순간들을 특별하게 만들어 줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,색감,대비,질감\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] DR200\r\nWB Auto, R-3 B-9\r\nISO-NR -4\r\nCOLOR 3\r\nSHARP -4\r\nH-TONE -2\r\nS-TONE -2\r\nCLARITY 0\r\nColor Chrome Strong\r\nColor Chrome weak\r\nGRAIN Strong Large',
+  },
+  {
+    id: '273',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 거친 질감을 통해, 잊혀진 시간 속의 아름다움을 표현합니다. 특히, 빛과 그림자의 드라마틱한 연출을 통해 흑백 사진 특유의 깊이와 매력을 극대화하여, 묵직하고 강렬한 인상을 남기는 사진을 만들 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,강렬한,콘트라스트,필름\n[Moods] 드라마틱,강렬한,고전적인,빈티지\n[ShootingTypes] snap,daily\n[Settings] Acros R\r\nDynamic Range: DR100\r\nWhite Balance: Auto, R+7 B-9\r\nISO-NR: -4\r\nCOLOR: -0\r\nSHARP: -4\r\nH-TONE: 4\r\nS-TONE: +2.5\r\nCLARITY: +3\r\nColor Chrome: off\r\nColor Chrome: off\r\nGRAIN: STRONG Large\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '274',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 피부톤과 따뜻한 색감, 그리고 은은한 필름 그레인 효과를 통해 아련하고 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 몽환적인 분위기를 자아내며, 따뜻하고 차분한 느낌을 선사할 것입니다. 마치 오래된 사진첩 속 한 페이지를 꺼내 보는 듯한 감성을 느낄 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,인물,부드러움,필름,몽환적인\n[Moods] 따뜻한,부드러운,몽환적인,차분한\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR100\r\n White Balance: Auto, R+3 B-8\r\n ISO Noise Reduction: -4\r\n Color: -2\r\n Sharpness: -4\r\n Highlight Tone: -2\r\n Shadow Tone: +3.5\r\n Clarity: 0\r\n Color Chrome Effect: Off\r\n Color Chrome Effect Blue: Weak\r\n Grain Effect: Strong, Small',
+  },
+  {
+    id: '275',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로, 따뜻하고 선명한 색감과 은은한 필름 그레인을 더하여 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 강렬한 색상 대비와 깊이 있는 색감을 통해 인상적인 사진을 만들 수 있습니다. 일상 스냅이나 특별한 순간을 기록하기에 적합합니다.\n[Base Film Simulation] Provia\n[Keywords] 필름,빈티지,따뜻한,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: +3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Auto, +6 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)\r\nFilter  1/4 Black Pro Mist Filter. Alternatively, you can use this with a 10% CineBloom',
+  },
+  {
+    id: '276',
+    pageContent:
+      '[Summary] 이 레시피는 푸른 하늘과 자연의 색감을 더욱 선명하고 풍부하게 담아내어, 따뜻하면서도 드라마틱한 분위기를 연출합니다. 특히, 풍경 사진에서 돋보이는 대비와 색감으로 생동감 넘치는 결과물을 얻을 수 있을 것입니다. 마치 한 폭의 그림과 같은 인상적인 사진을 만들어보세요.\n[Base Film Simulation] Classic Chrome\n[Keywords] 풍경,선명한,따뜻한,필름,대비\n[Moods] 따뜻한,선명한,생생한,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +3\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: -3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Daylight, -2 Red & +5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '277',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감으로 일상 속의 소중한 순간들을 기록하기에 적합합니다. 특히, 인물 사진이나 풍경 사진에서 은은한 필름 느낌을 살려 아련한 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 따뜻한,빈티지,풍경,인물,필름\n[Moods] 따뜻한,부드러운,빈티지,레트로\n[ShootingTypes] snap,daily\n[Settings] Patreon early access',
+  },
+  {
+    id: '278',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 따뜻하고 빈티지한 색감과 필름 느낌을 더하여 아련한 분위기를 연출합니다. 특히 파란색을 강조하여, 여행지의 풍경이나 일상 속 순간들을 더욱 감성적으로 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,색감,여행\n[Moods] 따뜻한,아련한,빈티지,그리운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong\r\nGrain Size: Small\r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Strong\r\nWhite Balance Shift: R:3. B:3\r\nHighlight Tone: -1\r\nShadow Tone: -1\r\nColor: +2\r\nSharpness: -3\r\nNoise Reduction: -4\r\nClarity: -1',
+  },
+  {
+    id: '279',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 비전3 250D 필름을 모방하여, 클래식 크롬의 부드러운 색감과 강렬한 그레인, 그리고 색상 대비를 통해 빈티지하면서도 영화적인 분위기를 연출합니다. 특히, 따뜻한 색감과 깊이 있는 그림자는 일상적인 스냅 사진에 드라마틱한 감성을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 시네마틱,필름,빈티지,따뜻함,선명함\n[Moods] 따뜻한,드라마틱,선명한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range Auto\r\nWhite Balance 6100K, -R2 +B5\r\nColor Chrome Effect Strong\r\nColor Chrome FX Blue  Strong\r\nHighlight​ +1\r\nShadow +3\r\nColor +2\r\nSharpness -2\r\nClarity​ 0\r\nNoise Reduction -4\r\nGrain Effect Strong\r\nGrain Size  / Large\r\nISO Auto ISO 6400\r\nExposure Compensation -1/3 to +1/3',
+  },
+  {
+    id: '280',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 은은한 그레인과 따뜻한 색감으로 빈티지한 분위기를 연출합니다. 일상 속 소중한 순간들을 아련하고 그리운 느낌으로 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,따뜻함,색감,인물\n[Moods] 따뜻한,빈티지,아련한,그리운\n[ShootingTypes] snap,daily\n[Settings] Patreon early access',
+  },
+  {
+    id: '281',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로 하여, 따뜻하고 부드러운 색감과 빈티지한 분위기를 연출합니다. 특히, 일상 스냅 사진이나 인물 사진에 적합하며, 은은한 색감과 부드러운 톤으로 편안한 느낌을 선사합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,빈티지,따뜻함,색감,필름\n[Moods] 따뜻한,빈티지,클래식,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: 0\r\nColor: +1\r\nSharpness: 0\r\nNoise Reduction: -2\r\nWhite Balance: Auto, +2 Red & -2 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '282',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 골드 톤과 강렬한 필름 그레인, 그리고 깊이 있는 색감을 통해 아날로그 감성을 극대화합니다. 마치 오래된 영화 필름을 보는 듯한 빈티지한 느낌을 주며, 일상적인 풍경이나 인물 사진에 특별한 분위기를 더해줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 아날로그,따뜻한,빈티지,골드,필름\n[Moods] 따뜻한,빈티지,몽환적인,황금빛\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: +1.5\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -4\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Daylight, +4 Red & -9 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '283',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 햇살 아래에서 필름 카메라로 촬영한 듯한 부드럽고 빈티지한 느낌을 선사합니다. 특히, 여름날의 풍경이나 인물 사진에 잘 어울리며, 은은한 색감과 부드러운 질감으로 몽환적인 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,부드러운,필름,여름\n[Moods] 따뜻한,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: -1\r\nColor: +1\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: -4\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 5500K, +3 Red & -7 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +1 (typically)',
+  },
+  {
+    id: '284',
+    pageContent:
+      '[Summary] 이 레시피는 일상 속의 소중한 순간들을 부드럽고 따뜻하게 담아내는데 최적화되어 있습니다. Astia 필름 시뮬레이션의 부드러운 색감과 DR400의 넓은 다이나믹 레인지는 하이라이트와 섀도우의 디테일을 살려주며, 은은한 그레인 효과는 아날로그 감성을 더해줍니다. 특히 인물 사진이나 일상 스냅에 활용하면 좋습니다.\n[Base Film Simulation] Astia\n[Keywords] 부드러움,화사함,인물,일상,필름\n[Moods] 따뜻한,부드러운,화사한,자연스러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +1\r\nColor: -1\r\nColor Chrome Effect: N/A (X-Trans III) or Off (X-T3/X-T30)\r\nSharpness: -1\r\nNoise Reduction: -4\r\nGrain: Weak\r\nWhite Balance: Auto, -1 Red & -2 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '285',
+    pageContent:
+      "[Summary] 이 레시피는 클래식 크롬의 부드러운 색감과 파란색 강조를 통해 몽환적이고 따뜻한 분위기를 연출합니다. 특히, 하이라이트와 섀도우 조절을 통해 부드러운 톤을 유지하면서도, 선명도를 낮춰 꿈결 같은 이미지를 만들어냅니다. 일상 스냅이나, 따뜻한 감성을 담고 싶은 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,몽환적인,파랑 강조,부드러운,빈티지\n[Moods] 따뜻한,몽환적인,부드러운,차분한\n[ShootingTypes] snap,daily\n[Settings] WB: AUTO, R2 B-1 (can also be used with R0 B0 if you don't fancy small color casts on skin tones)\r\nDynamic Range: 200\r\nTone Curve: H:-2 S:-1\r\nColor: +4\r\nColor Chrome: OFF\r\nColor Chrome FX Blue: Strong\r\nSharp: -4  (for a slightly dreamy look...)\r\nClarity: 0\r\nNoise reduction: -4  (no need for NR if shooting in this conditions and lowest ISO)\r\nGrain: OFF\r\nEV. compensation: usually +1\r\nISO Auto (320-3200)",
+  },
+  {
+    id: '286',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 슬라이드 필름을 연상시키는 선명하고 대비가 강한 색감으로, 풍경 사진에 특히 적합합니다. 하이라이트와 섀도우의 섬세한 조절을 통해, 강렬하면서도 디테일을 잃지 않는 이미지를 연출할 수 있습니다. 차갑고 쨍한 색감은 시원한 느낌을 주며, 역동적인 풍경을 담아내기에 좋습니다.\n[Base Film Simulation] Provia\n[Keywords] 슬라이드 필름,선명한,대비,색감,풍경\n[Moods] 선명한,화려한,극적인,차가운\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -1 (Medium-Soft)\r\nShadow: +2 (Hard)\r\nColor: +2 (High)\r\nSharpness: +1 (Medium-Hard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Fluorescent 1, -4 Red & +7 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '287',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 빈티지하고 아날로그적인 감성을 극대화합니다. 부드러운 색감과 강한 그레인 효과는 오래된 사진첩을 넘기는 듯한 따뜻함과 추억을 불러일으키며, 일상적인 스냅 사진에 특별한 깊이를 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,아날로그,클래식,색감,필름\n[Moods] 따뜻한,빈티지한,차분한,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +2\r\nShadow: 0\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpness: -1\r\nClarity: -2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 9100K, -4 Red & +4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '288',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감으로, 마치 오래된 사진첩을 넘기는 듯한 빈티지한 감성을 선사합니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하며, 은은한 색감으로 아련한 분위기를 연출합니다. 일상 속 소중한 순간들을 따뜻하게 기록하고 싶은 분들께 추천합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,부드러운,색감,인물\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,portrait\n[Settings] Dynamic Range: DR200\r\nHighlight: -2 (Soft)\r\nShadow: -1 (Medium-Soft)\r\nColor: +2 (High)\r\nSharpness: -1 (Medium-Soft)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Incandescent, +6 Red & -7 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '289',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 흑백 대비와 질감을 통해 드라마틱하고 빈티지한 느낌을 선사합니다. 특히 빛과 그림자의 대비를 강조하여 흑백 사진 특유의 깊이감을 더하며, 거친 질감 표현으로 아날로그 감성을 자극합니다. 도시의 풍경, 인물, 또는 다큐멘터리 사진에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,대비,질감,빈티지\n[Moods] 드라마틱,강렬한,차분한,거친\n[ShootingTypes] snap,documentry\n[Settings] Monochrome+R\r\nDynamic Range: DR400\r\nHighlight: -1 (Medium-Soft)\r\nShadow: +2 (Hard)\r\nSharpness: +1 (Medium-Hard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Fluorescent 1, -4 Red & +7 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: 0 to +1 (typically)',
+  },
+  {
+    id: '290',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 색감과 강렬한 푸른색 대비를 통해, 마치 오래된 필름 사진과 같은 빈티지한 느낌을 선사합니다. 특히, 거친 질감과 몽환적인 분위기는 일상 속 특별한 순간들을 더욱 드라마틱하게 담아낼 것입니다. 밤하늘, 바다, 또는 빛바랜 풍경을 촬영하는 데 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 필름,빈티지,따뜻한,푸른색,질감\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: +2\r\nShadow: +4\r\nColor: 0\r\nNoise Reduction: -4\r\nSharpness: -3\r\nClarity: -2\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 2900K, +9 Red & -9 Blue\r\nISO: 12800\r\nExposure Compensation: -2/3 to +2/3 (typically)',
+  },
+  {
+    id: '291',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션과 강렬한 대비, 그리고 선명한 디테일을 통해 흑백의 깊이를 더합니다. 특히, 파란색 계열의 색상 강조는 흑백 사진에 독특한 매력을 더하며, 일상 속의 순간들을 드라마틱하게 담아낼 수 있도록 해줍니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,고대비,선명함,디테일,필름\n[Moods] 드라마틱,강렬한,선명한,모던한\n[ShootingTypes] snap,daily\n[Settings] Simulation: ACROS + Y\r\nGrain Effect: Off\r\nWB: Auto R0  B0 \r\nHighlights: +4\r\nShadows: -1\r\nColour: Toning WC -2 MG -1\r\nSharpening: +3\r\nClarity: +5\r\nNoise Reduction: -4\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nExposure Compensation:  +1/3 to +1 1/3\r\nISO: Auto, up to ISO 3200',
+  },
+  {
+    id: '292',
+    pageContent:
+      '[Summary] 흑백 필름 시뮬레이션과 강렬한 콘트라스트 설정은 드라마틱하고 빈티지한 느낌을 자아냅니다. 특히, 빛과 그림자의 대비를 강조하여 흑백 사진 특유의 깊이 있는 표현을 가능하게 합니다. 일상 속 순간들을 묵직하고 강렬하게 담아낼 수 있는 레시피입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,콘트라스트,빈티지,질감\n[Moods] 드라마틱,강렬한,차분한,고전적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR 400 (or 100/200 for more contrast)  \r\nHighlight: +2  \r\nShadow: +3 \r\nToning: WC2 MG2  \r\nNoise Reduction: -4   \r\nSharpening: -2  \r\nClarity: +3  \r\nGrain Effect: weak small  \r\nColor Chrome Effect: off \r\nColor Chrome Effect Blue: off \r\nWhite Balance: Daylight R7  B-7  \r\nISO: Auto, up to ISO 6400  \r\nSlightly underexposed',
+  },
+  {
+    id: '293',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 선명한 디테일을 동시에 살려줍니다. 특히, 색상 대비를 강조하고 노이즈를 줄여, 쨍하면서도 부드러운 느낌을 주는 사진을 연출합니다. 일상 스냅이나 풍경 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,선명한,색감,필름\n[Moods] 따뜻한,선명한,빈티지,클래식\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR 200  \r\nHighlight: -1  \r\nShadow: 0 \r\nColor: +1  \r\nNoise Reduction: -4   \r\nSharpening: +1  \r\nClarity: +5  \r\nGrain Effect: weak small  \r\nColor Chrome Effect: strong  \r\nColor Chrome Effect Blue: off \r\nWhite Balance: K6300 R-2  B5  \r\nISO: Auto, up to ISO 1600  \r\nSlightly overexposed',
+  },
+  {
+    id: '294',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 선명한 디테일이 조화롭게 어우러져, 마치 오래된 필름 사진을 보는 듯한 매력을 선사합니다. 인물 사진의 피부톤을 화사하게 표현하면서도, 전반적으로 빈티지한 분위기를 연출하여 일상 속 특별한 순간들을 더욱 돋보이게 해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,인물,따뜻한,필름,선명함\n[Moods] 따뜻한,선명한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR 200  \r\nHighlight: +1  \r\nShadow: 0 \r\nColor: +1  \r\nNoise Reduction: -4   \r\nSharpening: +1  \r\nClarity: +5  \r\nGrain Effect: weak large  \r\nColor Chrome Effect: strong  \r\nColor Chrome Effect Blue: weak \r\nWhite Balance: daylight R1  B-4  \r\nISO: Auto, up to ISO 1600  \r\nSlightly overexposed',
+  },
+  {
+    id: '295',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로, 선명하고 생생한 색감과 강렬한 대비를 통해 풍경 사진에 최적화된 레시피입니다. 특히, 파란색과 붉은색 계열의 색상을 강조하여 자연의 아름다움을 더욱 돋보이게 하며, 맑고 깨끗한 이미지를 연출합니다. 쨍한 햇살 아래 펼쳐진 풍경이나, 역동적인 순간을 담아내기에 적합합니다.\n[Base Film Simulation] Astia\n[Keywords] 선명한,풍경,색감,대비,필름\n[Moods] 생생한,선명한,극적인,따뜻한\n[ShootingTypes] landscape,snap\n[Settings] dynamic range        DRAUTO\r\nhighlight        +2\r\nshadow        +2\r\ncolor        +3\r\nnoise reduction        -4\r\nsharpness        +2\r\nclarity        +5\r\nchrome fx        Strong\r\nchrome fx blue        Strong\r\nwhite balance        Auto, +2 red & -2 blue\r\niso        up to ISO 800\r\nexposure compensation        -1/3 to +1/3',
+  },
+  {
+    id: '296',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하면서도 선명하고 빈티지한 느낌을 줍니다. 특히, 푸른색 강조를 통해 하늘이나 바다를 더욱 돋보이게 하며, 약간의 과다 노출 설정으로 부드러운 분위기를 연출합니다. 일상 스냅 사진이나, 따뜻한 감성을 담고 싶은 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식 네거티브,선명함,푸른색 강조,빈티지,따뜻함\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR 200/ DR 400  \r\nHighlight: -1  \r\nShadow: -1  \r\nColor: +2 \r\nNoise Reduction: -4   \r\nSharpening: +1  \r\nClarity: +5  \r\nGrain Effect: small/weak  \r\nColor Chrome Effect: weak  \r\nColor Chrome Effect Blue: strong  \r\nWhite Balance: daylight R0  B-6  \r\nISO: Auto, up to ISO 3200  \r\nNormal exposure > slightly overexposed',
+  },
+  {
+    id: '297',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 빈티지한 색감과 필름 그레인을 더하여 아련하고 따뜻한 분위기를 연출합니다. 빛바랜 사진처럼 부드럽고, 몽환적인 느낌을 주며, 일상적인 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,색감,필름,노이즈\n[Moods] 따뜻한,빈티지,아련한,그리운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +2\r\nShadow: 0\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpness: -1\r\nGrain Effect: Strong\r\nColor Chrome Effect: Off/NA\r\nWhite Balance: 9100K, -4 Red & +4 Blue\r\nISO: Auto up to ISO 12800\r\nExposure Compensation: -1/3 to +1/3',
+  },
+  {
+    id: '298',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 부드러운 색감과 강렬한 색상 대비를 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히 인물 사진에서 따뜻하고 선명한 느낌을 주어, 일상 속 특별한 순간들을 더욱 돋보이게 할 것입니다. 마치 오래된 영화 필름처럼 아련한 감성을 자극하는 사진을 만들 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,인물,따뜻한,선명한\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Color Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weeak\r\nWhite Balance: Auto, +4 Red & -1 Blue\r\nHighlight: -2\r\nShadow: -2\r\nColor: +3\r\nClarity: -0\r\n\r\nDynamic Range: DR400\r\nGrain Off\r\nSharpness: +1',
+  },
+  {
+    id: '299',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 입자와 푸른 색감, 그리고 따뜻한 색감의 조화로 독특한 분위기를 연출합니다. 특히, 빛이 강한 야외나 대비가 큰 상황에서 드라마틱하고 빈티지한 느낌을 담아낼 수 있습니다. 마치 오래된 영화의 한 장면처럼, 기억 속에 깊이 각인될 사진을 만들어 보세요.\n[Base Film Simulation] Eterna\n[Keywords] 필름,빈티지,따뜻한,푸른색,흑백\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: +2\r\nShadow: +4\r\nColor: 0\r\nNoise Reduction: -4\r\nSharpness: -3\r\nClarity: -2\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 2900K, +9 Red & -9 Blue\r\nISO: 12800\r\nExposure Compensation: -2/3 to +2/3 (typically)',
+  },
+  {
+    id: '300',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 하여, 차분하면서도 빈티지한 색감을 연출합니다. 하이라이트와 섀도우를 조절하여 부드러운 대비를 만들고, 선명도를 높여 디테일을 살리는 것이 특징입니다. 일상 스냅이나 풍경 사진에 적합하며, 따뜻하고 고전적인 분위기를 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,대비,선명함\n[Moods] 따뜻한,차분한,선명한,고전적인\n[ShootingTypes] snap,daily\n[Settings] dynamic range: DR100\r\nhighlight: -1\r\nshadow: -1\r\ncolor: +2\r\nwhite balance: auto\r\nwB shift: R:-2, B:-2\r\nnoise reduction: -4\r\nsharpening: +4\r\nclarity: 0\r\ngrain effect: {off}\r\ncolor chrome effect:{off}\r\ncolor chrome effect blue:{off}',
+  },
+  {
+    id: '301',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 부드러운 색감과 함께 은은한 필름 그레인을 더하여 아련하고 빈티지한 분위기를 연출합니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 적합하며, 일상 속 소중한 순간들을 아날로그 감성으로 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻함,색감,아날로그\n[Moods] 따뜻한,빈티지,아련한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: 0\r\nColor: -3\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: -3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 6900K, -5 Red & +5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +1 (typically)',
+  },
+  {
+    id: '302',
+    pageContent:
+      '[Summary] 이 레시피는 Eterna Bleach Bypass 필름 시뮬레이션을 사용하여, 마치 영화의 한 장면처럼 강렬하고 드라마틱한 이미지를 연출합니다. 고대비와 저채도로 인해 거친 질감과 깊이 있는 표현이 가능하며, 다큐멘터리나 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Eterna Bleach Bypass\n[Keywords] 시네마틱,고대비,저채도,드라마틱,필름\n[Moods] 강렬한,드라마틱한,거친,영화같은\n[ShootingTypes] documentry,snap\n[Settings] Currently app patrons only',
+  },
+  {
+    id: '303',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 부드러운 색감과 Incandescent 화이트 밸런스의 따뜻함, 그리고 섬세한 설정들을 통해, 멜랑콜리한 감성을 자아내는 사진을 만들어줍니다. 차분하면서도 몽환적인 분위기는 일상 속의 특별한 순간들을 더욱 돋보이게 할 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,몽환적인,차분한,푸른색,필름\n[Moods] 차분한,몽환적인,쓸쓸한,차가운,고독한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +3\r\nShadow: -1\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpness: -1\r\nGrain Effect: Weak\r\nColor Chrome Effect: Off/NA\r\nWhite Balance: Incandescent, +4 Red & -9 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: -1/3 to -1 (typically)',
+  },
+  {
+    id: '304',
+    pageContent:
+      '[Summary] 이 레시피는 지중해의 푸른 바다와 하늘을 담은 듯한, 강렬하고 선명한 색감과 필름 특유의 질감을 표현합니다. 특히, 파란색 계열의 색상을 강조하여 시원하고 청량한 느낌을 주며, 따뜻한 색감과 대비를 이루어 드라마틱한 분위기를 연출합니다. 마치 한 폭의 그림엽서처럼, 기억 속에 오래도록 간직될 아름다운 풍경 사진을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 파란색,지중해,빈티지,필름,선명함\n[Moods] 따뜻한,선명한,생생한,드라마틱\n[ShootingTypes] snap,landscape\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: +3\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -3\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 5800K, +1 Red & -3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '305',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 아날로그적인 질감을 통해, 마치 오래된 사진첩을 펼쳐보는 듯한 향수를 불러일으킵니다. 특히 자연광 아래의 풍경이나 인물 사진에 적용하면, 빈티지하면서도 몽환적인 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,따뜻함,아날로그,풍경,색감\n[Moods] 따뜻한,빈티지,몽환적인,차분한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +3\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -3\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Daylight, +6 Red & -3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '306',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로 하여, 따뜻하고 빈티지한 색감과 부드러운 그레인 효과를 통해 아련하고 그리운 느낌을 자아냅니다. 일상 스냅이나 인물 사진에 특히 잘 어울리며, 과거의 추억을 불러일으키는 듯한 사진을 만들어 줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,따뜻한,인물,스냅\n[Moods] 따뜻한,빈티지,아련한,그리운\n[ShootingTypes] snap,daily\n[Settings] Currently app patrons only',
+  },
+  {
+    id: '307',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 톤이 강조된 색상과 부드러운 그레인 효과를 통해 빈티지한 느낌을 선사합니다. 특히 인물 사진에서 매력적인 분위기를 연출하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,따뜻한,선명한,빈티지,인물\n[Moods] 따뜻한,선명한,빈티지,레트로\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -2\r\nShadow: +2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: -2\r\nGrain Effect: Weak\r\nColor Chrome Effect: Off/NA\r\nWhite Balance: Fluorescent 2, -1 Red & -6 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +1',
+  },
+  {
+    id: '308',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 대비와 은은한 색감으로, 일상 속의 소중한 순간들을 따뜻하고 빈티지한 감성으로 담아낼 수 있게 해줍니다. 특히 인물 사진에서 자연스러운 피부톤과 부드러운 분위기를 연출하는 데에 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,클래식,색감,대비,인물\n[Moods] 따뜻한,차분한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1 (Medium-Hard)\r\nShadow: +1 (Medium-Hard)\r\nColor: +1 (Medium-High)\r\nSharpness: 0 (Standard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Auto, 0 Red & -1 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: 0 to +1/3 (typically)',
+  },
+  {
+    id: '309',
+    pageContent:
+      '[Summary] 이 레시피는 과거의 향수를 불러일으키는 따뜻하고 부드러운 색감의 사진을 만들어줍니다. Classic Negative 필름 시뮬레이션과 섬세한 색상 조정, 그리고 푸른색 강조를 통해, 아련하고 빈티지한 분위기를 연출하며, 인물 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,필름,색감,인물\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off (but you can add some if you prefer)\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: 5600K\r\nWB Shift: +4 Red, +5 Blue\r\nDynamic Range: DR200\r\nHighlights: +1.5\r\nShadows: -1.5\r\nColour: +2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '310',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 여름날의 햇살 아래, 부드럽고 몽환적인 분위기를 담아냅니다. 크림처럼 부드러운 색감과 빈티지한 느낌이 어우러져, 일상 속 특별한 순간들을 아름답게 기록할 수 있게 해줍니다. 특히, 햇살 좋은 날의 스냅 사진에 잘 어울릴 것 같습니다.\n[Base Film Simulation] Eterna\n[Keywords] 여름,따뜻함,크림,빈티지,몽환적인\n[Moods] 따뜻한,몽환적인,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: 7500K\r\nWB Shift: +3 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: +2\r\nShadows: -2\r\nColour: -4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: +4\r\nEV compensation: +2/3',
+  },
+  {
+    id: '311',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 강렬한 색상과 대비를 통해 레트로 감성을 극대화합니다. 특히, 푸른색 강조와 DR400 설정은 풍부한 계조와 드라마틱한 분위기를 연출하며, 빈티지한 느낌을 더해줍니다. 일상 속 특별한 순간들을 아련하고 따뜻하게 기록하기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 레트로,대비,색감,필름,빈티지\n[Moods] 따뜻한,강렬한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: 8000K\r\nWB Shift: +1 Red, +5 Blue\r\nDynamic Range: DR400\r\nHighlights: 0\r\nShadows: +2\r\nColour: -4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '312',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 빈티지한 느낌을 살려, 마치 오래된 필름 사진을 보는 듯한 매력을 선사합니다. 인물 사진이나 일상 스냅에 활용하면 은은하고 몽환적인 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,따뜻한,부드러운,필름,인물\n[Moods] 따뜻한,빈티지,부드러운,몽환적인\n[ShootingTypes] snap,portrait\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Fluorescent 1\r\nWB Shift: -3 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: +1\r\nShadows: -0.5 (use -1 if your camera does’t have -0.5)\r\nColour: -2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0 (or use -2 for a subtle bloom effect)\r\nEV compensation: +2/3',
+  },
+  {
+    id: '313',
+    pageContent:
+      '[Summary] 이 레시피는 차갑고 세련된 분위기를 연출하며, 선명한 대비와 함께 피부톤을 아름답게 표현해 줍니다. 특히, 도시의 풍경이나 인물 사진에 적합하며, 차분하면서도 시크한 느낌을 담아낼 수 있습니다.\n[Base Film Simulation] Eterna\n[Keywords] 차가운,세련된,선명한,대비,피부톤\n[Moods] 세련된,차가운,도시적인,선명한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: -4 Red, +1 Blue\r\nDynamic Range: DR200\r\nHighlights: +1.5\r\nShadows: -0.5\r\nColour: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: +3\r\nEV compensation: +2/3 to +1 2/3 (important to overexpose)',
+  },
+  {
+    id: '314',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 은은한 색감과 필름 특유의 질감을 살려, 일상 속 소중한 순간들을 따뜻하고 몽환적인 분위기로 담아낼 수 있습니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 잘 어울립니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,파스텔,흐림,색감\n[Moods] 따뜻한,몽환적인,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: -1 Red, +3 Blue\r\nDynamic Range: DR200\r\nHighlights: +1.5\r\nShadows: -0.5\r\nColour: +1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3 to +2/3 for the washed out look',
+  },
+  {
+    id: '315',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 선명하고 대비가 강한, 그리고 몽환적인 느낌을 동시에 담아내는 사진을 만들어줍니다. 특히, 푸른 하늘과 대비되는 풍경 사진에 적합하며, 따뜻하면서도 드라마틱한 분위기를 연출할 수 있습니다. 마치 한 폭의 그림엽서처럼 기억에 남는 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,터키색,대비,선명함,필름\n[Moods] 따뜻한,선명한,몽환적인,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: 6600K\r\nWB Shift: -5 Red, -1 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: +1\r\nColour: -3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '4',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 파스텔톤을 통해 북유럽의 따뜻하고 포근한 감성을 담아냅니다. 특히, 자연광 아래에서 인물이나 풍경 사진을 촬영할 때, 몽환적이면서도 매력적인 분위기를 연출할 수 있습니다. 마치 동화 속 한 장면처럼, 일상의 순간들을 아름답게 기록할 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 따뜻한,부드러운,북유럽,파스텔,필름\n[Moods] 몽환적인,따뜻한,부드러운,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: 4400K\r\nWB Shift: 0 Red, -4 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: 1\r\nColor: 4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '32',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하면서도 선명한 색감과 강렬한 대비를 통해 빈티지한 감성을 표현합니다. 특히, 색상 강조와 선명도 조절을 통해 피사체의 질감을 살리고, 파란색 계열의 색상을 은은하게 강조하여 매력적인 이미지를 연출합니다. 일상 스냅 사진이나, 특별한 순간을 기록하는 데 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식 네거티브,선명함,색감 강조,필름,빈티지\n[Moods] 따뜻한,선명한,빈티지,강렬한\n[ShootingTypes] snap,daily\n[Settings] DR-P: Weak\r\nWhite Balance: 6900K, R-7, B-7\r\nISO Noise Reduction: -4\r\nColor: +2\r\nSharpness: +4\r\nHighlight Tone: 0\r\nShadow Tone: 0\r\nClarity: +3\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nGrain Effect: Weak, Small\r\n\r\nFilter: FLD Filter Necessary',
+  },
+  {
+    id: '33',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 강렬한 그레인과 색감, 그리고 톤 조절을 통해 빈티지하면서도 몽환적인 분위기를 연출합니다. 특히, 빛과 그림자의 대비를 강조하여 드라마틱한 느낌을 더하며, 잊혀져가는 과거의 기억을 떠올리게 합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,몽환적인,색감,질감\n[Moods] 따뜻한,몽환적인,드라마틱,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nWhite Balance: R7 B4\r\nISO Noise Reduction: -4\r\nColor: -2\r\nSharpness: -1\r\nHighlight Tone: -2\r\nShadow Tone: +2\r\nClarity: -3\r\nChrome Color Effect: Strong\r\nChrome Blue Effect: Weak\r\nGrain Effect: Strong Large',
+  },
+  {
+    id: '34',
+    pageContent:
+      '[Summary] 이 레시피는 어두운 밤의 도시를 배경으로, 강렬하고 선명한 색감과 몽환적인 분위기를 담아낼 수 있습니다. Velvia 필름 시뮬레이션과 색상 강조 설정을 통해, 네온사인 불빛과 그림자의 대비를 극대화하여 드라마틱한 야경 사진을 연출할 수 있을 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 야경,필름,선명함,색감,강렬함\n[Moods] 드라마틱,몽환적인,강렬한,차가운\n[ShootingTypes] night,snap\n[Settings] Dynamic Range (DR): Auto\r\nWhite Balance (WB): 4270K, Red -3, Blue -8\r\nISO Noise Reduction (ISO-NR): -4\r\nColor: +2\r\nSharpness (SHARP): 0\r\nHighlight Tone (H-TONE): -2\r\nShadow Tone (S-TONE): -1\r\nClarity: -3\r\nColor Chrome Effect (CCR): Strong\r\nColor Chrome Effect Blue (CCB): Off\r\nGrain Effect: Weak, Small',
+  },
+  {
+    id: '35',
+    pageContent:
+      '[Summary] 이 레시피는 광활한 사막의 풍경과 거친 질감을 담아, 영화 속 한 장면을 연상시키는 듯한 인상을 줍니다. 따뜻한 색감과 강렬한 하이라이트, 그리고 독특한 그레인 효과는 마치 모래 언덕 위를 걷는 듯한 몽환적인 분위기를 자아냅니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,모래,따뜻한,영화,질감\n[Moods] 따뜻한,몽환적인,드라마틱,거친\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range (DR): 100\r\nAuto White Balance (AWB): Red Shift +7, Blue Shift -9\r\nISO Noise Reduction (ISO-NR): -4\r\nColor: -3\r\nSharpness: 0\r\nHighlight Tone (H-Tone): +4\r\nShadow Tone (S-Tone): +2\r\nClarity: -4\r\nColor Chrome Effect (CCR): OFF\r\nColor Chrome Effect Blue (CCB): OFF\r\nGrain Effect: Weak, Large',
+  },
+  {
+    id: '36',
+    pageContent:
+      '[Summary] 이 레시피는 시네마틱한 분위기를 연출하며, 특히 밤의 풍경이나 네온사인 아래에서 몽환적인 분위기를 자아낼 것입니다. 강렬한 그레인과 푸른색 강조는 영화적인 느낌을 더하고, 따뜻한 색감은 아련한 감성을 자극합니다. 어두운 밤거리를 걷는 인물이나 도시의 야경을 담기에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,따뜻함,푸른색 강조,고대비\n[Moods] 몽환적인,따뜻한,드라마틱,영화같은\n[ShootingTypes] night,snap\n[Settings] Grain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Weak\r\nWhite Balance: 7700K, -9 Red & +5 Blue\r\nDynamic Range: DR400\r\nHighlight: -0.5\r\nShadow: +1.5\r\nColor: +3\r\nSharpness: 0\r\nHigh ISO NR: -4\r\nClarity: -3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '37',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드러운 그레인과 색상 표현을 통해 따뜻하고 빈티지한 분위기를 연출합니다. 특히, 밝은 환경에서의 스냅 사진이나 일상적인 풍경을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,클래식,색감,빈티지,따뜻함\n[Moods] 따뜻한,선명한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome FX Blue: Weak\r\nWhite Balance: Auto White Priority, -3 Red & -1 Blue\r\nDynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nColor: +2\r\nSharpness: 0\r\nHigh ISO NR: -4\r\nClarity: +2\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '38',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 수페리아 100 필름의 따뜻하고 부드러운 색감을 재현하여, 일상적인 스냅 사진에 적합합니다. 특히, 인물 사진에서 빈티지하면서도 아련한 분위기를 연출할 수 있습니다. 부드러운 하이라이트와 섀도우, 그리고 약한 그레인 효과는 사진에 따뜻함과 깊이를 더해줍니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,색감,인물\n[Moods] 따뜻한,빈티지,부드러운,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Off\r\nWhite Balance: Daylight, 0 Red & -1 Blue\r\nDynamic Range: DR-Auto\r\nHighlight: -1\r\nShadow: -2\r\nColor: +1\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -2\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '39',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 강렬한 색상과 부드러운 질감을 동시에 표현합니다. DR400 설정은 하이라이트와 섀도우의 디테일을 살려주며, 따뜻하면서도 빈티지한 감성을 자아냅니다. 특히, 일상 스냅 사진에서 독특한 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,색감,대비,질감\n[Moods] 따뜻한,드라마틱,몽환적인,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Off\r\nWhite Balance: 6400K, -1 Red & +8 Blue\r\nDynamic Range: DR400\r\nHighlight: +2\r\nShadow: -2\r\nColor: +3\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -4\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1 to -1/3 (typically)',
+  },
+  {
+    id: '40',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 여름날의 햇살 아래에서 포착한 순간들을 부드럽고, 빈티지한 감성으로 담아낼 수 있도록 설계되었습니다. 은은한 필름 그레인과 색감, 그리고 부드러운 톤은 마치 오래된 영화의 한 장면처럼 아련하고 몽환적인 분위기를 연출할 것입니다. 특히, 일상 속 소소한 풍경이나 인물 사진에 잘 어울릴 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 따뜻한,여름,필름,빈티지,부드러움\n[Moods] 따뜻한,몽환적인,부드러운,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 5800K\r\nWB Shift: -2 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 1\r\nColor: 4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -4\r\nEV suggestion: 0',
+  },
+  {
+    id: '316',
+    pageContent:
+      '[Summary] 이 레시피는 자연스러운 색감과 부드러운 톤으로, 일상 속의 소중한 순간들을 따뜻하게 담아낼 수 있도록 도와줍니다. 특히, 자연광 아래에서 인물이나 풍경 사진을 촬영할 때, 은은하면서도 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 자연,스냅,부드러움,색감,필름\n[Moods] 따뜻한,자연스러운,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +3 Red, -3 Blue\r\nDynamic Range: DR100\r\nHighlights: 0\r\nShadows: -1\r\nColour: -2\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '317',
+    pageContent:
+      '[Summary] 이 레시피는 여름날의 싱그러운 녹음을 담아내기에 적합하며, 부드러운 색감과 은은한 필름 그레인, 그리고 푸른 하늘을 더욱 선명하게 표현해 줍니다. 잔디밭 위에서 즐거운 시간을 보내는 모습이나, 푸르른 자연 속에서 여유를 만끽하는 순간들을 포착하기에 좋습니다.\n[Base Film Simulation] Astia\n[Keywords] 여름,싱그러움,그린,선명함,부드러움\n[Moods] 따뜻한,싱그러운,자연스러운,청량한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, -3 Blue\r\nDynamic Range: DR400\r\nHighlights: +0.5 (use 1 on older cameras)\r\nShadows: -1.5 (use 1 on older cameras)\r\nColour: -1\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '318',
+    pageContent:
+      '[Summary] 이 레시피는 바랜 필름의 질감과 독특한 색감을 재현하여, 아련하고 몽환적인 분위기를 연출합니다. 특히, 빛 바랜 듯한 색감과 강렬한 푸른색 강조는 특별한 감성을 더하며, 일상적인 스냅 사진에 빈티지한 매력을 불어넣어 줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,필름,몽환적인,색감,노출\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Shade\r\nWB Shift: +6 Red, +6 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: -2\r\nColour: -2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0 (go to -5, or use a mist filter for extra effect)\r\nEV compensation: +1 stop for the burned out look',
+  },
+  {
+    id: '319',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여, 자연의 풍경을 부드럽고 생생하게 담아냅니다. 특히 파란색 계열의 색상을 강조하여, 맑고 깨끗한 하늘과 바다를 더욱 돋보이게 합니다. 전반적으로 따뜻하면서도 선명한 색감으로, 일상 속의 아름다운 순간들을 기록하기에 적합합니다.\n[Base Film Simulation] Astia\n[Keywords] 풍경,자연,선명함,부드러움,색감\n[Moods] 따뜻한,선명한,자연스러운,생생한\n[ShootingTypes] landscape,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Daylight\r\nWB Shift: +2 Red, -2 Blue\r\nDynamic Range: DR100\r\nHighlights: +1.5 (use 1 on older cameras)\r\nShadows: -1.5 (use 1 on older cameras)\r\nColour: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: +2\r\nEV compensation: 0',
+  },
+  {
+    id: '320',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 질감을 연출합니다. 특히, 노을 아래 인물 사진이나 일상 스냅 사진에 적합하며, 마치 오래된 필름 사진처럼 아련하고 몽환적인 분위기를 자아낼 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,필름,노을,인물\n[Moods] 따뜻한,빈티지,아련한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: +6 Red, -6 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.5 (use -2 if your cameras doesn’t have -1.5)\r\nShadows: +0.5 (use 0 if your cameras doesn’t have +0.5)\r\nColour: -4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '321',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 아늑한 분위기를 연출하며, 레트로 감성을 자극하는 사진을 만들어줍니다. Pro Neg. Std 필름 시뮬레이션과 강한 그레인 효과, 그리고 색상 보정을 통해 빈티지하면서도 매력적인 색감을 표현합니다. 일상 속 소중한 순간들을 아련하고 따뜻하게 기록하기에 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,따뜻한,레트로,필름,색감\n[Moods] 따뜻한,빈티지,아련한,포근한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +5 Red, -7 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: +1\r\nColour: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: +1/3',
+  },
+  {
+    id: '322',
+    pageContent:
+      '[Summary] 이 레시피는 마치 서부 영화의 한 장면처럼, 클래식 크롬의 부드러운 색감과 강렬한 파란색 강조를 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 따뜻한 색감과 대비를 살려, 기억 속에 깊이 각인될 듯한 인상적인 사진을 만들 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,빈티지,영화,색감,대비\n[Moods] 따뜻한,빈티지한,드라마틱한,영화같은\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 0\r\nColour: -1\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '323',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 필름 그레인과 따뜻한 색감, 그리고 파란색의 깊이를 더하여, 마치 예술 영화의 한 장면을 연상시키는 이미지를 연출합니다. 특히, 일상 속의 특별한 순간들을 감성적으로 담아내기에 적합하며, 몽환적이면서도 따뜻한 분위기를 자아냅니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,빈티지,파랑,따뜻함\n[Moods] 몽환적인,따뜻한,차분한,영화같은\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Daylight\r\nWB Shift: +2 Red, -7 Blue\r\nDynamic Range: DR100\r\nHighlights: -1\r\nShadows: -1\r\nColour: -4\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '324',
+    pageContent:
+      '[Summary] 이 레시피는 에테르나 필름 시뮬레이션을 기반으로, 강렬한 그레인과 색상 보정을 통해 독특한 분위기를 연출합니다. 특히 하늘과 나무, 바다를 담은 풍경 사진에서 드라마틱하고 빈티지한 느낌을 강조하며, 고대비와 차가운 색감으로 시선을 사로잡을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 고대비,드라마틱,필름,푸른색 강조,빈티지\n[Moods] 강렬한,차가운,드라마틱,거친\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: +4 Red, -6 Blue\r\nDynamic Range: DR400\r\nHighlights: +1\r\nShadows: +2\r\nColour: 0\r\nSharpness: +2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: -1/3 to +1/3',
+  },
+  {
+    id: '325',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 은은한 그레인과 파란색 강조를 통해 빈티지하면서도 선명한 이미지를 연출합니다. DR400 설정은 하이라이트와 섀도우 디테일을 살려주며, 따뜻하고 차분한 색감으로 일상 스냅에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,클래식,선명한,필름,색감\n[Moods] 따뜻한,차분한,선명한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -4 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.5\r\nShadows: -1\r\nColour: -3\r\nSharpness: +2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: +2/3',
+  },
+  {
+    id: '326',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 황금빛과 필름 느낌을 살려, 선명하고 빈티지한 이미지를 연출합니다. 특히, 황금 시간대의 풍경이나 일상 스냅 사진에 적합하며, 강렬한 색감과 부드러운 분위기를 동시에 담아낼 수 있습니다.\n[Base Film Simulation] Provia\n[Keywords] 따뜻한,황금빛,필름,선명한,빈티지\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain strong small (for medium format look grain)\r\nCCr strong CCb strong\r\nWb 6000k +2r (for a more warmer image, best in golden hour scenes) \r\nDr200\r\nH-1 s+1\r\nColor-2\r\nSharpness+2\r\nNr-2\r\nClarity+3\r\nEv until you reach the blowing highlights\r\nFor more scenes, like even nightly scenes Auto Ambience priority +3r -5b, and desaturated to color -4',
+  },
+  {
+    id: '327',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 여름날의 영화 같은 장면을 연출합니다. Classic Chrome 필름 시뮬레이션과 강한 그레인 효과는 빈티지한 감성을 더하고, DR400 설정은 하이라이트와 섀도우의 디테일을 살려 드라마틱한 분위기를 연출합니다. 선명함과 색상 조절을 통해 몽환적이면서도 기억에 남는 사진을 만들 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 시네마틱,여름,빈티지,따뜻함,필름\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: 400\r\nClarity: 0 / +3\r\nNR: 0\r\nHighlight: -1\r\nShadows: +2\r\nColor: -1/-2\r\nSharpness: +3\r\nGrain: Large & Strong\r\nWB: Daylight\r\nWB Shift: R -5 B -5',
+  },
+  {
+    id: '328',
+    pageContent:
+      '[Summary] Ilford 필름의 질감과 흑백의 대비를 극대화하여, 거칠고 드라마틱한 흑백 사진을 연출합니다. 특히, 빛과 그림자의 강렬한 대비를 통해 잊혀져가는 과거의 기억을 불러일으키는 듯한 인상을 줍니다. 오래된 영화의 한 장면처럼, 깊이 있는 흑백의 세계를 경험할 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,필름,빈티지,질감\n[Moods] 차분한,빈티지한,드라마틱한,거친\n[ShootingTypes] snap,documentry\n[Settings] Acros Yellow\r\n400 DR\r\nISO NR -4\r\nSharp -3\r\nH -2\r\nS +1 / 0.5 for X-e4 / X-S10/X-T4\r\n+1 / +2 over expose (generally +1)\r\nGrain small and strong\r\nColor Chrome Effect Strong\r\nColor Chrome FX Blue Strong\r\nMonocromatic Color WC +1 MG-1 (Sepia Toned)',
+  },
+  {
+    id: '329',
+    pageContent:
+      '[Summary] 이 레시피는 에테르나 필름 시뮬레이션을 기반으로 하여, 강렬한 색상과 필름 그레인이 더해져 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 따뜻한 색감과 선명한 디테일은 일상 스냅 사진에 매력적인 표현을 더해줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻한,빈티지,선명한,필름\n[Moods] 따뜻한,강렬한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain: Strong, Large\r\nCC Effect: Strong\r\nCC FX Blue: Weak\r\nWB: 9500K\r\nH-2, S+2.5\r\nColor: 4\r\nSharpness: 0\r\nClarity: 0\r\nNR: -4',
+  },
+  {
+    id: '330',
+    pageContent:
+      '[Summary] 이 레시피는 Eterna 필름 시뮬레이션을 기반으로 하여, 강렬한 그레인과 높은 채도를 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 따뜻한 색감과 고대비 설정은 잊혀진 영화의 한 장면을 연상시키며, 일상적인 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,빈티지,따뜻한,고대비\n[Moods] 따뜻한,드라마틱,강렬한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColor FX: Off\r\nWhite Balance: 9500K\r\nH-2, S 2.5\r\nColor: 4\r\nSharpness: 0\r\nNR: -4\r\nClarity: 0',
+  },
+  {
+    id: '331',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 함께, 강렬한 대비를 통해 드라마틱한 분위기를 연출합니다. 특히 인물 사진에서 부드러운 피부톤과 함께 돋보이는 색감을 표현하며, 일상 스냅 사진에 매력적인 느낌을 더해줄 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 컬러 네거티브,빈티지,따뜻한,대비,피부톤\n[Moods] 따뜻한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2 (Hard)\r\nShadow: +2 (Hard)\r\nColor: -2 (Low)\r\nSharpness: -1 (Medium-Soft)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: 3200K, +8 Red & -8 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '332',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 은은한 필름 그레인, 그리고 약간의 빈티지한 느낌을 담아, 일상 속의 소중한 순간들을 아련하고 감성적으로 기록할 수 있도록 해줍니다. 특히 인물 사진이나 스냅 사진에 활용하면, 잊지 못할 추억을 더욱 아름답게 만들어 줄 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,부드러움,색감,필름,인물\n[Moods] 따뜻한,차분한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: +2\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpness: +1\r\nClarity: -2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Auto, +1 Red & -2 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +1/3 (typically)',
+  },
+  {
+    id: '333',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 은은한 필름 그레인과 강렬한 색상 표현으로 빈티지한 감성을 자아냅니다. 특히, 일상 속의 소중한 순간들을 몽환적이면서도 생동감 넘치게 담아낼 수 있을 것입니다. 마치 오래된 영화 필름처럼, 추억을 아름답게 기록해 보세요.\n[Base Film Simulation] Eterna\n[Keywords] 따뜻한,빈티지,필름,색감,선명함\n[Moods] 따뜻한,몽환적인,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -2\r\nShadow: +4\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: 5100K, +5 Red & -3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '334',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 필름 특유의 질감을 살려 아련하고 몽환적인 분위기를 연출합니다. 특히, 노스탤지어한 감성을 자극하는 사진을 원하는 분들에게 적합하며, 일상 속 소중한 순간들을 더욱 특별하게 담아낼 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,따뜻한,필름,몽환적인,색감\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] 44740"Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: 0\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -3\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 4700K, -3 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)"',
+  },
+  {
+    id: '335',
+    pageContent:
+      '[Summary] 이 레시피는 인물 사진에 적합하며, 강렬한 색감과 필름 그레인 효과로 따뜻하고 선명한 분위기를 연출합니다. 하이라이트와 섀도우 톤 조절을 통해 대비를 살리고, 컬러 크롬 효과로 깊이 있는 색감을 더하여 드라마틱한 느낌을 줍니다. 일상 속 스냅 사진이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,선명한,필름,따뜻한,대비\n[Moods] 따뜻한,선명한,활기찬,드라마틱\n[ShootingTypes] portrait,snap\n[Settings] Push/Pull (Exposure): -0.3\r\nDynamic Range: Auto\r\nGrain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Effect Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: R: 1 B: -2\r\nHighlight Tone: +1\r\nShadow Tone: +1\r\nColour: +2\r\nSharpness: +1\r\nNoise Reduction: -3',
+  },
+  {
+    id: '336',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션을 기반으로 하여, 선명하고 강렬한 색감과 높은 대비를 통해 잊혀진 옛 시절의 따뜻한 감성을 표현합니다. 특히, 풍경 사진에서 돋보이는 톤과 디테일은 마치 오래된 필름 사진을 보는 듯한 빈티지한 느낌을 자아냅니다.\n[Base Film Simulation] Velvia\n[Keywords] 빈티지,풍경,고채도,필름,대비\n[Moods] 따뜻한,선명한,강렬한,빈티지,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] WB for daylight / interior : 3200K R:8 B:-8 \r\nWB for night : Auto R:-2 B:0\r\nIso: 1600 (to emulate a natural grain)\r\nShadows : 0 \r\nHighlights: +1\r\nColor : -4 for daylight / 0 for night\r\nSharpness : -4\r\nIso NR: -4\r\nClarity : +2\r\nDR : 400%\r\nCC Effect : Strong\r\nCC Blue : Off\r\nGrain: Off',
+  },
+  {
+    id: '337',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 필름 특유의 질감을 살려, 인물 사진이나 스냅 사진에 적합합니다. 클래식 크롬 필름 시뮬레이션과 강한 그레인 효과는 빈티지한 감성을 더하며, 하이라이트와 섀도우 조절을 통해 부드러운 분위기를 연출합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,따뜻한,빈티지,인물,부드러움\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,portrait\n[Settings] DR200\r\nHL -2\r\nShadows -0.5\r\nColor +2\r\nClarity +3\r\nsharpness -4\r\nWb 5200K +3,-5. Try 5500K for warmer, or auto with the same offset if the situation is difficult.\r\nGrain: strong/large.(or small for more of a 120-film look.)',
+  },
+  {
+    id: '338',
+    pageContent:
+      '[Summary] 이 레시피는 깊고 어두운 톤을 통해 몽환적이고 드라마틱한 분위기를 연출합니다. 푸른색 강조와 빈티지한 느낌이 어우러져, 마치 영화 속 한 장면처럼 신비로운 이미지를 만들어낼 것입니다. 특히 밤의 도시 풍경이나 어두운 실내 촬영에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,어두운,푸른색,빈티지,드라마틱\n[Moods] 몽환적인,차가운,신비로운,차분한\n[ShootingTypes] snap,night\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +7 Red, -7 Blue\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: +1\r\nColour: -4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: +2\r\nEV compensation: -2/3 (important to underexpose)',
+  },
+  {
+    id: '339',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 여름날의 추억을 담아내기 위해, 클래식 네거티브 필름 시뮬레이션을 기반으로 빈티지한 감성을 극대화합니다. 강한 그레인과 색상 보정을 통해 아련하고 몽환적인 분위기를 연출하며, 70년대 여름의 따뜻함과 레트로 감성을 사진에 담아낼 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,필름,여름,레트로\n[Moods] 따뜻한,몽환적인,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Flourescent 3\r\nWB Shift: +7 Red, -9 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: -2\r\nColour: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: 0 to +2/3',
+  },
+  {
+    id: '340',
+    pageContent:
+      '[Summary] 이 레시피는 황금빛 노을 아래에서 촬영된 인물 사진에 특히 잘 어울리며, 부드러운 색감과 필름 그레인이 더해져 따뜻하고 빈티지한 분위기를 연출합니다. Classic Negative 필름 시뮬레이션과 색상 보정을 통해 아련하면서도 매력적인 이미지를 만들어낼 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻함,황금빛,인물,필름\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,portrait\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: 6000k\r\nWB Shift: +4 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: -1\r\nColour: -4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -1\r\nEV compensation: +1/3 or +2/3',
+  },
+  {
+    id: '341',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로 하여, 은은한 색감과 부드러운 분위기를 연출합니다. 코닥 크롬 필름의 따뜻한 색감을 재현하려는 시도로, 일상적인 스냅 사진에 적합하며, 빈티지한 감성을 더해줍니다. 특히, 맑은 날의 풍경이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻함,일상,선명함,필름\n[Moods] 따뜻한,빈티지,선명한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -3 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 0\r\nColour: -1\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: +1 (leave off for faster shooting)\r\nEV compensation: +1/3',
+  },
+  {
+    id: '342',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 필름 그레인과 함께 따뜻하고 빈티지한 색감을 연출하여, 마치 오래된 영화의 한 장면을 보는 듯한 느낌을 줍니다. 특히 파란색 계열의 색상을 강조하여, 몽환적인 분위기를 더하며 일상 속의 특별한 순간들을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,따뜻한,필름,시네마틱,파스텔\n[Moods] 따뜻한,몽환적인,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +5 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: +2\r\nColour: +2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '343',
+    pageContent:
+      '[Summary] 이 레시피는 깊고 푸른 바다의 신비로움을 담아내기 위해 Classic Chrome 필름 시뮬레이션을 기반으로 제작되었습니다. DR400 설정은 넓은 다이나믹 레인지를 확보하여 밝은 부분과 어두운 부분의 디테일을 동시에 살리고, Colour Chrome Blue 설정을 통해 파란색 계열의 색상을 강조하여 시원하고 청량한 느낌을 더합니다. 바다, 하늘, 그리고 그 사이의 모든 순간을 생생하고 드라마틱하게 포착할 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 바다,파랑,선명한,필름,다이나믹\n[Moods] 청량한,시원한,생동감 있는,드라마틱한\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto White Priority\r\nWB Shift: -1 Red, -3 Blue\r\nDynamic Range: DR400\r\nHighlights: +0.5\r\nShadows: -1\r\nColour: -3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: +3\r\nEV compensation: none',
+  },
+  {
+    id: '344',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 필름 느낌을 통해, 여름날의 추억을 아련하게 담아낼 수 있도록 설계되었습니다. 특히 인물 사진에서 부드러운 피부톤과 몽환적인 분위기를 연출하며, 일상 속 소중한 순간들을 아름답게 기록할 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 따뜻한,부드러운,필름,색감,인물\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Daylight\r\nWB Shift: +6 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: -1\r\nColour: -2\r\nSharpness: +2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +2/3',
+  },
+  {
+    id: '345',
+    pageContent:
+      '[Summary] 이 레시피는 영화의 한 장면처럼 깊이 있고, 따뜻하면서도 드라마틱한 분위기를 연출합니다. 특히, 푸른색 강조와 부드러운 필름 그레인 효과는 잊혀지지 않는 빈티지 감성을 더하며, 일상적인 순간들을 특별하게 만들어 줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,따뜻함,드라마틱,빈티지\n[Moods] 따뜻한,드라마틱,몽환적인,영화같은\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: -1 Red, -2 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: +3\r\nColour: +2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '346',
+    pageContent:
+      '[Summary] 부드러운 시나몬 색감과 은은한 푸른색 강조가 어우러져 따뜻하면서도 몽환적인 분위기를 연출합니다. 특히, 인물 사진이나 일상 스냅에 활용하면 부드러운 색감과 함께 잊지 못할 추억을 담을 수 있을 것입니다. 마치 따스한 햇살 아래에서 즐기는 한 잔의 시나몬 라떼처럼, 편안하고 감성적인 사진을 만들어 보세요.\n[Base Film Simulation] Eterna\n[Keywords] 따뜻한,부드러운,시네마틱,색감,빈티지\n[Moods] 따뜻한,몽환적인,차분한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +7 Red, -6 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.5\r\nShadows: -1.5\r\nColour: +2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '347',
+    pageContent:
+      '[Summary] 이 레시피는 흐릿한 기억 속 한 장면처럼 부드럽고 따뜻한 색감과 몽환적인 분위기를 연출합니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 잘 어울리며, 아련하고 그리운 감성을 자극하는 사진을 만들어 줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 몽환적인,빈티지,부드러운,따뜻한,필름\n[Moods] 아련한,몽환적인,따뜻한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Flourescent 1\r\nWB Shift: -2 Red, -5 Blue\r\nDynamic Range: DR400\r\nHighlights: -1.5\r\nShadows: -1.5\r\nColour: +3\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0 to +2/3 (use enough to add the hazy mood)',
+  },
+  {
+    id: '348',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 여름 햇살 아래 부드럽고 몽환적인 분위기를 연출하며, 특히 인물 사진에 적합합니다. 푸른 하늘과 대비되는 따뜻한 색감은 영화 같은 분위기를 자아내며, 기억 속에 영원히 간직하고 싶은 순간들을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻함,여름,인물,부드러움\n[Moods] 따뜻한,몽환적인,부드러운,영화같은\n[ShootingTypes] portrait,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: 7000k\r\nWB Shift: +1 Red, +2 Blue\r\nDynamic Range: DR400\r\nHighlights: 0\r\nShadows: +2\r\nColour: +1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: +2/3',
+  },
+  {
+    id: '349',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드러운 청록색 톤과 필름 그레인의 조화가 돋보이는 것이 특징입니다. 따뜻하면서도 몽환적인 분위기를 연출하여 일상 스냅 사진에 특히 잘 어울립니다. 마치 오래된 필름 카메라로 촬영한 듯한 빈티지한 감성을 선사합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,청록색,부드러움,몽환적인\n[Moods] 따뜻한,차분한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: -1 Red, -6 Blue\r\nDynamic Range: DR100\r\nHighlights: +1\r\nShadows: -2\r\nColour: -1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -3\r\nEV compensation: -1/3',
+  },
+  {
+    id: '350',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 강렬한 그레인과 푸른색 강조를 통해 빈티지하면서도 몽환적인 분위기를 연출합니다. 따뜻한 색감과 부드러운 톤은 일상적인 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,클래식,푸른색,빈티지,몽환적인\n[Moods] 따뜻한,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +5 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1.5\r\nShadows: -0.5\r\nColour: -4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: +1/3',
+  },
+  {
+    id: '351',
+    pageContent:
+      '[Summary] 이 레시피는 아날로그 감성을 극대화하여, 마치 오래된 사진첩에서 꺼낸 듯한 흑백 사진을 만들어줍니다. 강한 입자감과 푸른 색감의 미묘한 조화는 몽환적이면서도 깊이 있는 분위기를 연출하며, 흑백 사진 특유의 드라마틱한 표현을 가능하게 합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,빈티지,모노톤,질감,대비\n[Moods] 차분한,고전적인,몽환적인,드라마틱한\n[ShootingTypes] snap,documentry\n[Settings] Acros + Green\r\nGrain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: 0 Red, 0 Blue\r\nMono Shift: WC -5, MG +5\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: 0\r\nColour: N/A\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0',
+  },
+  {
+    id: '352',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 부드럽고 따뜻한 색감과 은은한 필름 그레인을 더해, 아련한 빈티지 감성을 자아냅니다. 일상 속 소중한 순간들을 포착하거나, 따스한 햇살 아래 풍경을 담기에 적합하며, 사진에 깊이와 매력을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,빈티지,따뜻함,색감,필름\n[Moods] 따뜻한,부드러운,빈티지,클래식\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: -1 Red, -3 Blue\r\nDynamic Range: DR200\r\nHighlights: +1\r\nShadows: 0\r\nColour: 0\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: +1 (leave this off, if you want fast shooting)\r\nEV compensation: +1/3',
+  },
+  {
+    id: '353',
+    pageContent:
+      '[Summary] 이 레시피는 어둡고 깊이 있는 숲의 풍경을 담아내기 위해, 에테르나 필름 시뮬레이션과 섬세한 색상 보정을 활용합니다. 강렬한 파란색 강조와 함께, 몽환적이면서도 드라마틱한 분위기를 연출하며, 마치 영화의 한 장면과 같은 인상을 줍니다. 특히, 자연의 깊이와 신비로움을 표현하는 데 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,풍경,어두운,무드,필름\n[Moods] 몽환적인,차분한,드라마틱,신비로운\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: Daylight\r\nWB Shift: +3 Red, -6 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: -2\r\nColour: -4\r\nSharpness: +2\r\nISO Noise Reduction: -4\r\nClarity: +2 (leave off for a less crisp look)\r\nEV compensation: -2/3 (undexposure is important for this one)',
+  },
+  {
+    id: '354',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 포트라 필름의 부드럽고 따뜻한 색감을 클래식 네거티브 필름 시뮬레이션을 통해 재현합니다. 강한 그레인 효과와 색상 보정을 통해 빈티지한 감성을 더하며, 인물 사진이나 스냅 사진에 특히 잘 어울립니다. 부드러운 하이라이트와 섀도우 표현은 따뜻하고 아련한 분위기를 연출합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,포트라,빈티지,인물,따뜻함\n[Moods] 따뜻한,부드러운,빈티지,필름,클래식\n[ShootingTypes] snap,portrait\n[Settings] Grain Effect: Strong, Large (dial down for a traditional look)\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: 5200K\r\nWB Shift: +2 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: 0\r\nColour: +1\r\nSharpness: -3\r\nISO Noise Reduction: -4\r\nClarity: 1\r\nEV compensation: +2/3',
+  },
+  {
+    id: '355',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 그레인, 그리고 파란색 계열의 강조를 통해 아련하고 몽환적인 분위기를 연출합니다. 특히, 노스탤지어한 감성을 자극하며, 일상적인 스냅 사진에 특별한 매력을 더해줄 것입니다. 마치 오래된 필름 사진처럼 따뜻하고 빈티지한 느낌을 선사할 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 필름,빈티지,몽환적인,따뜻한,파스텔\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: 6450K\r\nWB Shift: +1 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: +1\r\nShadows: +3\r\nColour: -2\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '356',
+    pageContent:
+      '[Summary] 이 레시피는 잡지 화보 같은 스타일을 연출하며, 부드러운 색감과 따뜻한 분위기를 자아냅니다. 특히 인물 사진에서 톤을 부드럽게 표현하여, 빈티지하면서도 매력적인 이미지를 만들어낼 수 있습니다. 일상 속 특별한 순간들을 감성적으로 담아보세요.\n[Base Film Simulation] Classic Negative\n[Keywords] 매거진,빈티지,인물,필름,따뜻함\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: -1 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: +3\r\nColour: -3\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1 to washout the highlights',
+  },
+  {
+    id: '357',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬함과 섬세함을 동시에 담아, 현실과 초현실의 경계를 넘나드는 듯한 묘한 분위기를 연출합니다. 특히, 깊은 그림자와 밝은 하이라이트의 대비를 통해 드라마틱한 흑백 사진을 만들 수 있으며, 몽환적이면서도 강렬한 인상을 남길 수 있습니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,고대비,선명한,디테일\n[Moods] 드라마틱,강렬한,차분한,몽환적인\n[ShootingTypes] snap,documentry\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, 0 Blue\r\nMono Shift: WC +4, MG +4\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: -2\r\nColour: N/A\r\nSharpness: +3\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +2/3 to +1 2/3',
+  },
+  {
+    id: '358',
+    pageContent:
+      '[Summary] 이 레시피는 70년대 코닥 필름의 따뜻하고 빈티지한 색감을 재현하여, 일상적인 스냅 사진에 향수를 더해줍니다. 특히, 파란색 계열의 색상을 강조하여 하늘과 바다를 더욱 선명하게 표현하며, 전반적으로 톤을 따뜻하게 유지하여 아련한 분위기를 연출합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,선명한,필름,레트로\n[Moods] 따뜻한,선명한,레트로,활기찬\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 0\r\nColour: +2\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: +1 (leave this off, if you want fast shooting)\r\nEV compensation: +1/3',
+  },
+  {
+    id: '359',
+    pageContent:
+      '[Summary] 따스한 햇살 아래 부드럽고 몽환적인 분위기를 담아낼 수 있는 레시피입니다. 특히, 인물 사진이나 풍경 사진에서 은은한 필름 느낌과 함께 따뜻하고 화사한 색감을 표현하여, 잊지 못할 순간들을 더욱 아름답게 기록할 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 따뜻한,부드러운,화사한,필름,햇살\n[Moods] 따뜻한,몽환적인,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large (option to remove)\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Off\r\nWhite Balance: Daylight\r\nWB Shift: +4 Red, -2 Blue\r\nDynamic Range: DR400\r\nHighlights: +2\r\nShadows: +1\r\nColour: -1\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 1\r\nEV compensation: 0',
+  },
+  {
+    id: '360',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 부드러운 질감을 통해, 마치 오래된 흑백 사진첩을 펼쳐보는 듯한 아련한 감성을 선사합니다. 특히, 빛과 그림자의 대비를 강조하여 드라마틱하고 빈티지한 느낌을 연출하며, 일상 속 순간들을 특별하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노톤,빈티지,질감,대비\n[Moods] 따뜻한,차분한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Monochrome + Red Filter (option)\r\nGrain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 0 Red, +4 Blue\r\nMono Shift: WC +5, MG -1\r\nDynamic Range: DR400\r\nHighlights: +1\r\nShadows: +1\r\nColour: N/A\r\nSharpness: +2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '361',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드럽고 은은한 파스텔톤의 색감과 미세한 그레인, 그리고 푸른색 강조를 통해 몽환적인 분위기를 연출합니다. 특히, 인물 사진이나 일상 스냅에서 아련하고 빈티지한 감성을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,파스텔,부드러움,필름,몽환적인\n[Moods] 따뜻한,몽환적인,차분한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -5 Blue\r\nDynamic Range: DR100\r\nHighlights: -2\r\nShadows: 0\r\nColour: -4\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: +2/3',
+  },
+  {
+    id: '362',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드럽고 따뜻한 색감과 함께 필름 특유의 질감을 살려주는 것이 특징입니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 적합하며, 아련하고 빈티지한 분위기를 연출합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,부드러운,색감\n[Moods] 따뜻한,빈티지,부드러운,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: +1 Red, -3 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: +1\r\nColour: -1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '363',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 레트로 감성을 자극하는 색감과 부드러운 질감을 선사합니다. 특히, 푸른색 강조와 따뜻한 색감의 조화는 아련한 추억을 떠올리게 하며, 일상 스냅 사진에 매력적인 분위기를 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 레트로,필름,빈티지,따뜻함,푸른색\n[Moods] 따뜻한,빈티지,몽환적인,레트로\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +4 Red, -1 Blue\r\nDynamic Range: DR200\r\nHighlights: +1\r\nShadows: -1\r\nColour: +2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: 0',
+  },
+  {
+    id: '364',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 부드럽고 빈티지한 색감과 필름 느낌을 살려 일상적인 스냅 사진에 적합합니다. 특히 인물 사진에서 따뜻하고 몽환적인 분위기를 연출하며, 은은한 색감과 부드러운 톤으로 편안한 느낌을 줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,부드러움,색감,인물,필름\n[Moods] 따뜻한,차분한,몽환적인,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: +4 Red, -3 Blue\r\nDynamic Range: DR100\r\nHighlights: -1\r\nShadows: -1\r\nColour: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0 or +1/3',
+  },
+  {
+    id: '365',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션을 기반으로 하여, 자연의 색상을 더욱 선명하고 생생하게 표현합니다. 특히 풍경 사진에서 강렬한 색감과 디테일을 강조하여, 보는 이의 시선을 사로잡는 매력적인 이미지를 만들어 줍니다. 또한, 색상 대비를 높여 드라마틱한 분위기를 연출합니다.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,선명한,풍경,강렬한,필름\n[Moods] 생동감 넘치는,강렬한,극적인,선명한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: -1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: +4\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Daylight, -1 Red & +1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '366',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 부드러운 입자와 깊이 있는 색감을 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히 인물 사진에서 따뜻하고 몽환적인 느낌을 주며, 일상적인 스냅 사진에도 매력적인 표현을 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,색감,인물,대비\n[Moods] 따뜻한,차분한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: +2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: -1\r\nClarity: -2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Daylight, -2 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -2/3 to -1 1/3 (typically)',
+  },
+  {
+    id: '367',
+    pageContent:
+      '[Summary] 이 레시피는 시네마틱한 분위기를 연출하며, 따뜻하고 강렬한 색감과 필름 그레인의 질감을 통해 빈티지한 감성을 자극합니다. 특히, 빛이 강하게 들어오는 풍경이나 인물 사진에서 드라마틱한 효과를 낼 수 있습니다. 마치 오래된 영화의 한 장면처럼, 잊을 수 없는 순간들을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,따뜻함,대비,빈티지\n[Moods] 따뜻한,드라마틱,몽환적인,강렬한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +3\r\nShadow: +1\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: -3\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 7700K, -9 Red & +7 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '368',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 따뜻한 톤으로, 마치 오래된 필름 사진을 보는 듯한 빈티지한 느낌을 줍니다. 인물 사진에 특히 잘 어울리며, 몽환적인 분위기를 연출하여 특별한 순간을 더욱 아름답게 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,인물,따뜻한,빈티지,부드러운\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: -1\r\nShadow: -1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: 0\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Auto, +2 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)\r\n5% CineBloom',
+  },
+  {
+    id: '369',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 밝은 색감과 함께 강렬한 필름 그레인 효과를 통해 빈티지한 감성을 자아냅니다. 특히, 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다. 마치 오래된 코닥 필름으로 촬영한 듯한, 향수를 불러일으키는 사진을 만들어줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻함,선명함,필름,색감\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: -2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -3\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Daylight, +3 Red & -7 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1 to +1 2/3 (typically)',
+  },
+  {
+    id: '370',
+    pageContent:
+      '[Summary] 이 레시피는 아침 햇살 아래 펼쳐지는 풍경의 따뜻함과 부드러움을 담아내어, 마치 한 폭의 그림 같은 사진을 선사할 것입니다. DR400 설정은 밝은 부분의 디테일을 살리고, 필름 그레인은 아날로그 감성을 더해줍니다. 노을 아래에서, 혹은 따스한 햇살 아래에서 포근하고 몽환적인 분위기를 연출해보세요.\n[Base Film Simulation] Provia\n[Keywords] 따뜻한,풍경,노을,선명한,필름\n[Moods] 따뜻한,몽환적인,아련한\n[ShootingTypes] landscape,snap\n[Settings] NR-2\r\nSharpness -2\r\nS-1\r\nDR400\r\nFine\r\nB-7 R0',
+  },
+  {
+    id: '371',
+    pageContent:
+      '[Summary] 이 레시피는 벨비아 필름의 특징을 살려, 자연의 색감을 극대화하고 선명하고 강렬한 이미지를 연출합니다. 특히, 풍경 사진에서 돋보이는 생동감 넘치는 색감과 디테일을 경험할 수 있으며, 파란색 계열의 색상을 강조하여 더욱 시원하고 청량한 느낌을 줍니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,선명한,강렬한,필름\n[Moods] 생동감,강렬한,극적인,선명한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: -1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: +4\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Daylight, -1 Red & +1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '372',
+    pageContent:
+      '[Summary] 이 레시피는 시네마틱한 무드를 연출하며, 푸른색과 따뜻한 색감의 조화가 돋보이는, 마치 영화의 한 장면을 연상시키는 사진을 만들어줍니다. 특히, 어두운 밤거리나 네온사인이 빛나는 도시의 풍경을 담기에 적합하며, 강렬한 대비와 필름 그레인이 더해져 잊을 수 없는 인상을 남길 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,따뜻한,푸른색,고대비\n[Moods] 몽환적인,따뜻한,드라마틱,강렬한\n[ShootingTypes] night,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -0.5\r\nShadow: -1.5\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: -3\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 7700K, -9 Red & +5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '373',
+    pageContent:
+      '[Summary] 이 레시피는 어두운 밤, 네온사인 아래에서 촬영하면 몽환적이고 드라마틱한 분위기를 연출할 수 있습니다. 특히, 강렬한 색감과 푸른색 강조는 도시의 화려함을, 필름 그레인은 아날로그 감성을 더해줄 것입니다. 마치 영화의 한 장면처럼 기억에 남는 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,색감 강조,푸른색 강조,빈티지\n[Moods] 따뜻한,드라마틱,몽환적인,강렬한\n[ShootingTypes] night,snap\n[Settings] works great with cinematic FX filters,\r\n\r\nDynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nColor: +3\r\nSharpening: -1\r\nNoise Reduction: -4\r\nGrain Effect: Strong\r\nGrain Size: Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Fluorescent 1, -8 Red & -3 Blue',
+  },
+  {
+    id: '374',
+    pageContent:
+      '[Summary] 이 레시피는 영화적인 느낌을 주면서도, 따뜻하고 몽환적인 분위기를 연출합니다. 특히, 색상 표현에 강점을 가지고 있어, 일상적인 스냅 사진이나 인물 사진에 활용하면 독특한 감성을 더할 수 있습니다. 부드러운 그림자와 하이라이트 표현은 사진에 깊이감을 더해줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,따뜻함,몽환적인,색감\n[Moods] 따뜻한,몽환적인,영화같은,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: Auto\r\nHighlight: +1\r\nShadow: +3\r\nColor: 0\r\nSharpening: 0\r\nNoise Reduction: -4\r\nGrain: Off (Optional)\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nISO: Auto – 6400\r\nWhite Balance: 5300K, +2 Red & -4 Blue\r\nExposure Compensation: -1/3 to +1/3',
+  },
+  {
+    id: '375',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션의 특징을 살려, 풍경 사진에 생생하고 선명한 색감을 부여합니다. 강렬한 색상과 대비, 그리고 파란색 강조를 통해, 자연의 아름다움을 더욱 극적으로 표현하며, 쨍한 사진을 연출합니다.\n[Base Film Simulation] Velvia\n[Keywords] 선명한,채도,풍경,대비,필름\n[Moods] 선명한,강렬한,극적인,화려한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: Auto\r\nHighlight: -1\r\nShadow: 0\r\nColor: +1\r\nSharpening: 0\r\nNoise Reduction: -4\r\nGrain Effect: Off\r\nGrain Size: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Auto, +1 Red & -1 Blue',
+  },
+  {
+    id: '376',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강렬한 색상과 톤, 그리고 필름 그레인의 질감을 더하여, 마치 오래된 필름 카메라로 촬영한 듯한 빈티지한 느낌을 선사합니다. 특히, 일상 속의 순간들을 따뜻하고 매력적인 색감으로 담아낼 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,클래식,빈티지,색감,선명함\n[Moods] 따뜻한,선명한,빈티지,강렬한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +2\r\nShadow: -1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: 0\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Auto, -3 Red & -3 Blue\r\nISO: Auto – 6400',
+  },
+  {
+    id: '377',
+    pageContent:
+      "[Summary] 이 레시피는 영화 'One for the Road'에서 영감을 받아 제작되었으며, 따뜻한 오렌지 톤과 차가운 청록색의 조화가 돋보이는 시네마틱한 분위기를 연출합니다. 필름 그레인과 색상 효과를 통해 빈티지하면서도 몽환적인 느낌을 주며, 일상적인 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,오렌지,청록색,빈티지,필름\n[Moods] 따뜻한,드라마틱,몽환적인,영화같은\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: +4\r\nColor: -1\r\nSharpening: -2\r\nNoise Reduction: -4\r\nGrain Effect: Weak\r\nGrain Size: Large\r\nColor Chrome Effect: Weak\r\nColor Chrome FX Blue: Strong\r\nClarity:0\r\nWhite Balance: 4550K, +1 Red & -9 Blue\r\nExposure Compensation: 0 to +2/3",
+  },
+  {
+    id: '378',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 흑백 대비와 거친 질감을 통해, 마치 오래된 영화 속 한 장면을 연상시키는 듯한 인상을 줍니다. 특히, 빛과 그림자의 드라마틱한 연출을 통해, 평범한 일상 속에서도 강렬한 인상을 남길 수 있는 사진을 만들어낼 수 있을 것입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,필름,빈티지,강렬함,질감\n[Moods] 드라마틱,강렬한,거친,빈티지,극적인\n[ShootingTypes] snap,daily\n[Settings] Best ith a Black Mist Filter\r\n\r\nDynamic Range: DR400\r\nHighlight: +3\r\nShadow: +4\r\nSharpening: -4\r\nNoise Reduction: -4\r\nMonochromatic Color: WC:0 MG:0\r\nGrain Effect: Strong\r\nGrain Size: Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nClarity: +0\r\nWhite Balance: Auto, Red -3 Blue +3\r\nExposure Compensation: -2/3 to +1/3',
+  },
+  {
+    id: '379',
+    pageContent:
+      '[Summary] 이 레시피는 여행의 설렘과 그리움을 동시에 담아낸 듯한, 깊이 있는 색감과 거친 질감을 특징으로 합니다. 마치 오래된 필름 사진처럼 따뜻하고 몽환적인 분위기를 연출하며, 기억 속의 한 장면을 꺼내 보는 듯한 느낌을 선사할 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,여행,필름,몽환적인,따뜻한\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: +2\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: 0\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Auto, +4 Red & -6 Blue\r\nISO: Auto – 6400\r\nExposure Compensation -1/3 to +1/3',
+  },
+  {
+    id: '380',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 차가운 밤, 네온사인 아래의 풍경, 그리고 그 속에서 살아가는 사람들의 이야기를 담아내기에 적합합니다. 강렬한 색감과 거친 입자, 그리고 푸른색의 강조는 마치 오래된 영화 필름을 보는 듯한 독특한 분위기를 연출합니다. 어쩌면 당신의 일상에 숨겨진 드라마를 발견하게 될지도 모릅니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,강렬한,빈티지,필름,색감\n[Moods] 드라마틱,강렬한,몽환적인,차가운,빈티지\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: Auto\r\nHighlight: +1\r\nShadow: +2\r\nColor: +3\r\nSharpening: 0\r\nNoise Reduction: -4\r\nGrain Effect: Strong\r\nGrain Size: Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Auto, -4 Red & +4 Blue\r\nExposure Compensation: -1/3 to +1/3',
+  },
+  {
+    id: '381',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 강렬한 그레인 효과를 통해 아날로그 감성을 극대화합니다. 특히, 선명한 색상과 몽환적인 분위기를 동시에 연출하여, 일상 속 특별한 순간들을 더욱 매력적으로 담아낼 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1.5\r\nShadow: +1.5\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -4\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 5500K, -1 Red & -2 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '382',
+    pageContent:
+      '[Summary] 이 레시피는 해변의 따스한 햇살 아래에서 포착한 순간들을 생생하고 아름답게 담아낼 것입니다. 부드러운 필름 그레인과 은은한 색감, 그리고 선명한 디테일은 마치 한 폭의 그림 같은 사진을 만들어 줄 것입니다. 해변의 활기찬 분위기와 잊지 못할 추억을 담아보세요.\n[Base Film Simulation] Eterna\n[Keywords] 해변,따뜻함,선명함,필름,색감\n[Moods] 따뜻한,화사한,청량한,선명한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: +1\r\nShadow: +2\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: +3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Auto, 0 Red & 0 Blue\r\nISO: Auto\r\nExposure Compensation: 0',
+  },
+  {
+    id: '383',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 필름 느낌과 따뜻한 색감으로, 일상 속의 소중한 순간들을 아련하고 빈티지하게 담아낼 수 있도록 해줍니다. 특히, 햇살 좋은 날의 스냅 사진이나, 톤 다운된 색감으로 차분한 분위기를 연출하고 싶을 때 유용할 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,따뜻한,빈티지,색감\n[Moods] 따뜻한,몽환적인,차분한,빈티지\n[ShootingTypes] snap,daily\n[Settings] WB: Auto 0+0\r\nDR: 200\r\nColor chrome fx: Weak\r\nColor chrome fx blue: Weak\r\nTone curve H+1, S+2\r\nColor: +2\r\nGrain: Weak Small\r\nNR: -4',
+  },
+  {
+    id: '384',
+    pageContent:
+      '[Summary] 이 레시피는 흑백 필름의 질감과 대비를 살려, 몽환적이면서도 강렬한 인상을 주는 사진을 만들어 줍니다. 특히, 빛과 그림자의 대비가 뚜렷한 풍경이나 인물 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,필름,빈티지,모노크롬,질감\n[Moods] 차분한,빈티지한,드라마틱한,거친\n[ShootingTypes] snap,daily\n[Settings] Monochrome + Green\r\n\r\nWB: Auto R-3, B-3\r\nDR: 100\r\nTone curve H+2, S+2\r\nColor: +2\r\nGrain: Weak Small\r\nSharpness: +2\r\nNR: -4',
+  },
+  {
+    id: '385',
+    pageContent:
+      '[Summary] 이 레시피는 석양 아래의 풍경을 담기 위해 최적화되어, 따뜻하고 드라마틱한 분위기를 연출합니다. Eterna 필름 시뮬레이션과 강한 그레인 효과는 아날로그 감성을 더하고, 하이라이트와 섀도우 조절을 통해 풍부한 색감과 깊이 있는 이미지를 만들어냅니다. 노을 아래의 풍경이나 인물 사진에 활용하면 인상적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 노을,따뜻함,필름,대비,선명함\n[Moods] 따뜻한,선명한,드라마틱,강렬한\n[ShootingTypes] landscape,snap\n[Settings] WB: 6150K R+4 B-4\r\nDR: 200\r\nGrain: Strong Small\r\nTone curve H+2, S+2\r\nColor: +2\r\nSharpness: +2\r\nNR: -4',
+  },
+  {
+    id: '386',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 필름 특유의 질감을 살려 빈티지한 감성을 표현합니다. 특히 인물 사진에서 피부톤을 화사하게 표현하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 따뜻한,빈티지,필름,선명한,피부톤\n[Moods] 따뜻한,부드러운,선명한\n[ShootingTypes] snap,daily\n[Settings] WB: 7100K R+2 B-2\r\nDR: 400\r\nTone curve H+1, S+1\r\nColor: +2\r\nNR: -4\r\nGrain: Weak Small',
+  },
+  {
+    id: '387',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 에크타 100 필름의 색감을 후지필름 X 시리즈로 재현하고자 합니다. Classic Chrome 필름 시뮬레이션을 기반으로, 강렬한 색상과 대비, 그리고 은은한 파란색 강조를 통해 쨍하면서도 따뜻한 느낌을 줍니다. 일상 스냅 사진이나, 빈티지한 감성을 담고 싶은 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,선명한,따뜻한,색감,빈티지\n[Moods] 따뜻한,선명한,활기찬,빈티지\n[ShootingTypes] snap,daily\n[Settings] Color chrome fx: Strong\r\nColor chrome fx blue: Weak\r\nWB: 6050K R+3 B 0\r\nTone curve H+1, S-2\r\nSharpness: +2\r\nColor: +4\r\nNR: -4',
+  },
+  {
+    id: '388',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 강렬한 그레인과 톤 커브를 통해 흑백 사진 특유의 깊이와 질감을 살려줍니다. 특히 스튜디오 촬영이나 흑백 다큐멘터리 사진에 적합하며, 빈티지하면서도 선명한 이미지를 연출합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,스튜디오,모노톤,선명한,빈티지\n[Moods] 차분한,드라마틱한,고전적인,강렬한\n[ShootingTypes] documentry,snap\n[Settings] Acros +R\r\nGrain: Strong Large\r\nWB: Fluorescent R+4 B-5\r\nDR: 200\r\nTone curve H+1, S+1\r\nSharpness: +2\r\nNR: +1',
+  },
+  {
+    id: '389',
+    pageContent:
+      '[Summary] 이 레시피는 겨울의 따뜻함과 차가움을 동시에 담아낸 듯한 인상을 줍니다. 에테르나 필름 시뮬레이션과 섬세한 설정들이 어우러져, 맑고 선명하면서도 몽환적인 분위기를 연출하며, 겨울 풍경이나 일상 스냅에 특히 잘 어울릴 것 같습니다.\n[Base Film Simulation] Eterna\n[Keywords] 따뜻한,겨울,필름,선명한,대비\n[Moods] 따뜻한,선명한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] WB: Daylight R+2 B-3\r\nColor: +4\r\nDR: 200\r\nGrain: Weak Small\r\nTone curve H+1, S+1\r\nSharpness: +4\r\nNR: +2',
+  },
+  {
+    id: '390',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 필름 느낌과 따뜻한 색감으로, 일상 속 소중한 순간들을 몽환적으로 담아낼 수 있습니다. 특히, 노을 아래의 풍경이나 따스한 햇살 아래 인물 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻함,필름,빈티지,부드러움\n[Moods] 따뜻한,몽환적인,차분한,부드러운\n[ShootingTypes] snap,daily\n[Settings] WB: Daylight R+1 B+3\r\nColor: +2\r\nDR: 200\r\nGrain: Weak Small\r\nTone curve H+3, S+3\r\nSharpness: +4\r\nNR: +2',
+  },
+  {
+    id: '391',
+    pageContent:
+      '[Summary] 흑백 필름 시뮬레이션과 강렬한 대비, 그리고 미세한 그레인 효과를 통해, 이 레시피는 흑백 사진 특유의 깊이와 질감을 살려줍니다. 특히, 풍경 사진이나 인물 사진에서 드라마틱하고 빈티지한 느낌을 연출하기에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,대비,필름,빈티지\n[Moods] 드라마틱,차분한,고전적인,강렬한\n[ShootingTypes] snap,documentry\n[Settings] Acros + R\r\nWB: Daylight R+1 B+1\r\nDR: 400\r\nGrain: Weak Small\r\nTone curve H+3, S+3\r\nSharpness: +4\r\nNR: +4',
+  },
+  {
+    id: '392',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 특징을 살려, 빈티지하면서도 선명하고, 다큐멘터리적인 느낌을 주는 사진을 만들어 줍니다. 강한 그레인과 색상 대비는 사진에 깊이와 개성을 더하며, 일상적인 스냅 사진이나 거리 풍경을 특별하게 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,선명한,다큐멘터리,필름\n[Moods] 따뜻한,선명한,강렬한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong/Small\r\nColour Chrome Effect: Strong\r\nColour Chrome FX Blue: Weak\r\nWhite Balance: Auto\r\nDynamic Range: 400\r\nTone Curve: H-2 S-2\r\nColour: +2\r\nSharpness: +4\r\nHigh ISO NR: +4\r\nClarity: +5',
+  },
+  {
+    id: '393',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강한 그레인과 따뜻한 색감, 그리고 부드러운 톤 커브를 통해 빈티지하면서도 매력적인 이미지를 연출합니다. 특히 인물 사진에서 부드러운 피부 표현과 함께 아날로그 감성을 극대화하여, 일상 속 특별한 순간들을 더욱 돋보이게 해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,클래식,질감,인물\n[Moods] 따뜻한,빈티지한,클래식한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong / Large\r\nColour Chrome Effect: Off\r\nColour Chrome FX Blue: Off\r\nWhite Balance: K 5000\r\nDynamic Range: 100\r\nTone Curve: H+2 S+3\r\nColour: -1\r\nSharpness: +2\r\nHigh ISO NR: -4\r\nClarity: +1',
+  },
+  {
+    id: '394',
+    pageContent:
+      '[Summary] 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드러운 질감과 따뜻한 색감을 더하여 빈티지하면서도 포근한 느낌을 자아냅니다. 특히 일상 스냅 사진에서 아련하고 감성적인 분위기를 연출하기에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식 네거티브,빈티지,필름,질감,부드러움\n[Moods] 따뜻한,차분한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong / Large\r\nColour Chrome Effect: Off\r\nColour Chrome FX Blue: Off\r\nWhite Balance: K 5000\r\nDynamic Range: 100\r\nTone Curve: H+2 S+3\r\nColour: -1\r\nSharpness: +2\r\nHigh ISO NR: -4\r\nClarity: +1',
+  },
+  {
+    id: '395',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 다큐멘터리 사진에 적합한 차분하고 빈티지한 느낌을 줍니다. 색상과 선명도를 강조하여, 현실적이면서도 매력적인 이미지를 만들어냅니다. 특히, 일상 속의 순간들을 기록하거나, 거리의 풍경을 담는 데에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 다큐멘터리,빈티지,클래식,색감,선명함\n[Moods] 차분한,빈티지한,사실적인,선명한\n[ShootingTypes] documentry,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome FX Blue: Weak\r\nWhite Balance: Auto\r\nDynamic Range: 200\r\nTone Curve: H+1 S+1\r\nColour: +2\r\nSharpness: +4\r\nHigh ISO NR: +4\r\nClarity: +4',
+  },
+  {
+    id: '396',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로, 강한 그레인과 은은한 색상 효과를 통해 빈티지한 감성을 극대화합니다. 부드러운 하이라이트와 섀도우 톤 조절은 사진에 따뜻함과 깊이를 더하며, 일상적인 스냅 사진을 특별한 기억으로 만들어 줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,필름,색감,질감\n[Moods] 따뜻한,빈티지한,클래식한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong / Large\r\nColour Chrome Effect: Weak\r\nColour Chrome FX Blue: Weak\r\nWhite Balance: Auto\r\nDynamic Range: 100\r\nTone Curve: H+1 S -0.5\r\nColour: +2\r\nSharpness: +2\r\nHigh ISO NR: -4\r\nClarity: +2',
+  },
+  {
+    id: '397',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 크리미한 색감으로, 마치 빈티지 카페의 한 장면을 담은 듯한 사진을 만들어줍니다. Classic Chrome 필름 시뮬레이션과 섬세한 설정들이 어우러져 부드럽고 차분한 분위기를 연출하며, 일상 속 특별한 순간들을 기록하기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,카페,따뜻한,색감,필름\n[Moods] 따뜻한,빈티지,부드러운,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: 8100K\r\nWB Shift: +1 Red, +5 Blue\r\nDynamic Range: DR400\r\nHighlights: 0\r\nShadows: +2\r\nColour: -4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '398',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 필름 그레인, 그리고 약간의 빈티지한 느낌을 담아, 아련한 추억을 떠올리게 하는 사진을 만들어줍니다. 특히, 일상 속 소중한 순간들을 기록하거나, 인물 사진에 따뜻한 감성을 더하고 싶을 때 활용하면 좋습니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 빈티지,따뜻함,레트로,인물,필름\n[Moods] 따뜻한,빈티지한,향수를 불러일으키는,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: +5 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: +1\r\nColour: -3\r\nSharpness: -+1\r\nISO Noise Reduction: -4\r\nClarity: +3 (optional)\r\nEV compensation: +1/3',
+  },
+  {
+    id: '399',
+    pageContent:
+      '[Summary] 이 레시피는 바랜 듯한 인화 사진의 느낌을 재현하여, 따뜻하고 부드러운 색감과 함께 은은한 필름 그레인을 더해줍니다. 특히, 파란색 계열의 색상을 강조하여 몽환적인 분위기를 연출하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,파스텔,따뜻한,레트로\n[Moods] 따뜻한,부드러운,몽환적인,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: +5 Red, -3 Blue\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: -1\r\nColour: -4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '400',
+    pageContent:
+      '[Summary] 이 레시피는 에테르나 필름 시뮬레이션을 기반으로, 호수와 자연의 푸르름을 강조하여 몽환적이면서도 시원한 느낌을 줍니다. 약한 그레인 효과와 색상 보정을 통해 부드럽고 은은한 분위기를 연출하며, 특히 자연 풍경 사진에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,풍경,호수,푸른색,그린\n[Moods] 몽환적인,차분한,청량한,신비로운\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: -1 Red, +4 Blue\r\nDynamic Range: DR200\r\nHighlights: +1\r\nShadows: +2\r\nColour: +1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '401',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 강렬한 색상과 파란색 강조를 통해 영화적인 분위기를 연출합니다. 하이라이트와 섀도우를 조절하여 부드러우면서도 깊이 있는 톤을 만들어내며, 몽환적이면서도 드라마틱한 이미지를 선사할 것입니다. 일상적인 스냅 사진이나, 특별한 순간을 기록하는 데 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 시네마틱,빈티지,색감,영화,필름\n[Moods] 차분한,몽환적인,드라마틱,따뜻한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: 5800K\r\nWB Shift: +1 Red, +2 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: -1\r\nColour: -4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '402',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 세피아 톤과 부드러운 그레인, 그리고 파란색 강조를 통해 아련한 빈티지 감성을 자아냅니다. 마치 오래된 사진첩을 넘기는 듯한 향수를 불러일으키는 이 레시피는 일상 속 소중한 순간들을 더욱 특별하게 기록해 줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,세피아,레트로,필름,따뜻함\n[Moods] 따뜻한,빈티지,향수를 불러일으키는,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Shade\r\nWB Shift: +7 Red, -6 Blue\r\nDynamic Range: DR100\r\nHighlights: -2\r\nShadows: -2\r\nColour: -3\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity: -0\r\nEV compensation: -1/3 to +1/3',
+  },
+  {
+    id: '403',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감으로, 마치 코닥 포트라 필름을 연상시키는 인물 사진에 적합합니다. 은은한 그레인과 색상 대비를 통해 빈티지하면서도 몽환적인 분위기를 연출하며, 인물 피부톤을 화사하게 표현해 줍니다. 특히 햇살 좋은 날 야외에서 촬영하면 더욱 좋은 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 부드러움,따뜻함,파스텔,인물,필름\n[Moods] 따뜻한,부드러운,몽환적인,빈티지\n[ShootingTypes] portrait,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +4 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: +1\r\nShadows: -2\r\nColour: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3 or +2/3',
+  },
+  {
+    id: '404',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 안개 속에서 포착한 듯한 몽환적인 분위기를 연출합니다. Classic Chrome 필름 시뮬레이션과 섬세한 색상 보정을 통해, 따뜻하면서도 빈티지한 감성을 담아낼 수 있습니다. 특히, 자연 풍경이나 스냅 사진에 활용하면 더욱 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 안개,몽환,빈티지,파스텔,부드러움\n[Moods] 몽환적인,부드러운,차분한,따뜻한\n[ShootingTypes] snap,landscape\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 7200K\r\nWB Shift: -2 Red, +2 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: -1\r\nColour: -4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +2/3',
+  },
+  {
+    id: '405',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 필름 그레인의 질감을 통해 아련한 노스텔지어를 자극합니다. 코닥 골드 필름의 특징을 살려, 일상적인 풍경이나 인물 사진에 빈티지한 감성을 더해줄 것입니다. 특히 햇살 좋은 날의 스냅 사진에 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 따뜻한,빈티지,노스텔지어,필름,골드\n[Moods] 따뜻한,부드러운,빈티지,향수를 불러일으키는\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Daylight\r\nWB Shift: +4 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: +1\r\nColour: 0\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '41',
+    pageContent:
+      '[Summary] 이 레시피는 해안가의 고요함과 부드러움을 담아내어, 따뜻하고 빈티지한 파스텔톤의 이미지를 연출합니다. 은은한 색감과 부드러운 질감은 마치 꿈결 같은 분위기를 자아내며, 잊혀진 해변의 추억을 떠올리게 합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 해변,부드러운,따뜻한,파스텔,빈티지\n[Moods] 따뜻한,차분한,몽환적인,부드러운\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 2 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: -1.5\r\nShadows: 1.5\r\nColor: -3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '42',
+    pageContent:
+      '[Summary] 이 레시피는 다이다 모리야마의 흑백 사진처럼 강렬하고, 거친 질감과 높은 콘트라스트를 통해 도시의 어둡고 고독한 분위기를 표현합니다. 특히, 섀도우를 강조하고, 노이즈를 줄여, 흑백의 깊이와 디테일을 살려, 다큐멘터리나 스냅 사진에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,거친,질감,다큐멘터리\n[Moods] 거친,드라마틱,강렬한,고독한\n[ShootingTypes] documentry,snap\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: Underwater\r\nWB Shift: 0 Red, 0 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: 4\r\nMono Shift: WC +1, MG +1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 4\r\nEV suggestion: +2/3',
+  },
+  {
+    id: '43',
+    pageContent:
+      '[Summary] 이 레시피는 70년대 여름날의 따뜻하고 아련한 추억을 담아낼 수 있도록 설계되었습니다. Classic Chrome 필름 시뮬레이션과 약한 그레인 효과, 그리고 색상 보정을 통해 빈티지한 감성을 극대화하며, 특히 햇살 가득한 야외 풍경이나 인물 사진에 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻함,색감,필름,여름\n[Moods] 따뜻한,빈티지,레트로,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Fluorescent 1\r\nWB Shift: 0 Red, 5 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: -2\r\nColor: 1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '44',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 차분한 색감과 낮은 콘트라스트로, 마치 영화의 한 장면을 보는 듯한 느낌을 줍니다. 특히, 은은한 그레인 효과와 색상 보정을 통해 빈티지하면서도 몽환적인 분위기를 연출하며, 일상적인 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,로우콘트라스트,매트,필름,빈티지\n[Moods] 차분한,몽환적인,부드러운,빈티지한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 6200K\r\nWB Shift: -2 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: -1\r\nColor: -4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: -1/3',
+  },
+  {
+    id: '45',
+    pageContent:
+      '[Summary] 이 레시피는 Pro Neg. High 필름 시뮬레이션을 기반으로, 따뜻하고 깊이 있는 색감과 강렬한 대비를 통해 인물 사진에 적합한 분위기를 연출합니다. 특히, 톤 조정과 그레인 효과를 통해 빈티지하면서도 드라마틱한 느낌을 강조하여, 잊혀지지 않는 인상을 남길 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 대비,빈티지,인물,따뜻함,필름\n[Moods] 따뜻한,차분한,빈티지,드라마틱\n[ShootingTypes] portrait,snap\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 3 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: 3\r\nShadows: 1\r\nColor: -3\r\nSharpness: 0\r\nISO Noise Reduction: -3\r\nClarity: -3\r\nEV suggestion: -2/3',
+  },
+  {
+    id: '46',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로 하여, 부드러운 필름 그레인과 색상 대비를 통해 빈티지하면서도 세련된 느낌을 연출합니다. 특히, 파란색 계열의 색상을 은은하게 강조하여, 차분하면서도 몽환적인 분위기를 자아냅니다. 일상 속 특별한 순간들을 고급스럽게 기록하기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,대비,필름\n[Moods] 따뜻한,차분한,몽환적인,고급스러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: 4000K\r\nWB Shift: 0 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 0\r\nColor: 1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '47',
+    pageContent:
+      '[Summary] 이 레시피는 스페인 여름의 강렬한 햇살 아래, 생생하고 선명한 색감과 부드러운 필름 그레인이 어우러져 따뜻하면서도 빈티지한 감성을 자아냅니다. 풍경 사진에 특히 잘 어울리며, 잊을 수 없는 여름날의 추억을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 따뜻한,선명한,대비,필름,빈티지\n[Moods] 따뜻한,활기찬,선명한,빈티지\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Shade\r\nWB Shift: 5 Red, -7 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 1\r\nColor: -4\r\nSharpness: -4\r\nISO Noise Reduction: -4\r\nClarity: -5\r\nEV suggestion: 1',
+  },
+  {
+    id: '48',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 필름 느낌을 살려, 마치 여행지의 한 순간을 기록한 듯한 사진을 만들어 줍니다. 특히, 자연광 아래에서 인물이나 풍경을 촬영할 때, 은은하면서도 몽환적인 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 따뜻한,부드러운,필름,색감,여행\n[Moods] 따뜻한,부드러운,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: 6600K\r\nWB Shift: 2 Red, -2 Blue\r\nDynamic Range: DR400\r\nHighlights: 2\r\nShadows: 2\r\nColor: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '49',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 필름 그레인, 그리고 빈티지한 느낌을 살려, 일상 속 소중한 순간들을 매력적으로 담아낼 수 있도록 설계되었습니다. 특히, 인물 사진에서 피부톤을 자연스럽고 아름답게 표현하며, 몽환적인 분위기를 연출하는 데 탁월합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻함,필름,색감,인물\n[Moods] 따뜻한,빈티지,부드러운,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 3 Red, -6 Blue\r\nDynamic Range: DR400\r\nHighlights: -0.5\r\nShadows: -1.5\r\nColor: 1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '406',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 에크타 필름의 특징을 클래식 크롬 필름 시뮬레이션을 통해 재현하여, 선명하고 따뜻한 색감과 함께 긍정적이고 활기찬 분위기를 연출합니다. 특히 인물 사진이나 풍경 사진에서 생동감 넘치는 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,선명한,따뜻한,인물,풍경\n[Moods] 따뜻한,선명한,활기찬,생동감있는\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: +1 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: +1\r\nShadows: +1\r\nColour: +2\r\nSharpness: +1\r\nISO Noise Reduction: -4\r\nClarity:0\r\nEV compensation: -1/3 to +1/3',
+  },
+  {
+    id: '407',
+    pageContent:
+      '[Summary] 이 레시피는 차가운 색감과 강렬한 그레인 효과를 통해 아날로그 필름의 감성을 재현합니다. 특히, 파란색 계열의 색상을 강조하여 시원하고 빈티지한 느낌을 주며, DR400 설정은 밝은 영역의 디테일까지 살려줍니다. 일상 스냅이나 풍경 사진에 활용하면 독특한 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 차가운,필름,빈티지,색감,대비\n[Moods] 차가운,몽환적인,세련된,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: -3 Red, +1 Blue\r\nDynamic Range: DR400\r\nHighlights: +1\r\nShadows: -1\r\nColour: -2\r\nSharpness: +0\r\nISO Noise Reduction: -4\r\nClarity: +0\r\nEV compensation: +1/3',
+  },
+  {
+    id: '408',
+    pageContent:
+      '[Summary] 이 레시피는 여름날의 따스함과 바다의 시원함을 동시에 담아낸 듯한, 부드럽고 빈티지한 색감을 선사합니다. 은은한 파스텔톤과 함께 몽환적인 분위기를 연출하여 일상 속 특별한 순간들을 더욱 아름답게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 따뜻함,바다,여름,빈티지,파스텔\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: 7000K\r\nWB Shift: +2 Red, -5 Blue\r\nDynamic Range: DR100\r\nHighlights: -1\r\nShadows: -1\r\nColour: -2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: -1/3',
+  },
+  {
+    id: '409',
+    pageContent:
+      '[Summary] 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 부드러운 색감과 필름 그레인의 질감을 더하여, 마치 오래된 필름 사진을 보는 듯한 빈티지한 감성을 선사합니다. 특히, 자연스러운 일상 스냅 사진에 잘 어울립니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,그린,스냅\n[Moods] 따뜻한,빈티지,부드러운,레트로\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto\r\nWB Shift: -1 Red, -3 Blue\r\nDynamic Range: DR100\r\nHighlights: 0\r\nShadows: -1\r\nColour: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: +1/3',
+  },
+  {
+    id: '410',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 파스텔톤과 은은한 그레인 효과를 통해, 마치 캔디처럼 달콤하고 포근한 분위기를 연출합니다. 특히 맑은 하늘 아래 인물 사진이나, 따뜻한 햇살이 비치는 풍경을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,파스텔,하늘,인물\n[Moods] 몽환적인,따뜻한,부드러운,로맨틱한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +6 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: -1\r\nColour: 0\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV compensation: 0',
+  },
+  {
+    id: '411',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 생생한 색감을 재현하여, 풍경 사진에 특히 잘 어울립니다. 강한 색상 대비와 미세한 그레인은 빈티지한 감성을 더하며, 맑고 화창한 날씨의 풍경을 더욱 돋보이게 해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻함,선명함,풍경\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: +1\r\nShadows: 0\r\nColour: +1\r\nSharpness: +2\r\nISO Noise Reduction: -4\r\nClarity: +2\r\nEV compensation: +1/3',
+  },
+  {
+    id: '412',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 부드럽고 빈티지한 느낌을 강조합니다. 특히, 파란색 계열의 색상을 강조하여 몽환적인 분위기를 연출하며, 따뜻하면서도 부드러운 색감으로 일상적인 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,파스텔,몽환적인,푸른색\n[Moods] 따뜻한,몽환적인,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: 4800K\r\nWB Shift: +5 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: -1\r\nColour: -3\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV compensation: 0 or +1/3',
+  },
+  {
+    id: '413',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 섬세한 디테일을 살려, 묵직하고 드라마틱한 분위기를 연출합니다. 특히, 인물이나 풍경 사진에서 깊이 있는 표현을 가능하게 하며, 흑백 특유의 클래식한 감성을 극대화합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,대비,선명함,디테일\n[Moods] 드라마틱,강렬한,차분한,고전적인\n[ShootingTypes] snap,daily\n[Settings] Acros Y\r\nDR 200\r\nGrain Off\r\nWB Auto\r\nHighlight +3\r\nShadows +4\r\nSharpness +2\r\nNoise Reduction -4',
+  },
+  {
+    id: '414',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 여름 햇살 아래에서 촬영한 사진처럼, 빈티지하면서도 선명한 색감을 표현합니다. 특히, 클래식 크롬 필름 시뮬레이션과 색상 보정을 통해 아련한 추억을 떠올리게 하는 사진을 만들 수 있습니다. 야외 스냅 사진이나 일상적인 풍경을 담기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,여름,따뜻함,색감,클래식\n[Moods] 따뜻한,빈티지,선명한,레트로\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: 400\r\nGrain: Off\r\nColour Chrome: Weak\r\nWB: 7700k\r\nWB Offset: R-4, B-1\r\nH: -2\r\nS: 0\r\nColour: -2\r\nSharpness: +3\r\nNoise: 0\r\nExposure Compensation: 0 to +2/3',
+  },
+  {
+    id: '415',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 질감과 따뜻한 색감으로, 마치 오래된 필름 사진을 보는 듯한 빈티지한 느낌을 줍니다. 인물 사진이나 스냅 사진에 활용하면, 아련하고 몽환적인 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,인물,부드러움,따뜻함\n[Moods] 따뜻한,부드러운,몽환적인,빈티지\n[ShootingTypes] snap,portrait\n[Settings] Grain strong/large\r\nColor Chrome Strong\r\nColor Chrome Blue Off\r\nWB Shade\r\nDR100\r\nTone Curve H-2, S+1\r\nColor +4\r\nSharp 0 to -4\r\nNR-4\r\nClarity 0 to -4',
+  },
+  {
+    id: '416',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로 하여, 따뜻하고 빈티지한 색감과 필름 그레인의 질감을 더해 아련한 분위기를 연출합니다. 특히, 노을 아래 풍경이나 인물 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,레트로,필름,따뜻한,색감\n[Moods] 따뜻한,빈티지,레트로,아련한\n[ShootingTypes] snap,daily\n[Settings] With ProMist 1/4 filter\r\n\r\nGrain weak/large\r\nColor Chrome Off\r\nColor Chrome Blue Off\r\nWB Shade R2,B3\r\nDR100\r\nDR Priority Off\r\nTone Curve H-2, S+1\r\nColor +3\r\nsharp+4\r\nNR-4',
+  },
+  {
+    id: '417',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 거리 풍경을 담기에 적합하며, 강렬한 색상과 선명한 디테일을 통해 생동감 넘치는 이미지를 연출합니다. 특히, 대비가 강한 환경에서 피사체를 돋보이게 하며, 톤 조정과 색상 효과를 통해 세련된 분위기를 더합니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 거리,대비,선명함,필름,채색\n[Moods] 강렬한,선명한,세련된,도시적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: 100\r\nWhite balance: Auto\r\nWB Offset: R+2 B-1\r\nColor Chrome Effect: Strong\r\nColorChrome FX Blue: Weak\r\nHighlight: -1\r\nShadow: 0\r\nColor: +2\r\nSharpness: -2\r\nNoise Reduction: -3\r\nClarity: 0\r\nGrain: Off\r\nExposure compensation: -0.3 all day long',
+  },
+  {
+    id: '418',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 하여, 은은한 색감과 부드러운 질감을 통해 빈티지한 감성을 자아냅니다. 특히, 도시의 거리나 일상적인 스냅 사진에 잘 어울리며, 따뜻하면서도 차분한 분위기를 연출해 줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,거리,스냅\n[Moods] 따뜻한,차분한,빈티지,선명한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: 100\r\nWhite balance: Auto\r\nWB Offset: R+2 B-1\r\nColor Chrome Effect: Strong\r\nColorChrome FX Blue: Off\r\nHighlight: -1\r\nShadow: 0\r\nColor: +2\r\nSharpness: -2\r\nNoise Reduction: -3\r\nClarity: 0\r\nGrain: Weak/Small\r\nExposure compensation: -0.3 all day long',
+  },
+  {
+    id: '419',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 그레인, 그리고 강렬한 색상 대비를 통해 따뜻하고 빈티지한 느낌을 선사합니다. 마치 영화 속 한 장면처럼, 일상적인 순간들을 특별하게 담아낼 수 있을 것입니다. 특히, 햇살 좋은 날의 스냅 사진이나 인물 사진에 잘 어울립니다.\n[Base Film Simulation] Astia\n[Keywords] 시네마틱,따뜻한,빈티지,필름,색감\n[Moods] 따뜻한,몽환적인,빈티지,영화같은\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: 0\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -4\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: 6800K, -5 Red & -3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '420',
+    pageContent:
+      '[Summary] 이 레시피는 벨비아 필름의 특징을 살려, 강렬한 색감과 높은 대비를 통해 풍경 사진에 생동감을 불어넣습니다. DR400 설정은 하이라이트와 섀도우 영역의 디테일을 살리고, Cloudy/Shade 화이트 밸런스와 색상 보정을 통해 차갑고 드라마틱한 분위기를 연출합니다. 푸른 하늘과 녹음이 우거진 풍경을 담기에 완벽한 레시피입니다.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,대비,풍경,선명함,강렬함\n[Moods] 강렬한,선명한,극적인,차가운\n[ShootingTypes] landscape,snap\n[Settings] Push/Pull (Exposure): 0\r\nDynamic Range: DR400\r\nGrain Effect: Off\r\nColour Chrome Effect: Strong\r\nWhite Balance: Cloudy/Shade\r\nWB Shift: R: -4 B: -1\r\nHighlight Tone: -1\r\nShadow Tone: -1\r\nColour: -1\r\nSharpness: 0\r\nNoise Reduction: 0',
+  },
+  {
+    id: '421',
+    pageContent:
+      '[Summary] 이 레시피는 밝고 화사한 색감과 강렬한 대비를 통해 풍경과 인물 사진에 생동감을 불어넣습니다. 특히 맑은 날 야외에서 촬영하면, 마치 에크타크롬 필름으로 촬영한 듯한 쨍한 색감과 필름 특유의 질감을 느낄 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 선명한,풍경,인물,대비,필름\n[Moods] 따뜻한,선명한,생생한,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +1 (Medium-Hard)\r\nShadow: +2 (Hard)\r\nColor: -1 (Medium-Low)\r\nSharpness: +2 (Hard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Daylight/Fine, -1 Red & +3 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '422',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 그레인 효과를 통해, 마치 오래된 필름 사진을 보는 듯한 빈티지한 느낌을 선사합니다. 특히 인물 사진에서 부드러운 피부톤과 자연스러운 분위기를 연출하며, 일상 속 소중한 순간들을 아련하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻함,필름,색감,인물\n[Moods] 따뜻한,빈티지,부드러운,레트로\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nColor: +2\r\nSharpness: -1\r\nNoise Reduction: -4\r\nGrain: Weak\r\nColor Chrome Effect: Off\r\nWhite Balance: 10000K, -7 Red & +8 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '423',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션을 기반으로 하여, 강렬한 색감과 깊은 그림자를 통해 거리의 생생한 순간들을 포착하는 데 중점을 둡니다. 차분하면서도 드라마틱한 분위기를 연출하며, 빈티지한 감성을 더해 사진에 독특한 매력을 부여합니다. 특히, 도시의 일상이나 인물 사진에 적합합니다.\n[Base Film Simulation] Velvia\n[Keywords] 빈티지,거리,대비,채도,필름\n[Moods] 차분한,빈티지,드라마틱,고독한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200 \r\nHighlight: -2\r\nShadow: -2\r\nColor: -4\r\nWhite Balance: Wb Auto\r\nWB Shift: R -4, B -3\r\nNoise Reduction: -4 \r\nSharpening: -4 \r\nGrain: None',
+  },
+  {
+    id: '424',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 흑백 대비와 거친 질감, 그리고 깊은 그림자를 통해 드라마틱하고 몽환적인 분위기를 연출합니다. 특히, 어두운 밤거리, 쓸쓸한 풍경, 또는 인물의 내면을 표현하는 데 적합하며, 흑백 사진 특유의 고독하고 차분한 감성을 자극합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,극적인,질감,빈티지\n[Moods] 드라마틱,몽환적인,차분한,고독한\n[ShootingTypes] snap,documentry\n[Settings] Acros+Y\r\nDynamic Range: DR400\r\nHighlight: -1\r\nShadow: +4\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -3\r\nGrain Effect: Strong, Large \r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Fluorescent 3, -4 Red & -9 Blue\r\nISO: 3200\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '425',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 강렬한 그레인 효과를 통해 아련하고 빈티지한 분위기를 연출합니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 잘 어울리며, 잊혀져가는 옛 추억을 떠올리게 하는 몽환적인 느낌을 선사할 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,필름,몽환적인,색감\n[Moods] 따뜻한,몽환적인,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +3\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -4\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 6700K, -4 Red & -1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '426',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션의 특징을 극대화하여, 풍경 사진에 적합한 강렬하고 선명한 색감과 높은 대비를 제공합니다. DR400과 색상 강조 설정은 하이라이트와 섀도우 디테일을 살리면서도, 톤과 색상 표현에 깊이를 더해 드라마틱한 이미지를 연출합니다. 특히, 자연의 웅장함과 아름다움을 담아내기에 최적화된 레시피입니다.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,고대비,선명한,풍경,극적인\n[Moods] 강렬한,극적인,선명한,차가운\n[ShootingTypes] landscape,snap\n[Settings] DR400\r\nWB K8500, R-4 B-9\r\nISO-NR -4\r\nCOLOR -4\r\nSHARP -3\r\nH-TONE 2,5\r\nS-TONE 4\r\nCLARITY -4\r\nColor Chrome STRONG\r\nColor Chrome Blue STRONG\r\nGRAIN STRONG SMALL',
+  },
+  {
+    id: '427',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강렬한 푸른색과 따뜻한 색감의 조화가 돋보이는 사진을 만들어줍니다. 특히, 빈티지한 느낌과 함께 선명하고 활기찬 분위기를 연출하여, 일상 속 특별한 순간들을 드라마틱하게 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,따뜻한,선명한,푸른색\n[Moods] 따뜻한,선명한,활기찬,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain: Weak, Large\r\nColor Chrome: Weak\r\nColor Chrome FX blue: Strong\r\nWhite Blance Auto, R:2; B:-3\r\nDynamic Range: 200\r\nHightlight Tone: -1.5\r\nShadow tone: -0.5\r\nColor; +3\r\nSharpness: +2\r\nNoise Réduction: -4',
+  },
+  {
+    id: '428',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 따뜻하면서도 선명한 색감과 적절한 대비를 통해 빈티지한 감성을 표현합니다. 특히, 하이라이트와 섀도우의 조절을 통해 풍부한 계조를 살리고, 노이즈 감소를 통해 깔끔한 이미지를 연출합니다. 일상 스냅이나 풍경 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,따뜻함,선명함,대비,빈티지\n[Moods] 따뜻한,선명한,빈티지,화사한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: Dr200\r\nHighlight: +1\r\nShadow: +2\r\nColor: +2\r\nWhite Balance: 5300K\r\nWB Shift: None\r\nNoise Reduction: -4\r\nSharpening: +4\r\nGrain: Weak',
+  },
+  {
+    id: '429',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 생생한 색감을 클래식 크롬 필름 시뮬레이션을 기반으로 재현합니다. 강렬한 색상과 미세한 그레인, 그리고 하이라이트와 섀도우의 섬세한 조절을 통해, 마치 오래된 코닥 필름으로 촬영한 듯한 빈티지하면서도 선명한 이미지를 연출합니다. 일상 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 선명한,필름,빈티지,코닥,색감\n[Moods] 따뜻한,선명한,생동감,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +4\r\nShadow: -2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: -1\r\nClarity: +2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Daylight, +2 Red & -1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1 to 0 (typically)',
+  },
+  {
+    id: '430',
+    pageContent:
+      '[Summary] 이 레시피는 흑백 필름의 깊이 있는 질감과 강렬한 대비를 통해, 마치 오래된 다큐멘터리 사진집을 펼쳐보는 듯한 느낌을 선사합니다. 특히, 빛과 그림자의 드라마틱한 연출을 통해 잊혀져 가는 시간의 흔적을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,필름,빈티지,질감\n[Moods] 클래식,드라마틱,거친,빈티지,차분한\n[ShootingTypes] documentry,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nNoise Reduction: -4\r\nSharpness: -2\r\nGrain Effect: Strong\r\nWhite Balance: Daylight, +1 Red & -8 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -2/3 to +2/3 (typically)',
+  },
+  {
+    id: '431',
+    pageContent:
+      '[Summary] Ilford HP5 Plus 400 레시피는 강렬한 흑백 대비와 거친 질감을 통해 아날로그 필름의 감성을 극대화합니다. 특히, DR400 설정과 강한 그레인 효과는 드라마틱한 분위기를 연출하며, 흑백 사진 특유의 깊이 있는 표현을 가능하게 합니다. 일상 속 스냅 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,필름,콘트라스트,질감,모노크롬\n[Moods] 빈티지,드라마틱,거친,클래식\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: 0\r\nGrain Effect: Strong, Large \r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Daylight, +1 Red & -8 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -2/3 to +2/3 (typically)',
+  },
+  {
+    id: '432',
+    pageContent:
+      '[Summary] 이 레시피는 500T 필름의 따뜻하고 빈티지한 색감을 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. 강렬한 그레인과 색상 효과는 영화적인 분위기를 더하며, 하이라이트와 섀도우 조절을 통해 드라마틱한 표현이 가능합니다. 일상 스냅 사진에 적합하며, 따뜻하고 몽환적인 분위기를 연출합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻한,시네마틱,색감\n[Moods] 따뜻한,드라마틱,몽환적인,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: -2\r\nShadow: -1\r\nColor: -1\r\nNoise Reduction: -2\r\nSharpness: -1\r\nClarity: 0\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 3200K, -1 Red & +4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '433',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 풍경을 담기 위해 최적화되어 있으며, 클래식 크롬 필름 시뮬레이션과 강렬한 색상, 높은 대비를 통해 현대적이고 세련된 이미지를 연출합니다. 특히, 파란색 계열의 색상을 강조하여 맑고 시원한 느낌을 더하며, 선명한 디테일과 깊이 있는 색감을 동시에 표현합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 도시,풍경,선명한,대비,클래식\n[Moods] 선명한,강렬한,현대적인,세련된\n[ShootingTypes] landscape,snap\n[Settings] DR: 100\r\nHighlights: +1.5\r\nShadows: +2\r\nColor: +4\r\nNR: -4\r\nWB: Auto (-1R, -1B)\r\nSharpness: 0\r\nGrain: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nClarity: +2\r\nExp. Comp.: +1 to +⅓.',
+  },
+  {
+    id: '434',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 피부톤과 따뜻한 색감으로 인물 사진에 최적화되어 있으며, 필름 특유의 질감과 빈티지한 분위기를 더해줍니다. 특히, 햇빛 좋은 날 야외에서 인물 사진을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,부드러움,필름,따뜻함,빈티지\n[Moods] 따뜻한,부드러운,빈티지,자연스러운\n[ShootingTypes] portrait,snap\n[Settings] DR: 200\r\nHighlights: +2 (I like it this way but if you find whites too bright set it to +1)\r\nShadows: +1.5 (+2 for any other camera)\r\nColor: +1\r\nNR: -4\r\nWB: Auto (+2R, -3B)\r\nSharpness: -4\r\nGrain: weak large\r\nColor Chrome Effect: Weak\r\nColor Chrome FX Blue: Off\r\nClarity: 0\r\nExp. Comp.: +1 to +1⅓. It looks good with a lot of light',
+  },
+  {
+    id: '435',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션과 섬세한 설정들을 통해, 강렬하면서도 부드러운 대비와 몽환적인 색감을 동시에 표현합니다. 특히, 파란색 계열의 색상을 강조하여, 풍경 사진에 깊이와 드라마틱한 분위기를 더해줄 것입니다. 마치 꿈결 같은 순간들을 포착하여, 보는 이의 마음을 사로잡을 듯합니다.\n[Base Film Simulation] Velvia\n[Keywords] 몽환적인,필름,색감,대비,빈티지\n[Moods] 몽환적인,따뜻한,드라마틱\n[ShootingTypes] snap,landscape\n[Settings] Dynamic Range: DR400\r\nWhite Balance: K4090, R-1 B-7\r\nISO: Noise Reduction -4\r\nColor: -3\r\nSharpness: -3\r\nHighlight Tone: -2\r\nShadow Tone: -2\r\nClarity: -4\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nGrain Effect: Weak, Small\r\nExposure Compensation: 0 to +2/3 (typically)\r\n\r\nFld-Filter Necessary"',
+  },
+  {
+    id: '436',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬의 빈티지한 색감과 강렬한 푸른색 강조를 통해, 따뜻하면서도 드라마틱한 분위기를 연출합니다. 특히, 선명한 색감과 부드러운 입자, 그리고 섬세한 디테일 표현은 일상 속 스냅 사진에 깊이와 매력을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,따뜻함,선명함,빈티지,푸른색 강조\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dr400\r\nK4000\r\nR-1 B+5\r\nIso-Nr -4\r\nColor +4\r\nSharp -4\r\nH-Tone 0\r\nS-Tone +1\r\nClarity -5\r\nCcr Strong\r\nCcb Strong\r\nGrain Weak Small',
+  },
+  {
+    id: '437',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 그림자와 따뜻한 색감, 그리고 강렬한 색상 대비를 통해 마치 영화의 한 장면과 같은 인상적인 이미지를 연출합니다. 특히, 노을 아래의 풍경이나 인물 사진에 적용하면 더욱 깊이 있는 감성을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻함,빈티지,색감,필름\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dr200\r\nK6990\r\nR3 B-7\r\nIso-Nr -4\r\nColor -2\r\nSharp -4\r\nH-Tone 0\r\nS-Tone 2,5\r\nClarity -5\r\nCcr Strong\r\nCcb Strong\r\nGrain off',
+  },
+  {
+    id: '438',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 필름 특유의 질감을 살려, 마치 오래된 사진첩을 넘기는 듯한 아련한 분위기를 연출합니다. 특히, 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 감성적으로 담아내기에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,크리미,부드러운,필름\n[Moods] 따뜻한,몽환적인,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dr400\r\nK8700\r\nR4 B6\r\nIso-Nr -4\r\nColor -4\r\nSharp -4\r\nH-Tone +4\r\nS-Tone +4\r\nClarity -5\r\nCcr Strong\r\nCcb Strong\r\nGrain Strong Large',
+  },
+  {
+    id: '439',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로 하여, 따뜻하고 부드러운 색감과 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 은은한 필름 느낌과 몽환적인 분위기를 더해줄 수 있으며, 일상적인 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,부드러운,필름,인물\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dr100\r\nWb Auto\r\nR5 B-7\r\nIso-Nr -4\r\nColor 0\r\nSharp -4\r\nH-Tone -2\r\nS-Tone +2\r\nClarity -5\r\nCcr Weak\r\nCcb Weak\r\nGrain Weak Small',
+  },
+  {
+    id: '440',
+    pageContent:
+      '[Summary] 이 레시피는 영화 같은 분위기를 연출하며, 따뜻하고 낭만적인 거리의 모습을 담아낼 수 있습니다. 특히, 붉은 색감과 푸른 색감의 대비를 통해 강렬하면서도 빈티지한 감성을 표현할 수 있으며, 늦은 오후 햇살 아래의 스냅 사진에 잘 어울립니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,빈티지,거리,따뜻한,필름\n[Moods] 따뜻한,몽환적인,드라마틱,강렬한\n[ShootingTypes] snap,daily\n[Settings] Dr100\r\nK7060\r\nR3 B1\r\nIso-Nr -4\r\nColor +4\r\nSharp -4\r\nH-Tone +4\r\nS-Tone +4\r\nClarity +4\r\nCcr Strong\r\nCcb Strong\r\nGrain Strong Small',
+  },
+  {
+    id: '441',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 햇살 아래, 붉게 물든 단풍잎과 함께하는 가을날의 추억을 담아낼 수 있을 것 같습니다. Classic Negative 필름 시뮬레이션과 강렬한 색상 설정은 빈티지하면서도 선명한, 잊을 수 없는 순간들을 만들어 줄 것입니다. 특히, 인물 사진이나 풍경 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Classic Negative\n[Keywords] 따뜻함,가을,선명함,빈티지,필름\n[Moods] 따뜻한,선명한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dr100\r\nK5500\r\nR6 B-9\r\nIso-Nr -4\r\nColor +4\r\nSharp -4\r\nH-Tone +4\r\nS-Tone 0\r\nClarity -4\r\nCcr Strong\r\nCcb Strong\r\nGrain Weak Small',
+  },
+  {
+    id: '442',
+    pageContent:
+      '[Summary] 이 레시피는 50년대 다이너의 따뜻하고 활기찬 분위기를 담아내기 위해 Classic Negative 필름 시뮬레이션과 풍부한 색감, 강렬한 그레인 효과를 사용했습니다. 선명하면서도 빈티지한 느낌을 주어, 일상 속 특별한 순간들을 드라마틱하게 기록할 수 있습니다. 특히, 음식 사진이나 인물 사진에 매력적인 표현을 더할 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,필름,색감,선명함\n[Moods] 따뜻한,빈티지,선명한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dr100\r\nWb Auto\r\nR-6 B-9\r\nIso-Nr -4\r\nColor +1\r\nSharp -3\r\nH-Tone -2\r\nS-Tone 0\r\nClarity -4\r\nCcr Strong\r\nCcb Strong\r\nGrain Strong Large\r\n\r\nFld-Filter Necessary',
+  },
+  {
+    id: '443',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 따뜻하고 빈티지한 색감과 강렬한 입자, 그리고 깊이 있는 색상 표현을 통해 아련한 옛 추억을 떠올리게 합니다. 특히, 햇살 좋은 날의 풍경이나 인물 사진에 적용하면, 마치 오래된 필름 사진처럼 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,색감,질감\n[Moods] 따뜻한,레트로,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2\r\nShadow: +1\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: -4\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Daylight, +3 Red & +2 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '444',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션을 기반으로 하여, 풍경 사진에 생동감과 강렬함을 더해줍니다. 다이나믹 레인지를 확장하고, 하이라이트를 조절하여 디테일을 살리면서, 색상과 채도를 약간 높여 선명하고 인상적인 이미지를 만들어 줍니다. 특히 자연의 아름다움을 담아내는데 탁월할 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,선명한,고채도,대비,필름\n[Moods] 생동감 있는,강렬한,선명한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: 0\r\nColor: +1\r\nSharpness: 0\r\nNoise Reduction: -4\r\nGrain: Weak\r\nWhite Balance: Auto, -1 Red & -2 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '445',
+    pageContent:
+      '[Summary] 이 레시피는 궂은 날씨 속에서 포착한 풍경의 강렬함과 대비를 강조하여, 잊을 수 없는 순간을 선명하게 담아낼 수 있도록 돕습니다. Velvia 필름 시뮬레이션과 섬세한 설정들은 생생한 색감과 깊이 있는 톤을 동시에 표현하며, 마치 한 폭의 그림과 같은 사진을 만들어 줄 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,대비,선명한,필름,색감\n[Moods] 강렬한,극적인,선명한,따뜻한\n[ShootingTypes] landscape,snap\n[Settings] DR: 400\r\nWB: Auto\r\nWB Shift: +1 Red & +1 Blue\r\nGrain Effect: Weak Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Weak\r\nHighlight: -2\r\nShadow: -1.5\r\nColor: +2\r\nclarity: +2\r\nSharpening: +3\r\nNoise Reduction: -4\r\nExposure Compensation: +2/3 to +1',
+  },
+  {
+    id: '446',
+    pageContent:
+      '[Summary] 이 레시피는 시네마틱한 분위기와 따뜻한 색감, 그리고 필름 특유의 질감을 살려줍니다. 특히 야경 사진에서 몽환적이고 드라마틱한 분위기를 연출하며, 빈티지한 감성을 더해줄 것입니다. 어두운 밤, 도시의 불빛, 그리고 잊혀진 기억들을 담아내기에 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 시네마틱,따뜻한,필름,빈티지,야경\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] night,snap\n[Settings] DR 200\r\nGrain Off\r\nWB Colour Temp 2650K\r\nHighlight +3\r\nShadow +1\r\nColour -1\r\nSharpness +2\r\nNR -4',
+  },
+  {
+    id: '447',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 선명한 색감과 빈티지한 느낌을 동시에 담아내어, 마치 오래된 필름 사진을 보는 듯한 매력을 선사합니다. 특히 자연 풍경이나 일상 스냅 사진에 활용하면, 아련한 추억을 떠올리게 하는 특별한 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,따뜻함,선명함,빈티지,풍경\n[Moods] 따뜻한,선명한,빈티지,노스텔지어\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR 200\r\nHighlight: +1\r\nShadow: +2\r\nColour: -1\r\nNoise Reduction: -4\r\nSharpening: 1\r\nGrain: None\r\nWhite Balance: Daylight (you can use Auto still), +3 Red & -4 Blue',
+  },
+  {
+    id: '448',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 따뜻한 분위기를 연출하여 인물 사진에 특히 적합합니다. Pro Neg. Std 필름 시뮬레이션과 섀도우, 색상, 화이트 밸런스 조정을 통해 따뜻하고 자연스러운 느낌을 강조하며, 일상적인 스냅 사진에 훌륭한 선택이 될 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 인물,부드러움,따뜻함,필름,색감\n[Moods] 따뜻한,부드러운,화사한,자연스러운\n[ShootingTypes] snap,daily\n[Settings] DR 200\r\nGrain Off\r\nWB Auto +2 Red +1 Blue\r\nHighlight 0\r\nShadow +3\r\nColour +4\r\nSharpness 0\r\nNR -4',
+  },
+  {
+    id: '449',
+    pageContent:
+      '[Summary] 이 레시피는 숲의 깊은 숨결과 따스함을 담아, 자연의 부드러운 색감을 표현합니다. 은은한 톤과 섬세한 디테일은 마치 한 폭의 수채화처럼, 잊혀지지 않는 숲의 기억을 선사할 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 자연,숲,빈티지,따뜻함,부드러움\n[Moods] 따뜻한,차분한,몽환적인\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range 200\r\nGrain Off\r\nWhite Balance Auto -3 Red -6 Blue\r\nHighlight -2\r\nShadow 0\r\nColour -4\r\nSharpness -2\r\nNoise Reduction -4',
+  },
+  {
+    id: '450',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 은은한 필름 느낌을 통해 인물 사진에 특히 잘 어울립니다. 클래식 크롬 필름 시뮬레이션과 섬세한 색상 조정은 빈티지하면서도 매력적인 분위기를 연출하며, 인물 사진의 매력을 한층 끌어올립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 인물,따뜻한,부드러운,필름,빈티지\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] portrait,snap\n[Settings] DR : 100\r\nGrain: Off\r\nWhite Balance: Daylight\r\nWB Color Shift: +3R, -4B\r\nColor: +2\r\nHighlights: -2\r\nShadows: 0\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Weak\r\nColor chrome FX blue: Off\r\nClarity: +1\r\nExp comp: +1',
+  },
+  {
+    id: '451',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강렬한 색감과 대비를 통해 피사체를 돋보이게 합니다. 특히, 붉은색 계열의 색상을 강조하여 따뜻하면서도 드라마틱한 분위기를 연출하며, 빈티지한 감성을 더해줍니다. 일상 스냅이나 인물 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 선명한,색감,대비,빈티지,인물\n[Moods] 따뜻한,강렬한,드라마틱,선명한\n[ShootingTypes] snap,daily\n[Settings] DR : 100\r\nGrain: Off\r\nWhite Balance: Daylight\r\nWB Color Shift: +1R, -2B\r\nColor: +4\r\nHighlights: -1\r\nShadows: +2\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Weak\r\nColor chrome FX blue: Weak\r\nClarity: 0\r\nExp comp: 0',
+  },
+  {
+    id: '452',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 에크타크롬 필름을 크로스 프로세싱한 듯한 강렬하고 독특한 색감과 질감을 재현합니다. 강한 대비와 선명함, 그리고 푸른색과 붉은색의 과장된 표현은 사진에 드라마틱한 분위기를 더하며, 일상적인 스냅 사진을 특별하게 만들어 줄 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 크로스 프로세싱,필름,선명한,대비,색감\n[Moods] 강렬한,극적인,빈티지,선명한\n[ShootingTypes] snap,daily\n[Settings] DR : 100\r\nWhite Balance: Shade WB Color Shift: -5R, -4B\r\nGrain: Large Strong\r\nColor: 0\r\nHighlights: +4\r\nShadows: +3\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Weak\r\nClarity: +1\r\nExp comp: +⅓',
+  },
+  {
+    id: '453',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 에크타 100 필름의 특징을 재현하여, 선명하고 생생한 색감과 풍부한 디테일을 담아냅니다. 특히 인물 사진이나 풍경 사진에서 돋보이며, 강렬한 색상과 대비를 통해 시선을 사로잡는 이미지를 연출합니다. 일상적인 스냅 사진에도 활력을 불어넣어 줄 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 선명한,채도,인물,풍경,필름\n[Moods] 따뜻한,선명한,생생한,극적인\n[ShootingTypes] snap,daily\n[Settings] DR : 100\r\nWhite Balance: 5900k\r\nWB Color Shift: -1R, +3B\r\nHighlights: 0\r\nShadows: +1\r\nColor: +3\r\nSharpness: -0\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Strong\r\nClarity: +2\r\nExp comp: 0 to ⅔',
+  },
+  {
+    id: '454',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 차가운 분위기를 로모그래피 스타일로 담아내어, 몽환적이면서도 강렬한 인상을 줍니다. 특히, 선명한 색감과 대비를 통해 드라마틱한 느낌을 강조하며, 일상적인 스냅 사진에 독특한 개성을 부여합니다.\n[Base Film Simulation] Eterna\n[Keywords] 로모,도시,필름,빈티지,선명함\n[Moods] 몽환적인,차가운,드라마틱,강렬한\n[ShootingTypes] snap,daily\n[Settings] DR : Auto\r\nWhite Balance: Ambience Priority\r\nWB Color Shift: 0R, +2B\r\nHighlights: -0.5\r\nShadows: +1.5\r\nColor: 0\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Strong\r\nClarity: +3\r\nExp comp: usually 0 or slightly underexposed',
+  },
+  {
+    id: '455',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 필름 그레인이 어우러져, 마치 오래된 사진첩을 넘기는 듯한 아련한 분위기를 연출합니다. 일상 속 소중한 순간들을 빈티지한 감성으로 담아낼 수 있을 것입니다. 특히, 햇살 좋은 날의 스냅 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,색감,필름,질감\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] DR : 200\r\nWhite Balance: 5900k\r\nWB Color Shift: 0R, -2B\r\nColor: 4\r\nGrain: Weak\r\nHighlights: 0\r\nShadows: 0\r\nSharpness: -4\r\nNr: -4\r\nExp comp: 1/3 to 1',
+  },
+  {
+    id: '456',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 톤으로 인물 사진에 적합하며, 따뜻하고 빈티지한 느낌을 줍니다. 섀도우를 살짝 올려 부드러운 분위기를 연출하고, 선명도를 낮춰 몽환적인 느낌을 더합니다. 특히, 인물 사진이나 스냅 사진에 활용하면 좋습니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,따뜻한,빈티지,부드러운,대비\n[Moods] 따뜻한,차분한,부드러운\n[ShootingTypes] portrait,snap\n[Settings] DR : 100\r\nWhite Balance: Custom\r\nWB Color Shift: 0R, 0B\r\nColor: -2\r\nHighlights: 0\r\nShadows: +2\r\nSharpness: -2\r\nNr: -2\r\nExp comp: 0',
+  },
+  {
+    id: '457',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 차가운 풍경에 따뜻함과 몽환적인 분위기를 불어넣어, 마치 오래된 영화 속 한 장면을 연상시키는 사진을 만들어줍니다. 높은 다이나믹 레인지와 부드러운 톤, 그리고 약간의 색상 보정을 통해, 도시의 일상적인 모습도 특별하게 담아낼 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 도시,대비,빈티지,몽환적인,필름\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] DR : 400\r\nWhite Balance: Auto\r\nWB Color Shift: +2R, -3B\r\nColor: -2\r\nHighlights: -2\r\nShadows: +2\r\nSharpness: -2\r\nNr: -2\r\nExp comp: 2/3 to +1\r\nDIY mist filter',
+  },
+  {
+    id: '458',
+    pageContent:
+      '[Summary] 이 레시피는 Pro Neg. High 필름 시뮬레이션을 기반으로 하며, 하이라이트와 섀도우를 조절하여 대비를 높이고, 색상과 노이즈 감소를 통해 빈티지한 느낌을 강조합니다. 따뜻하면서도 차분한 분위기를 연출하며, 인물 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 클래식,대비,빈티지,인물,필름\n[Moods] 따뜻한,차분한,빈티지,드라마틱\n[ShootingTypes] portrait,snap\n[Settings] DR : 200\r\nWhite Balance: 5900k\r\nWB Color Shift: +1R, -2B\r\nColor: -2\r\nHighlights: -2\r\nShadows: +2\r\nSharpness: 0\r\nNr: -2\r\nExp comp: 0 to ⅓',
+  },
+  {
+    id: '459',
+    pageContent:
+      '[Summary] 이 레시피는 로모 800 필름의 따뜻하고 빈티지한 색감을 후지필름 X-Pro3로 재현합니다. Classic Chrome 필름 시뮬레이션과 강한 색상, 그리고 독특한 그레인 효과는 아련하고 몽환적인 분위기를 연출하며, 일상 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,색감,질감\n[Moods] 따뜻한,몽환적인,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] DR : 200\r\nWhite Balance: 6000k\r\nWB Color Shift: 0R, -2B\r\nColor: 4\r\nGrain: Weak, Large\r\nHighlights: 0\r\nShadows: 0\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Off\r\nClarity: 0\r\nExp comp: 1/3 to 1',
+  },
+  {
+    id: '460',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로 하여, 선명하고 생생한 색감과 함께 따뜻한 분위기를 연출합니다. 특히 풍경 사진에서 돋보이며, 인물 사진에도 매력적인 표현을 더할 수 있습니다. 강렬한 색상과 부드러운 그레인이 조화롭게 어우러져, 기억 속에 오래도록 간직될 사진을 만들어 줄 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 선명한,풍경,인물,채도,필름\n[Moods] 따뜻한,선명한,생생한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +2\r\nShadow: +1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Daylight, -3 Red & 0 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '461',
+    pageContent:
+      '[Summary] 이 레시피는 1990년대의 필름 카메라로 촬영한 듯한, 강렬하고 빈티지한 색감과 질감을 제공합니다. 특히, 쨍한 색감과 깊은 그림자 표현을 통해 드라마틱한 분위기를 연출하며, 일상적인 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,선명한,색감,대비\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2\r\nShadow: -2\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpness: -1\r\nClarity: -3\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Daylight, -2 Red & +3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +1 (typically)',
+  },
+  {
+    id: '462',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로 빈티지한 색감과 강렬한 그레인 효과를 더하여, 마치 오래된 필름 사진을 보는 듯한 따뜻하고 몽환적인 분위기를 연출합니다. 특히, 빛이 좋은 날 야외에서 스냅 사진을 찍거나, 일상적인 풍경을 기록할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,필름,색감 강조,몽환적인\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2\r\nShadow: +3\r\nColor: -1\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -3\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 7350K, -1 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +1 (typically)',
+  },
+  {
+    id: '463',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 대표적인 필름 시뮬레이션인 Provia를 기반으로 하여, 자연스러운 색감과 선명한 디테일을 제공합니다. 풍경 사진이나 일상 스냅에 적합하며, 맑고 깨끗한 이미지를 연출할 수 있습니다. 특히, 밝은 야외 촬영에서 뛰어난 결과물을 보여줄 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 프로비아,선명한,자연스러운,풍경,스냅\n[Moods] 선명한,자연스러운,화사한\n[ShootingTypes] snap,landscape\n[Settings] Currently app patrons only',
+  },
+  {
+    id: '464',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 함께, 강렬한 입자감과 깊이 있는 색상 표현을 통해 독특한 분위기를 연출합니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 적합하며, 아련하면서도 낭만적인 분위기를 자아낼 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,따뜻함,색감 강조,필름,질감\n[Moods] 따뜻한,빈티지,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +2\r\nShadow: +3\r\nColor: +1\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -2\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 7350K, -1 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '465',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 빈티지한 느낌을 살려, 인물 사진에 특히 잘 어울립니다. 따뜻하고 차분한 분위기를 연출하며, 필름 특유의 감성을 느낄 수 있습니다. 일상 스냅 사진에 활용하면 좋습니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,필름,부드러움,색감,인물\n[Moods] 따뜻한,차분한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -1 (Medium-Soft)\r\nShadow: 0 (Standard)\r\nColor: -2 (Low)\r\nSharpness: 0 (Standard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: 5300K, -5 Red & -4 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '466',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 필름 느낌과 따뜻한 색감을 통해 아련하고 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하며, 일상적인 스냅 사진에 적합합니다. 은은한 그레인 효과와 색상 대비를 통해 몽환적인 분위기를 더합니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,필름,따뜻한,인물,색감\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +2\r\nShadow: +4\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpness: -1\r\nGrain Effect: Weak\r\nColor Chrome Effect: Off/NA\r\nWhite Balance: Fluorescent 3, -2 Red & -7 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3',
+  },
+  {
+    id: '467',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 선명한 색감을 재현하여, 일상 속의 소중한 순간들을 빈티지하고 매력적으로 담아낼 수 있습니다. 특히, 쨍한 햇살 아래의 풍경이나 인물 사진에서 독특한 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻한,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,레트로\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: Auto\r\nHighlight: +1\r\nShadow: +1\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: 0\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Auto, +3 Red & -4 Blue\r\nISO: Auto – 12800\r\nExposure Compensation -1/3 to +2/3',
+  },
+  {
+    id: '468',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께 필름 특유의 질감을 살려, 마치 오래된 사진첩을 펼쳐보는 듯한 아련한 분위기를 연출합니다. 일상 속 소중한 순간들을 빈티지 감성으로 기록하고 싶은 분들께 추천합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,인물,질감\n[Moods] 따뜻한,빈티지,부드러운,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: 0\r\nShadow: -1\r\nColor: -1\r\nNoise Reduction: -4\r\nSharpness: -1\r\nClarity: -2\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: 5800K, +2 Red & +4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '469',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 입자와 은은한 색감으로, 마치 오래된 필름 사진을 보는 듯한 따뜻하고 빈티지한 분위기를 연출합니다. 일상 속 소중한 순간들을 아련하고 몽환적인 감성으로 담아낼 수 있을 것입니다. 특히 햇살 좋은 날의 스냅 사진이나, 따뜻한 분위기의 인물 사진에 잘 어울립니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,레트로,필름,따뜻한,색감\n[Moods] 따뜻한,빈티지,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain weak small\r\nColor chrome weak\r\nDr 200\r\nAuto white prio +4r -4b\r\nH +1.5 S +0.5\r\nColor +2\r\nSharpness +1\r\nNoise reduction 0\r\nClarity -3',
+  },
+  {
+    id: '470',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 부드러운 색감을 재현하여, 일상 속의 소중한 순간들을 아련하고 빈티지하게 담아낼 수 있습니다. 특히 인물 사진에서 부드러운 피부톤과 은은한 분위기를 연출하며, 필름 특유의 감성을 더해줄 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,빈티지,따뜻한,색감,인물\n[Moods] 따뜻한,빈티지,레트로,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: +3\r\nColor: -3\r\nSharpness: -2\r\nNoise Reduction: -4\r\nGrain: Strong\r\nWhite Balance: 7100K, +7 Red & -5 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '471',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 골드 톤을 통해 아날로그 필름의 향수를 불러일으키는 사진을 만들어줍니다. 일상 속 소중한 순간들을 빈티지한 감성으로 기록하며, 은은한 그레인 효과가 사진에 깊이와 매력을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻함,골드,아날로그,필름\n[Moods] 따뜻한,빈티지,향수,부드러운\n[ShootingTypes] snap,daily\n[Settings] Currently app patrons only',
+  },
+  {
+    id: '472',
+    pageContent:
+      '[Summary] 이 레시피는 오래된 코닥 필름의 따뜻하고 부드러운 색감과 독특한 질감을 재현하여, 향수를 불러일으키는 빈티지한 사진을 만들어줍니다. 특히, 빛바랜 듯한 색감과 은은한 그레인 효과는 일상적인 풍경이나 인물 사진에 몽환적인 분위기를 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻함,필름,색감,질감\n[Moods] 따뜻한,빈티지,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +3.5\r\nShadow: -0.5\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto White Priority, +1 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '473',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 깊이 있는 색감으로, 몽환적이면서도 드라마틱한 분위기를 연출합니다. 특히, 도시의 야경이나 인물의 감정선을 극대화하는 데 적합하며, 잊혀진 기억 속 한 장면을 꺼내듯 강렬한 인상을 남길 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,고대비,질감,드라마틱\n[Moods] 몽환적인,드라마틱한,강렬한,차가운\n[ShootingTypes] snap,daily\n[Settings] Acros+G Filter\r\nDynamic Range: DR200\r\nHighlight: +3\r\nShadow: +2\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity: 0\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nMonochromatic Color: WC: +0, MG: 0\r\nWhite Balance: Auto\r\nISO: Auto 3200\r\nAperture: Wide Open\r\nExposure Compensation: 0 to +0.6',
+  },
+  {
+    id: '474',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이와 드라마틱한 대비를 통해 강렬하고 몽환적인 분위기를 연출합니다. 특히, 어두운 밤거리, 인물의 고독한 모습, 또는 흑백의 예술적인 표현을 담아내기에 적합하며, 보는 이의 시선을 사로잡는 강렬한 인상을 남길 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,고대비,드라마틱,필름\n[Moods] 차분한,드라마틱한,강렬한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Acros+G Filter\r\nDynamic Range: DR200\r\nHighlight: +4\r\nShadow: +2\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity: 0\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nMonochromatic Color: WC: +0, MG: 0\r\nWhite Balance: Auto\r\nISO: Auto 3200\r\nAperture: Wide Open\r\nExposure Compensation: 0 to +0.6',
+  },
+  {
+    id: '475',
+    pageContent:
+      '[Summary] 이 레시피는 아날로그 흑백 필름의 깊이 있는 감성을 재현하며, 강렬한 대비와 부드러운 그레인 효과를 통해 몽환적이면서도 드라마틱한 분위기를 연출합니다. 특히, 빛과 그림자의 대비를 강조하여 흑백 사진 특유의 클래식한 매력을 극대화합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,빈티지,필름,대비\n[Moods] 차분한,고전적인,드라마틱,흑백\n[ShootingTypes] snap,documentry\n[Settings] Acros+G\r\nDynamic Range: DR400\r\nHighlight: +1\r\nShadow: +3\r\nNoise Reduction: -4\r\nSharpening: -1\r\nGrain Effect: Weak\r\nWhite Balance: Incandescent, -8 Red & -8 Blue\r\nISO: Auto up to ISO 12800\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '476',
+    pageContent:
+      '[Summary] 일포드 팬 F 플러스 50 레시피는 흑백 필름의 깊이 있는 질감과 섬세한 디테일을 재현하여, 마치 오래된 흑백 사진첩을 펼쳐보는 듯한 아련한 감성을 선사합니다. 특히, 빛과 그림자의 대비를 살려 드라마틱하고 고전적인 분위기를 연출하며, 일상 속 순간들을 특별하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,필름,빈티지,모노크롬,디테일\n[Moods] 차분한,고전적인,섬세한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: 0\r\nShadow: +1\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: +2\r\nGrain Effect: Weak, Large \r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Daylight, +1 Red & -6 Blue\r\nISO: Auto, up to ISO 6400 (for best results, try to limit the ISO to 1600 and lower when able)\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '477',
+    pageContent:
+      '[Summary] Ilford Pan F Plus 50 레시피는 흑백 필름의 깊이 있는 질감과 섬세함을 재현하여, 마치 오래된 흑백 사진첩을 넘기는 듯한 아련한 감성을 선사합니다. 특히, 빛과 그림자의 대비를 살려 드라마틱하고 빈티지한 느낌을 강조합니다. 일상 속 순간들을 묵직하고 클래식하게 담아내기에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,필름,빈티지,모노크롬,디테일\n[Moods] 차분한,고전적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: 0\r\nShadow: +2 (Or 1,5 when camera allows)\r\nNoise Reduction: -3\r\nSharpening: +1\r\nClarity: 0\r\nGrain Effect: Weak, Large \r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Daylight, +1 Red & -6 Blue\r\nISO: Auto, up to ISO 6400 (for best results, try to limit the ISO to 1600 and lower when able)\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '478',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션과 톤 조절을 통해 흑백 사진의 깊이와 질감을 살려줍니다. 특히, 하이라이트와 섀도우의 대비를 조절하여 드라마틱한 흑백 이미지를 연출하며, 은은한 그레인 효과는 빈티지한 감성을 더해줍니다. 일상 속 스냅 사진이나 다큐멘터리 사진에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,빈티지,모노크롬,질감\n[Moods] 차분한,고전적인,드라마틱,빈티지한\n[ShootingTypes] snap,documentry\n[Settings] Acros Red Filter\r\nWhite Balance : Auto\r\nDynamic Range : Auto\r\nD Range Priority: Off\r\nTone Curve : Highlights +2 Shadows -1\r\nColor +2\r\nSharpness -1\r\nClarity 0\r\nGrain Effect : Weak Small\r\nNoise Reduction -3',
+  },
+  {
+    id: '479',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 질감을 표현합니다. 특히 인물 사진에서 매력적인 분위기를 연출하며, 일상 스냅 사진에 적합합니다. 강한 색상 대비와 은은한 그레인 효과는 아날로그 감성을 더해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,클래식,색감,인물\n[Moods] 따뜻한,빈티지한,클래식한,부드러운\n[ShootingTypes] snap,daily\n[Settings] White Balance : Auto\r\nWB Shift : R+2 B-4\r\nColor Chrome Effect : Strong\r\nColor Chrome FX Blue : Weak\r\nDynamic Range : Auto\r\nTone Curve : Highlights -1 Shadows -2\r\nColor +2\r\nSharpness -2\r\nClarity 0\r\nGrain Effect : Weak Small\r\nNoise Reduction -4',
+  },
+  {
+    id: '480',
+    pageContent:
+      '[Summary] 후지필름의 Fujicolor NPH 필름을 연상시키는 이 레시피는, 따뜻하고 부드러운 색감과 함께 강렬한 대비와 선명함을 동시에 담아냅니다. 특히, 풍경 사진이나 일상 스냅에서 매력적인 빈티지 감성을 표현할 수 있을 것입니다. 하늘과 바다의 푸른색을 강조하여 더욱 생동감 넘치는 사진을 만들 수 있습니다.\n[Base Film Simulation] Provia\n[Keywords] 필름,따뜻한,선명한,색감,빈티지\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: -1\r\nShadow: 0\r\nColor: 0\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -3\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 5250K, -3 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '481',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 맥스 800 필름의 따뜻하고 부드러운 색감을 재현하여, 아련한 추억을 담은 듯한 사진을 만들어 줍니다. 특히 인물 사진에서 부드러운 피부톤과 빈티지한 분위기를 연출하며, 일상 속 소중한 순간들을 더욱 특별하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,색감,인물\n[Moods] 따뜻한,빈티지,부드러운,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: +1\r\nColor: -1\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -4\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: 7300K, -5 Red & -2 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '482',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강렬한 그레인과 색상 대비를 통해 빈티지하면서도 몽환적인 분위기를 연출합니다. 특히 여행 사진이나 일상 스냅에서 따뜻하면서도 드라마틱한 감성을 담아낼 수 있습니다. 톤 조정과 화이트 밸런스 설정을 통해 독특한 색감을 표현합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,여행,필름,색감,모노톤\n[Moods] 몽환적인,따뜻한,차분한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -2\r\nShadow: +2\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: 0\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Auto, +4 Red & -6 Blue\r\nISO: Auto – 12800\r\nExposure Compensation -1/3 to +1/3',
+  },
+  {
+    id: '483',
+    pageContent:
+      '[Summary] 이 레시피는 텅스텐 조명 아래에서 촬영한 듯한 따뜻하고 부드러운 색감과 낮은 대비를 특징으로 합니다. 특히 인물 사진에서 아련하고 빈티지한 분위기를 연출하며, 필름 특유의 질감을 더해 줍니다. 부드러운 하이라이트와 섀도우 표현은 몽환적인 느낌을 더해줄 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 필름,빈티지,따뜻한,저대비,인물\n[Moods] 따뜻한,빈티지,차분한,몽환적인\n[ShootingTypes] snap,portrait\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: 0\r\nColor: -2\r\nSharpening: -1\r\nNoise Reduction: -4\r\nGrain: Weak\r\nWhite Balance: Fluorescent 3, -6 Red & -3 Blue\r\nISO: Auto up to ISO 12800\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '484',
+    pageContent:
+      '[Summary] 이 레시피는 푸른 바다와 하늘을 클래식 크롬의 따뜻하고 드라마틱한 색감으로 담아내어, 쨍한 햇살 아래 풍경을 생생하게 표현합니다. 특히, 하이라이트와 섀도우를 강조하여 입체감 있는 사진을 연출하며, 바다와 하늘의 선명한 대비를 통해 시원한 느낌을 줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,바다,하늘,선명함,따뜻함\n[Moods] 따뜻한,선명한,생생한,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] dynamic range: DR200\r\nhighlight: +4\r\nshadow: +3\r\ncolor: +1\r\nnoise reduction: +3\r\nsharpness: 0\r\ngrain effect: Off\r\nchrome fx: Strong\r\nwhite balance: Auto, +2 red & -8 blue\r\niso: up to ISO 3200\r\nexposure compensation: -1/3 to -2/3',
+  },
+  {
+    id: '485',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 강렬한 대비를 통해 인물 사진에 매력적인 분위기를 부여합니다. 하이라이트와 섀도우의 섬세한 조절은 드라마틱한 표현을 더하며, 일상 속 특별한 순간들을 포착하는 데 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,인물,따뜻한,대비\n[Moods] 따뜻한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] dynamic range: DR200\r\nhighlight: +4\r\nshadow: +3\r\ncolor: +1\r\nnoise reduction: +3\r\nsharpness: 0\r\ngrain effect: Off\r\nchrome fx: Strong\r\nwhite balance: Auto, +2 red & -8 blue\r\niso: up to ISO 3200\r\nexposure compensation: -2/3',
+  },
+  {
+    id: '486',
+    pageContent:
+      '[Summary] 이 레시피는 밤의 도시를 따뜻하고 빈티지한 감성으로 담아낼 수 있도록 설계되었습니다. Velvia 필름 시뮬레이션과 색상, 노이즈 감소 설정을 통해 몽환적이면서도 아련한 분위기를 연출하며, 밤하늘의 불빛과 그림자를 부드럽게 표현하여 잊지 못할 야경 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 야경,따뜻한,빈티지,필름,몽환적인\n[Moods] 따뜻한,몽환적인,차분한\n[ShootingTypes] night,snap\n[Settings] dynamic range: DR100\r\nhighlight: +1\r\nshadow: +1\r\ncolor: -3\r\nnoise reduction: -4\r\nsharpness: 0\r\ngrain effect: Weak (or Off)\r\nwhite balance: Auto, +3 red & -2 blue\r\niso: Any\r\nexposure compensation: 0',
+  },
+  {
+    id: '487',
+    pageContent:
+      '[Summary] 어두운 밤의 도시를 배경으로, 네온사인 불빛과 몽환적인 분위기를 담아낼 수 있는 레시피입니다. Classic Chrome의 부드러운 색감과 DR400의 넓은 계조, 그리고 Grain Effect의 조화는 마치 오래된 필름 사진을 보는 듯한 따뜻하고 드라마틱한 느낌을 선사할 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 밤,네온,도시,필름,따뜻함\n[Moods] 몽환적인,따뜻한,드라마틱,강렬한\n[ShootingTypes] night,snap\n[Settings] dynamic range: DR400\r\nhighlight: +1\r\nshadow: 0\r\ncolor: +2\r\nnoise reduction: -4\r\nsharpness: +1\r\nclarity: 0\r\ntoning: None\r\ngrain effect: Weak small\r\nchrome fx: Strong\r\nchrome fx blue: Off\r\nwhite balance: 2650K, -9 red & -4 blue\r\niso: 3200\r\nexposure compensation: None',
+  },
+  {
+    id: '488',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 선명한 색감을 후지필름 특유의 클래식 크롬으로 재현하여, 일상 속의 소중한 순간들을 빈티지하면서도 생동감 넘치게 담아낼 수 있도록 해줍니다. 특히, 햇살 좋은 날의 스냅 사진이나, 활기찬 일상을 기록하는 데 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻한,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: +1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 4800K, -2 Red & -7 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '489',
+    pageContent:
+      '[Summary] 이 레시피는 차가운 겨울 풍경을 담아내기 위해 설계되었으며, Provia 필름 시뮬레이션과 DR200 설정을 통해 하이라이트와 섀도우의 디테일을 살리면서도, 색상과 선명도를 조절하여 몽환적인 분위기를 연출합니다. 차가운 색감과 부드러운 톤은 겨울의 고요함과 아름다움을 표현합니다.\n[Base Film Simulation] Provia\n[Keywords] 차가운,겨울,대비,몽환적인,필름\n[Moods] 차가운,몽환적인,고요한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: 0 (Standard)\r\nShadow: +2 (Hard)\r\nColor: -2 (Low)\r\nSharpness: -1 (Medium-Soft)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: 5000K, -1 Red & -3 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: +1/3 to +1 1/3 (typically)',
+  },
+  {
+    id: '490',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 흑백 대비와 거친 질감을 통해, 마치 오래된 필름 사진을 보는 듯한 인상을 줍니다. 특히, 빛과 그림자의 극적인 표현을 통해 피사체의 감정이나 이야기를 더욱 깊이 있게 전달하며, 흑백 특유의 클래식한 분위기를 연출합니다. 다큐멘터리나 스냅 사진에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,콘트라스트,질감,빈티지\n[Moods] 드라마틱,거친,고전적인,강렬한\n[ShootingTypes] documentry,snap\n[Settings] Acros+R\r\nDynamic Range: DR400\r\nHighlight: -1\r\nShadow: +4\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Strong\r\nWhite Balance: 10000K, +7 Red & +7 Blue\r\nISO: Auto up to ISO 12800\r\nExposure Compensation: -2/3 to +2/3 (typically)',
+  },
+  {
+    id: '491',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 부드러운 색감과 Grain Effect의 조화로 빈티지한 감성을 자아냅니다. 따뜻한 화이트 밸런스와 하이라이트, 섀도우 조절을 통해 부드럽고 깊이 있는 이미지를 연출하며, 일상 속의 특별한 순간들을 기록하기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,필름,따뜻함\n[Moods] 따뜻한,빈티지,클래식,차분한\n[ShootingTypes] snap,daily\n[Settings] WB 5400\r\nWB Shift R:+1 B:-4\r\nDR400\r\nH:-1 S:-1\r\nNR:-4\r\nShrapening:-2\r\nClarity:-3\r\nGrain Strong, Large\r\nCCEfex: Weak\r\nCCEfex blue: Weak\r\nISO up to 12600\r\nExposure compensation: +1/3 to +1',
+  },
+  {
+    id: '492',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 선명한 색감을 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. 강렬한 색상과 푸른색 강조는 풍경 사진에 생동감을 더하고, 높은 선명도와 노이즈 감소는 깔끔한 이미지를 만들어줍니다. 전반적으로 따뜻하고 활기찬 분위기를 연출하며, 특히 야외 촬영에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,선명한,따뜻한,풍경\n[Moods] 따뜻한,선명한,활기찬,빈티지\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +0\r\nShadow: -1\r\nColor: +1\r\nNoise Reduction: -4\r\nSharpening: +3\r\nClarity: +3\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Daylight, +2 Red & -4 Blue\r\nISO: Auto, up to ISO 1600\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '493',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 선명한 색감을 클래식 크롬을 통해 재현합니다. 강렬한 색상과 파란색 강조는 생동감 넘치는 이미지를 연출하며, 노이즈 감소와 선명도 조절을 통해 깔끔하면서도 필름 특유의 질감을 살립니다. 일상 속의 특별한 순간들을 따뜻하고 매력적으로 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 코닥,클래식,선명한,따뜻한,필름\n[Moods] 따뜻한,선명한,빈티지,화사한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +0.5\r\nShadow: -0.5\r\nColor: +1\r\nNoise Reduction: -4\r\nSharpening: +3\r\nClarity: +3\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Daylight, +2 Red & -4 Blue\r\nISO: Auto, up to ISO 1600\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '494',
+    pageContent:
+      '[Summary] 이 레시피는 도심의 활기찬 분위기를 담아내면서도, 클래식 크롬의 빈티지한 감성을 더하여 독특한 매력을 선사합니다. 강렬한 색감과 파란색 강조는 생동감 넘치는 사진을, DR400과 하이라이트/섀도우 설정은 풍부한 계조와 디테일을 표현합니다. 거리를 걷는 사람들의 생생한 모습이나, 일상 속 특별한 순간들을 포착하는데 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 거리,인물,선명한,따뜻한,빈티지\n[Moods] 따뜻한,선명한,활기찬,생동감있는\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: 0\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Auto, -3 Red & -4 Blue\r\nISO: Auto – 12800\r\nExposure Compensation: 0 to +1/3',
+  },
+  {
+    id: '495',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 빈티지한 감성과 독특한 색감을 표현합니다. 강한 그레인 효과와 색상 강조를 통해 아날로그 필름의 질감을 살리고, 따뜻하면서도 몽환적인 분위기를 연출합니다. 오래된 사진첩을 펼쳐보는 듯한 향수를 불러일으키는 사진을 만들 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,색감,노이즈,레트로\n[Moods] 따뜻한,빈티지한,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nColor: -3\r\nNoise Reduction: -4\r\nSharpeness: -4\r\nClarity: -5\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 10000K, -6 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '496',
+    pageContent:
+      '[Summary] 이 레시피는 어두운 밤의 풍경을 부드럽고 따뜻하게 담아내어, 마치 오래된 필름 사진처럼 아련한 분위기를 연출합니다. 특히, 은은한 파란색 강조와 붉은 톤의 조화는 몽환적이면서도 빈티지한 감성을 자극하며, 밤의 도시를 산책하는 듯한 느낌을 선사할 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 야경,따뜻함,빈티지,몽환적인,필름\n[Moods] 따뜻한,몽환적인,차분한\n[ShootingTypes] night\n[Settings] Highlight tone: -1\r\nShadow tone: 0\r\nDynamic range: 200\r\nWhite balance: Incandescent\r\nWhite balance shift: R +2, B +4\r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Weak\r\nColor: -2\r\nSharpness: -2\r\nNoise reduction: -4\r\nGrain: Off\r\nClarity: 0\r\nExposure compensation: Around -1',
+  },
+  {
+    id: '5',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 몽환적인 분위기를 연출합니다. 특히 인물 사진에서 부드러운 피부톤과 깊이 있는 그림자를 표현하여, 아련하고 감성적인 느낌을 강조합니다. 일상 속 특별한 순간들을 따뜻하게 기록하기에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,따뜻한,몽환적인,인물\n[Moods] 따뜻한,몽환적인,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Underwater\r\nWB Shift: 1 Red, -2 Blue\r\nDynamic Range: DR400\r\nHighlights: 1\r\nShadows: -2\r\nColor: -3\r\nSharpness: 1\r\nISO Noise Reduction: -2\r\nClarity: -3\r\nEV suggestion: 0',
+  },
+  {
+    id: '50',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 파스텔톤과 은은한 필름 그레인, 그리고 푸른색 강조를 통해 몽환적이면서도 따뜻한 분위기를 연출합니다. 특히, 봄날의 햇살 아래에서 촬영하거나, 인물 사진에 활용하면 더욱 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,파스텔,부드러움,몽환적인,필름\n[Moods] 따뜻한,몽환적인,부드러운,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: 5000K\r\nWB Shift: 5 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 1\r\nColor: -1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '51',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 여름 햇살 아래에서 느낄 수 있는 생생하고 선명한 색감을 담아냅니다. Classic Chrome의 부드러운 톤과 Grain Effect의 조화는 아날로그 필름의 감성을 자극하며, 강렬한 색상과 푸른색 강조는 여름날의 활기찬 분위기를 더욱 강조합니다. 특히, 야외 스냅 사진이나 일상적인 풍경을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 따뜻한,여름,선명한,필름,빈티지\n[Moods] 따뜻한,활기찬,선명한,생동감있는\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nColor: +1\r\nNoise Reduction: -1\r\nSharpness: +1\r\nClarity: +1\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Auto, +2 Red & -1 Blue',
+  },
+  {
+    id: '52',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 파스텔톤 색감과 은은한 그레인 효과를 통해, 마치 오래된 사진첩을 펼쳐보는 듯한 아련하고 빈티지한 분위기를 연출합니다. 특히, 일상 속 소소한 풍경이나 인물 사진을 따뜻하고 몽환적인 느낌으로 담아낼 때 효과적입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,부드러운,파스텔,몽환적인,클래식\n[Moods] 따뜻한,차분한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: -1\r\nColor: -2\r\nNoise Reduction: -2\r\nSharpness: +1\r\nClarity: 0\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Off\r\nWhite Balance: Auto, -1 Red & -1 Blue',
+  },
+  {
+    id: '53',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 대비와 풍부한 색감, 그리고 필름 그레인의 질감을 통해 빈티지한 감성을 극대화합니다. 특히, 따뜻하면서도 드라마틱한 분위기를 연출하여 일상 속의 특별한 순간들을 더욱 돋보이게 해줄 것입니다. 마치 오래된 영화 속 한 장면처럼, 기억 속에 깊이 각인될 사진을 만들어 보세요.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 필름,빈티지,색감,대비,선명함\n[Moods] 따뜻한,강렬한,드라마틱,빈티지\n[ShootingTypes] snap,daily\n[Settings] DR 400\r\nCLARITY -2\r\nNoise Redution 0 Highlithts +0.5 Shadows +2\r\nCOLOR +3\r\nSharpness +2\r\nGrain: Strong and Large\r\nWB AUTO/DAYLIGHT\r\nWB SHIFT R -3 B -3\r\nExposure Compensation: +2/3\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong',
+  },
+  {
+    id: '54',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 봄날의 햇살 아래, 부드럽고 몽환적인 분위기를 담아낼 수 있습니다. Astia 필름 시뮬레이션과 섬세한 설정들이 어우러져, 마치 수채화 같은 파스텔톤의 아름다운 사진을 선사할 것입니다. 특히, 흩날리는 벚꽃, 싱그러운 풀잎, 그리고 따스한 햇살 아래의 인물 사진에 잘 어울릴 것 같습니다.\n[Base Film Simulation] Astia\n[Keywords] 봄,파스텔,부드러움,몽환적인,필름\n[Moods] 따뜻한,몽환적인,부드러운,청량한\n[ShootingTypes] snap,daily\n[Settings] DR 400\r\nCLARITY -4\r\nNoise Redution -4 Highlithts -2 Shadows -2\r\nCOLOR -3\r\nSharpness -2\r\nGrain: Strong and Large\r\nWB AUTO/DAYLIGHT\r\nWB SHIFT R -5 B +5\r\nExposure Compensation: +1\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: OFF',
+  },
+  {
+    id: '55',
+    pageContent:
+      '[Summary] 이 레시피는 마치 일회용 카메라로 찍은 듯한 빈티지한 감성을 선사합니다. 강렬한 색감과 거친 입자, 그리고 따뜻한 색조는 아련한 추억을 불러일으키며, 평범한 일상 속에서도 특별한 순간을 포착할 수 있게 해줍니다. 특히, 햇살 좋은 날의 스냅 사진에 잘 어울릴 것 같습니다.\n[Base Film Simulation] Velvia\n[Keywords] 빈티지,필름,따뜻한,색감,레트로\n[Moods] 따뜻한,빈티지,레트로,몽환적인\n[ShootingTypes] snap,daily\n[Settings] CLARITY -4\r\nNoise Redution -4 Highlithts -2 Shadows -2\r\nCOLOR -4\r\nSharpness -4\r\nGrain: Strong and Large\r\nWB AUTO/DAYLIGHT\r\nWB SHIFT R -8 B -4\r\nExposure Compensation: +1\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong',
+  },
+  {
+    id: '56',
+    pageContent:
+      '[Summary] 이 레시피는 흙과 자연의 색감을 담아, 따뜻하고 빈티지한 분위기를 연출합니다. Classic Negative 필름 시뮬레이션과 강한 그레인 효과는 아날로그 감성을 더하며, 색상 보정을 통해 몽환적인 느낌을 자아냅니다. 특히, 야외 스냅 사진이나 일상적인 풍경을 담기에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,흙,색감,필름\n[Moods] 따뜻한,빈티지,자연스러운,몽환적인\n[ShootingTypes] snap,daily\n[Settings] DR 400\r\nCLARITY +3\r\nNoise Redution 0 Highlithts -1 Shadows +1\r\nCOLOR -2\r\nSharpness +3\r\nGrain: Strong and Small\r\nWB AUTO/DAYLIGHT\r\nWB SHIFT R 4 B-4\r\nExposure Compensation: +1 max\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong',
+  },
+  {
+    id: '57',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 그레인 효과를 통해 아련한 추억을 떠올리게 합니다. 70년대의 향수를 자극하는 이 레시피는 일상적인 스냅 사진이나, 특별한 날의 기록을 더욱 감성적으로 만들어 줄 것입니다.\n[Base Film Simulation] Nostalgic Neg.\n[Keywords] 따뜻한,빈티지,향수,부드러운,노스탤지어\n[Moods] 따뜻한,몽환적인,차분한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Patreon',
+  },
+  {
+    id: '58',
+    pageContent:
+      '[Summary] 후지필름의 Pro Neg. Std 필름 시뮬레이션을 기반으로, 따뜻하고 부드러운 색감과 강한 그레인 효과를 더하여 빈티지한 감성을 극대화합니다. 하이라이트와 섀도우의 섬세한 조절을 통해 부드러운 분위기를 연출하며, 일상 속 스냅 사진에 특별한 감성을 불어넣어 줄 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,빈티지,따뜻한,부드러운,대비\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nGrain: Strong\r\nWhite Balance: 5900K, -2 Red & 0 Blue\r\nColor Chrome Effect: N/A (X-Trans III) or Off (X-T3/X-T30)\r\nHighlight: -2\r\nShadow: +3\r\nColor: -2\r\nSharpness: -2\r\nNoise Reduction: -4\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +2/3 to +1 1/3 (typically)',
+  },
+  {
+    id: '497',
+    pageContent:
+      '[Summary] 이 레시피는 흐린 날씨나 안개가 낀 풍경 속에서 부드럽고 몽환적인 분위기를 연출하는 데 최적화되어 있습니다. Astia 필름 시뮬레이션과 섬세한 색상 조절을 통해, 차분하면서도 따뜻한 감성을 담아낼 수 있으며, 디테일을 살리면서도 부드러운 이미지를 만들어낼 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 흐린 날씨,부드러움,색감,몽환적인,디테일\n[Moods] 차분한,부드러운,몽환적인,따뜻한\n[ShootingTypes] landscape,daily\n[Settings] Highlight tone: +1\r\nShadow tone: 0\r\nDynamic range: 200\r\nWhite balance: 5500 K\r\nWhite balance shift: R -1, B -2\r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Off\r\nColor: 0\r\nSharpness: -2\r\nNoise reduction: -4\r\nGrain: Off\r\nClarity: 0\r\nExposure compensation: 0 with multi metering as a starting point, but adjusting as needed to get a balanced histogram.',
+  },
+  {
+    id: '498',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 필름 느낌을 살려, 일상 속 소중한 순간들을 따뜻하고 자연스럽게 담아낼 수 있도록 설계되었습니다. 특히 인물 사진이나 풍경 사진에서 부드러운 분위기를 연출하는 데 적합하며, 따뜻한 색감으로 편안한 느낌을 더해줄 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,풍경,부드러움,따뜻함,필름\n[Moods] 따뜻한,부드러운,자연스러운\n[ShootingTypes] snap,daily\n[Settings] Highlight tone: -1\r\nShadow tone: 0\r\nDynamic range: 200\r\nWhite balance: Auto (White Priority if available)\r\nWhite balance shift: R -1, B -2\r\nColor Chrome Effect: Weak\r\nColor Chrome FX Blue: Weak\r\nColor: 0\r\nSharpness: -2\r\nNoise reduction: -4\r\nGrain: Off\r\nClarity: 0\r\nExposure compensation: 0 with spot/center-weighted metering or whatever needed to avoid highlight clipping.',
+  },
+  {
+    id: '499',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 색감과 강렬한 대비를 통해, 마치 오래된 필름 사진을 보는 듯한 빈티지한 느낌을 선사합니다. 특히 인물 사진에서 피부톤을 생기있게 표현하며, 일상 속의 특별한 순간들을 매력적으로 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,따뜻함,선명함,필름,인물\n[Moods] 따뜻한,선명한,빈티지,생동감있는\n[ShootingTypes] snap,daily\n[Settings] DR 200.\r\nColor+4.\r\nHighlights +4.\r\nShadows +2 (Sometimes 0 or 1).\r\nChrome effect: Strong.\r\nGrain: Off.\r\nSharpness +1.\r\nNR -4.\r\nWB: Daylight (or adjust to kelvins needed to preserve warm tonality 5300k, 5600k, 5900kand so on).\r\nWB shift: R2, B-4.',
+  },
+  {
+    id: '500',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 골드 톤과 함께 레트로 감성을 자극하며, 빛바랜 듯한 색감과 강렬한 대비를 통해 독특한 분위기를 연출합니다. 특히, 노을 아래 풍경이나 빈티지한 피사체를 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,골드,레트로,필름\n[Moods] 따뜻한,빈티지,몽환적인,황홀한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +4\r\nShadow: +2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Fluorescent 3 (“Cool White Fluorescent”), +4 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to -2/3 (typically)',
+  },
+  {
+    id: '501',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 대비를 통해 아련한 분위기를 연출합니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 적합하며, 몽환적이면서도 드라마틱한 감성을 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,대비,필름,색감\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: -2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Fluorescent 3 (“Cool White Fluorescent”), +4 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to -2/3 (typically)',
+  },
+  {
+    id: '502',
+    pageContent:
+      '[Summary] 이 레시피는 벨비아 필름 시뮬레이션을 기반으로 하여, 선명하고 생생한 색감과 풍부한 대비를 통해 자연의 아름다움을 극대화합니다. 특히 풍경 사진에서 돋보이며, 맑고 화창한 날씨 아래의 풍경을 더욱 돋보이게 해줄 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 선명한,화사한,풍경,인물,필름\n[Moods] 따뜻한,선명한,생동감 있는,자연스러운\n[ShootingTypes] landscape,snap\n[Settings] Currently app patrons only',
+  },
+  {
+    id: '503',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 그림자와 은은한 그레인 효과를 통해 따뜻하고 빈티지한 느낌을 자아냅니다. 인물 사진에 특히 잘 어울리며, 일상적인 스냅 사진을 더욱 매력적으로 만들어 줄 것입니다. 차분하면서도 깊이 있는 색감은 사진에 특별한 분위기를 더합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,따뜻한,색감,인물,부드러움\n[Moods] 따뜻한,차분한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: 0\r\nColor: 0\r\nColor Chrome Effect: Off or N/A\r\nSharpness: 0\r\nNoise Reduction: -4\r\nGrain Effect: Weak\r\nWhite Balance: Shade, 0 Red & -4 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '504',
+    pageContent:
+      '[Summary] 만료된 C200 필름의 독특한 색감과 거친 질감을 재현하여, 아련하면서도 강렬한 인상을 주는 사진을 만들어 줍니다. 특히, 빛과 그림자의 대비를 강조하여 드라마틱한 분위기를 연출하며, 잊혀져 가는 필름 감성을 불러일으킵니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,색감,노이즈,대비\n[Moods] 따뜻한,빈티지,드라마틱,강렬한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: +2\r\nColor: +1\r\nNoise Reduction: -4\r\nSharpening: -4\r\nClarity: 0\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Auto, -3 Red & -6 Blue\r\nISO: Auto – 12800',
+  },
+  {
+    id: '505',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 거친 질감을 통해 어둡고 드라마틱한 분위기를 연출합니다. 특히 스트리트 사진에서 돋보이며, 몽환적이면서도 강렬한 인상을 남기는 이미지를 만들어낼 것입니다. 도시의 어둠 속에서 피어나는 이야기들을 담아보세요.\n[Base Film Simulation] Acros\n[Keywords] 흑백,스트리트,질감,대비,필름\n[Moods] 드라마틱,강렬한,거친,몽환적인\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: 0\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Weak\r\nMonochromatic Color: WC: +1, MG: 0\r\nWhite Balance: Auto\r\nISO: Auto – 12800\r\nAperture: Wide Open\r\nPush/Pull: -1/3 to +1/3',
+  },
+  {
+    id: '506',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 포트라 400 필름의 부드럽고 따뜻한 색감을 후지필름 X-T4로 재현하고자 합니다. Classic Chrome 필름 시뮬레이션과 DR400, 그리고 섬세한 설정들을 통해, 인물 사진에 특히 잘 어울리는 빈티지하면서도 몽환적인 분위기를 연출합니다. 따뜻한 색감과 부드러운 톤은 사진에 깊이와 매력을 더해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,인물,따뜻함,부드러움,빈티지\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: -1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: 0\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Weak\r\nWhite Balance: Daylight, 1 Red & -5 Blue\r\nISO: Auto – 12800\r\nAperture: Wide Open\r\nPush/Pull: 0 to +1',
+  },
+  {
+    id: '507',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로 따뜻하고 부드러운 색감과 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 매력적인 피부톤과 은은한 색감 표현이 가능하며, 일상적인 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식 네거티브,따뜻함,빈티지,피부톤,색감\n[Moods] 따뜻한,부드러운,빈티지,화사한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: Auto\r\nHighlight: 0\r\nShadow: +1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity: 0\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Weak\r\nWhite Balance: Auto WB, +4 Red & +4 Blue\r\nISO: Auto\r\nAperture: Wide Open\r\nPush/Pull: +1/3 to +1',
+  },
+  {
+    id: '508',
+    pageContent:
+      '[Summary] 이 레시피는 영화적인 느낌을 주면서도, 흑백의 강렬함과 빈티지한 매력을 동시에 담아낼 수 있습니다. 특히, 빛과 그림자의 대비를 극대화하여 드라마틱하고 몽환적인 분위기를 연출하며, 거친 질감 표현을 통해 독특한 감성을 더합니다. 다큐멘터리, 스냅 사진에 적합합니다.\n[Base Film Simulation] Eterna Bleach Bypass\n[Keywords] 시네마틱,고대비,흑백,빈티지,드라마틱\n[Moods] 강렬한,거친,드라마틱한,몽환적인\n[ShootingTypes] documentry,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +3\r\nShadow: +3\r\nColor: -4\r\nColor Chrome Effect: Off or N/A\r\nSharpness: 0\r\nNoise Reduction: -4\r\nGrain Effect: Weak\r\nWhite Balance: Incandescent, +8 Red & -9 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '509',
+    pageContent:
+      '[Summary] 후지필름 Pro Neg. Std를 기반으로, 부드러운 하이라이트와 섀도우, 그리고 색상 크롬 효과를 통해 따뜻하고 빈티지한 분위기를 연출합니다. 인물 사진에 특히 적합하며, 은은한 색감과 부드러운 질감으로 아련한 느낌을 더해줍니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,인물,부드러움,색감,빈티지\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,portrait\n[Settings] DR 200\r\nHighlight -1\r\nShadow  -1\r\nCCR STRONG\r\nCCB  WEAK\r\nClarity  -2\r\nSharpening +1\r\nWB AUTO NO SHİFT\r\nGRAİN OFF',
+  },
+  {
+    id: '510',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 강렬한 입자, 그리고 톤 대비를 통해 마치 오래된 필름 사진을 보는 듯한 느낌을 선사합니다. 특히, 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다. 또한, 파란색 계열의 색상을 은은하게 강조하여 사진에 깊이를 더합니다.\n[Base Film Simulation] Eterna\n[Keywords] 필름,빈티지,따뜻한,색감,선명함\n[Moods] 따뜻한,빈티지,선명한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: -2\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 5200K, +1 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '511',
+    pageContent:
+      '[Summary] 이 레시피는 벨비아 필름 시뮬레이션을 기반으로 하여, 강렬한 색감과 높은 대비를 통해 풍경 사진에 생동감을 불어넣습니다. 하이라이트와 섀도우 조절을 통해 극적인 표현을 더하고, 화이트 밸런스와 색상 조절을 통해 원하는 색감을 만들어냅니다. 선명함과 노이즈 감소를 통해 깔끔하면서도 깊이 있는 이미지를 연출합니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,대비,선명함,필름\n[Moods] 강렬한,선명한,극적인,생생한\n[ShootingTypes] landscape,snap\n[Settings] DYNAMIC RANGE: DR400\r\nHIGHLIGHT: +1\r\nSHADOW: -2\r\nCOLOR: -2\r\nWHITE BALANCE: 5600K\r\nWB SHIFT: R: 3, B: 3\r\nNOISE REDUCTION: -2\r\nSHARPENING: -2',
+  },
+  {
+    id: '512',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 가을 햇살 아래, 클래식한 감성을 담아낸 사진을 만들어줍니다. Classic Chrome 필름 시뮬레이션과 색상 보정을 통해 빈티지하면서도 깊이 있는 색감을 표현하며, 하이라이트와 섀도우 조절로 부드러운 톤을 연출합니다. 특히, 풍경 사진이나 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 가을,따뜻함,클래식,빈티지,색감\n[Moods] 따뜻한,차분한,빈티지,고풍스러운\n[ShootingTypes] landscape,snap\n[Settings] dynamic range DR200\r\nhighlight -1\r\nshadow +2\r\ncolor -2\r\nnoise reduction -2\r\nsharpness +1\r\nclarity 0\r\ngrain effect Off\r\nchrome fx Strong\r\nchrome fx blue Weak\r\nwhite balance 5200K, +1 red & -5 blue\r\niso up to ISO 800\r\nexposure compensation +1 to +1 1/3',
+  },
+  {
+    id: '513',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 흑백 대비와 거친 질감, 그리고 톤 보정을 통해 과거의 향수를 불러일으키는 사진을 만들어 줍니다. 특히, 오래된 건물이나 골목길, 인물 사진 등에서 빈티지하고 드라마틱한 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,레트로,빈티지,강렬함,대비\n[Moods] 클래식한,드라마틱한,강렬한,빈티지한\n[ShootingTypes] snap,daily\n[Settings] dynamic range DR200\r\nhighlight 0\r\nshadow +2\r\ncolor 0\r\nnoise reduction -1\r\nsharpness +2\r\nclarity +2\r\ntoning WC+3, MG-1\r\ngrain effect StrongSmall\r\nchrome fx Strong\r\nchrome fx blue Off\r\nwhite balance Auto, +9 red & -9 blue\r\niso Up to 12800\r\nexposure compensation +-0',
+  },
+  {
+    id: '514',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 활기찬 모습과 차가운 분위기를 동시에 담아내어, 강렬하고 드라마틱한 이미지를 연출합니다. 특히, 선명한 디테일과 깊이 있는 색감, 그리고 필름 그레인의 조화는 빈티지한 감성을 더해줄 것입니다. 도시의 거리, 건물, 그리고 사람들의 역동적인 모습을 담기에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 도시,거리,선명함,필름,빈티지\n[Moods] 강렬한,차가운,도시적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] dynamic range DR200\r\nhighlight +2\r\nshadow +1\r\ncolor +1\r\nnoise reduction -4\r\nsharpness -3\r\nclarity +5\r\ngrain effect Weak Large\r\nchrome fx Strong\r\nchrome fx blue Strong\r\nwhite balance Auto, -3 red & -7 blue\r\niso up to ISO 3200\r\nexposure compensation +1/3 to +1',
+  },
+  {
+    id: '515',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 빈티지한 느낌을 담아, 마치 오래된 필름 사진을 보는 듯한 매력을 선사합니다. 인물 사진이나 일상 스냅에 활용하면, 은은하면서도 몽환적인 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,부드러운,인물,필름\n[Moods] 따뜻한,빈티지,부드러운,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +2 (Hard)\r\nShadow: +2 (Hard)\r\nColor: -2 (Low)\r\nSharpness: -1 (Medium-Soft)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: 3200K, +8 Red & -8 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '516',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 강렬한 그레인, 그리고 독특한 색상 표현을 통해 마치 오래된 영화 필름을 보는 듯한 빈티지한 감성을 선사합니다. 특히, 따뜻하고 몽환적인 분위기를 연출하여 일상 속 특별한 순간들을 더욱 아름답게 담아낼 수 있을 것입니다. 노을 아래 풍경이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 시네마틱,필름,빈티지,따뜻한,몽환적인\n[Moods] 따뜻한,몽환적인,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nColor: -1\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: -4\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Daylight, -1 Red & -3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '517',
+    pageContent:
+      '[Summary] 이 레시피는 영화적인 분위기를 연출하며, 따뜻하고 선명한 색감과 강렬한 대비를 통해 빈티지하면서도 드라마틱한 이미지를 만들어줍니다. 특히, 일상 스냅 사진이나 특별한 순간을 기록하는 데 적합하며, 필름 특유의 질감을 더해 줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,따뜻함,선명함,빈티지\n[Moods] 따뜻한,선명한,영화같은,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2\r\nShadow: +3\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nWhite Balance: Auto, -1 Red & -1 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3',
+  },
+  {
+    id: '518',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 색감을 연출합니다. 부드러운 톤과 낮은 채도는 인물 사진에 특히 잘 어울리며, 일상적인 스냅 사진에도 매력적인 분위기를 더해줄 것입니다. 따뜻한 색감과 부드러운 톤은 편안하고 아련한 느낌을 선사합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,차분한,색감,인물\n[Moods] 차분한,따뜻한,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] dynamic range DRPAuto\r\nhighlight 0\r\nshadow 0\r\ncolor -2\r\nnoise reduction -4\r\nsharpness -2\r\ngrain effect N/a\r\nwhite balance Auto, +3 red & -5 blue\r\niso 400 minimum\r\nexposure compensation 0',
+  },
+  {
+    id: '519',
+    pageContent:
+      '[Summary] 이 레시피는 Eterna 필름 시뮬레이션을 기반으로 하여, 부드럽고 차분한 색감과 함께 선명하고 디테일한 이미지를 제공합니다. 전반적으로 자연스러운 색감을 유지하면서도, 약간의 채도를 더하여 생동감을 불어넣어 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 중립,선명한,자연스러운,색감,디테일\n[Moods] 선명한,깔끔한,사실적인\n[ShootingTypes] daily,snap\n[Settings] dynamic range DRPAuto\r\nhighlight 0\r\nshadow 0\r\ncolor +3\r\nnoise reduction -2\r\nsharpness -2\r\nwhite balance Auto, -1 red & -1 blue\r\niso Auto\r\nexposure compensation N/a',
+  },
+  {
+    id: '520',
+    pageContent:
+      '[Summary] 이 레시피는 독특한 색감과 높은 다이나믹 레인지를 통해 자연의 풍경을 담아내는데 최적화되어 있습니다. 특히, 푸른색과 대비를 강조하여 극적이고 선명한 이미지를 연출하며, 강렬한 인상을 남길 수 있습니다. 차가운 듯하면서도 생동감 넘치는 사진을 원하는 분들께 추천합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 풍경,대비,선명한,푸른색,극적인\n[Moods] 극적인,강렬한,차가운,선명한\n[ShootingTypes] landscape\n[Settings] dynamic range DR400\r\nhighlight -1\r\nshadow +1\r\ncolor 0\r\nnoise reduction -2\r\nsharpness +2\r\nwhite balance 3600K, -9 red & -8 blue\r\niso Up to 3200\r\nexposure compensation +1/3 to 1 1/3',
+  },
+  {
+    id: '521',
+    pageContent:
+      '[Summary] 이 레시피는 적외선 개조 카메라를 사용하여 독특한 흑백 이미지를 연출합니다. 벨비아 필름 시뮬레이션과 대비, 선명도를 강조하여 몽환적이면서도 강렬한 분위기를 자아냅니다. 특히 풍경 사진에서 신비로운 느낌을 극대화할 수 있습니다.\n[Base Film Simulation] Velvia\n[Keywords] 적외선,흑백,대비,선명함,몽환적인\n[Moods] 몽환적인,신비로운,드라마틱,강렬한\n[ShootingTypes] landscape,snap\n[Settings] dynamic range DRAUTO\r\nhighlight -1\r\nshadow +1\r\ncolor +1\r\nnoise reduction -2\r\nsharpness +2\r\nwhite balance Custom, -9 red & -6 blue\r\niso Up to ISO 3200\r\nexposure compensation +2/3 to +1 1/3 EV',
+  },
+  {
+    id: '522',
+    pageContent:
+      '[Summary] 이 레시피는 에테르나 필름 시뮬레이션을 기반으로 하여, 따뜻하고 드라마틱한 색감과 빈티지한 분위기를 연출합니다. 특히, 하이라이트와 섀도우의 섬세한 조절을 통해 깊이 있는 표현이 가능하며, 붉은색과 푸른색의 미묘한 조절은 독특한 감성을 더합니다. 거리의 스냅 사진이나 다큐멘터리 사진에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,빈티지,드라마틱,따뜻함,색감\n[Moods] 따뜻한,드라마틱,몽환적인,빈티지\n[ShootingTypes] snap,documentry\n[Settings] dynamic range DRAUTO\r\nhighlight +4\r\nshadow +3\r\ncolor -4\r\nnoise reduction -2\r\nsharpness +2\r\nclarity 0\r\ngrain effect None\r\nchrome fx Strong\r\nchrome fx blue None\r\nwhite balance Shade, +3 red & +8 blue\r\niso Max 6400\r\nexposure compensation -1 to +1',
+  },
+  {
+    id: '523',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 함께 부드러운 노이즈, 그리고 강한 색상 대비를 통해 아련한 분위기를 연출합니다. 특히, 노스탤지어를 자극하는 사진을 원하는 분들에게 적합합니다.\n[Base Film Simulation] Velvia\n[Keywords] 빈티지,따뜻함,색감,필름,노스텔지어\n[Moods] 따뜻한,빈티지,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic range DRAUTO\r\nhighlight 0\r\nshadow -1\r\ncolor -2\r\nnoise reduction -4\r\nsharpness 0\r\nclarity 0\r\ngrain effect Off\r\nchrome fx Strong\r\nchrome fx blue Off\r\nwhite balance Auto, +3 red & -3 blue\r\niso Auto, up to ISO 3200\r\nexposure compensation -1/3 to +2/3',
+  },
+  {
+    id: '524',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 차분한 색감과 은은한 필름 그레인, 그리고 톤 다운된 색상으로 몽환적인 분위기를 연출합니다. 특히, 인물 사진이나 일상 스냅에서 따뜻하고 빈티지한 감성을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,필름,차분한,몽환적인,색감\n[Moods] 차분한,몽환적인,부드러운,따뜻한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -0.5\r\nShadow: +1\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Auto, +3 Red & -8 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '525',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드러운 그레인과 따뜻한 색감, 그리고 은은한 블루톤을 더하여 아련하고 빈티지한 분위기를 연출합니다. 특히, 일상 속의 소중한 순간들을 따뜻하고 감성적으로 기록하는 데 적합하며, 몽환적인 분위기를 더해 사진에 특별한 매력을 부여할 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,색감,질감\n[Moods] 따뜻한,빈티지,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain effect: Weak / Large\r\nCH: Weak\r\nCH Blue: Weak\r\nWhite balance: AUTO  R: +4; B: -8\r\nDynamic range: DR200\r\nTone curve: H:-2; S:0\r\nColor: +2\r\nSharpness: -2\r\nNoise reduction: -4\r\nClarity: -4\r\nExposure compensation: by your personal preferences.',
+  },
+  {
+    id: '526',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 색상과 높은 대비를 통해 풍경과 인물 사진에 생동감을 불어넣습니다. DR400과 하이라이트, 섀도우 조절을 통해 풍부한 계조를 확보하고, 선명도를 높여 디테일을 살립니다. 특히, 흐린 날씨나 그늘진 곳에서 촬영하면 더욱 드라마틱한 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 선명한,풍경,인물,채도,대비\n[Moods] 따뜻한,선명한,강렬한,극적인\n[ShootingTypes] landscape,daily\n[Settings] Push/Pull (Exposure): Typically +1EV and up (expose as you need)\r\nDynamic Range: DR400\r\nGrain Effect: Off\r\nColour Chrome Effect: Strong\r\nWhite Balance: Cloudy/Shade\r\nWB Shift: R: 0 B: +1\r\nHighlight Tone: -2\r\nShadow Tone: -2\r\nColour: +4\r\nSharpness: +4\r\nNoise Reduction: 0',
+  },
+  {
+    id: '527',
+    pageContent:
+      '[Summary] Mark G. Adams의 Classic Negative 레시피는 Classic Chrome을 기반으로, 강렬한 Grain Effect와 Colour Chrome Effect를 통해 빈티지하고 드라마틱한 분위기를 연출합니다. DR400 설정은 넓은 다이나믹 레인지를 확보하여, 섀도우와 하이라이트의 디테일을 살리고, 따뜻하면서도 강렬한 색감으로 다큐멘터리나 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,다큐멘터리,대비,색감\n[Moods] 따뜻한,드라마틱,빈티지,강렬한\n[ShootingTypes] documentry,snap\n[Settings] Push Pull Process: +2/3 or +1 (Adjust for shadows)\r\nDynamic Range: DR400\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nWhite Balance: 5900K\r\nWB Shift: R-4 : B 3\r\nHighlight Tone: -1\r\nShadow Tone: -2\r\nColour: +1\r\nSharpness: 0\r\nNoise Reduction: 0',
+  },
+  {
+    id: '528',
+    pageContent:
+      '[Summary] 이 레시피는 은은한 필름 그레인과 함께, 여름날의 따사로운 햇살 아래에서 포착한 순간들을 생생하고 선명하게 담아낼 것입니다. 특히, 파란 하늘과 푸른 바다를 배경으로 한 사진에서 그 매력을 극대화할 수 있으며, 잊을 수 없는 여름날의 추억을 간직하게 해줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 여름,실버,따뜻함,선명함,필름\n[Moods] 따뜻한,선명한,생생한,청량한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -3\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 5300K, -3 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '529',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 수페리아 필름의 따뜻하고 생생한 색감을 재현하여, 일상 속의 소중한 순간들을 빈티지하면서도 선명하게 담아낼 수 있게 해줍니다. 특히, 파란색 강조 설정은 하늘과 바다의 색감을 더욱 풍부하게 표현해 줄 것입니다. 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,선명한,색감\n[Moods] 따뜻한,선명한,활기찬,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: D-Range Priority Strong\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: +2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Daylight, -4 Red & -2 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '530',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 일상 속의 순간들을 흑백의 깊이 있는 표현으로 담아냅니다. 선명한 디테일과 부드러운 그레인 효과는 차분하고 모던한 분위기를 연출하며, 어떤 피사체든 담백하게 표현해 줍니다. 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,선명한,디테일,일상\n[Moods] 차분한,깔끔한,모던한,담백한\n[ShootingTypes] daily,snap\n[Settings] Dynamic range DR100\r\nhighlight +1\r\nshadow +2\r\ncolor 0\r\nnoise reduction -4\r\nsharpness +2\r\nclarity 0\r\ntoning 0 or warm +1 to taste\r\ngrain effect Weak, off at 12800\r\nchrome fx Off\r\nwhite balance Auto, 0 red & 0 blue\r\niso Auto to 6400, 12800 at night\r\nexposure compensation',
+  },
+  {
+    id: '531',
+    pageContent:
+      '[Summary] Ilford PAN 100 레시피는 흑백 필름의 깊이 있는 질감과 섬세한 디테일을 살려, 마치 오래된 사진첩에서 꺼낸 듯한 빈티지한 느낌을 선사합니다. 강렬한 하이라이트와 부드러운 섀도우의 조화는 드라마틱한 흑백 사진을 연출하며, 일상 속 순간들을 특별하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,필름,빈티지,디테일\n[Moods] 차분한,클래식,빈티지,드라마틱\n[ShootingTypes] snap,documentry\n[Settings] ACROS+Ye\r\ndynamic range DR100\r\nhighlight +3\r\nshadow 0\r\ncolor 0\r\nnoise reduction -1\r\nsharpness +2\r\nclarity 0\r\ngrain effect Weak\r\nwhite balance Auto, 0 red & 0 blue\r\niso (Auto) 6400\r\nexposure compensation +1/3 to +1',
+  },
+  {
+    id: '532',
+    pageContent:
+      '[Summary] Ilford Delta 3200 필름을 연상시키는 이 레시피는 강렬한 흑백 대비와 거친 질감을 통해 드라마틱한 분위기를 연출합니다. 어두운 그림자와 밝은 하이라이트의 조화는 흑백 사진 특유의 깊이와 풍부한 표현력을 더하며, 몽환적이면서도 강렬한 인상을 남깁니다. 특히, 도시의 밤거리나 인물 사진에 잘 어울릴 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,필름,거친,드라마틱\n[Moods] 차가운,드라마틱,강렬한,거친,빈티지\n[ShootingTypes] snap,documentry\n[Settings] ACROS+G\r\ndynamic range DR400\r\nhighlight -2\r\nshadow +4\r\ncolor 0\r\nnoise reduction -4\r\nsharpness -2\r\nclarity 0\r\ngrain effect Strong\r\nwhite balance Auto, 0 red & 0 blue\r\niso 12800\r\nexposure compensation -1/3 to -2/3',
+  },
+  {
+    id: '533',
+    pageContent:
+      '[Summary] Agfa APX 100 레시피는 흑백 필름의 깊이 있는 질감과 강렬한 대비를 통해, 마치 오래된 다큐멘터리 사진집을 보는 듯한 느낌을 선사합니다. 강한 그레인 효과와 하이라이트, 섀도우 조절을 통해 흑백의 매력을 극대화하여, 잊혀져 가는 시간의 흔적을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,빈티지,모노크롬,질감\n[Moods] 차분한,고전적인,드라마틱한,거친\n[ShootingTypes] snap,documentry\n[Settings] simulation ACROS+G\r\ndynamic range DR100\r\nhighlight +4\r\nshadow +1\r\ncolor 0\r\nnoise reduction -2\r\nsharpness -2\r\nclarity 0\r\ngrain effect Strong\r\nwhite balance Auto, 0 red & 0 blue\r\niso (Auto) 6400\r\nexposure compensation',
+  },
+  {
+    id: '534',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 활기찬 분위기를 연출하며, 필름 특유의 질감과 색감을 살려줍니다. 특히, 일상적인 스냅 사진이나 풍경 사진에 활용하면 더욱 매력적인 결과물을 얻을 수 있을 것입니다. 마치 오래된 필름 카메라로 촬영한 듯한 빈티지한 느낌을 선사합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,따뜻함,선명함,빈티지,색감\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] dynamic range DR400\r\nhighlight +2\r\nshadow +2\r\ncolor +4\r\nnoise reduction -4\r\nsharpness +2\r\ngrain effect Strong\r\nwhite balance Shade, +1 red & -4 blue\r\niso AUTO 200 to 6400\r\nexposure compensation 0 to +1',
+  },
+  {
+    id: '535',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이와 질감을 극대화하여, 오래된 사진첩에서 발견한 듯한 아련하고 빈티지한 느낌을 선사합니다. 강렬한 대비와 섬세한 그레인은 잊혀진 기억을 불러일으키며, 몽환적이면서도 드라마틱한 분위기를 연출합니다. 특히, 인물이나 풍경 사진에 깊이와 개성을 더할 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,빈티지,모노톤,질감,대비\n[Moods] 드라마틱,강렬한,고풍스러운,거친,몽환적인\n[ShootingTypes] snap,daily\n[Settings] dynamic range DR400\r\nhighlight +1\r\nshadow +3\r\ncolor 0\r\nnoise reduction -4\r\nsharpness +1\r\nclarity +3\r\ntoning wc+1 mg+1\r\ngrain effect Weak Small\r\nchrome fx Strong\r\nchrome fx blue Off\r\nwhite balance Daylight, +7 red & -7 blue\r\niso up to ISO 6400\r\nexposure compensation 0 to +2/3',
+  },
+  {
+    id: '536',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 빈티지하면서도 강렬한 색감과 깊이 있는 톤을 표현합니다. 특히, 거리 사진이나 일상 스냅에서 돋보이는 드라마틱한 분위기를 연출하며, 앰버톤과 블루톤의 조화가 인상적입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,거리,필름,색감,대비\n[Moods] 따뜻한,빈티지한,선명한,드라마틱한\n[ShootingTypes] snap,daily\n[Settings] dynamic range DR200\r\nhighlight -2\r\nshadow 0\r\ncolor 0\r\nnoise reduction -4\r\nsharpness 0\r\nclarity -3\r\ngrain effect Weak Small\r\nchrome fx Strong\r\nchrome fx blue Strong\r\nwhite balance Auto, -2 red & -5 blue\r\niso 320-12800\r\nexposure compensation 0 to +1',
+  },
+  {
+    id: '537',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 그레인, 그리고 따뜻한 색감으로 몽환적인 분위기를 연출합니다. 특히, 노을 아래의 풍경이나 인물 사진에 잘 어울리며, 아련하고 빈티지한 느낌을 더해줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 몽환적인,부드러운,필름,따뜻한,빈티지\n[Moods] 몽환적인,따뜻한,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] dynamic range DR400\r\nhighlight +2\r\nshadow +3\r\ncolor +3\r\nnoise reduction 0\r\nsharpness 0\r\nclarity -3\r\ngrain effect Weak Small\r\nchrome fx Off\r\nchrome fx blue Off\r\nwhite balance Auto, +2 red & -4 blue\r\niso 640-12800\r\nexposure compensation 0 - +1',
+  },
+  {
+    id: '538',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감으로 일상 속의 소중한 순간들을 기록하기에 적합합니다. Astia 필름 시뮬레이션과 색상 강조 설정을 통해, 인물 사진의 피부톤을 화사하게 표현하고, 주변 풍경을 더욱 선명하고 생동감 있게 담아낼 수 있습니다. 특히, 맑은 날 야외에서 촬영하면 더욱 좋은 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 따뜻한,부드러운,선명한,일상,인물\n[Moods] 따뜻한,부드러운,화사한,자연스러운\n[ShootingTypes] snap,daily\n[Settings] dynamic range DRPWeak\r\nhighlight 0\r\nshadow 0\r\ncolor +2\r\nnoise reduction -4\r\nsharpness +2\r\nclarity 0\r\nchrome fx Strong\r\nchrome fx blue Off\r\nwhite balance Auto, 0 red & 0 blue\r\niso Auto up to 6400\r\nexposure compensation 0',
+  },
+  {
+    id: '539',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션의 특징을 살려, 풍경 사진에 적합한 선명하고 대비가 강한 이미지를 연출합니다. DR400 설정은 하이라이트와 섀도우의 디테일을 살리고, 색상과 채도를 높여 생동감 넘치는 사진을 만들어 줍니다. 따뜻한 색감과 강렬한 대비는 보는 이의 시선을 사로잡을 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,대비,선명한,풍경,강렬한\n[Moods] 생동감,따뜻한,극적인\n[ShootingTypes] landscape,snap\n[Settings] dynamic range DR400\r\nhighlight -2\r\nshadow +4\r\ncolor +4\r\nnoise reduction 0\r\nsharpness +2\r\ngrain effect Weak\r\nchrome fx Weak\r\nwhite balance Auto, -1 red & -1 blue\r\niso Auto, up to 6400\r\nexposure compensation 0 to +1 typically',
+  },
+  {
+    id: '540',
+    pageContent:
+      '[Summary] 파리의 새벽 거리를 걷는 듯한 이 레시피는 Classic Chrome의 부드러운 색감과 따뜻한 색조, 그리고 강렬한 파란색 강조를 통해 몽환적인 분위기를 연출합니다. 노이즈 감소와 선명도 조절을 통해 부드러우면서도 디테일이 살아있는 사진을 만들 수 있으며, 일상 스냅이나 여행 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,파리,따뜻한,색감,필름\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] dynamic range DRPWeak\r\nhighlight 0\r\nshadow 0\r\ncolor +2\r\nnoise reduction -4\r\nsharpness +2\r\nclarity 0\r\ngrain effect Off\r\nchrome fx Strong\r\nchrome fx blue Strong\r\nwhite balance Auto, +3 red & -3 blue\r\niso Auto, up to 6400\r\nexposure compensation 0, typically',
+  },
+  {
+    id: '541',
+    pageContent:
+      '[Summary] Marcel Fraij의 Acros Dark 레시피는 강렬한 흑백 대비와 섬세한 디테일을 살려, 묵직하고 드라마틱한 흑백 사진을 연출합니다. 특히, 높은 선명도와 노이즈 감소를 통해 깔끔하면서도 깊이 있는 질감을 표현하며, 파란색 계열의 색상 강조를 통해 흑백 사진에 독특한 개성을 더합니다. 이 레시피는 다큐멘터리나 스냅 사진에 적합하며, 흑백의 매력을 극대화합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,콘트라스트,선명함,질감\n[Moods] 드라마틱,강렬한,차분한,고전적인\n[ShootingTypes] documentry,snap\n[Settings] ACROS+R\r\ndynamic range DRAUTO\r\nhighlight +2\r\nshadow +3\r\ncolor 0\r\nnoise reduction -4\r\nsharpness +2\r\nclarity +5\r\ntoning WC+1 MG+1\r\ngrain effect Off\r\nchrome fx Strong\r\nchrome fx blue Strong\r\nwhite balance Auto, 0 red & 0 blue\r\niso Up to ISO 6400\r\nexposure compensation 0 to +2/3',
+  },
+  {
+    id: '542',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 몽환적인 분위기를 자아내는 사진을 만들어 줍니다. 특히, 빈티지한 느낌과 필름 특유의 질감을 살려, 일상 속 특별한 순간들을 아름답게 담아낼 수 있을 것입니다. 부드러운 그림자와 은은한 색감은 사진에 깊이와 감성을 더해줍니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,색감,몽환적인,필름,부드러움\n[Moods] 따뜻한,몽환적인,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] dynamic range DR200\r\nhighlight -1\r\nshadow +4\r\ncolor +3\r\nnoise reduction -4\r\nsharpness -4\r\nclarity 0\r\ngrain effect Weak Large\r\nchrome fx Weak\r\nchrome fx blue Weak\r\nwhite balance 4000K, +3 red & -6 blue\r\niso Up to ISO 6400\r\nexposure compensation 0 to +2/3',
+  },
+  {
+    id: '543',
+    pageContent:
+      '[Summary] 이 레시피는 Pro Neg. High 필름 시뮬레이션을 기반으로, 인물 사진의 생동감과 선명도를 높이는 데 초점을 맞추었습니다. 특히, 색상과 채도를 강조하고, 섀도우를 살짝 올려 따뜻하고 드라마틱한 분위기를 연출합니다. 강렬한 색감과 뚜렷한 윤곽으로, 기억에 남는 인물 사진을 담아낼 수 있습니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,선명한,대비,필름,색감\n[Moods] 따뜻한,선명한,생동감있는,드라마틱\n[ShootingTypes] portrait,snap\n[Settings] dynamic range DR200\r\nhighlight 0\r\nshadow +1\r\ncolor +1\r\nnoise reduction -4\r\nsharpness +2\r\nclarity +5\r\ngrain effect Off\r\nchrome fx Strong\r\nchrome fx blue Strong\r\nwhite balance Auto, -1 red & -3 blue\r\niso Up to ISO 800\r\nexposure compensation 0 to +2/3',
+  },
+  {
+    id: '544',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 하여, 차분하고 빈티지한 색감과 함께 약간의 드라마틱한 분위기를 연출합니다. 하이라이트와 섀도우 조절을 통해 대비를 살리고, 노이즈 감소와 샤프니스를 낮춰 부드러운 느낌을 더했습니다. 다큐멘터리나 스냅 사진에 적합하며, 일상 속 특별한 순간들을 기록하기에 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,빈티지,다큐멘터리,색감,대비\n[Moods] 차분한,빈티지,고전적인,드라마틱\n[ShootingTypes] snap,documentry\n[Settings] dynamic range DR200\r\nhighlight -2\r\nshadow +1\r\ncolor -2\r\nnoise reduction -2\r\nsharpness -2\r\nwhite balance Fluorescent 2, -2 red & -1 blue\r\niso Auto up to ISO 3200\r\nexposure compensation +1/3 to +1',
+  },
+  {
+    id: '545',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 흑백 대비와 섬세한 질감을 통해, 마치 오래된 필름 사진과 같은 독특한 분위기를 연출합니다. 특히, 빛과 그림자의 극적인 대비를 강조하여, 흑백 사진 특유의 깊이감과 드라마틱한 감성을 표현하고자 할 때 적합합니다. 도시의 풍경, 인물, 또는 다큐멘터리 사진에 활용하면 인상적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,대비,선명함,질감,필름\n[Moods] 강렬한,드라마틱,빈티지,거친\n[ShootingTypes] snap,documentry\n[Settings] MONOCHROME+Ye\r\ndynamic range DR400\r\nhighlight +4\r\nshadow 0\r\ncolor 0\r\nnoise reduction -4\r\nsharpness +4\r\nclarity +5\r\ntoning WC -1 MG 0\r\ngrain effect Weak, Small\r\nchrome fx Strong\r\nchrome fx blue Strong\r\nwhite balance Auto, 0 red & 0 blue\r\niso up to 6400\r\nexposure compensation +2/3 to +1 2/3',
+  },
+  {
+    id: '546',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 Astia 필름 시뮬레이션을 기반으로 하여, 부드럽고 화사한 색감과 섬세한 피부 표현을 강조합니다. 인물 사진에 특히 적합하며, 따뜻하고 몽환적인 분위기를 연출하여 사진에 깊이를 더합니다. 부드러운 하이라이트와 섀도우 표현은 사진에 은은한 매력을 더해줍니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,화사함,피부톤,필름\n[Moods] 따뜻한,부드러운,화사한,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] dynamic range DR100\r\nhighlight -1\r\nshadow -2\r\ncolor +2\r\nnoise reduction -2\r\nsharpness -1\r\nclarity 0\r\ngrain effect 0\r\nwhite balance auto, 0 red & 0 blue\r\niso auto\r\nexposure compensation 0 to +1/3',
+  },
+  {
+    id: '547',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 화사한 색감으로, 일상 속의 소중한 순간들을 선명하게 담아낼 수 있도록 설계되었습니다. 특히, 자연광 아래에서 인물이나 풍경 사진을 촬영할 때, 부드러운 피부톤과 생생한 색감을 동시에 얻을 수 있어, 기억하고 싶은 순간들을 더욱 아름답게 기록할 수 있을 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 따뜻한,선명한,풍경,인물,필름\n[Moods] 따뜻한,화사한,선명한,자연스러운\n[ShootingTypes] snap,daily\n[Settings] dynamic range DRAUTO\r\nhighlight -1\r\nshadow 0\r\ncolor +1\r\nnoise reduction -2\r\nsharpness -1\r\nclarity 0\r\ngrain effect 0\r\nwhite balance Daylight/Fine, +3 red & 0 blue\r\niso auto\r\nexposure compensation -0 to +2/3',
+  },
+  {
+    id: '548',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여 부드러우면서도 생동감 넘치는 색감을 연출합니다. 특히 인물 사진에서 따뜻하고 매력적인 분위기를 자아내며, 적절한 대비와 선명함으로 피사체를 돋보이게 합니다. 일상 스냅이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Astia\n[Keywords] 따뜻한,선명한,인물,색감,대비\n[Moods] 따뜻한,생동감,선명한,활기찬\n[ShootingTypes] portrait,snap\n[Settings] dynamic range DR200\r\nhighlight 0\r\nshadow +2\r\ncolor +2\r\nnoise reduction -2\r\nsharpness +2\r\nclarity 0\r\ngrain effect 0\r\nwhite balance Fluorescent 3 (Cool White Fluorescent), +2 red & -5 blue\r\niso auto\r\nexposure compensation -1/3 to +1/3',
+  },
+  {
+    id: '549',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 빈티지한 색감을 후지필름 특유의 감성으로 재현합니다. Classic Chrome 필름 시뮬레이션과 섬세한 설정들을 통해, 일상 속의 소중한 순간들을 더욱 매력적으로 담아낼 수 있습니다. 특히, 빛이 좋은 날 야외에서 인물이나 풍경 사진을 촬영하면 더욱 만족스러운 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,따뜻한,선명한,색감\n[Moods] 따뜻한,빈티지,선명한,활기찬\n[ShootingTypes] snap,daily\n[Settings] dynamic range DR400\r\nhighlight -1\r\nshadow +1\r\ncolor -2\r\nnoise reduction -4\r\nsharpness 0\r\nclarity +3\r\ngrain effect Strong Small\r\nchrome fx off\r\nchrome fx blue weak\r\nwhite balance 6300K, -1 red & -4 blue\r\niso auto\r\nexposure compensation +2/3 to +1 2/3 EV',
+  },
+  {
+    id: '550',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 화사한 피부 표현과 함께, 은은한 필름 느낌을 살려 인물 사진에 최적화된 레시피입니다. 따뜻한 색감과 적절한 선명도 조절을 통해, 일상 속의 소중한 순간들을 더욱 아름답게 담아낼 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,화사함,필름,선명함\n[Moods] 따뜻한,화사한,선명한,부드러운\n[ShootingTypes] portrait,snap\n[Settings] dynamic range DRAUTO\r\nhighlight +1\r\nshadow +1\r\ncolor +4\r\nnoise reduction -4\r\nsharpness 0\r\nclarity +3\r\ngrain effect Weak Small\r\nchrome fx weak\r\nchrome fx blue weak\r\nwhite balance auto, +3 red & -2 blue\r\niso auto\r\nexposure compensation +1/3 to +1 EV',
+  },
+  {
+    id: '551',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션의 특징을 극대화하여, 풍경 사진에 적합한 선명하고 강렬한 색감과 높은 대비를 제공합니다. DR400 설정은 하이라이트와 섀도우 영역의 디테일을 살리고, +2의 하이라이트와 섀도우 설정은 사진에 극적인 깊이를 더합니다. 생동감 넘치는 색상과 디테일을 담아내어, 기억에 남는 이미지를 만들 수 있습니다.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,대비,선명함,풍경,강렬함\n[Moods] 생동감 있는,강렬한,극적인,선명한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +2 (Hard)\r\nShadow: +2 (Hard)\r\nColor: +2 (High)\r\nSharpness: +2 (Hard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Daylight/Fine, 0 Red & 0 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '552',
+    pageContent:
+      '[Summary] 이 레시피는 시네마틱한 분위기를 연출하며, 따뜻하고 부드러운 색감으로 인물과 도시의 야경을 담기에 적합합니다. 특히, 어두운 밤의 도시 풍경이나 인물 사진에서 몽환적이면서도 드라마틱한 느낌을 표현할 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 시네마틱,따뜻함,도시,인물,필름\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] night,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: +2 (Hard)\r\nShadow: +1 (Medium-Hard)\r\nColor: -1 (Medium-Low)\r\nSharpness: 0 (Standard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: 4300K, -3 Red & -3 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '553',
+    pageContent:
+      '[Summary] 이 레시피는 컬러 네거티브 필름의 따뜻하고 부드러운 색감을 재현하여, 일상 속 스냅 사진에 적합합니다. 클래식 크롬 필름 시뮬레이션을 기반으로 하여 빈티지한 감성을 더해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 컬러,네거티브,필름,빈티지,따뜻함\n[Moods] 따뜻한,부드러운,빈티지\n[ShootingTypes] snap\n[Settings] Currently app patrons only',
+  },
+  {
+    id: '554',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 그레인, 그리고 따뜻한 색상으로 마치 포트라 필름을 연상시키는 매력적인 결과물을 만들어줍니다. 특히 인물 사진에서 피부톤을 아름답게 표현하며, 빈티지하면서도 몽환적인 분위기를 연출합니다. 일상 스냅이나 인물 촬영에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,인물,따뜻한,빈티지,부드러운\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: D-Range Priority Auto\r\nColor: +1\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: +3\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 5000K, +2 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '555',
+    pageContent:
+      '[Summary] Dom Caligan의 Machina 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 은은한 그레인 효과를 통해 아련한 분위기를 연출합니다. 특히, 노이즈 감소와 색상 조절을 통해 부드럽고 차분한 이미지를 만들어 줍니다. 일상 스냅 사진에 적합하며, 과거의 추억을 떠올리게 하는 사진을 담을 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,필름,색감,노이즈\n[Moods] 따뜻한,차분한,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] White Balance: 7700K \r\nWB Shift: Red +1 & Blue -6\r\nDynamic Range: Auto\r\nHighlight: 0\r\nShadow: 0\r\nColor: -2\r\nSharpness: 0\r\nNoise Reduction: -2\r\nGrain Effect: Weak\r\nColor Chrome Effect: weak\r\nISO AUTO MAX 6400',
+  },
+  {
+    id: '556',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 Superia 필름을 스캔한 듯한 따뜻하고 빈티지한 색감을 재현합니다. Classic Negative 필름 시뮬레이션과 섬세한 그레인, 그리고 색상 보정을 통해 일상 스냅 사진에 매력적인 분위기를 더해줍니다. 특히, 따뜻한 색감과 부드러운 톤은 편안하고 아련한 느낌을 선사합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,스냅,따뜻한,색감\n[Moods] 따뜻한,레트로,선명한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: D-Range Priority Auto\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -3\r\nClarity: +3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Daylight, -2 Red & +3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '557',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 자연스러운 톤으로, 일상 속의 소중한 순간들을 따뜻하고 감성적으로 담아낼 수 있도록 해줍니다. 특히, 인물 사진이나 스냅 사진에 적합하며, 은은한 필름 그레인 효과가 아날로그 감성을 더해줍니다.\n[Base Film Simulation] Astia\n[Keywords] 현대적인,네거티브,부드러운,색감,필름\n[Moods] 따뜻한,부드러운,자연스러운\n[ShootingTypes] snap,daily\n[Settings] Grain: Weak Small\r\nDynamic Range: 400\r\nISO: Auto 640–6400 (important for DR400)\r\nWhite balance: Auto white priority\r\nWB offset: R: 2, B -2\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Weak\r\nHighlights: 0\r\nShadows: 0\r\nColor: -2\r\nSharpness: -1\r\nNoise Reduction: -2\r\nClarity: 0\r\nExposure compensation: Typically +1/3 — +2/3',
+  },
+  {
+    id: '558',
+    pageContent:
+      '[Summary] 강렬한 흑백 대비와 거친 질감 표현을 통해, 마치 오래된 필름 사진을 보는 듯한 드라마틱한 분위기를 연출합니다. 특히, 강한 빛과 그림자의 대비를 강조하여 피사체의 질감과 형태를 더욱 돋보이게 합니다. 흑백의 깊이 있는 표현은 다큐멘터리나 스냅 사진에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,고대비,질감,선명함,필름\n[Moods] 드라마틱,강렬한,거친,빈티지\n[ShootingTypes] documentry,snap\n[Settings] Acros Y\r\nDR 100\r\nMonochromatic Color: WC:1 MG:0\r\nGrain: Strong, Large\r\nChrome Color FX: Strong\r\nChrome FX blue: Strong\r\nWB: Auto\r\nWB Shift: R:-9 B:0\r\nHighLight Tone: +4\r\nShadow Tone: +4\r\nColor:-\r\nSharpness: 0\r\nNoise Reduction: -4\r\nClarity: +2',
+  },
+  {
+    id: '559',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 강한 그레인 효과를 통해 아련한 분위기를 연출합니다. 특히, 부드러운 하이라이트와 섀도우, 그리고 색상 보정을 통해 몽환적인 느낌을 더하여, 일상적인 스냅 사진에 특별한 감성을 불어넣을 수 있습니다.\n[Base Film Simulation] Provia\n[Keywords] 따뜻한,빈티지,필름,그레인,몽환적인\n[Moods] 따뜻한,몽환적인,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] WB Shade/5000K, R -4, B -7\r\nHighlight: -1\r\nShadow: +0\r\nColor: -2\r\nChrome Color FX: eak\r\nChrome FX blue:\r\nSharpness: 0\r\nNoise Reduction: -2\r\nGrain effect: Strong\r\nDynamic Range: Auto\r\nIso: auto up to Auto Max 6400\r\nEV Compensation: 0:+1/3',
+  },
+  {
+    id: '560',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 선명한 색감을 재현하려는 시도로, 강렬한 하이라이트와 부드러운 섀도우, 그리고 약간의 색상 보정을 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 일상 스냅이나 풍경 사진에 적합하며, 잊혀져 가는 필름의 감성을 되살립니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,빈티지,따뜻한,선명한,대비\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2 (Hard)\r\nShadow: -2 (Soft)\r\nColor: +2 (High)\r\nSharpness: +1 (Medium-Hard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Auto, 0 Red & -3 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: -1/3 to -1 (typically)',
+  },
+  {
+    id: '561',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 흑백 대비와 풍부한 입자 표현을 통해, 마치 오래된 영화 속 한 장면을 연상시키는 듯한 드라마틱한 분위기를 연출합니다. 특히, 빛과 그림자의 극적인 대비를 담아내어 흑백 사진 특유의 깊이와 감성을 극대화합니다. 거친 질감과 섬세한 디테일이 공존하는 이 레시피는 흑백 사진의 매력을 한껏 느낄 수 있게 해줍니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,콘트라스트,필름,빈티지\n[Moods] 드라마틱,차분한,고전적인,강렬한\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR400\r\nHighlight: +3\r\nShadow: 0\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: 0\r\nGrain Effect: Strong, Small (Strong for those cameras without Grain Size)\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Daylight, 0 Red & 0 Blue\r\nISO: Auto, up to ISO 12800\r\nExposure Compensation: 0 to -2/3 (typically)',
+  },
+  {
+    id: '562',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 세련된 분위기를 담아내기 위해 Classic Negative 필름 시뮬레이션을 기반으로 합니다. 차갑고 시크한 느낌을 주며, 스트릿 패션이나 도시적인 인물 사진에 특히 잘 어울립니다. 도시의 일상적인 모습을 감각적으로 포착하고 싶은 분들에게 추천합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,스트릿,패션,인물,도시\n[Moods] 세련된,시크한,차가운,도시적인\n[ShootingTypes] snap,daily\n[Settings] Behind a wall',
+  },
+  {
+    id: '563',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로 하여, 따뜻하고 부드러운 색감과 은은한 그레인 효과를 통해 아련하고 그리운 분위기를 연출합니다. 일상 속 소중한 순간들을 레트로 감성으로 담아낼 수 있는 매력적인 레시피입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 레트로,빈티지,클래식,따뜻함,필름\n[Moods] 따뜻한,빈티지,아련한,그리운\n[ShootingTypes] snap,daily\n[Settings] Behind a wall',
+  },
+  {
+    id: '564',
+    pageContent:
+      '[Summary] 이 레시피는 영화적인 분위기를 연출하며, 부드럽고 따뜻한 색감으로 일상적인 스냅 사진에 적합합니다. 특히, 은은한 분위기를 선호하는 분들에게 좋은 선택이 될 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,영화,부드러움,따뜻함,빈티지\n[Moods] 따뜻한,몽환적인,차분한,영화같은\n[ShootingTypes] snap,daily\n[Settings] Behind a wall',
+  },
+  {
+    id: '565',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 따뜻하고 빈티지한 색감과 함께 필름 특유의 질감을 살려줍니다. 특히, 빛 바랜 듯한 느낌과 톤을 통해 아련하고 감성적인 분위기를 연출하며, 일상 속 소중한 순간들을 더욱 특별하게 기록할 수 있도록 해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,색감,질감\n[Moods] 따뜻한,빈티지,차분한,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nGrain Strong Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Shade, +4 Red & -3 Blue\r\nDynamic Range: DR100\r\nHighlight: -1\r\nShadow: -+2\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpening: +4\r\nClarity: +3',
+  },
+  {
+    id: '566',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 함께 필름 특유의 질감을 살려, 인물 사진에 특히 잘 어울리는 레시피입니다. 클래식 크롬 필름 시뮬레이션과 강한 그레인 효과는 빈티지한 감성을 더하며, 톤 조정과 화이트 밸런스 설정을 통해 따뜻하고 아련한 분위기를 연출합니다. 일상 스냅이나 인물 사진에 활용하여, 포근하고 매력적인 결과물을 얻을 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,인물,따뜻한,부드러운,빈티지\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: -1\r\nShadow: -1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nWhite Balance: Daylight, +2 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '567',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 강렬한 질감을 통해, 오래된 사진첩을 넘기는 듯한 아련하고 빈티지한 감성을 선사합니다. 특히, 빛과 그림자의 대비를 강조하여 드라마틱한 흑백 사진을 연출하는 데 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,빈티지,모노크롬,질감,디테일\n[Moods] 차분한,고전적인,드라마틱한,빈티지한\n[ShootingTypes] snap,daily\n[Settings] Acros yellow\r\nWB Auto, R -9, B -9\r\nHighlight: +1\r\nShadow: +1\r\nColor:\r\nChrome Color FX: \r\nChrome FX blue:\r\nSharpness: 0\r\nClarity: -1\r\nNoise Reduction: 0\r\nGrain effect: Strong Large\r\nDynamic Range: Auto\r\nIso: auto up to 3200\r\nEV Compensation: 0',
+  },
+  {
+    id: '568',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 파스텔톤과 빈티지한 색감으로, 일상 속의 소중한 순간들을 따뜻하고 몽환적으로 담아낼 수 있습니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Provia\n[Keywords] 빈티지,몽환적인,파스텔톤,필름,색감\n[Moods] 따뜻한,몽환적인,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] WB 4000, R +4, B -5\r\nHighlight: -2\r\nShadow: -1\r\nColor:-4\r\nChrome Color FX: Strong\r\nChrome FX blue: Strong\r\nSharpness: 0\r\nClarity: -1\r\nNoise Reduction: -4\r\nGrain effect: Strong Weak\r\nDynamic Range: Auto\r\nIso: Auto up to 3200\r\nEV Compensation: 0',
+  },
+  {
+    id: '569',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 차갑고 몽환적인 분위기를 연출합니다. 특히, 파란색 계열의 색상을 강조하고, 강한 그레인 효과를 통해 빈티지한 느낌을 더하여, 흑백 사진과 같은 드라마틱한 분위기를 자아냅니다. 일상 스냅 사진이나, 특별한 순간을 기록하는 데 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,푸른색,몽환적인,흑백\n[Moods] 차가운,몽환적인,드라마틱,신비로운\n[ShootingTypes] snap,daily\n[Settings] WB 3800K, R -7, B -2\r\nHighlight: -1\r\nShadow: -1\r\nColor:-4\r\nChrome Color FX: Strong\r\nChrome FX blue: Strong\r\nSharpness: -2\r\nClarity: -2\r\nNoise Reduction: -4\r\nGrain effect: Strong Large\r\nDynamic Range: Auto\r\nIso: Auto up to 6400\r\nEV Compensation: 0 to -1/3',
+  },
+  {
+    id: '570',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 하이라이트와 섀도우, 그리고 따뜻한 색감으로 몽환적인 분위기를 연출합니다. 특히 인물 사진에서 부드러운 피부톤과 빈티지한 느낌을 살려주며, 일상적인 스냅 사진에도 매력적인 분위기를 더해줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻한,빈티지,인물,필름\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] White Balance: Incandescent, -9 Red & +6 Blue\r\nDynamic Range: DR100\r\nDynamic Range Priority: off\r\nHighlight: -2\r\nShadow: +2\r\nColor: + 4\r\nSharpness: -2\r\nNoise Reduction: -2\r\nGrain Effect: off\r\nColor Chrome Effect: weak',
+  },
+  {
+    id: '571',
+    pageContent:
+      '[Summary] 흑백 필름 시뮬레이션과 대비, 선명도를 강조하여, 묵직하고 드라마틱한 흑백 사진을 연출합니다. 강렬한 톤과 디테일 표현으로 빈티지하면서도 깊이 있는 감성을 담아낼 수 있습니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,대비,선명함,필름\n[Moods] 드라마틱,강렬한,차분한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Monochrome Red\r\nHTone -2\r\nSTone +2\r\nDR100\r\nSharp +2\r\nNR+1',
+  },
+  {
+    id: '572',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 차분한 색감과 차가운 색 보정을 통해, 차분하고 빈티지한 분위기를 연출합니다. 하이라이트와 섀도우를 강조하여 드라마틱한 대비를 주고, 인물 사진에 특히 잘 어울리는 톤을 만들어줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,차분한,차가운,인물,대비\n[Moods] 차가운,차분한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] WB: Auto\r\nWB Shift:  R-6 B-2\r\nColour: -2\r\nHighlights: +2\r\nShadows: +2\r\nNR: -2\r\nSharpening: -2\r\nEV: -0',
+  },
+  {
+    id: '573',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로 하여, 따뜻하고 빈티지한 색감으로 일상 속의 소중한 순간들을 담아낼 수 있도록 설계되었습니다. 음식 사진이나 스냅 사진에 특히 잘 어울리며, 부드러운 하이라이트와 섀도우 표현으로 아련한 분위기를 연출합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,음식,색감,클래식\n[Moods] 따뜻한,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] WB: Auto\r\nWB Shift:  R-5 B+2\r\nColour: +2 \r\nHighlights: +1\r\nShadows: +2\r\nNR: -2\r\nSharpening: -2\r\nEV: -1',
+  },
+  {
+    id: '574',
+    pageContent:
+      '[Summary] 이 레시피는 1960년대의 부드러운 크로스 프로세싱을 연상시키는 따뜻하고 빈티지한 색감을 제공합니다. 부드러운 하이라이트와 섀도우, 그리고 약간의 노이즈 감소는 몽환적인 분위기를 연출하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 빈티지,따뜻한,부드러운,색감,필름\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: AUTO\r\nWhite Balance: Underwater, -2 Red & -3 Blue\r\nColor: 0\r\nHighlight: -1\r\nShadow: 0\r\nSharpness : 2\r\nNoise Reduction: -2\r\nISO: Auto, up to ISO 3200',
+  },
+  {
+    id: '575',
+    pageContent:
+      '[Summary] 강렬한 대비와 깊이 있는 톤으로 흑백의 매력을 극대화한 레시피입니다. 특히 붉은색 계열의 피사체에 드라마틱한 표현을 더하며, 거친 질감과 섬세한 디테일이 공존하는 독특한 분위기를 연출합니다. 흑백 사진 특유의 감성을 통해 피사체의 본질을 더욱 깊이 있게 담아낼 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,레드필터,대비,질감,모노크롬\n[Moods] 드라마틱,강렬한,빈티지,거친,극적인\n[ShootingTypes] snap,documentry\n[Settings] Acros Red\r\nDR : 200\r\nWhite Balance: 2500k\r\nWB Color Shift: -9R, 0B\r\nGrain: Weak small\r\nColor: N/A\r\nHighlights: -0.5\r\nShadows: +3\r\nSharpness: -2\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Strong\r\nClarity: +1\r\nExp comp: 1 to 2, even 2⅔ (play with these a lot)',
+  },
+  {
+    id: '576',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 하여, 빈티지하면서도 선명한 색감과 부드러운 그림자를 표현합니다. DR200% 설정은 하이라이트와 섀도우의 디테일을 살려주며, +1의 샤픈과 +1의 색상 설정은 사진에 생동감을 더합니다. 일상 스냅이나, 따뜻한 분위기를 담고 싶을 때 사용하면 좋을 것 같습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,대비,색감,질감\n[Moods] 따뜻한,차분한,빈티지한,선명한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: 200%\r\nColor: +1\r\nSharpness: +1\r\nHighlight Tone: -1\r\nShadow Tone: -1\r\nNoise Reduction: -2',
+  },
+  {
+    id: '577',
+    pageContent:
+      '[Summary] 강렬한 흑백 대비와 풍부한 섀도우 톤으로, 드라마틱하고 깊이 있는 흑백 사진을 연출합니다. 섬세한 디테일 묘사와 함께, 흑백 특유의 고전적인 분위기를 자아내며, 피사체의 강렬한 인상을 담아낼 수 있습니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,대비,디테일,강렬함,모노크롬\n[Moods] 드라마틱,강렬한,차분한,고전적인\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: 400% (a minimum ISO of 640 is required)\r\nSharpness: 0\r\nHighlight Tone: 0\r\nShadow Tone: +2\r\nNoise Reduction: -2',
+  },
+  {
+    id: '578',
+    pageContent:
+      '[Summary] Astia 필름 시뮬레이션을 기반으로, 부드럽고 따뜻한 색감과 빈티지한 분위기를 연출하는 레시피입니다. 하이라이트와 섀도우 톤을 조절하여 부드러운 계조와 깊이 있는 표현을 가능하게 하며, 인물 사진이나 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Astia\n[Keywords] 빈티지,부드러움,인물,따뜻함,필름\n[Moods] 따뜻한,차분한,부드러운,빈티지\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: 100%\r\nColor: 0\r\nSharpness: -1\r\nHighlight Tone: -1\r\nShadow Tone: -2\r\nNoise Reduction: -2',
+  },
+  {
+    id: '579',
+    pageContent:
+      '[Summary] AgfaChrome RS 100 레시피는 강렬한 색상과 대비, 그리고 필름 그레인의 질감을 통해 빈티지한 감성을 자극합니다. 특히, 파란색 계열의 색상을 강조하여 풍경 사진에 생동감을 더하며, 따뜻하면서도 선명한 이미지를 연출합니다. 이 레시피는 일상 속의 특별한 순간들을 더욱 돋보이게 해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,선명한,색감,대비,빈티지\n[Moods] 따뜻한,선명한,강렬한,빈티지\n[ShootingTypes] snap,landscape\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: -1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -3\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Daylight, -3 Red & +5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '580',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 빈티지한 느낌을 주어, 일상 속 소중한 순간들을 아련하게 담아낼 수 있습니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하고, 몽환적인 분위기를 연출하는 데 적합합니다. 따뜻한 햇살 아래에서, 또는 실내에서 편안한 분위기를 담아보세요.\n[Base Film Simulation] Provia\n[Keywords] 빈티지,따뜻한,필름,인물,부드러운\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2 (High)\r\nShadow: +2 (High)\r\nColor: -2 (Low)\r\nSharpness: -1 (Medium-Low)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: 3000K, +8 Red & -9 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '581',
+    pageContent:
+      '[Summary] 강렬한 흑백 대비와 거친 질감 표현을 통해, 잊혀진 시간의 조각들을 담아내는 레시피입니다. 흑백의 깊이 있는 표현과 강렬한 콘트라스트는 드라마틱한 분위기를 연출하며, 오래된 사진첩을 넘기는 듯한 빈티지한 감성을 선사합니다. 흑백의 매력을 극대화하여, 당신의 피사체에 새로운 생명을 불어넣어 보세요.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,콘트라스트,질감,빈티지\n[Moods] 드라마틱,강렬한,빈티지,거친\n[ShootingTypes] snap,documentry\n[Settings] Film simulation: Acros Green\r\nDynamic Range: DR200\r\nMonochromatic Color: WC +2, MG +2\r\nWB Shift: 0 Red, 0 Blue\r\nHighlights: +2\r\nShadows: +1\r\nColor: 0\r\nNoise reduction: -4\r\nClarity: +2\r\nSharpening: 0\r\nGrain effect: Strong\r\nGrain size: Large\r\nColor chrome Effect: Strong\r\nColor chrome FX blue: Off\r\nExposure compensation: +1/3 as base, adjust as necessary',
+  },
+  {
+    id: '582',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 강렬한 그레인과 색상 대비를 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 푸른색 계열의 색상을 강조하여 독특한 색감을 더하고, DR400 설정으로 풍부한 계조를 확보하여, 잊혀져가는 과거의 한 장면을 포착한 듯한 인상을 줍니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,색감,대비,질감\n[Moods] 따뜻한,드라마틱,빈티지,강렬한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nWhite Balance: Auto\r\nWB Shift: -2 Red, -5 Blue\r\nHighlights: -2\r\nShadows: 0\r\nColor: +3\r\nNoise reduction: -4\r\nClarity: -3\r\nSharpening: 0\r\nGrain effect: Strong\r\nGrain size: Large\r\nColor chrome Effect: Weak\r\nColor chrome FX blue: Strong\r\nExposure compensation: between +1 and +1 2/3, adjust as needed to keep the image bright',
+  },
+  {
+    id: '583',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 하여, 빈티지하면서도 몽환적인 분위기를 연출합니다. 강렬한 색감과 대비, 그리고 필름 그레인이 더해져, 마치 오래된 영화의 한 장면을 보는 듯한 느낌을 줍니다. 특히, 일상 속의 특별한 순간들을 담아내기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,대비,필름\n[Moods] 차분한,몽환적인,따뜻한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nWhite Balance: Daylight\r\nWB Shift: -4 Red, -5 Blue\r\nHighlights: +2\r\nShadows: 0\r\nColor: +4\r\nNoise reduction: -4\r\nClarity: -2\r\nSharpening: -2\r\nGrain effect: Strong\r\nGrain size: Large\r\nColor chrome Effect: Strong\r\nColor chrome FX blue: Off\r\nExposure compensation: -1/3, adjust as necessary',
+  },
+  {
+    id: '584',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 클래식 크롬을 기반으로 하여, 따뜻하고 빈티지한 색감과 은은한 필름 그레인을 더해 줍니다. 특히 인물 사진에서 부드러운 피부톤과 몽환적인 분위기를 연출하며, 일상 스냅 사진에도 잘 어울립니다. 마치 오래된 필름 사진첩을 넘기는 듯한 아련한 감성을 선사할 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 부드러운,빈티지,색감,인물,필름\n[Moods] 따뜻한,부드러운,몽환적인,차분한\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR200\r\nWhite Balance: Auto\r\nWB Shift: +1 Red, -4 Blue\r\nHighlights: +2\r\nShadows: 0\r\nColor: 0\r\nNoise reduction: -4\r\nClarity: -2\r\nSharpening: 0\r\nGrain effect: Weak\r\nGrain size: Small\r\nColor chrome Effect: Weak\r\nColor chrome FX blue: Weak\r\nExposure compensation: usually between +1/3 and +1, adjust as desired',
+  },
+  {
+    id: '585',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 질감을 표현합니다. 특히, DR400 설정과 색상 보정을 통해 풍부한 계조와 톤을 살려, 일상적인 스냅 사진이나 인물 사진에 매력적인 분위기를 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,클래식,다큐멘터리,필름,색감\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nWhite Balance: Auto\r\nWB Shift: +3 Red, -8 Blue\r\nHighlights: -1\r\nShadows: -2\r\nColor: -2\r\nNoise reduction: -4\r\nClarity: 0\r\nSharpening: -4\r\nGrain effect: Weak\r\nGrain size: Small\r\nColor chrome Effect: Strong\r\nColor chrome FX blue: Weak\r\nExposure compensation: usually between +1/3 and +2/3, adjust as necessary',
+  },
+  {
+    id: '586',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 빈티지한 감성과 몽환적인 분위기를 자아냅니다. 강한 그레인과 색상 효과는 사진에 깊이와 질감을 더하며, 부드러운 색감과 하이라이트/섀도우 조절을 통해 은은하면서도 매력적인 이미지를 연출합니다. 일상 스냅이나, 특별한 순간을 기록하는 데 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,클래식,색감,필름,몽환적인\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nWhite Balance: Auto\r\nWB Shift: +2 Red, -5 Blue\r\nHighlights: -1\r\nShadows: -1\r\nColor: -1\r\nNoise reduction: -4\r\nClarity: 0\r\nSharpening: -4\r\nGrain effect: Strong\r\nGrain size: Small\r\nColor chrome Effect: Strong\r\nColor chrome FX blue: Weak\r\nExposure compensation: usually between +2/3 and +1, adjust as necessary',
+  },
+  {
+    id: '6',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 강렬한 그레인과 색감, 그리고 높은 대비를 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 따뜻한 색감과 깊이 있는 톤은 일상 속 특별한 순간들을 더욱 돋보이게 해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,따뜻한,대비,질감\n[Moods] 따뜻한,드라마틱,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: 4000K\r\nWB Shift: 4 Red, -4 Blue\r\nDynamic Range: DR200\r\nHighlights: 4\r\nShadows: 4\r\nColor: -4\r\nSharpness: 1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: -1/3',
+  },
+  {
+    id: '59',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 은은한 색감과 함께, 마치 꿈결 같은 분위기를 연출합니다. 특히, 파란색 계열의 색상을 강조하여 몽환적인 느낌을 더하며, 따뜻하면서도 차분한 분위기를 자아냅니다. 일상 속 소중한 순간들을 아름답게 담아내기에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,파스텔,부드러운,몽환적인,필름\n[Moods] 따뜻한,몽환적인,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: 5000K\r\nWB Shift: 5 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 1\r\nColor: -1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '60',
+    pageContent:
+      '[Summary] 올림푸스 Trip 35의 감성을 담아낸 이 레시피는, 클래식 네거티브 필름 시뮬레이션과 따뜻한 색감, 그리고 강렬한 그레인 효과를 통해 아련하고 빈티지한 분위기를 연출합니다. 특히, 파란색 계열의 색상을 강조하여 하늘과 바다를 더욱 선명하게 표현하며, 톤 조정과 선명도 조절을 통해 사진에 깊이와 생동감을 더합니다. 일상 속 스냅 사진이나, 추억을 담는 데 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 레트로,빈티지,필름,따뜻함,색감\n[Moods] 따뜻한,빈티지,레트로,선명한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Daylight\r\nWB Shift: 6 Red, 2 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: 1\r\nColor: 2\r\nSharpness: -4\r\nISO Noise Reduction: -4\r\nClarity: 2\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '61',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 그린톤과 따뜻한 색감, 그리고 은은한 필름 그레인이 어우러져 몽환적이면서도 빈티지한 분위기를 연출합니다. 특히 자연광 아래에서 인물이나 풍경 사진을 촬영할 때, 아련하고 따뜻한 감성을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 몽환적인,따뜻한,필름,그린,빈티지\n[Moods] 따뜻한,몽환적인,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto Ambience Priority\r\nWB Shift: 1 Red, -6 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 2\r\nColor: 1\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 2\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '62',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 에크타크롬 E100VS 필름을 연상시키는 생생하고 선명한 색감과 강렬한 대비를 특징으로 합니다. 특히 풍경 사진에서 돋보이며, 하늘과 바다의 푸른색을 더욱 강조하여 극적인 분위기를 연출합니다. 섬세한 그레인 효과와 선명도 조절을 통해 필름 특유의 질감을 살려줍니다.\n[Base Film Simulation] Velvia\n[Keywords] 필름,선명한,색감,대비,풍경\n[Moods] 생생한,선명한,강렬한,극적인\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: 5150K, +3 Red & -3 Blue\r\nDynamic Range: DR200\r\nHighlight: +1.5\r\nShadow: +0.5\r\nColor: +1\r\nSharpness: -1\r\nHigh ISO NR: -4\r\nClarity: +3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '63',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 에크타크롬 E100VS 필름을 연상시키는 선명하고 생생한 색감과 강렬한 대비를 특징으로 합니다. 특히 풍경 사진에서 돋보이며, 강렬한 색상과 디테일을 통해 드라마틱한 분위기를 연출합니다. 마치 눈앞에 펼쳐진 풍경을 그대로 담아내는 듯한 인상을 줍니다.\n[Base Film Simulation] Velvia\n[Keywords] 필름,선명한,색감,대비,풍경\n[Moods] 생생한,선명한,따뜻한,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Auto, +2 Red & -2 Blue\r\nDynamic Range: DR400\r\nHighlight: +1\r\nShadow: +1\r\nColor: +2\r\nSharpness: +1\r\nHigh ISO NR: -2\r\nClarity: +1\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '64',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 포트라 필름의 부드러운 색감과 도시적인 감성을 클래식 크롬을 기반으로 재현합니다. 은은한 그레인과 색상 대비, 그리고 따뜻한 화이트 밸런스 톤은 도시의 일상적인 풍경을 매력적으로 담아낼 것입니다. 특히, 거리 스냅 사진에 적합하며, 따뜻하고 부드러운 분위기를 연출합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 도시,거리,포트라,필름,따뜻함\n[Moods] 따뜻한,부드러운,빈티지,세련된\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 2 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: 1\r\nShadows: -1\r\nColor: 2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '65',
+    pageContent:
+      '[Summary] 이 레시피는 맑은 날 야외 풍경을 담기에 적합하며, Astia 필름 시뮬레이션과 DR400 설정을 통해 풍부한 색상과 디테일을 살려줍니다. 특히, 자연의 싱그러움과 생동감을 강조하여 하이킹이나 야외 활동의 즐거움을 사진에 담아낼 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 하이킹,풍경,선명한,자연,색감\n[Moods] 상쾌한,생생한,따뜻한,선명한\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: 5500K\r\nWB Shift: -2 Red, 0 Blue\r\nDynamic Range: DR400\r\nHighlights: -0.5\r\nShadows: -1.5\r\nColor: 1\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 2\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '66',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로 하여, 따뜻하고 부드러운 색감과 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 피부톤을 자연스럽게 표현하며, 은은한 색상 대비와 디테일 표현을 통해 아련한 감성을 자극합니다. 일상 스냅이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식,빈티지,인물,색감,필름\n[Moods] 따뜻한,차분한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Daylight\r\nWB Shift: 4 Red, -1 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 1\r\nColor: -1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '67',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 색감과 부드러운 질감의 조화로, 마치 꿈결 같은 분위기를 연출합니다. 필름 그레인과 색상 크롬 효과는 빈티지한 감성을 더하며, 따뜻하면서도 몽환적인 이미지를 만들어낼 것입니다. 일상 속 특별한 순간들을 더욱 아름답게 담아낼 수 있습니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 선명한,몽환적인,컬러풀,빈티지,필름\n[Moods] 따뜻한,몽환적인,선명한,활기찬\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Off\r\nWhite Balance: Fluorescent 2\r\nWB Shift: 3 Red, 3 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: -1\r\nColor: 4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: -4\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '587',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 빈티지한 색감을 재현하여, 풍경 사진에 생동감을 더해줍니다. 하이라이트와 섀도우를 강조하여 입체적인 표현이 가능하며, 선명한 이미지를 연출합니다. 특히 야외 촬영이나 인물 사진에 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,따뜻한,선명한,풍경,인물\n[Moods] 따뜻한,선명한,활기찬,빈티지\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +1 (Medium-High)\r\nShadow: +2 (High)\r\nColor: -2 (Low)\r\nSharpness: +2 (Hard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Auto, +1 Red & -2 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '588',
+    pageContent:
+      '[Summary] 이 레시피는 다큐멘터리 사진에 적합하며, 선명하고 생생한 색감과 적절한 대비를 통해 현실적인 묘사를 추구합니다. 특히, 일상 속의 순간들을 포착하여 기록하는 스냅 사진에 유용하며, 따뜻하면서도 선명한 분위기를 연출합니다.\n[Base Film Simulation] Provia\n[Keywords] 다큐멘터리,선명한,색감,대비,스냅\n[Moods] 선명한,사실적인,생동감있는,따뜻한\n[ShootingTypes] documentry,snap\n[Settings] Dynamic Range: 200\r\nHighlights: +1\r\nShadows: +0.5\r\nColor: +3\r\nWhite Balance: Auto White Priority\r\nWhite Balance Shift: R+2, B-2\r\nColor Chrome Effect/Blue: Weak\r\nSharpness: +1\r\nNoise Reduction: 0\r\nGrain: Off\r\nClarity: 0',
+  },
+  {
+    id: '589',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 빈티지한 분위기를 연출하여, 마치 오래된 필름 사진을 보는 듯한 느낌을 줍니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 잘 어울릴 것 같네요.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,따뜻한,색감,부드러움\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] DR : 400\r\nWhite Balance: auto\r\nWB Color Shift: +1R, -3B\r\nColor: -2\r\nHighlights: -2\r\nShadows: +1\r\nSharpness: -2\r\nNr: -2\r\nExp comp: 0 to ⅔',
+  },
+  {
+    id: '590',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 화사한 색감과 은은한 필름 그레인, 그리고 빈티지한 느낌을 담아, 인물 사진에 특히 잘 어울리는 따뜻하고 몽환적인 분위기를 연출합니다. Astia 필름 시뮬레이션과 섬세한 설정들이 조화롭게 어우러져, 마치 오래된 영화 속 한 장면과 같은 사진을 만들어낼 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,화사함,필름,빈티지\n[Moods] 따뜻한,화사한,부드러운,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +2\r\nShadow: +1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: +2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Fluorescent 2, -3 Red & -1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '591',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강렬한 색상과 대비, 그리고 은은한 필름 그레인을 더하여, 마치 오래된 영화의 한 장면을 보는 듯한 인상을 줍니다. 특히, 파란색 계열의 색상을 강조하여, 풍경 사진이나 스냅 사진에 매력적인 분위기를 더할 수 있습니다. 따뜻하면서도 빈티지한 감성을 담아낼 수 있는 레시피입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,클래식,색감,선명함,대비\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: +2\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto White Priority, -3 Red & -1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '592',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 풍부한 질감으로, 마치 오래된 필름 사진을 보는 듯한 따뜻하고 빈티지한 느낌을 선사합니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하고, 몽환적인 분위기를 연출하는 데 적합합니다.\n[Base Film Simulation] Astia\n[Keywords] 빈티지,필름,색감,인물,질감\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] DR : 200\r\nWhite Balance: Auto\r\nWB Color Shift: -1R, -3B\r\nGrain: Strong Large\r\nColor: -3\r\nHighlights: -1\r\nShadows: +2.5\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Off\r\nClarity: 0\r\nExp comp: 0 to ⅓',
+  },
+  {
+    id: '593',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 함께 강렬한 파란색을 표현합니다. 특히, 빛이 좋은 날 야외에서 스냅 사진을 찍거나 일상적인 풍경을 담기에 적합하며, 사진에 생동감과 깊이를 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,선명한,파란색\n[Moods] 따뜻한,선명한,활기찬,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: +1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -3\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Fluorescent 2, -3 Red & -1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '594',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 피부톤과 따뜻한 색감으로 인물 사진에 특화되어 있으며, 필름 특유의 빈티지한 감성을 더해줍니다. 과도한 채도를 억제하고 섀도우를 살려, 몽환적이면서도 깊이 있는 분위기를 연출합니다. 일상 속 특별한 순간들을 따뜻하게 기록하기에 적합합니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 필름,인물,따뜻한,대비,빈티지\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] White Balance: Grey card / B+1 R+1\r\nDynamic Range: 400\r\nISO: 800\r\nSaturation: -2\r\nShadows: +2\r\nHighlights: -2\r\nSharpness: -2\r\nNoise Reduction: 0\r\nEV: +1/3 – 2/3',
+  },
+  {
+    id: '595',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 부드럽고 따뜻한 색감과 빈티지한 분위기를 연출합니다. 하이라이트와 섀도우를 조절하여, 인물 사진에 적합하도록 부드러운 톤을 강조합니다. 일상 스냅이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,부드러움,따뜻함,인물\n[Moods] 따뜻한,차분한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight:+2\r\nShadow: +2\r\nColor: -2\r\nNoise Reduction: -3\r\nWhite: Balance:Auto\r\nWB Shift: R -1 B -1',
+  },
+  {
+    id: '596',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 강렬한 색감과 필름 그레인 효과를 통해 빈티지한 감성을 극대화합니다. 특히, 파란색 계열의 색상을 강조하여 더욱 드라마틱하고 매력적인 이미지를 연출하며, 따뜻하면서도 선명한 분위기를 자아냅니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,색감,대비,선명함\n[Moods] 따뜻한,강렬한,드라마틱,선명한\n[ShootingTypes] snap,daily\n[Settings] Grain effect  -  strong\r\nColor chrome effect - strong\r\nCC FX blue - strong\r\nWB - custom 1 -  R 6 B -6\r\nDR - 200\r\nTone Curve H: -2  S: +1\r\nColor +4\r\nSharpness  +1\r\nNR -4\r\nClarity +2',
+  },
+  {
+    id: '597',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로 하여, 풍경 사진에 적합하도록 선명하고 생생한 색감과 디테일을 살리는 데 중점을 둡니다. DR400 설정은 하이라이트와 섀도우 영역의 풍부한 계조를 제공하며, 색상과 선명도 조절을 통해 사진에 깊이와 생동감을 더합니다. 자연스러운 색감과 뛰어난 디테일 표현으로, 일상 스냅이나 풍경 사진에 활용하기 좋습니다.\n[Base Film Simulation] Provia\n[Keywords] 선명한,풍경,색감,대비,디테일\n[Moods] 생동감 있는,선명한,따뜻한,자연스러운\n[ShootingTypes] landscape,snap\n[Settings] Push/Pull (Exposure): 0EV (expose as you need)\r\nDynamic Range: DR400\r\nFilm Simulation: Provia\r\nGrain Effect: Off\r\nColour Chrome Effect: Weak\r\nWhite Balance: Auto\r\nWB Shift: R: 0 B: 0\r\nHighlight Tone: -2\r\nShadow Tone: -1\r\nColour: +2\r\nSharpness: +2\r\nNoise Reduction: 0',
+  },
+  {
+    id: '598',
+    pageContent:
+      '[Summary] 이 레시피는 차갑고, 약간은 몽환적인 분위기를 연출하며, 특히 겨울 풍경이나 차가운 도시의 모습을 담기에 적합합니다. Classic Negative 필름 시뮬레이션과 강한 그레인 효과는 빈티지한 감성을 더하고, 색상 보정을 통해 드라마틱한 대비를 만들어낼 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,차가운,풍경,대비,필름\n[Moods] 차가운,드라마틱,몽환적인\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: -2\r\nShadow: -1\r\nColor: -2\r\nNoise Reduction: -3\r\nSharpening: -2\r\nClarity: -1\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto Ambience, +1 Red & -2 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: As needed\r\n*Created on X- Trans IV (X-S10)',
+  },
+  {
+    id: '599',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션과 강한 색상, 그리고 부드러운 그레인 효과를 사용하여, 따뜻하고 빈티지한 느낌을 연출합니다. 특히 인물 사진에서 피부톤을 아름답게 표현하며, 쨍한 색감으로 생동감을 더해줍니다. 일상 스냅이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,인물,따뜻함,빈티지,선명함\n[Moods] 따뜻한,선명한,빈티지,부드러운\n[ShootingTypes] snap,portrait\n[Settings] Grain: Weak/Small\r\nColor Chrome: Strong\r\nColor Chrome FX Blue: Weak\r\nWB: Auto (R:3, B:-4)\r\nD-Range Priority: Weak\r\nColor: +4\r\nSharpness: 0\r\nNR: -4\r\nClarity: 0',
+  },
+  {
+    id: '600',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 여름날의 추억을 담아내는 듯한 클래식한 분위기를 연출합니다. Classic Negative 필름 시뮬레이션과 색상, 화이트 밸런스 조정을 통해 빈티지하면서도 선명한 인물 사진을 만들어낼 수 있을 것입니다. 특히, 햇살 아래 인물 사진이나 일상 스냅에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식,여름,따뜻함,빈티지,인물\n[Moods] 따뜻한,빈티지,선명한,클래식\n[ShootingTypes] snap,daily\n[Settings] DR 200\r\nWB Auto R+4, B-5\r\nH 0, S-1\r\nColor +2\r\nSharp+1',
+  },
+  {
+    id: '601',
+    pageContent:
+      '[Summary] 이 레시피는 은은한 여름 햇살 아래, 쨍한 색감과 필름 그레인이 어우러져 몽환적이면서도 생동감 넘치는 사진을 선사합니다. 특히, 파란 하늘 아래 풍경이나 인물 사진에 매력적인 분위기를 더해줄 것입니다. 마치 오래된 영화 속 한 장면처럼, 아련한 추억을 담아보세요.\n[Base Film Simulation] Eterna\n[Keywords] 여름,실버,따뜻함,선명함,필름\n[Moods] 따뜻한,선명한,몽환적인,화려한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -3\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 5300K, -3 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '602',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 포트라 400 필름의 따뜻하고 부드러운 색감을 후지필름의 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. 강한 그레인 효과와 색상 대비를 더하여 빈티지하면서도 매력적인 인물 사진을 연출할 수 있습니다. 특히, 따뜻한 햇살 아래에서 인물 사진을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 따뜻한,필름,인물,색감,빈티지\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: -2\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: 5500K, 0 Red & -7 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 1/3 (typically)',
+  },
+  {
+    id: '603',
+    pageContent:
+      '[Summary] MGA Vintage Chrome 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로, 빈티지한 감성과 부드러운 색감을 강조합니다. 하이라이트와 섀도우를 조절하여 대비를 낮추고, 선명도를 높여 클래식한 분위기를 연출합니다. 특히 풍경 사진이나 스냅 사진에 적합하며, 따뜻하고 차분한 느낌을 줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,대비,필름\n[Moods] 따뜻한,차분한,빈티지한,클래식한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nGrain Effect: As required (illustrated are some without and some on high)\r\nColour Chrome Effect: Strong\r\nWhite Balance: 6300K\r\nWB Shift: R: -5 B: 5\r\nHighlight Tone: -2\r\nShadow Tone: -2\r\nColour: -4\r\nSharpness: +4\r\nNoise Reduction: -4\r\nPush/Pull (Exposure): 0EV (or expose for the highlights)',
+  },
+  {
+    id: '604',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 색감과 선명한 디테일로 자연의 아름다움을 담아내는 데 초점을 맞춘 듯합니다. 특히 풍경 사진에서 긍정적인 결과를 보여줄 것이며, 일상 스냅에도 활용하여 따뜻하고 기억에 남는 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 풍경,따뜻함,선명함,필름\n[Moods] 따뜻한,선명한,자연스러운\n[ShootingTypes] landscape,snap\n[Settings] WB 5600\r\nR-9 B-9',
+  },
+  {
+    id: '605',
+    pageContent:
+      '[Summary] 이 레시피는 매트릭스 영화의 한 장면처럼 강렬하고, 차가우면서도 몽환적인 분위기를 연출합니다. 특히, 강한 그레인과 색상 대비는 빈티지하면서도 드라마틱한 느낌을 주며, 독특한 색감과 선명함으로 시선을 사로잡는 사진을 만들어낼 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 시네마틱,필름,빈티지,대비,선명함\n[Moods] 강렬한,드라마틱한,차가운,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain: Strong / Large\r\nChrome FX / Strong\r\nChrome FX blue / Strong\r\nDynamic Range / 200\r\nHighlight / 0\r\nShadows / +2\r\nColour / +3\r\nSharpening / -4\r\nClarity / -4\r\nWhite Balance / Red -2 | Blue -9',
+  },
+  {
+    id: '606',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 여름날의 추억을 담아내기 위해 설계되었습니다. Provia 필름 시뮬레이션과 강렬한 색상 크롬 설정을 통해 빈티지한 느낌을 살리고, 하이라이트와 섀도우를 조절하여 부드러우면서도 선명한 이미지를 연출합니다. 특히, 햇살 가득한 풍경이나 인물 사진에 잘 어울릴 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 빈티지,따뜻한,여름,색감,선명한\n[Moods] 따뜻한,활기찬,선명한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: 400\r\nGrain: Off\r\nColour Chrome: Strong\r\nWB: 7700k\r\nWB Offset: R-4, B-1\r\nH: -2\r\nS: +2\r\nColour: -2\r\nSharpness: +4\r\nNoise: 0\r\nExposure Compensation: 0-1 stop (have a play)',
+  },
+  {
+    id: '607',
+    pageContent:
+      '[Summary] 이 레시피는 벨비아 필름 시뮬레이션을 기반으로, 강렬한 색감과 높은 대비, 그리고 거친 질감을 통해 빈티지한 느낌을 극대화합니다. 특히, 붉은 계열의 색상을 강조하고, 푸른색을 억제하여 따뜻하면서도 몽환적인 분위기를 연출합니다. 오래된 슬라이드 필름의 독특한 색감과 질감을 재현하여, 아날로그 감성을 자극하는 사진을 만들 수 있습니다.\n[Base Film Simulation] Velvia\n[Keywords] 빈티지,필름,색감,대비,질감\n[Moods] 따뜻한,강렬한,거친,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2\r\nShadow: -1\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -2\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 5000K, +8 Red & 0 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '608',
+    pageContent:
+      '[Summary] 이 레시피는 벨비아 필름 시뮬레이션을 기반으로, 강렬한 색감과 높은 대비를 통해 잊혀진 슬라이드 필름의 독특한 분위기를 재현합니다. 특히, 붉은 계열의 색상을 강조하고, 거친 입자와 푸른색을 강조하여, 아련하면서도 강렬한 인상을 남기는 사진을 연출합니다. 오래된 사진첩을 넘기는 듯한 빈티지한 감성을 느껴보세요.\n[Base Film Simulation] Velvia\n[Keywords] 빈티지,필름,색감,대비,선명함\n[Moods] 따뜻한,드라마틱,강렬한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2\r\nShadow: -1\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpness: -2\r\nClarity: -2\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 5500K, +7 Red & -2 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '609',
+    pageContent:
+      '[Summary] 이 레시피는 Ilford FP3 필름의 질감을 재현하여, 흑백의 깊이 있는 표현과 섬세한 디테일을 살린 사진을 만들어줍니다. 특히, 빛과 그림자의 대비를 강조하여 드라마틱하고 빈티지한 느낌을 연출하며, 흑백 사진 특유의 클래식한 감성을 담아낼 수 있습니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,빈티지,필름,디테일\n[Moods] 차분한,고전적인,드라마틱,빈티지한\n[ShootingTypes] documentry,snap\n[Settings] Monochrome Y\r\nISO 400\r\nDR 100\r\nWhite Balance Fluorescent LUM 2 (R +3 B -6)\r\nSharpness +1\r\nHighlights Tone 0\r\nShadows Tone +1\r\nNoise Reduction -1',
+  },
+  {
+    id: '610',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 따뜻한 톤으로 인물 사진에 특히 잘 어울리며, 마치 오래된 필름 사진처럼 은은한 빈티지 감성을 자아냅니다. 부드러운 하이라이트와 섀도우 표현은 인물의 피부톤을 더욱 자연스럽게 만들어 줄 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 인물,부드러움,따뜻함,빈티지,필름\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] portrait,snap\n[Settings] ISO 400\r\nDR 200\r\nWhite Balance 6700 K (R +3 B +6)\r\nColor -1\r\nSharpness +1\r\nHighlights Tone -2\r\nShadows Tone 0\r\nNoise Reduction 0',
+  },
+  {
+    id: '611',
+    pageContent:
+      '[Summary] 따뜻한 색감과 강렬한 대비가 돋보이는 이 레시피는, 마치 오래된 영화 필름을 보는 듯한 빈티지한 감성을 선사합니다. 특히, 파란색 계열의 색상을 강조하여, 더욱 깊이 있고 드라마틱한 분위기를 연출할 수 있습니다. 일상 속 특별한 순간들을 더욱 돋보이게 만들어 줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,필름,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] White Balance: 5400K, Red:-3, Blue: +2\r\nColor Chrome: Strong\r\nColor Chrome Blue: Strong\r\nDynamic Range: DR400\r\nHighlight: -2\r\nShadow: 0\r\nColor: +2\r\nSharpness: -4\r\nNoise Reduction: -4\r\nClarity: 0\r\nGrain: Strong/Large',
+  },
+  {
+    id: '612',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 색감과 빈티지한 느낌을 동시에 담아내어, 마치 오래된 영화의 한 장면을 연상시키는 듯한 사진을 만들어줍니다. 특히, 파란색 계열의 색상을 강조하여, 더욱 몽환적이고 드라마틱한 분위기를 연출할 수 있습니다. 거친 입자와 부드러운 색감의 조화가 인상적입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,몽환적인,색감,대비\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] White Balance: 5200K, Red:-6, Blur: -9\r\nColor Chrome: Strong\r\nColor Chrome Blue: Strong\r\nDynamic Range: DR400\r\nHighlight: -2\r\nShadow: 0\r\nColor: +1\r\nSharpness: -4\r\nNoise Reduction: -4\r\nClarity: -2\r\nGrain: Strong/Large',
+  },
+  {
+    id: '613',
+    pageContent:
+      '[Summary] 요세미티 국립공원의 웅장한 풍경을 담아내기 위해 최적화된 레시피입니다. Velvia 필름 시뮬레이션의 선명하고 화려한 색감과 DR200의 넓은 계조 표현은 자연의 아름다움을 극대화합니다. 따뜻한 색감과 대비를 통해 생동감 넘치는 사진을 연출합니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,대비,선명함,따뜻함\n[Moods] 생동감 넘치는,강렬한,극적인,따뜻한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: -2\r\nColor: +2\r\nSharpness: -1\r\nNoise Reduction: -2\r\nWhite Balance: Shade, -2 Red & -2 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '614',
+    pageContent:
+      '[Summary] 코닥 플래티넘 200 필름을 연상시키는 이 레시피는 따뜻하고 부드러운 색감과 적당한 대비로 일상 스냅과 인물 사진에 적합합니다. Provia 필름 시뮬레이션을 기반으로, 하이라이트와 섀도우를 조절하여 필름 특유의 감성을 재현하며, 선명함과 노이즈 감소를 통해 깔끔하면서도 빈티지한 느낌을 줍니다.\n[Base Film Simulation] Provia\n[Keywords] 필름,빈티지,따뜻한,색감,인물\n[Moods] 따뜻한,부드러운,빈티지,자연스러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: +1 (Medium-High)\r\nShadow: -2 (Low)\r\nColor: +2 (High)\r\nSharpness: +1 (Medium-High)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Daylight/Fine, 0 Red & 0 Blue\r\nISO: Auto up to ISO 3200 (but… the lower the better)\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '615',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 강렬한 그레인과 색감, 그리고 섀도우와 하이라이트 조절을 통해 빈티지한 무드를 연출합니다. 따뜻한 색감과 톤으로, 오래된 사진첩을 넘기는 듯한 아련한 감성을 자극하며, 일상 속 소중한 순간들을 더욱 특별하게 기록할 수 있도록 해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,브라운,클래식,필름,따뜻함\n[Moods] 따뜻한,빈티지,차분한,고풍스러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Fx Blue: Weah\r\nWhite Balance: Shade, +4 Red & -2 Blue\r\nDynamic Range: DR100\r\nHighlight: -1\r\nShadow: +2\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpening: +4\r\nClarity: +3',
+  },
+  {
+    id: '616',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬의 부드러운 색감에 강렬한 색상 대비를 더하여, 인물 사진에 생동감과 깊이를 부여합니다. 특히, 따뜻하고 선명한 색감은 일상 속의 특별한 순간들을 세련되게 담아낼 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,선명한,색감,인물,필름\n[Moods] 따뜻한,선명한,생동감있는,세련된\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: 0EV (or as needed)\r\nDynamic Range Auto\r\nGrain Effect Off\r\nColor Chrome Effect: Strong\r\nWB AUTO\r\nWB Shift R0 B0\r\nHighlight Tone -2\r\nShadow Tone -1\r\nColor +4\r\nSharpness 0\r\nNoise Reduction 0',
+  },
+  {
+    id: '617',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 햇살 아래에서 촬영한 듯한 부드러움과 강렬함을 동시에 담아냅니다. 특히, 에테르나 필름 시뮬레이션과 색상 크롬 효과를 통해 영화 같은 분위기를 연출하며, 하이라이트와 섀도우 톤 조절로 드라마틱한 대비를 더해 생동감 넘치는 사진을 만들어 줍니다. 수중 화이트 밸런스와 붉은 색감 강조는 따뜻하고 몽환적인 분위기를 선사합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻함,태양,필름,선명함\n[Moods] 따뜻한,드라마틱,선명한,영화같은\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: 0EV (or as needed),\r\nDynamic Range 400,\r\nGrain Effect Weak,\r\nColor Chrome Effect: Strong,\r\nWB Underwater,\r\nWB Shift R8 B-8,\r\nHighlight Tone -1,\r\nShadow Tone +2,\r\nColor -1,\r\nSharpness +4,\r\nNoise Reduction -2',
+  },
+  {
+    id: '618',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이와 풍부한 계조를 통해, 마치 라이카 M10으로 촬영한 듯한 클래식하고 드라마틱한 이미지를 연출합니다. DR400 설정은 하이라이트와 섀도우의 디테일을 살리고, 강렬한 콘트라스트와 선명함으로 흑백 사진의 매력을 극대화합니다. 특히, 인물이나 풍경 사진에서 돋보이는 빈티지한 감성을 선사할 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,빈티지,콘트라스트,디테일\n[Moods] 클래식,드라마틱,강렬한,빈티지한,모던한\n[ShootingTypes] snap,documentry\n[Settings] Acros+G,\r\nPush/Pull Process: 0 (or as needed),\r\nDynamic Range DR400,\r\nGrain Effect Off,\r\nColor Chrome Effect: Strong,\r\nWB 6300k,\r\nWB Shift R6 B-7,\r\nHighlight Tone -2,\r\nShadow Tone +1,\r\nColor –,\r\nSharpness +4,\r\nNoise Reduction 0 ,\r\nB&W Adjust -1',
+  },
+  {
+    id: '619',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 긍정적인 분위기를 연출하며, 강렬한 색상과 대비를 통해 생동감 넘치는 이미지를 만들어줍니다. 특히, 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 따뜻한,선명한,필름,레트로,대비\n[Moods] 따뜻한,선명한,활기찬,극적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpeness: -2\r\nClarity: -4\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 2950K, +7 Red & -9 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '620',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로 하여, 따뜻하고 선명한 색감으로 풍경과 인물 사진에 적합합니다. 특히 하이라이트와 섀도우를 조절하여 부드러운 계조와 디테일을 살리면서도, 색상과 화이트 밸런스 조정을 통해 따뜻하고 매력적인 분위기를 연출합니다.\n[Base Film Simulation] Provia\n[Keywords] 선명한,풍경,인물,따뜻한,필름\n[Moods] 따뜻한,선명한,화사한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: -2 (Low)\r\nShadow: -1 (Medium-Low)\r\nColor: +1 (Medium-High)\r\nSharpness: 0 (Normal)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Incandescent, +6 Red & -9 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '621',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 파스텔톤과 빈티지한 감성을 담아, 마치 오래된 필름 사진을 보는 듯한 느낌을 줍니다. 특히, 따뜻하고 몽환적인 분위기를 연출하여 일상 속 소중한 순간들을 더욱 특별하게 기록할 수 있을 것입니다. 노을 아래의 풍경, 빛바랜 골목길, 또는 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,따뜻한,파스텔,몽환적인\n[Moods] 따뜻한,몽환적인,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: -2\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpeness: +1\r\nClarity: -2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto, -1 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 1/3 (typically)',
+  },
+  {
+    id: '622',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 은은한 필름 그레인, 그리고 약간의 빈티지한 느낌을 담아, 인물 사진에 특히 잘 어울릴 것 같습니다. Astia 필름 시뮬레이션과 섬세한 설정들이 어우러져, 마치 오래된 필름 사진을 보는 듯한 아련한 분위기를 연출할 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 필름,인물,따뜻한,부드러운,빈티지\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] DR : 100\r\nWhite Balance: Auto\r\nWB Color Shift: +1R, -1B\r\nGrain: Weak small\r\nColor: +1\r\nHighlights: +1\r\nShadows: +2\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Weak\r\nColor chrome FX blue: Off\r\nClarity: +1\r\nExp comp: ⅓ to ⅔',
+  },
+  {
+    id: '623',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 부드러운 색감에 DR400과 강한 그레인 효과를 더하여, 빈티지 필름 사진 특유의 따뜻하고 거친 질감을 표현합니다. 하이라이트와 섀도우의 섬세한 조절을 통해 드라마틱한 분위기를 연출하며, 일상적인 스냅 사진에 특별한 감성을 불어넣어 줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,색감,질감,대비\n[Moods] 따뜻한,거친,드라마틱,빈티지\n[ShootingTypes] snap,daily\n[Settings] Exposure Compensation: Most important part\r\nbase: + 1 2/3 EV\r\nshade +2 EV\r\nlight +1 1/3 EV\r\novercast +1 1/3 EV\r\n\r\nDynamic Range: DR400\r\nHighlight: -2\r\nShadow: +1\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpness: 0\r\nGrain Effect: Strong, Large\r\nWhite Balance: Auto, -2 Red & 0 Blue',
+  },
+  {
+    id: '624',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 강렬한 색감과 거친 질감을 통해 잊혀진 필름의 향수를 불러일으킵니다. 특히, 드라마틱한 분위기를 연출하여, 평범한 일상도 특별하게 만들어 줄 것입니다. 강렬한 대비와 깊이 있는 색감은 당신의 사진에 빈티지한 매력을 더할 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,강렬한,색감,질감\n[Moods] 드라마틱,강렬한,빈티지,거친\n[ShootingTypes] snap\n[Settings] Exposure Compensation: Most important part\r\nbase: + 1 2/3 EV\r\nshade +2 EV\r\nlight +1 1/3 EV\r\novercast +1 1/3 EV\r\n\r\nDynamic Range: DR400\r\nHighlight: -2\r\nShadow: -2\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: +4\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto, -2 Red & -5 Blue',
+  },
+  {
+    id: '625',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 피부톤과 풍부한 색감을 살려 인물 사진에 최적화된 레시피입니다. DR400 설정으로 하이라이트와 섀도우 디테일을 살리고, Grain 효과와 색상 보정을 통해 필름 특유의 빈티지한 감성을 더했습니다. 따뜻하고 선명한 색감으로 일상 스냅 사진에도 활용하기 좋습니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 필름,인물,색감,선명함,빈티지\n[Moods] 따뜻한,선명한,부드러운,빈티지\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: 0\r\nColor: +1\r\nColor Chrome Effect: Strong\r\nGrain: Weak\r\nNoise Reduction: -4\r\nSharpness: -3\r\nWhite Balance: Daylight, +1 Red & -3 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '626',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 자연스러운 색감과 함께, 인물 사진에 특히 잘 어울리는 따뜻한 분위기를 연출합니다. 필름 특유의 질감과 DR400 설정은 풍부한 계조와 하이라이트 표현을 가능하게 하여, 잊혀지지 않는 순간들을 더욱 아름답게 담아낼 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 부드러운,자연스러운,인물,필름,따뜻한\n[Moods] 따뜻한,부드러운,자연스러운,화사한\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: 0\r\nColor: 0\r\nColor Chrome Effect: Off\r\nGrain: Weak\r\nNoise Reduction: -4\r\nSharpness: -3\r\nWhite Balance: Daylight, 0 Red & 0 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '627',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 느낌을 주며, 다큐멘터리나 스냅 사진에 적합합니다. 강한 그레인 효과와 저채도 설정은 마치 오래된 영화 필름을 보는 듯한 몽환적인 분위기를 연출하며, 차가운 색감과 드라마틱한 톤은 사진에 깊이를 더합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 시네마틱,빈티지,저채도,필름,다큐멘터리\n[Moods] 차분한,몽환적인,드라마틱,빈티지,차가운\n[ShootingTypes] documentry,snap\n[Settings] DYNAMIC RANGE: DR100\r\nHIGHLIGHT: -1\r\nSHADOW: -2\r\nCOLOR: -4\r\nWHITE BALANCE: AUTO\r\nWB SHIFT: R: -7, B: -6\r\nNOISE REDUCTION: -4\r\nSHARPENING: +1\r\nGRAIN EFFECT: STRONG',
+  },
+  {
+    id: '628',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션을 기반으로 하여, 풍경 사진에 생동감과 강렬한 대비를 부여합니다. 특히, 하이라이트와 섀도우를 조절하여 극적인 표현을 더하고, 약한 그레인 효과로 필름 특유의 질감을 살려, 기억에 남는 스냅 사진을 만들 수 있습니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,선명한,대비,채도,필름\n[Moods] 생동감 있는,강렬한,극적인,선명한\n[ShootingTypes] landscape,snap\n[Settings] WB Auto, WR +3, WB -4\r\nColor:-2\r\nHighlight: +2\r\nShadow: -2\r\nSharpness 0\r\nNR: -2\r\nGrain: weak',
+  },
+  {
+    id: '629',
+    pageContent:
+      '[Summary] 이 레시피는 활기찬 도시의 모습을 담기 위해 최적화된 설정입니다. Provia 필름 시뮬레이션과 강한 그레인 효과는 사진에 생동감과 빈티지한 느낌을 더하며, 색상과 대비를 강조하여 거리를 걷는 사람들의 생생한 모습을 담아낼 수 있습니다. 특히, 일상 스냅 사진에 적합하며, 따뜻하고 선명한 색감으로 기억을 기록합니다.\n[Base Film Simulation] Provia\n[Keywords] 선명한,채도,대비,필름,거리\n[Moods] 따뜻한,선명한,활기찬,생동감있는\n[ShootingTypes] snap,daily\n[Settings] WB Auto, WR -3, WB +2\r\nColor:+4\r\nHighlight: -1\r\nShadow: -1\r\nSharpness -4\r\nNR: -4\r\nGrain: strong',
+  },
+  {
+    id: '630',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 강렬한 그레인 효과를 통해, 일상 속의 소중한 순간들을 매력적으로 담아낼 수 있도록 설계되었습니다. 특히, 도시의 활기찬 거리 풍경이나 인물 사진에 잘 어울릴 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,따뜻한,선명한,거리,필름\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] WB Auto, WR +3, WB -3\r\nColor:+1\r\nHighlight: -1\r\nShadow: +2\r\nSharpness +2\r\nNR: -4\r\nGrain: strong',
+  },
+  {
+    id: '631',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 선명한 색감으로 인물 사진에 적합하며, 은은한 필름 그레인과 부드러운 톤으로 빈티지한 감성을 더합니다. 일상 스냅이나 인물 사진에 활용하여 아련하고 따뜻한 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,선명한,따뜻한,빈티지,필름\n[Moods] 따뜻한,선명한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] WB Auto, WR +2, WB +3\r\nColor:+2\r\nHighlight: -1\r\nShadow: -2\r\nSharpness -2\r\nNR: +4\r\nGrain: weak, small',
+  },
+  {
+    id: '632',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션과 부드러운 그레인 효과를 통해, 낡은 필름 사진 특유의 따뜻하고 빈티지한 감성을 자아냅니다. 특히, 도시의 일상적인 풍경이나 인물 사진에 적용하면, 아련하면서도 몽환적인 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,거리,스냅,필름,따뜻함\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] DR 100\r\nWB Auto, WR -4, WB -2\r\nHighlight: -2\r\nShadow: -1\r\nNR:-2\r\nColor:+1\r\nGrain: weak, small',
+  },
+  {
+    id: '633',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 포트라 800 필름의 부드럽고 따뜻한 색감을 클래식 크롬 필름 시뮬레이션을 기반으로 재현합니다. 강한 그레인과 색상 효과는 빈티지한 분위기를 더하며, 몽환적이고 부드러운 이미지를 연출합니다. 일상 스냅이나 인물 사진에 적합하며, 따뜻한 감성을 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,포트라,빈티지,색감,부드러움\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: -2\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -5\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Daylight, +3 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -2/3 to +1 (typically)',
+  },
+  {
+    id: '634',
+    pageContent:
+      '[Summary] 이 레시피는 영화적인 분위기를 연출하며, 강렬한 색감과 거친 질감을 통해 빈티지한 감성을 자극합니다. 특히, 파란색 계열의 색상을 강조하여, 깊이 있는 색감과 몽환적인 분위기를 동시에 느낄 수 있습니다. 마치 오래된 영화의 한 장면처럼, 따뜻하면서도 드라마틱한 사진을 만들어낼 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,빈티지,따뜻함,색감 강조,필름\n[Moods] 따뜻한,드라마틱,몽환적인,강렬한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: 0\r\nShadow: +2.5\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpness: -4\r\nClarity: -5\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 6990K, +3 Red & -7 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '635',
+    pageContent:
+      '[Summary] Agfa Ultra 100 레시피는 Velvia 필름 시뮬레이션을 기반으로, 따뜻하고 선명한 색감과 부드러운 질감을 동시에 표현합니다. 약한 그레인과 색상 효과는 빈티지한 감성을 더하며, 하이라이트와 섀도우 조절을 통해 사진에 깊이감을 부여합니다. 일상 스냅이나 풍경 사진에 적합하며, 따뜻하고 부드러운 분위기를 연출합니다.\n[Base Film Simulation] Velvia\n[Keywords] 필름,빈티지,색감,따뜻함,선명함\n[Moods] 따뜻한,선명한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] DR : 100\r\nWhite Balance: Auto\r\nWB Color Shift: +1R, -2B\r\nGrain: Weak small\r\nColor: +2\r\nHighlights: +1\r\nShadows: +2\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Weak\r\nColor chrome FX blue: Weak\r\nClarity: +2\r\nExp comp: 0 to +⅓',
+  },
+  {
+    id: '636',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 그레인, 그리고 깊이 있는 색상 표현을 통해 꿈결 같은 분위기를 연출합니다. 특히, 늦은 오후 햇살 아래에서 인물이나 풍경 사진을 촬영할 때, 몽환적이면서도 따뜻한 감성을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 몽환적인,시네마틱,필름,색감,부드러움\n[Moods] 몽환적인,따뜻한,부드러운,신비로운\n[ShootingTypes] snap,daily\n[Settings] DR : 200\r\nWhite Balance: Fluorescent 1\r\nWB Color Shift: +0R, -1B\r\nGrain: Weak small\r\nColor: +4\r\nHighlights: -2\r\nShadows: 0\r\nSharpness: 0\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Strong\r\nClarity: -2\r\nExp comp: from ⅔ to 1',
+  },
+  {
+    id: '637',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 자연스러운 색감과 은은한 파스텔톤을 통해 인물 사진에 특히 잘 어울리는 레시피입니다. 따뜻하고 몽환적인 분위기를 연출하여, 일상 속의 소중한 순간들을 아름답게 담아낼 수 있을 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 인물,부드러움,자연스러움,필름,파스텔\n[Moods] 따뜻한,부드러운,화사한,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Currently app patrons only',
+  },
+  {
+    id: '638',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 C200 필름의 색감과 질감을 재현하여, 따뜻하고 빈티지한 분위기를 연출합니다. 특히, 선명한 색감과 부드러운 그레인 효과가 조화롭게 어우러져 일상 스냅 사진에 매력적인 표현력을 더해줄 것입니다. 햇살 좋은 날의 풍경이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,선명한,색감\n[Moods] 따뜻한,선명한,활기찬,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400 (DR200 in low contrast situations)\r\nHighlight: +0.5\r\nShadow: -0.5\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpeness: -3\r\nClarity: -3\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Daylight, 0 Red & -3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '639',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로 하여, 부드럽고 빈티지한 색감과 필름 특유의 질감을 살려줍니다. 특히, 따뜻한 색감과 부드러운 톤으로 일상적인 스냅 사진이나 인물 사진에 적합하며, 아련하고 감성적인 분위기를 연출합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,부드러움,색감,아날로그\n[Moods] 따뜻한,빈티지,부드러운,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: +3\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -3\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Auto, -1 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '640',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감으로, 일상 속의 소중한 순간들을 필름 사진처럼 담아낼 수 있게 해줍니다. 특히 인물 사진이나 스냅 사진에 적합하며, 은은한 그레인 효과가 아날로그 감성을 더해줄 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 부드러움,인물,스냅,필름,따뜻함\n[Moods] 따뜻한,부드러운,자연스러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: 0 \r\nShadow: 0 \r\nColor: 0 \r\nSharpness: +1 \r\nNoise Reduction: 0 \r\nWhite Balance: AUTO \r\nGrain: weak\r\nISO: AUTO, 200 up to ISO 6400, SHUTTER VELOCITY 1/250 (1/125 and 1/60 at night)',
+  },
+  {
+    id: '641',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로, 풍경 사진에 적합하며, 은은한 그레인과 강렬한 색상 표현을 통해 빈티지하면서도 선명한 이미지를 연출합니다. 특히 자연의 색감을 부드럽고 따뜻하게 담아내면서도, 디테일을 놓치지 않아 사실적인 묘사가 돋보입니다. 마치 미국의 자연 풍경을 담은 사진처럼 생생하고 따뜻한 감성을 전달합니다.\n[Base Film Simulation] Astia\n[Keywords] 풍경,색감,선명함,필름,빈티지\n[Moods] 따뜻한,선명한,사실적인,자연스러운\n[ShootingTypes] landscape,snap\n[Settings] Grain: Weak Large\r\nDynamic Range: 200\r\nWhite balance: Auto white priority\r\nWB offset: R: 3, B -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Weak\r\nHighlights: +1\r\nShadows: -0.5\r\nColor: 0\r\nSharpness: -4\r\nNoise Reduction: +4\r\nClarity: 0\r\nExposure compensation: Typically +1/3 — +2/3',
+  },
+  {
+    id: '642',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강렬한 색상과 빈티지한 느낌을 강조하여, 마치 오래된 영화의 한 장면을 연상시키는 이미지를 연출합니다. 특히, 따뜻하고 선명한 색감과 함께, 굵은 입자와 푸른색 강조를 통해 독특한 분위기를 자아냅니다. 일상적인 스냅 사진이나, 특별한 순간을 드라마틱하게 기록하고 싶을 때 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,따뜻한,색감,선명한\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +3\r\nShadow: 0\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -4\r\nClarity: -4\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto, -3 Red & -9 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +1/3 (typically)',
+  },
+  {
+    id: '643',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 대비와 흑백의 질감을 통해 독특하고 빈티지한 느낌을 선사합니다. 마치 오래된 영화의 한 장면처럼, 드라마틱하고 거친 분위기를 연출하여 보는 이의 시선을 사로잡을 것입니다. 특히, 거리의 스냅 사진이나 다큐멘터리 사진에 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,대비,필름,흑백,질감\n[Moods] 드라마틱,거친,빈티지,강렬한\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR200\r\nHighlight: +3\r\nShadow: +4\r\nColor: -4\r\nColor Chrome Effect: Off or N/A\r\nSharpness: -1\r\nNoise Reduction: -4\r\nGrain Effect: Strong\r\nWhite Balance: Auto, +2 Red & -5 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '644',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하면서도 빈티지한 감성을 담아, 일상 속의 소중한 순간들을 매력적으로 기록할 수 있게 해줍니다. 특히, 파란색 계열의 색상을 강조하여, 맑은 하늘 아래나 바다를 배경으로 한 사진에 잘 어울립니다. 부드러운 필름 그레인과 색감은 아련한 추억을 떠올리게 할 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,클래식,푸른색,빈티지,따뜻함\n[Moods] 따뜻한,몽환적인,빈티지,선명한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto, -2 Red & -4 Blue\r\nDynamic Range: DR100\r\nHighlight: +1\r\nShadow: +3\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -3',
+  },
+  {
+    id: '645',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 밤거리를 걷는 듯한, 따뜻하면서도 대비가 강한, 그리고 약간의 빈티지한 느낌을 담아낼 수 있습니다. 특히, 네온사인 불빛 아래에서 인물이나 풍경 사진을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,따뜻한,도시,대비,선명한\n[Moods] 따뜻한,선명한,활기찬,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Week, Small\r\nColor Chrome Effect: Weak\r\nWhite Balance: Auto, +4 Red & -5 Blue\r\nDynamic Range: DR100\r\nHighlight: +1\r\nShadow: +1\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: +3',
+  },
+  {
+    id: '646',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강한 그레인과 색상 대비를 통해 빈티지한 감성을 극대화합니다. 특히 파란색 계열의 색상을 강조하여, 맑은 하늘 아래의 풍경이나 인물 사진에 매력적인 분위기를 더해줄 것입니다. 따뜻하면서도 선명한 색감은 일상적인 스냅 사진을 특별하게 만들어 줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,클래식,컬러,선명함,빈티지\n[Moods] 따뜻한,선명한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Strong, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto, -3 Red & -3 Blue\r\nDynamic Range: DR100\r\nHighlight: +2\r\nShadow: -1\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: -3',
+  },
+  {
+    id: '647',
+    pageContent:
+      '[Summary] 이 레시피는 차분하면서도 빈티지한 느낌을 주며, 차가운 색감과 부드러운 그림자를 통해 몽환적인 분위기를 연출합니다. 특히 인물 사진에서 피부톤을 자연스럽게 표현하면서도, 약간의 대비를 더해 깊이 있는 표현을 가능하게 합니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 빈티지,인물,대비,차가운,필름\n[Moods] 차가운,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] PRO Neg Hi\r\nDYNAMIC RANGE: DR100\r\nHIGHLIGHT:-2\r\nSHADOW:-1\r\nCOLOR:+2\r\nWHITE BALANCE: 5300K\r\nWB SHIFT: R: -4, B:6\r\nNOISE REDUCTION:0\r\nSHARPENING:+4\r\nGRAIN EFFECT: WEAK',
+  },
+  {
+    id: '648',
+    pageContent:
+      '[Summary] 이 레시피는 영화 필름의 부드러움과 빈티지한 감성을 담아, 잊혀진 기억 속 한 장면을 연상시키는 듯한 사진을 만들어 줍니다. 특히, 빛 바랜 듯한 색감과 부드러운 그림자는 일상 속 특별한 순간들을 더욱 드라마틱하게 표현해 줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,필름,저채도,드라마틱,질감\n[Moods] 차분한,몽환적인,따뜻한,빈티지\n[ShootingTypes] snap,daily\n[Settings] DYNAMIC RANGE: DR400\r\nHIGHLIGHT: 0\r\nSHADOW: -2\r\nCOLOR: -4\r\nWHITE BALANCE: AUTO WB\r\nWB SHIFT: R 5, B -6\r\nNOISE REDUCTION: -4\r\nSHARPENING: 0\r\nGRAIN EFFECT: {OFF} *OR ADD FOR TEXTURE',
+  },
+  {
+    id: '649',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로 부드럽고 빈티지한 파스텔톤의 이미지를 연출합니다. 하이라이트와 섀도우 조절을 통해 섬세한 톤을 살리고, 색상과 화이트 밸런스 조정을 통해 따뜻하면서도 몽환적인 분위기를 자아냅니다. 일상 스냅이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 파스텔,빈티지,부드러움,색감,클래식\n[Moods] 따뜻한,차분한,몽환적인,부드러운\n[ShootingTypes] snap,daily\n[Settings] DYNAMIC RANGE: DR200\r\nHIGHLIGHT: 1\r\nSHADOW: -2\r\nCOLOR: -4\r\nWHITE BALANCE: AUTO WB\r\nWB SHIFT: R 2, B -5\r\nNOISE REDUCTION: -4\r\nSHARPENING: 1\r\nGRAIN EFFECT: {OFF}',
+  },
+  {
+    id: '650',
+    pageContent:
+      '[Summary] 이 레시피는 영화적인 분위기를 연출하며, 따뜻하고 부드러운 색감과 강렬한 입자감을 통해 빈티지한 감성을 자극합니다. 특히, 하이라이트와 섀도우의 섬세한 조절은 드라마틱한 연출을 가능하게 하며, 일상적인 스냅 사진에 특별한 깊이를 더해줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,영화,따뜻한,필름,빈티지\n[Moods] 따뜻한,몽환적인,드라마틱,영화같은\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +3\r\nShadow: +2\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpness: 0\r\nClarity: -3\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto White Priority (X100V + X-Pro3: Auto), +4 Red & -7 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '651',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 선명한 색감과 강렬한 대비를 통해 영화 같은 분위기를 연출합니다. 특히, 푸른색 계열의 색상을 강조하여 하늘이나 바다를 더욱 돋보이게 하며, 필름 그레인 효과를 통해 아날로그 감성을 더합니다. 일상적인 스냅 사진이나 풍경 사진에 적합하며, 드라마틱한 분위기를 연출하고 싶을 때 사용하면 좋습니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻한,필름,대비,선명한\n[Moods] 따뜻한,선명한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: -2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -3\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto Ambience Priority, -6 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '652',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 질감을 동시에 표현합니다. DR400 설정은 하이라이트와 섀도우의 디테일을 살려주며, 강한 그레인 효과는 아날로그 감성을 더해줍니다. 일상 속 소중한 순간들을 아련하고 따뜻하게 기록하기에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,따뜻한,색감,질감\n[Moods] 따뜻한,빈티지,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Classic Negative\r\nDynamic Range: DR400\r\nHighlight: 0\r\nShadow: -2\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 5200K, +1 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '653',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 Superia Xtra 400 필름의 색감을 재현하여, 따뜻하고 생동감 넘치는 사진을 만들어줍니다. 특히 인물 사진에서 부드러운 피부톤과 함께 선명한 색감을 표현하며, 스냅 사진에도 적합합니다.\n[Base Film Simulation] Astia\n[Keywords] 필름,따뜻한,선명한,인물,스냅\n[Moods] 따뜻한,선명한,활기찬,생동감있는\n[ShootingTypes] snap,portrait\n[Settings] Dynamic Range: DR200\r\nHighlight: -2 (Low)\r\nShadow: +1 (Medium-High)\r\nColor: +2 (High)\r\nSharpness: 0 (Normal)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Shade, +2 Red & +2 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '654',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감으로 인물 사진에 특히 잘 어울립니다. 클래식 크롬 필름 시뮬레이션과 섬세한 설정들이 어우러져, 마치 오래된 필름 사진처럼 은은하고 빈티지한 분위기를 연출합니다. 일상 속 소중한 순간들을 아련하고 따뜻하게 기록할 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 인물,따뜻한,부드러운,필름,빈티지\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: -1 (Medium-Low)\r\nShadow: -1 (Medium-Low)\r\nColor: +2 (High)\r\nSharpness: -1 (Medium-Low)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Daylight/Fine, +4 Red & -4 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '655',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 질감을 동시에 표현합니다. 강한 그레인 효과와 색상 강조를 통해 필름 특유의 감성을 극대화하며, 하이라이트와 섀도우 조절로 섬세한 톤 표현이 가능합니다. 일상 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,따뜻함,색감,질감\n[Moods] 따뜻한,빈티지,선명한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +3.5\r\nShadow: -0.5\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto White Priority, +1 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '656',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 밤거리, 네온사인, 그리고 인물 사진에 특히 잘 어울리는, 강렬하고 드라마틱한 분위기를 연출합니다. Eterna 필름 시뮬레이션과 다양한 색상 보정 설정을 통해, 마치 영화의 한 장면과 같은 독특한 이미지를 만들어낼 수 있습니다. 차가운 듯하면서도 몽환적인, 잊을 수 없는 순간들을 담아보세요.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,대비,빈티지,색감 강조,필름\n[Moods] 드라마틱,강렬한,몽환적인,차가운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: +2.5\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: +4\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto White Priority, +1 Red & -7 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '657',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 생생한 색감을 후지필름의 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. 은은한 그레인과 색상 대비, 그리고 푸른색 강조를 통해 빈티지하면서도 선명한 이미지를 연출하며, 일상 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻한,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,화사한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: +2\r\nColor: +1\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity: -2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Auto, +3 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '658',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 빈티지한 색감을 재현하여, 일상 속의 소중한 순간들을 매력적으로 담아낼 수 있도록 합니다. 특히, 햇살 좋은 날의 풍경이나 인물 사진에 적용하면, 은은한 그레인과 함께 잊을 수 없는 추억을 선사할 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: +1.5\r\nColor: +1\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity: -2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Auto White Priority, +3 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '659',
+    pageContent:
+      '[Summary] 후지필름 C200 필름을 연상시키는 이 레시피는, 클래식 네거티브 필름 시뮬레이션을 기반으로 따뜻하고 부드러운 색감과 함께 적당한 필름 그레인으로 아날로그 감성을 자극합니다. 선명함과 대비를 조절하여, 일상 속 스냅 사진에 매력적인 빈티지 무드를 더해줍니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,색감,스냅\n[Moods] 따뜻한,빈티지,부드러운,선명한\n[ShootingTypes] snap,daily\n[Settings] DR : 200\r\nWhite Balance: Auto\r\nWB Color Shift: +1R, -2B\r\nGrain: Weak Large\r\nColor: +2\r\nHighlights: 0\r\nShadows: +1\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Weak\r\nColor chrome FX blue: Off\r\nClarity: +2\r\nExp comp: from ⅓ to ⅔ usually',
+  },
+  {
+    id: '660',
+    pageContent:
+      '[Summary] Mark G. Adams의 MGA Kodak Double-X 레시피는 흑백 필름의 깊이 있는 질감과 강렬한 콘트라스트를 통해 드라마틱하고 빈티지한 분위기를 연출합니다. 특히, 하이라이트와 섀도우 톤 조절을 통해 흑백 사진 특유의 감성을 극대화하여, 잊혀져 가는 과거의 기억을 불러일으키는 듯한 인상을 줍니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,콘트라스트,빈티지,모노크롬\n[Moods] 드라마틱,빈티지,강렬한,차분한\n[ShootingTypes] snap,documentry\n[Settings] Film Simulation Acros+Y\r\nPush/Pull Process: 0 or +/- 2/3\r\nDynamic Range DR200\r\nGrain Effect Strong\r\nColor Chrome Effect: Weak\r\nWB Auto\r\nWB Shift R0 B0\r\nHighlight Tone -2\r\nShadow Tone +1\r\nColor –\r\nSharpness +4\r\nNoise Reduction -04 \r\nB&W Adjust +1',
+  },
+  {
+    id: '661',
+    pageContent:
+      '[Summary] 이 레시피는 석양 아래의 거리를 영화처럼 담아내기 위한 따뜻하고 드라마틱한 분위기를 연출합니다. Eterna 필름 시뮬레이션과 강한 색상 크롬 효과는 깊이 있는 색감을, 하이라이트와 섀도우 톤 조절은 대비를 더하여 강렬한 인상을 줍니다. 마치 한 편의 영화 속 한 장면을 포착한 듯한 사진을 만들 수 있습니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,노을,거리,따뜻함,필름\n[Moods] 따뜻한,드라마틱,강렬한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: 0EV (or as needed)\r\nDynamic Range 100\r\nGrain Effect Off\r\nColor Chrome Effect: Strong\r\nWB AUTO\r\nWB Shift R4 B-2\r\nHighlight Tone -2\r\nShadow Tone +4\r\nColor +4\r\nSharpness -3\r\nNoise Reduction',
+  },
+  {
+    id: '662',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 크리미한 색감과 함께, 따뜻하고 몽환적인 분위기를 연출합니다. 특히, 빈티지한 느낌을 살려 인물 사진이나 일상 스냅에 활용하면 좋습니다. 필름 그레인과 색상 효과가 더해져 아날로그 감성을 극대화합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,크리미,따뜻한,필름,몽환적인\n[Moods] 따뜻한,몽환적인,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +4\r\nShadow: +4\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpening: -4\r\nClarity: -5\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 8700K, +4 Red & +6 Blue\r\nISO: up to ISO 5000\r\nExposure Compensation: +1/3 (typically)',
+  },
+  {
+    id: '663',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로, 풍경 사진에 적합하며, 강렬한 색감과 필름 그레인 효과를 통해 아날로그 감성을 더합니다. 특히, DR400 설정은 밝은 영역의 디테일을 살리고, 색상 및 채도 조절을 통해 생생하고 드라마틱한 이미지를 연출합니다. 따뜻하면서도 선명한 색감은 보는 이의 시선을 사로잡을 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 선명한,풍경,색감,필름,강렬한\n[Moods] 따뜻한,선명한,생생한,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nColor: +4\r\nColor Chrome Effect: Strong\r\nSharpening: -2\r\nNoise Reduction: -4\r\nGrain Effect: Strong\r\nWhite Balance: Fluorescent 2, -2 Red & -2 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '664',
+    pageContent:
+      '[Summary] 이 레시피는 아날로그 필름의 질감과 색감을 살려, 몽환적이면서도 강렬한 인상을 주는 사진을 만들어 줍니다. 특히, 따뜻한 색감과 깊이 있는 그림자는 빈티지한 분위기를 더하며, 일상적인 스냅 사진에 특별한 감성을 불어넣어 줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 필름,빈티지,색감,질감,선명함\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] DR : 200\r\nWhite Balance: Auto\r\nWB Color Shift: -5R, -7B\r\nGrain: Strong Large\r\nColor: 0\r\nHighlights: -2\r\nShadows: -1\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Off\r\nClarity: +2\r\nExp comp: tend to keep it at zero(or ⅓ over)',
+  },
+  {
+    id: '665',
+    pageContent:
+      '[Summary] 이 레시피는 두 번의 노출을 통해, 바랜 듯한 색감과 강렬한 대비를 동시에 담아내는 독특한 매력을 선사합니다. 특히, 붉은 색과 푸른색의 대비를 강조하여 몽환적이면서도 드라마틱한 분위기를 연출하며, 빈티지한 감성을 자극하는 사진을 만들어낼 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,색감,몽환적인,대비\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Double exposition\r\n\r\nDynamic Range: DR400\r\nHighlight: +3\r\nShadow: +4\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: 0\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto, +4 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 1/3 for the 1st exposure, 0 to +1/3 for the 2nd exposure (typically)',
+  },
+  {
+    id: '666',
+    pageContent:
+      '[Summary] 이 레시피는 차가운 겨울 풍경의 아름다움을 담아내기 위해 Velvia 필름 시뮬레이션을 기반으로 제작되었습니다. DR400의 넓은 다이나믹 레인지는 하이라이트와 섀도우의 디테일을 살리고, -2의 낮은 채도 설정은 차분하면서도 드라마틱한 분위기를 연출합니다. 특히 겨울의 차가운 색감을 선명하게 표현하는 데 적합합니다.\n[Base Film Simulation] Velvia\n[Keywords] 차가운,겨울,풍경,대비,선명한\n[Moods] 차분한,차가운,선명한,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -1 (Medium-Low)\r\nShadow: 0 (Normal)\r\nColor: -2 (Low)\r\nSharpness: 0 (Normal)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Daylight (“Fine”), 0 Red & +2 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: +2/3 (typically)',
+  },
+  {
+    id: '667',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 빈티지하면서도 다큐멘터리적인 느낌을 자아냅니다. DR400 설정과 섀도우, 하이라이트 조절을 통해 풍부한 계조와 드라마틱한 대비를 표현하며, 따뜻하고 차분한 분위기를 연출합니다. 일상 스냅 사진에 적합하며, 고전적인 감성을 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,다큐멘터리,대비,색감\n[Moods] 따뜻한,차분한,고전적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +1 (Medium-High)\r\nShadow: +2 (High)\r\nColor: +1 (Medium-High)\r\nSharpness: 0 (Medium)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Auto, +4 Red & -4 Blue\r\nISO: Auto up to ISO 3200\r\nExposure Compensation: +2/3 (typically)',
+  },
+  {
+    id: '668',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 부드러운 질감을 통해 아련한 분위기를 연출합니다. 특히, 일상 속 소중한 순간들을 필름 사진처럼 기록하고 싶은 분들에게 적합합니다. 노스탤지어 감성을 자극하는 이 레시피는 잊혀져가는 추억을 되살리는 듯한 느낌을 선사할 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,색감,레트로\n[Moods] 따뜻한,몽환적인,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain: Weak/Small\r\nColor Chrome: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance : Auto with a Shift (Red +3 Blue ‑5)\r\nDynamic Range: DR200\r\nTone Curve: Highlights ‑1 Shadows 0\r\nColor: +4\r\nSharpness: 0\r\nNoise Reduction: ‑4\r\nClarity ‑2',
+  },
+  {
+    id: '669',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 골드 200 필름의 따뜻하고 부드러운 색감을 재현하여, 일상 속의 소중한 순간들을 매력적으로 담아낼 수 있습니다. 강한 그레인과 선명한 색상, 그리고 하이라이트와 섀도우의 섬세한 조절을 통해, 빈티지하면서도 생동감 넘치는 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 따뜻한,필름,빈티지,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] DR : 200\r\nWhite Balance: Auto\r\nWB Color Shift: +2R, -3B\r\nGrain: Strong Small\r\nColor: +3\r\nHighlights: -2\r\nShadows: +1.5\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Off\r\nClarity: +1\r\nExp comp: ⅓ to 1',
+  },
+  {
+    id: '670',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 Provia 필름 시뮬레이션을 기반으로, 부드럽고 따뜻한 색감과 함께 필름 그레인 효과를 더하여 빈티지한 감성을 자아냅니다. 특히, 파란색 계열의 색상을 강조하여 풍경 사진에 매력적인 분위기를 더할 수 있습니다. 일상 스냅 사진에 활용하면 좋습니다.\n[Base Film Simulation] Provia\n[Keywords] 필름,부드러움,따뜻함,색감,빈티지\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap\n[Settings] Dynamic Range: DR100\r\nHighlight: -1\r\nShadow: 0\r\nColor: 0\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -3\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: 5250K, -3 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '671',
+    pageContent:
+      '[Summary] Velvia 필름 시뮬레이션을 기반으로 제작된 이 레시피는 자연의 생생한 색감을 극대화하여, 풍경 사진에 특히 적합합니다. 강렬한 색상과 대비, 그리고 은은한 필름 그레인이 더해져, 잊을 수 없는 순간들을 더욱 드라마틱하게 담아낼 수 있습니다. 선명하고 기억에 남는 이미지를 원하는 분들에게 최고의 선택이 될 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,대비,선명한,필름\n[Moods] 생생한,강렬한,극적인\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: -1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: 0\r\nGrain Effect: Weak\r\nColor Chrome Effect: Strong\r\nWhite Balance: Auto, 0 Red & 0 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '672',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 풍부한 질감을 통해, 잊혀진 도시의 뒷골목이나 고독한 인물의 모습을 담아낼 수 있습니다. 특히, 빛과 그림자의 드라마틱한 연출을 통해 강렬하고 인상적인 이미지를 만들 수 있을 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,강렬함,대비,디테일\n[Moods] 드라마틱,강렬한,고전적인,극적인\n[ShootingTypes] snap,daily\n[Settings] Acros Y\r\nGrain Effect: Strong/Large\r\nColor Chrome : Off\r\nColor Chrome FX Blue: Off\r\nWhite Balance : Auto\r\nD Range : 100\r\nTone Curve : Highlights +4 / Shadows +4\r\nColor 0\r\nSharpness +4\r\nNoise Reduction -4\r\nClarity +1\r\nI shoot this at 0+/- Ev and adjust on location as needed.',
+  },
+  {
+    id: '673',
+    pageContent:
+      '[Summary] 강렬한 흑백 대비와 미세한 그레인이 돋보이는 이 레시피는 흑백의 깊이 있는 표현을 추구합니다. 파란색 계열의 색상 강조를 통해, 흑백 사진에 독특한 개성을 부여하며, 드라마틱하고 고전적인 분위기를 연출합니다. 도시의 풍경이나 인물 사진에 잘 어울릴 것입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,강렬함,대비,필름\n[Moods] 드라마틱,강렬한,차분한,고전적인\n[ShootingTypes] snap\n[Settings] Monochome R\r\nGrain Effect: Strong/Small\r\nColor Chrome : Off\r\nColor Chrome FX Blue: Strong\r\nWhite Balance : Auto\r\nD Range : 100\r\nTone Curve : Highlights 0 / Shadows +3\r\nColor 0\r\nSharpness +1\r\nNoise Reduction 0\r\nClarity +1\r\nI shoot this at 0 to +3/4 Ev and adjust on location as needed.',
+  },
+  {
+    id: '674',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로, 강렬한 색상과 높은 다이나믹 레인지를 통해 여름의 생생한 풍경을 담아냅니다. 특히, 톤 커브와 화이트 밸런스 조정을 통해 따뜻하면서도 드라마틱한 분위기를 연출하며, 선명한 이미지와 대비를 강조하여 여름의 활기찬 순간들을 포착합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,여름,따뜻함,선명함,대비\n[Moods] 따뜻한,선명한,활기찬,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColor Chrome : Strong\r\nColor Chrome FX Blue: Off\r\nWhite Balance : Kelvin 7100 Shift Red -3 Blue -2\r\nD Range : 400\r\nTone Curve : Highlights -2 / Shadows -2\r\nColor +4\r\nSharpness 0\r\nNoise Reduction -4\r\nClarity -5\r\nI shoot this at Positive + 1 1/2 to at time +2 Ev and adjust on location as needed.',
+  },
+  {
+    id: '675',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 포트라 필름의 부드럽고 따뜻한 색감을 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. 하이라이트와 섀도우의 섬세한 조절은 부드러운 톤을 만들어내며, 인물 사진에 특히 잘 어울립니다. 은은한 그레인 효과와 색상 강조는 빈티지하면서도 몽환적인 분위기를 더합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,포트라,따뜻한,부드러운,인물\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Grain Effect: Weak/Small\r\nColor Chrome : Strong\r\nColor Chrome FX Blue: Weak\r\nWhite Balance : Kelvin 5200 Shift Red +1 Blue -6\r\nD Range : 400\r\nTone Curve : Highlights -2 / Shadows +2\r\nColor +2\r\nSharpness -1\r\nNoise Reduction -4\r\nClarity -2\r\nI shoot this at Positive +1/2 to 1 1/2 Ev and adjust on location as needed.',
+  },
+  {
+    id: '676',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 선명한 색감을 클래식 크롬 필름 시뮬레이션으로 재현합니다. 강한 색상 대비와 미세한 그레인 효과는 빈티지한 감성을 더하며, 일상 스냅 사진에 활력을 불어넣어 줄 것입니다. 특히, 햇살 좋은 날 야외에서 촬영하면 더욱 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,선명한,따뜻한,필름,빈티지\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak/Small\r\nColor Chrome : Strong\r\nColor Chrome FX Blue: Weak\r\nWhite Balance : Daylight Shift Red +2 Blue -5\r\nD Range : 200\r\nTone Curve : Highlights 0 / Shadows 0\r\nColor +2\r\nSharpness +1\r\nNoise Reduction -4\r\nClarity +3\r\nI shoot this at Positive +1/3 to 3/4 Ev and adjust on location as needed.',
+  },
+  {
+    id: '7',
+    pageContent:
+      '[Summary] 이 레시피는 텅 빈 부두의 고독함과 쓸쓸함, 그리고 그 속에서 느껴지는 미묘한 아름다움을 담아낼 수 있을 것입니다. 특히, 차가운 듯 따뜻한 색감과 은은한 필름 그레인은 잊혀진 시간의 조각들을 섬세하게 표현하며, 몽환적인 분위기를 연출할 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,빈티지,파랑,따뜻함,필름\n[Moods] 몽환적인,따뜻한,차분한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Fluorescent 2\r\nWB Shift: 2 Red, -5 Blue\r\nDynamic Range: DR400\r\nHighlights: 0\r\nShadows: -1\r\nColor: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: -2/3',
+  },
+  {
+    id: '68',
+    pageContent:
+      '[Summary] 이 레시피는 실내 공간의 따뜻하고 빈티지한 분위기를 담아내는데 초점을 맞춘 듯 합니다. 강렬한 색상과 파란색 강조, 그리고 부드러운 그레인 효과는 마치 영화의 한 장면처럼 몽환적인 느낌을 선사하며, 일상 속 특별한 순간들을 드라마틱하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,빈티지,색감 강조,실내,따뜻함\n[Moods] 따뜻한,몽환적인,드라마틱,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: Auto Ambience Priority, -1 Red & -6 Blue\r\nDynamic Range: DR200\r\nHighlight: -1\r\nShadow: -1\r\nColor: +4\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '69',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 부드러운 질감을 통해, 마치 오래된 영화 속 한 장면을 연상시키는 사진을 만들어 줍니다. 특히 실내 인물 사진에서 몽환적이고 아련한 분위기를 연출하는 데 탁월하며, 빛과 그림자의 대비를 살려 드라마틱한 느낌을 더할 수 있습니다.\n[Base Film Simulation] Nostalgic Neg.\n[Keywords] 빈티지,따뜻한,색감,인물,필름\n[Moods] 따뜻한,빈티지,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Weak\r\nWhite Balance: Auto Ambience Priority, -2 Red & -6 Blue\r\nDynamic Range: DR400\r\nHighlight: -2\r\nShadow: -2\r\nColor: -1\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '70',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬의 부드러운 색감에 강렬한 파란색 강조와 따뜻한 색온도를 더하여, 생동감 넘치면서도 빈티지한 분위기를 연출합니다. 특히, 풍경 사진에서 쨍한 하늘과 대비를 강조하여 드라마틱한 느낌을 살릴 수 있습니다. 마치 영화의 한 장면처럼 기억에 남는 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 색감,선명함,대비,필름,빈티지\n[Moods] 따뜻한,선명한,활기찬,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Strong\r\nWhite Balance: 4350K, +6 Red & -8 Blue\r\nDynamic Range: DR-P Strong\r\nColor: +4\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to + 1 1/3 (typically)',
+  },
+  {
+    id: '71',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬의 빈티지한 색감과 강렬한 대비를 바탕으로, 생생하고 드라마틱한 풍경 사진을 연출합니다. 특히, 붉은 색감을 강조하고 파란색을 은은하게 표현하여, 따뜻하면서도 활기찬 분위기를 자아냅니다. 이 레시피는 광활한 자연 풍경이나, 역동적인 도시의 모습을 담기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 선명한,색감,대비,빈티지,풍경\n[Moods] 따뜻한,선명한,활기찬,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Weak\r\nWhite Balance: 4350K, +6 Red & -8 Blue\r\nDynamic Range: DR-P Strong\r\nColor: +4\r\nSharpness: -2\r\nHigh ISO NR: -4\r\nClarity: -3\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to + 1 1/3 (typically)',
+  },
+  {
+    id: '72',
+    pageContent:
+      '[Summary] 이 레시피는 차갑고 금속적인 톤으로, 마치 영화의 한 장면을 보는 듯한 느낌을 줍니다. 특히, 파란색 강조와 높은 다이나믹 레인지는 차가운 도시의 풍경이나 인물의 드라마틱한 순간을 담아내기에 적합합니다. 또한, 부드러운 그레인 효과는 사진에 은은한 필름 느낌을 더해줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,차가운,금속,대비,필름\n[Moods] 차가운,몽환적인,드라마틱,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Shade\r\nWB Shift: -3 Red, 3 Blue\r\nDynamic Range: DR400\r\nHighlights: -0.5\r\nShadows: -1.5\r\nColor: -4\r\nSharpness: 1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: -1/3',
+  },
+  {
+    id: '73',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여 부드럽고 자연스러운 색감과 은은한 필름 그레인을 더해 따뜻하고 편안한 분위기를 연출합니다. 자연스러운 풍경이나 일상 스냅 사진에 적합하며, 부드러운 톤과 섬세한 디테일을 통해 따뜻한 감성을 담아낼 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 자연스러운,부드러운,따뜻한,색감,필름\n[Moods] 따뜻한,부드러운,자연스러운,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto Ambience Priority\r\nWB Shift: 1 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: 1\r\nColor: 1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '74',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 부드러운 색감을 재현하여, 아련한 분위기와 빈티지한 감성을 동시에 느낄 수 있게 해줍니다. 일상 속 소중한 순간들을 포근하고 아름다운 사진으로 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻한,색감,스냅\n[Moods] 따뜻한,빈티지,몽환적인,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto Ambience Priority\r\nWB Shift: 1 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: 0\r\nColor: 2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '75',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로 하여, 부드럽고 따뜻한 색감과 은은한 그레인 효과를 통해 아련하고 빈티지한 분위기를 연출합니다. 특히, 일상 스냅 사진이나 인물 사진에 잘 어울리며, 몽환적인 분위기를 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,부드러운,색감\n[Moods] 따뜻한,부드러운,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: Auto Ambience Priority\r\nWB Shift: 0 Red, -1 Blue\r\nDynamic Range: DR200\r\nHighlights: 0.5\r\nShadows: -0.5\r\nColor: 1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '76',
+    pageContent:
+      '[Summary] 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 부드러운 색감과 은은한 필름 그레인을 더해, 마치 오래된 사진첩을 펼쳐보는 듯한 아련한 분위기를 연출합니다. 특히 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 담기에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 따뜻한,필름,빈티지,골드,부드러운\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 7700K\r\nWB Shift: -4 Red, 4 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: 0\r\nColor: -1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -2\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '677',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 선명한 색감을 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. 강렬한 색상과 높은 다이나믹 레인지를 통해 풍부한 표현력을 제공하며, 하이라이트와 섀도우 조절로 드라마틱한 분위기를 연출합니다. 일상 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,클래식,선명한,따뜻한,색감\n[Moods] 따뜻한,선명한,빈티지,극적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak/Small\r\nColor Chrome : Strong\r\nColor Chrome FX Blue: Weak\r\nWhite Balance : Auto WB Shift Red +2 Blue -4\r\nD Range : 400\r\nTone Curve : Highlights +4 / Shadows -2\r\nColor +4\r\nSharpness -1\r\nNoise Reduction -4\r\nClarity +1\r\nI shoot this at Negative -1/2 to -1 Ev and adjust on location as needed.',
+  },
+  {
+    id: '678',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강렬한 색상과 선명도를 통해 빈티지하면서도 드라마틱한 이미지를 연출합니다. 특히, 파란색 계열의 색상을 강조하여 더욱 깊이 있는 색감을 표현하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식,빈티지,필름,선명함,색감\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak/Small\r\nColor Chrome : Strong\r\nColor Chrome FX Blue: Strong\r\nWhite Balance : Kelvin 6000 No Shift\r\nD Range Priority : Auto\r\nColor +2\r\nSharpness +3\r\nNoise Reduction -4\r\nClarity +1\r\nI shoot this at Ev 0 +/-  and adjust on location as needed.',
+  },
+  {
+    id: '679',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 필름 특유의 질감을 살려, 마치 오래된 사진첩을 펼쳐보는 듯한 아련한 느낌을 선사합니다. 인물 사진에 특히 잘 어울리며, 일상 속 소중한 순간들을 따뜻하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,따뜻한,빈티지,색감,인물\n[Moods] 따뜻한,빈티지,선명한,부드러운\n[ShootingTypes] snap,daily\n[Settings] DR : 100\r\nWhite Balance: Daylight\r\nWB Color Shift: +2R, -1B\r\nGrain: Weak Large\r\nColor: +4\r\nHighlights: 0\r\nShadows: +2\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Strong\r\nClarity: +2\r\nExp comp: 0,+⅓ occasionally',
+  },
+  {
+    id: '680',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로 하여, 따뜻하고 부드러운 색감과 빈티지한 분위기를 연출합니다. 특히, 은은한 색상 표현과 섀도우 톤 조절을 통해 아련하고 그리운 느낌을 담아낼 수 있습니다. 일상 속의 소중한 순간들을 포근하게 기록하기에 적합합니다.\n[Base Film Simulation] Provia\n[Keywords] 따뜻한,빈티지,부드러운,색감,필름\n[Moods] 따뜻한,아련한,그리운,포근한\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: 0EV\r\nDynamic Range DR200\r\nFilm Simulation Provia\r\nGrain Effect Off\r\nColor Chrome Effect: Weak\r\nWB AUTO\r\nWB Shift R1 B1\r\nHighlight Tone 0\r\nShadow Tone -1\r\nColor +1\r\nSharpness +2\r\nNoise Reduction 0',
+  },
+  {
+    id: '681',
+    pageContent:
+      '[Summary] 이 레시피는 깊은 세피아 톤과 강렬한 그레인 효과를 통해, 마치 오래된 영화 속 한 장면을 보는 듯한 빈티지한 감성을 선사합니다. 특히, 빛과 그림자의 대비를 강조하여 드라마틱한 분위기를 연출하며, 흑백 사진 특유의 거친 질감을 통해 아날로그 감성을 극대화합니다. 오래된 건물, 인물, 또는 자연 풍경을 촬영할 때, 이 레시피는 잊혀진 시간의 흔적을 생생하게 되살려 줄 것입니다.\n[Base Film Simulation] Sepia\n[Keywords] 흑백,세피아,빈티지,필름,거친\n[Moods] 따뜻한,빈티지,드라마틱,거친\n[ShootingTypes] documentry,snap\n[Settings] Push/Pull Process: +2/3\r\nDynamic Range D200\r\nGrain Effect Strong\r\nColor Chrome Effect: Strong \r\nWB: 2500k\r\nWB Shift R9 B9\r\nHighlight Tone +3\r\nShadow Tone +3\r\nColor –\r\nSharpness -4\r\nNoise Reduction +4\r\nB&W Adjust',
+  },
+  {
+    id: '682',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 부드러운 색감을 재현하여, 일상 속 소중한 순간들을 아련하고 빈티지한 감성으로 담아낼 수 있도록 도와줍니다. 특히, 은은한 그레인과 부드러운 톤은 사진에 몽환적인 분위기를 더해줄 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 필름,빈티지,따뜻함,부드러움,질감\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] DR : 100\r\nWhite Balance: Auto\r\nWB Color Shift: +1R, -2B\r\nGrain: Strong, small\r\nColor: -1\r\nHighlights: -0.5\r\nShadows: +1.5\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: weak\r\nColor chrome FX blue: off\r\nClarity: 0\r\nExp comp: I tend to overexpose slightly, +⅓',
+  },
+  {
+    id: '683',
+    pageContent:
+      '[Summary] Ilford Ortho Plus 80 레시피는 강렬한 흑백 대비와 풍부한 질감을 통해, 마치 오래된 필름 사진을 보는 듯한 빈티지한 느낌을 선사합니다. DR400과 높은 하이라이트, 섀도우 설정은 드라마틱한 톤을 연출하며, 흑백의 깊이 있는 표현을 가능하게 합니다. 이 레시피는 다큐멘터리나 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,콘트라스트,빈티지,질감,모노크롬\n[Moods] 드라마틱,강렬한,거친,고전적인\n[ShootingTypes] documentry,snap\n[Settings] Monochrome+G\r\nDynamic Range: DR400\r\nHighlight: +2\r\nShadow: +3\r\nNoise Reduction: -4\r\nSharpening: +2\r\nClarity: -2\r\nToning: WC +1, MG 0\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: 7000K, -5 Red & 0 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '684',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 생동감 넘치는 색감과 필름 느낌을 살려, 풍경 사진에 특히 잘 어울립니다. 전반적으로 선명하고 화사한 분위기를 연출하며, 쨍한 색감과 부드러운 그레인이 조화롭게 어우러져 매력적인 결과물을 만들어낼 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 선명한,따뜻한,색감,필름,풍경\n[Moods] 따뜻한,선명한,생동감있는,화사한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +1\r\nColor: +3\r\nColor Chrome Effect: Weak\r\nSharpening: +1\r\nNoise Reduction: -4\r\nGrain Effect: Weak\r\nWhite Balance: 7100K, -6 Red & +5 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '685',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 산업 현장이나 빈티지한 분위기를 담기에 적합합니다. DR400 설정과 강한 대비, 그리고 따뜻한 색감은 사진에 깊이와 드라마틱한 느낌을 더해줍니다. 특히, 빛과 그림자의 대비를 강조하여 낡은 건물이나 기계, 또는 인물 사진에 매력적인 분위기를 부여할 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,산업,대비,색감,필름\n[Moods] 따뜻한,거친,드라마틱,빈티지\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nColor: +1\r\nColor Chrome Effect: Weak\r\nSharpening: +1\r\nNoise Reduction: -4\r\nGrain Effect: Weak\r\nWhite Balance: 3200K, +8 Red & -8 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '686',
+    pageContent:
+      '[Summary] MGA Kodachrome Classic 레시피는 클래식 크롬을 기반으로, 코다크롬 필름의 따뜻하고 선명한 색감을 재현합니다. 강한 그레인과 색상 대비는 빈티지한 느낌을 더하며, 하이라이트와 섀도우 톤 조절을 통해 깊이 있는 이미지를 연출합니다. 일상 스냅 사진에 적합하며, 따뜻하고 고전적인 분위기를 선호하는 사용자에게 추천합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,코다크롬,필름,빈티지,선명함\n[Moods] 따뜻한,선명한,빈티지,고전적인\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: +2/3EV\r\nDynamic Range DR100\r\nGrain Effect Strong\r\nColor Chrome Effect: Strong\r\nWB AUTO\r\nWB Shift R2 B1\r\nHighlight Tone –2\r\nShadow Tone +2\r\nColor +4\r\nSharpness +3\r\nNoise Reduction 0',
+  },
+  {
+    id: '687',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 따뜻한 분위기를 연출하여 인물 사진에 특히 적합합니다. 필름 그레인 효과와 색상 보정을 통해 아날로그 감성을 더하고, DR400 설정으로 풍부한 계조를 표현합니다. 따뜻하고 부드러운 색감으로 인물 사진을 더욱 매력적으로 만들어 줄 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,필름,따뜻한,부드러움,색감\n[Moods] 따뜻한,부드러운,화사한\n[ShootingTypes] portrait,snap\n[Settings] Push/Pull Process: +1EV (or as much as you can get away with)\r\nDynamic Range DR400\r\nGrain Effect Weak\r\nColor Chrome Effect: Weak\r\nWB AUTO\r\nWB Shift R-3 B2\r\nHighlight Tone –1\r\nShadow Tone 0\r\nColor +2 (or +3 as needed)\r\nSharpness 0\r\nNoise Reduction 0',
+  },
+  {
+    id: '688',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 프로 이미지 100 필름을 연상시키는 따뜻하고 부드러운 색감과 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 자연스러운 피부톤과 은은한 그레인 효과를 통해 아련한 감성을 표현할 수 있습니다. 노출 보정을 통해 더욱 풍부한 표현이 가능합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,따뜻한,빈티지,인물,부드러움\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] snap,portrait\n[Settings] DR : Auto\r\nWhite Balance: Auto\r\nWB Color Shift: +2R, -1B\r\nGrain: Weak small\r\nColor: +2\r\nHighlights: -2\r\nShadows: +1\r\nSharpness: -4\r\nNr: -4\r\nColor chrome effect: off\r\nColor chrome FX blue: off\r\nClarity: -3\r\nExp comp: ideally +1 or more',
+  },
+  {
+    id: '689',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이와 강렬한 대비를 통해 고전적인 분위기를 연출합니다. 특히, 강한 하이라이트와 섀도우 설정은 드라마틱한 톤을 만들어내며, 섬세한 그레인 효과와 선명한 디테일은 흑백 사진의 매력을 극대화합니다. 일상적인 스냅 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,클래식,모노크롬,대비,질감\n[Moods] 클래식한,선명한,강렬한,드라마틱한\n[ShootingTypes] snap,documentry\n[Settings] Monochrome (+Y, +R, +G)\r\nDynamic Range: DR100\r\nHighlight: +4\r\nShadow: +2\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity: +4\r\nToning: WC +1, MG 0\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto, 0 Red & 0 Blue\r\nISO: Auto, up to ISO 12800\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '690',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로 하여, 부드러운 질감과 따뜻한 색감을 통해 아련하고 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 돋보이며, 일상 속의 소중한 순간들을 감성적으로 담아낼 수 있습니다. 마치 오래된 필름 사진처럼, 따뜻하고 몽환적인 분위기를 선사합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,색감,인물,질감\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: +4\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -5\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Auto, -2 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '691',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 필름 그레인이 어우러져, 마치 코닥 포트라 필름을 연상시키는 빈티지한 분위기를 연출합니다. 특히 인물 사진이나 일상 스냅에서 은은하면서도 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 따뜻한,필름,포트라,빈티지,색감\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: -2\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: 5500K, 0 Red & -7 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 1/3 (typically)',
+  },
+  {
+    id: '692',
+    pageContent:
+      '[Summary] 이 레시피는 라이카 렌즈 특유의 선명하고 쨍한 색감과 빈티지한 분위기를 후지필름 카메라로 재현하고자 합니다. 특히 인물 사진에서 피부톤을 자연스럽게 표현하면서도, 톤과 채도를 강조하여 깊이 있는 사진을 연출할 수 있습니다. 일상 스냅이나 인물 사진에 적합합니다.\n[Base Film Simulation] Provia\n[Keywords] 빈티지,클래식,선명한,색감,인물\n[Moods] 따뜻한,선명한,빈티지,클래식\n[ShootingTypes] snap,daily\n[Settings] Push Pull Process: +1/3\r\nDynamic Range: DR200\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nWhite Balance: Auto\r\nWB Shift: R-2 : B 2\r\nHighlight Tone: -2\r\nShadow Tone: -1 (or 0 in certain circumstances)\r\nColour: +3\r\nSharpness: +4\r\nNoise Reduction: 0',
+  },
+  {
+    id: '693',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 함께, 필름 특유의 질감을 살려 인물 사진에 특히 잘 어울리는 레시피입니다. 은은한 그레인과 색상 대비를 통해 빈티지하면서도 몽환적인 분위기를 연출하며, 일상 속 특별한 순간들을 아름답게 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,인물,따뜻한,부드러운,빈티지\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: -2\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 5200K, +1 Red & -6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '694',
+    pageContent:
+      '[Summary] 이 레시피는 차분한 Classic Chrome을 기반으로 차갑고 도시적인 분위기를 연출합니다. 특히 도시의 야경이나 흐린 날씨의 풍경을 촬영할 때, 차가운 색감과 빈티지한 느낌을 더하여 독특한 감성을 표현할 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,도시,차가운,푸른색,필름\n[Moods] 차가운,몽환적인,도시적인,세련된\n[ShootingTypes] snap,daily\n[Settings] base film simulation: classic chrome\r\ndynamic range: dr100\r\nwhite balance: 4300k\r\nwb shift: r: -6, b: -6\r\ncolor: -2\r\nsharpness: -2\r\nhighlight tone: -1\r\nshadow tone: -2\r\nnoise reduction: -2',
+  },
+  {
+    id: '695',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 강렬한 대비를 통해 마치 꿈결 같은 분위기를 연출합니다. 특히, 늦은 오후 햇살 아래에서 인물이나 풍경 사진을 촬영할 때, 은은한 필름 느낌과 함께 잊을 수 없는 순간을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻한,색감,대비,필름\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Push Pull Process: +2/3 or +1\r\nDynamic Range: DR400\r\nGrain Effect: Weak\r\nColor Chrome Effect: Strong\r\nWhite Balance: Underwater\r\nWB Shift: R7 : B-3\r\nHighlight Tone: +2\r\nShadow Tone: +1\r\nColour: +3\r\nSharpness: -4\r\nNoise Reduction: 0',
+  },
+  {
+    id: '696',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 강렬한 대비를 통해, 마치 오래된 사진첩을 펼쳐보는 듯한 느낌을 선사합니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하면서도, 쨍한 색감으로 생동감을 더해, 잊을 수 없는 순간들을 더욱 특별하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,따뜻한,인물,필름,선명한\n[Moods] 따뜻한,빈티지,드라마틱,강렬한\n[ShootingTypes] snap,daily\n[Settings] Push Pull Process: +1 EV (Don’t worry about sky blowout)\r\nDynamic Range: DR200\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nWhite Balance: Incandescent\r\nWB Shift: R6 : B6\r\nHighlight Tone: -1\r\nShadow Tone: -2\r\nColour: +4 (But variable, +2 & +3 look good)\r\nSharpness: +4\r\nNoise Reduction: 0',
+  },
+  {
+    id: '697',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감으로, 인물 사진에 특히 잘 어울립니다. 강렬한 색상과 부드러운 그림자는 드라마틱한 분위기를 연출하며, 마치 오래된 필름 사진을 보는 듯한 느낌을 줍니다. 따뜻한 색감은 편안함과 향수를 불러일으키며, 일상적인 스냅 사진을 특별하게 만들어 줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,필름,따뜻한,색감,인물\n[Moods] 따뜻한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Push Pull Process: +1 EV (Just ensure shadows visible)\r\nDynamic Range: DR100\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nWhite Balance: Underwater\r\nWB Shift: R6 : B-7\r\nHighlight Tone: +2\r\nShadow Tone: +1\r\nColour: +3\r\nSharpness: -4\r\nNoise Reduction: 0',
+  },
+  {
+    id: '698',
+    pageContent:
+      '[Summary] Superia Premium 400 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 선명한 색감과 강렬한 입자 표현을 통해 빈티지한 감성을 자극합니다. 특히, 풍경 사진이나 일상 스냅에서 돋보이는 매력을 발휘하며, 긍정적인 분위기를 연출합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,클래식 네거티브,선명한,따뜻한,빈티지\n[Moods] 따뜻한,선명한,빈티지,생동감있는\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -2\r\nShadow: 0\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: -2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 4700K, +4 Red & -3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '699',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 햇살 아래 고요한 정원을 담아낸 듯한, 부드럽고 차분한 분위기를 연출합니다. 은은한 그레인 효과와 톤 조정은 빈티지한 감성을 더하며, 돌과 자연의 조화를 더욱 돋보이게 합니다. 고즈넉한 풍경 사진에 특히 잘 어울릴 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 풍경,돌,정원,따뜻함,빈티지\n[Moods] 따뜻한,차분한,빈티지,고즈넉한\n[ShootingTypes] landscape,snap\n[Settings] DYNAMIC RANGE: DR200\r\nGRAIN EFFECT: WEAK\r\nWB: 5000K\r\nHIGHTLIGHT TONE: +1\r\nSHADOW TONE: +2\r\nCOLOR: +2\r\nSHARPNESS: -3\r\nNR: -3',
+  },
+  {
+    id: '700',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현을 통해 거리의 생생한 순간들을 포착하는 데 중점을 둡니다. DR400과 섀도우, 하이라이트 톤 조절을 통해 대비를 극대화하여 드라마틱하고 강렬한 흑백 사진을 연출합니다. 도시의 고독함과 스냅 사진의 찰나를 담아내기에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,거리,스냅,빈티지\n[Moods] 고독한,드라마틱한,차분한,강렬한\n[ShootingTypes] snap,daily\n[Settings] MonochromeDynamic Range: DR400\r\nWhite Balance: Auto\r\nColor: n/a\r\nSharpness: -2\r\nHighlight Tone: -2\r\nShadow Tone: -2\r\nNoise Reduction: -2',
+  },
+  {
+    id: '701',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 Astia 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감을 연출합니다. DR400 설정은 하이라이트와 섀도우의 디테일을 살리고, 색상과 노이즈 감소 설정을 통해 부드럽고 차분한 분위기를 더합니다. 특히 인물 사진이나 일상 스냅에 적합합니다.\n[Base Film Simulation] Astia\n[Keywords] 부드러움,인물,따뜻함,빈티지,필름\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] DYNAMIC RANGE: DR400\r\nWB: 5300K\r\nWB Shift: R: -3, B -3\r\nColor: -2\r\nSharpness: 0\r\nHighlight Tone: -2\r\nShadow Tone: -2\r\nNoise Reduction: -2',
+  },
+  {
+    id: '702',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 빈티지한 분위기를 자아내며, 일상 속의 소중한 순간들을 아련하게 담아낼 수 있습니다. 특히, 햇살 좋은 날의 스냅 사진이나, 따뜻한 감성을 담고 싶은 사진에 적합합니다.\n[Base Film Simulation] Provia\n[Keywords] 빈티지,따뜻함,아날로그,클래식,색감\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: -1\r\nColor: -2\r\nSharpness: 0\r\nNoise Reduction: -2\r\nWhite Balance: Daylight/Fine, +1 Red & -6 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '703',
+    pageContent:
+      '[Summary] 이 레시피는 가을의 따스한 햇살 아래, 붉게 물든 단풍잎과 황금빛 들판을 연상시키는 따뜻하고 빈티지한 색감을 표현합니다. 특히, 자연의 풍경을 부드럽고 몽환적인 분위기로 담아내어, 보는 이의 마음을 차분하게 만들어 줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 가을,따뜻한,빈티지,풍경,색감\n[Moods] 따뜻한,빈티지,몽환적인,차분한\n[ShootingTypes] landscape,snap\n[Settings] DR : auto\r\nWhite Balance: shade\r\nWB Color Shift: +2R, -4B\r\nHighlights: -1.5\r\nShadows: +3\r\nColor: -1\r\nSharpness: +1\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Strong\r\nClarity: -3\r\nExp comp: 0 to ⅔',
+  },
+  {
+    id: '704',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 섬세한 디테일을 살려, 마치 라이카 모노크롬 카메라로 촬영한 듯한 깊이 있는 흑백 사진을 연출합니다. 특히, 빛과 그림자의 극적인 표현을 통해 피사체의 질감과 형태를 강조하며, 묵직하고 드라마틱한 분위기를 자아낼 것입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,고대비,선명한,디테일\n[Moods] 드라마틱,강렬한,차분한,고독한\n[ShootingTypes] documentry,snap\n[Settings] Film Simulation Monochrome+G\r\nPush/Pull Process: +2/3\r\nDynamic Range D400-\r\nGrain Effect Off\r\nWB Auto\r\nWB Shift R6 B-7\r\nHighlight Tone +1\r\nShadow Tone +3\r\nColor –\r\nSharpness +4\r\nNoise Reduction 0',
+  },
+  {
+    id: '705',
+    pageContent:
+      '[Summary] 이 레시피는 깊은 그림자와 섬세한 디테일이 공존하는 흑백 사진을 연출합니다. 마치 오래된 영화 속 한 장면처럼, 과거의 향수를 불러일으키는 동시에 강렬한 인상을 남길 수 있습니다. 특히 인물, 풍경, 스냅 사진에 매력적인 분위기를 더할 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,빈티지,모노크롬,클래식,디테일\n[Moods] 차분한,고전적인,드라마틱한,빈티지한\n[ShootingTypes] documentry,snap\n[Settings] Film Simulation Acros+R\r\nPush/Pull Process: +2/3\r\nDynamic Range DR100\r\nGrain Effect Off\r\nWB Auto\r\nWB Shift R0 B0\r\nHighlight Tone -2\r\nShadow Tone –2\r\nColor –\r\nSharpness –4\r\nNoise Reduction –4',
+  },
+  {
+    id: '706',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 필름 느낌과 함께 따뜻하고 드라마틱한 분위기를 연출합니다. 특히, 높은 채도와 강한 대비를 통해 인상적인 이미지를 만들 수 있으며, 일상적인 스냅 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,따뜻함,대비,질감\n[Moods] 따뜻한,드라마틱,빈티지,강렬한\n[ShootingTypes] documentry,daily\n[Settings] Push/Pull Process: +2/3\r\nDynamic Range DR400\r\nGrain Effect Weak\r\nWB AUTO WB Shift R0 B0\r\nHighlight Tone -2\r\nShadow Tone -2\r\nColor +1\r\nSharpness +4\r\nNoise Reduction 0',
+  },
+  {
+    id: '707',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감으로 인물 사진에 특히 잘 어울립니다. 클래식 크롬 필름 시뮬레이션과 색상 크롬 효과를 통해 빈티지한 느낌을 더하고, 하이라이트와 섀도우 톤 조절로 섬세한 표현이 가능합니다. 마치 오래된 필름 사진처럼 아련하고 따뜻한 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 인물,따뜻함,부드러움,필름,빈티지\n[Moods] 따뜻한,부드러운,빈티지,클래식\n[ShootingTypes] portrait,snap\n[Settings] Push Pull Process: +1 (Use your EV dial to ensure shadows are visible)\r\nDynamic Range: DR100Classic Chrome\r\nGrain Effect: Weak\r\nColor Chrome Effect: Strong\r\nWhite Balance: Auto (Or use Daylight or Shade as needed)\r\nWB Shift: R:4 B:-4\r\nHighlight Tone: -2\r\nShadow Tone: 0\r\nColour: +3\r\nSharpness: +2\r\nNoise Reduction: 0',
+  },
+  {
+    id: '708',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 그림자와 따뜻한 색감, 그리고 필름 그레인의 질감을 통해 영화 같은 분위기를 연출합니다. 특히, 일상적인 스냅 사진이나 따뜻한 분위기를 담고 싶은 사진에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,영화,따뜻한,빈티지,필름\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\n Highlight: +2\r\n Shadow: +2\r\n Color: +3\r\n Noise Reduction: -4\r\n Sharpening:+2\r\n Grain Effect: Strong\r\n White Balance: Auto, +5 Red & -6 Blue\r\n ISO: Auto up to ISO 6400',
+  },
+  {
+    id: '709',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 함께 영화 같은 분위기를 연출하며, 따뜻하고 빈티지한 느낌을 더해줍니다. 특히, 하이라이트와 섀도우를 강조하여 드라마틱한 장면을 연출하고, 강한 그레인 효과로 아날로그 감성을 극대화합니다. 일상적인 스냅 사진이나, 특별한 순간을 기록하는 데 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,영화,부드러움,따뜻함,빈티지\n[Moods] 따뜻한,몽환적인,차분한,영화같은\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\n Highlight: +4\r\n Shadow: +4\r\n Color: +4\r\n Noise Reduction: -4\r\n Sharpening: +2\r\n Grain Effect: Strong\r\n Color Chrome Effect: Weak\r\n White Balance: Auto, +5 Red & -6 Blue\r\n ISO: Auto up to ISO 6400',
+  },
+  {
+    id: '710',
+    pageContent:
+      '[Summary] Superia Xtra 400 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 강렬한 색감과 필름 그레인, 그리고 푸른색 강조를 통해 빈티지한 감성을 극대화합니다. DR400 설정은 하이라이트와 섀도우의 디테일을 살리고, +4의 높은 채도는 사진에 생동감을 더합니다. 일상 스냅이나 풍경 사진에 적합하며, 따뜻하고 선명한 색감으로 기억을 담아낼 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,컬러,선명한,대비,빈티지\n[Moods] 따뜻한,선명한,강렬한,필름,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: -1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: -2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto, +3 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +1 (typically)',
+  },
+  {
+    id: '711',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션과 강한 그레인 효과를 통해, 마치 오래된 코닥 필름으로 촬영한 듯한 빈티지한 감성을 선사합니다. 특히, 깊은 그림자와 강렬한 색감, 그리고 높은 채도를 통해 도시의 거리 풍경이나 인물 사진에 드라마틱한 분위기를 더할 수 있습니다.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,대비,필름,빈티지,거리\n[Moods] 강렬한,따뜻한,극적인,선명한\n[ShootingTypes] snap,daily\n[Settings] Push Pull Process: +1/3\r\nDynamic Range: DR400\r\nFilm Simulation: Velvia/Vivid\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nWhite Balance: Auto\r\nWB Shift: R:0 B:2\r\nHighlight Tone: -1\r\nShadow Tone: +3\r\nColour: +3\r\nSharpness: +3\r\nNoise Reduction: 0',
+  },
+  {
+    id: '712',
+    pageContent:
+      '[Summary] 이 레시피는 1950년대 코닥 크롬 필름의 색감을 재현하려는 시도로, 강렬한 색상과 높은 대비, 그리고 은은한 그레인 효과를 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 풍경 사진이나 스냅 사진에서 인상적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 필름,빈티지,색감,대비,선명함\n[Moods] 따뜻한,선명한,빈티지,강렬한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Push Pull Process: +1/3\r\nDynamic Range: DR400\r\nGrain Effect: Weak\r\nColor Chrome Effect: Strong\r\nWhite Balance: Auto\r\nWB Shift: R:0 B:0\r\nHighlight Tone: -1\r\nShadow Tone: +1\r\nColour: +3\r\nSharpness: +3\r\nNoise Reduction: 0',
+  },
+  {
+    id: '713',
+    pageContent:
+      '[Summary] 따뜻한 색감의 프로비아 필름 시뮬레이션을 기반으로, 인물 사진에 적합하도록 부드러움과 선명함의 균형을 맞춘 레시피입니다. 특히, 따뜻한 색감과 깊이 있는 색상 표현으로 일상 속 소중한 순간들을 더욱 특별하게 담아낼 수 있습니다.\n[Base Film Simulation] Provia\n[Keywords] 따뜻한,프로비아,색감,인물,선명함\n[Moods] 따뜻한,부드러운,선명한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColor Chrome Effect: Strong\r\nWhite Balance: Auto R:2 B: -3\r\nHighlight Tone: -2\r\nShadow Tone: -1\r\nColor: 0\r\nSharpness: +1\r\nNoise Reduction: -3',
+  },
+  {
+    id: '714',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 포트라 800 필름의 부드럽고 따뜻한 색감을 후지필름의 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. 강한 그레인과 색상 대비를 더하여 빈티지하면서도 몽환적인 분위기를 연출하며, 인물 사진이나 일상 스냅에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,포트라,따뜻한,부드러운,빈티지\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: 0\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -4\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 5200K, +1 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '715',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 플랫한 톤으로, 차분하고 몽환적인 분위기를 연출합니다. 특히 인물 사진이나 일상 스냅에 적합하며, 과하지 않은 색감으로 편안한 느낌을 줍니다. 부드러운 하이라이트와 섀도우는 사진에 깊이를 더하고, 낮은 채도는 은은한 감성을 자극합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 플랫,로우키,부드러움,톤,필름\n[Moods] 차분한,부드러운,몽환적인,미니멀,따뜻한\n[ShootingTypes] snap,daily\n[Settings] GRAIN EFFECT: OFF\r\nWHITE BALANCE: Auto\r\n\r\nDYNAMIC RANGE:: Auto\r\nHIGHTLIGHT TONE: -2\r\nSHADOW TONE: -2\r\nCOLOR: -4\r\nSHARPNESS:: -4',
+  },
+  {
+    id: '716',
+    pageContent:
+      '[Summary] 어두운 밤의 풍경을 담아내기 위해 최적화된 레시피입니다. Classic Negative 필름 시뮬레이션과 강한 그레인 효과는 빈티지한 감성을 더하고, 따뜻한 색감과 톤 조절을 통해 몽환적이면서도 드라마틱한 분위기를 연출합니다. 밤의 도시, 불빛, 그리고 그 속의 사람들을 담아보세요.\n[Base Film Simulation] Classic Negative\n[Keywords] 밤,필름,빈티지,색감,대비\n[Moods] 몽환적인,따뜻한,드라마틱,차분한\n[ShootingTypes] night,snap\n[Settings] GRAIN EFFECT: STRONG/SMALL\r\nWHITE BALANCE: 4500K\r\nWB SHIFT: R -4, B +1\r\nDYNAMIC RANGE:: DR200\r\nHIGHTLIGHT TONE: -1\r\nSHADOW TONE: -1\r\nCOLOR: +2\r\nSHARPNESS:: -1',
+  },
+  {
+    id: '717',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 부드러운 색감과 따뜻한 화이트 밸런스, 그리고 하이라이트와 섀도우 톤 조절을 통해 빈티지하면서도 몽환적인 분위기를 연출합니다. 특히 인물 사진에서 부드럽고 따뜻한 느낌을 강조하여 일상적인 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,부드러운,인물,필름\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] GRAIN EFFECT: OFF\r\nWHITE BALANCE: Auto\r\nWB SHIFT: R +4, B-2\r\nDYNAMIC RANGE:: Auto or DR400\r\nHIGHTLIGHT TONE: -2\r\nSHADOW TONE: -1\r\n\r\nSHARPNESS:: +1',
+  },
+  {
+    id: '718',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 드라마틱한 대비를 통해 인물 사진에 매력적인 분위기를 더합니다. 하이라이트와 섀도우 톤 조절을 통해 깊이 있는 표현이 가능하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,대비,인물,따뜻함\n[Moods] 따뜻한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] GRAIN EFFECT: OFF\r\nWHITE BALANCE: 6500K\r\nWB SHIFT: R +2, B -4\r\nDYNAMIC RANGE:: Auto or DR400\r\nHIGHTLIGHT TONE: +2\r\nSHADOW TONE: -2\r\nSHARPNESS:: -2',
+  },
+  {
+    id: '719',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 일상적인 풍경을 따뜻하고 빈티지한 감성으로 담아낼 수 있도록 설계되었습니다. Classic Chrome 필름 시뮬레이션과 은은한 그레인 효과는 아련한 분위기를 연출하며, 하이라이트와 섀도우 톤 조절을 통해 부드러우면서도 깊이 있는 톤을 만들어줍니다. 거리를 걷는 사람들의 모습, 노을 아래 도시의 풍경을 담기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,도시,거리,필름,따뜻함\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] GRAIN EFFECT: WEAK/SMALL\r\nWHITE BALANCE: Auto\r\n\r\nDYNAMIC RANGE:: DR101\r\nHIGHTLIGHT TONE: +1\r\nSHADOW TONE: +2\r\nCOLOR: 0\r\nSHARPNESS:: +1',
+  },
+  {
+    id: '720',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 섬세한 디테일을 살려, 깨끗하고 드라마틱한 이미지를 연출합니다. 특히, 하이키 스타일을 통해 밝고 긍정적인 분위기를 강조하며, 필름 느낌을 더해 아날로그 감성을 더합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,하이키,대비,디테일,필름\n[Moods] 선명한,깨끗한,드라마틱,강렬한\n[ShootingTypes] snap,daily\n[Settings] Acros +R\r\nGRAIN EFFECT: WEAK/SMALL\r\nWHITE BALANCE: Auto\r\n\r\nDYNAMIC RANGE:: DR100\r\nHIGHTLIGHT TONE: +2\r\nSHADOW TONE: +4\r\n\r\nSHARPNESS:: +1',
+  },
+  {
+    id: '721',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감으로, 마치 오래된 필름 사진을 보는 듯한 빈티지한 감성을 선사합니다. 특히, 자연스러운 인물 사진이나 풍경 사진에 잘 어울리며, 일상 속 소중한 순간들을 따뜻하게 기록할 수 있도록 도와줄 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 따뜻한,빈티지,풍경,인물,필름\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: 0 (Std)\r\nShadow: +1 (Medium-Hard)\r\nColor: 0 (Mid)\r\nSharpness: 0 (Std)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Daylight/Fine, +2 Red & -6 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '722',
+    pageContent:
+      '[Summary] 모리야마 다이도 스타일을 연상시키는 이 레시피는 강렬한 흑백 대비와 거친 질감을 통해 도시의 숨결을 생생하게 담아냅니다. 어두운 그림자와 밝은 하이라이트의 극적인 조화는 보는 이에게 깊은 인상을 남길 것입니다. 특히, 스트리트 사진이나 다큐멘터리 사진에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,스트리트,질감,콘트라스트\n[Moods] 거친,드라마틱,강렬한,빈티지\n[ShootingTypes] snap,documentry\n[Settings] Acros R\r\nDynamic Range: DR-100\r\nHighlight: -2\r\nShadow: +4\r\nColor:  /\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity:  0\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: /\r\nColor Chrome Effect Blue: /\r\nWB: Auto, +9 Red & -9 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3',
+  },
+  {
+    id: '723',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 섬세한 질감을 살려냅니다. 특히, 콘트라스트를 강조하고, 노이즈를 줄여 깔끔하면서도 빈티지한 느낌을 주어, 흑백 사진 특유의 매력을 극대화합니다. 톤 조정과 화이트 밸런스 설정을 통해, 흑백 사진의 깊이와 감성을 더욱 풍부하게 표현할 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,디테일,빈티지,필름\n[Moods] 차분한,고전적인,드라마틱한,선명한\n[ShootingTypes] snap,documentry\n[Settings] Acros Ye\r\nDynamic Range: DR-100\r\nHighlight: -2\r\nShadow: -1\r\nColor:  /\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity:  0\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: /\r\nColor Chrome Effect Blue: /\r\nWB: Auto, +3 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3',
+  },
+  {
+    id: '724',
+    pageContent:
+      '[Summary] Tri-x 400 레시피는 흑백 필름의 깊이 있는 질감과 대비를 살려, 마치 오래된 영화 속 한 장면을 연상시키는 듯한 사진을 만들어줍니다. 강렬한 섀도우와 하이라이트 표현은 드라마틱한 분위기를 더하며, 흑백 특유의 클래식한 감성을 극대화합니다. 일상 속 스냅 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,빈티지,필름,모노크롬,질감\n[Moods] 차분한,고전적인,드라마틱한,빈티지한\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR-100\r\nHighlight: -2\r\nShadow: +2\r\nColor:  /\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity:  0\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: /\r\nColor Chrome Effect Blue: /\r\nWB: Auto, 9 Red & -9 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3',
+  },
+  {
+    id: '725',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 Astia 필름 시뮬레이션을 기반으로, 따뜻하고 생생한 색감과 함께 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하며, 강한 색상 대비와 디테일 표현을 통해 사진에 깊이와 선명함을 더합니다. 일상 스냅이나 인물 사진에 적합하며, 따뜻하고 긍정적인 분위기를 담아낼 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,색감,빈티지,선명함,필름\n[Moods] 따뜻한,선명한,생생한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR-100\r\nHighlight: -1\r\nShadow: -1\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity:  0\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWB: Auto, 1 Red & -3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3',
+  },
+  {
+    id: '726',
+    pageContent:
+      '[Summary] 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 필름 그레인의 질감을 살린 레시피입니다. 선명한 색상과 대비를 통해 일상 속의 소중한 순간들을 더욱 돋보이게 하며, 잊혀져가는 필름 감성을 불러일으킵니다. 일상 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,생동감있는\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR-100\r\nHighlight: -1\r\nShadow: -2\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity:  0\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWB: Auto, 0 Red & -1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3',
+  },
+  {
+    id: '727',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션을 기반으로 하여, 선명하고 강렬한 색감과 높은 대비를 통해 풍경 사진에 생동감을 불어넣습니다. 특히, 하이라이트와 섀도우를 강조하여 극적인 표현을 더하며, 따뜻한 색감으로 묘사합니다. 맑은 날의 자연 풍경이나 도시의 스냅 사진에 적합합니다.\n[Base Film Simulation] Velvia\n[Keywords] 선명한,풍경,색감,대비,강렬한\n[Moods] 생동감있는,따뜻한,선명한,극적인\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: +1 (Medium-Hard)\r\nShadow: +2 (Hard)\r\nColor: +2 (High)\r\nSharpness: +1 (Medium-Hard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Fluorescent 1 (“Daylight Fluorescent”), -5 Red & +5 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '728',
+    pageContent:
+      '[Summary] 차가운 겨울 풍경의 쓸쓸함과 고요함을 담아낸 이 레시피는, 벨비아 필름 시뮬레이션과 차가운 색감, 그리고 강한 대비를 통해 차갑지만 선명한 겨울의 감성을 표현합니다. 하이라이트와 섀도우 톤 조절을 통해 드라마틱한 분위기를 연출하며, 겨울의 차가운 공기를 사진 속에 담아낼 수 있을 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 차가운,겨울,대비,선명한,필름\n[Moods] 차분한,차가운,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Push Pull Process: 0\r\nDynamic Range: 100\r\nGrain Effect: Off\r\nWhite Balance: 4000K\r\nWB Shift: R:-2 B:3\r\nHighlight Tone: -2\r\nShadow Tone: -2\r\nColour: -2\r\nSharpness: +3\r\nNoise Reduction: 0',
+  },
+  {
+    id: '729',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션과 강한 그레인 효과를 통해 거칠고, 낡은 도시의 모습을 담아내기에 적합합니다. DR400 설정은 하이라이트와 섀도우의 디테일을 살려 드라마틱한 흑백 사진을 연출하며, 빈티지한 감성을 더합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,거친,질감,빈티지\n[Moods] 드라마틱,거친,빈티지,강렬한\n[ShootingTypes] documentry,snap\n[Settings] BASE FILM SIMULATION: ACROS\r\nDYNAMIC RANGE: DR400\r\nGRAIN EFFECT: STRONG\r\nWHITE BALANCE: AUTO\r\nHIGHTLIGHT TONE: -2\r\nSHADOW TONE: 0\r\nCOLOR: N/A\r\nSHARPNESS: -4\r\nNOISE REDUCTION: -4',
+  },
+  {
+    id: '730',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 여름 햇살 아래에서 포착한 사진처럼, 화사하고 생동감 넘치는 분위기를 연출합니다. 특히 인물 사진에서 부드러운 피부톤과 선명한 색감을 동시에 잡을 수 있으며, 노을 아래의 풍경을 더욱 아름답게 담아낼 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 따뜻한,여름,노을,피부톤,선명함\n[Moods] 따뜻한,화사한,선명한,생동감있는\n[ShootingTypes] snap,daily\n[Settings] Push Pull Process: 0\r\nDynamic Range: DR200\r\nGrain Effect: Off\r\nWhite Balance: Underwater\r\nWB Shift: R:8 B:-8\r\nHighlight Tone: +2\r\nShadow Tone: +3\r\nColour: -1\r\nSharpness: +4\r\nNoise Reduction: 0',
+  },
+  {
+    id: '731',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 섬세한 디테일을 살려, 마치 오래된 영화 속 한 장면을 연상시키는 듯한 사진을 만들어줍니다. 특히, 빛과 그림자의 극적인 연출을 통해 인물이나 풍경에 깊이 있는 표현을 더할 수 있습니다. 흑백 특유의 클래식한 감성을 담아내기에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,콘트라스트,디테일,빈티지\n[Moods] 드라마틱,강렬한,고전적인,차분한\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR200\r\nHighlight: +2 (Hard)\r\nShadow: +2 (Hard)\r\nSharpness: +1 (Medium-Hard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Incandescent, -5 Red & +9 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '732',
+    pageContent:
+      '[Summary] 이 레시피는 시네마틱한 분위기를 연출하며, 특히 야경 사진에 적합합니다. 따뜻한 색감과 푸른색의 대비를 통해 몽환적이면서도 드라마틱한 분위기를 자아냅니다. 마치 영화의 한 장면처럼, 기억 속에 깊이 남을 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,따뜻한,푸른색,야경\n[Moods] 몽환적인,따뜻한,드라마틱\n[ShootingTypes] night,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: +2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -3\r\nClarity: -5\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Fluorescent 3 (Cool White Fluorescent), -6 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '733',
+    pageContent:
+      '[Summary] 이 레시피는 흑백 필름의 강렬한 대비와 거친 질감을 살려, 잊혀져 가는 도시의 뒷골목이나 인물의 깊은 내면을 드라마틱하게 표현합니다. 특히, 빛과 그림자의 극적인 대비를 통해 흑백 사진 특유의 아련함과 강렬함을 동시에 담아낼 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,고대비,필름,질감,선명함\n[Moods] 드라마틱,강렬한,빈티지,거친\n[ShootingTypes] snap,documentry\n[Settings] Acros (+Y, +R, +G)\r\nDynamic Range: DR400\r\nHighlight: 0\r\nShadow: +2\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: -4\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWhite Balance: Auto, 0 Red & 0 Blue\r\nISO: Auto, up to ISO 12800\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '734',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬함과 빈티지한 감성을 담아, 마치 오래된 신문 사진처럼 깊이 있는 톤과 질감을 표현합니다. 특히, 빛과 그림자의 대비를 극대화하여 드라마틱하고 인상적인 이미지를 연출할 수 있습니다. 거친 질감과 섬세한 디테일이 공존하는 흑백 사진을 통해, 잊혀져 가는 시간의 흔적을 담아보세요.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,빈티지,질감,선명함\n[Moods] 차분한,고전적인,드라마틱한,강렬한\n[ShootingTypes] documentry,snap\n[Settings] Acros Y\r\nWC:-1 MG: +1\r\nGrain Effect: Strong\r\nGrain size: Small\r\nWB Shift R:-4 B:-4\r\nHighlights: +4\r\nShadows: +4\r\nSharpness: +2\r\nNoise Reduction: -4',
+  },
+  {
+    id: '735',
+    pageContent:
+      '[Summary] 이 레시피는 1950년대 느와르 영화의 한 장면을 연상시키는 흑백 사진을 만들어줍니다. 강렬한 그레인과 높은 대비는 거친 질감을 더하고, 하이라이트와 섀도우를 강조하여 드라마틱한 분위기를 연출합니다. 흑백 필름의 클래식한 매력을 극대화하여, 잊혀진 시대의 이야기를 담아낼 수 있을 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,빈티지,느와르,선명함\n[Moods] 드라마틱,강렬한,고전적인,거친\n[ShootingTypes] documentry,snap\n[Settings] Acros Y\r\nGrain Effect: Strong\r\nGrain size: Large\r\nHighlights: +4\r\nShadows: +4\r\nSharpness: +4\r\nNoise Reduction: -4\r\nClarity: 1',
+  },
+  {
+    id: '736',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 함께, 필름 그레인 효과를 통해 아날로그 감성을 극대화합니다. 강렬한 그림자와 섬세한 디테일은 흑백 사진 특유의 드라마틱한 분위기를 연출하며, 일상 속 순간들을 특별하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,필름,빈티지,질감\n[Moods] 차분한,고전적인,드라마틱,거친\n[ShootingTypes] snap,daily\n[Settings] Monochrome R\r\nGrain Effect: Strong\r\nGrain size: Small\r\nHighlights: 0\r\nShadows: 4\r\nSharpness: -1\r\nNoise Reduction: -3\r\nClarity: 1',
+  },
+  {
+    id: '737',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로, 따뜻하고 매력적인 색감과 선명한 디테일을 동시에 담아냅니다. 특히 인물 사진에서 피부톤을 자연스럽게 표현하면서도, 강렬한 색상 대비를 통해 잊을 수 없는 순간을 포착할 수 있을 것입니다. 일상 속 스냅 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,인물,선명함,따뜻함\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] Color Chrome Fx: Strong\r\nColor Chrome Fx Blue: Off\r\nHighlights: 2\r\nShadows: 2\r\nColor: 2\r\nSharpness: 2\r\nNoise Reduction: -1\r\nClarity: 1',
+  },
+  {
+    id: '738',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드러운 그레인과 색상 대비를 통해 빈티지한 감성을 자아냅니다. 특히 인물 사진에서 따뜻하면서도 드라마틱한 분위기를 연출하며, 일상 스냅 사진에 매력적인 표현력을 더할 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,인물,색감,선명함\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain effect: Weak\r\nGrain size: Large\r\nColor Chrome Fx: Weak\r\nColor Chrome Fx Blue: Strong\r\nHighlights: -1\r\nShadows: 2\r\nColor: -2\r\nSharpness: 1\r\nNoise Reduction: -2\r\nClarity: 3',
+  },
+  {
+    id: '739',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 빈티지한 색감을 재현하여, 일상적인 스냅 사진에 매력적인 분위기를 더해줍니다. 강한 그레인과 대비, 그리고 부드러운 하이라이트와 섀도우 설정은 사진에 깊이와 질감을 부여하여, 마치 오래된 필름 사진을 보는 듯한 느낌을 선사합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,대비,질감\n[Moods] 따뜻한,빈티지,클래식,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain effect: Strong\r\nGrain size Large\r\nWB: 5000K\r\nWB Shift: R:-1, B:+2\r\nHighlights:  +2\r\nShadows: +3\r\nColor: -1\r\nSharpness: +2\r\nNoise Reduction: -4\r\nClarity: 1',
+  },
+  {
+    id: '740',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 흑백 대비와 필름 그레인 효과를 통해, 마치 오래된 다큐멘터리 사진을 보는 듯한 깊이 있는 질감을 선사합니다. 섀도우를 강조하여 드라마틱한 분위기를 연출하며, 흑백 특유의 클래식한 감성을 극대화합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,빈티지,필름,질감\n[Moods] 차분한,고전적인,드라마틱,강렬한\n[ShootingTypes] snap,documentry\n[Settings] Monochrome R\r\nGrain: Strong\r\nHighlights: 0\r\nShadows: +3\r\nSharpness: +1\r\nNoise Reduction: 0\r\nClarity: +1',
+  },
+  {
+    id: '741',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 차가운 콘크리트 질감과 반사되는 빛을 흑백으로 담아내어, 절제된 아름다움과 깊이 있는 대비를 보여줍니다. 차분하고 모던한 분위기를 연출하며, 일상 속에서 발견하는 드라마틱한 순간들을 포착하는 데 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,콘크리트,반사,질감,모노크롬\n[Moods] 차분한,모던한,미니멀,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nWB: 2500K\r\nColor: n/a\r\nSharpness: 1\r\nHighlight Tone: 1\r\nShadow Tone: -2\r\nNoise Reduction: 0',
+  },
+  {
+    id: '742',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 차분한 색감과 DR400의 넓은 다이나믹 레인지를 통해, 흑백 필름의 강렬함과 빈티지한 감성을 동시에 담아냅니다. 특히, 강한 그레인 효과와 톤 조절을 통해 드라마틱하고 몽환적인 분위기를 연출하며, 일상적인 스냅 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,흑백,질감,대비\n[Moods] 차분한,드라마틱,거친,몽환적인\n[ShootingTypes] snap,documentry\n[Settings] DYNAMIC RANGE: DR400\r\nGRAIN EFFECT: STRONG\r\nWHITE BALANCE: 3400\r\nHIGHTLIGHT TONE: 1\r\nSHADOW TONE: -2\r\nCOLOR: -3\r\nSHARPNESS: -4\r\nNOISE REDUCTION: -4',
+  },
+  {
+    id: '743',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 강렬한 콘트라스트를 통해, 일상 속의 순간들을 드라마틱하게 담아냅니다. 선명한 디테일 묘사와 톤 표현은 흑백 사진 특유의 고전적인 분위기를 자아내며, 피사체의 질감을 더욱 돋보이게 합니다. 일상 스냅 사진에 적합하며, 흑백의 매력을 극대화합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,콘트라스트,질감,디테일\n[Moods] 차분한,고전적인,드라마틱한,선명한\n[ShootingTypes] snap,daily\n[Settings] Monochrome Green\r\nDynamic Range: DR100\r\nWhite Balance: Auto\r\nColor: n/a\r\nSharpness: 2\r\nHighlight Tone: 1\r\nShadow Tone: 2\r\nNoise Reduction: -2',
+  },
+  {
+    id: '744',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 차가운 분위기와 거친 질감을 담아내어, 흑백 영화의 한 장면을 연상시키는 듯한 인상을 줍니다. 강렬한 대비와 필름 그레인은 사진에 깊이와 드라마틱한 느낌을 더하며, 몽환적이면서도 차분한 분위기를 연출합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,흑백,질감,대비,필름\n[Moods] 드라마틱,거친,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] DYNAMIC RANGE: DR400\r\nGRAIN EFFECT: STRONG\r\nWHITE BALANCE: AUTO\r\nHIGHTLIGHT TONE: 0\r\nSHADOW TONE: -2\r\nCOLOR: 2\r\nSHARPNESS: -4\r\nNOISE REDUCTION: -4',
+  },
+  {
+    id: '745',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션과 DR400의 넓은 다이나믹 레인지를 통해, 빛과 그림자의 대비를 강조하면서도 부드럽고 몽환적인 분위기를 연출합니다. 강한 그레인 효과와 색상, 선명도 조절을 통해 빈티지하면서도 드라마틱한 감성을 담아낼 수 있습니다. 특히, 일상 속의 특별한 순간들을 기록하는 데 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,대비,질감,몽환적인\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] DYNAMIC RANGE: DR400\r\nGRAIN EFFECT: STRONG\r\nWHITE BALANCE: 6700K\r\nWB SHIFT: R:5 B-5\r\nHIGHTLIGHT TONE: -2\r\nSHADOW TONE: 3\r\nCOLOR: -3\r\nSHARPNESS: -3\r\nNOISE REDUCTION: 0',
+  },
+  {
+    id: '746',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션과 DR400의 넓은 다이나믹 레인지를 통해 빈티지하면서도 깊이 있는 색감을 표현합니다. 특히, 인물 사진에서 부드러운 피부톤과 함께 드라마틱한 분위기를 연출하며, 따뜻하고 몽환적인 감성을 자극합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,색감,인물,대비\n[Moods] 따뜻한,몽환적인,드라마틱,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic range: DR400\r\nGrain size: Weak-Small\r\nWhite balance: 6600 R2 B2\r\nTone Lights: -1\r\nShading tone: +2\r\ncolor: -2\r\nSharpness: -4\r\nClarity: -4\r\nNoise reduction: -4\r\nISO: 640\r\nExposure compensation: +1\r\nColor Chrome- Effect : Strong\r\nColor Chrome FX Blue: Strong',
+  },
+  {
+    id: '747',
+    pageContent:
+      '[Summary] Classic Chrome 필름 시뮬레이션을 기반으로, 부드러운 색감과 빈티지한 분위기를 연출하는 레시피입니다. 따뜻한 톤과 섬세한 디테일 표현을 통해 일상 속 소중한 순간들을 감성적으로 담아낼 수 있습니다. 특히, 스냅 사진이나 일상적인 풍경을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,스냅,따뜻함\n[Moods] 따뜻한,차분한,빈티지,레트로\n[ShootingTypes] snap,daily\n[Settings] Dynamic range: DR100\r\nGrain size: Weak\r\nWhite balance: 6300+ R-1 B-4\r\nTone Lights: -1\r\nShading tone: +1\r\ncolor: -2\r\nSharpness: 0\r\nNoise reduction: -4\r\nISO: 160\r\nExposure compensation: +1\r\nColor Chrome- Effect : off\r\nColor Chrome FX Blue: off',
+  },
+  {
+    id: '748',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 부드러운 색감과 몽환적인 분위기를 연출합니다. 특히 인물 사진이나 일상 스냅에 적합하며, 빈티지한 감성을 더해줍니다. 부드러운 톤과 낮은 채도는 아련한 느낌을 자아냅니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,따뜻한,몽환적인,인물\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic range: DR400\r\nGrain size: Weak-Small\r\nWhite balance: Daylight R3 B1\r\nTone Lights: 0\r\nShading Tone: +2\r\ncolor: -3\r\nSharpness: -4\r\nClarity: -4\r\nNoise reduction: -4\r\nISO: 640\r\nExposure compensation: +1\r\nColor Chrome- Effect :\r\nColor Chrome FX Blue:',
+  },
+  {
+    id: '749',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션과 따뜻한 색감, 그리고 부드러운 질감을 통해 아련하고 빈티지한 분위기를 연출합니다. 특히, 일상 속의 소중한 순간들을 따뜻하고 감성적으로 담아내기에 적합하며, 잊혀져 가는 옛 추억을 떠올리게 하는 사진을 만들어 줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,따뜻한,필름,색감\n[Moods] 따뜻한,차분한,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic range: DR400\r\nGrain size: Weak\r\nWhite balance: 7700+ R-1 B-4\r\nTone Lights: -1\r\nShading tone: +1\r\ncolor: -2\r\nSharpness: 0\r\nNoise reduction: -4\r\nISO: 640\r\nExposure compensation: +1\r\nColor Chrome- Effect : off\r\nColor Chrome FX Blue: off',
+  },
+  {
+    id: '750',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드럽고 몽환적인 분위기를 연출합니다. 따뜻한 색감과 부드러운 톤은 빈티지한 감성을 자극하며, 인물 사진에 특히 잘 어울립니다. 노이즈 감소와 선명도 조절을 통해 부드러우면서도 디테일을 살린 사진을 만들 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,몽환적인,색감,인물\n[Moods] 따뜻한,부드러운,몽환적인,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic range: DR400\r\nGrain size: Weak-Small\r\nWhite balance: 7000 R2 B-5\r\nTone Lights: 0\r\nShading Tone: +2\r\ncolor: +3\r\nSharpness: -4\r\nClarity: -4\r\nNoise reduction: -4\r\nISO: 640\r\nExposure compensation: +0.3\r\nColor Chrome- Effect :\r\nColor Chrome FX Blue:',
+  },
+  {
+    id: '751',
+    pageContent:
+      '[Summary] 이 레시피는 자연의 생생함과 네온의 인공적인 색감이 만나 독특한 분위기를 자아냅니다. 클래식 크롬의 빈티지한 색감과 DR400의 넓은 다이나믹 레인지는 몽환적이면서도 디테일이 살아있는 사진을 만들어줍니다. 특히, 밤의 도시 풍경이나 네온사인이 빛나는 거리에서 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 네온,자연,빈티지,클래식,몽환적인\n[Moods] 따뜻한,몽환적인,신비로운,독특한\n[ShootingTypes] landscape,snap\n[Settings] Dr400\r\nWb Fluorescent I\r\nR+2 B-5\r\nIso-Nr -4\r\nColor +3\r\nSharp -4\r\nH-Tone 0\r\nS-Tone +2\r\nClarity -4\r\nCcr Weak\r\nCcb Weak\r\nGrain Weak Small',
+  },
+  {
+    id: '752',
+    pageContent:
+      '[Summary] 이 레시피는 라이카 렌즈 특유의 선명함과 대비를 후지필름 X-T2로 재현하고자 하는 시도입니다. Provia 필름 시뮬레이션을 기반으로, 색상과 선명도를 강조하여 일상 스냅 사진에 적합하며, 따뜻하면서도 뚜렷한 인상을 남기는 이미지를 만들어 줍니다. 마치 오래된 필름 카메라로 촬영한 듯한 빈티지한 느낌을 선사합니다.\n[Base Film Simulation] Provia\n[Keywords] 클래식,빈티지,선명한,대비,흑백\n[Moods] 따뜻한,선명한,클래식한,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Push Pull Process: 0\r\nGrain Effect: Off\r\nWhite Balance: Auto\r\nWB Shift: R:1 B:1\r\nHighlight Tone: -1\r\nShadow Tone: +1\r\nColour: +3 (Try +4 in some instances)\r\nSharpness: +4\r\nNoise Reduction: -1',
+  },
+  {
+    id: '753',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 함께, 필름 특유의 질감을 살려주는 것이 특징입니다. 특히, 맑은 날 야외에서 촬영하면, 쨍한 색감과 함께 아련한 분위기를 연출할 수 있습니다. 일상 스냅 사진에 활용하여, 특별한 순간들을 더욱 감성적으로 기록해보세요.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,따뜻한,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: -2\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -0\r\nClarity: +3\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 5600K, -4 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '754',
+    pageContent:
+      '[Summary] 이 레시피는 마치 푸른 물이 도시를 감싸는 듯한 황혼의 신비로운 분위기를 연출합니다. Classic Chrome 필름 시뮬레이션과 강렬한 파란색 색상 효과는 차갑고 몽환적인 느낌을 주며, 거친 그레인과 낮은 채도는 빈티지한 감성을 더해줍니다. 특히, 야경이나 도시 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 푸른색,황혼,필름,빈티지,도시\n[Moods] 몽환적인,차가운,신비로운,드라마틱\n[ShootingTypes] snap,night\n[Settings] Dynamic Range: DR400\r\nHighlight: -1 to +1\r\nShadow: -2 to 0\r\nColor: -2 to +2\r\nSharpness: -3\r\nNoise Reduction: -4\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Strong\r\nGrain: Weak, Large\r\nClarity: -2\r\nWhite Balance: 2500K, +5 Red & +9 Blue\r\nISO: 640\r\nFlash: On, with yellow “gel”\r\nExposure: -3 2/3 to -4 1/3 (typically)',
+  },
+  {
+    id: '755',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로 차분하고 빈티지한 색감을 연출하며, DR400 설정으로 풍부한 계조를 표현합니다. 하이라이트와 섀도우 조절을 통해 대비를 살리고, 화이트 밸런스 및 색상 조정을 통해 차가운 느낌을 더하여, 일상 스냅 사진에 적합한 레시피입니다.\n[Base Film Simulation] Provia\n[Keywords] 차가운,빈티지,대비,색감,필름\n[Moods] 차분한,몽환적인,차가운,세련된\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: -1\r\nColor: +2\r\nNoise Reduction: -2\r\nSharpening: 0\r\nWhite Balance: 4200K, -2 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '756',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 거친 질감을 통해 스트리트 사진의 본질을 담아냅니다. 특히, 빛과 그림자의 드라마틱한 연출을 통해 잊을 수 없는 순간들을 포착하며, 빈티지한 감성을 더해 사진에 깊이를 더합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,스트리트,강렬함,대비,질감\n[Moods] 드라마틱,강렬한,거친,빈티지\n[ShootingTypes] snap,documentry\n[Settings] Film Simulation: Monochrome+R\r\nPush Pull Process: -1/3EV or 0\r\nGrain Effect: Strong\r\nWB: Fluorescent Light 1\r\nWB Shift: R:0 B:0\r\nHighlight Tone: +2\r\nShadow Tone: +3\r\nColour:\r\nSharpness: +4\r\nNoise Reduction: -4',
+  },
+  {
+    id: '757',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션을 기반으로 하여, 자연의 색상을 극적으로 표현합니다. 선명한 색감과 강렬한 대비는 풍경 사진에 생동감을 불어넣어, 보는 이의 시선을 사로잡을 것입니다. 특히, 맑은 날의 풍경이나, 역광을 활용한 사진에 적합합니다.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,선명한,풍경,대비,강렬함\n[Moods] 생동감 넘치는,강렬한,극적인\n[ShootingTypes] landscape,snap\n[Settings] Base Film Simulation: Velvia\r\nDynamic Range: DR100\r\nWB: 5000k\r\nColor +1\r\nSharpness: +2\r\nHighlight Tone: -2\r\nShadow Tone: 0\r\nNoise Reduction: 0',
+  },
+  {
+    id: '758',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 필름 특유의 질감을 살려 몽환적인 분위기를 연출합니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 적합하며, 아련한 추억을 담아내는 듯한 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,빈티지,따뜻한,몽환적인,색감\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: 0EV\r\nDynamic Range DR400\r\nGrain Effect Strong,\r\nWB 5900k,\r\nWB Shift R8 B9\r\nHighlight Tone -1\r\nShadow Tone +1\r\nColor 0\r\nSharpness -1\r\nNoise Reduction 0',
+  },
+  {
+    id: '759',
+    pageContent:
+      '[Summary] 이 레시피는 1970년대의 따뜻하고 부드러운 색감을 재현하여, 아련한 추억을 떠올리게 하는 사진을 만들어 줍니다. 특히, 햇살 좋은 날의 풍경, 인물 사진, 또는 일상 스냅에 잘 어울릴 것입니다. 부드러운 하이라이트와 섀도우 톤은 사진에 깊이와 따뜻함을 더해줍니다.\n[Base Film Simulation] Astia\n[Keywords] 빈티지,따뜻한,필름,회고,부드러운\n[Moods] 따뜻한,몽환적인,차분한,빈티지\n[ShootingTypes] snap,daily\n[Settings] DYNAMIC RANGE: DR400\r\nWHITE BALANCE: 6300K\r\nCOLOR: -2\r\nSHARPNESS: -2\r\nHIGHLIGHT TONE: -2\r\nSHADOW TONE: -2\r\nNOISE REDUCTION: -2',
+  },
+  {
+    id: '760',
+    pageContent:
+      '[Summary] 이 레시피는 실내와 실외의 대비를 부드럽게 조절하여, 따뜻하면서도 차분한 분위기를 연출합니다. 특히, 그림자가 강조된 설정은 사진에 깊이와 부드러움을 더해 일상적인 순간들을 필름 사진처럼 담아낼 수 있게 해줍니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 실내,실외,대비,부드러움,필름\n[Moods] 따뜻한,차분한,부드러운\n[ShootingTypes] snap,daily\n[Settings] DYNAMIC RANGE: DR400\r\nWHITE BALANCE: Auto\r\nCOLOR: -2\r\nSHARPNESS: -2\r\nHIGHLIGHT TONE: 0\r\nSHADOW TONE: -2\r\nNOISE REDUCTION: -2',
+  },
+  {
+    id: '761',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 빈티지한 색감을 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. 강렬한 색상과 입자 효과는 사진에 깊이와 질감을 더하며, 하이라이트와 섀도우 조절을 통해 드라마틱한 분위기를 연출합니다. 일상 스냅이나 풍경 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻함,선명함,색감\n[Moods] 따뜻한,선명한,빈티지,극적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +4\r\nShadow: -2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: +1\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Auto, +2 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to -1 (typically)',
+  },
+  {
+    id: '762',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬의 부드러운 색감과 강렬한 대비를 통해 여름의 밝고 긍정적인 에너지를 담아냅니다. 특히, 선명한 색상과 디테일을 살려, 일상 속의 생생한 순간들을 포착하는 데 적합합니다. 풍경 사진이나 스냅 사진에 활용하면, 잊지 못할 여름의 추억을 간직할 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,여름,선명한,대비,필름\n[Moods] 따뜻한,선명한,활기찬,생생한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: -2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: -5\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: 7100K, -4 Red & -2 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1 to +2 (typically)',
+  },
+  {
+    id: '763',
+    pageContent:
+      '[Summary] 강렬한 흑백 대비와 선명함으로, 묵직하고 드라마틱한 톤을 연출합니다. 하이라이트와 섀도우를 강조하여 깊이 있는 흑백 사진을 만들 수 있으며, 톤과 질감을 섬세하게 조절하여 흑백의 매력을 극대화합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,대비,질감,선명함\n[Moods] 드라마틱,강렬한,고전적인,극적인\n[ShootingTypes] documentry,snap\n[Settings] Monochrome R\r\nDR100\r\nWB 10000\r\nWB shift R -9 B +9\r\nHighlight +4\r\nShadow +4\r\nSharpness -2\r\nNoise reduction -4\r\nCCR String, CCB String\r\nClarity +5\r\nExposure comp usually +2/3',
+  },
+  {
+    id: '764',
+    pageContent:
+      '[Summary] Classic Negative 필름 시뮬레이션과 DR400 설정은 빈티지하면서도 깊이 있는 색감과 풍부한 계조를 표현합니다. 대비를 강조하여 드라마틱한 분위기를 연출하며, 일상적인 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,클래식,다큐멘터리,대비,필름\n[Moods] 차분한,빈티지한,드라마틱한\n[ShootingTypes] snap,daily\n[Settings] DR400 + DR Priority Strong\r\n-2 highlights, -2 shadows when not on DRP\r\nWB auto\r\nClarity +2\r\nSharpness 0\r\nNoise reduction -',
+  },
+  {
+    id: '765',
+    pageContent:
+      '[Summary] 이 레시피는 흑백 필름의 강렬한 콘트라스트와 거친 질감을 통해 드라마틱하고 빈티지한 느낌을 연출합니다. 특히, 빛과 그림자의 대비를 강조하여 잊혀지지 않는 순간을 포착하는 데 적합합니다. 도시의 밤거리, 인물의 강렬한 표정, 또는 오래된 건물 등, 흑백의 깊이를 더해주는 피사체에 잘 어울립니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,콘트라스트,필름,빈티지,질감\n[Moods] 드라마틱,강렬한,빈티지,거친\n[ShootingTypes] snap,documentry\n[Settings] Acros+G\r\nDynamic Range: DR200\r\nHighlight: +4\r\nShadow: +1\r\nGrain: Strong\r\nColor Chrome Effect: Off\r\nToning: 0\r\nSharpening: -4\r\nNoise Reduction: -4\r\nWhite Balance: 2500K, +9 Red & +9 Blue\r\nExposure Compensation: -2/3 to +2/3 (typically)\r\nISO 3200',
+  },
+  {
+    id: '766',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬의 부드러운 색감과 따뜻한 톤을 기반으로, 자연스러운 분위기를 연출합니다. DR400 설정은 하이라이트와 섀도우의 디테일을 살려, 풍부한 계조를 제공하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,빈티지,따뜻함,대비,다이나믹 레인지\n[Moods] 따뜻한,빈티지,부드러운,자연스러운\n[ShootingTypes] snap,daily\n[Settings] DR400 (Auto ISO or manually set 2 stops or more above base ISO)\r\nWB: Daylight / as shot\r\nWB SHIFT: R : 3  B: -6\r\nNR: -2\r\nHighlight: -1\r\nShadows: +2\r\nColor: 0\r\nSharp: +1\r\nChrome FX Blue: 0\r\nColor Chrome Effects: 0\r\nGrain: OFF or WEAK\r\nClarity (XPRO3/XT4): +1',
+  },
+  {
+    id: '8',
+    pageContent:
+      '[Summary] 이 레시피는 차가운 겨울날의 풍경을 담아내기 위해 Classic Chrome을 기반으로 제작되었습니다. 푸른색 강조와 높은 다이나믹 레인지는 차갑고 신비로운 분위기를 연출하며, 약간의 빈티지한 느낌을 더해줍니다. 차가운 도시의 풍경이나 고요한 자연을 담기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 차가운,파란색,대비,필름,빈티지\n[Moods] 차가운,몽환적인,신비로운,드라마틱\n[ShootingTypes] snap,landscape\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Underwater\r\nWB Shift: -1 Red, -1 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: -1\r\nColor: -1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '77',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 필름 그레인, 그리고 약간의 빈티지한 느낌을 담아, 일상 속 소중한 순간들을 아련하고 감성적으로 기록할 수 있게 해줍니다. 특히, 햇살 좋은 날의 인물 사진이나, 따뜻한 분위기의 스냅 사진에 잘 어울릴 것 같습니다.\n[Base Film Simulation] Astia\n[Keywords] 따뜻함,빈티지,부드러움,인물,필름\n[Moods] 따뜻한,아늑한,부드러운,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 8600K\r\nWB Shift: -4 Red, 6 Blue\r\nDynamic Range: DR200\r\nHighlights: 1\r\nShadows: -1\r\nColor: -2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 2\r\nEV suggestion: 0',
+  },
+  {
+    id: '78',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 하여, 부드럽고 빈티지한 색감과 은은한 색상 대비를 통해 따뜻하면서도 차분한 분위기를 연출합니다. 특히 인물 사진에서 피부톤을 자연스럽게 표현하며, 일상적인 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,대비,인물\n[Moods] 따뜻한,차분한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: 10000K\r\nWB Shift: -5 Red, 8 Blue\r\nDynamic Range: DR100\r\nHighlights: 1\r\nShadows: -1\r\nColor: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 2\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '79',
+    pageContent:
+      '[Summary] 이 레시피는 자연의 풍경을 부드럽고 따뜻한 색감으로 담아내어, 마치 한 폭의 영화 같은 장면을 연출합니다. 은은한 필름 그레인과 색상 표현은 몽환적인 분위기를 더하며, 보는 이로 하여금 편안함과 감성을 자극하는 사진을 만들어 줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,자연,따뜻한,필름,부드러움\n[Moods] 따뜻한,몽환적인,차분한\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Off\r\nWhite Balance: 5800K\r\nWB Shift: 2 Red, -4 Blue\r\nDynamic Range: DR400\r\nHighlights: -0.5\r\nShadows: 2\r\nColor: 2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '80',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 Astia 필름 시뮬레이션을 기반으로, 은은한 그레인과 색상 대비를 통해 따뜻하고 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하며, 몽환적인 느낌을 더해줍니다. 마치 오래된 필름 사진처럼 아련한 추억을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,색감,필름,빈티지\n[Moods] 따뜻한,부드러운,몽환적인,빈티지\n[ShootingTypes] portrait,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Off\r\nWhite Balance: 6750K\r\nWB Shift: -4 Red, 4 Blue\r\nDynamic Range: DR200\r\nHighlights: 1\r\nShadows: -1\r\nColor: -2\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 2\r\nEV suggestion: 0',
+  },
+  {
+    id: '81',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 필름 그레인과 푸른색 강조를 통해 따뜻하고 몽환적인 분위기를 연출합니다. 특히, 연인과의 소중한 순간이나 일상 속의 아름다움을 기록하기에 적합하며, 마치 영화 속 한 장면처럼 로맨틱한 감성을 담아낼 수 있습니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,따뜻함,파스텔톤,몽환적인\n[Moods] 따뜻한,몽환적인,로맨틱한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: 5 Red, -5 Blue\r\nDynamic Range: DR400\r\nHighlights: 1\r\nShadows: 1\r\nColor: 3\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 2\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '82',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드러운 그레인과 색상 크롬 효과를 더해 따뜻하고 빈티지한 분위기를 연출합니다. 특히, 언더워터 화이트 밸런스와 섀도우 설정을 통해 몽환적이고 독특한 색감을 표현하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,컬러,빈티지,따뜻한,선명한\n[Moods] 따뜻한,선명한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Underwater\r\nWB Shift: -1 Red, -3 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: 4\r\nColor: 4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -4\r\nEV suggestion: +2/3',
+  },
+  {
+    id: '83',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 부드럽고 매트한 질감과 빈티지한 색감을 연출합니다. 특히, 파란색 계열의 색상을 강조하여 독특한 분위기를 자아내며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,매트,필름,색감,톤\n[Moods] 차분한,빈티지한,매트한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Shade\r\nWB Shift: -2 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: -2\r\nColor: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +2/3',
+  },
+  {
+    id: '84',
+    pageContent:
+      '[Summary] 이 레시피는 황금빛 노을 아래에서 촬영한 사진처럼 따뜻하고 부드러운 분위기를 연출합니다. Classic Negative 필름 시뮬레이션과 섬세한 색상 보정을 통해, 아련하면서도 빈티지한 감성을 담아낼 수 있습니다. 특히, 인물 사진이나 일상 스냅에 활용하면 좋습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 황금빛,따뜻함,빈티지,클래식,부드러움\n[Moods] 따뜻한,황홀한,아련한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 6540K\r\nWB Shift: 3 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: 1\r\nShadows: 0\r\nColor: -1\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -3\r\nEV suggestion: 0',
+  },
+  {
+    id: '85',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 빈티지한 느낌과 부드러운 색감을 동시에 표현합니다. 특히, 색상 대비를 줄이고 채도를 낮춰, 은은하면서도 깊이 있는 분위기를 연출하며, 따뜻하고 차분한 감성을 사진에 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,필름,톤\n[Moods] 따뜻한,차분한,빈티지한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: 5430K\r\nWB Shift: 2 Red, 1 Blue\r\nDynamic Range: DR200\r\nHighlights: 0\r\nShadows: -1\r\nColor: -2\r\nSharpness: -3\r\nISO Noise Reduction: -4\r\nClarity: -5\r\nEV suggestion: 0',
+  },
+  {
+    id: '767',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 선명한 색감으로, 자연의 아름다움을 돋보이게 합니다. 특히 풍경 사진에서 훌륭한 결과물을 보여줄 것이며, 일상 스냅에도 활력을 불어넣어 줄 것입니다. 클래식 크롬의 부드러운 색감과 DR400의 넓은 다이나믹 레인지는 사진에 깊이와 풍부함을 더합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,선명함,따뜻함,풍경,색감\n[Moods] 따뜻한,선명한,화사한,생동감있는\n[ShootingTypes] landscape,snap\n[Settings] DR400 (Auto ISO or manually set 2 stops or more above base ISO)\r\nWB: Daylight / as shot\r\nWB SHIFT: R : 2  B : -3\r\nNR: 0\r\nHighlight: 0\r\nShadows: +1\r\nColor: +1\r\nSharp: +2\r\nChrome FX Blue: 0\r\nColor Chrome Effects: 0\r\nGrain: OFF\r\nClarity (XPRO3/XT4): +1',
+  },
+  {
+    id: '768',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여 부드럽고 따뜻한 색감과 함께, 하이라이트와 섀도우 톤 조절을 통해 빈티지한 감성을 더했습니다. 특히 인물 사진에서 부드러운 피부 표현과 은은한 분위기를 연출하며, 일상 스냅 사진에도 잘 어울립니다.\n[Base Film Simulation] Astia\n[Keywords] 따뜻한,빈티지,인물,부드러움,필름\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] portrait,snap\n[Settings] DYNAMIC RANGE: DR100\r\nWB: 8300k\r\nCOLOR: 2\r\nSHARPNESS: -2\r\nHIGHLIGHT TONE: 2\r\nSHADOW TONE: -2\r\nNOISE REDUCTION: -2',
+  },
+  {
+    id: '769',
+    pageContent:
+      '[Summary] 흑백 필름 시뮬레이션과 강렬한 대비, 그리고 푸른색 계열의 색상 강조를 통해, 거칠고 드라마틱한 흑백 사진을 연출합니다. 특히, 빛과 그림자의 대비가 뚜렷한 풍경이나 인물 사진에 적합하며, 몽환적이면서도 강렬한 인상을 남길 수 있습니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,대비,질감,필름\n[Moods] 드라마틱,강렬한,거친,빈티지,몽환적인\n[ShootingTypes] snap,documentry\n[Settings] Monochrome+Green (Bg)\r\nDR : 100\r\nWhite Balance: 2500k\r\nWB Color Shift: 0R, -9B\r\nHighlights: +4\r\nShadows: +4\r\nSharpness: -2\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Strong\r\nClarity: +2\r\nExp comp: spot metering for highlights(generally shot it underexposed)',
+  },
+  {
+    id: '770',
+    pageContent:
+      '[Summary] 이 레시피는 영화 같은 분위기를 연출하며, 따뜻하고 빈티지한 색감으로 일상적인 순간들을 특별하게 담아낼 수 있습니다. 특히, 인물 사진이나 스냅 사진에서 부드러우면서도 깊이 있는 감성을 표현하는데 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,영화,따뜻한,색감,빈티지\n[Moods] 따뜻한,몽환적인,영화같은,빈티지\n[ShootingTypes] snap,daily\n[Settings] WB: AUTO | R +5 B: -6\r\nExposure Comp: + 2/3\r\nTone Curve: H-1, S+3\r\nColor: +4\r\nSharpness: +2\r\nClarity: 0\r\nNoise Reduction: -4\r\nDR: 100\r\nDR Priority: Off\r\nGrain Effect: Small Weak or Large Weak \r\nColor Chrome Effect: Strong\r\nColor Chrome FX Blue: Weak',
+  },
+  {
+    id: '771',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감으로, 노을 아래 인물 사진이나 일상 스냅에 적합합니다. Classic Chrome 필름 시뮬레이션과 섬세한 톤 조절을 통해 부드럽고 아련한 분위기를 연출하며, 잊혀져가는 옛 추억을 떠올리게 합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,클래식,인물,노을\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: +1\r\nShadow: -2\r\nColor: -2\r\nNoise Reduction: -2\r\nSharpening: 0\r\nWhite Balance: Daylight, +4 Red & -2 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '772',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 컬러플러스 200 필름의 따뜻하고 빈티지한 색감을 후지필름 X-Trans III 센서에 담아내어, 아련한 추억을 불러일으키는 듯한 사진을 만들어줍니다. 특히 인물 사진에서 부드러운 피부톤과 함께 아날로그 감성을 느낄 수 있으며, 일상적인 스냅 사진에도 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻한,색감,인물\n[Moods] 따뜻한,빈티지,레트로,부드러운\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: -1/3EV\r\nDynamic Range DR200\r\nGrain Effect Strong\r\nWB As Shot\r\nWB Shift R3 B-5\r\nHighlight Tone +4\r\nShadow Tone -1\r\nColor -1\r\nSharpness 0\r\nNoise Reduction 0',
+  },
+  {
+    id: '773',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 빈티지한 색감을 재현하여, 일상 속의 소중한 순간들을 매력적으로 담아낼 수 있게 해줍니다. 특히, 햇살 좋은 날의 스냅 사진이나, 따뜻한 분위기를 연출하고 싶을 때 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,색감,선명함\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: -1/3EV\r\nDynamic Range DR200\r\nGrain Effect Strong\r\nWB Daylight\r\nWB Shift R2 B-2\r\nHighlight Tone +2\r\nShadow Tone +1\r\nColor +2\r\nSharpness 0\r\nNoise Reduction -4',
+  },
+  {
+    id: '774',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 풍부한 질감을 통해, 마치 오래된 필름 사진을 보는 듯한 깊이 있는 감성을 선사합니다. 특히, 도시의 풍경이나 인물의 모습을 드라마틱하게 담아내기에 적합하며, 흑백 특유의 클래식한 매력을 극대화합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,콘트라스트,질감,빈티지,모노크롬\n[Moods] 드라마틱,강렬한,거친,클래식,빈티지\n[ShootingTypes] snap,documentry\n[Settings] Monochrome (+Y, +R, +G)\r\nDynamic Range: DR200\r\nHighlight: 0\r\nShadow: +3\r\nNoise Reduction: -4\r\nSharpening: +2\r\nClarity: +3\r\nToning: WC +2, MG 0\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Daylight,+9 Red & -9 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '775',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로, 따뜻하고 부드러운 색감과 필름 그레인의 질감을 더하여 빈티지한 분위기를 연출합니다. 인물 사진이나 일상 스냅에 적합하며, 아련하고 따뜻한 감성을 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,인물,따뜻한,필름,색감\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,portrait\n[Settings] DR100\r\nWhitebalance : Fkuorescent light 1\r\nWB Shift : R -1,  B: 0\r\nHighlight: -2\r\nShadow: -1\r\nColor +3\r\nSharpness -2\r\nNR -2\r\nGrain Strong',
+  },
+  {
+    id: '776',
+    pageContent:
+      '[Summary] 이 레시피는 인물 사진에 적합하며, 따뜻한 색감과 강렬한 대비를 통해 인물의 개성을 돋보이게 합니다. 하이라이트와 섀도우 톤 조절을 통해 드라마틱한 분위기를 연출하며, 선명한 이미지를 제공합니다. 일상 스냅 사진에도 활용하여 특별한 순간을 기록할 수 있습니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,선명함,대비,따뜻함,필름\n[Moods] 따뜻한,선명한,드라마틱\n[ShootingTypes] portrait,daily\n[Settings] PRO Neg. Hi\r\nDYNAMIC RANGE: DR100\r\nWHITE BALANCE (WB): 3400K\r\nCOLOR: 1\r\nSHARPNESS: 2\r\nHIGHLIGHT TONE: -2\r\nSHADOW TONE: 2\r\nNOISE REDUCTION: -2',
+  },
+  {
+    id: '777',
+    pageContent:
+      '[Summary] 이 레시피는 깊고 어두운 밤하늘 아래, 극적인 대비와 풍부한 디테일을 담아내는 흑백 사진을 위한 레시피입니다. 하이라이트와 섀도우의 섬세한 조절을 통해, 밤하늘의 신비로움과 몽환적인 분위기를 극대화합니다. 특히, 도시의 야경이나 별이 빛나는 밤하늘을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,고대비,극적인,밤하늘,디테일\n[Moods] 드라마틱한,강렬한,차분한,몽환적인\n[ShootingTypes] night,landscape\n[Settings] Acros + R\r\nDR 400%\r\n3800K WB\r\nWB Shift R:0, B:8\r\nH-Tone +3\r\nS-Tone -1,\r\nSharpness +2\r\nNR -2\r\nGrain OFF',
+  },
+  {
+    id: '778',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 느낌을 주며, 강렬한 노이즈와 함께 황금빛 색감을 강조하여 아련하고 몽환적인 분위기를 연출합니다. 특히 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 담기에 적합하며, 아날로그 필름 카메라 특유의 감성을 느낄 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,황금빛,노이즈,필름\n[Moods] 따뜻한,빈티지,황홀한,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: +2\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: +2\r\nClarity: 0\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: Auto, -2 Red & -5 Blue\r\nISO: Auto, up to ISO 6400',
+  },
+  {
+    id: '779',
+    pageContent:
+      '[Summary] 이 레시피는 흑백 필름의 강렬한 콘트라스트와 거친 질감을 재현하여, 마치 오래된 다큐멘터리 사진을 보는 듯한 느낌을 줍니다. 특히, 빛과 그림자의 대비를 강조하여 드라마틱하고 빈티지한 분위기를 연출하며, 흑백 사진 특유의 클래식한 감성을 자극합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,빈티지,모노크롬,질감\n[Moods] 거친,드라마틱,빈티지,클래식\n[ShootingTypes] snap,documentry\n[Settings] Strong Grain\r\nNR -4\r\nAuto WB\r\nH-1\r\nS+2\r\nSharp 0',
+  },
+  {
+    id: '780',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 하이라이트와 섀도우를 강조하고 채도를 낮춰 빈티지하면서도 드라마틱한 느낌을 연출합니다. 특히, 흑백 사진과 같은 강렬한 대비를 통해, 거친 질감과 깊이 있는 표현을 추구하는 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,대비,흑백,필름\n[Moods] 차분한,드라마틱,빈티지,거친\n[ShootingTypes] snap\n[Settings] DYNAMIC RANGE: DR100\r\nWB: 5000K\r\nCOLOR: -2\r\nSHARPNESS: 1\r\nHIGHLIGHT TONE: 2\r\nSHADOW TONE: 2\r\nNOISE REDUCTION: -2',
+  },
+  {
+    id: '781',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 생생한 색감을 후지필름 특유의 클래식 크롬 필름 시뮬레이션으로 재현하여, 일상 속의 소중한 순간들을 매력적으로 담아낼 수 있도록 해줍니다. 특히, 밝은 야외 풍경이나 인물 사진에서 톤의 깊이와 디테일을 살려주며, 아날로그 감성을 자극하는 매력적인 결과물을 선사할 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,따뜻함,선명함,빈티지,색감\n[Moods] 따뜻한,선명한,활기찬,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2\r\nShadow: +2\r\nColor: +4\r\nSharpening: +2\r\nNoise Reduction: -4\r\nGrain: Strong\r\nColor Chrome Effect: Off or N/A\r\nWhite Balance: Auto, +1 Red & -6 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '782',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감으로 인물 사진에 최적화되어 있으며, 빈티지한 감성을 더해 줍니다. 특히, 빛이 부드럽게 스며드는 순간을 포착하여 몽환적인 분위기를 연출하는 데 탁월합니다. 섬세한 색상 표현과 부드러운 톤은 사진에 깊이와 매력을 더해줄 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,파스텔,빈티지,따뜻함\n[Moods] 따뜻한,부드러운,몽환적인,차분한\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -2 (Soft)\r\nShadow: 0 (Standard)\r\nColor: -2 (Low)\r\nSharpness: -1 (Medium-Soft)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: 2650K, +8 Red & -8 Blue\r\nISO: Auto, up to ISO 1600\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '783',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 필름 특유의 질감을 살려 빈티지하면서도 몽환적인 분위기를 연출합니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 적합하며, 따뜻한 감성을 사진에 담아낼 수 있습니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻함,빈티지,필름,색감\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] ISO: Auto (640 to 3200)\r\nExposure Compensation: Typically between +1 and + 2\r\nGrain Effect: Strong Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Fx Blue: Off\r\nWhite Balance: Kelvin between 6000 and 8000 "adjusted manually throughout the day. This is the most important part of this recipe, I tend to make the temperature a bit more on the warm side. If you don\'t want to adjust it every time, you can set the white balance to auto and white balance shift to R: +5 B: -6. It often does the job".\r\nWhite Balance Shift: R: 0 B:0\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: +3\r\nColor: +2\r\nSharpness: 0\r\nNoise Reduction: -4\r\nClarity: -3',
+  },
+  {
+    id: '784',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로 하여, 따뜻하면서도 차분한 분위기를 연출합니다. 하이라이트와 섀도우 톤 조절을 통해 드라마틱한 대비를 더하여, 빈티지하면서도 깊이 있는 인물 사진을 담아낼 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식,빈티지,인물,대비,필름\n[Moods] 따뜻한,차분한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Highlight Tone: +2\r\nShadow Tone: +1\r\nColor: -4',
+  },
+  {
+    id: '785',
+    pageContent:
+      '[Summary] 이 레시피는 거친 질감과 강렬한 대비를 통해 흑백 사진의 깊이와 드라마틱한 분위기를 극대화합니다. 특히, 모래 언덕이나 사막과 같은 풍경을 촬영할 때, 고독하고 묵직한 감성을 표현하는 데 적합합니다. 강한 그레인 효과는 빈티지한 느낌을 더해줍니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모래,대비,질감,빈티지\n[Moods] 차분한,고독한,드라마틱,거친\n[ShootingTypes] landscape,snap\n[Settings] Acros +R\r\nDynamic range: dr100\r\nGrain effect: strong\r\nWhite balance: auto\r\nHighlight tone: -2\r\nShadow tone: +4\r\nSharpness: -2\r\nNoise reduction: 0',
+  },
+  {
+    id: '786',
+    pageContent:
+      '[Summary] 이 레시피는 어두운 밤하늘 아래 펼쳐지는 풍경을 담아내기에 적합하며, 흑백의 강렬한 대비와 높은 다이나믹 레인지를 통해 극적인 분위기를 연출합니다. 차가운 색감과 섬세한 톤 조절은 몽환적이면서도 깊이 있는 흑백 사진을 만들어낼 것입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,고대비,드라마틱,질감\n[Moods] 드라마틱한,강렬한,차가운,고독한\n[ShootingTypes] landscape,night\n[Settings] Mono + R\r\nWB 3800K\r\nWB Shift R:0, B:8\r\nGrain OFF\r\nDR400\r\nH-Tone +3\r\nS-Tone -1\r\nSharpness +2\r\nNR -2',
+  },
+  {
+    id: '787',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여, 따뜻하고 생기 넘치는 색감과 부드러운 피부 표현을 동시에 잡으려는 의도가 엿보입니다. 색상 크롬 효과를 통해 깊이 있는 색감을 더하고, 하이라이트와 섀도우 조절로 입체감을 살려 인물 사진이나 일상 스냅에 적합한 결과물을 기대할 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 따뜻한,선명한,인물,색감,필름\n[Moods] 따뜻한,선명한,활기찬,생동감있는\n[ShootingTypes] snap,daily\n[Settings] DR100\r\nWhitebalance : auto\r\nWB Shift : R +3,  B: -1\r\nColor Chrome Strong\r\nHighlight: -1\r\nShadow: +1\r\nColor +3\r\nSharpness -2\r\nNR -2\r\nGrain weak',
+  },
+  {
+    id: '788',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 은은한 그레인과 부드러운 톤, 그리고 채도를 낮춰 빈티지하고 차분한 분위기를 연출합니다. 하이라이트와 섀도우를 조절하여 부드러운 계조를 살리고, 색감을 살짝 낮춰 몽환적인 느낌을 더했습니다. 일상 스냅이나, 따뜻한 감성을 담은 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,톤,필름\n[Moods] 차분한,빈티지한,따뜻한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: 0EV\r\nDynamic Range DR100\r\nGrain Effect Weak\r\nWB As Shot\r\nWB Shift R0 B0\r\nHighlight Tone -1\r\nShadow Tone -2\r\nColor -4\r\nSharpness +1\r\nNoise Reduction -2',
+  },
+  {
+    id: '789',
+    pageContent:
+      '[Summary] Mark G. Adams의 흑백 레시피는 라이카 M10 모노크롬의 감성을 후지필름 X-T2로 재현합니다. 강렬한 콘트라스트와 섬세한 톤 표현으로 흑백 사진의 깊이를 더하며, 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 인물이나 스냅 사진에 잘 어울립니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,빈티지,하이키,콘트라스트\n[Moods] 클래식,차분한,드라마틱,고전적인\n[ShootingTypes] documentry,snap\n[Settings] Monochrome+G\r\nPush/Pull Process: +1/3EV\r\nDynamic Range DR100\r\nGrain Effect Off\r\nWB 5600k\r\nWB Shift R-3 B7\r\nHighlight Tone -2\r\nShadow Tone +2\r\nColor —\r\nSharpness +4\r\nNoise Reduction +2',
+  },
+  {
+    id: '790',
+    pageContent:
+      '[Summary] 이 레시피는 70년대의 따뜻하고 향수를 불러일으키는 분위기를 담아, 부드럽고 몽환적인 색감과 함께 빈티지한 감성을 선사합니다. 특히, 햇살 아래의 인물 사진이나, 오래된 골목길, 또는 추억이 깃든 장소를 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,레트로,필름,몽환적인\n[Moods] 따뜻한,몽환적인,빈티지,향수를 불러일으키는\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Shade\r\nWB Shift: +3 Red, -2 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: +1\r\nColour: -2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -3 (for the retro hazy softness)\r\nEV compensation: +1/3',
+  },
+  {
+    id: '791',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 퇴색된 색감을 재현하여, 따뜻하고 빈티지한 분위기를 연출합니다. 하이라이트와 섀도우 톤 조절을 통해 드라마틱한 대비를 더하여, 일상적인 풍경이나 인물 사진에 깊이와 감성을 불어넣어 줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,코닥,퇴색,따뜻함,대비\n[Moods] 따뜻한,빈티지,노스텔지어,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: 0EV\r\nDynamic Range DR100\r\nGrain Effect Weak\r\nWB As Shot\r\nWB Shift R4 B-1\r\nHighlight Tone +2\r\nShadow Tone -2\r\nColor -4\r\nSharpness +4\r\nNoise Reduction +4',
+  },
+  {
+    id: '792',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션과 따뜻한 색감, 그리고 강렬한 대비를 통해 생동감 넘치는 풍경 사진을 연출합니다. 특히, 자연의 아름다움을 선명하고 드라마틱하게 담아내어 보는 이의 시선을 사로잡을 것입니다. 쨍한 햇살 아래의 풍경이나, 활기찬 도시의 모습을 담기에 적합합니다.\n[Base Film Simulation] Velvia\n[Keywords] 필름,선명한,따뜻한,대비,색감\n[Moods] 따뜻한,선명한,활기찬,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Push/Pull Process: -1/3EV\r\nDynamic Range DR200\r\nGrain Effect Weak\r\nWB 4500K\r\nWB Shift R5 B2\r\nHighlight Tone -2\r\nShadow Tone +2\r\nColor +4\r\nSharpness +2\r\nNoise Reduction +2',
+  },
+  {
+    id: '793',
+    pageContent:
+      '[Summary] 강렬한 흑백 대비와 거친 질감, 그리고 적외선 필름의 독특한 분위기를 담아낸 레시피입니다. 몽환적이면서도 드라마틱한 풍경 사진을 연출하며, 흑백의 깊이 있는 표현을 통해 피사체의 감성을 극대화합니다. 특히, 강렬한 햇빛 아래의 풍경이나 독특한 질감을 가진 피사체를 촬영하는데 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,적외선,대비,질감,몽환적인\n[Moods] 드라마틱한,몽환적인,신비로운,강렬한\n[ShootingTypes] landscape,snap\n[Settings] Acros+R\r\nDynamic Range: DR200\r\nHighlight: +4\r\nShadow: +3\r\nB&W Toning: 0\r\nNoise Reduction: -4\r\nSharpening: -4\r\nClarity: +5\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Off\r\nColor Chrome Effect Blue: Off\r\nWhite Balance: 2750K, -5 Red & +9 Blue\r\nISO: Auto, up to ISO 6400',
+  },
+  {
+    id: '794',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 에크타 100 필름의 특징을 살려, 선명하고 생생한 색감과 깊이 있는 그림자를 표현합니다. 특히 인물 사진이나 풍경 사진에서 톤의 대비를 강조하여 극적인 분위기를 연출하며, 따뜻하고 매력적인 이미지를 만들어 줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 선명한,채도,필름,인물,풍경\n[Moods] 따뜻한,선명한,생동감 있는,극적인\n[ShootingTypes] snap,landscape\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: +1\r\nShadow: -2\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: +3\r\nGrain Effect: Off\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: 6050K, +3 Red & 0 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '795',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 울트라맥스 400 필름의 특징을 담아, 클래식 크롬을 기반으로 따뜻하고 선명한 색감과 강렬한 입자감을 표현합니다. 일상 스냅 사진에 적합하며, 빈티지한 감성을 더해줍니다. 특히, 햇살 좋은 날 야외에서 촬영하면 더욱 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻한,선명한,색감\n[Moods] 따뜻한,선명한,빈티지,생동감있는\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: +1\r\nShadow: +1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: +3\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Auto, +1 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '796',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 그림자와 낮은 채도를 통해 따뜻하고 빈티지한 느낌을 연출합니다. 특히 인물 사진이나 풍경 사진에서 은은하고 몽환적인 분위기를 자아낼 수 있으며, 일상적인 스냅 사진에도 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,부드러운,인물,풍경\n[Moods] 따뜻한,차분한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] DR: 200\r\nWB: 5600K\r\ncolor:-2\r\nsharpness: -2\r\nhighlight tone: -2\r\nshadow tone: -2\r\nnoise reduction: 0',
+  },
+  {
+    id: '797',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊은 대비와 부드러운 톤을 통해 도시의 고독함과 거리의 이야기를 담아냅니다. 차분하면서도 드라마틱한 흑백 사진은 오래된 영화의 한 장면처럼 기억을 불러일으키며, 잊혀져 가는 순간들을 영원히 간직할 수 있게 해줍니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,대비,질감,거리\n[Moods] 차분한,고독한,드라마틱,빈티지\n[ShootingTypes] snap,documentry\n[Settings] DR: 100\r\nWB: auto\r\nsharpness: -1\r\nhighlight tone: -2\r\nshadow tone: +2\r\nnoise reduction: -2',
+  },
+  {
+    id: '798',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 흑백 대비와 풍부한 톤으로, 잊혀진 시간 속의 한 장면을 포착한 듯한 느낌을 줍니다. 특히, 빛과 그림자의 드라마틱한 연출을 통해 인물이나 풍경에 깊이와 감성을 더할 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,콘트라스트,질감,빈티지\n[Moods] 드라마틱,강렬한,클래식,차분한\n[ShootingTypes] snap,documentry\n[Settings] ACROS R\r\nDR: Auto\r\nHighlight: +4\r\nShadow: +4\r\nNR: -3',
+  },
+  {
+    id: '799',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 색감과 필름 그레인 효과를 통해 빈티지한 감성을 자아냅니다. 하이라이트와 섀도우 조절을 통해 부드러우면서도 깊이 있는 톤을 표현하며, 인물 사진이나 스냅 사진에 특히 잘 어울립니다. 마치 오래된 필름 사진첩을 넘기는 듯한 아련한 느낌을 선사할 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 빈티지,색감,따뜻함,필름,인물\n[Moods] 따뜻한,몽환적인,빈티지,아련한\n[ShootingTypes] snap,portrait\n[Settings] Push/pull 0EV\r\nDR100\r\nGrain strong\r\nWB 4200K\r\nWB Shift R:+7 B:-7\r\nHighligth:  -2\r\nShadow:+1',
+  },
+  {
+    id: '800',
+    pageContent:
+      '[Summary] Astia 필름 시뮬레이션과 강한 그레인 효과, 그리고 따뜻한 색감은 마치 오래된 사진첩을 넘기는 듯한 아련하고 빈티지한 분위기를 연출합니다. 부드러운 하이라이트와 섀도우 설정은 인물 사진에 깊이와 섬세함을 더하며, 몽환적인 분위기를 자아냅니다. 이 레시피는 일상 속의 특별한 순간들을 따뜻하고 차분하게 기록하기에 적합합니다.\n[Base Film Simulation] Astia\n[Keywords] 빈티지,부드러움,색감,인물,필름\n[Moods] 따뜻한,몽환적인,차분한\n[ShootingTypes] snap,portrait\n[Settings] Push/pull 0EV\r\nDR100\r\nGrain strong\r\nWB 4200K\r\nWB Shift R:+7 B:-7\r\nHighligth:  -2\r\nShadow:+1',
+  },
+  {
+    id: '801',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로 따뜻하고 빈티지한 색감을 연출하며, 하이라이트와 섀도우를 조절하여 부드러운 대비를 만들어냅니다. 전반적으로 톤을 따뜻하게 유지하면서도, 선명함을 잃지 않아 일상 스냅이나 풍경 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,빈티지,색감,따뜻함,대비\n[Moods] 따뜻한,선명한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nAuto-WB Shift: +4 Red, -5 Blue\r\nHighlights: +1\r\nShadows: +1\r\nColor: +3\r\nNoise reduction: -4\r\nSharpening: 0\r\nGrain effect: Off\r\nExposure compensation: typically between +1/3 and +2/3',
+  },
+  {
+    id: '802',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 빈티지한 색감을 재현하여, 풍경 사진이나 인물 사진에 매력적인 분위기를 더해줍니다. 특히, 햇빛 아래에서 촬영하면 더욱 훌륭한 결과물을 얻을 수 있을 것입니다. 부드러운 하이라이트와 섀도우 표현은 사진에 깊이감을 더하고, 톤 조정과 화이트 밸런스 설정을 통해 따뜻하고 클래식한 느낌을 연출합니다.\n[Base Film Simulation] Provia\n[Keywords] 코닥,따뜻한,빈티지,풍경,인물\n[Moods] 따뜻한,선명한,빈티지,클래식\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: +2 (Hard)\r\nShadow: +1 (Medium-Hard)\r\nColor: -2 (Low)\r\nSharpness: 0 (Standard)\r\nNoise Reduction: -2 (Low)\r\nWhite Balance: Daylight (Fujifilm calls it “Fine” for some reason), -1 Red & -4 Blue\r\nISO: Auto, up to ISO 1600\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '803',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 강렬한 그레인 효과를 통해 아날로그 감성을 극대화합니다. 특히, 선명도를 낮추고 채도를 조절하여 부드럽고 몽환적인 분위기를 연출하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,색감,선명함,아날로그\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +1\r\nColor: -1\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: -4\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWhite Balance: Daylight, -1 Red & -3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '804',
+    pageContent:
+      '[Summary] 이 레시피는 라이카 M10 모노크롬의 흑백 감성을 후지필름 X-T20으로 재현하고자 합니다. 강렬한 대비와 하이라이트, 섀도우 톤 조절을 통해 흑백의 깊이 있는 표현을 추구하며, 빈티지하면서도 드라마틱한 이미지를 연출합니다. 일상 스냅이나 인물 사진에 적합하며, 흑백 특유의 클래식한 분위기를 자아냅니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,빈티지,하이키,콘트라스트\n[Moods] 클래식,드라마틱,강렬한,차분한\n[ShootingTypes] snap,daily\n[Settings] Monochrome+G\r\nPush/Pull Process: +1/3EV\r\nDynamic Range DR100\r\nGrain Effect Off\r\nWB 10000k\r\nWB Shift R6 B-7\r\nHighlight Tone +1\r\nShadow Tone +3\r\nColor —\r\nSharpness +4\r\nNoise Reduction +2',
+  },
+  {
+    id: '805',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이와 강렬한 대비를 통해, 묵직하고 드라마틱한 분위기를 연출합니다. 강한 그레인 효과는 사진에 거친 질감을 더하여, 마치 오래된 흑백 영화의 한 장면을 보는 듯한 인상을 줍니다. 어두운 그림자와 밝은 하이라이트의 조화는 피사체에 깊이와 입체감을 부여하여, 인상적인 흑백 사진을 만들 수 있게 해줍니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,강렬함,대비,질감\n[Moods] 드라마틱,강렬한,차분한,고전적인\n[ShootingTypes] documentry,snap\n[Settings] Push/Pull Process: 0EV, Dynamic Range DR200, Film Simulation Monochrome, Grain Effect Strong, WB As Shot, WB Shift R0 B0, Highlight Tone -1, Shadow Tone +2, Color -1, Sharpness +4, Noise Reduction 0',
+  },
+  {
+    id: '806',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션과 강한 그레인 효과를 통해 흑백 사진 특유의 깊이와 질감을 살려줍니다. 하이라이트와 섀도우 톤 조절을 통해 드라마틱한 톤을 연출하며, 빈티지하면서도 고전적인 느낌을 줍니다. 일상 스냅 사진에 활용하면 잊을 수 없는 순간들을 더욱 특별하게 기록할 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,빈티지,모노크롬,하이키,콘트라스트\n[Moods] 차분한,고전적인,드라마틱한,빈티지한\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: 0EV, Dynamic Range DR100, Film Simulation Acros+R, Grain Effect Strong, WB As Shot, WB Shift R0 B0, Highlight Tone +3, Shadow Tone -2, Color —, Sharpness +4, Noise Reduction 0',
+  },
+  {
+    id: '807',
+    pageContent:
+      '[Summary] 이 레시피는 Acros 필름 시뮬레이션을 기반으로 하여, 밤하늘의 깊이와 별들의 섬세한 디테일을 흑백으로 담아내는 데 최적화되어 있습니다. 강한 대비와 선명함은 어두운 밤하늘의 신비로운 분위기를 더욱 강조하며, 몽환적이면서도 드라마틱한 이미지를 연출합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,선명한,대비,디테일,밤하늘\n[Moods] 드라마틱,차분한,몽환적인,고독한\n[ShootingTypes] night,landscape\n[Settings] Push/Pull Process: 0EV, Dynamic Range DR100, Film Simulation Acros+R, Grain Effect Weak, WB As Shot, WB Shift R0 B0, Highlight Tone -2, Shadow Tone +1, Color–, Sharpness +4, Noise Reduction 0',
+  },
+  {
+    id: '808',
+    pageContent:
+      '[Summary] 벨비아 필름 시뮬레이션과 높은 다이나믹 레인지 설정은 풍경 사진에 적합하며, 강렬한 색감과 대비를 통해 드라마틱한 분위기를 연출합니다. 하이라이트와 섀도우 톤 조절은 섬세한 표현을 가능하게 합니다.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,대비,풍경,선명함,필름\n[Moods] 강렬한,드라마틱,선명한,생생한\n[ShootingTypes] landscape,snap\n[Settings] Push/Pull Process: 0EV, Dynamic Range DR400, Grain Effect Off, WB As Shot, WB Shift R0 B0, Highlight Tone -2, Shadow Tone +4, Color 0, Sharpness +4, Noise Reduction -4',
+  },
+  {
+    id: '809',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 그림자와 따뜻한 색감, 그리고 필름 그레인의 조화로 마치 오래된 영화의 한 장면을 보는 듯한 느낌을 줍니다. 특히, 노을 아래의 풍경이나 인물 사진에 적용하면 아련하고 따뜻한 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,영화,따뜻한,빈티지,필름\n[Moods] 따뜻한,몽환적인,드라마틱,영화같은\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\n Highlight: +4\r\n Shadow: +4\r\n Color: +4\r\n Noise Reduction: -4\r\n Sharpening: +2\r\n Grain Effect: Strong\r\n Color Chrome Effect: Weak\r\n White Balance: Auto, +5 Red & -6 Blue\r\n ISO: Auto up to ISO 6400',
+  },
+  {
+    id: '810',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로 하여, 자연스러운 색감과 부드러운 톤을 강조합니다. 약한 그레인 효과와 샤프니스를 더하여, 풍경 사진이나 인물 사진에 적합하며, 따뜻하면서도 선명한 이미지를 연출할 수 있습니다. 특히, 자연광 아래에서 촬영하면 더욱 좋은 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 자연스러운,풍경,인물,선명한,부드러운\n[Moods] 따뜻한,자연스러운,선명한,차분한\n[ShootingTypes] landscape,snap\n[Settings] Push/Pull Process: 0EV, Dynamic Range DR100, Grain Effect Weak, WB As Shot, WB Shift R0 B0, Highlight Tone -2, Shadow Tone +1, Color -4, Sharpness +4, Noise Reduction 0',
+  },
+  {
+    id: '811',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 빈티지하면서도 차분한 색감과 강한 대비를 통해 독특한 분위기를 연출합니다. 특히, 섀도우 톤을 낮춰 깊이 있는 톤을 표현하며, 선명도를 높여 디테일을 살리는 것이 특징입니다. 일상 스냅 사진에 적합하며, 따뜻하고 클래식한 감성을 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,대비,필름\n[Moods] 따뜻한,차분한,빈티지,클래식\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: +2/3EV, Dynamic Range DR100\r\nFilm Simulation Classic Chrome\r\nGrain Effect OFF\r\nWB Auto\r\nWB Shift R-3 B4\r\nHighlight Tone 0\r\nShadow Tone -2\r\nColor +2\r\nSharpness +4\r\nNoise Reduction -4',
+  },
+  {
+    id: '812',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 부드러운 색감과 Grain Effect의 은은한 필름 느낌을 살려, 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 하이라이트와 섀도우 톤 조절을 통해 풍부한 계조와 깊이 있는 색감을 표현하여, 일상 속 스냅 사진에 매력적인 분위기를 더할 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,빈티지,색감,대비,필름\n[Moods] 따뜻한,빈티지,선명한,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Push/Pull Process: 0EV, Dynamic Range DR100, Grain Effect Weak, WB As Shot, WB Shift R0 B0, Highlight Tone –2, Shadow Tone -1, Color +4, Sharpness +4, Noise Reduction -4',
+  },
+  {
+    id: '813',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 빈티지하고 다큐멘터리적인 느낌을 강조합니다. 강한 그레인 효과와 높은 샤프니스 설정은 사진에 거친 질감을 더하고, 하이라이트와 섀도우 톤 조절을 통해 드라마틱한 대비를 연출합니다. 흑백 사진으로도 훌륭한 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,다큐멘터리,대비,흑백,필름\n[Moods] 차분한,빈티지,드라마틱,거친\n[ShootingTypes] snap,documentry\n[Settings] Push/Pull Process: 0EV\r\nDynamic Range DR100\r\nGrain Effect Strong\r\nWB Auto\r\nWB Shift R0 B0\r\nHighlight Tone -1\r\nShadow Tone +2\r\nColor -1\r\nSharpness +4\r\nNoise Reduction 0',
+  },
+  {
+    id: '814',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 부드러운 색감과 강렬한 색상 대비를 통해 깊이 있는 분위기를 연출합니다. 특히, 파란색 계열의 색상을 강조하여 몽환적이고 빈티지한 느낌을 자아내며, 일상적인 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,다큐멘터리,색감,대비\n[Moods] 차분한,몽환적인,드라마틱,빈티지,따뜻한\n[ShootingTypes] snap,daily\n[Settings] CCfx strong\r\nCCfx Blue strong\r\nWB auto R -2 B 2\r\nDR200\r\nH 0, S +4\r\nColor -4\r\nNR -4',
+  },
+  {
+    id: '815',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 분위기를 연출합니다. DR400 설정은 하이라이트와 섀도우의 디테일을 살려 드라마틱한 이미지를 만들어주며, 따뜻한 색감과 대비를 통해 고전적인 느낌을 더합니다. 일상적인 스냅 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,다큐멘터리,클래식,대비,색감\n[Moods] 차분한,빈티지,드라마틱,고전적인\n[ShootingTypes] documentry,snap\n[Settings] DR 400\r\nHighlight: -1\r\nShadox:+2\r\nColor:+1\r\nWB Auto, WR +2, WB -2',
+  },
+  {
+    id: '816',
+    pageContent:
+      '[Summary] 이 레시피는 로모그래피 필름의 독특한 색감과 빈티지한 감성을 재현합니다. DR400과 하이라이트 설정을 통해 풍부한 계조와 강렬한 대비를 표현하며, 섀도우와 색상 조절을 통해 부드러우면서도 몽환적인 분위기를 연출합니다. 일상 스냅이나 빈티지한 감성을 담은 사진에 적합합니다.\n[Base Film Simulation] Velvia\n[Keywords] 빈티지,로모,색감,대비,필름\n[Moods] 따뜻한,몽환적인,레트로,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2 (Hard)\r\nShadow: 0 (Standard)\r\nColor: -2 (Low)\r\nSharpness: 0 (Standard)\r\nNoise Reduction: -2 (Low)\r\nWB: Cloudy/Shade, -3 Red & +7 Blue\r\nISO: Auto, up to ISO 1600\r\nExposure Compensation: 0 to +1/3 (typically)',
+  },
+  {
+    id: '817',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 색감과 대비를 통해 독특하고 빈티지한 분위기를 연출합니다. 특히, 하이라이트와 섀도우를 강조하여 드라마틱한 느낌을 주며, 크로스 프로세스 특유의 색감 변화를 재현합니다. 일상 스냅 사진에 활용하면 특별한 감성을 더할 수 있습니다.\n[Base Film Simulation] Provia\n[Keywords] 크로스 프로세스,컬러,대비,빈티지,선명함\n[Moods] 강렬한,드라마틱,빈티지,독특한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +2 (Hard)\r\nShadow: +2 (Hard)\r\nColor: +2 (High)\r\nSharpness: -1 (Medium-Soft)\r\nNoise Reduction: -2 (Low)\r\nWB: Auto, -3 Red & -9 Blue\r\nISO: Auto, up to ISO 1600\r\nExposure Compensation: +1/3 (typically)',
+  },
+  {
+    id: '818',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션을 기반으로 하여, 자연의 풍경을 더욱 생생하고 강렬하게 담아낼 수 있도록 설계되었습니다. 특히, 선명한 색감과 깊이 있는 대비, 그리고 미세한 필름 그레인이 더해져, 잊을 수 없는 순간들을 드라마틱하게 기록할 수 있습니다. 마치 한 폭의 그림처럼, 기억 속에 오래도록 간직될 사진을 만들어 보세요.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,강렬한,선명한,필름\n[Moods] 생동감,극적인,강렬한,선명한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: -1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: +4\r\nClarity: +5\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWB: Auto, +1 Red & -1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '819',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬함과 컬러의 대비를 절묘하게 섞어, 마치 오래된 영화의 한 장면을 보는 듯한 느낌을 줍니다. 특히, 빛과 그림자의 극적인 연출을 통해 피사체의 질감을 강조하고, 잊혀져 가는 과거의 기억을 불러일으키는 듯한 사진을 만들어낼 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 고대비,흑백,필름,빈티지,드라마틱\n[Moods] 강렬한,거친,드라마틱한,차가운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: +2\r\nShadow: +4\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: +3\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Strong\r\nWB: Daylight, -1 Red & +1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '820',
+    pageContent:
+      '[Summary] 이 레시피는 다큐멘터리 사진에 적합하며, 클래식 네거티브 필름 시뮬레이션을 기반으로 빈티지하고 차분한 분위기를 연출합니다. 약한 그레인 효과와 색상 크롬, 그리고 톤 조절을 통해 부드러우면서도 깊이 있는 색감과 질감을 표현하여, 일상 속의 특별한 순간들을 따뜻하게 담아낼 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 다큐멘터리,빈티지,필름,클래식,질감\n[Moods] 차분한,빈티지한,사실적인,따뜻한\n[ShootingTypes] documentry,snap\n[Settings] DR: AUTO\r\nGrain: Weak Large\r\nColor Chrome: Weak\r\nColor Chrome Blue: Off\r\nWB: Auto, Shift 0\r\nTone Curve: H -1, S 0\r\nColor: -1\r\nSharpness: 0\r\nNoise Reduction: -2\r\nClarity: +2',
+  },
+  {
+    id: '821',
+    pageContent:
+      '[Summary] 이 레시피는 다큐멘터리 사진에 적합하며, 클래식 크롬 필름 시뮬레이션을 기반으로 빈티지하면서도 차분한 분위기를 연출합니다. 약한 그레인과 파란색 계열의 색상 강조는 사진에 깊이와 따뜻함을 더하여, 기록적인 순간들을 더욱 매력적으로 담아낼 수 있게 해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 다큐멘터리,빈티지,클래식,색감,필름\n[Moods] 차분한,빈티지한,사실적인,따뜻한\n[ShootingTypes] documentry,snap\n[Settings] DR: AUTO\r\nGrain: Weak Large\r\nColor Chrome: Off\r\nColor Chrome Blue: Weak\r\nWB: Auto, Shift 0\r\nTone Curve: H +1, S 0\r\nColor: +2\r\nSharpness: 0\r\nNoise Reduction: -2\r\nClarity: +2',
+  },
+  {
+    id: '822',
+    pageContent:
+      '[Summary] 이 레시피는 오래된 사진첩을 펼쳐보는 듯한 아련함과 따뜻함을 선사합니다. 강렬한 그레인과 세피아 톤은 시간의 흐름을 담아내며, 잊혀져 가는 추억을 불러일으키는 듯한 인상을 줍니다. 일상 속 소중한 순간들을 빈티지 감성으로 기록하기에 적합합니다.\n[Base Film Simulation] Sepia\n[Keywords] 빈티지,흑백,세피아,필름,질감\n[Moods] 따뜻한,고풍스러운,향수를 불러일으키는,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range DR400\r\nHighlight & Shadow: +3\r\nGrain: Strong, Large\r\nColor Chrome Effect & Color Chrome Effect Blue: Off\r\nClarity: +2\r\nSharpening: -2\r\nNoise Reduction: -4',
+  },
+  {
+    id: '823',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 Superia 1600 필름의 특징을 살려, 강렬한 색감과 거친 입자, 그리고 톤 대비를 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 빛이 강한 야외나 역광 상황에서 인상적인 사진을 만들 수 있습니다. 붉은 색감과 푸른 색감의 조화는 독특한 분위기를 더합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,색감,선명함,그레인\n[Moods] 따뜻한,강렬한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: +2\r\nColor: -3\r\nNoise Reduction: -4\r\nSharpening: -1\r\nClarity: -4\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWB: Daylight, +3 Red & +1 Blue\r\nISO: 1600 to 6400',
+  },
+  {
+    id: '824',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬을 기반으로, 강렬한 색상과 푸른색 강조를 통해 빈티지하면서도 선명한 이미지를 연출합니다. DR400 설정은 하이라이트와 섀도우 디테일을 살려 풍부한 표현력을 더하며, 따뜻하고 생생한 색감은 사진에 극적인 분위기를 부여합니다. 일상 스냅이나 풍경 사진에 활용하면 좋은 결과를 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,선명한,푸른색 강조,빈티지,색감\n[Moods] 따뜻한,선명한,생생한,극적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic : DR400\r\nGrain : Weak\r\nGrain Size : Small\r\nChrome FX : Strong\r\nBlue FX : Strong\r\nWB : AUTO\r\nWB shift : R:5 B:-6\r\nH Curve : 0\r\nS Curbe : +2\r\nColor : +3\r\nDetail : +2\r\nNR : -4\r\nClarity : +2',
+  },
+  {
+    id: '825',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 부드러운 색감과 강한 그레인 효과를 통해 빈티지한 분위기를 연출합니다. 특히, 섀도우를 강조하고 노이즈를 줄여 차분하면서도 깊이 있는 이미지를 만들어낼 수 있습니다. 따뜻한 색감과 대비를 통해 일상 속 특별한 순간들을 담아보세요.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,클래식,대비,따뜻함\n[Moods] 따뜻한,차분한,빈티지,클래식\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: 0\r\nShadow: -2\r\nColor: -1\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Strong\r\nWB: Daylight, +2 Red & -3 Blue\r\nISO: 200\r\nExposure Compensation: -1/3',
+  },
+  {
+    id: '826',
+    pageContent:
+      '[Summary] 이 레시피는 차분한 청록색 톤과 부드러운 그림자를 통해 영화적인 분위기를 연출합니다. 특히, 야간 촬영이나 인물 사진에서 몽환적이면서도 드라마틱한 느낌을 주며, 빈티지한 감성을 더해줍니다. 마치 오래된 영화의 한 장면을 보는 듯한 인상을 줍니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 시네마틱,청록색,빈티지,드라마틱,필름\n[Moods] 몽환적인,차가운,드라마틱,신비로운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +3\r\nColor: -3\r\nNoise Reduction: -3\r\nSharpening: -1\r\nGrain Effect: Weak\r\nWB: 4500K, +2 Red & -8 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '827',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 Reala 필름을 연상시키는 톤과 색감을 재현하며, Classic Negative 필름 시뮬레이션을 기반으로 선명하고 디테일한 이미지를 제공합니다. 특히, 푸른색 계열의 색상을 강조하여 더욱 생동감 넘치는 사진을 연출할 수 있습니다. 일상 스냅이나 풍경 사진에 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,레알라,선명한,색감,디테일\n[Moods] 선명한,화사한,생동감있는,깨끗한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: -1\r\nColor: +0\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Strong\r\nWB: Daylight, 0 Red & 0 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +1 (typically)',
+  },
+  {
+    id: '828',
+    pageContent:
+      '[Summary] Kodak Tri-X 400 필름의 흑백 감성을 재현하여, 강렬한 콘트라스트와 거친 질감을 통해 드라마틱한 분위기를 연출합니다. 특히, 흑백 사진 특유의 빈티지한 매력을 극대화하여, 깊이 있는 표현을 가능하게 합니다. 일상 속 스냅 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,빈티지,콘트라스트,질감\n[Moods] 드라마틱,거친,빈티지,강렬한\n[ShootingTypes] snap,documentry\n[Settings] Acros (+Y, +R, +G)\r\nDynamic Range: DR200\r\nHighlight: 0\r\nShadow: +3\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity: +4\r\nGrain Effect: Strong, Large\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Off\r\nWB: Daylight,+9 Red & -9 Blue\r\nISO: ISO 1600 – 12800\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '829',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 필름 특유의 질감을 살려 빈티지한 감성을 표현합니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 적합하며, 아련하고 몽환적인 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 빈티지,따뜻함,부드러움,색감,필름\n[Moods] 따뜻한,빈티지,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] DR100\r\nWhitebalance : neutral\r\nWB Shift : R7 B-7\r\nColor Chrome Strong\r\nHighlight; -2\r\nShadow: -1\r\nColor -4\r\nSharpnes -4\r\nNR -4\r\nGrain Strong\r\nLMO On',
+  },
+  {
+    id: '830',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 인물의 섬세한 감정을 담아내기 위한 레시피입니다. 부드러운 그림자와 하이라이트, 그리고 적절한 선명함은 인물 사진에 깊이와 입체감을 더해주며, 흑백 특유의 클래식한 분위기를 연출합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,인물,모노크롬,대비,클래식\n[Moods] 차분한,고전적인,드라마틱,빈티지\n[ShootingTypes] portrait\n[Settings] Monochrome Green\r\nISO: 800\r\nDynamic Range: DR100\r\nWB: Auto\r\nColour: 0\r\nSharpness: 1\r\nHighlight: -1\r\nShadow: -1\r\nNoise: 0',
+  },
+  {
+    id: '831',
+    pageContent:
+      '[Summary] 이 레시피는 흑백으로 표현된 풍경 사진에 적합하며, 자연의 웅장함과 디테일을 강조합니다. 선명한 묘사와 적절한 대비를 통해 흑백 사진 특유의 고전적이고 드라마틱한 분위기를 연출할 수 있습니다. 특히, 자연의 웅장함을 담아내기에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,풍경,모노크롬,대비,디테일\n[Moods] 차분한,고전적인,드라마틱한,선명한\n[ShootingTypes] landscape\n[Settings] Monochrome Red\r\nISO: 800\r\nDynamic Range: DR100\r\nWB: Auto\r\nColour: 0\r\nSharpness: 1\r\nHighlight: 0\r\nShadow: 0\r\nNoise: 0',
+  },
+  {
+    id: '832',
+    pageContent:
+      '[Summary] 이 레시피는 Pro Neg. High 필름 시뮬레이션을 기반으로 인물 사진에 적합하도록 설계되었습니다. DR200 설정을 통해 하이라이트와 섀도우를 부드럽게 처리하여 자연스러운 피부톤과 함께 적절한 대비를 제공하며, 선명도를 약간 높여 디테일을 살립니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,대비,선명함,피부톤,클래식\n[Moods] 차분한,선명한,자연스러운,클래식한\n[ShootingTypes] portrait\n[Settings] ISO: 400\r\nDynamic Range: DR200\r\nWB: Auto\r\nColour: 0\r\nSharpness: 1\r\nHighlight: -1\r\nShadow: -2\r\nNoise: 0',
+  },
+  {
+    id: '833',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여, 풍경 사진에 적합하도록 고안되었습니다. DR200 설정은 하이라이트와 섀도우의 디테일을 살리고, 색상과 선명도를 조절하여 자연스러운 색감과 뚜렷한 이미지를 동시에 표현합니다. 특히, 대비가 강한 풍경 사진에서 그 진가를 발휘할 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 풍경,대비,선명함,색감,디테일\n[Moods] 선명한,극적인,강렬한\n[ShootingTypes] landscape\n[Settings] ISO: 400\r\nDynamic Range: DR200\r\nWB: Auto\r\nColour: -1\r\nSharpness: 1\r\nHighlight: -1\r\nShadow: -2\r\nNoise: 0',
+  },
+  {
+    id: '834',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여, 자연스러운 색감과 부드러운 톤을 강조합니다. 하이라이트와 섀도우를 조절하여 풍경의 디테일을 살리고, 선명도를 더해 맑고 깨끗한 이미지를 연출합니다. 일상적인 풍경 사진에 적합하며, 편안하고 긍정적인 분위기를 담아낼 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 풍경,자연,선명함,부드러움,색감\n[Moods] 차분한,자연스러운,선명한\n[ShootingTypes] landscape,daily\n[Settings] ISO: 200\r\nDynamic Range: DR100\r\nWB: Auto\r\nColour: -1\r\nSharpness: 1\r\nHighlight: -1\r\nShadow: -2\r\nNoise: 0',
+  },
+  {
+    id: '835',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 표준 필름 시뮬레이션인 Provia를 기반으로 하여, 자연스럽고 선명한 색감의 사진을 제공합니다. 일상적인 스냅 사진이나 풍경 사진에 적합하며, 과장되지 않은 깔끔한 톤을 선호하는 분들에게 좋은 선택이 될 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 표준,자연스러운,일상,선명함,풍경\n[Moods] 자연스러운,선명한,깔끔한\n[ShootingTypes] snap,daily\n[Settings] ISO: AUTO\r\nDynamic Range: DR100\r\nWB: Auto\r\nColour: 0\r\nSharpness: 0\r\nHighlight: 0\r\nShadow: 0\r\nNoise: 0',
+  },
+  {
+    id: '836',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 Tri-X 400 필름의 질감과 흑백의 강렬함을 재현하여, 거칠고 드라마틱한 흑백 사진을 만들어줍니다. 강한 그레인과 섀도우 톤 조절을 통해 빈티지하면서도 깊이 있는 톤을 표현하며, 다큐멘터리나 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,빈티지,모노크롬,질감\n[Moods] 거친,드라마틱,클래식,강렬한\n[ShootingTypes] documentry,snap\n[Settings] Dynamic range: 200\r\nGrain: STRONG\r\nColor chrome: STRONG\r\nWB: DAYLIGHT\r\nWB Shift: R:9 B-9\r\nHighlight tone: 0\r\nShadow tone: +3\r\nSharpness: +1\r\nNoise reduction: -4\r\n\r\nSofter development:\r\n——————————————\r\nHighlight tone: -1\r\nShadow tone: +2\r\n\r\nHarder development:\r\n——————————————\r\nHighlight tone: +1\r\nShadow tone: +4',
+  },
+  {
+    id: '837',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하면서도 선명한 색감과 필름 특유의 질감을 살려줍니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하며, 파란색 계열의 색상을 강조하여 쨍한 느낌을 더합니다. 일상 스냅이나 인물 사진에 적합하며, 빈티지한 감성을 더해줍니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,클래식,색감,인물,선명함\n[Moods] 따뜻한,선명한,빈티지,필름\n[ShootingTypes] snap,daily\n[Settings] DR : auto\r\nWB: Auto Ambience Priority\r\nWB Color Shift: +2 R, -2 B\r\nHighlights: -2\r\nShadows: -0.5\r\nColor: +2\r\nSharpness: -2\r\nNr: -4\r\nColor chrome effect: Strong\r\nColor chrome FX blue: Strong\r\nClarity: 0\r\nExp comp: 0 to ⅔',
+  },
+  {
+    id: '838',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현을 통해 인물의 개성과 감정을 강조합니다. 부드러운 톤과 적절한 대비는 고전적인 흑백 사진의 매력을 재현하며, 인물의 섬세한 표정과 감정을 더욱 돋보이게 합니다. 흑백 인물 사진을 위한 완벽한 선택입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,인물,모노크롬,대비,클래식\n[Moods] 차분한,고전적인,드라마틱한,세련된\n[ShootingTypes] portrait\n[Settings] Monochrome G\r\nDR100\r\nISO: 200\r\nWB: Auto\r\nColour: 0\r\nSharpness: 1\r\nHighlight: -1\r\nShadow: -1\r\nNR: 0',
+  },
+  {
+    id: '839',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 풍경 사진을 위한 레시피입니다. 모노크롬 필름 시뮬레이션과 섬세한 설정은 자연의 웅장함과 디테일을 강조하며, 차분하면서도 드라마틱한 분위기를 연출합니다. 특히, 대비가 돋보이는 풍경 사진에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,풍경,모노크롬,대비,디테일\n[Moods] 차분한,고독한,드라마틱,선명한\n[ShootingTypes] landscape\n[Settings] Monochrome R\r\nDR100\r\nISO: 200\r\nWB: Auto\r\nColour: 0\r\nSharpness: 1\r\nHighlight: 0\r\nShadow: 0\r\nNR: 0',
+  },
+  {
+    id: '840',
+    pageContent:
+      '[Summary] 이 레시피는 인물 사진에 최적화되어 있으며, Pro Neg. High 필름 시뮬레이션을 기반으로 하여 자연스러운 피부톤과 적절한 대비를 제공합니다. 하이라이트와 섀도우를 조절하여 부드러우면서도 깊이 있는 톤을 연출하며, 선명도를 약간 높여 인물의 디테일을 살립니다. 차분하고 자연스러운 분위기를 원하는 인물 사진에 적합합니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,선명함,대비,피부톤,클래식\n[Moods] 차분한,선명한,자연스러운\n[ShootingTypes] portrait\n[Settings] DR200\r\nISO: 400\r\nWB: Auto\r\nColour: 0\r\nSharpness: 1\r\nHighlight: -1\r\nShadow: -2\r\nNR: 0',
+  },
+  {
+    id: '841',
+    pageContent:
+      '[Summary] 이 레시피는 풍경 사진에서 높은 대비와 선명한 디테일을 추구하며, 차갑고 사실적인 분위기를 연출합니다. Astia 필름 시뮬레이션과 DR200 설정을 통해 하이라이트와 섀도우의 디테일을 살리고, 샤프니스를 더하여 풍경의 웅장함을 강조합니다.\n[Base Film Simulation] Astia\n[Keywords] 풍경,대비,선명한,색감,디테일\n[Moods] 선명한,극적인,차가운,사실적인\n[ShootingTypes] landscape\n[Settings] DR200\r\nISO: 400\r\nWB: Auto\r\nColour: -1\r\nSharpness: 1\r\nHighlight: -1\r\nShadow: -2\r\nNR: 0',
+  },
+  {
+    id: '842',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여, 자연스러운 색감과 부드러운 톤을 강조합니다. 하이라이트와 섀도우를 조절하여 풍경 사진에 적합한, 차분하고 따뜻한 분위기를 연출합니다. 일상 속 풍경을 부드럽고 따뜻하게 담아내기에 좋은 레시피입니다.\n[Base Film Simulation] Astia\n[Keywords] 풍경,자연,부드러움,색감,빈티지\n[Moods] 따뜻한,차분한,자연스러운\n[ShootingTypes] landscape,daily\n[Settings] DR100\r\nISO: 200\r\nWB: Auto\r\nColour: -1\r\nSharpness: 1\r\nHighlight: -1\r\nShadow: -2\r\nNR: 0',
+  },
+  {
+    id: '843',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 표준 필름 시뮬레이션인 Provia를 기반으로 하여, 자연스럽고 선명한 색감의 이미지를 제공합니다. 일상적인 스냅 사진이나 풍경 사진에 적합하며, 과장되지 않은 현실적인 표현을 추구하는 사용자에게 적합합니다.\n[Base Film Simulation] Provia\n[Keywords] 표준,선명함,자연스러움,일상\n[Moods] 차분한,자연스러운,선명한\n[ShootingTypes] daily,snap\n[Settings] DR100\r\nISO: 200\r\nWB: Auto\r\nColour: 0\r\nSharpness: 0\r\nHighlight: 0\r\nShadow: 0\r\nNR: 0',
+  },
+  {
+    id: '844',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 따뜻한 톤으로, 마치 필름 카메라로 촬영한 듯한 빈티지한 느낌을 선사합니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하며, 몽환적인 분위기를 연출하여 기억 속에 오래도록 간직하고 싶은 순간들을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,인물,따뜻한,부드러운,빈티지\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: -1\r\nShadow: -2\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: +2\r\nGrain Effect: Strong, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWB: Daylight, +3 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '845',
+    pageContent:
+      '[Summary] 이 레시피는 숲의 싱그러움과 따스함을 담아내어, 자연의 아름다움을 부드럽고 빈티지한 감성으로 표현합니다. 특히, 햇살 가득한 숲 속 풍경이나, 고요한 자연의 모습을 담기에 적합합니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 숲,자연,따뜻한,빈티지,필름\n[Moods] 따뜻한,차분한,몽환적인,빈티지\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range 200\r\nGrain Off\r\nWB Auto -3 Red -6 Blue\r\nHighlight -2 Shadow 0 Colour -4 Sharpness -2 Noise Reduction -4',
+  },
+  {
+    id: '846',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 함께, 영화 같은 분위기를 연출하여 인물 사진에 특히 잘 어울립니다. 은은한 하이라이트와 섀도우, 그리고 약간의 채색으로 아련하고 빈티지한 감성을 더해줍니다. 일상 속 특별한 순간들을 감성적으로 기록하기에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,부드러움,따뜻함,빈티지,인물\n[Moods] 따뜻한,차분한,몽환적인,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: +2 (High)\r\nShadow: +1 (Medium-High)\r\nColor: +2 (High)\r\nSharpness: +1 (Medium-High)\r\nNoise Reduction: -2 (Low)\r\nWB: Auto, +6 Red & -7 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '847',
+    pageContent:
+      '[Summary] 후지필름 Superia 100 필름을 연상시키는 이 레시피는, 따뜻하고 부드러운 색감과 함께 은은한 필름 그레인, 그리고 약간의 선명함으로 아련한 분위기를 연출합니다. 일상 속 소중한 순간들을 빈티지한 감성으로 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,색감,선명함,따뜻함\n[Moods] 따뜻한,빈티지,선명한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: -1\r\nShadow: -2\r\nColor: +1\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -2\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWB: Daylight, 0 Red & -1 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '848',
+    pageContent:
+      '[Summary] 이 레시피는 차분한 에테르나 필름 시뮬레이션을 기반으로, 부드러운 입자와 독특한 청록색 색감으로 몽환적인 분위기를 연출합니다. 하이라이트와 섀도우의 섬세한 조절을 통해, 빈티지하면서도 세련된 이미지를 만들어낼 수 있습니다. 특히, 일상적인 스냅 사진이나 풍경 사진에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,청록색,빈티지,필름,몽환적인\n[Moods] 몽환적인,차가운,신비로운,세련된\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -2\r\nShadow: +4\r\nColor: -1\r\nNoise Reduction: -4\r\nSharpening: -2\r\nClarity: -5\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Strong\r\nWB: 4550K, +1 Red & -9 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '849',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 부드럽고 빈티지한 색감과 은은한 그레인 효과를 통해 아련한 분위기를 연출합니다. 하이라이트 톤 조절을 통해 대비를 살짝 더하여, 일상 속 스냅 사진에 적합한 따뜻하고 차분한 느낌을 줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,스냅,필름\n[Moods] 따뜻한,차분한,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] DR AUTO\r\nHighlight Tone = +1\r\nColor = -1\r\nGrain effect = Weak',
+  },
+  {
+    id: '850',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션의 특징을 살려, 풍경 사진에 적합한 선명하고 강렬한 색감을 표현합니다. 강한 그레인 효과는 사진에 아날로그적인 질감을 더하여, 여행의 순간들을 더욱 드라마틱하게 담아낼 수 있게 해줍니다.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,풍경,여행,선명한,강렬한\n[Moods] 생동감,강렬한,극적인\n[ShootingTypes] landscape,snap\n[Settings] DR AUTO\r\nGrain effect = Strong',
+  },
+  {
+    id: '851',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 대표적인 필름 시뮬레이션인 Provia를 기반으로 하여, 맑고 깨끗한 풍경 사진을 담아내기에 적합합니다. 자연스러운 색감과 디테일을 살려 일상 속의 아름다움을 포착하는 데에 탁월한 선택이 될 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 풍경,선명한,자연스러운,색감,일상\n[Moods] 선명한,자연스러운,화사한,깔끔한\n[ShootingTypes] landscape,daily\n[Settings] DR AUTO',
+  },
+  {
+    id: '852',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 거친 질감을 통해 도시의 숨결을 담아내고자 합니다. 특히, 그림자가 강조된 톤 설정은 드라마틱한 분위기를 연출하며, 스트리트 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,스트리트,질감,대비\n[Moods] 강렬한,거친,드라마틱,도시적인\n[ShootingTypes] snap,documentry\n[Settings] Monochrome G\r\nDR 100\r\nShadow Tone = +4\r\nHighlight Tone = +2\r\nGrain effect = Strong',
+  },
+  {
+    id: '853',
+    pageContent:
+      '[Summary] 이 흑백 레시피는 인물의 깊이 있는 표정과 섬세한 감정을 담아내기에 적합합니다. Acros 필름 시뮬레이션과 DR Priority AUTO 설정을 통해 부드러우면서도 강렬한 흑백 이미지를 연출하며, 인물의 개성과 분위기를 더욱 돋보이게 합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,인물,모노크롬,클래식,대비\n[Moods] 차분한,고전적인,드라마틱한,강렬한\n[ShootingTypes] portrait\n[Settings] Acros G\r\nDR Priority AUTO',
+  },
+  {
+    id: '854',
+    pageContent:
+      '[Summary] 이 레시피는 인물 사진에 최적화되어 있으며, Pro Neg. High 필름 시뮬레이션을 기반으로 하여 부드러운 피부톤과 강한 대비를 동시에 표현합니다. 스튜디오 촬영이나, 인물의 개성을 선명하게 담아내고자 할 때 유용하며, 세련되고 깊이 있는 인물 사진을 연출할 수 있습니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,선명함,대비,피부톤,스튜디오\n[Moods] 선명한,강렬한,입체적인,세련된\n[ShootingTypes] portrait\n[Settings] DR\r\nPriority AUTO',
+  },
+  {
+    id: '855',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 몽환적인 분위기를 연출하여, 인물 사진에 특히 잘 어울릴 것입니다. Eterna 필름 시뮬레이션과 DR400 설정은 부드러운 계조와 함께 하이라이트와 섀도우의 디테일을 살려주며, 따뜻하고 포근한 느낌을 더해줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 부드러움,파스텔톤,몽환적인,인물,따뜻함\n[Moods] 따뜻한,몽환적인,부드러운\n[ShootingTypes] portrait,daily\n[Settings] DR 400\r\nColor +2',
+  },
+  {
+    id: '856',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Negative 필름 시뮬레이션을 기반으로 하여, 따뜻하면서도 빈티지한 색감과 필름 특유의 질감을 살린 사진을 만들어줍니다. 특히, 일상 스냅 사진에서 매력적인 결과물을 얻을 수 있으며, 톤 조정과 색상 보정을 통해 더욱 깊이 있는 표현이 가능합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식,빈티지,필름,색감,스냅\n[Moods] 따뜻한,빈티지한,선명한,클래식한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: 0\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: 0\r\nClarity: +2\r\nGrain Effect: Weak, Large\r\nColor Chrome Effect: Weak\r\nColor Chrome Effect Blue: Weak\r\nWB: Auto, +4 Red & -4 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '9',
+    pageContent:
+      '[Summary] 이 레시피는 마치 오래된 필름 카메라로 촬영한 듯한 빈티지한 감성을 선사합니다. 부드러운 색감과 은은한 그레인, 그리고 파란색 강조를 통해 몽환적이면서도 따뜻한 분위기를 연출하며, 특히 일상 스냅 사진에 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,따뜻한,몽환적인,색감\n[Moods] 따뜻한,몽환적인,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: 2 Red, -9 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: -2\r\nColor: -4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -4\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '86',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 질감을 통해 아련한 분위기를 연출합니다. 특히 인물 사진에서 부드러운 피부톤과 은은한 색감 표현이 돋보이며, 아날로그 감성을 자극하는 매력적인 결과물을 선사할 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 빈티지,아날로그,인물,따뜻함,필름\n[Moods] 따뜻한,빈티지한,부드러운,아련한\n[ShootingTypes] snap,portrait\n[Settings] Grain Effect: Strong, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto White Priority\r\nWB Shift: 5 Red, -5 Blue\r\nDynamic Range: DR100\r\nHighlights: -1\r\nShadows: -1\r\nColor: -2\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: 0',
+  },
+  {
+    id: '87',
+    pageContent:
+      '[Summary] 이 레시피는 차가운 겨울 숲의 풍경을 부드럽고 따뜻하게 담아내어, 마치 꿈결 같은 분위기를 연출합니다. 은은한 색감과 섬세한 디테일은 몽환적인 분위기를 더하며, 파란색 강조는 차가운 겨울의 느낌을 더욱 강조합니다.\n[Base Film Simulation] Eterna\n[Keywords] 겨울,숲,따뜻함,몽환,파스텔\n[Moods] 따뜻한,몽환적인,부드러운,차분한\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: 7000K\r\nWB Shift: 0 Red, 7 Blue\r\nDynamic Range: DR200\r\nHighlights: 1\r\nShadows: 1\r\nColor: 4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: -4\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '88',
+    pageContent:
+      '[Summary] 이 레시피는 차갑고 신비로운 분위기를 연출하며, 마치 물 속에 잠긴 듯한 몽환적인 느낌을 선사합니다. 푸른색 계열의 색감이 강조되어 시원하고 청량한 느낌을 주며, 영화 같은 분위기를 자아냅니다. 특히, 자연 풍경이나 스냅 사진에 활용하면 독특한 감성을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,차가운,청량한,몽환적인,필름\n[Moods] 차가운,몽환적인,신비로운,청량한\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Shade\r\nWB Shift: -3 Red, -3 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: -2\r\nColor: -3\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +2/3',
+  },
+  {
+    id: '89',
+    pageContent:
+      '[Summary] 이 레시피는 차분하고 미니멀한 분위기를 연출하며, 차가운 색감과 흑백의 대비를 통해 몽환적인 느낌을 자아냅니다. 특히, 푸른색 강조와 필름 그레인은 빈티지한 감성을 더하여 드라마틱한 사진을 만들어 줍니다. 도시의 야경이나 인물 사진에 활용하면 독특한 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,차가운,푸른색,흑백,필름\n[Moods] 차분한,몽환적인,차가운,미니멀,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Fluorescent 3\r\nWB Shift: 0 Red, -4 Blue\r\nDynamic Range: DR100\r\nHighlights: -2\r\nShadows: -2\r\nColor: -3\r\nSharpness: 1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: -1/3',
+  },
+  {
+    id: '90',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 부드러운 그레인과 따뜻한 색감, 그리고 파란색 계열의 미묘한 강조를 통해 아련하고 빈티지한 분위기를 연출합니다. 특히, 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,따뜻한,색감,질감\n[Moods] 따뜻한,빈티지,몽환적인,부드러운\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Large\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: 7200K\r\nWB Shift: 2 Red, 7 Blue\r\nDynamic Range: DR400\r\nHighlights: 0\r\nShadows: -1\r\nColor: -4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '91',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 강렬한 색감과 깊이 있는 파란색, 그리고 높은 다이나믹 레인지를 통해 영화 같은 분위기를 연출합니다. 특히, 따뜻하면서도 드라마틱한 느낌을 주어, 일상적인 스냅 사진에 특별한 감성을 더할 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 시네마틱,빈티지,강렬한,색감,필름\n[Moods] 따뜻한,드라마틱,선명한,강렬한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: 5800K\r\nWB Shift: 1 Red, 2 Blue\r\nDynamic Range: DR400\r\nHighlights: -1\r\nShadows: 1\r\nColor: 4\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +2/3',
+  },
+  {
+    id: '92',
+    pageContent:
+      '[Summary] 이 레시피는 바다, 하늘, 그리고 자연의 풍경을 담기에 적합하며, 차분하고 몽환적인 분위기를 연출합니다. 특히, 푸른색 계열의 색상을 강조하여 시원하고 신비로운 느낌을 주며, 빈티지한 감성을 더해줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,풍경,바다,빈티지,푸른색\n[Moods] 몽환적인,차분한,차가운,신비로운\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Fluorescent 1\r\nWB Shift: -4 Red, -6 Blue\r\nDynamic Range: DR100\r\nHighlights: -1\r\nShadows: -2\r\nColor: -4\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 3\r\nEV suggestion: 0',
+  },
+  {
+    id: '93',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 드라마틱한 분위기를 연출하며, 강렬한 색상과 부드러운 질감을 통해 몽환적인 느낌을 선사합니다. 특히, 빛샘 효과를 극대화하여 빈티지하면서도 독특한 이미지를 만들어낼 수 있습니다. 일상 속 특별한 순간들을 영화처럼 담아보세요.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻함,색감 강조,빈티지,드라마틱\n[Moods] 따뜻한,드라마틱,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Strong\r\nColour Chrome Blue: Strong\r\nWhite Balance: 7500K\r\nWB Shift: 2 Red, 5 Blue\r\nDynamic Range: DR200\r\nHighlights: 1\r\nShadows: -2\r\nColor: 2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -4\r\nEV suggestion: 0',
+  },
+  {
+    id: '94',
+    pageContent:
+      '[Summary] 이 레시피는 새벽녘이나 해 질 녘의 따뜻하고 황홀한 빛을 담아내기 위한 레시피입니다. Classic Negative 필름 시뮬레이션과 섬세한 색상 조정, 그리고 은은한 그레인 효과는 마치 오래된 필름 사진처럼 아련하고 빈티지한 느낌을 선사할 것입니다. 특히, 황금빛 노을 아래 풍경 사진에 매우 적합합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 황금빛,노을,따뜻함,빈티지,필름\n[Moods] 따뜻한,몽환적인,황홀한,아련한\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: 6000K\r\nWB Shift: 4 Red, -5 Blue\r\nDynamic Range: DR200\r\nHighlights: -2\r\nShadows: 0\r\nColor: 4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: -1\r\nEV suggestion: 0',
+  },
+  {
+    id: '857',
+    pageContent:
+      '[Summary] 코닥 필름의 따뜻하고 부드러운 색감을 재현하여, 일상 속 인물과 풍경을 아련하고 빈티지한 무드로 담아낼 수 있는 레시피입니다. 특히, 부드러운 하이라이트와 섀도우 표현은 따뜻한 분위기를 더욱 강조하여, 편안하고 감성적인 사진을 연출합니다.\n[Base Film Simulation] Provia\n[Keywords] 필름,따뜻한,빈티지,인물,부드러움\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] Simulation: Provia\r\nDR : auto(I usually set iso to 200 so it stays at DR100)\r\nWB: Custom1(+1 R, -2 B)\r\nHighlights: -2\r\nShadows: +1\r\nColor: +1\r\nSharpness: -2\r\nNr: -4\r\nExp comp: +⅓ usually',
+  },
+  {
+    id: '858',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 영화 같은 분위기를 연출해 줍니다. 특히 인물 사진에서 하이라이트와 섀도우의 대비를 살려 드라마틱한 느낌을 주며, 몽환적인 분위기를 자아냅니다. 일상 속 특별한 순간들을 필름 사진처럼 기록하고 싶을 때 사용해 보세요.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,따뜻한,빈티지,필름,인물\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] DR : auto\r\nWB: Incadescent(-7 R, +4 B)\r\nHighlights: +4\r\nShadows: +3\r\nColor: +4\r\nSharpness: -2\r\nNr: -4\r\nExp comp: -⅓ to 0',
+  },
+  {
+    id: '859',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 64 필름을 연상시키는 따뜻하고 선명한 색감과 미세한 그레인, 그리고 깊이 있는 색상 표현을 특징으로 합니다. 일상적인 스냅 사진이나 풍경 사진에 활용하면, 아련하면서도 생동감 넘치는 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,선명한,따뜻한,색감\n[Moods] 따뜻한,선명한,활기찬,레트로\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: 0\r\nShadow: 0\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: +1\r\nClarity: +3\r\nGrain Effect: Weak, Small\r\nColor Chrome Effect: Strong\r\nColor Chrome Effect Blue: Weak\r\nWB Daylight, +2 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '860',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감으로, 부드러운 피부톤과 은은한 분위기를 연출합니다. 특히 인물 사진에서 몽환적인 느낌을 주며, 일상적인 스냅 사진에 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,색감,대비,인물,질감\n[Moods] 따뜻한,몽환적인,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] DR : 100\r\nWB: Shade (+2 R, -2 B)\r\nHighlights: +1\r\nShadows: +1\r\nColor: -2\r\nSharpness: 0\r\nNr: -2\r\nExp comp: 0 to ⅓',
+  },
+  {
+    id: '861',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 거친 질감을 통해, 아이슬란드의 광활하고 드라마틱한 풍경을 담아내기 위한 레시피입니다. 특히, 섀도우와 노이즈 리덕션 설정을 통해 흑백의 깊이와 디테일을 살려, 잊을 수 없는 순간들을 포착할 수 있을 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,강렬한,질감,대비,모노크롬\n[Moods] 드라마틱한,강렬한,거친,극적인\n[ShootingTypes] landscape,documentry\n[Settings] Film simulation: Acros + R\r\nDynamic range: DR100 - DR200\r\ngrain effect : strong\r\nWB: Auto (R: 0 B: 0)\r\ntone lights: 0 - -1\r\nshading. Tone: +1 - +2\r\nColor: -\r\nSharpness: +1\r\nNoise reduction: -4\r\nISO: Auto\r\nexposure compensation: manual',
+  },
+  {
+    id: '862',
+    pageContent:
+      '[Summary] 이 레시피는 스튜디오 촬영에 최적화되어, 인물의 디테일과 피부톤을 자연스럽게 표현하면서도 선명하고 깔끔한 결과물을 제공합니다. 하이라이트와 섀도우 톤 조절을 통해 인물에 입체감을 부여하고, 샤프니스를 더하여 뚜렷한 이미지를 연출합니다.\n[Base Film Simulation] Provia\n[Keywords] 인물,스튜디오,선명함,대비,피부톤\n[Moods] 선명한,깔끔한,자연스러운\n[ShootingTypes] portrait\n[Settings] DR: 100\r\nWB: Custom (Calibrated to my studio flashes)\r\nNR: -1\r\nH Tone: 0\r\nS Tone: -1\r\nColor: 0\r\nSharp: +1\r\nGrain: Off',
+  },
+  {
+    id: '863',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 강렬한 대비를 통해 잊혀진 시간의 조각들을 담아냅니다. 은은한 그레인 효과는 사진에 빈티지한 감성을 더하며, 섀도우 톤을 강조하여 드라마틱한 분위기를 연출합니다. 일상 속 스냅 사진이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,빈티지,선명함,대비\n[Moods] 차분한,고전적인,드라마틱,강렬한\n[ShootingTypes] snap,daily\n[Settings] Film simulation: Acros + R\r\nDR: 100\r\nWB: Auto\r\nNR: -3\r\nH Tone: 0\r\nS Tone: +3\r\nColor: -\r\nSharp: +1\r\nGrain: Weak',
+  },
+  {
+    id: '864',
+    pageContent:
+      '[Summary] 이 레시피는 다큐멘터리 사진이나 스냅 사진에 적합하며, 인물과 풍경 모두에 자연스럽고 선명한 톤을 제공합니다. Pro Neg. High 필름 시뮬레이션과 섬세한 설정은 현실적이면서도 매력적인 이미지를 만들어낼 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 다큐멘터리,스냅,인물,선명함,대비\n[Moods] 차분한,사실적인,선명한\n[ShootingTypes] documentry,snap\n[Settings] DR: 100\r\nWB: Auto\r\nH Tone: 0\r\nS Tone: 0\r\nColor: 0\r\nSharp: +1\r\nGrain: Off',
+  },
+  {
+    id: '865',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여 부드럽고 화사한 색감으로 일상 스냅 사진에 적합합니다. 인물 사진의 피부톤을 부드럽게 표현하고, 따뜻하고 자연스러운 분위기를 연출합니다. 전반적으로 편안하고 긍정적인 느낌을 주는 사진을 만들 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,화사함,일상,스냅\n[Moods] 따뜻한,화사한,부드러운,자연스러운\n[ShootingTypes] snap,daily\n[Settings] DR: 100\r\nWB: Auto\r\nNR: -1\r\nH Tone: -1\r\nS Tone: -1\r\nColor: 0\r\nSharp: +1\r\nGrain: Off',
+  },
+  {
+    id: '866',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이와 질감을 살려, 일상 속의 순간들을 드라마틱하고 클래식한 분위기로 담아낼 수 있습니다. 특히, 은은한 그레인 효과와 대비를 통해 흑백 사진 특유의 매력을 극대화하여, 잊을 수 없는 기억을 선사할 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,콘트라스트,질감,클래식\n[Moods] 차분한,고전적인,드라마틱한,선명한\n[ShootingTypes] snap,daily\n[Settings] Film simulation: Acros + G\r\nDR: 100\r\nWB: Auto\r\nNR: -1\r\nH Tone: 0\r\nS Tone: +1\r\nColor: -\r\nSharp: +1\r\nGrain: Weak',
+  },
+  {
+    id: '867',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 느낌을 자아냅니다. 은은한 그레인 효과와 색상, 톤 조절을 통해 다큐멘터리 사진이나 스냅 사진에 적합하며, 과거의 향수를 불러일으키는 듯한 매력을 선사합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,다큐멘터리,차분함,매거진\n[Moods] 차분한,빈티지,고전적인\n[ShootingTypes] documentry,snap\n[Settings] DR: 100\r\nWB: Auto\r\nNR: -1\r\nH Tone: 0\r\nS Tone: +1\r\nColor: +2\r\nSharp: +1\r\nGrain: Weak',
+  },
+  {
+    id: '868',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 빈티지한 색감을 재현하여, 일상 스냅 사진에 향수를 더합니다. 부드러운 그레인과 색상 보정을 통해, 마치 오래된 필름 사진을 보는 듯한 매력적인 결과물을 얻을 수 있습니다. 특히, 햇살 좋은 날의 풍경이나 인물 사진에 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,색감,선명함\n[Moods] 따뜻한,빈티지,선명한,레트로\n[ShootingTypes] snap,daily\n[Settings] Grain: Weak Small\r\nColor: chrome Weak\r\nCC FX Blue: Weak\r\nWB Shift: R:3, B:-4\r\nDR: 200\r\nTone curve: H:+1, S:0\r\nColor: 0\r\nSharpness: +1\r\nNR: -3',
+  },
+  {
+    id: '869',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 부드러운 입자, 그리고 강렬한 색상 대비를 통해 마치 오래된 영화의 한 장면을 보는 듯한 느낌을 줍니다. 특히, 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 드라마틱하게 담아내기에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 필름,따뜻한,빈티지,시네마틱,색감\n[Moods] 따뜻한,빈티지,영화 같은,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: +3\r\nShadow: +4\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nWB: Fluorescent 1 (Daylight Fluorescent), -3 Red & -1 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '870',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 포트라 400 필름의 부드럽고 따뜻한 색감을 후지필름 카메라로 재현합니다. 클래식 크롬 필름 시뮬레이션을 기반으로, 하이라이트와 섀도우를 조절하여 부드러운 톤을 연출하고, 강한 그레인 효과와 색상 크롬 효과로 빈티지한 감성을 더합니다. 인물 사진이나 일상 스냅에 적합하며, 따뜻하고 몽환적인 분위기를 선사합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,포트라,따뜻한,빈티지,인물\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: -1\r\nShadow: -1\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nWB: Daylight, +4 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '871',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 빈티지한 색감을 재현하여, 일상 속의 소중한 순간들을 매력적으로 담아낼 수 있게 해줍니다. 특히, 햇살 좋은 날의 풍경이나 인물 사진에 잘 어울리며, 은은한 그레인 효과와 색상 대비를 통해 아련한 분위기를 연출합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻한,선명한,다큐멘터리\n[Moods] 따뜻한,선명한,레트로,빈티지\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nColor: 0\r\nNoise Reduction: -4\r\nSharpening: +2\r\nGrain Effect: Weak\r\nColor Chrome Effect: Weak\r\nWB: Daylight, +2 Red & -5 Blue\r\nExposure Compensation: +1/3',
+  },
+  {
+    id: '872',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 C200 필름을 연상시키는 따뜻하고 부드러운 색감과 빈티지한 분위기를 연출합니다. 특히, DR400 설정은 풍부한 계조를, Grain Effect와 Sharpness 설정은 필름 특유의 질감을 더해줍니다. 일상 스냅이나 데일리 사진에 적합하며, 아련하고 따뜻한 감성을 담아낼 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 필름,빈티지,따뜻한,부드러운,색감\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] grain efx- weak small\r\ncc fx- off\r\ncc blue fx- off\r\nwb:auto r4 b -6\r\nDR 400\r\nH -2\r\nS +1\r\ncolor -1\r\nsharpness +2\r\nnoise reduction -2',
+  },
+  {
+    id: '873',
+    pageContent:
+      "[Summary] 이 레시피는 코닥 에크타 100 필름의 특징을 재현하여, 맑고 선명하며 따뜻한 색감의 사진을 만들어 줍니다. 특히 인물 사진에서 피부톤을 화사하게 표현하고, 적절한 대비를 통해 생동감 넘치는 결과물을 얻을 수 있습니다. 일상 스냅이나 데일리 사진에 활용하면 좋습니다.\n[Base Film Simulation] Astia\n[Keywords] 선명한,따뜻한,대비,인물,필름\n[Moods] 따뜻한,선명한,활기찬,생동감있는\n[ShootingTypes] snap,daily\n[Settings] DR : auto(I usually set iso to 200 so it stays at DR100)\r\nWB: Kelvin 5900k(-1 R, +3 B)\r\nHighlights: 0\r\nShadows: +1\r\nColor: +3\r\nSharpness: 0\r\nNr: -4\r\nExp comp: usually 0, it's all about contrast and colour:)",
+  },
+  {
+    id: '874',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여 부드럽고 따뜻한 색감과 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 피부톤을 화사하게 표현하며, DR400 설정으로 풍부한 계조를 담아낼 수 있습니다. 전체적으로 몽환적이고 따뜻한 느낌을 주는 사진을 만들 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,따뜻함,빈티지,필름\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait\n[Settings] Image Quality: Fine\r\nPush/Pull +2/3 EV\r\nDynamic Range DR400\r\nGrain Effect OFF\r\nWB As Shot WB\r\nWB Shift R-2 B-3\r\nHighlight Tone -1\r\nShadow Tone -1\r\nColor -2\r\nSharpness -2\r\nNoise Reduction +4',
+  },
+  {
+    id: '875',
+    pageContent:
+      '[Summary] Velvia 필름 시뮬레이션을 기반으로, 강렬한 색감과 높은 대비를 통해 인물과 풍경에 깊이 있는 표현을 더합니다. 하이라이트와 섀도우 톤 조절을 통해 섬세한 디테일을 살리면서도, 따뜻하고 드라마틱한 분위기를 연출합니다. 마치 오래된 필름 사진처럼, 기억 속에 깊이 각인될 듯한 인상을 남깁니다.\n[Base Film Simulation] Velvia\n[Keywords] 인물,풍경,고채도,대비,필름\n[Moods] 따뜻한,선명한,강렬한,드라마틱\n[ShootingTypes] portrait,landscape\n[Settings] Image Quality: Fine\r\nPush/Pull +2/3 EV\r\nDynamic Range DR400\r\nGrain Effect OFF\r\nWB As Shot WB\r\nWB Shift R-2 B-3\r\nHighlight Tone -2\r\nShadow Tone -1\r\nColor -4\r\nSharpness -2\r\nNoise Reduction +4',
+  },
+  {
+    id: '876',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로 따뜻하고 부드러운 색감과 빈티지한 분위기를 연출합니다. DR400 설정은 풍부한 계조를 제공하며, 하이라이트와 섀도우 조절을 통해 섬세한 톤을 표현합니다. 인물 사진이나 스냅 사진에 적합하며, 아련하고 따뜻한 감성을 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,부드러운,색감,인물\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,portrait\n[Settings] Dynamic Range: DR400\r\nHighlight: +1 (Medium-High)\r\nShadow: +1 (Medium-High)\r\nColor: -2 (Low)\r\nSharpness: 0 (Medium)\r\nNoise Reduction: -2 (Low)\r\nWB: 6300K, -3 Red & -2 Blue\r\nISO: Auto, up to ISO 6400',
+  },
+  {
+    id: '877',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 빈티지한 색감을 후지필름 카메라로 재현합니다. DR400 설정은 하이라이트와 섀도우의 디테일을 살리고, Classic Chrome 필름 시뮬레이션은 부드러운 색감과 함께 레트로한 분위기를 연출합니다. 풍경 사진이나 스냅 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻한,선명한,풍경\n[Moods] 따뜻한,선명한,빈티지,레트로\n[ShootingTypes] landscape,snap\n[Settings] Dnamic Range: DR400\r\nHighlight: +2 (High)\r\nShadow: +1 (Medium-High)\r\nColor: 0 (Medium)\r\nSharpness: 0 (Medium)\r\nNoise Reduction: -2 (Low)\r\nWB: Daylight, 0 Red & -3 Blue\r\nISO: Auto, up to ISO 3200',
+  },
+  {
+    id: '878',
+    pageContent:
+      '[Summary] 코닥 포트라 400 필름을 연상시키는 이 레시피는 부드러운 피부톤과 따뜻한 색감으로 인물 사진에 특히 적합합니다. 하이라이트와 샤픈을 조절하여 부드러운 분위기를 연출하며, 일상적인 스냅 사진에도 잘 어울립니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,부드러움,따뜻함,필름,빈티지\n[Moods] 따뜻한,부드러운,빈티지,자연스러운\n[ShootingTypes] portrait,daily\n[Settings] DR : auto\r\nWB: 6300-6700K (-1 R, 0 B)\r\nHighlights: -2\r\nShadows: 0 \r\nColor: 0\r\nSharpness: -2\r\nNr: -2\r\nExp comp: as you like, I usually give it +1, +1⅓',
+  },
+  {
+    id: '879',
+    pageContent:
+      '[Summary] 이 레시피는 1970년대 코닥 필름의 따뜻하고 부드러운 색감을 재현하여, 향수를 불러일으키는 빈티지한 사진을 만들어줍니다. Classic Chrome 필름 시뮬레이션과 강한 Grain Effect, 그리고 색상 보정을 통해, 인물 사진이나 일상 스냅에 특히 잘 어울리는 따뜻하고 매력적인 결과물을 얻을 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,필름,따뜻한,색감,인물\n[Moods] 따뜻한,빈티지,레트로,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -1\r\nShadow: +3\r\nColor: -4\r\nNoise Reduction: -4\r\nSharpening: -4\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nImage Quality: Normal\r\nAspect Ratio: 1:1\r\nWB: 6300K, +6 Red & +3 Blue\r\nISO: 3200 – 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '880',
+    pageContent:
+      '[Summary] 코닥 포트라 160 필름을 연상시키는 이 레시피는 부드럽고 따뜻한 색감으로, 일상 속 인물 사진에 특히 잘 어울립니다. 클래식 크롬 필름 시뮬레이션과 섬세한 설정들이 어우러져, 아련하면서도 빈티지한 감성을 자아낼 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,인물,부드러움,따뜻함,필름\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] snap,daily\n[Settings] WB: Fluorescent Light 1(-1 R, -1 B)\r\nDR : auto\r\nHighlights: -2\r\nShadows: 0 \r\nColor: +2\r\nSharpness: -2\r\nNr: -2\r\nExp comp: +⅔-1⅓',
+  },
+  {
+    id: '881',
+    pageContent:
+      '[Summary] 이 레시피는 거친 질감과 강렬한 콘트라스트를 통해 흑백 필름의 드라마틱한 분위기를 연출합니다. 특히, 어두운 영역을 강조하고 노이즈를 줄여, 빈티지하면서도 고전적인 느낌을 주어 다큐멘터리나 스냅 사진에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,콘트라스트,질감,필름,모노크롬\n[Moods] 드라마틱,강렬한,거친,빈티지,고전적인\n[ShootingTypes] snap,documentry\n[Settings] Monochrome (+Y, +R, +G)\r\nDynamic Range: DR400\r\nHighlight: 0\r\nShadow: +3\r\nGrain: Strong\r\nColor Chrome Effect: Off\r\nToning: 0\r\nSharpening: -3\r\nNoise Reduction: -4\r\nExposure Compensation: +1/3 to +2/3 (typically)\r\nISO 12800',
+  },
+  {
+    id: '882',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감으로, 마치 오래된 영화 필름을 보는 듯한 빈티지한 느낌을 줍니다. 특히 인물 사진이나 일상 스냅에 활용하면, 은은하고 몽환적인 분위기를 연출할 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 시네마틱,부드러운,빈티지,따뜻한,필름\n[Moods] 따뜻한,차분한,부드러운,몽환적인\n[ShootingTypes] snap,daily\n[Settings] DR : Auto\r\nWB: Custom(-1 R, -3 B)\r\nHighlights: -1\r\nShadows: +2\r\nColor: -2\r\nSharpness: -2\r\nNr: -2\r\nExp comp: 0 to +1',
+  },
+  {
+    id: '883',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감으로, 마치 오래된 필름 사진처럼 은은한 분위기를 연출합니다. 인물 사진이나 일상 스냅에 활용하면, 아련하고 빈티지한 감성을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,인물,따뜻한,부드러운,필름\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] portrait,snap\n[Settings] WB Auto(+3 R, -4 B)\r\nDR : auto\r\nHighlights: -2\r\nShadows: -2 \r\nColor: +2\r\nSharpness: -2\r\nNr: -2\r\nExp comp: +1 typically(can go higher in darker conditions)',
+  },
+  {
+    id: '884',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 필름 느낌을 살려, 일상 속 소중한 순간들을 아련하고 빈티지하게 담아낼 수 있도록 해줍니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하고, 몽환적인 분위기를 연출하는 데에 적합합니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 필름,빈티지,따뜻한,색감,인물\n[Moods] 따뜻한,빈티지,부드러운,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Grain: weak\r\nWb: Underwater(- 1 R, -3 B)\r\nHighlights: -2\r\nShadows: +2\r\nColor: +2\r\nSharpness: -2\r\nDR200\r\nExp comp: ⅔ to +1(depending on conditions)',
+  },
+  {
+    id: '885',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 강렬한 그레인 효과를 통해 코닥 골드 200 필름의 특징을 재현합니다. 일상적인 스냅 사진이나 따뜻한 분위기를 담고 싶은 사진에 적합하며, 70년대의 향수를 불러일으키는 빈티지한 느낌을 선사합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 따뜻한,빈티지,필름,노란색,클래식\n[Moods] 따뜻한,레트로,향수,활기찬\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR-Auto\r\nHighlight: -2\r\nShadow: +1\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Strong\r\nColor Chrome Effect: Off\r\nWB: Daylight, +4 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 1/3 (typically)',
+  },
+  {
+    id: '886',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 함께, 코닥 골드 200 필름의 특유의 빈티지한 감성을 재현하고자 합니다. 특히 인물 사진에서 부드러운 피부톤과 은은한 색감으로 아련한 분위기를 연출하며, 일상 스냅 사진에 적합합니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 따뜻한,빈티지,인물,노란색,필름\n[Moods] 따뜻한,빈티지,레트로,부드러운\n[ShootingTypes] snap,daily\n[Settings] Wb: Fluorescent light 1(+4 R, -3 B)\r\nHighlights: -2\r\nShadows: -1\r\nColor: +1\r\nSharpness: -2\r\nDR100\r\nExp comp: 0 to +1(depending on conditions)',
+  },
+  {
+    id: '887',
+    pageContent:
+      '[Summary] 이 레시피는 벨비아 필름 시뮬레이션을 기반으로 하여, 강렬한 색감과 높은 대비를 통해 풍경 사진에 생동감을 불어넣습니다. 여기에 약한 그레인 효과와 색상 크롬 효과가 더해져 빈티지한 감성을 자아내며, 따뜻하고 긍정적인 분위기를 연출합니다. 특히, 자연의 아름다움을 담아내는 데 적합합니다.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,대비,필름,선명함,빈티지\n[Moods] 따뜻한,생생한,강렬한,빈티지\n[ShootingTypes] snap,landscape\n[Settings] Velvia\r\nDynamic Range: DR400\r\nHighlight: +1\r\nShadow: +1\r\nColor: -3\r\nNoise Reduction: -4\r\nSharpening: +1\r\nGrain Effect: Weak\r\nColor Chrome Effect: Weak\r\nWB: Cloudy/Shade, -3 Red & +7 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3',
+  },
+  {
+    id: '888',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 부드러운 색감을 후지필름 특유의 클래식 크롬 필름 시뮬레이션으로 재현합니다. 강한 그레인 효과와 섀도우, 하이라이트 조절을 통해 빈티지하면서도 깊이 있는 인물 사진을 연출할 수 있습니다. 일상 스냅이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻함,필름,색감,인물\n[Moods] 따뜻한,빈티지,부드러운,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +2\r\nColor: -2\r\nSharpening: +2\r\nNoise Reduction: -4\r\nGrain: Strong\r\nColor Chrome Effect: Off\r\nWB: 6300K, -1 Red & -4 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +2/3 to + 1-1/3 (typically)',
+  },
+  {
+    id: '889',
+    pageContent:
+      '[Summary] Kodachrome 필름의 흑백 버전을 연상시키는 이 레시피는 강렬한 콘트라스트와 풍부한 톤으로 흑백 사진의 매력을 극대화합니다. 특히, 빛과 그림자의 대비를 강조하여 드라마틱하고 빈티지한 느낌을 주며, 흑백 특유의 차분함과 깊이 있는 감성을 표현합니다. 오래된 영화 속 한 장면처럼, 기억 속에 깊이 각인될 흑백 사진을 담아보세요.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,빈티지,모노크롬,콘트라스트\n[Moods] 드라마틱,빈티지,강렬한,차분한\n[ShootingTypes] snap,documentry\n[Settings] Acros+R\r\nDynamic Range: DR200\r\nHighlight: +4\r\nShadow: -2\r\nNoise Reduction: -4\r\nSharpening: +1\r\nGrain Effect: Strong\r\nColor Chrome Effect: Off\r\nToning: 0\r\nWB: AWB, 0 Red & +9 Blue\r\nISO: Auto, ISO 3200 to ISO 12800\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '890',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로 하여, 선명하고 생생한 색감과 함께 따뜻한 분위기를 연출합니다. 특히 풍경 사진에서 돋보이며, 섀도우 설정을 통해 부드러운 톤을 유지하면서도 디테일을 살려줍니다. 일상 스냅 사진에도 활용하기 좋습니다.\n[Base Film Simulation] Provia\n[Keywords] 선명한,풍경,인물,필름,따뜻한\n[Moods] 따뜻한,선명한,활기찬\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: 0\r\nShadow: +2\r\nColor: 0\r\nNoise Reduction: -4\r\nSharpening: +1\r\nGrain Effect: Weak\r\nColor Chrome Effect: Off\r\nWB: Warm-White Fluorescent (2), -1 Red & -3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to +2/3 (typically)',
+  },
+  {
+    id: '891',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 빈티지한 색감과 강렬한 대비를 통해, 마치 오래된 필름 사진을 보는 듯한 느낌을 선사합니다. 특히, 흑백 모드를 함께 사용하여 더욱 드라마틱하고 몽환적인 분위기를 연출할 수 있으며, 일상적인 스냅 사진에 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 빈티지,색감,대비,필름,흑백\n[Moods] 따뜻한,빈티지한,드라마틱한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Exposure 1\r\nPRO Neg. Hi\r\nDynamic Range: DR200\r\nHighlight: +4\r\nShadow: +4\r\nColor: +4\r\nColor Chrome Effect: Strong\r\nGrain: Weak\r\nSharpening: +1\r\nNoise Reduction: -4\r\nWB: Auto, -5 Red & +5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)\r\nExposure 2\r\nAcros\r\nDynamic Range: DR200\r\nHighlight: +4\r\nShadow: +4\r\nTone: +6 (warm)\r\nColor Chrome Effect: Strong\r\nGrain: Weak\r\nSharpening: +1\r\nNoise Reduction: -4\r\nWB: Auto, -5 Red & +5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1 to -3 (typically)',
+  },
+  {
+    id: '892',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 필름 그레인의 조화로 아련한 분위기를 연출합니다. 과다 노출 설정은 부드러운 하이라이트와 섀도우 디테일을 살려 인물 사진에 특히 매력적입니다. 마치 따뜻한 햇살 아래에서 촬영한 듯한, 포근하고 몽환적인 느낌을 선사합니다.\n[Base Film Simulation] Provia\n[Keywords] 필름,따뜻한,부드러운,과다노출,인물\n[Moods] 따뜻한,부드러운,몽환적인,빈티지\n[ShootingTypes] portrait,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: +4\r\nColor: +1\r\nColor Chrome Effect: Off\r\nGrain: Weak\r\nNoise Reduction: -4\r\nSharpening: 1\r\nWB: Auto, +2 Red & +2 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1 2/3 to +2 1/3 (typically)',
+  },
+  {
+    id: '893',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 영화적 색감과 필름 그레인의 조화로, 따뜻하고 빈티지한 분위기를 연출합니다. 하이라이트와 섀도우를 강조하여 드라마틱한 느낌을 더하고, 일상적인 스냅 사진에 특별한 감성을 불어넣어 줄 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,빈티지,필름,따뜻한,색감\n[Moods] 따뜻한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: +4\r\nShadow: +4\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Strong\r\nColor Chrome Effect: Weak\r\nWB: Auto, +5 Red & +5 Blue\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '894',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻한 색감과 강렬한 대비를 통해 생동감 넘치는 사진을 연출합니다. 특히 인물 사진에서 피부톤을 화사하게 표현하면서도, 섀도우와 하이라이트의 조절을 통해 입체감과 깊이감을 더합니다. 필름 그레인 효과는 아날로그적인 감성을 더해줍니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 따뜻한,대비,필름,인물,선명한\n[Moods] 따뜻한,선명한,활기찬,극적인\n[ShootingTypes] portrait,snap\n[Settings] PRO Neg. Std\r\nDynamic Range: DR200\r\nHighlight: +1\r\nShadow:+3\r\nColor: +4\r\nSharpening: +1\r\nNoise Reduction: -4\r\nGrain: Strong\r\nColor Chrome Effect: Off\r\nWB: Auto, -2 Red & -4 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '895',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 아스티아 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감으로 인물 사진에 특화된 레시피입니다. 하이라이트와 섀도우를 살짝 강조하여 부드러우면서도 입체적인 표현을, 색상과 노이즈 감소를 통해 은은하고 몽환적인 분위기를 연출합니다. 특히, 햇살 좋은 날 야외에서 인물 사진을 촬영하면 더욱 좋은 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,따뜻함,빈티지,필름\n[Moods] 따뜻한,부드러운,빈티지,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Film simulation: Astia\r\nDynamic Range: DR200\r\nAuto-WB Shift: +4 Red, -5 Blue\r\nHighlights: +1\r\nShadows: +1\r\nColor: -2\r\nNoise reduction: -2\r\nSharpening: 0\r\nExposure compensation: typically between +1/3 and +2/3',
+  },
+  {
+    id: '896',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로 하여, 따뜻하고 빈티지한 색감과 강렬한 그레인 효과를 통해 아날로그 감성을 극대화합니다. 특히, 인물 사진에서 피부톤을 부드럽게 표현하면서도, 선명한 색감으로 생동감을 더해줍니다. 일상 스냅이나 인물 사진에 적합하며, 따뜻하고 활기찬 분위기를 연출합니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,따뜻한,선명한,인물\n[Moods] 따뜻한,선명한,빈티지,활기찬\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nAuto-WB Shift: +4 Red, -4 Blue\r\nHighlights: +1\r\nShadows: +0\r\nColor: +3 (sometimes I’ll drop it to +1 when I want a less saturated look)\r\nNoise reduction: -4\r\nClarity: 0\r\nSharpening: 0\r\nGrain effect: Strong\r\nGrain size: Large\r\nColor chrome fx: Off\r\nColor chrome blue: Weak\r\nExposure compensation: typically between +1/3 and +1',
+  },
+  {
+    id: '897',
+    pageContent:
+      '[Summary] 이 레시피는 아날로그 감성을 극대화하여, 마치 오래된 사진첩에서 꺼낸 듯한 흑백 사진을 만들어줍니다. 강렬한 대비와 거친 질감은 피사체의 디테일을 살리면서도, 몽환적이고 드라마틱한 분위기를 연출합니다. 특히, 빛과 그림자의 대비가 뚜렷한 풍경이나 인물 사진에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,빈티지,모노톤,거친,대비\n[Moods] 드라마틱,빈티지,거친,강렬한\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR400\r\nHighlight: +3\r\nShadow: +3\r\nNoise Reduction: -4\r\nSharpening: -4\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nToning: -9\r\nWB: Auto\r\nISO: Auto, up to ISO 12800\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '898',
+    pageContent:
+      '[Summary] 이 레시피는 폴라로이드 사진의 따뜻하고 빈티지한 감성을 후지필름 카메라로 재현합니다. 강한 대비와 색감, 그리고 필름 그레인이 어우러져 독특하고 매력적인 이미지를 만들어냅니다. 일상 속 특별한 순간들을 아련하고 드라마틱하게 담아낼 수 있습니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,따뜻한,필름,색감,대비\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: +4\r\nShadow: +4\r\nColor: -3\r\nNoise Reduction: -4\r\nSharpness: -4\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nWB: Shade, +4 Red & +6 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to -1 (typically)',
+  },
+  {
+    id: '899',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감으로, 마치 실제 필름으로 촬영한 듯한 자연스러운 결과물을 제공합니다. 인물 사진이나 일상 스냅에 적합하며, 편안하고 긍정적인 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,따뜻함,인물,부드러움,자연스러움\n[Moods] 따뜻한,부드러운,자연스러운\n[ShootingTypes] snap,daily\n[Settings] Wb: Auto(+1 R, -3 B)\r\nHighlights: -2\r\nShadows: 0\r\nColor: +1\r\nSharpness: -1\r\nExp comp: +⅔ to +1(depending on conditions)"',
+  },
+  {
+    id: '900',
+    pageContent:
+      '[Summary] 이 레시피는 폴라로이드 사진의 따뜻하고 빈티지한 감성을 후지필름 카메라로 재현합니다. 강한 그레인 효과와 부드러운 색감, 그리고 하이라이트와 섀도우의 섬세한 조절을 통해 몽환적이면서도 매력적인 이미지를 연출합니다. 일상 속 특별한 순간들을 아련하게 기록하기에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 빈티지,따뜻한,필름,몽환적인,대비\n[Moods] 따뜻한,몽환적인,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +4\r\nShadow: -2\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpness: -1\r\nGrain Effect: Strong\r\nColor Chrome Effect: Off\r\nWB: Auto, +5 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -2/3 to +1 (typically)',
+  },
+  {
+    id: '901',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여, 인물의 피부톤을 부드럽고 화사하게 표현하는 데 초점을 맞추고 있습니다. 하이라이트와 섀도우를 조절하여 입체감을 살리고, 따뜻하고 자연스러운 분위기를 연출합니다. 인물 사진에 이상적인 레시피입니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,화사함,피부톤,따뜻함\n[Moods] 따뜻한,부드러운,화사한,자연스러운\n[ShootingTypes] portrait\n[Settings] WB :Auto\r\nDR100\r\nHighlight: 2\r\nShadows: 2\r\nColor: 0\r\nSharpness: 1\r\nNoise Red: 0',
+  },
+  {
+    id: '902',
+    pageContent:
+      '[Summary] 이 레시피는 Pro Neg. High 필름 시뮬레이션을 기반으로 하여, 부드럽고 차분한 분위기를 연출합니다. 특히 인물 사진에서 따뜻하고 빈티지한 느낌을 주며, 은은한 그레인 효과가 아날로그 감성을 더합니다. 하이라이트와 섀도우 조절을 통해 섬세한 톤 표현이 가능하며, 일상 스냅이나 인물 사진에 적합합니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 부드러운,빈티지,인물,차분한,필름\n[Moods] 따뜻한,차분한,부드러운\n[ShootingTypes] portrait,snap\n[Settings] Pro Neg Hi.\r\nGrain: Weak\r\nWB :Auto\r\nDR100\r\nHighlight: -1\r\nShadows: 2\r\nColor: -2\r\nSharpness: 0\r\nNoise Red: -2',
+  },
+  {
+    id: '903',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션의 특징을 살려, 자연의 색감을 극대화하고 선명하고 생생한 이미지를 연출합니다. 하이라이트와 섀도우의 섬세한 조절을 통해 풍경 사진에 깊이와 입체감을 더하며, 강렬한 색감과 대비로 잊을 수 없는 순간을 담아낼 수 있습니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,선명한,고채도,대비,생생한\n[Moods] 강렬한,생동감 있는,선명한,극적인\n[ShootingTypes] landscape,snap\n[Settings] WB :Auto\r\nDR100\r\nHighlight: -1\r\nShadows: 2\r\nColor: 2\r\nSharpness: 2\r\nNoise Red: -1',
+  },
+  {
+    id: '904',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬의 부드러운 색감에 색상 크롬 효과를 더하여, 깊이 있고 드라마틱한 분위기를 연출합니다. 하이라이트와 섀도우의 섬세한 조절은 대비를 살려, 일상적인 풍경이나 인물 사진에 특별한 감성을 부여할 것입니다. 특히, 따뜻하면서도 빈티지한 느낌을 원하는 분들께 추천합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식 크롬,색감 강조,대비,선명함,빈티지\n[Moods] 따뜻한,선명한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Color Chrome Effect: Strong\r\nWB :Auto\r\nDR100\r\nHighlight: -2\r\nShadows: 2\r\nColor: 0\r\nSharpness: 2\r\nNoise Red: 0',
+  },
+  {
+    id: '905',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로 하여, 부드럽고 빈티지한 색감과 대비를 통해 아련한 분위기를 연출합니다. 인물 사진이나 일상 스냅에 적합하며, 따뜻하고 차분한 느낌을 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,색감,대비,인물\n[Moods] 따뜻한,차분한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] WB :Auto\r\nDR100\r\nHighlight: -1\r\nShadows: 2\r\nColor: -1\r\nSharpness: 1\r\nNoise Red: 0',
+  },
+  {
+    id: '906',
+    pageContent:
+      '[Summary] 강렬한 흑백 대비와 은은한 그레인이 돋보이는 이 레시피는, 흑백 사진 특유의 드라마틱한 분위기를 연출합니다. 특히, 인물의 감정선을 강조하거나, 도시의 차가운 풍경을 담아낼 때 효과적일 것입니다. 거친 질감과 섬세한 디테일이 공존하는 매력적인 흑백 사진을 경험해보세요.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,대비,선명함,필름\n[Moods] 드라마틱,강렬한,차분한,고전적인\n[ShootingTypes] snap,documentry\n[Settings] ACROS +R\r\nGrain: Weak\r\nWB :Auto\r\nDR100\r\nHighlight: -1\r\nShadows: 2\r\nColor: 0\r\nSharpness: 2\r\nNoise Red: -1',
+  },
+  {
+    id: '907',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 느낌을 강조합니다. DR200 설정과 하이라이트 및 섀도우 조절을 통해, 적절한 대비와 디테일을 유지하면서도 부드러운 색감을 표현합니다. 일상 스냅이나 다큐멘터리 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,다큐멘터리,색감,대비\n[Moods] 차분한,빈티지한,고전적인,사실적인\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: +1\r\nColor: +1\r\nSharpness: 0\r\nNoise Reduction: -2\r\nWhite Balance: Auto, 0 Red & -1 Blue',
+  },
+  {
+    id: '908',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 은은한 필름 그레인을 통해, 마치 코닥 포트라 160 필름을 연상시키는 빈티지한 분위기를 연출합니다. 인물 사진이나 스냅 사진에 특히 잘 어울리며, 따뜻하고 포근한 느낌을 담아낼 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,인물,따뜻한,부드러운,빈티지\n[Moods] 따뜻한,부드러운,빈티지,포근한\n[ShootingTypes] snap,portrait\n[Settings] WB: Daylight, +4 Red & -5 Blue\r\nColor Chrome Effect: Off\r\nDynamic Range: DR-Auto\r\nHighlight: -2\r\nShadow: -2\r\nColor: +1\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Weak\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 1/3 (typically)',
+  },
+  {
+    id: '909',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 포트라 160NC 필름을 연상시키는 부드럽고 따뜻한 색감과 빈티지한 분위기를 연출합니다. 특히 인물 사진에서 자연스러운 피부톤과 은은한 색감으로 매력적인 결과물을 얻을 수 있으며, 일상 스냅 사진에도 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,인물,부드러움,색감,필름\n[Moods] 따뜻한,부드러운,차분한,빈티지\n[ShootingTypes] portrait,snap\n[Settings] WB: Daylight, +3 Red & -4 Blue\r\nDynamic Range: DR-Auto\r\nHighlight: -2 (Low)\r\nShadow: -2 (Low)\r\nColor: +1 (Medium-High)\r\nSharpness: -2 (Low)\r\nNoise Reduction: -2 (Low)\r\nISO: Auto, up to ISO 3200',
+  },
+  {
+    id: '910',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 빈티지한 느낌을 담아, 마치 오래된 필름 사진을 보는 듯한 아련한 분위기를 연출합니다. 특히 인물 사진에서 피부톤을 부드럽게 표현하고, 따뜻한 색감으로 포근한 느낌을 더해줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,인물,부드러움,따뜻함,필름\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] WB: Auto, +3 Red & -4 Blue\r\nDynamic Range: DR-Auto\r\nHighlight: -2 (Low)\r\nShadow: -2 (Low)\r\nColor: +2 (Medium-High)\r\nSharpness: -2 (Low)\r\nNoise Reduction: -2 (Low)\r\nISO: Auto, up to ISO 3200',
+  },
+  {
+    id: '911',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 느낌을 강조합니다. 특히, 흑백 사진과 같은 고전적인 분위기를 연출하며, 부드러운 그레인 효과와 섬세한 색상 표현을 통해 몽환적인 분위기를 자아냅니다. 일상 스냅 사진이나, 차분한 분위기를 담고 싶을 때 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,차분한,흑백,필름\n[Moods] 차분한,고전적인,몽환적인,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain        WEAK\r\nCCFx/CCFxB        OFF\r\nWB/MC        AUTO\r\nRed - WC        0\r\nBlue - MG        -2\r\nD Range        OFF DR100\r\nHighlight        -1\r\nShadows        0\r\nColor        -4\r\nSharpness        3\r\nNoise Red        -4\r\nExp Comp        0',
+  },
+  {
+    id: '912',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 흑백 대비와 거친 질감을 통해, 잊혀진 시대의 기억을 불러일으키는 듯한 인상을 줍니다. 특히 인물의 감정을 깊이 있게 표현하거나, 낡은 도시의 풍경을 담아낼 때 효과적일 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,빈티지,필름,거친\n[Moods] 차분한,드라마틱,고전적인,강렬한\n[ShootingTypes] snap,daily\n[Settings] Push/Pull (exposure compensation) 0 EV\r\nDynamic Range DR200\r\nGrain Effect STRONG (this practically ruins the in-camera look)\r\nWB AS SHOT WB\r\nWB Shift R:0,B:0\r\nHighlight Tone -2\r\nShadow Tone -1\r\nColor\r\nSharpness 0\r\nNoise Reduction -4',
+  },
+  {
+    id: '913',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 톤과 은은한 그레인 효과를 통해 따뜻하고 빈티지한 분위기를 연출합니다. 특히, 섀도우 톤 조절을 통해 부드러운 톤을 강조하여, 일상적인 스냅 사진이나 인물 사진에 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,필름,따뜻한,부드러운,흑백\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Push/Pull (exposure compensation) 0 EV\r\nDynamic Range DR100\r\nGrain Effect WEAK\r\nWB AS SHOT WB\r\nWB Shift R:0,B:-3\r\nHighlight Tone 0\r\nShadow Tone -2\r\nColor 0\r\nSharpness -1\r\nNoise Reduction -4',
+  },
+  {
+    id: '914',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 빈티지 감성을 담아내어, 일상 속 소중한 순간들을 아련하게 기록할 수 있게 해줍니다. 특히, 빛바랜 듯한 색감과 부드러운 질감 표현이 돋보여, 스냅 사진이나 일상적인 풍경을 더욱 감성적으로 만들어 줄 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 빈티지,따뜻한,색감,부드러운,필름\n[Moods] 따뜻한,차분한,빈티지,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Image Quality FINE\r\nPush/Pull (exposure compensation) 0 EV\r\nDynamic Range DR100\r\nGrain Effect WEAK\r\nWB AS SHOT WB\r\nWB Shift R:3,B:-2\r\nHighlight Tone +1\r\nShadow Tone 0\r\nColor -4\r\nSharpness -4\r\nNoise Reduction -4',
+  },
+  {
+    id: '915',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 피부톤과 따뜻한 색감으로 인물 사진에 특화되어 있으며, 은은한 필름 그레인과 빈티지한 느낌을 더하여 아련한 분위기를 연출합니다. 일상 속 인물이나 따뜻한 감성을 담고 싶은 사진에 적합합니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,따뜻함,빈티지,필름\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] portrait,daily\n[Settings] Push/Pull (exposure compensation) +1/3EV\r\nDynamic Range DR100 or DR200 (I’d bet DR200 but tested only DR100)\r\nFilm Simulation ASTIA/SOFT\r\nGrain Effect WEAK\r\nWB AS SHOT WB\r\nWB Shift R:6,B:-3\r\nHighlight Tone -2\r\nShadow Tone -1\r\nColor -3\r\nSharpness -2\r\nNoise Reduction -4',
+  },
+  {
+    id: '916',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 대비와 은은한 그레인 효과를 통해 클래식하면서도 드라마틱한 이미지를 연출합니다. 특히 인물이나 풍경 사진에서 흑백 특유의 감성을 극대화하여, 잊혀지지 않는 순간들을 담아낼 수 있을 것입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,대비,클래식,모노크롬,필름\n[Moods] 차분한,드라마틱,고전적인,강렬한\n[ShootingTypes] snap,documentry\n[Settings] Monochrome + R\r\nHighlights +2\r\nShadows +1\r\nColor N/A\r\nSharpness +2\r\nDynamic Range 100\r\nAWB Shift R0, B0\r\nGrain effect WEAK\r\nNoise Reduction -4\r\nExposure Compensation 0',
+  },
+  {
+    id: '917',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 미세한 그레인, 그리고 약간의 빈티지한 느낌을 통해, 일상 속의 순간들을 드라마틱하게 담아낼 수 있도록 설계되었습니다. 특히, 빛과 그림자의 대비를 강조하여, 피사체의 질감과 형태를 더욱 돋보이게 할 것입니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,빈티지,필름,질감\n[Moods] 차분한,고전적인,드라마틱,빈티지한\n[ShootingTypes] snap,daily\n[Settings] Acros Red\r\nWC: -2 MG:+2\r\nWB : Daylight\r\nGrain: Weak - Small        \r\nDR: 200%\r\nHighlights: -2\r\nShadows : -1\r\nSharpness: +1\r\nNoise reduction: -4\r\nClarity: 0',
+  },
+  {
+    id: '918',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 따뜻하면서도 빈티지한 느낌을 자아냅니다. 특히 푸른색 계열의 색상을 강조하여, 대비가 강하고 드라마틱한 분위기를 연출하며, 일상 스냅 사진에 매력적인 표현력을 더해줄 것입니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 클래식 네거티브,필름,푸른색 강조,대비,빈티지\n[Moods] 따뜻한,빈티지,드라마틱,선명한\n[ShootingTypes] snap,daily\n[Settings] WB : Auto\r\nGrain: Weak - Small        \r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Str0ng\r\nDR: 400%\r\nHighlights: -2\r\nShadows : -2\r\nColor: +2\r\nSharpness: +1\r\nNoise reduction: -4\r\nClarity: 0',
+  },
+  {
+    id: '919',
+    pageContent:
+      '[Summary] 이 레시피는 Provia 필름 시뮬레이션을 기반으로, 부드러운 그레인과 색상 보정을 통해 따뜻하고 빈티지한 느낌을 연출합니다. DR400% 설정은 하이라이트와 섀도우 디테일을 살려 풍부한 계조를 제공하며, 선명함과 노이즈 감소 설정을 통해 깔끔하면서도 필름 특유의 질감을 살린 사진을 만들 수 있습니다. 일상 스냅이나 풍경 사진에 적합합니다.\n[Base Film Simulation] Provia\n[Keywords] 필름,따뜻한,색감,선명한,빈티지\n[Moods] 따뜻한,선명한,빈티지,부드러운\n[ShootingTypes] snap,daily\n[Settings] WB : Auto\r\nGrain: Weak - Small        \r\nColor Chrome Effect: Off\r\nColor Chrome FX Blue: Weak\r\nDR: 400%\r\nHighlights: -1\r\nShadows : -1\r\nColor: 0\r\nSharpness: +1\r\nNoise reduction: -4\r\nClarity: 0',
+  },
+  {
+    id: '920',
+    pageContent:
+      '[Summary] 이 레시피는 영화의 한 장면처럼 부드럽고 따뜻한 분위기를 연출하며, 필름 그레인과 색상 효과를 통해 빈티지한 감성을 더합니다. 특히 인물, 스냅 사진, 일상적인 풍경을 촬영할 때 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,필름,빈티지,따뜻함,드라마틱\n[Moods] 따뜻한,드라마틱,몽환적인\n[ShootingTypes] snap,daily\n[Settings] WB : Auto\r\nGrain: Strong- Large\r\nColor Chrome Effect: Weak\r\nColor Chrome FX Blue: Weak\r\nDR: 100%\r\nHighlights: +1\r\nShadows : +2\r\nColor: +2\r\nSharpness: +1\r\nNoise reduction: -2\r\nClarity: 0',
+  },
+  {
+    id: '921',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 다큐멘터리적인 감성과 빈티지한 분위기를 동시에 담아냅니다. DR400%와 섬세한 색상 보정을 통해 풍부한 계조와 깊이 있는 색감을 표현하며, 일상 속 특별한 순간들을 클래식한 스타일로 기록하기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,빈티지,다큐멘터리,색감,대비\n[Moods] 차분한,빈티지,고전적인,선명한\n[ShootingTypes] snap,daily\n[Settings] WB : Daylight\r\nGrain: Weak - Small\r\nColor Chrome Effect: Weak\r\nColor Chrome FX Blue: Strong\r\nDR: 400%\r\nHighlights: -1\r\nShadows : -1\r\nColor: 0\r\nSharpness: 0\r\nNoise reduction: --4\r\nClarity: 0',
+  },
+  {
+    id: '922',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 색감과 은은한 그레인 효과를 통해 따뜻하고 빈티지한 분위기를 연출합니다. 인물 사진이나 일상 스냅에 적합하며, 편안하고 아련한 느낌을 담아낼 수 있습니다. 마치 오래된 필름 사진처럼, 추억을 불러일으키는 사진을 만들어 줄 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 부드러운,따뜻한,빈티지,인물,필름\n[Moods] 따뜻한,차분한,부드러운,아련한\n[ShootingTypes] snap,daily\n[Settings] WB :Auto\r\nGrain: Weak - Small\r\nDR: 100%\r\nHighlights: -1\r\nShadows : 0\r\nColor: -2\r\nSharpness: 0\r\nNoise reduction: -2\r\nClarity: 0',
+  },
+  {
+    id: '923',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션의 특징을 살려, 자연의 색감을 극대화하고 풍부한 색상 표현을 가능하게 합니다. 특히, DR400% 설정은 밝은 부분의 디테일을 살리고, 섀도우와 컬러 설정을 통해 더욱 드라마틱하고 생동감 넘치는 이미지를 연출합니다. 선명한 색감과 대비를 통해 기억에 남는 사진을 만들 수 있습니다.\n[Base Film Simulation] Velvia\n[Keywords] 고채도,풍경,선명함,대비,강렬함\n[Moods] 생동감 있는,선명한,극적인,따뜻한\n[ShootingTypes] landscape,snap\n[Settings] WB :Auto\r\nDR: 400%\r\nHighlights: 0\r\nShadows : +2\r\nColor: +2\r\nSharpness: +1\r\nNoise reduction: -4\r\nclarity: 0',
+  },
+  {
+    id: '924',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 피부톤과 자연스러운 색감을 살려 인물 사진에 최적화된 레시피입니다. 차분하고 따뜻한 분위기를 연출하여 일상적인 스냅 사진에도 잘 어울립니다. 특히, 빈티지한 느낌을 더해 아날로그 감성을 자극합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 인물,부드러움,자연스러움,빈티지,필름\n[Moods] 따뜻한,차분한,자연스러운\n[ShootingTypes] portrait,daily\n[Settings] Highlight: -1\r\nShadow: -1\r\nSharpness -2\r\nNoise reduction -3 \r\nWB : K',
+  },
+  {
+    id: '925',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 강렬한 색감과 높은 대비를 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 하이라이트와 섀도우의 섬세한 조절은 몽환적인 느낌을 더하며, 따뜻한 색감으로 사진에 깊이를 더합니다. 일상적인 스냅 사진에 독특한 개성을 부여할 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,컬러,대비,색감,필름\n[Moods] 따뜻한,드라마틱,강렬한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +4\r\nShadow: -1\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpness: +1\r\nGrain Effect: Weak\r\nColor Chrome Effect: Off\r\nWB: 7700K, -8 Red & -3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1/3 to -2/3 (typically)',
+  },
+  {
+    id: '926',
+    pageContent:
+      '[Summary] 이 레시피는 어두운 밤의 도시를 배경으로, 네온사인 불빛과 그림자가 만들어내는 강렬한 대비를 담아낼 수 있습니다. DR400과 강한 색상 크롬 효과는 하이라이트와 그림자의 디테일을 살리면서도, 선명하고 극적인 이미지를 연출합니다. 차가운 색감과 은은한 그레인은 레시피의 특징을 더욱 돋보이게 합니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 야경,네온,선명한,필름,대비\n[Moods] 강렬한,극적인,차가운,선명한\n[ShootingTypes] night\n[Settings] PRO Neg. Hi\r\nDynamic Range: DR400\r\nHighlight: +1\r\nShadow: +0\r\nColor: +2\r\nNoise Reduction: -4\r\nSharpness: +1\r\nGrain Effect: Weak\r\nColor Chrome Effect: Strong\r\nWB: 2650K, -1 Red & +4 Blue',
+  },
+  {
+    id: '927',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감으로, 아련한 추억을 담아내는 듯한 사진을 만들어줍니다. 특히 인물 사진에서 자연스러운 피부톤과 빈티지한 분위기를 연출하며, 일상 속 소중한 순간들을 더욱 특별하게 기록할 수 있을 것입니다.\n[Base Film Simulation] Provia\n[Keywords] 빈티지,따뜻한,부드러운,색감,인물\n[Moods] 따뜻한,차분한,부드러운,빈티지\n[ShootingTypes] snap,daily\n[Settings] Provia\r\nDynamic Range: DR100\r\nHighlight: -1 (Medium-Low)\r\nShadow: +1 (Medium-High)\r\nColor: -2 (Low)\r\nSharpness: 0 (Medium)\r\nNoise Reduction: -2 (Low)\r\nWB: Daylight, -3 Red & +1 Blue\r\nISO: Auto, up to ISO 3200',
+  },
+  {
+    id: '928',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로, 슬라이드 필름의 특징을 재현하여 선명하고 빈티지한 느낌을 줍니다. 특히 풍경 사진에서 따뜻하고 긍정적인 분위기를 연출하며, 노출 보정을 통해 원하는 밝기를 섬세하게 조절할 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 클래식,슬라이드,선명한,빈티지,풍경\n[Moods] 따뜻한,선명한,빈티지,긍정적인\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nColor: 0\r\nSharpening: +1\r\nNoise Reduction: -4\r\nGrain: Weak\r\nColor Chrome Effect: Off\r\nWB: Daylight, -2 Red & +3 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '929',
+    pageContent:
+      '[Summary] 이 레시피는 흑백 필름의 깊이 있는 질감과 강렬한 콘트라스트를 통해, 마치 오래된 영화 속 한 장면을 보는 듯한 인상을 줍니다. 특히 빛과 그림자의 대비를 강조하여, 피사체의 드라마틱한 면모를 부각시키는 데 탁월합니다. 일상 속 순간들을 잊을 수 없는 흑백의 추억으로 만들어 보세요.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,빈티지,모노크롬,콘트라스트\n[Moods] 드라마틱,빈티지,강렬한,차분한,고전적인\n[ShootingTypes] snap,daily\n[Settings] Acros+R\r\nDynamic Range: DR200\r\nHighlight: +4\r\nShadow: -2\r\nNoise Reduction: -4\r\nSharpening: +1\r\nGrain Effect: Strong\r\nColor Chrome Effect: Off\r\nToning: 0\r\nWB: AWB, 0 Red & +9 Blue\r\nISO: Auto, ISO 3200 to ISO 12800\r\nExposure Compensation: -1/3 to +2/3 (typically)',
+  },
+  {
+    id: '930',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 부드러운 톤을 통해, 아련하고 몽환적인 분위기를 연출합니다. 하이라이트와 섀도우를 강조하여 대비를 높이고, 노이즈 감소를 통해 깔끔한 이미지를 만들어냅니다. 오래된 사진첩 속 한 장면처럼, 아련한 추억을 떠올리게 하는 사진을 담아보세요.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,빈티지,몽환적인,하이키,대비\n[Moods] 차분한,몽환적인,고전적인\n[ShootingTypes] snap\n[Settings] Double-exposure mode\r\n\r\nFirst eposure should be slightly overexposed\r\nMonochrome\r\nDynamic Range: DR100\r\nHighlight: +2 (High)\r\nShadow: +2 (High)\r\nSharpness: 0 (Medium)\r\nNoise Reduction: -2 (Low)\r\nISO: Auto, up to ISO 3200\r\nSecon exposure underexposed by at least 1 stop, and as many as 3 stops of a medium grey card',
+  },
+  {
+    id: '931',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 필름 그레인의 질감을 통해 아날로그 감성을 극대화합니다. 특히, 햇살 좋은 날의 스냅 사진이나 일상적인 풍경을 촬영할 때, 은은하면서도 빈티지한 분위기를 연출하여 특별한 감성을 더해줄 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 아날로그,따뜻한,색감,필름,빈티지\n[Moods] 따뜻한,빈티지,레트로,아련한\n[ShootingTypes] snap,daily\n[Settings] PRO Neg. Std\r\nDynamic Range: DR200\r\nHighlight: +3\r\nShadow: +0\r\nColor: -1\r\nColor Chrome Effect: Strong\r\nGrain: Strong\r\nNoise Reduction: -4\r\nSharpening: 1\r\nWB: Daylight, -3 Red & +1 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +2/3 to +1 1/3 (typically)',
+  },
+  {
+    id: '932',
+    pageContent:
+      '[Summary] 흑백 필름의 깊이 있는 질감과 강렬한 대비를 통해, 과거의 향수를 불러일으키는 동시에 드라마틱한 분위기를 연출합니다. 특히, 빛과 그림자의 대비가 뚜렷한 풍경이나 인물 사진에 적합하며, 따뜻한 톤을 더해 빈티지한 감성을 극대화합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,대비,빈티지,필름,질감\n[Moods] 따뜻한,드라마틱,강렬한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Exposure 1\r\nAcros\r\nDynamic Range: DR200\r\nHighlight: +4\r\nShadow: +4\r\nTone: +6 (warm)\r\nColor Chrome Effect: Strong\r\nGrain: Weak\r\nSharpening: +1\r\nNoise Reduction: -4\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)\r\n\r\nExposure 2\r\nVelvia\r\nDynamic Range: DR200\r\nHighlight: +4\r\nShadow: +4\r\nColor: +2\r\nColor Chrome Effect: Strong\r\nGrain: Weak\r\nSharpening: +1\r\nNoise Reduction: -4\r\nWB: Auto, 0 Red & 0 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: -1 to -3 (typically)',
+  },
+  {
+    id: '933',
+    pageContent:
+      '[Summary] 이 레시피는 흑백과 컬러를 넘나들며, 강렬한 대비와 거친 질감으로 독특한 분위기를 연출합니다. 특히, 드라마틱한 톤과 저채도, 그리고 필름 그레인의 조화는 보는 이의 시선을 사로잡는 강렬한 인상을 남길 것입니다. 도시의 풍경이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 고대비,저채도,흑백,필름,거친\n[Moods] 드라마틱,강렬한,거친,차가운\n[ShootingTypes] snap,documentry\n[Settings] Exposure 1\r\nDynamic Range: DR200\r\nHighlight: +3\r\nShadow: +4\r\nColor: +2\r\nColor Chrome Effect: Strong\r\nGrain: Strong\r\nSharpening: +1\r\nNoise Reduction: -4\r\nWB: Auto, -1 Red & +3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)\r\nExposure 2\r\nAcros\r\nDynamic Range: DR200\r\nHighlight: +3\r\nShadow: +4\r\nTone: +2 (warm)\r\nColor Chrome Effect: Strong\r\nGrain: Strong\r\nSharpening: +1\r\nNoise Reduction: -4\r\nWB: Auto, -1 Red & +3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '934',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 하이라이트와 섀도우를 조절하여 강렬한 대비를 주고, 색감을 낮춰 흑백에 가까운 빈티지한 느낌을 연출합니다. 노이즈 리덕션을 낮춰 디지털 그레인을 살려 거친 질감을 더했습니다. 이 레시피는 거리의 스냅 사진이나 일상적인 풍경을 드라마틱하게 담아낼 때 특히 효과적일 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,흑백,대비,거친,드라마틱\n[Moods] 강렬한,거친,드라마틱,빈티지\n[ShootingTypes] snap,daily\n[Settings] Highlights: +1\r\nShadows: +4\r\nColor: -4\r\nNoise reduction: -2. We want to retain the noise, it’s our digital grain after all\r\nSharpness: 0',
+  },
+  {
+    id: '935',
+    pageContent:
+      '[Summary] 이 레시피는 1970년대 코닥 필름의 색감을 재현하여, 따뜻하고 부드러운 분위기를 연출합니다. 특히 일상 스냅 사진에서 빈티지한 감성을 더해줄 수 있으며, 톤의 대비를 통해 사진에 깊이감을 더합니다. 노이즈 리덕션을 낮춰 필름 특유의 질감을 살린 것이 특징입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,색감,필름,스냅,따뜻함\n[Moods] 따뜻한,빈티지,레트로,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: -1\r\nShadow: +2\r\nColor: 0\r\nSharpening: +2\r\nNoise Reduction: -4\r\nGrain: Strong\r\nColor Chrome Effect: Off\r\nWB: 6300K, -1 Red & -4 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +2/3 to + 1-1/3 (typically)',
+  },
+  {
+    id: '936',
+    pageContent:
+      '[Summary] 이 레시피는 벨비아 필름 시뮬레이션을 기반으로 하여, 풍경 사진에 생동감과 선명함을 더해줍니다. 하이라이트와 섀도우를 조절하여 입체감을 살리고, 색상과 노이즈 감소를 통해 부드러우면서도 디테일이 살아있는 사진을 만들 수 있습니다. 따뜻한 색감과 선명한 이미지는 일상 스냅과 풍경 사진에 적합합니다.\n[Base Film Simulation] Velvia\n[Keywords] 필름,선명한,따뜻한,풍경,인물\n[Moods] 따뜻한,선명한,화사한\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nHighlight: +2 (High)\r\nShadow: +1 (Medium-High)\r\nColor: -1 (Medium-Low)\r\nSharpness: 0 (Medium)\r\nNoise Reduction: -2 (Low)\r\nWB: Auto, +1 Red & -2 Blue\r\nISO: Auto up to ISO 3200',
+  },
+  {
+    id: '937',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 빈티지한 색감을 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. 하이라이트와 섀도우의 미세한 조절은 사진에 깊이와 입체감을 더하며, 일상 속의 소중한 순간들을 아련하고 매력적인 이미지로 담아낼 수 있게 해줍니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,빈티지,따뜻한,레트로,색감\n[Moods] 따뜻한,빈티지,레트로,선명한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +2 (High)\r\nShadow: +1 (Medium-High)\r\nColor: -1 (Medium-Low)\r\nSharpness: 0 (Medium)\r\nNoise Reduction: -2 (Low)\r\nWB: Auto, +1 Red & -2 Blue\r\nISO: Auto up to ISO 3200',
+  },
+  {
+    id: '938',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 강렬한 대비와 풍부한 질감을 통해 드라마틱한 분위기를 연출합니다. 하이라이트와 섀도우를 강조하여 깊이 있는 톤을 만들고, 강한 그레인 효과와 색상 크롬 효과를 통해 흑백 사진 특유의 감성을 극대화합니다. 도시의 풍경, 인물, 또는 일상 속의 순간들을 잊을 수 없는 흑백의 기억으로 담아낼 수 있을 것입니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,드라마틱,고대비,질감,모노크롬\n[Moods] 강렬한,극적인,차분한,고독한\n[ShootingTypes] documentry,snap\n[Settings] Monochrome (+Y, +R, +G)\r\nDynamic Range: DR200\r\nHighlight: +4\r\nShadow: +4\r\nGrain: Strong\r\nColor Chrome Effect: Strong\r\nToning: 0\r\nSharpening: +3\r\nNoise Reduction: -4\r\nExposure Compensation: 0 to +2/3 (typically)\r\nISO: Auto up to ISO 12800',
+  },
+  {
+    id: '939',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 필름의 따뜻하고 선명한 색감을 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. 하이라이트와 섀도우의 미세한 조절은 사진에 깊이와 입체감을 더하며, 일상 속의 특별한 순간들을 빈티지한 감성으로 담아낼 수 있게 해줍니다. 특히, 햇살 좋은 날의 스냅 사진에 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 코닥,클래식,선명한,따뜻한,빈티지\n[Moods] 따뜻한,선명한,빈티지,클래식\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +2 (High)\r\nShadow: +1 (Medium-High)\r\nColor: 0 (Medium)\r\nSharpness: 0 (Medium)\r\nNoise Reduction: -2 (Low)\r\nWB: Daylight, 0 Red & -3 Blue\r\nISO: Auto, up to ISO 3200',
+  },
+  {
+    id: '940',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 선명한 디테일을 통해, 일상 속의 순간들을 드라마틱하게 담아낼 수 있습니다. DR200의 다이나믹 레인지는 하이라이트와 섀도우의 섬세한 표현을 돕고, 샤프니스와 노이즈 감소 설정은 깔끔하면서도 깊이 있는 흑백 사진을 만들어 줍니다. 도시의 풍경, 인물, 또는 일상적인 스냅 사진에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,콘트라스트,디테일,선명함\n[Moods] 차분한,고전적인,드라마틱한,선명한\n[ShootingTypes] snap,daily\n[Settings] Monochrome (+Y, +R, +G)\r\nDynamic Range: DR200\r\nHighlight: +1 (Medium-High)\r\nShadow: +1 (Medium-High)\r\nSharpness : +1 (Medium -Hard)\r\nNoise Reduction: -2 (Low)\r\nISO: Auto, up to ISO 6400',
+  },
+  {
+    id: '941',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 Velvia 필름 시뮬레이션을 기반으로 하여, 자연의 색상을 극적으로 표현합니다. DR200 설정은 하이라이트와 섀도우 디테일을 유지하며, 색상과 대비를 강조하여 풍경 사진에 생동감을 더합니다. 선명하고 강렬한 이미지를 원하는 분들에게 적합합니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,대비,선명함,강렬함\n[Moods] 생생한,강렬한,극적인\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR200\r\nWB: Auto, 0 Red & -2 Blue\r\nColor: +2 (High)\r\nHighlight: -1 (Medium-Low)\r\nShadow: -1 (Medium-Low)\r\nSharpness : 0 (STD)\r\nNoise Reduction: -2 (Low)\r\nISO: Auto, up to ISO 3200',
+  },
+  {
+    id: '942',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 클래식 크롬 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 색감과 적절한 대비를 통해 다큐멘터리 사진이나 스냅 사진에 적합한 분위기를 연출합니다. DR200 설정은 하이라이트와 섀도우 영역의 디테일을 살려주며, 색상과 하이라이트, 섀도우 조절을 통해 사진에 깊이와 입체감을 더합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,다큐멘터리,채도,대비\n[Moods] 차분한,빈티지한,고전적인,사실적인\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR200\r\nWB: Auto, -1 Red & -1 Blue\r\nColor: +2 (High)\r\nHighlight: +1 (Medium-High)\r\nShadow: +1 (Medium-High)\r\nSharpness: 0 (STD)\r\nNoise Reduction: -2 (Low)\r\nISO: Auto, up to ISO 3200',
+  },
+  {
+    id: '943',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로, 강한 그레인 효과와 톤 조절을 통해 빈티지하면서도 드라마틱한 분위기를 연출합니다. 특히, 400% 다이나믹 레인지를 사용하여 풍부한 계조와 섬세한 묘사가 가능하며, 흑백 사진 특유의 깊이 있는 질감을 살려낼 수 있습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,클래식,흑백,질감\n[Moods] 차분한,빈티지한,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] 400% dynamic range.\r\nGrain Effect at strong, just for the heck of it (to keep the “pure photography experience";\r\nWB: Auto, R: -2 B: +4\r\nHighlight tone to 0;\r\nShadows tone to -1\r\nColor to -1\r\nSharpness to -4\r\nNoise Reduction to -4\r\nLens modulation optimizer OFF',
+  },
+  {
+    id: '944',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 네거티브 필름 시뮬레이션을 기반으로 하여, 과거의 향수를 불러일으키는 따뜻하고 차분한 분위기를 연출합니다. 하이라이트와 섀도우를 조절하여 부드러운 톤과 깊이 있는 대비를 동시에 잡을 수 있으며, 일상적인 스냅 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 빈티지,필름,스냅,레트로,대비\n[Moods] 차분한,따뜻한,아련한\n[ShootingTypes] snap,daily\n[Settings] Highlights: -2\r\nShadows: -2',
+  },
+  {
+    id: '945',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 느낌을 주며, 일상적인 스냅 사진에 적합합니다. 부드러운 톤과 섬세한 디테일 표현으로, 다큐멘터리 사진과 같은 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,다큐멘터리,차분한,스냅\n[Moods] 차분한,빈티지,고전적인,사실적인\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: Auto\r\nWB: Auto\r\nNoise Reduction: -2\r\nHighlight Tone: +1\r\nShadow Tone: -2\r\nColour: +1\r\nSharpness: -1',
+  },
+  {
+    id: '946',
+    pageContent:
+      '[Summary] ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 선명한 디테일을 강조하여, 다큐멘터리나 스냅 사진에 적합한 레시피입니다. 섀도우 톤을 살짝 올려 부드러운 톤을 더하고, 노이즈 감소를 통해 깔끔한 이미지를 연출합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,디테일,선명함,대비\n[Moods] 차분한,모던한,드라마틱,클래식한\n[ShootingTypes] documentry,snap\n[Settings] Monochrome + Y\r\nISO 200 (will change when appropriate)\r\nDynamic Range: 100\r\nWB: Auto\r\nNoise Reduction: -1\r\nImage Size: Large 3:2\r\nImage Quality: Raw + Jpg fine\r\nHighlight Tone: 0\r\nShadow Tone: +1\r\nColour: 0\r\nSharpness: +1',
+  },
+  {
+    id: '95',
+    pageContent:
+      '[Summary] 이 레시피는 맑고 깨끗한 느낌을 주며, 파란 하늘 아래 인물 사진에 특히 잘 어울립니다. 부드러운 색감과 선명한 디테일이 조화롭게 어우러져, 일상 속 소중한 순간들을 아름답게 담아낼 수 있습니다. 특히, 자연광 아래에서 인물의 피부톤을 화사하게 표현해 줍니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 선명한,자연스러운,인물,파스텔,청량한\n[Moods] 따뜻한,화사한,청량한,선명한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 2 Red, -2 Blue\r\nDynamic Range: DR200\r\nHighlights: 0.5\r\nShadows: -1\r\nColor: 2\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 2\r\nEV suggestion: 0',
+  },
+  {
+    id: '96',
+    pageContent:
+      '[Summary] 이 레시피는 차가운 겨울 풍경을 매트하고 영화적인 느낌으로 담아낼 수 있도록 설계되었습니다. Eterna 필름 시뮬레이션과 DR400의 조합은 하이라이트와 섀도우의 디테일을 살리면서, 차분하고 몽환적인 분위기를 연출합니다. 특히, 겨울의 쓸쓸함과 고요함을 담아내기에 적합합니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,겨울,매트,차가운,필름\n[Moods] 차분한,몽환적인,차가운,드라마틱\n[ShootingTypes] landscape,snap\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 2 Red, -3 Blue\r\nDynamic Range: DR400\r\nHighlights: -2\r\nShadows: -1\r\nColor: 0\r\nSharpness: -2\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '97',
+    pageContent:
+      '[Summary] 이 레시피는 Eterna 필름 시뮬레이션을 기반으로 하며, 블리치 바이패스 효과와 레몬 톤을 연출하여 독특한 분위기를 자아냅니다. 특히, 푸른색 강조 설정을 통해 시원하면서도 몽환적인 느낌을 주며, 드라마틱한 장면을 연출하는 데 적합합니다. 일상 스냅 사진에 활용하면 특별한 감성을 더할 수 있습니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,블리치 바이패스,레몬톤,푸른색 강조,필름\n[Moods] 따뜻한,차가운,몽환적인,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Off\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: 4 Red, -7 Blue\r\nDynamic Range: DR200\r\nHighlights: -1\r\nShadows: 1\r\nColor: 1\r\nSharpness: -1\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: +2/3',
+  },
+  {
+    id: '98',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 프로 이미지 필름의 따뜻하고 부드러운 색감을 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. 특히 인물 사진에서 매력적인 피부톤과 빈티지한 분위기를 연출하며, 파란색 계열의 색상을 강조하여 더욱 생동감 있는 사진을 만들어줍니다. 일상 스냅 사진에 활용하면 좋습니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,따뜻함,인물,색감,빈티지\n[Moods] 따뜻한,부드러운,선명한,빈티지\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Off\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Strong\r\nWhite Balance: Auto\r\nWB Shift: 2 Red, -1 Blue\r\nDynamic Range: DR200\r\nHighlights: -1.5\r\nShadows: -0.5\r\nColor: 1\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 1\r\nEV suggestion: +1/3',
+  },
+  {
+    id: '99',
+    pageContent:
+      '[Summary] 이 레시피는 차갑고 빈티지한 느낌을 주며, 몽환적인 분위기를 연출합니다. 특히 흐린 날씨나 차분한 분위기를 담기에 적합하며, 필름 특유의 질감과 색감으로 독특한 사진을 만들 수 있습니다. 차가운 도시의 풍경이나 인물 사진에 잘 어울릴 것 같습니다.\n[Base Film Simulation] Classic Negative\n[Keywords] 차가운,빈티지,필름,대비,몽환적인\n[Moods] 차가운,몽환적인,차분한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: Weak, Small\r\nColour Chrome Effect: Weak\r\nColour Chrome Blue: Weak\r\nWhite Balance: Auto\r\nWB Shift: 2 Red, -2 Blue\r\nDynamic Range: DR100\r\nHighlights: -2\r\nShadows: -0.5\r\nColor: -4\r\nSharpness: 0\r\nISO Noise Reduction: -4\r\nClarity: 0\r\nEV suggestion: -1/3',
+  },
+  {
+    id: '947',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 Superia 800 필름의 따뜻하고 부드러운 색감을 재현하여, 일상 속의 소중한 순간들을 빈티지한 감성으로 담아낼 수 있도록 합니다. 인물 사진에 특히 잘 어울리며, 은은한 색감과 부드러운 톤으로 아련한 분위기를 연출합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,따뜻한,빈티지,인물,색감\n[Moods] 따뜻한,부드러운,빈티지,레트로\n[ShootingTypes] snap,daily\n[Settings] Dynamic range: 200\r\nWB: Auto\r\nNoise reduction: -2\r\nHighlight: 0\r\nShadow: +1\r\nColour: +2\r\nSharpness: +1\r\nGrain effect added in Lightroom in post:\r\nAmount: 60  Size: 40  Roughness: 40',
+  },
+  {
+    id: '948',
+    pageContent:
+      '[Summary] Ilford HP5 필름을 모방한 이 레시피는 흑백의 깊이 있는 표현과 함께, 하이라이트와 섀도우의 섬세한 조절을 통해 드라마틱한 톤을 연출합니다. 노이즈 감소를 통해 깔끔함을 유지하면서도, 필름 특유의 질감을 살려 빈티지한 감성을 더합니다. 일상 속 스냅 사진이나 다큐멘터리 촬영에 적합하며, 흑백 사진 특유의 고전적인 매력을 느낄 수 있습니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,필름,빈티지,질감\n[Moods] 차분한,빈티지한,드라마틱한,고전적인\n[ShootingTypes] snap,documentry\n[Settings] Monochrome + G\r\nDynamic range: 200\r\nWB: Auto\r\nNoise reduction: -2\r\nHighlight: +2\r\nShadow: +1\r\nSharpness: 0\r\nGrain effect added in Lightroom in post:\r\nAmount: 50  Size: 40  Roughness: 40',
+  },
+  {
+    id: '949',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로, 선명하고 따뜻한 색감으로 일상 스냅 사진에 적합합니다. 하이라이트와 섀도우를 살짝 강조하여 입체감을 더하고, 색상과 선명도를 높여 생동감 있는 결과물을 얻을 수 있습니다. 마치 코닥 Ektar 100 필름처럼, 쨍하고 화사한 색감을 기대할 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 선명한,따뜻한,인물,색감,필름\n[Moods] 따뜻한,선명한,화사한,생동감있는\n[ShootingTypes] snap,daily\n[Settings] Dynamic range: Auto\r\nWB: Auto\r\nNoise reduction: -2\r\nHighlight: +1\r\nShadow: +1\r\nColour: +2\r\nSharpness: +1\r\nGrain effect added in Lightroom in post:\r\nAmount: 30  Size: 30  Roughness: 30',
+  },
+  {
+    id: '950',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 강렬한 콘트라스트를 통해, 오래된 사진첩을 넘기는 듯한 아련한 감성을 선사합니다. 특히, 빛과 그림자의 대비를 극대화하여 흑백 사진 특유의 드라마틱한 분위기를 연출하며, 일상 속 순간들을 특별하게 기록할 수 있도록 해줍니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,빈티지,모노크롬,콘트라스트,질감\n[Moods] 클래식,드라마틱,차분한,강렬한\n[ShootingTypes] snap,documentry\n[Settings] Monochrome + R\r\nDynamic range: 200\r\nWB: Auto\r\nNoise reduction: -0\r\nHighlight: +1\r\nShadow: +2\r\nSharpness: +1\r\nGrain effect added in Lightroom in post:\r\nAmount: 60  Size: 40  Roughness: 40',
+  },
+  {
+    id: '951',
+    pageContent:
+      '[Summary] Kodak Portra 400 필름을 연상시키는 이 레시피는 부드럽고 따뜻한 색감으로 인물 사진에 특히 잘 어울립니다. 은은한 그레인과 톤 조정은 빈티지한 감성을 더해, 일상 속 소중한 순간들을 더욱 특별하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,인물,부드러움,따뜻함,빈티지\n[Moods] 따뜻한,부드러운,빈티지,차분한\n[ShootingTypes] portrait,snap\n[Settings] Dynamic range: 200\r\nWB: Fine\r\nNoise reduction: -2\r\nBase film simulation: \r\nHighlight: -1\r\nShadow: +1\r\nColour: -2\r\nSharpness: +1\r\nGrain effect added in Lightroom in post:\r\nAmount: 30  Size: 40  Roughness: 40',
+  },
+  {
+    id: '952',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 미세한 그레인 효과를 통해 클래식하고 차분한 분위기를 연출합니다. 하이라이트 조정으로 디테일을 살리고, 노이즈 감소를 통해 깔끔한 이미지를 제공합니다. 일상 스냅이나 인물 사진에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,디테일,선명함,필름\n[Moods] 차분한,모던한,클래식한\n[ShootingTypes] snap,daily\n[Settings] ACROS-Y\r\nDR AUTO\r\nGrain WEAK\r\nAUTO WB\r\nHighlights: +1\r\nShadows: 0\r\nSharpness 0\r\nNoise -4',
+  },
+  {
+    id: '953',
+    pageContent:
+      '[Summary] Astia 필름 시뮬레이션과 부드러운 노이즈 감소 설정은 따뜻하고 부드러운 색감으로 여행의 순간들을 담아낼 수 있게 해줍니다. 일상 속에서 발견하는 아름다움을 몽환적인 분위기로 표현하며, 은은한 색감과 부드러운 질감으로 편안한 느낌을 선사합니다.\n[Base Film Simulation] Astia\n[Keywords] 여행,부드러움,색감,필름,노이즈\n[Moods] 따뜻한,차분한,몽환적인\n[ShootingTypes] snap,daily\n[Settings] DR AUTO\r\nGrain OFF\r\n5000K\r\nHighlights: 0\r\nShadows: 0\r\nColor: -1\r\nSharpness 0\r\nNoise -3',
+  },
+  {
+    id: '954',
+    pageContent:
+      '[Summary] 이 레시피는 강렬한 대비와 차분한 색감으로 인물의 개성을 드러내는 데 초점을 맞춘 듯합니다. Pro Neg. High 필름 시뮬레이션과 섬세한 설정들이 어우러져, 인물의 표정과 감정에 집중하게 만드는, 세련되고 드라마틱한 흑백 초상 사진을 연출할 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,대비,선명함,흑백,필름\n[Moods] 강렬한,드라마틱한,차분한,세련된\n[ShootingTypes] portrait\n[Settings] DR100\r\nGrain OFF\r\n5300K\r\nHighlights: 0\r\nShadows: 0\r\nColor: -4\r\nSharpness 0\r\nNoise –2',
+  },
+  {
+    id: '955',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 피부톤과 따뜻한 색감을 강조하여 인물 사진에 최적화된 레시피입니다. 노이즈 감소와 샤픈 조절을 통해 부드럽고 몽환적인 분위기를 연출하며, 인물의 개성을 더욱 돋보이게 해줍니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 인물,부드러움,피부톤,따뜻함,몽환적인\n[Moods] 따뜻한,부드러운,몽환적인,차분한\n[ShootingTypes] portrait\n[Settings] DR AUTO\r\nPro Neg Std\r\nGrain OFF\r\n5300K\r\nHighlights: 0\r\nShadows: 0\r\nColor: -1\r\nSharpness 0\r\nNoise –2',
+  },
+  {
+    id: '956',
+    pageContent:
+      '[Summary] 이 레시피는 클래식 크롬 필름 시뮬레이션을 기반으로 하여, 여행의 생생한 순간들을 포착하기에 적합합니다. 채도를 약간 높여 풍경과 인물에 활력을 불어넣고, 선명함을 유지하여 디테일을 살립니다. 따뜻하고 생생한 색감은 일상 스냅 사진에 즐거움을 더할 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 여행,클래식 크롬,채도,선명함,빈티지\n[Moods] 따뜻한,선명한,활기찬,생생한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR AUTO\r\nGrain Effect: Off\r\nWhite Balance: 4800K\r\nHighlight: 0\r\nShadow: 0\r\nColor: +2\r\nSharpness: 0\r\nNoise Reduction: -4',
+  },
+  {
+    id: '957',
+    pageContent:
+      '[Summary] 이 레시피는 Astia 필름 시뮬레이션을 기반으로 하여, 부드럽고 자연스러운 색감과 함께 풍경의 디테일을 살려줍니다. DR200 설정은 하이라이트와 섀도우 영역의 표현력을 높여, 평온하고 묘한 분위기를 연출합니다. 특히, 탁 트인 풍경 사진에 적합하며, 일상적인 순간들을 아름답게 담아낼 수 있습니다.\n[Base Film Simulation] Astia\n[Keywords] 풍경,평온한,부드러운,자연,색감\n[Moods] 차분한,평화로운,자연스러운\n[ShootingTypes] landscape,daily\n[Settings] Dynamic Range: DR200\r\nGrain Effect: Off\r\nWhite Balance: 5000K\r\nHighlight: 1\r\nShadow: 0\r\nColor: -1\r\nSharpness: 0\r\nNoise Reduction: -2',
+  },
+  {
+    id: '958',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션의 특징을 살려, 자연의 아름다움을 극대화하는 데 초점을 맞추고 있습니다. 선명하고 생생한 색감, 높은 대비, 그리고 약간의 디테일 강조를 통해 풍경 사진에 적합한 레시피입니다. 특히, 밝은 야외 풍경을 촬영할 때 그 진가를 발휘할 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,선명한,생생한,고채도,대비\n[Moods] 선명한,생동감있는,강렬한\n[ShootingTypes] landscape\n[Settings] DR AUTO\r\nGrain OFF\r\n4800K\r\nHighlights: +1\r\nShadows: +1\r\nColor: +2\r\nSharpness 0\r\nNoise -2',
+  },
+  {
+    id: '959',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome의 부드러운 색감과 Grain Effect의 은은한 필름 느낌을 살려, 빈티지하면서도 몽환적인 분위기를 연출합니다. 특히, 하이라이트와 섀도우 톤 조절을 통해 드라마틱한 대비를 더하여, 일상 속 특별한 순간들을 담아내기에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,몽환적인,색감,대비,필름\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: weak\r\nDynamic Range: 200\r\nWB: auto; R:-3 B:-8\r\nHighlight Tone: +1\r\nShadow Tone: +2\r\nColor: -1\r\nSharpness: +1\r\nNoise Reduction: -3',
+  },
+  {
+    id: '960',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 강렬한 대비를 통해 피사체의 디테일을 살려냅니다. 하이라이트와 섀도우 톤을 강조하여 드라마틱한 흑백 사진을 연출하며, 일상 속 순간들을 돋보이게 합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,선명함,대비,디테일\n[Moods] 차분한,드라마틱,강렬한,모던한\n[ShootingTypes] snap,daily\n[Settings] Grain Effect: off\r\nDynamic Range:200\r\nWB: auto\r\nHighlight Tone: +2\r\nShadow Tone: +2\r\nSharpness: +2\r\nNoise Reduction: -2',
+  },
+  {
+    id: '961',
+    pageContent:
+      '[Summary] 이 레시피는 ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 뛰어난 디테일을 살려냅니다. 하이라이트와 섀도우의 미세한 조절을 통해 드라마틱한 흑백 사진을 연출하며, 일상 속 순간들을 모던하고 클래식하게 담아낼 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,디테일,선명함,대비\n[Moods] 차분한,드라마틱,모던한,클래식한\n[ShootingTypes] snap,daily\n[Settings] Highlights 0\r\nShadows +1\r\nColor N/A\r\nSharpness +1\r\nDynamic Range 100\r\nAWB Shift R0, B0\r\nGrain effect OFF\r\nNoise Reduction -4\r\nExposure Compensation 0',
+  },
+  {
+    id: '962',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 함께, 은은한 그레인 효과로 빈티지한 감성을 더해줍니다. 섀도우를 강조하여 드라마틱한 분위기를 연출하며, 일상적인 스냅 사진이나 다큐멘터리 촬영에 적합합니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,빈티지,콘트라스트,질감\n[Moods] 차분한,드라마틱,고전적인,강렬한\n[ShootingTypes] snap,documentry\n[Settings] Monochrome + R\r\nHighlights 0\r\nShadows +3\r\nColor N/A\r\nSharpness +1\r\nDynamic Range 100\r\nAWB Shift R0, B0\r\nGrain effect WEAK\r\nNoise Reduction -4\r\nExposure Compensation 0',
+  },
+  {
+    id: '963',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 분위기를 연출합니다. 하이라이트와 섀도우를 조절하여 대비를 살리고, 색상과 선명도를 미세하게 조정하여 클래식한 느낌을 더했습니다. 일상 스냅 사진이나 다큐멘터리 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,다큐멘터리,톤,대비\n[Moods] 차분한,빈티지한,고전적인,드라마틱한\n[ShootingTypes] snap,daily\n[Settings] Highlights +1\r\nShadows +2 (not my usual style so SOOC use limited)\r\nColor +2\r\nSharpness -2\r\nDynamic Range 200\r\nAWB Shift R0, B0 or R0, B-1\r\nGrain effect OFF\r\nNoise Reduction -2\r\nExposure Compensation 0',
+  },
+  {
+    id: '964',
+    pageContent:
+      '[Summary] 이 레시피는 영화의 한 장면처럼 부드럽고 따뜻한 분위기를 연출하며, 은은한 필름 그레인과 함께 몽환적인 느낌을 더해줍니다. 특히 일상 스냅 사진이나, 따뜻한 햇살 아래의 풍경을 담기에 적합하며, 노출 보정을 통해 다양한 분위기를 연출할 수 있습니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,영화,부드러움,따뜻함,필름\n[Moods] 따뜻한,부드러운,몽환적인,영화같은\n[ShootingTypes] snap,daily\n[Settings] Highlights +1\r\nShadows +3\r\nColor +3\r\nSharpness 2\r\nDynamic Range 200\r\nAWB Shift R0, B0 or R0, B-1\r\nGrain effect WEAK\r\nNoise Reduction -4\r\nExposure Compensation +1/3 – +2/3 (the look depends on this)',
+  },
+  {
+    id: '965',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 화사한 색감으로 인물 사진에 최적화되어 있습니다. Astia 필름 시뮬레이션과 섬세한 설정은 따뜻하고 몽환적인 분위기를 연출하며, 빈티지한 감성을 더해줍니다. 특히, 자연광 아래에서 인물의 아름다움을 돋보이게 할 것입니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,화사함,필름,빈티지\n[Moods] 따뜻한,부드러운,화사한,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] Highlights -1\r\nShadows -1\r\nColor -2\r\nSharpness 0\r\nDynamic Range 100\r\nAWB Shift R0, B-1\r\nGrain effect WEAK\r\nNoise Reduction -4\r\nExposure Compensation 0',
+  },
+  {
+    id: '966',
+    pageContent:
+      '[Summary] 이 레시피는 인물 사진에 최적화되어 있으며, 자연스러운 피부톤과 함께 약간의 대비를 더하여 생동감 있는 이미지를 연출합니다. 특히, 따뜻한 색감과 선명한 디테일은 일상 속 소중한 순간들을 더욱 돋보이게 해줄 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,선명함,대비,피부톤,색감\n[Moods] 따뜻한,선명한,자연스러운,생동감있는\n[ShootingTypes] portrait,daily\n[Settings] Highlights 0\r\nShadows -1 (sometimes -2)\r\nColor +2\r\nSharpness +1\r\nDynamic Range 100\r\nAWB Shift R0, B-1\r\nGrain effect OFF\r\nNoise Reduction -2\r\nExposure Compensation 0',
+  },
+  {
+    id: '967',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 Velvia 필름 시뮬레이션을 기반으로, 선명하고 강렬한 색감과 높은 대비를 통해 풍경 사진에 최적화된 설정을 제공합니다. 특히 자연의 아름다움을 생생하게 포착하고, 사진에 극적인 분위기를 더하고 싶을 때 유용합니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,대비,선명함,필름\n[Moods] 강렬한,생생한,극적인\n[ShootingTypes] landscape,snap\n[Settings] Velvia\r\nHighlights 0\r\nShadows -1\r\nColor +2\r\nSharpness +2\r\nDynamic Range 100\r\nAWB Shift R0, B-1 or R+1, B-2\r\nGrain effect OFF\r\nNoise Reduction -4\r\nExposure Compensation 0',
+  },
+  {
+    id: '968',
+    pageContent:
+      '[Summary] Ilford Delta 3200 필름의 거친 질감과 높은 ISO, DR400 설정은 어두운 환경에서도 디테일을 살린 흑백 사진을 연출합니다. 강렬한 대비와 섀도우, 하이라이트 조절을 통해 드라마틱한 흑백의 매력을 극대화하여, 흑백 필름 특유의 빈티지한 감성을 표현합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,고대비,질감,모노크롬\n[Moods] 드라마틱,거친,강렬한,빈티지\n[ShootingTypes] snap,documentry\n[Settings] Acros +G\r\nDynamic Range:        DR400\r\nHighlight:   -2\r\nShadows:  +4\r\nNoise Reduction:  -4\r\nSharpness:  -2\r\nGrain Effect:  Strong\r\nISO:  12800 +\r\nExposure Compensation: -1/3 to -2/3\r\nColor:  n/a\r\nWB: AutoAcros +G',
+  },
+  {
+    id: '969',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 파나토믹 필름의 흑백 사진을 재현하여, 선명하고 대비가 강하며 디테일이 살아있는 이미지를 만들어줍니다. 특히, 야외의 밝은 환경에서 촬영하면 더욱 드라마틱한 흑백 사진을 얻을 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,선명함,대비,빈티지,디테일\n[Moods] 클래식한,차분한,드라마틱한,강렬한\n[ShootingTypes] snap,daily\n[Settings] Film Simulation: Acros + Y (my preference) ORAcros + R \r\nDynamic Range: DR100\r\nHighlight: +3\r\nShadows: +3\r\nNoise Reduction: -1\r\nSharpness: +2\r\nGrain Effect: Off\r\nISO: Auto (200-1600)\r\nExposure Compensation: -1/3 to -1 (outside/sunny)\r\n0 (inside or cloudy)\r\nColor: n/a\r\nWB: Auto',
+  },
+  {
+    id: '970',
+    pageContent:
+      '[Summary] 이 레시피는 Velvia 필름 시뮬레이션의 특징을 살려, 자연의 색상을 극대화하고 생생하고 선명한 이미지를 만들어줍니다. 풍경 사진에서 돋보이는 강렬한 색감과 대비를 통해, 피사체의 디테일을 더욱 돋보이게 합니다.\n[Base Film Simulation] Velvia\n[Keywords] 선명한,풍경,채도,대비,생생함\n[Moods] 생동감 있는,화려한,강렬한\n[ShootingTypes] landscape,snap\n[Settings] Film Simulation: Velvia\r\nNR: 0\r\nHTone: -1\r\nSTone: 2\r\nColour: 2\r\nSharpness: 1',
+  },
+  {
+    id: '971',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하여, 차분하고 빈티지한 색감으로 일상 속의 소중한 순간들을 담아낼 수 있습니다. 하이라이트 톤을 강조하여 부드러운 분위기를 연출하며, 인물 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,차분한,인물,부드러운,톤\n[Moods] 따뜻한,차분한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Film Simulation: \r\nNR: 0\r\nHTone: 2\r\nSTone: 0\r\nColour: -2\r\nSharpness: 0',
+  },
+  {
+    id: '972',
+    pageContent:
+      '[Summary] 이 흑백 레시피는 깊이 있는 톤과 섬세한 디테일을 통해 흑백 사진의 클래식한 매력을 극대화합니다. 부드러운 노이즈 감소와 하이라이트, 섀도우 조절을 통해, 일상 속의 순간들을 드라마틱하고 세련된 흑백 이미지로 담아낼 수 있습니다.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,빈티지,클래식,디테일\n[Moods] 차분한,고전적인,드라마틱,모던한\n[ShootingTypes] snap,daily\n[Settings] Monochrome + R\r\nNR: -2\r\nHTone: 1\r\nSTone: 2\r\nColour: N/A\r\nSharpness: 1',
+  },
+  {
+    id: '973',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 엘리트 크롬 200 필름을 모방하여, 클래식 크롬의 부드러운 색감과 강한 그레인 효과를 통해 빈티지한 분위기를 연출합니다. 하이라이트와 섀도우의 섬세한 조절은 부드러운 톤을 유지하면서도 깊이 있는 표현을 가능하게 하며, 따뜻하고 몽환적인 분위기를 자아냅니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,색감,필름,대비,노이즈\n[Moods] 따뜻한,몽환적인,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: 0\r\nShadow: +2\r\nColor: -2\r\nNoise Reduction: +2\r\nSharpening: -4\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nImage Quality: Normal\r\nWB: 8300K, +4 Red & +8 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: 0 to -2/3 (typically)',
+  },
+  {
+    id: '974',
+    pageContent:
+      '[Summary] 이 레시피는 도시의 활기찬 모습과 빈티지한 감성을 동시에 담아내어, 마치 오래된 영화 속 한 장면을 보는 듯한 느낌을 선사합니다. 특히, 빛과 그림자의 대비를 강조하여 드라마틱한 분위기를 연출하며, 흑백 영화와 같은 클래식한 매력을 더합니다. 도시의 일상, 거리의 풍경, 그리고 인물 사진에 매력적으로 어울릴 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,도시,클래식,대비,필름\n[Moods] 따뜻한,차분한,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: 0\r\nShadow: +2\r\nColor: -4\r\nSharpening: 0\r\nNoise Reduction: -4\r\nGrain: Weak\r\nColor Chrome Effect: Off\r\nWB: 4300K, -1 Red & -3 Blue\r\nISO: Auto, up to ISO 3200\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '975',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 은은한 색감과 함께, 영화 같은 분위기를 연출해 줍니다. 특히, 빛이 부드럽게 스며드는 풍경이나 인물 사진에 적합하며, 아련하고 따뜻한 감성을 담아낼 수 있습니다. 필름 그레인이 더해져 빈티지한 느낌을 더해줍니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,부드러운,빈티지,필름,색감\n[Moods] 차분한,몽환적인,따뜻한,부드러운\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: -2\r\nShadow: -1\r\nColor: +4\r\nNoise Reduction: -4\r\nSharpening: -4\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nWB: 5900K, -3 Red & +3 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '976',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 빈티지한 색감을 재현하여, 풍경 사진에 특히 잘 어울립니다. DR400과 하이라이트, 섀도우 조절을 통해 풍부한 계조와 디테일을 살리고, 색상과 노이즈 감소 설정을 통해 부드럽고 매력적인 이미지를 연출합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,풍경,색감,필름\n[Moods] 따뜻한,레트로,선명한,빈티지\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +1\r\nColor: -1\r\nNoise Reduction: -4\r\nSharpening: +2\r\nGrain Effect: Off\r\nColor Chrome Effect: Weak\r\nWB: Daylight, +2 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '977',
+    pageContent:
+      '[Summary] 이 레시피는 코닥 크롬 필름의 따뜻하고 빈티지한 색감을 클래식 크롬 필름 시뮬레이션을 통해 재현합니다. DR400 설정과 하이라이트, 섀도우 조절을 통해 풍부한 계조와 입체감을 살리고, 약한 그레인 효과로 필름 특유의 질감을 더했습니다. 따뜻한 색감과 선명한 디테일은 풍경 사진에 특히 잘 어울립니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 필름,따뜻한,선명한,빈티지,풍경\n[Moods] 따뜻한,선명한,빈티지,레트로\n[ShootingTypes] landscape,snap\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nColor: 0\r\nNoise Reduction: -4\r\nSharpening: +2\r\nGrain Effect: Weak\r\nWB: Daylight, +2 Red & -5 Blue\r\nISO: Auto, up to ISO 6400\r\nExposure Compensation: +1/3 to +1 (typically)',
+  },
+  {
+    id: '978',
+    pageContent:
+      '[Summary] 이 레시피는 아스티아 필름 시뮬레이션을 기반으로, 따뜻하고 몽환적인 분위기를 연출합니다. 강렬한 색상 대비와 노이즈, 그리고 레드스케일 효과는 빈티지하면서도 드라마틱한 이미지를 만들어낼 것입니다. 일상 속에서 특별한 순간을 포착하거나, 독특한 감성을 표현하고 싶을 때 사용해보세요.\n[Base Film Simulation] Astia\n[Keywords] 레드스케일,따뜻한,빈티지,몽환적인,필름\n[Moods] 따뜻한,몽환적인,레트로,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: +2\r\nColor: -2\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nWB: 10000K, +9 Red & 0 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: -1/3 to +1/3 (typically)',
+  },
+  {
+    id: '979',
+    pageContent:
+      '[Summary] 이 레시피는 흑백의 깊이 있는 표현과 강렬한 대비를 통해, 잊혀져 가는 과거의 기억을 불러일으키는 듯한 사진을 만들어 줍니다. 거친 입자와 함께 몽환적이면서도 드라마틱한 분위기를 연출하여, 평범한 일상 속에서도 특별한 순간을 포착할 수 있게 해줍니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,빈티지,필름,모노크롬,대비\n[Moods] 차분한,빈티지,드라마틱,고전적인\n[ShootingTypes] snap,daily\n[Settings] Acros (Acros+Y, Acros+R, Acros+G)\r\nDynamic Range: DR100\r\nHighlight: +4\r\nShadow: +4\r\nNoise Reduction: -4\r\nSharpening: +2\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nToning: 0 (Neutral)\r\nISO: Auto up to ISO 12800\r\nExposure Compensation: +1/3 to +1 (main exposure), 0 to -2 (second exposure)',
+  },
+  {
+    id: '980',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome을 기반으로, 강렬한 색상과 필름 그레인을 더하여 빈티지한 감성을 극대화합니다. 하이라이트와 섀도우를 강조하여 드라마틱한 분위기를 연출하며, 몽환적이면서도 따뜻한 느낌을 선사합니다. 일상 스냅 사진에 특별한 감성을 불어넣어 줄 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,색감,필름,몽환적인,대비\n[Moods] 따뜻한,몽환적인,빈티지,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Double-exposure mode\r\n\r\nDynamic Range: DR100\r\nHighlight: +3\r\nShadow: +4\r\nColor: +4\r\nColor Chrome Effect: Strong\r\nSharpening: +2\r\nNoise Reduction: -4\r\nGrain Effect: Strong\r\nWB: Auto (use a shift on the second exposure)\r\nISO: Auto up to ISO 12800\r\nExposure Compensation: +1/3 to +1 (main exposure), 0 to -2 (second exposure)',
+  },
+  {
+    id: '981',
+    pageContent:
+      '[Summary] 후지필름의 Pro Neg. Std 필름 시뮬레이션을 기반으로, 따뜻하고 빈티지한 색감과 부드러운 그레인 효과를 더하여, 마치 오래된 필름 사진을 보는 듯한 느낌을 줍니다. 특히, 붉은 톤과 푸른 톤의 섬세한 조절은 사진에 독특한 분위기를 부여하며, 일상적인 스냅 사진을 특별하게 만들어 줄 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,빈티지,따뜻함,산업,색감\n[Moods] 따뜻한,빈티지,레트로,선명한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nHighlight: +1\r\nShadow: +2\r\nColor: +1\r\nColor Chrome Effect: Weak\r\nSharpening: +2\r\nNoise Reduction: -4\r\nGrain Effect: Weak\r\nWB: 3200K, +8 Red & -8 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '982',
+    pageContent:
+      '[Summary] 이 레시피는 오래된 필름의 따뜻하고 빈티지한 색감을 재현하며, 강한 그레인 효과를 통해 아련하고 몽환적인 분위기를 연출합니다. 특히 일상 스냅 사진에서 독특한 감성을 표현하기에 적합합니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 빈티지,필름,색감,노이즈,따뜻한\n[Moods] 따뜻한,빈티지,몽환적인,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadow: 0\r\nColor: 0\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Strong\r\nWB: Auto, +5 Red & +5 Blue\r\nExposure Compensation: -2/3 to 0',
+  },
+  {
+    id: '983',
+    pageContent:
+      '[Summary] 이 레시피는 거친 질감과 높은 콘트라스트를 통해 흑백 필름의 드라마틱한 감성을 극대화합니다. 특히, 빛과 그림자의 대비를 강조하여 강렬하고 인상적인 이미지를 연출하며, 흑백 사진 특유의 빈티지한 매력을 느낄 수 있습니다. 어두운 밤거리나 인물 사진에 잘 어울립니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,하이키,거친,콘트라스트,필름\n[Moods] 드라마틱,강렬한,빈티지,거친\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: N/A\r\nHighlight: +3\r\nShadow: +4\r\nNoise Reduction: -4\r\nSharpening: -2\r\nGrain Effect: Strong\r\nColor Chrome Effect: Strong\r\nToning: 0 (off)\r\nISO: 25600 or 51200\r\nExposure Compensation: +1/3 (typically)',
+  },
+  {
+    id: '984',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름 Velvia 필름 시뮬레이션을 기반으로 하여, 자연의 풍경을 더욱 선명하고 생생하게 담아냅니다. 강렬한 색감과 깊이 있는 그림자는 보는 이의 시선을 사로잡으며, 마치 실제보다 더 아름다운 세상을 경험하게 해 줄 것입니다. 특히, 자연광 아래에서 촬영하면 그 매력이 더욱 돋보일 것입니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,강렬한,선명한,필름\n[Moods] 생생한,강렬한,선명한,극적인\n[ShootingTypes] landscape,snap\n[Settings] DR: Auto\r\nHighlight: 0\r\nShadow: +1\r\nColor: +3\r\nNoise Reduction: -4\r\nSharpening: +2\r\nGrain Effect: Weak\r\nColor Chrome Effect: Strong\r\nWB: Auto, +1 Red & -1 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +1/3 to +2/3 (typically)',
+  },
+  {
+    id: '985',
+    pageContent:
+      '[Summary] 이 레시피는 세피아 톤의 흑백 사진으로, 오래된 사진첩을 넘기는 듯한 아련한 감성을 선사합니다. 강한 그레인 효과는 사진에 거친 질감을 더해 빈티지한 매력을 극대화하며, 일상 속 순간들을 특별하게 기록할 수 있게 해줍니다.\n[Base Film Simulation] Sepia\n[Keywords] 흑백,세피아,빈티지,필름,거친\n[Moods] 따뜻한,빈티지,그리움,드라마틱\n[ShootingTypes] snap,daily\n[Settings] Sepia\r\nFujifilm X-T3 In-Camera Settings\r\nD Range Priority: Strong\r\nFilm Simulation: Sepia\r\nGrain Effect: Strong\r\nColor Chrome: Off\r\nWB: Auto, Red+0, Blue +0\r\nSharpness: -4\r\nNoise Reduction: +4\r\nAll other options at default.',
+  },
+  {
+    id: '986',
+    pageContent:
+      '[Summary] 이 레시피는 깊이 있는 흑백 사진을 위한 완벽한 시작점입니다. 하이라이트 톤을 낮춰 부드러운 톤을 연출하고, 모노크롬 필름 시뮬레이션을 통해 클래식하면서도 드라마틱한 흑백 이미지를 만들 수 있습니다. 일상 속의 순간들을 흑백의 대비로 담아내어, 잊지 못할 추억으로 만들어 보세요.\n[Base Film Simulation] Monochrome\n[Keywords] 흑백,모노크롬,대비,디테일,클래식\n[Moods] 차분한,고전적인,드라마틱한,모던한\n[ShootingTypes] snap,documentry\n[Settings] D Range Priority: Off\r\nDynamic Range: DR100\r\nFilm Simulation: Monochrome\r\nColor Chrome: Off\r\nWB: Auto, Red+0, Blue +0\r\nColor: 0\r\nHighlight Tone: -2\r\nShadow Tone: 0\r\nAll other options at default.',
+  },
+  {
+    id: '987',
+    pageContent:
+      '[Summary] 이 레시피는 Acros 필름 시뮬레이션을 기반으로 하여, 흑백의 깊이 있는 표현과 뛰어난 디테일을 강조합니다. 하이라이트 톤을 낮춰 부드러운 톤을 연출하고, 섀도우 톤을 조절하여 흑백 사진 특유의 드라마틱한 분위기를 자아냅니다. 일상적인 스냅 사진이나, 차분하고 모던한 느낌을 담고 싶을 때 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,디테일,선명함,콘트라스트\n[Moods] 차분한,고전적인,드라마틱한,모던한\n[ShootingTypes] snap,daily\n[Settings] D Range Priority: Off\r\nDynamic Range: DR100\r\nFilm Simulation: Acros\r\nColor Chrome: Off\r\nWB: Auto, Red+0, Blue +0\r\nColor: 0\r\nHighlight Tone: -2\r\nShadow Tone: 0\r\nAll other options at default.',
+  },
+  {
+    id: '988',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감으로, 마치 영화의 한 장면을 보는 듯한 느낌을 줍니다. 특히, 일상 속의 소소한 순간들을 감성적으로 담아내기에 적합하며, 은은한 빈티지 감성을 더해 줍니다. 따뜻한 햇살 아래, 또는 저녁 노을 아래에서 촬영하면 더욱 매력적인 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Eterna\n[Keywords] 시네마틱,영화,부드러움,따뜻함,빈티지\n[Moods] 따뜻한,몽환적인,차분한,영화같은\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR400\r\nFilm Simulation: /Cinema\r\nWB: Auto, Red+2, Blue -1\r\nAll other options at default.\r\nThis custom set can be saved in the I.Q. menu, but the Auto WB tint can not, and must be changed manually.',
+  },
+  {
+    id: '989',
+    pageContent:
+      '[Summary] 이 레시피는 부드러운 피부톤과 자연스러운 색감을 강조하여 인물 사진에 최적화된 레시피입니다. 따뜻한 색감과 깊이 있는 색상 표현은 일상 속 인물들의 매력을 더욱 돋보이게 해줍니다. 특히, 자연광 아래에서 인물 사진을 촬영할 때 훌륭한 결과물을 얻을 수 있을 것입니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 인물,부드러움,자연스러움,색감 강조,따뜻함\n[Moods] 따뜻한,자연스러운,부드러운,화사한\n[ShootingTypes] portrait,daily\n[Settings] D Range Priority: Weak\r\nFilm Simulation: Pro Neg. Std\r\nColor Chrome: Strong\r\nWB: Auto, Red+2, Blue -1\r\nColor: 0\r\nAll other options at default.',
+  },
+  {
+    id: '990',
+    pageContent:
+      '[Summary] 이 레시피는 인물 사진에 특화되어, 강렬한 대비와 선명한 색감으로 피사체를 돋보이게 합니다. 특히 스튜디오 촬영이나, 인물의 개성을 강조하고 싶을 때 효과적입니다. 색상 크롬의 강한 설정은 사진에 깊이와 풍부함을 더해줄 것입니다.\n[Base Film Simulation] Pro Neg. High\n[Keywords] 인물,스튜디오,선명함,강렬함,대비\n[Moods] 드라마틱,강렬한,선명한\n[ShootingTypes] portrait,snap\n[Settings] D Range Priority: Weak\r\nColor Chrome: Strong\r\nWB: Auto, Red+2, Blue -1\r\nColor: -2\r\nAll other options at default.',
+  },
+  {
+    id: '991',
+    pageContent:
+      '[Summary] 이 레시피는 Classic Chrome 필름 시뮬레이션을 기반으로 하며, 다큐멘터리 사진이나 스냅 사진에 적합합니다. 색상 채도를 낮추고, 색상 크롬 효과를 강조하여 빈티지하면서도 드라마틱한 느낌을 연출합니다. 특히, 차분하고 고전적인 분위기를 원하는 사진에 적합합니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,클래식,다큐멘터리,채도 감소,색감 강조\n[Moods] 차분한,빈티지한,고전적인,드라마틱한\n[ShootingTypes] documentry,snap\n[Settings] D Range Priority: Strong\r\nFilm Simulation: \r\nColor Chrome: Strong\r\nWB: Auto, Red+0, Blue +0\r\nColor: -1\r\nAll other options at default.',
+  },
+  {
+    id: '992',
+    pageContent:
+      '[Summary] Astia 필름 시뮬레이션과 약한 다이나믹 레인지 우선 설정을 통해 부드럽고 화사한 인물 사진을 위한 레시피입니다. 따뜻한 색감과 부드러운 피부톤 표현으로 인물의 매력을 극대화하며, 몽환적인 분위기를 연출합니다. 일상 스냅이나 인물 사진에 적합합니다.\n[Base Film Simulation] Astia\n[Keywords] 인물,부드러움,화사함,피부톤,파스텔\n[Moods] 따뜻한,부드러운,화사한,몽환적인\n[ShootingTypes] portrait,snap\n[Settings] D Range Priority: Weak\r\nFilm Simulation: Astia\r\nColor Chrome: Off\r\nWB: Auto, Red+2, Blue +0\r\nColor: -4\r\nAll other options at default.',
+  },
+  {
+    id: '993',
+    pageContent:
+      '[Summary] Velvia 필름 시뮬레이션과 색상 설정을 기반으로, 이 레시피는 자연의 풍경을 더욱 선명하고 생생하게 담아냅니다. 특히, 색상 크롬 효과와 화이트 밸런스 조정을 통해 풍경 사진에 깊이와 따뜻함을 더하여, 강렬하면서도 매력적인 이미지를 연출할 수 있습니다.\n[Base Film Simulation] Velvia\n[Keywords] 풍경,고채도,강렬함,선명함,색감\n[Moods] 생생한,강렬한,극적인\n[ShootingTypes] landscape,snap\n[Settings] Velvia\r\nD Range Priority: Strong\r\nFilm Simulation: Velvia\r\nColor Chrome: Weak\r\nWB: Auto, Red+2, Blue +0\r\nColor: -4\r\nAll other options at default.',
+  },
+  {
+    id: '994',
+    pageContent:
+      '[Summary] 이 레시피는 후지필름의 대표적인 필름 시뮬레이션인 Provia를 기반으로 하여, 일상적인 풍경이나 인물 사진에 적합한, 자연스럽고 부드러운 색감을 연출합니다. Color Chrome의 약한 설정은 은은한 색감 표현을 더하며, 따뜻하고 화사한 분위기를 자아냅니다.\n[Base Film Simulation] Provia\n[Keywords] 일상,선명한,자연스러운,부드러운,색감\n[Moods] 따뜻한,화사한,자연스러운\n[ShootingTypes] snap,daily\n[Settings] D Range Priority: Weak\r\nFilm Simulation: Provia/Std\r\nColor Chrome: Weak\r\nWB: Auto, Red+1, Blue +0\r\nColor: -1',
+  },
+  {
+    id: '995',
+    pageContent:
+      '[Summary] Agfa APX 400 필름을 모방한 이 레시피는 강렬한 흑백 대비와 거친 질감을 통해 아날로그 감성을 극대화합니다. 특히, 빛과 그림자의 극적인 표현과 섬세한 디테일 묘사가 돋보이며, 흑백 사진 특유의 클래식한 분위기를 연출합니다. 이 레시피는 흑백의 깊이 있는 표현을 통해 인물, 풍경, 스냅 사진 등 다양한 피사체를 매력적으로 담아낼 수 있습니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,필름,빈티지,모노크롬,질감\n[Moods] 드라마틱,거친,빈티지,클래식\n[ShootingTypes] snap,documentry\n[Settings] Dynamic Range: DR400\r\nHighlight: -2\r\nShadow: +4\r\nNoise Reduction: -4\r\nSharpening: +4\r\nGrain Effect: Weak\r\nColor Chrome Effect: Strong\r\nToning: +1 (warm)\r\nISO: Auto up to ISO 12800\r\nExposure Compensation: +2/3 to +1-1/3 (typically)',
+  },
+  {
+    id: '996',
+    pageContent:
+      '[Summary] ACROS 필름 시뮬레이션을 기반으로, 흑백의 깊이 있는 표현과 뛰어난 디테일을 살린 레시피입니다. 섀도우 톤을 강조하여 드라마틱한 분위기를 연출하며, 노이즈 감소를 통해 깔끔하고 선명한 이미지를 얻을 수 있습니다. 일상 스냅이나 다큐멘터리 사진에 적합합니다.\n[Base Film Simulation] Acros\n[Keywords] 흑백,모노크롬,디테일,선명함,콘트라스트\n[Moods] 차분한,드라마틱,고전적인,강렬한\n[ShootingTypes] documentry,snap\n[Settings] Acros R\r\nAuto ISO limited to 800 max. (thanks to IBIS ;-)\r\nAuto WB & Dynamic Range\r\nGrain Off (ACROS has already a tonality dependent grain feature)\r\nNoise Reduction -2 or -3\r\nHi-light Tone 0\r\nShadow Tone +3\r\nSharpening 0 or +1',
+  },
+  {
+    id: '997',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 그레인 효과를 통해 아련한 분위기를 연출합니다. 특히 인물 사진에서 빈티지한 감성을 더하며, 일상적인 스냅 사진에 매력적인 느낌을 부여할 것입니다. 마치 오래된 필름 카메라로 촬영한 듯한, 향수를 자극하는 사진을 만들어줍니다.\n[Base Film Simulation] Provia\n[Keywords] 빈티지,필름,따뜻한,색감,인물\n[Moods] 따뜻한,부드러운,빈티지,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR100\r\nHighlight: -2\r\nShadow: +2\r\nColor: -2\r\nNoise Reduction: -3\r\nSharpening: 0\r\nGrain Effect: Weak\r\nWB: Auto, -1 Red & -1 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+  {
+    id: '998',
+    pageContent:
+      '[Summary] 이 레시피는 따뜻하고 부드러운 색감과 은은한 그레인 효과를 통해, 마치 오래된 필름 사진을 보는 듯한 빈티지한 감성을 선사합니다. 특히 인물 사진에서 부드러운 피부톤과 따뜻한 분위기를 연출하여, 아련하고 추억을 불러일으키는 사진을 만들 수 있을 것입니다.\n[Base Film Simulation] Classic Chrome\n[Keywords] 빈티지,따뜻한,필름,색감,인물\n[Moods] 따뜻한,빈티지,레트로,아련한\n[ShootingTypes] snap,daily\n[Settings] Dynamic Range: DR200\r\nHighlight: +1\r\nShadows: +2\r\nNoise reduction: -3\r\nSharpening: +1\r\nColor: -1\r\nGrain: weak\r\nAutoWB: +3R, -4B\r\nExposure comp: +1/3 to +2/3',
+  },
+  {
+    id: '999',
+    pageContent:
+      '[Summary] 이 레시피는 부드럽고 따뜻한 색감과 은은한 필름 그레인을 통해, 마치 따스한 햇살 아래에서 촬영한 듯한 인물 사진을 연출합니다. 특히, 섀도우를 살짝 올려 부드러운 분위기를 강조하고, 색감을 더해 화사함을 더했습니다. 일상 스냅이나 인물 사진에 활용하면 좋습니다.\n[Base Film Simulation] Pro Neg. Std\n[Keywords] 필름,인물,따뜻한,부드러운,색감\n[Moods] 따뜻한,부드러운,화사한\n[ShootingTypes] snap,portrait\n[Settings] Dynamic Range: DR200\r\nHighlight: 0\r\nShadow: +3\r\nColor: +4\r\nGrain: Weak\r\nNoise Reduction: -3\r\nSharpening: 0\r\nWB: Auto, +2 Red & +1 Blue\r\nISO: Auto up to ISO 6400\r\nExposure Compensation: +2/3 to +1 (typically)',
+  },
+];

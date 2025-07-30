@@ -6,7 +6,9 @@ import {
 import { BM25Retriever } from '@langchain/community/retrievers/bm25';
 import { PineconeEmbeddings, PineconeStore } from '@langchain/pinecone';
 import { Pinecone as PineconeClient } from '@pinecone-database/pinecone';
+import { Document } from 'langchain/document';
 import { EnsembleRetriever } from 'langchain/retrievers/ensemble';
+import { PineconeRecipesForKeywordSearch } from '../../../types/pinecone-recipes';
 
 export const createPineconeClient = () => {
   return new PineconeClient({
@@ -47,7 +49,7 @@ export const retrieve = async (
   const vectorStore = await createVectorStore(embeddings, pineconeIndex);
 
   const pineconeRetriever = vectorStore.asRetriever({
-    k: 4,
+    k: 5,
     searchType: 'mmr',
     searchKwargs: { fetchK: 15, lambda: 0.4 },
     filter: {
@@ -56,17 +58,20 @@ export const retrieve = async (
       // settings_filmSimulation: { $in: metadata.filmSimultations },
     },
   });
-  console.log('🚀 ~ metadata:', metadata);
 
-  const documents = await pineconeRetriever.invoke(query);
-  console.log('🚀 ~ documents:', documents);
+  const recipeDocuments = PineconeRecipesForKeywordSearch.map((recipe) => {
+    return new Document({
+      pageContent: recipe.pageContent,
+      id: recipe.id,
+    });
+  });
 
-  const bm25Retriever = BM25Retriever.fromDocuments(documents, {
-    k: 3,
+  const bm25Retriever = BM25Retriever.fromDocuments(recipeDocuments, {
+    k: 5,
   });
 
   return new EnsembleRetriever({
     retrievers: [pineconeRetriever, bm25Retriever],
-    weights: [0.6, 0.4],
+    weights: [0.8, 0.2],
   }).invoke(query);
 };
