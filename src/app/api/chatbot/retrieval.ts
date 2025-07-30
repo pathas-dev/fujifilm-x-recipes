@@ -49,7 +49,7 @@ export const retrieve = async (
   const vectorStore = await createVectorStore(embeddings, pineconeIndex);
 
   const pineconeRetriever = vectorStore.asRetriever({
-    k: 5,
+    k: 4,
     searchType: 'mmr',
     searchKwargs: { fetchK: 15, lambda: 0.4 },
     filter: {
@@ -63,15 +63,16 @@ export const retrieve = async (
     return new Document({
       pageContent: recipe.pageContent,
       id: recipe.id,
+      metadata: { url: recipe.metadata.url },
     });
   });
 
   const bm25Retriever = BM25Retriever.fromDocuments(recipeDocuments, {
-    k: 5,
+    k: 4,
   });
 
   return new EnsembleRetriever({
     retrievers: [pineconeRetriever, bm25Retriever],
-    weights: [0.8, 0.2],
+    weights: [0.7, 0.3],
   }).invoke(query);
 };

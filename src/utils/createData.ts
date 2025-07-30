@@ -58,6 +58,7 @@ export const exportPineconeData = async () => {
     const exportData = allVectors.map((vector) => ({
       id: vector.id,
       pageContent: vector.metadata?.text || '',
+      metadata: { url: vector.metadata?.url || '' },
     }));
 
     // JSON 파일로 저장
