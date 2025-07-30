@@ -247,7 +247,7 @@ export const FujifilmSettingsSchema = z.object({
     .min(-4)
     .max(4)
     .default(0)
-    .describe('Noise Reduction - 디지털 노이즈 제거'),
+    .describe('Noise Reduction - 디지털 노이즈 제거, 높을수록 깔끔한 이미지'),
 });
 
 export type SensorType = z.infer<typeof SensorTypeSchema>;
