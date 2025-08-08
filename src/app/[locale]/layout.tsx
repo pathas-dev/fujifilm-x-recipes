@@ -7,9 +7,9 @@ import { localeIntl, locales } from '@/i18n/navigation';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Metadata } from 'next';
-import { NextIntlClientProvider } from 'next-intl';
 import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { Noto_Sans_KR } from 'next/font/google';
+import { NextIntlClientProvider } from 'next-intl';
 import { cookies } from 'next/headers';
 import { COOKIE_THEME_KEY } from '../constants/cookie';
 import { SITE_URL } from '../sitemap';
@@ -55,9 +55,6 @@ export async function generateMetadata(props: {
     },
     alternates: { canonical: SITE_URL },
     robots: { follow: true, index: true },
-    other: {
-      'og:image:secure_url': `${SITE_URL}/og.png?v=${process.env.VERCEL_GIT_COMMIT_SHA || '1'}`,
-    },
 
     openGraph: {
       title: 'fujifilm-x-recipes',
@@ -66,12 +63,12 @@ export async function generateMetadata(props: {
       siteName: 'fujifilm-x-recipes',
       images: [
         {
-          url: `${SITE_URL}/og.png?v=${process.env.VERCEL_GIT_COMMIT_SHA || '1'}`, // Cache busting with commit hash
+          url: `${SITE_URL}/og.png`, // Must be an absolute URL
           width: 1200,
           height: 630,
         },
         {
-          url: `${SITE_URL}/og-alt.png?v=${process.env.VERCEL_GIT_COMMIT_SHA || '1'}`, // Cache busting with commit hash
+          url: `${SITE_URL}/og-alt.png`, // Must be an absolute URL
           width: 1800,
           height: 900,
           alt: 'open graph alt image',
