@@ -42,7 +42,7 @@
     "lz-string": "^1.5.0",
     "mongodb": "^6.17.0",
     "negotiator": "^0.6.4",
-    "next": "15.4.1",
+    "next": "15.4.10",
     "next-intl": "^4.3.4",
     "nodemailer": "^6.10.1",
     "papaparse": "^5.5.3",
