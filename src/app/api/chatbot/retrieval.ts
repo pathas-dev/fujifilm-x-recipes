@@ -1,7 +1,6 @@
 import {
-  ColorOrBw,
-  FilmSimulationType,
-  SensorType,
+    ColorOrBw,
+    SensorType
 } from '@/types/camera-schema';
 import { BM25Retriever } from '@langchain/community/retrievers/bm25';
 import { PineconeEmbeddings, PineconeStore } from '@langchain/pinecone';
@@ -40,7 +39,7 @@ export const retrieve = async (
   metadata: {
     sensors: SensorType[];
     colorOrBw: ColorOrBw;
-    filmSimultations?: FilmSimulationType[];
+    filmSimultations?: string[];
   }
 ) => {
   const pinecone = createPineconeClient();

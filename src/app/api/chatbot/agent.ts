@@ -1,20 +1,20 @@
 import { formatContext } from '@/app/api/chatbot/context';
 import {
-  createCuratorPromptTemplate,
-  createLLM,
-  createParseQuestionPromptTemplate,
-  GoogleAIModel,
+    createCuratorPromptTemplate,
+    createLLM,
+    createParseQuestionPromptTemplate,
+    GroqModel,
 } from '@/app/api/chatbot/llm';
 import { retrieve } from '@/app/api/chatbot/retrieval';
 import {
-  CameraModel,
-  QuestionAnalysisSchema,
-  SensorType,
+    CameraModel,
+    QuestionAnalysisSchema,
+    SensorType,
 } from '@/app/api/chatbot/shema';
 import {
-  CuratedRecipesSchema,
-  CuratorResponse,
-  MetaTiming,
+    CuratedRecipesSchema,
+    CuratorResponse,
+    MetaTiming,
 } from '@/types/recipe-schema';
 import { retouchImage } from '@/utils/retouchImage';
 import z from 'zod';
@@ -25,7 +25,7 @@ import langfuseHandler from '../../../utils/langfuse';
 const llmCache = new Map<string, ReturnType<typeof createLLM>>();
 
 const getOrCreateLLM = (
-  model: GoogleAIModel,
+  model: GroqModel,
   temperature: number = 1
 ): ReturnType<typeof createLLM> => {
   const cacheKey = `llm_${model}`;
@@ -73,6 +73,55 @@ const validatePromptInputs = (
   }
 
   return inputs;
+};
+
+// Groq 응답 정규화 - settings 객체의 숫자 필드 변환
+const normalizeSettings = (settings: any): any => {
+  if (!settings) return settings;
+
+  const numericFields = [
+    'shiftRed',
+    'shiftBlue',
+    'highlight',
+    'shadow',
+    'color',
+    'clarity',
+    'sharpness',
+    'noiseReduction',
+  ];
+
+  const normalized = { ...settings };
+  for (const field of numericFields) {
+    if (normalized[field] !== undefined) {
+      const parsed = parseInt(String(normalized[field]), 10);
+      normalized[field] = isNaN(parsed) ? 0 : parsed;
+    }
+  }
+  return normalized;
+};
+
+// Groq 응답 정규화 - 레시피 객체 전체 정규화
+const normalizeRecipe = (recipe: any): any => {
+  if (!recipe) return recipe;
+
+  return {
+    ...recipe,
+    settings: normalizeSettings(recipe.settings),
+    // keywords 배열 길이 제한 (최대 5개)
+    keywords: Array.isArray(recipe.keywords)
+      ? recipe.keywords.slice(0, 5)
+      : recipe.keywords,
+  };
+};
+
+// Groq 응답 정규화 - CuratedRecipes 전체 정규화
+const normalizeCuratedRecipes = (data: any): any => {
+  if (!data) return data;
+
+  return {
+    retrieved: normalizeRecipe(data.retrieved),
+    generated: normalizeRecipe(data.generated),
+  };
 };
 
 /**
@@ -162,21 +211,58 @@ export class FujifilmRecipeAgent {
       console.log('🔍 Analyzing question:', this.state.question);
       const endTime = measureTime('Question Analysis');
 
-      const parsingLLM = getOrCreateLLM(GoogleAIModel.GeminiFlashLite);
+      const parsingLLM = getOrCreateLLM(GroqModel.Llama8b);
       const parsingPrompt = createParseQuestionPromptTemplate();
 
-      const parsingChain = parsingPrompt.pipe(
-        parsingLLM.withStructuredOutput(QuestionAnalysisSchema)
-      );
+      const parsingChain = parsingPrompt.pipe(parsingLLM);
 
       const inputs = validatePromptInputs(
         { question: this.state.question },
         'QuestionAnalysis'
       );
 
-      const analysis = (await parsingChain.invoke(inputs, {
+      const response = await parsingChain.invoke(inputs, {
         callbacks: [langfuseHandler],
-      })) as z.infer<typeof QuestionAnalysisSchema>;
+      });
+
+      // JSON 응답 수동 파싱
+      const content =
+        typeof response.content === 'string'
+          ? response.content
+          : JSON.stringify(response.content);
+
+      const jsonMatch =
+        content.match(/```json\s*([\s\S]*?)\s*```/) ||
+        content.match(/(\{[\s\S]*\})/);
+
+      if (!jsonMatch) {
+        throw new Error('JSON 응답을 찾을 수 없습니다');
+      }
+
+      // 디버깅: 원본 JSON 로깅
+      console.log('📝 Raw JSON:', jsonMatch[1].substring(0, 200));
+
+      // JSON 문자열 정리 - 문자열 내부 줄바꿈만 처리
+      const cleanJson = jsonMatch[1]
+        .replace(/\r\n/g, ' ')
+        .replace(/\n/g, ' ')
+        .replace(/\t/g, ' ');
+
+      const rawData = JSON.parse(cleanJson);
+
+      // 값 정규화 - filmSimulations가 문자열이면 배열로 변환
+      if (typeof rawData.filmSimulations === 'string') {
+        try {
+          // "['Velvia', 'Provia']" 형태를 파싱
+          rawData.filmSimulations = JSON.parse(
+            rawData.filmSimulations.replace(/'/g, '"')
+          );
+        } catch {
+          rawData.filmSimulations = null;
+        }
+      }
+
+      const analysis = QuestionAnalysisSchema.parse(rawData);
 
       this.state.analysis = analysis;
       const duration = endTime();
@@ -184,7 +270,7 @@ export class FujifilmRecipeAgent {
 
       // 관련 없는 질문 처리
       if (!analysis.isFilmRecipeQuestion) {
-        this.state.response = analysis.rejectionReason;
+        this.state.response = analysis.rejectionReason ?? undefined;
         this.state.step = 'completed';
         return false; // 다음 단계로 진행하지 않음
       }
@@ -193,7 +279,17 @@ export class FujifilmRecipeAgent {
       return true;
     } catch (error) {
       console.error('Question analysis error:', error);
-      this.state.error = '질문 분석 중 오류가 발생했습니다.';
+      
+      // 429 Rate Limit 에러 처리
+      const errorMsg = error instanceof Error ? error.message : String(error);
+      if (errorMsg.includes('429') || errorMsg.toLowerCase().includes('rate limit')) {
+        this.state.error = '현재 요청이 많아 처리가 지연되고 있습니다. 잠시 후 다시 시도해주세요.';
+      } else if (errorMsg.includes('timeout') || errorMsg.includes('ETIMEDOUT')) {
+        this.state.error = '응답 시간이 초과되었습니다. 다시 시도해주세요.';
+      } else {
+        this.state.error = '질문 분석 중 오류가 발생했습니다. 다시 시도해주세요.';
+      }
+      
       this.state.step = 'error';
       return false;
     }
@@ -210,7 +306,7 @@ export class FujifilmRecipeAgent {
       this.state.documents = await retrieve(searchQuery, {
         colorOrBw: this.state.analysis?.colorOrBw ?? 'Color',
         sensors: this.state.detectedSensors ?? [],
-        filmSimultations: this.state.analysis?.filmSimulations,
+        filmSimultations: this.state.analysis?.filmSimulations ?? undefined,
       });
 
       this.state.context = formatContext(this.state.documents);
@@ -231,12 +327,10 @@ export class FujifilmRecipeAgent {
       console.log('👨‍🍳 Generating recipes');
       const endTime = measureTime('Recipe Generation');
 
-      const curatorLLM = getOrCreateLLM(GoogleAIModel.GeminiFlash);
+      const curatorLLM = getOrCreateLLM(GroqModel.Llama70b);
       const curatorPrompt = createCuratorPromptTemplate();
 
-      const curatorChain = curatorPrompt.pipe(
-        curatorLLM.withStructuredOutput(CuratedRecipesSchema)
-      );
+      const curatorChain = curatorPrompt.pipe(curatorLLM);
 
       const inputs = validatePromptInputs(
         {
@@ -246,9 +340,36 @@ export class FujifilmRecipeAgent {
         'RecipeGeneration'
       );
 
-      const recipes = (await curatorChain.invoke(inputs, {
+      const response = await curatorChain.invoke(inputs, {
         callbacks: [langfuseHandler],
-      })) as z.infer<typeof CuratedRecipesSchema>;
+      });
+
+      // JSON 응답 수동 파싱
+      const content =
+        typeof response.content === 'string'
+          ? response.content
+          : JSON.stringify(response.content);
+
+      // JSON 블록 추출 (```json...``` 또는 순수 JSON)
+      const jsonMatch = content.match(/```json\s*([\s\S]*?)\s*```/) ||
+        content.match(/(\{[\s\S]*\})/);
+
+      if (!jsonMatch) {
+        throw new Error('JSON 응답을 찾을 수 없습니다');
+      }
+
+      // 디버깅: 원본 JSON 로깅
+      console.log('📝 Raw JSON:', jsonMatch[1].substring(0, 200));
+
+      // JSON 문자열 정리 - 문자열 내부 줄바꿈만 처리
+      const cleanJson = jsonMatch[1]
+        .replace(/\r\n/g, ' ')
+        .replace(/\n/g, ' ')
+        .replace(/\t/g, ' ');
+
+      const rawData = JSON.parse(cleanJson);
+      const normalizedData = normalizeCuratedRecipes(rawData);
+      const recipes = CuratedRecipesSchema.parse(normalizedData);
 
       this.state.recipes = recipes;
       const duration = endTime();
@@ -257,7 +378,17 @@ export class FujifilmRecipeAgent {
       return true;
     } catch (error) {
       console.error('Recipe generation error:', error);
-      this.state.error = '레시피 생성 중 오류가 발생했습니다.';
+      
+      // 429 Rate Limit 에러 처리
+      const errorMsg = error instanceof Error ? error.message : String(error);
+      if (errorMsg.includes('429') || errorMsg.toLowerCase().includes('rate limit')) {
+        this.state.error = '현재 요청이 많아 처리가 지연되고 있습니다. 잠시 후 다시 시도해주세요.';
+      } else if (errorMsg.includes('timeout') || errorMsg.includes('ETIMEDOUT')) {
+        this.state.error = '응답 시간이 초과되었습니다. 다시 시도해주세요.';
+      } else {
+        this.state.error = '레시피 생성 중 오류가 발생했습니다. 다시 시도해주세요.';
+      }
+      
       this.state.step = 'error';
       return false;
     }

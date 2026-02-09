@@ -2,17 +2,17 @@ import { FujifilmSettingsSchema } from '@/types/camera-schema';
 import { readCSV } from '@/utils/csvReader';
 import { Document } from '@langchain/core/documents';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
-import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
+import { ChatGroq } from '@langchain/groq';
 import { PineconeEmbeddings, PineconeStore } from '@langchain/pinecone';
 import { Pinecone as PineconeClient } from '@pinecone-database/pinecone';
 import { z } from 'zod';
 
 import path from 'path';
 import {
-  FILMSIMULATION_INSTRUCTION,
-  SETTINGS_INSTRUCTIONS,
+    FILMSIMULATION_INSTRUCTION,
+    SETTINGS_INSTRUCTIONS,
 } from '../app/api/chatbot/instructions';
-import { GoogleAIModel } from '../app/api/chatbot/llm';
+import { GroqModel } from '../app/api/chatbot/llm';
 import { PINECONE_EMBEDDING_MODEL } from '../app/api/chatbot/retrieval';
 import langfuseHandler from './langfuse';
 
@@ -81,17 +81,47 @@ ${SETTINGS_INSTRUCTIONS}
   ['human', `{recipe}`],
 ]);
 
-// Google Gemini 모델 초기화
-const llm = new ChatGoogleGenerativeAI({
-  apiKey: process.env.GOOGLE_API_KEY,
-  model: GoogleAIModel.GeminiFlashLite,
-  streaming: false,
+// Groq LLM 모델 초기화
+const llm = new ChatGroq({
+  apiKey: process.env.GROQ_API_KEY,
+  model: GroqModel.Llama8b,
   temperature: 0.3,
 });
 
 const chain = promptTemplate.pipe(
   llm.withStructuredOutput(RecipeAnalysisSchema)
 );
+
+// 429 Rate Limit 에러 재시도 헬퍼
+const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms));
+
+const invokeWithRetry = async <T>(
+  fn: () => Promise<T>,
+  maxRetries = 3,
+  baseDelayMs = 1000
+): Promise<T> => {
+  for (let attempt = 0; attempt < maxRetries; attempt++) {
+    try {
+      return await fn();
+    } catch (error: unknown) {
+      const isRateLimitError =
+        error instanceof Error &&
+        (error.message.includes('429') ||
+          error.message.toLowerCase().includes('rate limit'));
+
+      if (isRateLimitError && attempt < maxRetries - 1) {
+        const delayMs = baseDelayMs * Math.pow(2, attempt);
+        console.warn(
+          `⚠️ Rate limit hit. Retrying in ${delayMs}ms... (attempt ${attempt + 1}/${maxRetries})`
+        );
+        await sleep(delayMs);
+        continue;
+      }
+      throw error;
+    }
+  }
+  throw new Error('Max retries exceeded');
+};
 
 const embeddings = new PineconeEmbeddings({
   apiKey: process.env.PINECONE_API_KEY,
@@ -129,11 +159,13 @@ export const processRecipes = async () => {
       const batchDocuments = await Promise.all(
         batch.map(async (recipe, batchIndex: number) => {
           try {
-            const analysis = await chain.invoke(
-              {
-                recipe: JSON.stringify(recipe),
-              },
-              { callbacks: [langfuseHandler] }
+            const analysis = await invokeWithRetry(() =>
+              chain.invoke(
+                {
+                  recipe: JSON.stringify(recipe),
+                },
+                { callbacks: [langfuseHandler] }
+              )
             );
             console.log('🚀 ~ processRecipes ~ analysis:', analysis);
 

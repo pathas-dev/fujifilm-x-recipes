@@ -38,7 +38,14 @@ export async function POST(request: Request) {
             sendEvent('state', agent.getState());
 
             if (!shouldContinue) {
-              sendEvent('completed', agent.getState().response);
+              const state = agent.getState();
+              if (state.step === 'error') {
+                // 에러 상태면 에러 이벤트 전송
+                sendEvent('error', { error: state.error });
+              } else {
+                // 정상 종료 (관련 없는 질문 등)
+                sendEvent('completed', state.response);
+              }
               controller.close();
               return;
             }

@@ -1,25 +1,26 @@
 import { COLOR_TYPES } from '@/types/camera-schema';
 import { ChatPromptTemplate } from '@langchain/core/prompts';
-import { ChatGoogleGenerativeAI } from '@langchain/google-genai';
+import { ChatGroq } from '@langchain/groq';
 import {
   FILMSIMULATION_INSTRUCTION,
   SETTINGS_INSTRUCTIONS,
 } from './instructions';
 
-export enum GoogleAIModel {
-  GeminiFlash = 'gemini-2.0-flash',
-  GeminiFlashLite = 'gemini-2.0-flash-lite',
+export enum GroqModel {
+  Llama70b = 'llama-3.3-70b-versatile',
+  Llama8b = 'llama-3.1-8b-instant',
 }
 
 export const createLLM = (
-  model: GoogleAIModel = GoogleAIModel.GeminiFlash,
+  model: GroqModel = GroqModel.Llama70b,
   temperature: number
 ) => {
-  return new ChatGoogleGenerativeAI({
-    apiKey: process.env.GOOGLE_API_KEY,
+  return new ChatGroq({
+    apiKey: process.env.GROQ_API_KEY,
     model,
-    streaming: false,
     temperature,
+    maxRetries: 2,
+    timeout: 60000, // 60초 타임아웃
   });
 };
 
@@ -53,6 +54,18 @@ export const createParseQuestionPromptTemplate = () => {
 
 ### 색상 타입
 ${COLOR_TYPES.join(' / ')}
+
+## 응답 형식
+반드시 아래 JSON 형식으로만 응답하세요. 다른 텍스트 없이 JSON만 출력하세요:
+\`\`\`json
+{{
+  "colorOrBw": "Color" | "B&W",
+  "filmSimulations": ["필름시뮬레이션1", "필름시뮬레이션2"],
+  "enhancedQuestion": "개선된 질문",
+  "isFilmRecipeQuestion": true | false,
+  "rejectionReason": "관련 없는 질문인 경우 이유" | null
+}}
+\`\`\`
 `;
 
   const analysisSystemMessage = [
@@ -82,7 +95,6 @@ export const createCuratorPromptTemplate = () => {
 - **카메라 모델명, 센서 타입 등 기술적 고유 명사도 직접 언급하지 마세요**
 - 각 레시피의 최적 **촬영 목적**도 추천해주세요
 - **질문한 언어**와 같은 언어로 답변하세요
-- **반드시 JSON 형식으로만** 응답하세요
 
 ## 첫 번째 레시피 요구사항
 - Context 에 **검색된 레시피 중** 첫 번째 레시피만 활용하세요.
@@ -95,6 +107,28 @@ export const createCuratorPromptTemplate = () => {
 - **필름 시뮬레이션** 은 검색된 레시피 컨셉에 가장 잘 어울리는 것을 단 1개만 사용하세요.
 - Context 에 **검색된 레시피가 하나 이하인 경우** 사용자 질문에 대한 답변을 알고 있는 필름 시뮬레이션, 설정 정보를 최대한 활용해서 답변하세요.
 - base Film Simulation은 검색된 레시피들을 참조하여 가장 적합한 것을 선택하고, 검색 결과가 없는 경우 컬러는 **Provia**, 흑백은 **ACROS** 를 사용하세요.
+
+## 응답 형식
+반드시 아래 JSON 형식으로만 응답하세요. 다른 텍스트 없이 JSON만 출력하세요:
+\`\`\`json
+{{
+  "retrieved": {{
+    "title": "레시피 제목",
+    "baseFilmSimulation": "필름 시뮬레이션",
+    "recommendationReason": "추천 이유",
+    "settings": {{ "filmSimulation": "...", "iso": "...", ... }},
+    "keywords": ["키워드1", "키워드2", "키워드3"],
+    "url": "레시피 URL"
+  }},
+  "generated": {{
+    "title": "감성적인 레시피 제목",
+    "baseFilmSimulation": "필름 시뮬레이션",
+    "recommendationReason": "추천 이유",
+    "settings": {{ "filmSimulation": "...", "iso": "...", ... }},
+    "keywords": ["키워드1", "키워드2", "키워드3"]
+  }}
+}}
+\`\`\`
 `;
 
   const curatorSystemMessage = [

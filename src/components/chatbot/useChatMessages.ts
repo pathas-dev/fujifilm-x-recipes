@@ -123,7 +123,18 @@ export const useChatMessages = (): {
                     };
                     return addMessage(botMessage);
                   case 'error':
-                    throw new Error(eventData.error || 'Unknown error');
+                    // 서버에서 보낸 에러 메시지를 사용자에게 표시
+                    const serverErrorMessage = eventData.error || t('error');
+                    const errorBotMessage: ChatMessage = {
+                      id: (Date.now() + 2).toString(),
+                      content: serverErrorMessage,
+                      isUser: false,
+                      timestamp: new Date(),
+                      type: 'text',
+                    };
+                    addMessage(errorBotMessage);
+                    setLoading(false);
+                    return;
                   default:
                     const stateMessages = {
                       analyzing: t('loadings.analyzing'),
